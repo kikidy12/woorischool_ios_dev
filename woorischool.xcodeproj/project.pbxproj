@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A0D2D6A2D10E9CD5D1764F5 /* Pods_woorischoolUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7F9203926178007AA0F04D /* Pods_woorischoolUITests.framework */; };
+		56B73706B4EC30D999202D41 /* Pods_woorischoolTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BAFA166663B98C7BBE201EC /* Pods_woorischoolTests.framework */; };
+		6E6A417BE18C14AC419C187E /* Pods_woorischool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DF9025D4AFF6AA15336F7F8 /* Pods_woorischool.framework */; };
 		9968CF2C23418F3200B8D095 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9968CF2B23418F3200B8D095 /* AppDelegate.swift */; };
 		9968CF2E23418F3200B8D095 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9968CF2D23418F3200B8D095 /* ViewController.swift */; };
 		9968CF3123418F3200B8D095 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9968CF2F23418F3200B8D095 /* Main.storyboard */; };
@@ -35,6 +38,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0EA684C3B177CBDD6F244DE4 /* Pods-woorischoolUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-woorischoolUITests.debug.xcconfig"; path = "Target Support Files/Pods-woorischoolUITests/Pods-woorischoolUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2277AA59F5F17A19A5ADF56A /* Pods-woorischool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-woorischool.debug.xcconfig"; path = "Target Support Files/Pods-woorischool/Pods-woorischool.debug.xcconfig"; sourceTree = "<group>"; };
+		4DF9025D4AFF6AA15336F7F8 /* Pods_woorischool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_woorischool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		530174885E637CF31660E36D /* Pods-woorischoolTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-woorischoolTests.debug.xcconfig"; path = "Target Support Files/Pods-woorischoolTests/Pods-woorischoolTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5F7F9203926178007AA0F04D /* Pods_woorischoolUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_woorischoolUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7BAFA166663B98C7BBE201EC /* Pods_woorischoolTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_woorischoolTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		976225E4F1BC256AAEF8F4BB /* Pods-woorischool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-woorischool.release.xcconfig"; path = "Target Support Files/Pods-woorischool/Pods-woorischool.release.xcconfig"; sourceTree = "<group>"; };
 		9968CF2823418F3200B8D095 /* woorischool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = woorischool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9968CF2B23418F3200B8D095 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9968CF2D23418F3200B8D095 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +59,8 @@
 		9968CF4A23418F3500B8D095 /* woorischoolUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = woorischoolUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9968CF4E23418F3500B8D095 /* woorischoolUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = woorischoolUITests.swift; sourceTree = "<group>"; };
 		9968CF5023418F3500B8D095 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C63EB5231703A402FC52CEED /* Pods-woorischoolUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-woorischoolUITests.release.xcconfig"; path = "Target Support Files/Pods-woorischoolUITests/Pods-woorischoolUITests.release.xcconfig"; sourceTree = "<group>"; };
+		CECCFAD86527E37AA122206D /* Pods-woorischoolTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-woorischoolTests.release.xcconfig"; path = "Target Support Files/Pods-woorischoolTests/Pods-woorischoolTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E6A417BE18C14AC419C187E /* Pods_woorischool.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56B73706B4EC30D999202D41 /* Pods_woorischoolTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +84,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A0D2D6A2D10E9CD5D1764F5 /* Pods_woorischoolUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		62140E2395DDCD6CDFA1EAAF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4DF9025D4AFF6AA15336F7F8 /* Pods_woorischool.framework */,
+				7BAFA166663B98C7BBE201EC /* Pods_woorischoolTests.framework */,
+				5F7F9203926178007AA0F04D /* Pods_woorischoolUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		75E1AC6872D49F6AB1D31BA8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2277AA59F5F17A19A5ADF56A /* Pods-woorischool.debug.xcconfig */,
+				976225E4F1BC256AAEF8F4BB /* Pods-woorischool.release.xcconfig */,
+				530174885E637CF31660E36D /* Pods-woorischoolTests.debug.xcconfig */,
+				CECCFAD86527E37AA122206D /* Pods-woorischoolTests.release.xcconfig */,
+				0EA684C3B177CBDD6F244DE4 /* Pods-woorischoolUITests.debug.xcconfig */,
+				C63EB5231703A402FC52CEED /* Pods-woorischoolUITests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		9968CF1F23418F3200B8D095 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +122,8 @@
 				9968CF4223418F3500B8D095 /* woorischoolTests */,
 				9968CF4D23418F3500B8D095 /* woorischoolUITests */,
 				9968CF2923418F3200B8D095 /* Products */,
+				75E1AC6872D49F6AB1D31BA8 /* Pods */,
+				62140E2395DDCD6CDFA1EAAF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -135,9 +176,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9968CF5323418F3500B8D095 /* Build configuration list for PBXNativeTarget "woorischool" */;
 			buildPhases = (
+				BFB582CE2B7EE649D73B1A43 /* [CP] Check Pods Manifest.lock */,
 				9968CF2423418F3200B8D095 /* Sources */,
 				9968CF2523418F3200B8D095 /* Frameworks */,
 				9968CF2623418F3200B8D095 /* Resources */,
+				719246AE4963D30D433CBEA6 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +195,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9968CF5623418F3500B8D095 /* Build configuration list for PBXNativeTarget "woorischoolTests" */;
 			buildPhases = (
+				27B52022230FFA6332D760F7 /* [CP] Check Pods Manifest.lock */,
 				9968CF3B23418F3500B8D095 /* Sources */,
 				9968CF3C23418F3500B8D095 /* Frameworks */,
 				9968CF3D23418F3500B8D095 /* Resources */,
@@ -170,6 +214,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9968CF5923418F3500B8D095 /* Build configuration list for PBXNativeTarget "woorischoolUITests" */;
 			buildPhases = (
+				712885591959133CA90B5EA3 /* [CP] Check Pods Manifest.lock */,
 				9968CF4623418F3500B8D095 /* Sources */,
 				9968CF4723418F3500B8D095 /* Frameworks */,
 				9968CF4823418F3500B8D095 /* Resources */,
@@ -253,6 +298,92 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		27B52022230FFA6332D760F7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-woorischoolTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		712885591959133CA90B5EA3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-woorischoolUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		719246AE4963D30D433CBEA6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-woorischool/Pods-woorischool-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-woorischool/Pods-woorischool-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-woorischool/Pods-woorischool-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BFB582CE2B7EE649D73B1A43 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-woorischool-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9968CF2423418F3200B8D095 /* Sources */ = {
@@ -434,6 +565,7 @@
 		};
 		9968CF5423418F3500B8D095 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2277AA59F5F17A19A5ADF56A /* Pods-woorischool.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -452,6 +584,7 @@
 		};
 		9968CF5523418F3500B8D095 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 976225E4F1BC256AAEF8F4BB /* Pods-woorischool.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -470,6 +603,7 @@
 		};
 		9968CF5723418F3500B8D095 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 530174885E637CF31660E36D /* Pods-woorischoolTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -490,6 +624,7 @@
 		};
 		9968CF5823418F3500B8D095 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CECCFAD86527E37AA122206D /* Pods-woorischoolTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -510,6 +645,7 @@
 		};
 		9968CF5A23418F3500B8D095 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0EA684C3B177CBDD6F244DE4 /* Pods-woorischoolUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -529,6 +665,7 @@
 		};
 		9968CF5B23418F3500B8D095 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C63EB5231703A402FC52CEED /* Pods-woorischoolUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
