@@ -3,13 +3,42 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		1A0D2D6A2D10E9CD5D1764F5 /* Pods_woorischoolUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F7F9203926178007AA0F04D /* Pods_woorischoolUITests.framework */; };
 		56B73706B4EC30D999202D41 /* Pods_woorischoolTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7BAFA166663B98C7BBE201EC /* Pods_woorischoolTests.framework */; };
 		6E6A417BE18C14AC419C187E /* Pods_woorischool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DF9025D4AFF6AA15336F7F8 /* Pods_woorischool.framework */; };
+		9914A9CF2343098F001C0112 /* Extensions+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9914A9CE2343098F001C0112 /* Extensions+Views.swift */; };
+		9914A9D1234309BB001C0112 /* Extensions+Obejcts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9914A9D0234309BB001C0112 /* Extensions+Obejcts.swift */; };
+		9914A9D323430A57001C0112 /* EnumObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9914A9D223430A57001C0112 /* EnumObjects.swift */; };
+		9914A9D523430AC6001C0112 /* CustomViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9914A9D423430AC5001C0112 /* CustomViews.swift */; };
+		9914A9D723430B32001C0112 /* ServerUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9914A9D623430B32001C0112 /* ServerUtil.swift */; };
+		9914A9DA23430B8C001C0112 /* UserDefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9914A9D923430B8C001C0112 /* UserDefs.swift */; };
+		9914A9DC23430B8F001C0112 /* AlertHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9914A9DB23430B8F001C0112 /* AlertHandler.swift */; };
+		9914A9DE23430B99001C0112 /* CustomPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9914A9DD23430B99001C0112 /* CustomPageControl.swift */; };
+		9914A9E623430DA9001C0112 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9914A9E423430DA9001C0112 /* SplashViewController.swift */; };
+		9914A9E723430DA9001C0112 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9914A9E523430DA9001C0112 /* SplashViewController.xib */; };
+		9914A9FA23431447001C0112 /* NotoSansCJKkr-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9914A9F123431441001C0112 /* NotoSansCJKkr-Thin.otf */; };
+		9914A9FB23431447001C0112 /* NotoSansMonoCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9914A9F223431441001C0112 /* NotoSansMonoCJKkr-Bold.otf */; };
+		9914A9FC23431447001C0112 /* NotoSansCJKkr-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9914A9F323431442001C0112 /* NotoSansCJKkr-Black.otf */; };
+		9914A9FD23431447001C0112 /* NotoSansCJKkr-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9914A9F423431443001C0112 /* NotoSansCJKkr-Light.otf */; };
+		9914A9FE23431447001C0112 /* NotoSansMonoCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9914A9F523431444001C0112 /* NotoSansMonoCJKkr-Regular.otf */; };
+		9914A9FF23431447001C0112 /* NotoSansCJKkr-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9914A9F623431444001C0112 /* NotoSansCJKkr-Bold.otf */; };
+		9914AA0023431447001C0112 /* NotoSansCJKkr-DemiLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9914A9F723431445001C0112 /* NotoSansCJKkr-DemiLight.otf */; };
+		9914AA0123431447001C0112 /* NotoSansCJKkr-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9914A9F823431446001C0112 /* NotoSansCJKkr-Regular.otf */; };
+		9914AA0223431447001C0112 /* NotoSansCJKkr-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9914A9F923431447001C0112 /* NotoSansCJKkr-Medium.otf */; };
+		9914AA042343174A001C0112 /* NanumSquareRound-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9914AA032343174A001C0112 /* NanumSquareRound-Light.otf */; };
+		9914AA0623431780001C0112 /* NanumSquareRound-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9914AA0523431780001C0112 /* NanumSquareRound-Regular.otf */; };
+		9914AA0A234317E9001C0112 /* NanumSquareRound-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9914AA09234317E9001C0112 /* NanumSquareRound-Bold.otf */; };
+		9914AA0D23431B00001C0112 /* SelectUserTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9914AA0B23431B00001C0112 /* SelectUserTypeViewController.swift */; };
+		9914AA0E23431B00001C0112 /* SelectUserTypeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9914AA0C23431B00001C0112 /* SelectUserTypeViewController.xib */; };
+		9914AA1123431CF8001C0112 /* ParentsLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9914AA0F23431CF8001C0112 /* ParentsLoginViewController.swift */; };
+		9914AA1223431CF8001C0112 /* ParentsLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9914AA1023431CF8001C0112 /* ParentsLoginViewController.xib */; };
+		9914AA1B234326D4001C0112 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9914AA1A234326D4001C0112 /* UserData.swift */; };
+		9914AA1E23432728001C0112 /* ParentsSignUpStep1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9914AA1C23432728001C0112 /* ParentsSignUpStep1ViewController.swift */; };
+		9914AA1F23432728001C0112 /* ParentsSignUpStep1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9914AA1D23432728001C0112 /* ParentsSignUpStep1ViewController.xib */; };
 		9968CF2C23418F3200B8D095 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9968CF2B23418F3200B8D095 /* AppDelegate.swift */; };
 		9968CF2E23418F3200B8D095 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9968CF2D23418F3200B8D095 /* ViewController.swift */; };
 		9968CF3123418F3200B8D095 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9968CF2F23418F3200B8D095 /* Main.storyboard */; };
@@ -45,6 +74,35 @@
 		5F7F9203926178007AA0F04D /* Pods_woorischoolUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_woorischoolUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BAFA166663B98C7BBE201EC /* Pods_woorischoolTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_woorischoolTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		976225E4F1BC256AAEF8F4BB /* Pods-woorischool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-woorischool.release.xcconfig"; path = "Target Support Files/Pods-woorischool/Pods-woorischool.release.xcconfig"; sourceTree = "<group>"; };
+		9914A9CE2343098F001C0112 /* Extensions+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+Views.swift"; sourceTree = "<group>"; };
+		9914A9D0234309BB001C0112 /* Extensions+Obejcts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+Obejcts.swift"; sourceTree = "<group>"; };
+		9914A9D223430A57001C0112 /* EnumObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumObjects.swift; sourceTree = "<group>"; };
+		9914A9D423430AC5001C0112 /* CustomViews.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomViews.swift; sourceTree = "<group>"; };
+		9914A9D623430B32001C0112 /* ServerUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerUtil.swift; sourceTree = "<group>"; };
+		9914A9D923430B8C001C0112 /* UserDefs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefs.swift; sourceTree = "<group>"; };
+		9914A9DB23430B8F001C0112 /* AlertHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertHandler.swift; sourceTree = "<group>"; };
+		9914A9DD23430B99001C0112 /* CustomPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPageControl.swift; sourceTree = "<group>"; };
+		9914A9E423430DA9001C0112 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		9914A9E523430DA9001C0112 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
+		9914A9F123431441001C0112 /* NotoSansCJKkr-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Thin.otf"; sourceTree = "<group>"; };
+		9914A9F223431441001C0112 /* NotoSansMonoCJKkr-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansMonoCJKkr-Bold.otf"; sourceTree = "<group>"; };
+		9914A9F323431442001C0112 /* NotoSansCJKkr-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Black.otf"; sourceTree = "<group>"; };
+		9914A9F423431443001C0112 /* NotoSansCJKkr-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Light.otf"; sourceTree = "<group>"; };
+		9914A9F523431444001C0112 /* NotoSansMonoCJKkr-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansMonoCJKkr-Regular.otf"; sourceTree = "<group>"; };
+		9914A9F623431444001C0112 /* NotoSansCJKkr-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Bold.otf"; sourceTree = "<group>"; };
+		9914A9F723431445001C0112 /* NotoSansCJKkr-DemiLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-DemiLight.otf"; sourceTree = "<group>"; };
+		9914A9F823431446001C0112 /* NotoSansCJKkr-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Regular.otf"; sourceTree = "<group>"; };
+		9914A9F923431447001C0112 /* NotoSansCJKkr-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Medium.otf"; sourceTree = "<group>"; };
+		9914AA032343174A001C0112 /* NanumSquareRound-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumSquareRound-Light.otf"; sourceTree = "<group>"; };
+		9914AA0523431780001C0112 /* NanumSquareRound-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumSquareRound-Regular.otf"; sourceTree = "<group>"; };
+		9914AA09234317E9001C0112 /* NanumSquareRound-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumSquareRound-Bold.otf"; sourceTree = "<group>"; };
+		9914AA0B23431B00001C0112 /* SelectUserTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectUserTypeViewController.swift; sourceTree = "<group>"; };
+		9914AA0C23431B00001C0112 /* SelectUserTypeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectUserTypeViewController.xib; sourceTree = "<group>"; };
+		9914AA0F23431CF8001C0112 /* ParentsLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentsLoginViewController.swift; sourceTree = "<group>"; };
+		9914AA1023431CF8001C0112 /* ParentsLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParentsLoginViewController.xib; sourceTree = "<group>"; };
+		9914AA1A234326D4001C0112 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
+		9914AA1C23432728001C0112 /* ParentsSignUpStep1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentsSignUpStep1ViewController.swift; sourceTree = "<group>"; };
+		9914AA1D23432728001C0112 /* ParentsSignUpStep1ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParentsSignUpStep1ViewController.xib; sourceTree = "<group>"; };
 		9968CF2823418F3200B8D095 /* woorischool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = woorischool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9968CF2B23418F3200B8D095 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9968CF2D23418F3200B8D095 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -111,8 +169,142 @@
 				0EA684C3B177CBDD6F244DE4 /* Pods-woorischoolUITests.debug.xcconfig */,
 				C63EB5231703A402FC52CEED /* Pods-woorischoolUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		9914A9C9234308CC001C0112 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9914AA152343258D001C0112 /* Global */,
+				9914AA142343257A001C0112 /* Parents */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9914A9CA23430925001C0112 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9914AA182343268D001C0112 /* Global */,
+				9914AA1723432686001C0112 /* Parents */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		9914A9CB2343092F001C0112 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		9914A9CC23430939001C0112 /* Datas */ = {
+			isa = PBXGroup;
+			children = (
+				9914AA1A234326D4001C0112 /* UserData.swift */,
+			);
+			path = Datas;
+			sourceTree = "<group>";
+		};
+		9914A9CD23430945001C0112 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				9914A9CE2343098F001C0112 /* Extensions+Views.swift */,
+				9914A9D0234309BB001C0112 /* Extensions+Obejcts.swift */,
+				9914A9D223430A57001C0112 /* EnumObjects.swift */,
+				9914A9D423430AC5001C0112 /* CustomViews.swift */,
+				9914A9D623430B32001C0112 /* ServerUtil.swift */,
+				9914A9D923430B8C001C0112 /* UserDefs.swift */,
+				9914A9DB23430B8F001C0112 /* AlertHandler.swift */,
+				9914A9DD23430B99001C0112 /* CustomPageControl.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		9914A9DF23430C24001C0112 /* ModalViews */ = {
+			isa = PBXGroup;
+			children = (
+				9914AA1023431CF8001C0112 /* ParentsLoginViewController.xib */,
+				9914AA1D23432728001C0112 /* ParentsSignUpStep1ViewController.xib */,
+			);
+			path = ModalViews;
+			sourceTree = "<group>";
+		};
+		9914A9E223430C81001C0112 /* Modals */ = {
+			isa = PBXGroup;
+			children = (
+				9914AA0F23431CF8001C0112 /* ParentsLoginViewController.swift */,
+				9914AA1C23432728001C0112 /* ParentsSignUpStep1ViewController.swift */,
+			);
+			path = Modals;
+			sourceTree = "<group>";
+		};
+		9914A9E823430E3C001C0112 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				9914AA09234317E9001C0112 /* NanumSquareRound-Bold.otf */,
+				9914AA0523431780001C0112 /* NanumSquareRound-Regular.otf */,
+				9914AA032343174A001C0112 /* NanumSquareRound-Light.otf */,
+				9914A9F323431442001C0112 /* NotoSansCJKkr-Black.otf */,
+				9914A9F623431444001C0112 /* NotoSansCJKkr-Bold.otf */,
+				9914A9F723431445001C0112 /* NotoSansCJKkr-DemiLight.otf */,
+				9914A9F423431443001C0112 /* NotoSansCJKkr-Light.otf */,
+				9914A9F923431447001C0112 /* NotoSansCJKkr-Medium.otf */,
+				9914A9F823431446001C0112 /* NotoSansCJKkr-Regular.otf */,
+				9914A9F123431441001C0112 /* NotoSansCJKkr-Thin.otf */,
+				9914A9F223431441001C0112 /* NotoSansMonoCJKkr-Bold.otf */,
+				9914A9F523431444001C0112 /* NotoSansMonoCJKkr-Regular.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		9914AA142343257A001C0112 /* Parents */ = {
+			isa = PBXGroup;
+			children = (
+				9914A9DF23430C24001C0112 /* ModalViews */,
+			);
+			path = Parents;
+			sourceTree = "<group>";
+		};
+		9914AA152343258D001C0112 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				9914AA1623432611001C0112 /* ModalViews */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		9914AA1623432611001C0112 /* ModalViews */ = {
+			isa = PBXGroup;
+			children = (
+				9914A9E523430DA9001C0112 /* SplashViewController.xib */,
+				9914AA0C23431B00001C0112 /* SelectUserTypeViewController.xib */,
+			);
+			path = ModalViews;
+			sourceTree = "<group>";
+		};
+		9914AA1723432686001C0112 /* Parents */ = {
+			isa = PBXGroup;
+			children = (
+				9914A9E223430C81001C0112 /* Modals */,
+			);
+			path = Parents;
+			sourceTree = "<group>";
+		};
+		9914AA182343268D001C0112 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				9914AA19234326AA001C0112 /* Modals */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		9914AA19234326AA001C0112 /* Modals */ = {
+			isa = PBXGroup;
+			children = (
+				9914A9E423430DA9001C0112 /* SplashViewController.swift */,
+				9914AA0B23431B00001C0112 /* SelectUserTypeViewController.swift */,
+			);
+			path = Modals;
 			sourceTree = "<group>";
 		};
 		9968CF1F23418F3200B8D095 = {
@@ -140,6 +332,12 @@
 		9968CF2A23418F3200B8D095 /* woorischool */ = {
 			isa = PBXGroup;
 			children = (
+				9914A9E823430E3C001C0112 /* Fonts */,
+				9914A9CD23430945001C0112 /* Utils */,
+				9914A9CC23430939001C0112 /* Datas */,
+				9914A9CB2343092F001C0112 /* Cells */,
+				9914A9CA23430925001C0112 /* Controllers */,
+				9914A9C9234308CC001C0112 /* Views */,
 				9968CF2B23418F3200B8D095 /* AppDelegate.swift */,
 				9968CF2D23418F3200B8D095 /* ViewController.swift */,
 				9968CF2F23418F3200B8D095 /* Main.storyboard */,
@@ -277,9 +475,25 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9914A9FD23431447001C0112 /* NotoSansCJKkr-Light.otf in Resources */,
 				9968CF3923418F3500B8D095 /* LaunchScreen.storyboard in Resources */,
+				9914AA0623431780001C0112 /* NanumSquareRound-Regular.otf in Resources */,
+				9914A9FC23431447001C0112 /* NotoSansCJKkr-Black.otf in Resources */,
+				9914AA0E23431B00001C0112 /* SelectUserTypeViewController.xib in Resources */,
+				9914A9FA23431447001C0112 /* NotoSansCJKkr-Thin.otf in Resources */,
 				9968CF3623418F3500B8D095 /* Assets.xcassets in Resources */,
+				9914AA0A234317E9001C0112 /* NanumSquareRound-Bold.otf in Resources */,
+				9914A9FB23431447001C0112 /* NotoSansMonoCJKkr-Bold.otf in Resources */,
+				9914AA0123431447001C0112 /* NotoSansCJKkr-Regular.otf in Resources */,
+				9914AA042343174A001C0112 /* NanumSquareRound-Light.otf in Resources */,
+				9914A9FE23431447001C0112 /* NotoSansMonoCJKkr-Regular.otf in Resources */,
+				9914A9FF23431447001C0112 /* NotoSansCJKkr-Bold.otf in Resources */,
 				9968CF3123418F3200B8D095 /* Main.storyboard in Resources */,
+				9914AA1F23432728001C0112 /* ParentsSignUpStep1ViewController.xib in Resources */,
+				9914AA1223431CF8001C0112 /* ParentsLoginViewController.xib in Resources */,
+				9914AA0223431447001C0112 /* NotoSansCJKkr-Medium.otf in Resources */,
+				9914A9E723430DA9001C0112 /* SplashViewController.xib in Resources */,
+				9914AA0023431447001C0112 /* NotoSansCJKkr-DemiLight.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -390,9 +604,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9914AA1E23432728001C0112 /* ParentsSignUpStep1ViewController.swift in Sources */,
+				9914A9D723430B32001C0112 /* ServerUtil.swift in Sources */,
+				9914A9DC23430B8F001C0112 /* AlertHandler.swift in Sources */,
+				9914A9DE23430B99001C0112 /* CustomPageControl.swift in Sources */,
+				9914AA1B234326D4001C0112 /* UserData.swift in Sources */,
+				9914A9E623430DA9001C0112 /* SplashViewController.swift in Sources */,
+				9914AA0D23431B00001C0112 /* SelectUserTypeViewController.swift in Sources */,
 				9968CF2E23418F3200B8D095 /* ViewController.swift in Sources */,
 				9968CF2C23418F3200B8D095 /* AppDelegate.swift in Sources */,
+				9914A9CF2343098F001C0112 /* Extensions+Views.swift in Sources */,
+				9914AA1123431CF8001C0112 /* ParentsLoginViewController.swift in Sources */,
+				9914A9D523430AC6001C0112 /* CustomViews.swift in Sources */,
+				9914A9D1234309BB001C0112 /* Extensions+Obejcts.swift in Sources */,
+				9914A9DA23430B8C001C0112 /* UserDefs.swift in Sources */,
 				9968CF3423418F3200B8D095 /* woorischool.xcdatamodeld in Sources */,
+				9914A9D323430A57001C0112 /* EnumObjects.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -568,8 +795,9 @@
 			baseConfigurationReference = 2277AA59F5F17A19A5ADF56A /* Pods-woorischool.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 4TNGT36HA9;
 				INFOPLIST_FILE = woorischool/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -577,6 +805,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.beanfactory.woorischool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -587,8 +816,9 @@
 			baseConfigurationReference = 976225E4F1BC256AAEF8F4BB /* Pods-woorischool.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = 4TNGT36HA9;
 				INFOPLIST_FILE = woorischool/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -596,6 +826,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.beanfactory.woorischool;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
