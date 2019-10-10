@@ -16,6 +16,20 @@ class SplashViewController: UIViewController {
 
     
     override func viewDidAppear(_ animated: Bool) {
-        self.present(SelectUserTypeViewController(), animated: true, completion: nil)
+        if UserDefs.userToken != "" {
+            if UserDefs.lastUserType == UserType.parents.rawValue, UserDefs.hasChildren {
+                let navi = UINavigationController(rootViewController: ParentsHomeViewController())
+                navi.navigationBar.tintColor = .black
+                navi.navigationBar.barTintColor = .white
+                navi.navigationBar.shadowImage = UIImage()
+                self.present(navi, animated: true, completion: nil)
+            }
+            else {
+                self.present(SelectUserTypeViewController(), animated: true, completion: nil)
+            }
+        }
+        else {
+            self.present(SelectUserTypeViewController(), animated: true, completion: nil)
+        }
     }
 }

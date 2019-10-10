@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -30,22 +28,22 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FTI-fc-554">
-                    <rect key="frame" x="30" y="319.5" width="354" height="257.5"/>
+                    <rect key="frame" x="30" y="330" width="354" height="236.5"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rU6-d4-XHi" customClass="CustomView" customModule="woorischool" customModuleProvider="target">
-                            <rect key="frame" x="25" y="25" width="304" height="93"/>
+                            <rect key="frame" x="25" y="25" width="304" height="81.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="39a-hy-Sgt">
-                                    <rect key="frame" x="104.5" y="14" width="95.5" height="30"/>
+                                    <rect key="frame" x="107" y="14" width="90.5" height="23.5"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vZU-26-ViU">
-                                            <rect key="frame" x="0.0" y="0.0" width="52.5" height="30"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="49" height="23.5"/>
                                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="20"/>
                                             <color key="textColor" name="greyishBrown"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fQZ-rM-3C6">
-                                            <rect key="frame" x="59.5" y="9" width="36" height="21"/>
+                                            <rect key="frame" x="56" y="7" width="34.5" height="16.5"/>
                                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                             <color key="textColor" name="greyishBrown"/>
                                             <nil key="highlightedColor"/>
@@ -66,16 +64,16 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c0b-mn-eha">
-                                    <rect key="frame" x="104" y="54" width="96" height="24"/>
+                                    <rect key="frame" x="106.5" y="47.5" width="91" height="19"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EKu-MJ-aaY">
-                                            <rect key="frame" x="0.0" y="0.0" width="42" height="24"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="39.5" height="19"/>
                                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="16"/>
                                             <color key="textColor" name="greyishBrown"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KYA-J3-K4w">
-                                            <rect key="frame" x="54" y="0.0" width="42" height="24"/>
+                                            <rect key="frame" x="51.5" y="0.0" width="39.5" height="19"/>
                                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="16"/>
                                             <color key="textColor" name="greyishBrown"/>
                                             <nil key="highlightedColor"/>
@@ -113,7 +111,7 @@
                             </userDefinedRuntimeAttributes>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aal-1f-KeM">
-                            <rect key="frame" x="61.5" y="140" width="231" height="44.5"/>
+                            <rect key="frame" x="67" y="128.5" width="220.5" height="35"/>
                             <string key="text">인원초과로 인해 해당강좌 수강신청에
  실패했습니다</string>
                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="15"/>
@@ -121,14 +119,14 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SFd-9F-oEh">
-                            <rect key="frame" x="0.0" y="208.5" width="354" height="1"/>
+                            <rect key="frame" x="0.0" y="187.5" width="354" height="1"/>
                             <color key="backgroundColor" name="veryLightPink"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="Urd-Dr-otS"/>
                             </constraints>
                         </view>
                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Qbf-QN-ipO">
-                            <rect key="frame" x="0.0" y="209.5" width="354" height="48"/>
+                            <rect key="frame" x="0.0" y="188.5" width="354" height="48"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="doy-03-LRa">
                                     <rect key="frame" x="0.0" y="0.0" width="176.5" height="48"/>

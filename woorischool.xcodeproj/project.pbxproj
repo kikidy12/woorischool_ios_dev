@@ -37,10 +37,6 @@
 		9914AA1123431CF8001C0112 /* ParentsLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9914AA0F23431CF8001C0112 /* ParentsLoginViewController.swift */; };
 		9914AA1223431CF8001C0112 /* ParentsLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9914AA1023431CF8001C0112 /* ParentsLoginViewController.xib */; };
 		9914AA1B234326D4001C0112 /* UserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9914AA1A234326D4001C0112 /* UserData.swift */; };
-		9914AA1E23432728001C0112 /* ParentsSignUpStep1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9914AA1C23432728001C0112 /* ParentsSignUpStep1ViewController.swift */; };
-		9914AA1F23432728001C0112 /* ParentsSignUpStep1ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9914AA1D23432728001C0112 /* ParentsSignUpStep1ViewController.xib */; };
-		9914AA222345BF6D001C0112 /* ParentsSignUpStep2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9914AA202345BF6D001C0112 /* ParentsSignUpStep2ViewController.swift */; };
-		9914AA232345BF6D001C0112 /* ParentsSignUpStep2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9914AA212345BF6D001C0112 /* ParentsSignUpStep2ViewController.xib */; };
 		9914AA262345C12C001C0112 /* ParentsHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9914AA242345C12C001C0112 /* ParentsHomeViewController.swift */; };
 		9914AA272345C12C001C0112 /* ParentsHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9914AA252345C12C001C0112 /* ParentsHomeViewController.xib */; };
 		9914AA2A2345C861001C0112 /* CourseRegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9914AA282345C861001C0112 /* CourseRegistrationViewController.swift */; };
@@ -61,6 +57,11 @@
 		9968CF3923418F3500B8D095 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9968CF3723418F3500B8D095 /* LaunchScreen.storyboard */; };
 		9968CF4423418F3500B8D095 /* woorischoolTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9968CF4323418F3500B8D095 /* woorischoolTests.swift */; };
 		9968CF4F23418F3500B8D095 /* woorischoolUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9968CF4E23418F3500B8D095 /* woorischoolUITests.swift */; };
+		99DFB130234EF83300C5B69D /* RegistChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DFB12E234EF83300C5B69D /* RegistChildViewController.swift */; };
+		99DFB131234EF83300C5B69D /* RegistChildViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99DFB12F234EF83300C5B69D /* RegistChildViewController.xib */; };
+		99DFB133234EFBAB00C5B69D /* GlobalDatas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DFB132234EFBAB00C5B69D /* GlobalDatas.swift */; };
+		99DFB135234EFD5400C5B69D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 99DFB134234EFD5400C5B69D /* GoogleService-Info.plist */; };
+		99DFB137234F035400C5B69D /* StudentInfoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DFB136234F035400C5B69D /* StudentInfoData.swift */; };
 		99F7DC9D23470EA9007C4ABE /* RegistedClassMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F7DC9B23470EA9007C4ABE /* RegistedClassMainViewController.swift */; };
 		99F7DC9E23470EA9007C4ABE /* RegistedClassMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99F7DC9C23470EA9007C4ABE /* RegistedClassMainViewController.xib */; };
 		99F7DCA323471F86007C4ABE /* FillClassPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F7DCA123471F86007C4ABE /* FillClassPopUpViewController.swift */; };
@@ -119,10 +120,6 @@
 		9914AA0F23431CF8001C0112 /* ParentsLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentsLoginViewController.swift; sourceTree = "<group>"; };
 		9914AA1023431CF8001C0112 /* ParentsLoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParentsLoginViewController.xib; sourceTree = "<group>"; };
 		9914AA1A234326D4001C0112 /* UserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserData.swift; sourceTree = "<group>"; };
-		9914AA1C23432728001C0112 /* ParentsSignUpStep1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentsSignUpStep1ViewController.swift; sourceTree = "<group>"; };
-		9914AA1D23432728001C0112 /* ParentsSignUpStep1ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParentsSignUpStep1ViewController.xib; sourceTree = "<group>"; };
-		9914AA202345BF6D001C0112 /* ParentsSignUpStep2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentsSignUpStep2ViewController.swift; sourceTree = "<group>"; };
-		9914AA212345BF6D001C0112 /* ParentsSignUpStep2ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParentsSignUpStep2ViewController.xib; sourceTree = "<group>"; };
 		9914AA242345C12C001C0112 /* ParentsHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentsHomeViewController.swift; sourceTree = "<group>"; };
 		9914AA252345C12C001C0112 /* ParentsHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParentsHomeViewController.xib; sourceTree = "<group>"; };
 		9914AA282345C861001C0112 /* CourseRegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseRegistrationViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +146,11 @@
 		9968CF4A23418F3500B8D095 /* woorischoolUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = woorischoolUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9968CF4E23418F3500B8D095 /* woorischoolUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = woorischoolUITests.swift; sourceTree = "<group>"; };
 		9968CF5023418F3500B8D095 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99DFB12E234EF83300C5B69D /* RegistChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistChildViewController.swift; sourceTree = "<group>"; };
+		99DFB12F234EF83300C5B69D /* RegistChildViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistChildViewController.xib; sourceTree = "<group>"; };
+		99DFB132234EFBAB00C5B69D /* GlobalDatas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalDatas.swift; sourceTree = "<group>"; };
+		99DFB134234EFD5400C5B69D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		99DFB136234F035400C5B69D /* StudentInfoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInfoData.swift; sourceTree = "<group>"; };
 		99F7DC9B23470EA9007C4ABE /* RegistedClassMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistedClassMainViewController.swift; sourceTree = "<group>"; };
 		99F7DC9C23470EA9007C4ABE /* RegistedClassMainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistedClassMainViewController.xib; sourceTree = "<group>"; };
 		99F7DCA123471F86007C4ABE /* FillClassPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillClassPopUpViewController.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 			isa = PBXGroup;
 			children = (
 				9914AA1A234326D4001C0112 /* UserData.swift */,
+				99DFB136234F035400C5B69D /* StudentInfoData.swift */,
 			);
 			path = Datas;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 		9914A9CD23430945001C0112 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				99DFB132234EFBAB00C5B69D /* GlobalDatas.swift */,
 				9914A9CE2343098F001C0112 /* Extensions+Views.swift */,
 				9914A9D0234309BB001C0112 /* Extensions+Obejcts.swift */,
 				9914A9D223430A57001C0112 /* EnumObjects.swift */,
@@ -265,11 +269,10 @@
 			isa = PBXGroup;
 			children = (
 				9914AA1023431CF8001C0112 /* ParentsLoginViewController.xib */,
-				9914AA1D23432728001C0112 /* ParentsSignUpStep1ViewController.xib */,
-				9914AA212345BF6D001C0112 /* ParentsSignUpStep2ViewController.xib */,
 				9914AA252345C12C001C0112 /* ParentsHomeViewController.xib */,
 				9914AA292345C861001C0112 /* CourseRegistrationViewController.xib */,
 				99F7DC9C23470EA9007C4ABE /* RegistedClassMainViewController.xib */,
+				99DFB12F234EF83300C5B69D /* RegistChildViewController.xib */,
 			);
 			path = ModalViews;
 			sourceTree = "<group>";
@@ -278,11 +281,10 @@
 			isa = PBXGroup;
 			children = (
 				9914AA0F23431CF8001C0112 /* ParentsLoginViewController.swift */,
-				9914AA1C23432728001C0112 /* ParentsSignUpStep1ViewController.swift */,
-				9914AA202345BF6D001C0112 /* ParentsSignUpStep2ViewController.swift */,
 				9914AA242345C12C001C0112 /* ParentsHomeViewController.swift */,
 				9914AA282345C861001C0112 /* CourseRegistrationViewController.swift */,
 				99F7DC9B23470EA9007C4ABE /* RegistedClassMainViewController.swift */,
+				99DFB12E234EF83300C5B69D /* RegistChildViewController.swift */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
@@ -394,6 +396,7 @@
 		9968CF2A23418F3200B8D095 /* woorischool */ = {
 			isa = PBXGroup;
 			children = (
+				99DFB134234EFD5400C5B69D /* GoogleService-Info.plist */,
 				9914A9E823430E3C001C0112 /* Fonts */,
 				9914A9CD23430945001C0112 /* Utils */,
 				9914A9CC23430939001C0112 /* Datas */,
@@ -555,6 +558,7 @@
 			files = (
 				9914A9FD23431447001C0112 /* NotoSansCJKkr-Light.otf in Resources */,
 				9968CF3923418F3500B8D095 /* LaunchScreen.storyboard in Resources */,
+				99DFB131234EF83300C5B69D /* RegistChildViewController.xib in Resources */,
 				9914AA0623431780001C0112 /* NanumSquareRound-Regular.otf in Resources */,
 				9914AA352346FC4B001C0112 /* ParentsHomeScheduleTableViewCell.xib in Resources */,
 				9914A9FC23431447001C0112 /* NotoSansCJKkr-Black.otf in Resources */,
@@ -565,6 +569,7 @@
 				9968CF3623418F3500B8D095 /* Assets.xcassets in Resources */,
 				9914AA0A234317E9001C0112 /* NanumSquareRound-Bold.otf in Resources */,
 				9914A9FB23431447001C0112 /* NotoSansMonoCJKkr-Bold.otf in Resources */,
+				99DFB135234EFD5400C5B69D /* GoogleService-Info.plist in Resources */,
 				9962A4CA23470B340027FEB6 /* RegistClassTableViewCell.xib in Resources */,
 				9914AA0123431447001C0112 /* NotoSansCJKkr-Regular.otf in Resources */,
 				9914AA2B2345C861001C0112 /* CourseRegistrationViewController.xib in Resources */,
@@ -574,10 +579,8 @@
 				9914A9FF23431447001C0112 /* NotoSansCJKkr-Bold.otf in Resources */,
 				9914AA272345C12C001C0112 /* ParentsHomeViewController.xib in Resources */,
 				9968CF3123418F3200B8D095 /* Main.storyboard in Resources */,
-				9914AA1F23432728001C0112 /* ParentsSignUpStep1ViewController.xib in Resources */,
 				9914AA1223431CF8001C0112 /* ParentsLoginViewController.xib in Resources */,
 				9914AA0223431447001C0112 /* NotoSansCJKkr-Medium.otf in Resources */,
-				9914AA232345BF6D001C0112 /* ParentsSignUpStep2ViewController.xib in Resources */,
 				9914A9E723430DA9001C0112 /* SplashViewController.xib in Resources */,
 				9914AA302345CEFC001C0112 /* CourseCollectionViewCell.xib in Resources */,
 				9914AA0023431447001C0112 /* NotoSansCJKkr-DemiLight.otf in Resources */,
@@ -691,11 +694,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9914AA1E23432728001C0112 /* ParentsSignUpStep1ViewController.swift in Sources */,
 				99F7DC9D23470EA9007C4ABE /* RegistedClassMainViewController.swift in Sources */,
+				99DFB133234EFBAB00C5B69D /* GlobalDatas.swift in Sources */,
 				9914AA342346FC4B001C0112 /* ParentsHomeScheduleTableViewCell.swift in Sources */,
 				9914A9D723430B32001C0112 /* ServerUtil.swift in Sources */,
 				9914A9DC23430B8F001C0112 /* AlertHandler.swift in Sources */,
+				99DFB130234EF83300C5B69D /* RegistChildViewController.swift in Sources */,
 				9914AA262345C12C001C0112 /* ParentsHomeViewController.swift in Sources */,
 				9914AA2A2345C861001C0112 /* CourseRegistrationViewController.swift in Sources */,
 				9914A9DE23430B99001C0112 /* CustomPageControl.swift in Sources */,
@@ -709,10 +713,10 @@
 				9914AA1123431CF8001C0112 /* ParentsLoginViewController.swift in Sources */,
 				9962A4C923470B340027FEB6 /* RegistClassTableViewCell.swift in Sources */,
 				9914AA2F2345CEFC001C0112 /* CourseCollectionViewCell.swift in Sources */,
+				99DFB137234F035400C5B69D /* StudentInfoData.swift in Sources */,
 				9914A9D523430AC6001C0112 /* CustomViews.swift in Sources */,
 				9914A9D1234309BB001C0112 /* Extensions+Obejcts.swift in Sources */,
 				9914A9DA23430B8C001C0112 /* UserDefs.swift in Sources */,
-				9914AA222345BF6D001C0112 /* ParentsSignUpStep2ViewController.swift in Sources */,
 				9968CF3423418F3200B8D095 /* woorischool.xcdatamodeld in Sources */,
 				9914A9D323430A57001C0112 /* EnumObjects.swift in Sources */,
 				99F7DCA323471F86007C4ABE /* FillClassPopUpViewController.swift in Sources */,

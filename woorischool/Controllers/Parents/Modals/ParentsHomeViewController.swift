@@ -10,10 +10,14 @@ import UIKit
 
 class ParentsHomeViewController: UIViewController {
     
+    @IBOutlet weak var childProfileImageView: UIImageView!
+    
     @IBOutlet weak var scheduleTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationController?.viewControllers.removeAll(where: {$0 is RegistChildViewController})
 
         navibarSetting()
         
@@ -24,11 +28,11 @@ class ParentsHomeViewController: UIViewController {
     }
 
     func navibarSetting() {
-        let myBtn = UIBarButtonItem(image: UIImage(named: "filterImage"), style: .plain, target: self, action: #selector(showSettingEvent))
+        let myBtn = UIBarButtonItem(image: UIImage(named: "myIcon"), style: .plain, target: self, action: #selector(showSettingEvent))
         
-        let alarmBtn = UIBarButtonItem(image: UIImage(named: "filterImage"), style: .plain, target: self, action: #selector(showAlarmEvent))
+        let alarmBtn = UIBarButtonItem(image: UIImage(named: "alarmIcon"), style: .plain, target: self, action: #selector(showAlarmEvent))
         
-        navigationItem.rightBarButtonItems = [myBtn, alarmBtn]
+        navigationItem.rightBarButtonItems = [alarmBtn, myBtn]
     }
     
     @objc func showAlarmEvent() {
@@ -50,6 +54,12 @@ class ParentsHomeViewController: UIViewController {
     }
     
     @IBAction func showCompleteRegistViewEvent() {
+        
+    }
+    
+    func setUserInfo() {
+        let user = GlobalDatas.currentUser
+        
         
     }
 }

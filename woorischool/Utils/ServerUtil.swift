@@ -19,7 +19,7 @@ class ServerUtil: NSObject {
     
     fileprivate let liveServer:String = ""
     
-    fileprivate let devServer:String = "http://ec2-13-125-252-197.ap-northeast-2.compute.amazonaws.com/"
+    fileprivate let devServer:String = "http://52.78.148.252/"
     
     fileprivate let localServer:String = ""
     
@@ -64,6 +64,21 @@ class ServerUtil: NSObject {
     func getInfo(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
         currentVc = vc
         apiRequest("info", method: .get, parameters: parameters, completion: completion)
+    }
+    
+    func postAuth(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("auth", method: .post, parameters: parameters, completion: completion)
+    }
+    
+    func postPhoneAuth(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("phone_auth", method: .post, parameters: parameters, completion: completion)
+    }
+    
+    func postParentStudent(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("parent_student", method: .post, parameters: parameters, completion: completion)
     }
     
     //upload

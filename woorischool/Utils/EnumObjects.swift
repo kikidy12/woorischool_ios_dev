@@ -17,9 +17,9 @@ enum DateFormatterStyle: String {
 }
 
 enum UserType: String {
-    case student = "sutdent"
-    case parents = "parents"
-    case teacher = "teacher"
+    case student = "STUDENT"
+    case parents = "PARENTS"
+    case teacher = "TEACHER"
 }
 
 enum NanumSquareRound: String {
