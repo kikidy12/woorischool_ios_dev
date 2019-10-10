@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansCJKkr-Regular.otf">
+            <string>NotoSansCJKkr-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CourseCollectionViewCell" customModule="woorischool" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="223" height="169"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="223" height="169"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7sg-50-dur" customClass="CustomView" customModule="woorischool" customModuleProvider="target">
+                        <rect key="frame" x="0.0" y="0.0" width="223" height="169"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수학" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUh-Oq-Jws">
+                                <rect key="frame" x="97" y="74.5" width="29.5" height="20"/>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="fUh-Oq-Jws" firstAttribute="centerY" secondItem="7sg-50-dur" secondAttribute="centerY" id="6ro-Z1-2BW"/>
+                            <constraint firstItem="fUh-Oq-Jws" firstAttribute="centerX" secondItem="7sg-50-dur" secondAttribute="centerX" id="EfM-Bd-XAg"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
+                                <real key="value" value="16.5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" name="veryLightPink"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="7sg-50-dur" secondAttribute="trailing" id="fVp-Tn-YfN"/>
+                <constraint firstItem="7sg-50-dur" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="kYE-dh-yeR"/>
+                <constraint firstAttribute="bottom" secondItem="7sg-50-dur" secondAttribute="bottom" id="mAT-PJ-qCF"/>
+                <constraint firstItem="7sg-50-dur" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="oin-Xr-s96"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="223" height="169"/>
+            <connections>
+                <outlet property="containerView" destination="7sg-50-dur" id="30A-c4-wdQ"/>
+                <outlet property="courseLabel" destination="fUh-Oq-Jws" id="NPX-Xb-HTz"/>
+            </connections>
+            <point key="canvasLocation" x="261.59420289855075" y="160.37946428571428"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <namedColor name="veryLightPink">
+            <color red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -26,6 +26,11 @@ class ParentsSignUpStep1ViewController: UIViewController {
         view.endEditing(true)
         view.bounds.origin.y = 0
     }
+    
+    @IBAction func nextStepEvent() {
+        let vc = ParentsSignUpStep2ViewController()
+        self.show(vc, sender: nil)
+    }
 }
 
 extension ParentsSignUpStep1ViewController: UITextFieldDelegate {
