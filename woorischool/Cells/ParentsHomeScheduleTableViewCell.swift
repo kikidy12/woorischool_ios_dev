@@ -31,7 +31,7 @@ class ParentsHomeScheduleTableViewCell: UITableViewCell {
     func initView(_ data: LectureClassDayData) {
         dayInfo = data
         
-        classNameLabel.text = "\(dayInfo.lectureClass.name ?? "과목")(\(dayInfo.lectureClass.location ?? "미정"))"
+        classNameLabel.text = "\(dayInfo.lectureClass.lecture.name ?? "과목")(\(dayInfo.lectureClass.location ?? "미정"))"
         timeLabel.text = dayInfo.eduTime
     }
     

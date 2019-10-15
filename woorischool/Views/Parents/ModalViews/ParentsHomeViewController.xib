@@ -24,6 +24,7 @@
             <connections>
                 <outlet property="childProfileImageView" destination="jsa-Pz-qN3" id="v5B-1l-xRP"/>
                 <outlet property="dateStackView" destination="a9Q-hV-stV" id="iIb-vB-Mhc"/>
+                <outlet property="emptySchedualView" destination="qit-w4-nHZ" id="9yE-a8-8OZ"/>
                 <outlet property="nameLabel" destination="bIM-66-uKl" id="ajj-SB-pcb"/>
                 <outlet property="scheduleTableView" destination="pEN-18-Kcg" id="68K-M7-x8u"/>
                 <outlet property="selectDayLabel" destination="XA0-Zf-Vvz" id="vDG-hE-33V"/>

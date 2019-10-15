@@ -12,11 +12,12 @@ class ParentsHomeViewController: UIViewController {
     
     var lectureList = [LectureClassDayData]() {
         didSet {
+            print(lectureList.count)
             if lectureList.isEmpty {
-                
+                emptySchedualView.isHidden = false
             }
             else {
-                
+                emptySchedualView.isHidden = true
             }
             
             scheduleTableView.reloadData()
@@ -40,6 +41,7 @@ class ParentsHomeViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var selectDayLabel: UILabel!
     @IBOutlet weak var dateStackView: UIStackView!
+    @IBOutlet weak var emptySchedualView: CustomView!
     @IBOutlet weak var scheduleTableView: UITableView!
 
     override func viewDidLoad() {

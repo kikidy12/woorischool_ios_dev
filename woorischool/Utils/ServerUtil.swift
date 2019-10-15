@@ -153,14 +153,16 @@ extension ServerUtil {
     fileprivate func apiRequest(_ api: String, method: HTTPMethod, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
         showLoadding()
         var request: DataRequest!
-        switch method {
-        case .delete:
-            request = Alamofire.request(serverAddress + api, method: method, parameters: parameters, encoding: URLEncoding.httpBody , headers: headers)
-            break
-        default:
-            request = Alamofire.request(serverAddress + api, method: method, parameters: parameters, headers: headers)
-            break
-        }
+//        switch method {
+//        case .delete:
+//            request = Alamofire.request(serverAddress + api, method: method, parameters: parameters, encoding: URLEncoding.httpBody , headers: headers)
+//            break
+//        default:
+//            request = Alamofire.request(serverAddress + api, method: method, parameters: parameters, headers: headers)
+//            break
+//        }
+        
+        request = Alamofire.request(serverAddress + api, method: method, parameters: parameters, headers: headers)
         
         request.responseJSON { (response) in
             self.responseProcess(response: response, completion: completion)

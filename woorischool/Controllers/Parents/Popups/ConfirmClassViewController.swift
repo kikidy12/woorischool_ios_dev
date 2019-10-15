@@ -57,7 +57,9 @@ extension ConfirmClassViewController {
                 return
             }
             
-            self.closeClouser()
+            self.dismiss(animated: true) {
+                self.closeClouser()
+            }
         }
     }
 }
