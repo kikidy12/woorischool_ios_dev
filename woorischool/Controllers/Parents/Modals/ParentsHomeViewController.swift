@@ -24,6 +24,19 @@ class ParentsHomeViewController: UIViewController {
         }
     }
     
+    var alarmList = [String]() {
+        didSet {
+            if alarmList.isEmpty {
+                alarmBtn.image = UIImage(named: "alarmIcon")
+            }
+            else {
+                alarmBtn.image = UIImage(named: "newAlarmIcon")
+            }
+        }
+    }
+    
+    var alarmBtn = UIBarButtonItem(image: UIImage(), style: .plain, target: self, action: #selector(showAlarmEvent))
+    
     var selectDate = Date()
     var selectedNumber = 1
     
@@ -66,11 +79,10 @@ class ParentsHomeViewController: UIViewController {
     }
 
     func navibarSetting() {
+        alarmList = []
         let myBtn = UIBarButtonItem(image: UIImage(named: "myIcon"), style: .plain, target: self, action: #selector(showSettingEvent))
         
-        let alarmBtn = UIBarButtonItem(image: UIImage(named: "alarmIcon"), style: .plain, target: self, action: #selector(showAlarmEvent))
-        
-        navigationItem.rightBarButtonItems = [myBtn]
+        navigationItem.rightBarButtonItems = [alarmBtn, myBtn]
     }
     
     @objc func showAlarmEvent() {

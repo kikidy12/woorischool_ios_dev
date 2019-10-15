@@ -51,7 +51,7 @@ extension FillClassPopUpViewController {
         let parameters = [
             "lecture_class_id": lectureClass.id!
         ] as [String:Any]
-        ServerUtil.shared.patchLectureApply(self, parameters: parameters) { (success, dict, message) in
+        ServerUtil.shared.postLectureWait(self, parameters: parameters) { (success, dict, message) in
             guard success else {
                 AlertHandler.shared.showAlert(vc: self, message: message ?? "serverError", okTitle: "확인")
                 return

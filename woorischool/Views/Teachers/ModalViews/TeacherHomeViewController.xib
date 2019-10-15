@@ -22,6 +22,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TeacherHomeViewController" customModule="woorischool" customModuleProvider="target">
             <connections>
+                <outlet property="classTableView" destination="sP7-oj-uhg" id="FFU-vj-Fr9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -30,7 +31,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fHc-rc-JIJ">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilePlaceHolder" translatesAutoresizingMaskIntoConstraints="NO" id="fHc-rc-JIJ">
                     <rect key="frame" x="20" y="54" width="55" height="55"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="55" id="Zcj-3R-8a4"/>
@@ -38,7 +39,7 @@
                     </constraints>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TFf-Qj-Xb2">
-                    <rect key="frame" x="86" y="57" width="115" height="49"/>
+                    <rect key="frame" x="86" y="58.5" width="120" height="46.5"/>
                     <string key="text">홍길동 선생님
 안녕하세요</string>
                     <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="21"/>
@@ -56,13 +57,13 @@
                     <rect key="frame" x="0.0" y="144" width="414" height="40"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="공지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKF-wi-KlQ">
-                            <rect key="frame" x="27" y="11.5" width="26" height="17.5"/>
+                            <rect key="frame" x="27" y="9" width="28" height="22.5"/>
                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="15"/>
                             <color key="textColor" name="greyishBrown"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16a-Y2-a0f">
-                            <rect key="frame" x="76" y="12" width="34.5" height="16.5"/>
+                            <rect key="frame" x="78" y="9.5" width="36" height="21"/>
                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                             <color key="textColor" name="greyishBrown"/>
                             <nil key="highlightedColor"/>
@@ -92,14 +93,15 @@
                     <rect key="frame" x="0.0" y="185" width="414" height="677"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="담당 강좌 총 2개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ki6-lp-lQk">
-                            <rect key="frame" x="20" y="20" width="112" height="20"/>
+                            <rect key="frame" x="20" y="20" width="117" height="25.5"/>
                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="17"/>
                             <color key="textColor" name="greyishBrown"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sP7-oj-uhg">
-                            <rect key="frame" x="20" y="60" width="374" height="617"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sP7-oj-uhg">
+                            <rect key="frame" x="20" y="65.5" width="374" height="611.5"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </tableView>
                     </subviews>
                     <color key="backgroundColor" name="paleGrey"/>
@@ -139,6 +141,7 @@
         <tapGestureRecognizer id="sJa-Bb-ilI"/>
     </objects>
     <resources>
+        <image name="profilePlaceHolder" width="60" height="60"/>
         <namedColor name="greyishBrown">
             <color red="0.29019607843137257" green="0.29019607843137257" blue="0.29019607843137257" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

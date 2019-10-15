@@ -9,22 +9,62 @@
 import UIKit
 
 class TeacherHomeViewController: UIViewController {
+    
+    var classList = [LectureClassData]() {
+        didSet {
+            
+        }
+    }
+    
+    var alarmList = [String]() {
+        didSet {
+            if alarmList.isEmpty {
+                alarmBtn.image = UIImage(named: "alarmIcon")
+            }
+            else {
+                alarmBtn.image = UIImage(named: "newAlarmIcon")
+            }
+        }
+    }
+
+    var alarmBtn = UIBarButtonItem(image: UIImage(), style: .plain, target: self, action: #selector(showAlarmEvent))
+    
+    @IBOutlet weak var classTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        navibarSetting()
+        classTableView.delegate = self
+        classTableView.dataSource = self
+        classTableView.register(UINib(nibName: "TeacherHomeTableViewCell", bundle: nil), forCellReuseIdentifier: "classCell")
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func navibarSetting() {
+        alarmList = []
+        let myBtn = UIBarButtonItem(image: UIImage(named: "myIcon"), style: .plain, target: self, action: #selector(showSettingEvent))
+        
+        navigationItem.rightBarButtonItems = [alarmBtn, myBtn]
     }
-    */
+    
+    @objc func showAlarmEvent() {
+        
+    }
+    
+    @objc func showSettingEvent() {
+        
+    }
+}
 
+extension TeacherHomeViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "classCell", for: indexPath) as! TeacherHomeTableViewCell
+        
+        return cell
+    }
+    
+    
 }
