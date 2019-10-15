@@ -85,6 +85,11 @@ class ServerUtil: NSObject {
         apiRequest("parent_student", method: .delete, parameters: parameters, completion: completion)
     }
     
+    func patchParentStudent(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("parent_student", method: .patch, parameters: parameters, completion: completion)
+    }
+    
     func postParentStudent(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
         currentVc = vc
         apiRequest("parent_student", method: .post, parameters: parameters, completion: completion)

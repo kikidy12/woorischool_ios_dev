@@ -68,7 +68,7 @@ extension ManageChildrenViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        selectChild()
+        selectChild(id: childList[indexPath.item].id)
     }
     
 }
@@ -98,7 +98,17 @@ extension ManageChildrenViewController {
         }
     }
     
-    func selectChild() {
-        
+    func selectChild(id: Int) {
+        let parameters = [
+            "user_id": id
+        ] as [String:Any]
+        ServerUtil.shared.patchParentStudent(self, parameters: parameters) { (success, dict, message) in
+            guard success else {
+                AlertHandler.shared.showAlert(vc: self, message: message ?? "serverError", okTitle: "확인")
+                return
+            }
+            
+            self.navigationController?.popViewController(animated: true)
+        }
     }
 }
