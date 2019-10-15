@@ -191,7 +191,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="registEvent" destination="KGk-i7-Jjw" eventType="touchUpInside" id="cHB-MN-t7F"/>
+                                    <action selector="registEvent" destination="KGk-i7-Jjw" eventType="touchUpInside" id="itD-tB-eaG"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="지원자" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9m2-TA-Ctk">
@@ -257,14 +257,14 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="classNameLabel" destination="vpx-hN-IwY" id="nNt-5s-dOq"/>
-                <outlet property="classTimeLabel" destination="rxT-bT-Jx5" id="dno-jn-aO7"/>
-                <outlet property="countLabel" destination="Yyc-Xn-d4q" id="x2e-iy-bYe"/>
-                <outlet property="nameLabel" destination="8DK-xD-NLT" id="dd2-Ih-WuX"/>
-                <outlet property="priceLabel" destination="C72-YG-ijM" id="3qU-eY-Uv6"/>
-                <outlet property="registBtn" destination="8rZ-MK-juR" id="5Rd-zn-eji"/>
-                <outlet property="teacherNameLabel" destination="gKb-Rh-FKq" id="dxD-6a-LWd"/>
-                <outlet property="weekdaysLabel" destination="tst-xX-bZz" id="0Sh-TP-MUb"/>
+                <outlet property="classNameLabel" destination="vpx-hN-IwY" id="kct-5u-Pat"/>
+                <outlet property="classTimeLabel" destination="rxT-bT-Jx5" id="rfd-Zj-6JF"/>
+                <outlet property="countLabel" destination="Yyc-Xn-d4q" id="NRr-3O-W9b"/>
+                <outlet property="nameLabel" destination="8DK-xD-NLT" id="hub-Ib-fCG"/>
+                <outlet property="priceLabel" destination="C72-YG-ijM" id="pIB-2L-nkp"/>
+                <outlet property="registBtn" destination="8rZ-MK-juR" id="H5o-Ja-VfW"/>
+                <outlet property="teacherNameLabel" destination="gKb-Rh-FKq" id="8wf-z9-KjD"/>
+                <outlet property="weekdaysLabel" destination="tst-xX-bZz" id="fOK-XY-JU8"/>
             </connections>
             <point key="canvasLocation" x="232.60869565217394" y="207.58928571428569"/>
         </tableViewCell>

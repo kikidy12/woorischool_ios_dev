@@ -1,14 +1,15 @@
 //
-//  ClassRegistCompleteListViewController.swift
+//  RegistClassCompleteListViewController.swift
 //  woorischool
 //
-//  Created by 권성민 on 2019/10/11.
+//  Created by 권성민 on 2019/10/15.
 //  Copyright © 2019 beanfactory. All rights reserved.
 //
 
 import UIKit
 
-class ClassRegistCompleteListViewController: UIViewController {
+
+class RegistClassCompleteListViewController: UIViewController {
     
     var lectureClassList = [LectureClassData]() {
         didSet {
@@ -42,7 +43,7 @@ class ClassRegistCompleteListViewController: UIViewController {
 
 }
 
-extension ClassRegistCompleteListViewController: UITableViewDelegate, UITableViewDataSource {
+extension RegistClassCompleteListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return lectureClassList.count
     }
@@ -60,7 +61,7 @@ extension ClassRegistCompleteListViewController: UITableViewDelegate, UITableVie
     }
 }
 
-extension ClassRegistCompleteListViewController {
+extension RegistClassCompleteListViewController {
     func getLectureClass() {
         let parameters = [
             "status": "CONFIRM"
@@ -74,3 +75,4 @@ extension ClassRegistCompleteListViewController {
         }
     }
 }
+

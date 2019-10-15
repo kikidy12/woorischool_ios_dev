@@ -90,7 +90,7 @@ class ParentsHomeViewController: UIViewController {
     }
     
     @IBAction func showCompleteRegistViewEvent() {
-        let vc = ClassRegistCompleteListViewController()
+        let vc = RegistClassCompleteListViewController()
         self.show(vc, sender: nil)
     }
     

@@ -66,8 +66,6 @@
 		99DFB13B234F736F00C5B69D /* ClassInfoPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99DFB139234F736F00C5B69D /* ClassInfoPopupViewController.xib */; };
 		99DFB13E234F7AE400C5B69D /* RegistClassPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DFB13C234F7AE400C5B69D /* RegistClassPopupViewController.swift */; };
 		99DFB13F234F7AE400C5B69D /* RegistClassPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99DFB13D234F7AE400C5B69D /* RegistClassPopupViewController.xib */; };
-		99DFB146235043CA00C5B69D /* ClassRegistCompleteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DFB144235043CA00C5B69D /* ClassRegistCompleteListViewController.swift */; };
-		99DFB147235043CA00C5B69D /* ClassRegistCompleteListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99DFB145235043CA00C5B69D /* ClassRegistCompleteListViewController.xib */; };
 		99DFB14A2350481C00C5B69D /* RegistCompClassTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DFB1482350481C00C5B69D /* RegistCompClassTableViewCell.swift */; };
 		99DFB14B2350481C00C5B69D /* RegistCompClassTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99DFB1492350481C00C5B69D /* RegistCompClassTableViewCell.xib */; };
 		99DFB15223504D6000C5B69D /* TeacherLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DFB15023504D6000C5B69D /* TeacherLoginViewController.swift */; };
@@ -84,6 +82,8 @@
 		99DFB1682352BD3B00C5B69D /* LectureAreaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DFB1672352BD3B00C5B69D /* LectureAreaData.swift */; };
 		99DFB16B2354236600C5B69D /* ConfirmClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DFB1692354236600C5B69D /* ConfirmClassViewController.swift */; };
 		99DFB16C2354236600C5B69D /* ConfirmClassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99DFB16A2354236600C5B69D /* ConfirmClassViewController.xib */; };
+		99DFB1772355671500C5B69D /* RegistClassCompleteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DFB1752355671400C5B69D /* RegistClassCompleteListViewController.swift */; };
+		99DFB17923556E7F00C5B69D /* RegistClassCompleteListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99DFB1762355671400C5B69D /* RegistClassCompleteListViewController.xib */; };
 		99F7DC9D23470EA9007C4ABE /* RegistedClassMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F7DC9B23470EA9007C4ABE /* RegistedClassMainViewController.swift */; };
 		99F7DC9E23470EA9007C4ABE /* RegistedClassMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99F7DC9C23470EA9007C4ABE /* RegistedClassMainViewController.xib */; };
 		99F7DCA323471F86007C4ABE /* FillClassPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F7DCA123471F86007C4ABE /* FillClassPopUpViewController.swift */; };
@@ -177,8 +177,6 @@
 		99DFB139234F736F00C5B69D /* ClassInfoPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassInfoPopupViewController.xib; sourceTree = "<group>"; };
 		99DFB13C234F7AE400C5B69D /* RegistClassPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistClassPopupViewController.swift; sourceTree = "<group>"; };
 		99DFB13D234F7AE400C5B69D /* RegistClassPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistClassPopupViewController.xib; sourceTree = "<group>"; };
-		99DFB144235043CA00C5B69D /* ClassRegistCompleteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassRegistCompleteListViewController.swift; sourceTree = "<group>"; };
-		99DFB145235043CA00C5B69D /* ClassRegistCompleteListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassRegistCompleteListViewController.xib; sourceTree = "<group>"; };
 		99DFB1482350481C00C5B69D /* RegistCompClassTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistCompClassTableViewCell.swift; sourceTree = "<group>"; };
 		99DFB1492350481C00C5B69D /* RegistCompClassTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistCompClassTableViewCell.xib; sourceTree = "<group>"; };
 		99DFB15023504D6000C5B69D /* TeacherLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherLoginViewController.swift; sourceTree = "<group>"; };
@@ -196,6 +194,8 @@
 		99DFB1672352BD3B00C5B69D /* LectureAreaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureAreaData.swift; sourceTree = "<group>"; };
 		99DFB1692354236600C5B69D /* ConfirmClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmClassViewController.swift; sourceTree = "<group>"; };
 		99DFB16A2354236600C5B69D /* ConfirmClassViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfirmClassViewController.xib; sourceTree = "<group>"; };
+		99DFB1752355671400C5B69D /* RegistClassCompleteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistClassCompleteListViewController.swift; sourceTree = "<group>"; };
+		99DFB1762355671400C5B69D /* RegistClassCompleteListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistClassCompleteListViewController.xib; sourceTree = "<group>"; };
 		99F7DC9B23470EA9007C4ABE /* RegistedClassMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistedClassMainViewController.swift; sourceTree = "<group>"; };
 		99F7DC9C23470EA9007C4ABE /* RegistedClassMainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistedClassMainViewController.xib; sourceTree = "<group>"; };
 		99F7DCA123471F86007C4ABE /* FillClassPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillClassPopUpViewController.swift; sourceTree = "<group>"; };
@@ -326,7 +326,7 @@
 				9914AA292345C861001C0112 /* CourseRegistrationViewController.xib */,
 				99F7DC9C23470EA9007C4ABE /* RegistedClassMainViewController.xib */,
 				99DFB12F234EF83300C5B69D /* RegistChildViewController.xib */,
-				99DFB145235043CA00C5B69D /* ClassRegistCompleteListViewController.xib */,
+				99DFB1762355671400C5B69D /* RegistClassCompleteListViewController.xib */,
 			);
 			path = ModalViews;
 			sourceTree = "<group>";
@@ -339,7 +339,7 @@
 				9914AA282345C861001C0112 /* CourseRegistrationViewController.swift */,
 				99F7DC9B23470EA9007C4ABE /* RegistedClassMainViewController.swift */,
 				99DFB12E234EF83300C5B69D /* RegistChildViewController.swift */,
-				99DFB144235043CA00C5B69D /* ClassRegistCompleteListViewController.swift */,
+				99DFB1752355671400C5B69D /* RegistClassCompleteListViewController.swift */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
@@ -656,6 +656,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99DFB17923556E7F00C5B69D /* RegistClassCompleteListViewController.xib in Resources */,
 				9914A9FD23431447001C0112 /* NotoSansCJKkr-Light.otf in Resources */,
 				9968CF3923418F3500B8D095 /* LaunchScreen.storyboard in Resources */,
 				99DFB131234EF83300C5B69D /* RegistChildViewController.xib in Resources */,
@@ -666,7 +667,6 @@
 				99F7DCA423471F86007C4ABE /* FillClassPopUpViewController.xib in Resources */,
 				9914AA0E23431B00001C0112 /* SelectUserTypeViewController.xib in Resources */,
 				9914A9FA23431447001C0112 /* NotoSansCJKkr-Thin.otf in Resources */,
-				99DFB147235043CA00C5B69D /* ClassRegistCompleteListViewController.xib in Resources */,
 				9968CF3623418F3500B8D095 /* Assets.xcassets in Resources */,
 				9914AA0A234317E9001C0112 /* NanumSquareRound-Bold.otf in Resources */,
 				99DFB13B234F736F00C5B69D /* ClassInfoPopupViewController.xib in Resources */,
@@ -804,7 +804,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				99F7DC9D23470EA9007C4ABE /* RegistedClassMainViewController.swift in Sources */,
-				99DFB146235043CA00C5B69D /* ClassRegistCompleteListViewController.swift in Sources */,
 				99DFB16B2354236600C5B69D /* ConfirmClassViewController.swift in Sources */,
 				99DFB13A234F736F00C5B69D /* ClassInfoPopupViewController.swift in Sources */,
 				99DFB133234EFBAB00C5B69D /* GlobalDatas.swift in Sources */,
@@ -817,6 +816,7 @@
 				99DFB13E234F7AE400C5B69D /* RegistClassPopupViewController.swift in Sources */,
 				99DFB130234EF83300C5B69D /* RegistChildViewController.swift in Sources */,
 				99DFB1642350628700C5B69D /* TeacherHomeTableViewCell.swift in Sources */,
+				99DFB1772355671500C5B69D /* RegistClassCompleteListViewController.swift in Sources */,
 				9914AA262345C12C001C0112 /* ParentsHomeViewController.swift in Sources */,
 				9914AA2A2345C861001C0112 /* CourseRegistrationViewController.swift in Sources */,
 				9914A9DE23430B99001C0112 /* CustomPageControl.swift in Sources */,
