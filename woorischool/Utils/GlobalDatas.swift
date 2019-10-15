@@ -13,5 +13,5 @@ class GlobalDatas: NSObject {
     static var currentUser: UserData!
     static var deviceToken = ""
     static var currentUserType: UserType = .parents
-    static var childrenList = [UserData]()
+    static var children: UserData!
 }

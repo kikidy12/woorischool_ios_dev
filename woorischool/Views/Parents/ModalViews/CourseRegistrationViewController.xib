@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,8 +23,12 @@
                 <outlet property="chooseableCorseTableViewHeightConstraint" destination="M1s-Yn-veb" id="NYE-fo-2Tg"/>
                 <outlet property="courseCollectionView" destination="VFE-qF-EPD" id="Drp-UY-J1R"/>
                 <outlet property="courseCollectionViewHeightConstraint" destination="oph-YI-wh6" id="T6m-ga-6WN"/>
+                <outlet property="dayStackView" destination="rha-Cy-U67" id="MWC-Yw-AxW"/>
+                <outlet property="filterCoutLabel" destination="AaP-yg-wsb" id="M1r-8R-tk0"/>
+                <outlet property="filterLabelView" destination="nNb-n8-IFG" id="mKn-tn-hxq"/>
+                <outlet property="filterStackView" destination="ABI-JF-OD9" id="92S-f8-4CH"/>
                 <outlet property="filterTextField" destination="gtw-wP-gDa" id="kmg-Pq-yaz"/>
-                <outlet property="filterView" destination="2rK-nZ-eeT" id="xyY-2y-jHK"/>
+                <outlet property="filterView" destination="U3N-7I-Dos" id="QzB-Eg-wz4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -46,19 +48,30 @@
                     <rect key="frame" x="0.0" y="45" width="414" height="817"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9MR-8N-VGw">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="642.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="699.5"/>
                             <subviews>
-                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nNb-n8-IFG">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nNb-n8-IFG">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="57"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="과학 / 수요일 목요일" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UDt-gU-xPv">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
-                                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="17"/>
-                                            <color key="textColor" name="greyishBrown"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="ABI-JF-OD9">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="과학 / 수요일 목요일" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UDt-gU-xPv">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="33"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="17"/>
+                                                    <color key="textColor" name="greyishBrown"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="과학 / 수요일 목요일" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x72-Ft-MKC">
+                                                    <rect key="frame" x="0.0" y="36" width="414" height="20"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="17"/>
+                                                    <color key="textColor" name="greyishBrown"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </stackView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9dq-6y-tYW">
-                                            <rect key="frame" x="0.0" y="43" width="414" height="1"/>
+                                            <rect key="frame" x="0.0" y="56" width="414" height="1"/>
                                             <color key="backgroundColor" name="veryLightPink"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="InI-0H-UfX"/>
@@ -67,18 +80,17 @@
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstAttribute="trailing" secondItem="UDt-gU-xPv" secondAttribute="trailing" id="85Y-PN-RR0"/>
                                         <constraint firstAttribute="trailing" secondItem="9dq-6y-tYW" secondAttribute="trailing" id="Axw-9L-iQK"/>
-                                        <constraint firstAttribute="height" constant="44" id="BvO-wi-8ey"/>
-                                        <constraint firstItem="UDt-gU-xPv" firstAttribute="top" secondItem="nNb-n8-IFG" secondAttribute="top" id="Pso-fY-Eto"/>
+                                        <constraint firstItem="ABI-JF-OD9" firstAttribute="leading" secondItem="nNb-n8-IFG" secondAttribute="leading" id="SpX-qa-DbS"/>
                                         <constraint firstItem="9dq-6y-tYW" firstAttribute="leading" secondItem="nNb-n8-IFG" secondAttribute="leading" id="fah-i0-zAZ"/>
-                                        <constraint firstItem="9dq-6y-tYW" firstAttribute="top" secondItem="UDt-gU-xPv" secondAttribute="bottom" id="g39-zX-Kmd"/>
-                                        <constraint firstItem="UDt-gU-xPv" firstAttribute="leading" secondItem="nNb-n8-IFG" secondAttribute="leading" id="tne-sa-kkx"/>
+                                        <constraint firstAttribute="trailing" secondItem="ABI-JF-OD9" secondAttribute="trailing" id="lEj-m7-DRO"/>
+                                        <constraint firstItem="9dq-6y-tYW" firstAttribute="top" secondItem="ABI-JF-OD9" secondAttribute="bottom" id="rh5-iG-doa"/>
+                                        <constraint firstItem="ABI-JF-OD9" firstAttribute="top" secondItem="nNb-n8-IFG" secondAttribute="top" id="sio-6Z-f3Z"/>
                                         <constraint firstAttribute="bottom" secondItem="9dq-6y-tYW" secondAttribute="bottom" id="wIG-uR-EiJ"/>
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hil-AY-Tnb">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="642.5"/>
+                                    <rect key="frame" x="0.0" y="57" width="414" height="642.5"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SL4-0m-Obw" customClass="CustomView" customModule="woorischool" customModuleProvider="target">
                                             <rect key="frame" x="20" y="15" width="374" height="45"/>
@@ -88,6 +100,9 @@
                                                     <color key="textColor" name="greyishBrown"/>
                                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                                    <connections>
+                                                        <action selector="filterByClassName:" destination="-1" eventType="editingChanged" id="f14-qo-uuy"/>
+                                                    </connections>
                                                 </textField>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dj7-zn-11s">
                                                     <rect key="frame" x="329" y="0.0" width="45" height="45"/>
@@ -121,12 +136,12 @@
                                             </userDefinedRuntimeAttributes>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="총 0 강좌" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AaP-yg-wsb">
-                                            <rect key="frame" x="20" y="90" width="64.5" height="25.5"/>
+                                            <rect key="frame" x="20" y="90" width="63.5" height="25.5"/>
                                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="17"/>
                                             <color key="textColor" name="greyishBrown"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HL7-gM-MgT">
+                                        <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HL7-gM-MgT">
                                             <rect key="frame" x="20" y="122.5" width="374" height="500"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <constraints>
@@ -159,277 +174,292 @@
                         <constraint firstItem="9MR-8N-VGw" firstAttribute="leading" secondItem="epy-F0-6HJ" secondAttribute="leading" id="xIf-GC-2QG"/>
                     </constraints>
                 </scrollView>
-                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2rK-nZ-eeT">
-                    <rect key="frame" x="0.0" y="45" width="414" height="387"/>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U3N-7I-Dos">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="과목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Gn-Nk-asc">
-                            <rect key="frame" x="191.5" y="17" width="31.5" height="25.5"/>
-                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="17"/>
-                            <color key="textColor" name="greyishBrown"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="VFE-qF-EPD">
-                            <rect key="frame" x="20" y="56.5" width="374" height="100"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2rK-nZ-eeT">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="376"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="과목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Gn-Nk-asc">
+                                    <rect key="frame" x="192.5" y="17" width="29.5" height="20"/>
+                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="17"/>
+                                    <color key="textColor" name="greyishBrown"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="VFE-qF-EPD">
+                                    <rect key="frame" x="20" y="51" width="374" height="100"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="100" id="oph-YI-wh6"/>
+                                    </constraints>
+                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="15" minimumInteritemSpacing="0.0" id="PG3-B5-5cT">
+                                        <size key="itemSize" width="50" height="50"/>
+                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </collectionViewFlowLayout>
+                                </collectionView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ns8-2e-99l">
+                                    <rect key="frame" x="20" y="181" width="374" height="1"/>
+                                    <color key="backgroundColor" name="veryLightPink"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="V44-8d-nFW"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="요일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v2m-X6-kVf">
+                                    <rect key="frame" x="192.5" y="196" width="29.5" height="20"/>
+                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="17"/>
+                                    <color key="textColor" name="greyishBrown"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="rha-Cy-U67">
+                                    <rect key="frame" x="40" y="232" width="334" height="40"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ZX-8N-7tf" customClass="CustomButton" customModule="woorischool" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="2ZX-8N-7tf" secondAttribute="height" multiplier="1:1" id="eAy-1T-vTo"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
+                                            <state key="normal" title="월">
+                                                <color key="titleColor" name="greyishBrown"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
+                                                    <real key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <real key="value" value="1"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                    <color key="value" name="veryLightPink"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="selectDay:" destination="-1" eventType="touchUpInside" id="2zA-zW-bXC"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ix-fU-Hlg" customClass="CustomButton" customModule="woorischool" customModuleProvider="target">
+                                            <rect key="frame" x="59" y="0.0" width="40" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="1ix-fU-Hlg" secondAttribute="height" multiplier="1:1" id="pLJ-kp-zVg"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
+                                            <state key="normal" title="화">
+                                                <color key="titleColor" name="greyishBrown"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
+                                                    <real key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <real key="value" value="1"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                    <color key="value" name="veryLightPink"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="selectDay:" destination="-1" eventType="touchUpInside" id="4PF-9u-CwL"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H2p-wD-lIU" customClass="CustomButton" customModule="woorischool" customModuleProvider="target">
+                                            <rect key="frame" x="117.5" y="0.0" width="40" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="H2p-wD-lIU" secondAttribute="height" multiplier="1:1" id="yHf-hh-Lpa"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
+                                            <state key="normal" title="수">
+                                                <color key="titleColor" name="greyishBrown"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
+                                                    <real key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <real key="value" value="1"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                    <color key="value" name="veryLightPink"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="selectDay:" destination="-1" eventType="touchUpInside" id="t5Y-pU-4NU"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PPP-Z1-9fB" customClass="CustomButton" customModule="woorischool" customModuleProvider="target">
+                                            <rect key="frame" x="176.5" y="0.0" width="40" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="PPP-Z1-9fB" secondAttribute="height" multiplier="1:1" id="T5m-Mu-Wgf"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
+                                            <state key="normal" title="목">
+                                                <color key="titleColor" name="greyishBrown"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
+                                                    <real key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <real key="value" value="1"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                    <color key="value" name="veryLightPink"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="selectDay:" destination="-1" eventType="touchUpInside" id="IYW-8j-Bnc"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbP-eG-O7C" customClass="CustomButton" customModule="woorischool" customModuleProvider="target">
+                                            <rect key="frame" x="235" y="0.0" width="40" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="qbP-eG-O7C" secondAttribute="height" multiplier="1:1" id="gKg-LS-Xub"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
+                                            <state key="normal" title="금">
+                                                <color key="titleColor" name="greyishBrown"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
+                                                    <real key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <real key="value" value="1"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                    <color key="value" name="veryLightPink"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="selectDay:" destination="-1" eventType="touchUpInside" id="ixw-ZE-MAD"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezO-CY-xLu" customClass="CustomButton" customModule="woorischool" customModuleProvider="target">
+                                            <rect key="frame" x="294" y="0.0" width="40" height="40"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="ezO-CY-xLu" secondAttribute="height" multiplier="1:1" id="XoW-ax-yQM"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
+                                            <state key="normal" title="토">
+                                                <color key="titleColor" name="greyishBrown"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
+                                                    <real key="value" value="20"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <real key="value" value="1"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                    <color key="value" name="veryLightPink"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="selectDay:" destination="-1" eventType="touchUpInside" id="SFl-VW-Wbo"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="AaY-lV-WUv"/>
+                                        <constraint firstItem="1ix-fU-Hlg" firstAttribute="width" secondItem="1ix-fU-Hlg" secondAttribute="height" multiplier="1:1" id="Y5l-mJ-wqe"/>
+                                        <constraint firstItem="PPP-Z1-9fB" firstAttribute="width" secondItem="PPP-Z1-9fB" secondAttribute="height" multiplier="1:1" id="py1-iF-cwP"/>
+                                        <constraint firstItem="qbP-eG-O7C" firstAttribute="width" secondItem="qbP-eG-O7C" secondAttribute="height" multiplier="1:1" id="sEO-Et-mUv"/>
+                                        <constraint firstItem="H2p-wD-lIU" firstAttribute="width" secondItem="H2p-wD-lIU" secondAttribute="height" multiplier="1:1" id="sYL-2G-nxh"/>
+                                        <constraint firstItem="ezO-CY-xLu" firstAttribute="width" secondItem="ezO-CY-xLu" secondAttribute="height" multiplier="1:1" id="tGb-s8-Fsg"/>
+                                    </constraints>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Aki-T7-19V">
+                                    <rect key="frame" x="15" y="312" width="384" height="44"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXz-Ve-qL1" customClass="CustomButton" customModule="woorischool" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="187" height="44"/>
+                                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="16"/>
+                                            <state key="normal" title="취소">
+                                                <color key="titleColor" name="greyishBrown"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
+                                                    <real key="value" value="22"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <real key="value" value="1"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                    <color key="value" name="veryLightPink"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="hideFilterView" destination="-1" eventType="touchUpInside" id="fGX-ra-j45"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oRT-ET-5fO" customClass="CustomButton" customModule="woorischool" customModuleProvider="target">
+                                            <rect key="frame" x="197" y="0.0" width="187" height="44"/>
+                                            <color key="backgroundColor" name="greenishTeal"/>
+                                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="16"/>
+                                            <state key="normal" title="적용">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
+                                                    <real key="value" value="22"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <real key="value" value="0.0"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="filterByNmaesAndWeekDaysEvent" destination="-1" eventType="touchUpInside" id="3BU-DC-gSp"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="44" id="MPY-CX-BrM"/>
+                                    </constraints>
+                                </stackView>
+                            </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="100" id="oph-YI-wh6"/>
-                            </constraints>
-                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="15" minimumInteritemSpacing="0.0" id="PG3-B5-5cT">
-                                <size key="itemSize" width="50" height="50"/>
-                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            </collectionViewFlowLayout>
-                        </collectionView>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ns8-2e-99l">
-                            <rect key="frame" x="20" y="186.5" width="374" height="1"/>
-                            <color key="backgroundColor" name="veryLightPink"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="1" id="V44-8d-nFW"/>
+                                <constraint firstItem="VFE-qF-EPD" firstAttribute="leading" secondItem="2rK-nZ-eeT" secondAttribute="leading" constant="20" id="8tC-gq-EWi"/>
+                                <constraint firstItem="0Gn-Nk-asc" firstAttribute="centerX" secondItem="2rK-nZ-eeT" secondAttribute="centerX" id="CPg-fK-5id"/>
+                                <constraint firstItem="v2m-X6-kVf" firstAttribute="top" secondItem="ns8-2e-99l" secondAttribute="bottom" constant="14" id="Dcm-HO-LNN"/>
+                                <constraint firstItem="rha-Cy-U67" firstAttribute="leading" secondItem="2rK-nZ-eeT" secondAttribute="leading" constant="40" id="J88-eN-eZh"/>
+                                <constraint firstItem="VFE-qF-EPD" firstAttribute="top" secondItem="0Gn-Nk-asc" secondAttribute="bottom" constant="14" id="MUe-MU-5R1"/>
+                                <constraint firstAttribute="trailing" secondItem="VFE-qF-EPD" secondAttribute="trailing" constant="20" id="Mzi-Q4-xRR"/>
+                                <constraint firstAttribute="trailing" secondItem="rha-Cy-U67" secondAttribute="trailing" constant="40" id="Xdh-LG-oWV"/>
+                                <constraint firstItem="0Gn-Nk-asc" firstAttribute="top" secondItem="2rK-nZ-eeT" secondAttribute="top" constant="17" id="Xxo-a3-7Kf"/>
+                                <constraint firstItem="v2m-X6-kVf" firstAttribute="centerX" secondItem="2rK-nZ-eeT" secondAttribute="centerX" id="aAi-oE-a27"/>
+                                <constraint firstItem="ns8-2e-99l" firstAttribute="leading" secondItem="2rK-nZ-eeT" secondAttribute="leading" constant="20" id="eBJ-lZ-ua0"/>
+                                <constraint firstItem="rha-Cy-U67" firstAttribute="top" secondItem="v2m-X6-kVf" secondAttribute="bottom" constant="16" id="ldK-4e-Wfj"/>
+                                <constraint firstAttribute="bottom" secondItem="Aki-T7-19V" secondAttribute="bottom" constant="20" id="neg-De-0FK"/>
+                                <constraint firstItem="Aki-T7-19V" firstAttribute="leading" secondItem="2rK-nZ-eeT" secondAttribute="leading" constant="15" id="qUi-e3-7cf"/>
+                                <constraint firstItem="Aki-T7-19V" firstAttribute="top" secondItem="rha-Cy-U67" secondAttribute="bottom" constant="40" id="rQl-ba-R6k"/>
+                                <constraint firstItem="ns8-2e-99l" firstAttribute="top" secondItem="VFE-qF-EPD" secondAttribute="bottom" constant="30" id="s1g-cG-ekK"/>
+                                <constraint firstAttribute="trailing" secondItem="ns8-2e-99l" secondAttribute="trailing" constant="20" id="sia-5Q-5uj"/>
+                                <constraint firstAttribute="trailing" secondItem="Aki-T7-19V" secondAttribute="trailing" constant="15" id="wvN-BM-TWE"/>
                             </constraints>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="요일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v2m-X6-kVf">
-                            <rect key="frame" x="191.5" y="201.5" width="31.5" height="25.5"/>
-                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="17"/>
-                            <color key="textColor" name="greyishBrown"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="rha-Cy-U67">
-                            <rect key="frame" x="40" y="243" width="334" height="40"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ZX-8N-7tf" customClass="CustomButton" customModule="woorischool" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" secondItem="2ZX-8N-7tf" secondAttribute="height" multiplier="1:1" id="eAy-1T-vTo"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
-                                    <state key="normal" title="월">
-                                        <color key="titleColor" name="greyishBrown"/>
-                                    </state>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
-                                            <real key="value" value="20"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                            <real key="value" value="1"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                            <color key="value" name="veryLightPink"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                    <connections>
-                                        <action selector="selectDay:" destination="-1" eventType="touchUpInside" id="2zA-zW-bXC"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ix-fU-Hlg" customClass="CustomButton" customModule="woorischool" customModuleProvider="target">
-                                    <rect key="frame" x="59" y="0.0" width="40" height="40"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" secondItem="1ix-fU-Hlg" secondAttribute="height" multiplier="1:1" id="pLJ-kp-zVg"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
-                                    <state key="normal" title="화">
-                                        <color key="titleColor" name="greyishBrown"/>
-                                    </state>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
-                                            <real key="value" value="20"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                            <real key="value" value="1"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                            <color key="value" name="veryLightPink"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                    <connections>
-                                        <action selector="selectDay:" destination="-1" eventType="touchUpInside" id="4PF-9u-CwL"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H2p-wD-lIU" customClass="CustomButton" customModule="woorischool" customModuleProvider="target">
-                                    <rect key="frame" x="117.5" y="0.0" width="40" height="40"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" secondItem="H2p-wD-lIU" secondAttribute="height" multiplier="1:1" id="yHf-hh-Lpa"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
-                                    <state key="normal" title="수">
-                                        <color key="titleColor" name="greyishBrown"/>
-                                    </state>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
-                                            <real key="value" value="20"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                            <real key="value" value="1"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                            <color key="value" name="veryLightPink"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                    <connections>
-                                        <action selector="selectDay:" destination="-1" eventType="touchUpInside" id="t5Y-pU-4NU"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PPP-Z1-9fB" customClass="CustomButton" customModule="woorischool" customModuleProvider="target">
-                                    <rect key="frame" x="176.5" y="0.0" width="40" height="40"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" secondItem="PPP-Z1-9fB" secondAttribute="height" multiplier="1:1" id="T5m-Mu-Wgf"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
-                                    <state key="normal" title="목">
-                                        <color key="titleColor" name="greyishBrown"/>
-                                    </state>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
-                                            <real key="value" value="20"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                            <real key="value" value="1"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                            <color key="value" name="veryLightPink"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                    <connections>
-                                        <action selector="selectDay:" destination="-1" eventType="touchUpInside" id="IYW-8j-Bnc"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbP-eG-O7C" customClass="CustomButton" customModule="woorischool" customModuleProvider="target">
-                                    <rect key="frame" x="235" y="0.0" width="40" height="40"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" secondItem="qbP-eG-O7C" secondAttribute="height" multiplier="1:1" id="gKg-LS-Xub"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
-                                    <state key="normal" title="금">
-                                        <color key="titleColor" name="greyishBrown"/>
-                                    </state>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
-                                            <real key="value" value="20"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                            <real key="value" value="1"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                            <color key="value" name="veryLightPink"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                    <connections>
-                                        <action selector="selectDay:" destination="-1" eventType="touchUpInside" id="ixw-ZE-MAD"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezO-CY-xLu" customClass="CustomButton" customModule="woorischool" customModuleProvider="target">
-                                    <rect key="frame" x="294" y="0.0" width="40" height="40"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" secondItem="ezO-CY-xLu" secondAttribute="height" multiplier="1:1" id="XoW-ax-yQM"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
-                                    <state key="normal" title="토">
-                                        <color key="titleColor" name="greyishBrown"/>
-                                    </state>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
-                                            <real key="value" value="20"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                            <real key="value" value="1"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                            <color key="value" name="veryLightPink"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                    <connections>
-                                        <action selector="selectDay:" destination="-1" eventType="touchUpInside" id="SFl-VW-Wbo"/>
-                                    </connections>
-                                </button>
-                            </subviews>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="40" id="AaY-lV-WUv"/>
-                                <constraint firstItem="1ix-fU-Hlg" firstAttribute="width" secondItem="1ix-fU-Hlg" secondAttribute="height" multiplier="1:1" id="Y5l-mJ-wqe"/>
-                                <constraint firstItem="PPP-Z1-9fB" firstAttribute="width" secondItem="PPP-Z1-9fB" secondAttribute="height" multiplier="1:1" id="py1-iF-cwP"/>
-                                <constraint firstItem="qbP-eG-O7C" firstAttribute="width" secondItem="qbP-eG-O7C" secondAttribute="height" multiplier="1:1" id="sEO-Et-mUv"/>
-                                <constraint firstItem="H2p-wD-lIU" firstAttribute="width" secondItem="H2p-wD-lIU" secondAttribute="height" multiplier="1:1" id="sYL-2G-nxh"/>
-                                <constraint firstItem="ezO-CY-xLu" firstAttribute="width" secondItem="ezO-CY-xLu" secondAttribute="height" multiplier="1:1" id="tGb-s8-Fsg"/>
-                            </constraints>
-                        </stackView>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Aki-T7-19V">
-                            <rect key="frame" x="15" y="323" width="384" height="44"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXz-Ve-qL1" customClass="CustomButton" customModule="woorischool" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="187" height="44"/>
-                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="16"/>
-                                    <state key="normal" title="취소">
-                                        <color key="titleColor" name="greyishBrown"/>
-                                    </state>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
-                                            <real key="value" value="22"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                            <real key="value" value="1"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                            <color key="value" name="veryLightPink"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                    <connections>
-                                        <action selector="hideFilterView" destination="-1" eventType="touchUpInside" id="fGX-ra-j45"/>
-                                    </connections>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oRT-ET-5fO" customClass="CustomButton" customModule="woorischool" customModuleProvider="target">
-                                    <rect key="frame" x="197" y="0.0" width="187" height="44"/>
-                                    <color key="backgroundColor" name="greenishTeal"/>
-                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="16"/>
-                                    <state key="normal" title="적용">
-                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    </state>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
-                                            <real key="value" value="22"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                            <real key="value" value="0.0"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                </button>
-                            </subviews>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="44" id="MPY-CX-BrM"/>
-                            </constraints>
-                        </stackView>
                     </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="backgroundColor" name="black60"/>
                     <constraints>
-                        <constraint firstItem="VFE-qF-EPD" firstAttribute="leading" secondItem="2rK-nZ-eeT" secondAttribute="leading" constant="20" id="8tC-gq-EWi"/>
-                        <constraint firstItem="0Gn-Nk-asc" firstAttribute="centerX" secondItem="2rK-nZ-eeT" secondAttribute="centerX" id="CPg-fK-5id"/>
-                        <constraint firstItem="v2m-X6-kVf" firstAttribute="top" secondItem="ns8-2e-99l" secondAttribute="bottom" constant="14" id="Dcm-HO-LNN"/>
-                        <constraint firstItem="rha-Cy-U67" firstAttribute="leading" secondItem="2rK-nZ-eeT" secondAttribute="leading" constant="40" id="J88-eN-eZh"/>
-                        <constraint firstItem="VFE-qF-EPD" firstAttribute="top" secondItem="0Gn-Nk-asc" secondAttribute="bottom" constant="14" id="MUe-MU-5R1"/>
-                        <constraint firstAttribute="trailing" secondItem="VFE-qF-EPD" secondAttribute="trailing" constant="20" id="Mzi-Q4-xRR"/>
-                        <constraint firstAttribute="trailing" secondItem="rha-Cy-U67" secondAttribute="trailing" constant="40" id="Xdh-LG-oWV"/>
-                        <constraint firstItem="0Gn-Nk-asc" firstAttribute="top" secondItem="2rK-nZ-eeT" secondAttribute="top" constant="17" id="Xxo-a3-7Kf"/>
-                        <constraint firstItem="v2m-X6-kVf" firstAttribute="centerX" secondItem="2rK-nZ-eeT" secondAttribute="centerX" id="aAi-oE-a27"/>
-                        <constraint firstItem="ns8-2e-99l" firstAttribute="leading" secondItem="2rK-nZ-eeT" secondAttribute="leading" constant="20" id="eBJ-lZ-ua0"/>
-                        <constraint firstItem="rha-Cy-U67" firstAttribute="top" secondItem="v2m-X6-kVf" secondAttribute="bottom" constant="16" id="ldK-4e-Wfj"/>
-                        <constraint firstAttribute="bottom" secondItem="Aki-T7-19V" secondAttribute="bottom" constant="20" id="neg-De-0FK"/>
-                        <constraint firstItem="Aki-T7-19V" firstAttribute="leading" secondItem="2rK-nZ-eeT" secondAttribute="leading" constant="15" id="qUi-e3-7cf"/>
-                        <constraint firstItem="Aki-T7-19V" firstAttribute="top" secondItem="rha-Cy-U67" secondAttribute="bottom" constant="40" id="rQl-ba-R6k"/>
-                        <constraint firstItem="ns8-2e-99l" firstAttribute="top" secondItem="VFE-qF-EPD" secondAttribute="bottom" constant="30" id="s1g-cG-ekK"/>
-                        <constraint firstAttribute="trailing" secondItem="ns8-2e-99l" secondAttribute="trailing" constant="20" id="sia-5Q-5uj"/>
-                        <constraint firstAttribute="trailing" secondItem="Aki-T7-19V" secondAttribute="trailing" constant="15" id="wvN-BM-TWE"/>
+                        <constraint firstItem="2rK-nZ-eeT" firstAttribute="top" secondItem="U3N-7I-Dos" secondAttribute="top" id="1Wr-63-uG4"/>
+                        <constraint firstAttribute="trailing" secondItem="2rK-nZ-eeT" secondAttribute="trailing" id="Fgf-4x-ZFn"/>
+                        <constraint firstItem="2rK-nZ-eeT" firstAttribute="leading" secondItem="U3N-7I-Dos" secondAttribute="leading" id="RLB-LW-sZN"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" name="paleGrey"/>
             <constraints>
-                <constraint firstItem="2rK-nZ-eeT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="4oq-hf-B3I"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="epy-F0-6HJ" secondAttribute="trailing" id="FF7-YX-zTe"/>
-                <constraint firstItem="2rK-nZ-eeT" firstAttribute="top" secondItem="96D-2F-Y1R" secondAttribute="bottom" id="Nbz-Y2-bdl"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="2rK-nZ-eeT" secondAttribute="trailing" id="QcD-Q9-Im1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="U3N-7I-Dos" secondAttribute="trailing" id="WTB-Zq-7gW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="U3N-7I-Dos" secondAttribute="bottom" id="dTr-6i-jlU"/>
+                <constraint firstItem="U3N-7I-Dos" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="fcA-Iy-5ke"/>
                 <constraint firstItem="96D-2F-Y1R" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="fvo-1a-x4E"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="96D-2F-Y1R" secondAttribute="trailing" id="fzC-SF-CGe"/>
                 <constraint firstItem="epy-F0-6HJ" firstAttribute="top" secondItem="96D-2F-Y1R" secondAttribute="bottom" id="gBV-eJ-sHP"/>
                 <constraint firstItem="epy-F0-6HJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="jBP-f1-JGm"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="epy-F0-6HJ" secondAttribute="bottom" id="rGH-IB-9dG"/>
+                <constraint firstItem="U3N-7I-Dos" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="w2t-2E-501"/>
                 <constraint firstItem="96D-2F-Y1R" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="zBU-1z-2QH"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
@@ -438,6 +468,9 @@
     </objects>
     <resources>
         <image name="searchIcon" width="20" height="21"/>
+        <namedColor name="black60">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.60000002384185791" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="greenishTeal">
             <color red="0.17254901960784313" green="0.77647058823529413" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

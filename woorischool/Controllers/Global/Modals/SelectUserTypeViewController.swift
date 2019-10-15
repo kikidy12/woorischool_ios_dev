@@ -38,7 +38,7 @@ class SelectUserTypeViewController: UIViewController {
             vc.title = " "
             break
         case .teacher:
-            vc = ParentsLoginViewController()
+            vc = TeacherHomeViewController()
             vc.title = " "
             break
         }

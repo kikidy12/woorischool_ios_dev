@@ -16,6 +16,8 @@ class SplashViewController: UIViewController {
 
     
     override func viewDidAppear(_ animated: Bool) {
+        print(UserDefs.lastUserType)
+        print(UserDefs.hasChildren)
         if UserDefs.userToken != "" {
             if UserDefs.lastUserType == UserType.parents.rawValue, UserDefs.hasChildren {
                 let navi = UINavigationController(rootViewController: ParentsHomeViewController())

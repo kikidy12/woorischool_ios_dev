@@ -10,7 +10,7 @@ import UIKit
 
 class CourseCollectionViewCell: UICollectionViewCell {
     
-    var course: String!
+    var course: LectureAreaData!
     
     @IBOutlet weak var courseLabel: UILabel!
     @IBOutlet weak var containerView: CustomView!
@@ -21,10 +21,10 @@ class CourseCollectionViewCell: UICollectionViewCell {
     }
     
     
-    func initView(_ data: String) {
+    func initView(_ data: LectureAreaData) {
         course = data
-        courseLabel.text = course
-        if course == "A" {
+        courseLabel.text = course.name
+        if course.isSelected {
             courseLabel.textColor = .white
             containerView.backgroundColor = .greenishTeal
             containerView.borderWidth = 0

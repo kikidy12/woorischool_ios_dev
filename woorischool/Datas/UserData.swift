@@ -14,7 +14,7 @@ class UserData: NSObject {
     var name: String!
     var phoneNum: String!
     
-    var childlens = [UserData]()
+    var childlen: UserData!
     
     var studentInfo: StudentInfoData!
     
@@ -24,12 +24,14 @@ class UserData: NSObject {
     
     init(_ data: NSDictionary) {
         id = data["id"] as? Int
+        name = data["name"] as? String
+        phoneNum = data["phone_num"] as? String
         if let typeStr = data["type"] as? String {
             type = UserType(rawValue: typeStr)
         }
         
-        if let array = data["children"] as? NSArray {
-            childlens = array.compactMap { UserData($0 as! NSDictionary) }
+        if let dict = data["child"] as? NSDictionary {
+            childlen = UserData(dict)
         }
         
         if let dict = data["student_info"] as? NSDictionary {

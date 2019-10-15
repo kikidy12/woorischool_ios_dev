@@ -57,13 +57,12 @@ class ServerUtil: NSObject {
 //        loadingView.addSubview(lottie)
 //        lottie.play()
         progressLabel.numberOfLines = 1
-        print("UserToken: ", headers )
         progressLabel.font = .systemFont(ofSize: 20, weight: .medium)
     }
     
-    func getInfo(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+    func getMeInfo(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
         currentVc = vc
-        apiRequest("info", method: .get, parameters: parameters, completion: completion)
+        apiRequest("me_info", method: .get, parameters: parameters, completion: completion)
     }
     
     func postAuth(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
@@ -81,8 +80,47 @@ class ServerUtil: NSObject {
         apiRequest("parent_student", method: .post, parameters: parameters, completion: completion)
     }
     
-    //upload
+    func getLecture(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("lecture", method: .get, parameters: parameters, completion: completion)
+    }
     
+    func getLectureAreas(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("lecture_areas", method: .get, parameters: parameters, completion: completion)
+    }
+    
+    func postLecture(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("lecture", method: .post, parameters: parameters, completion: completion)
+    }
+    
+    func postLectureWait(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("lecture_wait", method: .post, parameters: parameters, completion: completion)
+    }
+    
+    func getLectureApply(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("lecture_apply", method: .get, parameters: parameters, completion: completion)
+    }
+    
+    func postLectureApply(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("lecture_apply", method: .post, parameters: parameters, completion: completion)
+    }
+    
+    func deleteLectureApply(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("lecture_apply", method: .delete, parameters: parameters, completion: completion)
+    }
+    
+    func patchLectureApply(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("lecture_apply", method: .patch, parameters: parameters, completion: completion)
+    }
+    
+    //upload
     func putAuth(vc: UIViewController, multipartFormData: @escaping (MultipartFormData) -> Void, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
         currentVc = vc
         uploadRequest("auth", method: .put, showUploadProgress: true, multipartFormData: multipartFormData, completion: completion)

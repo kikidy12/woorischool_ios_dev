@@ -9,8 +9,40 @@
 import UIKit
 
 class CourseRegistrationViewController: UIViewController {
+
+    var courseList = [LectureAreaData]() {
+        didSet {
+            if courseList.isEmpty {
+                
+            }
+            else {
+                
+            }
+            
+            courseCollectionView.reloadData()
+            
+            getLectureClass()
+        }
+    }
     
-    var courseList = [String]()
+    var lectureList = [LectureClassData]() {
+        didSet {
+            filterLectureList = lectureList
+        }
+    }
+    
+    var filterLectureList = [LectureClassData]() {
+        didSet {
+            if lectureList.isEmpty {
+                
+            }
+            else {
+                
+            }
+            filterCoutLabel.text = "총 \(filterLectureList.count) 강좌"
+            chooseableCorseTableView.reloadData()
+        }
+    }
     
     var accessaryView: UIToolbar! {
         didSet {
@@ -23,6 +55,10 @@ class CourseRegistrationViewController: UIViewController {
     }
     
     @IBOutlet weak var filterView: UIView!
+    @IBOutlet weak var filterCoutLabel: UILabel!
+    @IBOutlet weak var dayStackView: UIStackView!
+    @IBOutlet weak var filterStackView: UIStackView!
+    @IBOutlet weak var filterLabelView: UIView!
     @IBOutlet weak var filterTextField: UITextField!
     @IBOutlet weak var courseCollectionView: UICollectionView!
     @IBOutlet weak var courseCollectionViewHeightConstraint: NSLayoutConstraint!
@@ -33,7 +69,6 @@ class CourseRegistrationViewController: UIViewController {
         super.viewDidLoad()
         accessaryView = UIToolbar()
         navibarSetting()
-        courseList = ["B","B","B","B","B","B","B","B"]
         filterTextField.inputAccessoryView = accessaryView
         courseCollectionView.delegate = self
         courseCollectionView.dataSource = self
@@ -41,6 +76,7 @@ class CourseRegistrationViewController: UIViewController {
         chooseableCorseTableView.dataSource = self
         chooseableCorseTableView.register(UINib(nibName: "RegistClassTableViewCell", bundle: nil), forCellReuseIdentifier: "classCell")
         courseCollectionView.register(UINib(nibName: "CourseCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "courseCell")
+        getCourse()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -50,6 +86,7 @@ class CourseRegistrationViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         title = "수강신청"
     }
+    
     
     func navibarSetting() {
         let rightBtn = UIBarButtonItem(image: UIImage(named: "filterImage"), style: .plain, target: self, action: #selector(showFilterView))
@@ -79,12 +116,30 @@ class CourseRegistrationViewController: UIViewController {
     @IBAction func hideFilterView() {
         filterView.isHidden = true
     }
+    
+    @IBAction func filterByNmaesAndWeekDaysEvent() {
+        filterView.isHidden = true
+        getLectureClass()
+    }
+    
+    @IBAction func filterByClassName(_ sender: UITextField) {
+        guard let text = sender.text else { return }
+        
+        if text.isEmpty {
+            filterLectureList = lectureList
+        }
+        else {
+            filterLectureList = lectureList.filter {
+                return $0.name.contains(text)
+            }
+        }
+    }
 }
 
 extension CourseRegistrationViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if let cell = cell as? RegistClassTableViewCell {
-            cell.initView(indexPath.item)
+            cell.initView(filterLectureList[indexPath.item])
         }
         if indexPath.item == (tableView.indexPathsForVisibleRows!.last!).item {
             chooseableCorseTableViewHeightConstraint.constant = tableView.contentSize.height
@@ -92,15 +147,25 @@ extension CourseRegistrationViewController: UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return filterLectureList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "classCell", for: indexPath) as! RegistClassTableViewCell
-        
+        cell.requestClouser = {
+            let vc = RegistClassPopupViewController()
+            vc.lectureClass = self.filterLectureList[indexPath.item]
+            vc.preVC = self
+            self.showPopupView(vc: vc)
+        }
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = ClassInfoPopupViewController()
+        vc.lectureClass = filterLectureList[indexPath.item]
+        showPopupView(vc: vc)
+    }
     
 }
 
@@ -121,12 +186,7 @@ extension CourseRegistrationViewController: UICollectionViewDelegate, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        if courseList[indexPath.item] == "A" {
-            courseList[indexPath.item] = "B"
-        }
-        else {
-            courseList[indexPath.item] = "A"
-        }
+        courseList[indexPath.item].isSelected = !courseList[indexPath.item].isSelected
         let cell = collectionView.cellForItem(at: indexPath) as! CourseCollectionViewCell
         cell.initView(courseList[indexPath.item])
     }
@@ -136,4 +196,110 @@ extension CourseRegistrationViewController: UICollectionViewDelegate, UICollecti
         return CGSize(width: collectionView.frame.width / 4.0 - 10, height: 30)
     }
     
+}
+
+
+extension CourseRegistrationViewController {
+    func getCourse() {
+        ServerUtil.shared.getLectureAreas(self) { (success, dict, message) in
+            guard success, let array = dict?["lecture_area"] as? NSArray else {
+                return
+            }
+            
+            self.courseList = array.compactMap { LectureAreaData($0 as! NSDictionary)}
+        }
+    }
+    
+    func getLectureClass() {
+        var areaIds = "["
+        courseList.forEach {
+            if $0.isSelected {
+                areaIds += "\($0.id!)"
+                if $0 != courseList.last {
+                    areaIds += ","
+                }
+            }
+        }
+        areaIds += "]"
+        
+        var weekDays = "["
+        let array = dayStackView.arrangedSubviews.filter {$0.tag == 1}
+        dayStackView.arrangedSubviews.enumerated().forEach {
+            if $0.element.tag == 1 {
+                weekDays += "\($0.offset)"
+                if $0.element != array.last {
+                    weekDays += ","
+                }
+            }
+        }
+        weekDays += "]"
+        
+        if !courseList.contains(where: {$0.isSelected}), !dayStackView.arrangedSubviews.contains(where: {$0.tag == 1}) {
+            filterLabelView.isHidden = true
+        }
+        else {
+            filterLabelView.isHidden = false
+            guard let label1 = filterStackView.arrangedSubviews.first as? UILabel else {
+                return
+            }
+            
+            guard let label2 = filterStackView.arrangedSubviews.last as? UILabel else {
+                return
+            }
+            if courseList.contains(where: {$0.isSelected}) {
+                label1.isHidden = false
+                var searchStr = ""
+                courseList.forEach {
+                    if $0.isSelected {
+                        searchStr += "\($0.name!)"
+                        if $0 != courseList.last {
+                            searchStr += "/"
+                        }
+                    }
+                }
+                
+                label1.text = searchStr
+            }
+            else {
+                label1.isHidden = true
+            }
+            
+            
+            if dayStackView.arrangedSubviews.contains(where: {$0.tag == 1}) {
+                label2.isHidden = false
+                var searchStr = ""
+                let array = dayStackView.arrangedSubviews.filter {$0.tag == 1}
+                array.forEach {
+                    guard let btn = $0 as? UIButton else {
+                        return
+                    }
+                    searchStr += "\(btn.title(for: .normal) ?? "")요일"
+                    if $0 != array.last {
+                        searchStr += "/"
+                    }
+                }
+                
+                label2.text = searchStr
+            }
+            else {
+                label2.isHidden = true
+            }
+            
+        }
+        
+        
+        let parameters = [
+            "lecture_area_ids": areaIds,
+            "week_days": weekDays
+        ] as [String:Any]
+        print(parameters)
+        ServerUtil.shared.getLecture(self, parameters: parameters) { (success, dict, message) in
+            guard success, let array = dict?["lecture_list"] as? NSArray else {
+                return
+            }
+            
+            self.lectureList = array.compactMap { LectureClassData($0 as! NSDictionary)}
+            
+        }
+    }
 }

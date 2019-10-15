@@ -54,15 +54,14 @@ extension ParentsLoginViewController {
         ] as[String: Any]
         
         ServerUtil.shared.postAuth(self, parameters: parameters) { (success, dict, message) in
-            guard success,let array = dict?["children"] as? NSArray, let user = dict?["user"] as? NSDictionary, let token = dict?["token"] as? String else { return }
+            guard success, let user = dict?["user"] as? NSDictionary, let token = dict?["token"] as? String else { return }
             
             GlobalDatas.currentUser = UserData(user)
-            GlobalDatas.childrenList = array.compactMap { UserData($0 as! NSDictionary) }
-            print("userType: ", GlobalDatas.currentUser.type.rawValue)
+            
             UserDefs.setLastUserType(type: GlobalDatas.currentUser.type.rawValue)
             UserDefs.setUserToken(token: token)
             
-            if GlobalDatas.childrenList.isEmpty {
+            if GlobalDatas.currentUser.childlen == nil {
                 UserDefs.setHasChildren(false)
                 let vc = RegistChildViewController()
                 self.show(vc, sender: nil)

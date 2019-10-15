@@ -9,7 +9,14 @@
 import UIKit
 
 class ParentsHomeScheduleTableViewCell: UITableViewCell {
+    
+    var dayInfo: LectureClassDayData!
 
+    @IBOutlet weak var classNameLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var lectureImageView: UIImageView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,6 +26,13 @@ class ParentsHomeScheduleTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func initView(_ data: LectureClassDayData) {
+        dayInfo = data
+        
+        classNameLabel.text = "\(dayInfo.lectureClass.name ?? "과목")(\(dayInfo.lectureClass.location ?? "미정"))"
+        timeLabel.text = dayInfo.eduTime
     }
     
 }

@@ -25,6 +25,14 @@ extension DateFormatter {
     
 }
 
+extension Date {
+    var startOfWeek: Date? {
+        let gregorian = Calendar(identifier: .gregorian)
+        guard let sunday = gregorian.date(from: gregorian.dateComponents([.yearForWeekOfYear, .weekOfYear], from: self)) else { return nil }
+        return gregorian.date(byAdding: .day, value: 1, to: sunday)
+    }
+}
+
 extension UIColor {
     
     @nonobjc class var greyishBrown: UIColor {
@@ -67,4 +75,14 @@ extension UIColor {
         return UIColor(red: 245.0 / 255.0, green: 246.0 / 255.0, blue: 250.0 / 255.0, alpha: 1.0)
     }
     
+}
+
+extension String {
+    var imageURL: URL? {
+        guard let encoded = self.addingPercentEncoding(withAllowedCharacters: .urlFragmentAllowed) else {
+            return nil
+        }
+        
+        return URL(string: encoded) 
+    }
 }

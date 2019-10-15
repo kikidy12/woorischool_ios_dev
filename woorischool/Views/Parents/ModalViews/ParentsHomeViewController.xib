@@ -22,7 +22,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ParentsHomeViewController" customModule="woorischool" customModuleProvider="target">
             <connections>
+                <outlet property="childProfileImageView" destination="jsa-Pz-qN3" id="v5B-1l-xRP"/>
+                <outlet property="dateStackView" destination="a9Q-hV-stV" id="iIb-vB-Mhc"/>
+                <outlet property="nameLabel" destination="bIM-66-uKl" id="ajj-SB-pcb"/>
                 <outlet property="scheduleTableView" destination="pEN-18-Kcg" id="68K-M7-x8u"/>
+                <outlet property="selectDayLabel" destination="XA0-Zf-Vvz" id="vDG-hE-33V"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -31,15 +35,15 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jsa-Pz-qN3">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilePlaceHolder" translatesAutoresizingMaskIntoConstraints="NO" id="jsa-Pz-qN3">
                     <rect key="frame" x="25" y="74" width="60" height="60"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="60" id="JYc-yH-G0q"/>
                         <constraint firstAttribute="height" constant="60" id="ehj-Tq-LcV"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bIM-66-uKl">
-                    <rect key="frame" x="96" y="79.5" width="133" height="49"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bIM-66-uKl">
+                    <rect key="frame" x="96" y="79.5" width="205" height="49"/>
                     <string key="text">길동이 학부모님
 안녕하세요</string>
                     <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="21"/>
@@ -68,18 +72,13 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yml-12-tBt" customClass="CustomButton" customModule="woorischool" customModuleProvider="target">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yml-12-tBt">
                     <rect key="frame" x="45" y="184" width="60" height="60"/>
-                    <color key="backgroundColor" name="greenishTeal"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="p8f-Dt-2ta"/>
                         <constraint firstAttribute="width" constant="60" id="qEm-de-yN8"/>
                     </constraints>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
-                            <real key="value" value="30"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
+                    <state key="normal" backgroundImage="registHomeIcon"/>
                     <connections>
                         <action selector="showRegistViewEvent" destination="-1" eventType="touchUpInside" id="SyX-py-hvI"/>
                     </connections>
@@ -90,18 +89,13 @@
                     <color key="textColor" name="greyishBrown"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hPN-6Y-EHP" customClass="CustomButton" customModule="woorischool" customModuleProvider="target">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hPN-6Y-EHP">
                     <rect key="frame" x="177" y="184" width="60" height="60"/>
-                    <color key="backgroundColor" name="greenishTeal"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="Yr6-NU-E5Q"/>
                         <constraint firstAttribute="width" constant="60" id="lPQ-Ky-nUa"/>
                     </constraints>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
-                            <real key="value" value="30"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
+                    <state key="normal" backgroundImage="registCheckHomeIcon"/>
                     <connections>
                         <action selector="showRegistedClassViewEvent" destination="-1" eventType="touchUpInside" id="u41-xp-OXN"/>
                     </connections>
@@ -112,18 +106,13 @@
                     <color key="textColor" name="greyishBrown"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QP8-s5-GUg" customClass="CustomButton" customModule="woorischool" customModuleProvider="target">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QP8-s5-GUg">
                     <rect key="frame" x="309" y="184" width="60" height="60"/>
-                    <color key="backgroundColor" name="greenishTeal"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="422-Lj-wop"/>
                         <constraint firstAttribute="width" constant="60" id="xAy-eH-frW"/>
                     </constraints>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
-                            <real key="value" value="30"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
+                    <state key="normal" backgroundImage="registCompIcon"/>
                     <connections>
                         <action selector="showCompleteRegistViewEvent" destination="-1" eventType="touchUpInside" id="D2Z-Ry-BWN"/>
                     </connections>
@@ -134,25 +123,14 @@
                     <color key="textColor" name="greyishBrown"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DdK-ME-j4g" customClass="CustomButton" customModule="woorischool" customModuleProvider="target">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DdK-ME-j4g">
                     <rect key="frame" x="30" y="299" width="354" height="50"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="2Pw-QU-gHJ"/>
                     </constraints>
-                    <state key="normal" title="방과후학교 프로그램 통신문 다운 ">
+                    <state key="normal" backgroundImage="officalLetterImage">
                         <color key="titleColor" name="greenishTeal"/>
                     </state>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                            <real key="value" value="1"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                            <color key="value" name="greenishTeal"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
-                            <real key="value" value="5"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zAx-5b-HjW">
                     <rect key="frame" x="0.0" y="369" width="414" height="1"/>
@@ -171,9 +149,7 @@
                                 <constraint firstAttribute="width" constant="25" id="oO2-uy-eA4"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
-                            <state key="normal" title="21">
-                                <color key="titleColor" name="greenishTeal"/>
-                            </state>
+                            <state key="normal" title="21"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
                                     <real key="value" value="12.5"/>
@@ -185,17 +161,18 @@
                                     <color key="value" name="greenishTeal"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="selectDateEvent:" destination="-1" eventType="touchUpInside" id="SIE-k2-R1w"/>
+                            </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hEE-ch-NNA" customClass="CustomButton" customModule="woorischool" customModuleProvider="target">
-                            <rect key="frame" x="62" y="8" width="25" height="25"/>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hEE-ch-NNA" customClass="CustomButton" customModule="woorischool" customModuleProvider="target">
+                            <rect key="frame" x="51.5" y="8" width="25" height="25"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="25" id="eVv-5Y-q9d"/>
                                 <constraint firstAttribute="width" constant="25" id="uUt-r1-5T7"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
-                            <state key="normal" title="21">
-                                <color key="titleColor" name="greenishTeal"/>
-                            </state>
+                            <state key="normal" title="21"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
                                     <real key="value" value="12.5"/>
@@ -207,17 +184,18 @@
                                     <color key="value" name="greenishTeal"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="selectDateEvent:" destination="-1" eventType="touchUpInside" id="dLn-eI-TFO"/>
+                            </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkb-vi-gr2" customClass="CustomButton" customModule="woorischool" customModuleProvider="target">
-                            <rect key="frame" x="123.5" y="8" width="25" height="25"/>
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hkb-vi-gr2" customClass="CustomButton" customModule="woorischool" customModuleProvider="target">
+                            <rect key="frame" x="103" y="8" width="25" height="25"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="25" id="6vt-H5-2eC"/>
                                 <constraint firstAttribute="height" constant="25" id="pl1-hi-G5q"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
-                            <state key="normal" title="21">
-                                <color key="titleColor" name="greenishTeal"/>
-                            </state>
+                            <state key="normal" title="21"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
                                     <real key="value" value="12.5"/>
@@ -229,17 +207,18 @@
                                     <color key="value" name="greenishTeal"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="selectDateEvent:" destination="-1" eventType="touchUpInside" id="0Dc-xw-iQu"/>
+                            </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HKj-y5-6ZD" customClass="CustomButton" customModule="woorischool" customModuleProvider="target">
-                            <rect key="frame" x="185.5" y="8" width="25" height="25"/>
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HKj-y5-6ZD" customClass="CustomButton" customModule="woorischool" customModuleProvider="target">
+                            <rect key="frame" x="154.5" y="8" width="25" height="25"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="25" id="2PA-Bk-CLT"/>
                                 <constraint firstAttribute="height" constant="25" id="QUw-U9-xaH"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
-                            <state key="normal" title="21">
-                                <color key="titleColor" name="greenishTeal"/>
-                            </state>
+                            <state key="normal" title="21"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
                                     <real key="value" value="12.5"/>
@@ -251,17 +230,18 @@
                                     <color key="value" name="greenishTeal"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="selectDateEvent:" destination="-1" eventType="touchUpInside" id="NbW-Sv-RXJ"/>
+                            </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QsM-yN-WlZ" customClass="CustomButton" customModule="woorischool" customModuleProvider="target">
-                            <rect key="frame" x="247" y="8" width="25" height="25"/>
+                        <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QsM-yN-WlZ" customClass="CustomButton" customModule="woorischool" customModuleProvider="target">
+                            <rect key="frame" x="206" y="8" width="25" height="25"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="25" id="9Iu-Ms-4yJ"/>
                                 <constraint firstAttribute="height" constant="25" id="u2T-Zv-Y0N"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
-                            <state key="normal" title="21">
-                                <color key="titleColor" name="greenishTeal"/>
-                            </state>
+                            <state key="normal" title="21"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
                                     <real key="value" value="12.5"/>
@@ -273,17 +253,18 @@
                                     <color key="value" name="greenishTeal"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="selectDateEvent:" destination="-1" eventType="touchUpInside" id="IIe-TW-b5W"/>
+                            </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dsn-Y1-Dym" customClass="CustomButton" customModule="woorischool" customModuleProvider="target">
-                            <rect key="frame" x="309" y="8" width="25" height="25"/>
+                        <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dsn-Y1-Dym" customClass="CustomButton" customModule="woorischool" customModuleProvider="target">
+                            <rect key="frame" x="257.5" y="8" width="25" height="25"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="25" id="9SZ-qV-iwj"/>
                                 <constraint firstAttribute="height" constant="25" id="vDe-zU-ZJg"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
-                            <state key="normal" title="21">
-                                <color key="titleColor" name="greenishTeal"/>
-                            </state>
+                            <state key="normal" title="21"/>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
                                     <real key="value" value="12.5"/>
@@ -295,6 +276,32 @@
                                     <color key="value" name="greenishTeal"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="selectDateEvent:" destination="-1" eventType="touchUpInside" id="BkZ-71-hMF"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kzf-Zr-DVB" customClass="CustomButton" customModule="woorischool" customModuleProvider="target">
+                            <rect key="frame" x="309" y="8" width="25" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="25" id="THT-Gf-5Jr"/>
+                                <constraint firstAttribute="width" constant="25" id="mIx-4g-jyp"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
+                            <state key="normal" title="21"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
+                                    <real key="value" value="12.5"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" name="greenishTeal"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="selectDateEvent:" destination="-1" eventType="touchUpInside" id="XCF-Gd-Nce"/>
+                            </connections>
                         </button>
                     </subviews>
                     <constraints>
@@ -322,7 +329,7 @@
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </tableView>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qit-w4-nHZ" customClass="CustomView" customModule="woorischool" customModuleProvider="target">
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qit-w4-nHZ" customClass="CustomView" customModule="woorischool" customModuleProvider="target">
                             <rect key="frame" x="20" y="49" width="374" height="74"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZXy-3t-RmX" customClass="CustomView" customModule="woorischool" customModuleProvider="target">
@@ -396,6 +403,7 @@
                 <constraint firstItem="cs1-io-wyY" firstAttribute="top" secondItem="a9Q-hV-stV" secondAttribute="bottom" id="1Yl-fW-5ZL"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zAx-5b-HjW" secondAttribute="trailing" id="1bE-Q0-iXw"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wdJ-SN-FYm" secondAttribute="trailing" constant="25" id="4JM-Ip-Tbi"/>
+                <constraint firstItem="wdJ-SN-FYm" firstAttribute="leading" secondItem="bIM-66-uKl" secondAttribute="trailing" constant="10" id="5cQ-eO-gEg"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="KNG-Ec-Cg1" secondAttribute="bottom" id="8RF-bh-ix8"/>
                 <constraint firstItem="yml-12-tBt" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="45" id="9W4-0j-gIY"/>
                 <constraint firstItem="zAx-5b-HjW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="9hS-Ng-aRP"/>
@@ -434,6 +442,11 @@
     </objects>
     <resources>
         <image name="dotRound" width="28" height="28"/>
+        <image name="officalLetterImage" width="335" height="50"/>
+        <image name="profilePlaceHolder" width="60" height="60"/>
+        <image name="registCheckHomeIcon" width="60" height="60"/>
+        <image name="registCompIcon" width="60" height="60"/>
+        <image name="registHomeIcon" width="60" height="60"/>
         <namedColor name="brownGrey">
             <color red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

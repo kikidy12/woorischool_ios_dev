@@ -10,6 +10,21 @@ import UIKit
 
 class RegistedClassMainViewController: UIViewController {
     
+    var type: String = "APPLY"
+    
+    var lectureClassList = [LectureClassData]() {
+        didSet {
+            if lectureClassList.isEmpty {
+                
+            }
+            else {
+                
+            }
+            
+            classTabelView.reloadData()
+        }
+    }
+    
     @IBOutlet weak var headerFirstView: UIView!
     @IBOutlet weak var headerSecondView: UIView!
     @IBOutlet weak var alertLabel: UILabel!
@@ -33,6 +48,8 @@ class RegistedClassMainViewController: UIViewController {
         attributedString.addAttribute(.font, value: UIFont(name: "NotoSansCJKkr-Medium", size: 14.0)!, range: NSRange(location: 0, length: 5))
 
         alertLabel.attributedText = attributedString
+        
+        getLectureClass()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -50,7 +67,7 @@ class RegistedClassMainViewController: UIViewController {
                 btn.setTitleColor(.brownGrey, for: .normal)
                 lineView.backgroundColor = .clear
             }
-            
+            type = "APPLY"
         }
         if sender.superview == headerSecondView {
             if let lineView = headerSecondView.subviews.last {
@@ -62,7 +79,10 @@ class RegistedClassMainViewController: UIViewController {
                 lineView.backgroundColor = .clear
             }
             
+            type = "WAIT"
         }
+        
+        getLectureClass()
     }
 
 }
@@ -70,7 +90,7 @@ class RegistedClassMainViewController: UIViewController {
 extension RegistedClassMainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if let cell = cell as? RegistedClassTableViewCell {
-            cell.initView(indexPath.item % 2 == 0)
+            cell.initView(lectureClassList[indexPath.item], type: type)
         }
         if indexPath.item == (tableView.indexPathsForVisibleRows!.last!).item {
             classTableViewHeightConstraint.constant = tableView.contentSize.height
@@ -78,14 +98,63 @@ extension RegistedClassMainViewController: UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return lectureClassList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "classCell", for: indexPath) as! RegistedClassTableViewCell
         
+        cell.requestClouser = {
+            let vc = ConfirmClassViewController()
+            vc.preVC = self
+            vc.lectureClass = self.lectureClassList[indexPath.item]
+            vc.closeClouser = {
+                self.getLectureClass()
+            }
+            self.showPopupView(vc: vc)
+        }
+        
+        cell.cancelClouser = {
+            AlertHandler.shared.showAlert(vc: self, message: "취소하시겠습니까?", okTitle: "확인", cancelTitle: "닫기", okHandler: { (_) in
+                guard let id = self.lectureClassList[indexPath.item].applyId else { return }
+                self.cancelClass(id: id)
+            })
+        }
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = ClassInfoPopupViewController()
+        vc.lectureClass = lectureClassList[indexPath.item]
+        showPopupView(vc: vc)
+    }
     
+}
+
+extension RegistedClassMainViewController {
+    func getLectureClass() {
+        let parameters = [
+            "status": type
+        ] as [String:Any]
+        ServerUtil.shared.getLectureApply(self, parameters: parameters) { (success, dict, message) in
+            guard success, let array = dict?["lecture_class"] as? NSArray else {
+                return
+            }
+            
+            self.lectureClassList = array.compactMap { LectureClassData($0 as! NSDictionary) }
+        }
+    }
+    
+    func cancelClass(id: Int) {
+        let parameters = [
+            "lecture_apply_id": id
+        ] as [String:Any]
+        ServerUtil.shared.deleteLectureApply(self, parameters: parameters) { (success, dict, message) in
+            guard success else {
+                return
+            }
+            
+            self.getLectureClass()
+        }
+    }
 }

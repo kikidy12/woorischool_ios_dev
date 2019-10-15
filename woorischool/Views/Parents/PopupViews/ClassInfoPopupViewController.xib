@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansCJKkr-Medium.otf">
+            <string>NotoSansCJKkr-Medium</string>
+        </array>
+        <array key="NotoSansCJKkr-Regular.otf">
+            <string>NotoSansCJKkr-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ClassInfoPopupViewController" customModule="woorischool" customModuleProvider="target">
+            <connections>
+                <outlet property="classNameLabel" destination="pHc-ro-WHP" id="Xwd-FE-P4u"/>
+                <outlet property="gradeLabel" destination="fdd-Gx-aKV" id="Zbr-Di-Xu4"/>
+                <outlet property="materialLabel" destination="b7g-UU-N5X" id="t7i-Rm-uUU"/>
+                <outlet property="nameLabel" destination="95q-Wz-gwi" id="ndX-9I-hDd"/>
+                <outlet property="placeLabel" destination="T4n-F0-fGA" id="19P-o6-FaW"/>
+                <outlet property="priceLabel" destination="eE9-25-Cnk" id="tim-8q-eJf"/>
+                <outlet property="teacherNameLabel" destination="ZEJ-KN-XfY" id="Xyp-bq-lHF"/>
+                <outlet property="timeLabel" destination="dJD-Wu-6h3" id="DQb-8S-bH1"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="weekDaysLabel" destination="X3W-xD-rkX" id="ceq-vW-v1h"/>
+                <outlet property="weekLabel" destination="XpM-kO-GBp" id="DRN-X5-Dv8"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mek-VC-00f">
+                    <rect key="frame" x="17" y="243.5" width="380" height="409"/>
+                    <subviews>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="95q-Wz-gwi" customClass="CustomLabel" customModule="woorischool" customModuleProvider="target">
+                            <rect key="frame" x="12" y="20" width="356" height="47"/>
+                            <color key="backgroundColor" name="iceBlue"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="47" id="wmL-MJ-48S"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="19"/>
+                            <color key="textColor" name="softBlue"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
+                                    <real key="value" value="6"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dzG-qG-PMz">
+                            <rect key="frame" x="16" y="67" width="348" height="191"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="0tH-uD-vec">
+                                    <rect key="frame" x="0.0" y="0.0" width="348" height="63"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yfa-HT-1QS">
+                                            <rect key="frame" x="0.0" y="0.0" width="116" height="63"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="요일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SSF-bv-utx">
+                                                    <rect key="frame" x="47.5" y="13" width="21" height="14"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
+                                                    <color key="textColor" name="brownGrey"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수/금" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X3W-xD-rkX">
+                                                    <rect key="frame" x="43.5" y="35.5" width="29" height="16.5"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstItem="X3W-xD-rkX" firstAttribute="centerX" secondItem="Yfa-HT-1QS" secondAttribute="centerX" id="1Ky-vp-3bl"/>
+                                                <constraint firstItem="SSF-bv-utx" firstAttribute="top" secondItem="Yfa-HT-1QS" secondAttribute="top" constant="13" id="7m7-gX-KCm"/>
+                                                <constraint firstItem="SSF-bv-utx" firstAttribute="centerX" secondItem="Yfa-HT-1QS" secondAttribute="centerX" id="lWp-yq-g1x"/>
+                                                <constraint firstAttribute="bottom" secondItem="X3W-xD-rkX" secondAttribute="bottom" constant="11" id="v6J-Px-48I"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v3F-al-Fpc">
+                                            <rect key="frame" x="116" y="0.0" width="116" height="63"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="대상학년" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qBT-H0-lWg">
+                                                    <rect key="frame" x="37" y="13" width="42" height="14"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
+                                                    <color key="textColor" name="brownGrey"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1-2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdd-Gx-aKV">
+                                                    <rect key="frame" x="47.5" y="35.5" width="21.5" height="16.5"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstItem="qBT-H0-lWg" firstAttribute="centerX" secondItem="v3F-al-Fpc" secondAttribute="centerX" id="8GV-3N-dRt"/>
+                                                <constraint firstItem="qBT-H0-lWg" firstAttribute="top" secondItem="v3F-al-Fpc" secondAttribute="top" constant="13" id="E4q-4G-u9Q"/>
+                                                <constraint firstAttribute="bottom" secondItem="fdd-Gx-aKV" secondAttribute="bottom" constant="11" id="hDc-mm-4El"/>
+                                                <constraint firstItem="fdd-Gx-aKV" firstAttribute="centerX" secondItem="v3F-al-Fpc" secondAttribute="centerX" id="tMH-oj-Haf"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Sk-CF-NWb">
+                                            <rect key="frame" x="232" y="0.0" width="116" height="63"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="반" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KHP-nW-nCv">
+                                                    <rect key="frame" x="53" y="13" width="10.5" height="14"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
+                                                    <color key="textColor" name="brownGrey"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHc-ro-WHP">
+                                                    <rect key="frame" x="53.5" y="35.5" width="9.5" height="16.5"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="pHc-ro-WHP" secondAttribute="bottom" constant="11" id="AQ1-H7-jXa"/>
+                                                <constraint firstItem="KHP-nW-nCv" firstAttribute="top" secondItem="9Sk-CF-NWb" secondAttribute="top" constant="13" id="UHZ-lO-UWV"/>
+                                                <constraint firstItem="KHP-nW-nCv" firstAttribute="centerX" secondItem="9Sk-CF-NWb" secondAttribute="centerX" id="m0i-Ft-u6r"/>
+                                                <constraint firstItem="pHc-ro-WHP" firstAttribute="centerX" secondItem="9Sk-CF-NWb" secondAttribute="centerX" id="yW1-rx-eIb"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="63" id="Sj5-Ju-aUe"/>
+                                    </constraints>
+                                </stackView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aSb-oV-Y7V">
+                                    <rect key="frame" x="0.0" y="63" width="348" height="1"/>
+                                    <color key="backgroundColor" name="veryLightPink"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="vJ7-oE-Hma"/>
+                                    </constraints>
+                                </view>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="hPK-xJ-fpW">
+                                    <rect key="frame" x="0.0" y="64" width="348" height="63"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rWk-fn-Urd">
+                                            <rect key="frame" x="0.0" y="0.0" width="116" height="63"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수강료" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q3t-Zu-RQ3">
+                                                    <rect key="frame" x="42.5" y="13" width="31.5" height="14"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
+                                                    <color key="textColor" name="brownGrey"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="74,140" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eE9-25-Cnk">
+                                                    <rect key="frame" x="36.5" y="35.5" width="43" height="16.5"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstItem="eE9-25-Cnk" firstAttribute="centerX" secondItem="rWk-fn-Urd" secondAttribute="centerX" id="LNF-sl-wJb"/>
+                                                <constraint firstItem="q3t-Zu-RQ3" firstAttribute="top" secondItem="rWk-fn-Urd" secondAttribute="top" constant="13" id="Lgh-T6-z1L"/>
+                                                <constraint firstItem="q3t-Zu-RQ3" firstAttribute="centerX" secondItem="rWk-fn-Urd" secondAttribute="centerX" id="SE7-H4-Q5o"/>
+                                                <constraint firstAttribute="bottom" secondItem="eE9-25-Cnk" secondAttribute="bottom" constant="11" id="Vly-jK-OeQ"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kQq-Zk-d93">
+                                            <rect key="frame" x="116" y="0.0" width="116" height="63"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="재료 및 교재비" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJ4-1P-sOT">
+                                                    <rect key="frame" x="23.5" y="13" width="69" height="14"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
+                                                    <color key="textColor" name="brownGrey"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16,000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b7g-UU-N5X">
+                                                    <rect key="frame" x="36.5" y="35.5" width="43" height="16.5"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstItem="b7g-UU-N5X" firstAttribute="centerX" secondItem="kQq-Zk-d93" secondAttribute="centerX" id="In6-y1-8uZ"/>
+                                                <constraint firstItem="iJ4-1P-sOT" firstAttribute="centerX" secondItem="kQq-Zk-d93" secondAttribute="centerX" id="JEr-Wk-Ehb"/>
+                                                <constraint firstItem="iJ4-1P-sOT" firstAttribute="top" secondItem="kQq-Zk-d93" secondAttribute="top" constant="13" id="YNU-nz-0uD"/>
+                                                <constraint firstAttribute="bottom" secondItem="b7g-UU-N5X" secondAttribute="bottom" constant="11" id="ltE-Xo-Cg6"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4RZ-gW-YcG">
+                                            <rect key="frame" x="232" y="0.0" width="116" height="63"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="강사명" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pYY-vU-bx2">
+                                                    <rect key="frame" x="42.5" y="13" width="31.5" height="14"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
+                                                    <color key="textColor" name="brownGrey"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서유리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZEJ-KN-XfY">
+                                                    <rect key="frame" x="40" y="35.5" width="36.5" height="16.5"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstItem="ZEJ-KN-XfY" firstAttribute="centerX" secondItem="4RZ-gW-YcG" secondAttribute="centerX" id="BWn-P7-Ude"/>
+                                                <constraint firstItem="pYY-vU-bx2" firstAttribute="centerX" secondItem="4RZ-gW-YcG" secondAttribute="centerX" id="cml-iR-PKh"/>
+                                                <constraint firstItem="pYY-vU-bx2" firstAttribute="top" secondItem="4RZ-gW-YcG" secondAttribute="top" constant="13" id="hTO-pV-fW1"/>
+                                                <constraint firstAttribute="bottom" secondItem="ZEJ-KN-XfY" secondAttribute="bottom" constant="11" id="pe6-cI-A1r"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="63" id="5wt-sf-TGF"/>
+                                    </constraints>
+                                </stackView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9d7-oo-bi3">
+                                    <rect key="frame" x="0.0" y="127" width="348" height="1"/>
+                                    <color key="backgroundColor" name="veryLightPink"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="qu1-jh-rHB"/>
+                                    </constraints>
+                                </view>
+                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="GMv-9W-egv">
+                                    <rect key="frame" x="0.0" y="128" width="348" height="63"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6mN-h5-2vo">
+                                            <rect key="frame" x="0.0" y="0.0" width="116" height="63"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8zB-2y-SJm">
+                                                    <rect key="frame" x="47.5" y="13" width="21" height="14"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
+                                                    <color key="textColor" name="brownGrey"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="13:00-13:40" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dJD-Wu-6h3">
+                                                    <rect key="frame" x="20" y="35.5" width="76" height="16.5"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstItem="dJD-Wu-6h3" firstAttribute="centerX" secondItem="6mN-h5-2vo" secondAttribute="centerX" id="2t6-AL-XX0"/>
+                                                <constraint firstAttribute="bottom" secondItem="dJD-Wu-6h3" secondAttribute="bottom" constant="11" id="5Ea-I2-vjy"/>
+                                                <constraint firstItem="8zB-2y-SJm" firstAttribute="top" secondItem="6mN-h5-2vo" secondAttribute="top" constant="13" id="CNB-jE-WIK"/>
+                                                <constraint firstItem="8zB-2y-SJm" firstAttribute="centerX" secondItem="6mN-h5-2vo" secondAttribute="centerX" id="Qq4-fS-XMl"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dOb-kM-WNr">
+                                            <rect key="frame" x="116" y="0.0" width="116" height="63"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수업시수" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g4o-QD-Si4">
+                                                    <rect key="frame" x="37" y="13" width="42" height="14"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
+                                                    <color key="textColor" name="brownGrey"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="45분x2회(11주)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XpM-kO-GBp">
+                                                    <rect key="frame" x="13" y="35.5" width="90" height="16.5"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstItem="XpM-kO-GBp" firstAttribute="centerX" secondItem="dOb-kM-WNr" secondAttribute="centerX" id="BON-fk-Bug"/>
+                                                <constraint firstItem="g4o-QD-Si4" firstAttribute="centerX" secondItem="dOb-kM-WNr" secondAttribute="centerX" id="ZkA-Ax-Hlm"/>
+                                                <constraint firstItem="g4o-QD-Si4" firstAttribute="top" secondItem="dOb-kM-WNr" secondAttribute="top" constant="13" id="gff-jR-Tdg"/>
+                                                <constraint firstAttribute="bottom" secondItem="XpM-kO-GBp" secondAttribute="bottom" constant="11" id="rc6-ov-fON"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lFv-xq-9oq">
+                                            <rect key="frame" x="232" y="0.0" width="116" height="63"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수업장소" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lts-2C-4PA">
+                                                    <rect key="frame" x="37" y="13" width="42" height="14"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
+                                                    <color key="textColor" name="brownGrey"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1-8" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T4n-F0-fGA">
+                                                    <rect key="frame" x="47.5" y="35.5" width="21.5" height="16.5"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <constraints>
+                                                <constraint firstItem="Lts-2C-4PA" firstAttribute="top" secondItem="lFv-xq-9oq" secondAttribute="top" constant="13" id="4b7-R9-odC"/>
+                                                <constraint firstAttribute="bottom" secondItem="T4n-F0-fGA" secondAttribute="bottom" constant="11" id="JN0-of-eNj"/>
+                                                <constraint firstItem="Lts-2C-4PA" firstAttribute="centerX" secondItem="lFv-xq-9oq" secondAttribute="centerX" id="Lne-TQ-Ga0"/>
+                                                <constraint firstItem="T4n-F0-fGA" firstAttribute="centerX" secondItem="lFv-xq-9oq" secondAttribute="centerX" id="fTo-JA-BmI"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="63" id="ciY-63-4i2"/>
+                                    </constraints>
+                                </stackView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="0tH-uD-vec" secondAttribute="trailing" id="IO7-lD-3hj"/>
+                                <constraint firstItem="aSb-oV-Y7V" firstAttribute="leading" secondItem="dzG-qG-PMz" secondAttribute="leading" id="sIP-q6-uIv"/>
+                                <constraint firstItem="0tH-uD-vec" firstAttribute="leading" secondItem="dzG-qG-PMz" secondAttribute="leading" id="ujy-2X-S2X"/>
+                                <constraint firstAttribute="trailing" secondItem="aSb-oV-Y7V" secondAttribute="trailing" id="xad-5k-bhg"/>
+                            </constraints>
+                        </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dvG-6p-3C3" customClass="CustomButton" customModule="woorischool" customModuleProvider="target">
+                            <rect key="frame" x="18" y="268" width="344" height="50"/>
+                            <color key="backgroundColor" name="whiteTwo"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="M5W-QA-Sjc"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="16"/>
+                            <inset key="titleEdgeInsets" minX="12" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" title="수업계획서 다운" image="docIcon">
+                                <color key="titleColor" name="greyishBrown"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
+                                    <real key="value" value="6"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" name="veryLightPink"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y6z-Wc-cxn">
+                            <rect key="frame" x="18" y="343" width="344" height="50"/>
+                            <color key="backgroundColor" name="greenishTeal"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="a2P-3n-yxf"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="16"/>
+                            <state key="normal" title="확인">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="closeView" destination="-1" eventType="touchUpInside" id="490-Rs-E6L"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="95q-Wz-gwi" firstAttribute="leading" secondItem="mek-VC-00f" secondAttribute="leading" constant="12" id="2Qo-fL-kmD"/>
+                        <constraint firstItem="dvG-6p-3C3" firstAttribute="leading" secondItem="mek-VC-00f" secondAttribute="leading" constant="18" id="2xF-EN-dJp"/>
+                        <constraint firstAttribute="trailing" secondItem="dzG-qG-PMz" secondAttribute="trailing" constant="16" id="E1S-Ku-dGe"/>
+                        <constraint firstItem="95q-Wz-gwi" firstAttribute="top" secondItem="mek-VC-00f" secondAttribute="top" constant="20" id="JgU-dy-9eE"/>
+                        <constraint firstItem="dzG-qG-PMz" firstAttribute="top" secondItem="95q-Wz-gwi" secondAttribute="bottom" id="Thp-VQ-NhS"/>
+                        <constraint firstAttribute="bottom" secondItem="y6z-Wc-cxn" secondAttribute="bottom" constant="16" id="XTx-pU-mG5"/>
+                        <constraint firstItem="y6z-Wc-cxn" firstAttribute="top" secondItem="dvG-6p-3C3" secondAttribute="bottom" constant="25" id="dED-u7-HwI"/>
+                        <constraint firstAttribute="trailing" secondItem="95q-Wz-gwi" secondAttribute="trailing" constant="12" id="dtx-jN-847"/>
+                        <constraint firstItem="dvG-6p-3C3" firstAttribute="top" secondItem="dzG-qG-PMz" secondAttribute="bottom" constant="10" id="eKs-c7-alF"/>
+                        <constraint firstAttribute="trailing" secondItem="y6z-Wc-cxn" secondAttribute="trailing" constant="18" id="hPC-Pq-cdb"/>
+                        <constraint firstItem="dzG-qG-PMz" firstAttribute="leading" secondItem="mek-VC-00f" secondAttribute="leading" constant="16" id="mIm-Qy-1ak"/>
+                        <constraint firstItem="y6z-Wc-cxn" firstAttribute="leading" secondItem="mek-VC-00f" secondAttribute="leading" constant="18" id="qAE-so-gOS"/>
+                        <constraint firstAttribute="trailing" secondItem="dvG-6p-3C3" secondAttribute="trailing" constant="18" id="sJn-GE-a9o"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" name="black60"/>
+            <constraints>
+                <constraint firstItem="mek-VC-00f" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="G1s-Uu-DqQ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mek-VC-00f" secondAttribute="trailing" constant="17" id="VLI-OZ-uBy"/>
+                <constraint firstItem="mek-VC-00f" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="17" id="wsa-v8-gMW"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="-2128" y="-9"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="docIcon" width="19" height="24"/>
+        <namedColor name="black60">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.60000002384185791" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="brownGrey">
+            <color red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="greenishTeal">
+            <color red="0.17254901960784313" green="0.77647058823529413" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="greyishBrown">
+            <color red="0.29019607843137257" green="0.29019607843137257" blue="0.29019607843137257" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="iceBlue">
+            <color red="0.9137254901960784" green="0.95294117647058818" blue="0.99215686274509807" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="softBlue">
+            <color red="0.38039215686274508" green="0.67843137254901964" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="veryLightPink">
+            <color red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="whiteTwo">
+            <color red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
