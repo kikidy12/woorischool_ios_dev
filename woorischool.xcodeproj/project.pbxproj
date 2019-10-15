@@ -84,6 +84,10 @@
 		99DFB16C2354236600C5B69D /* ConfirmClassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99DFB16A2354236600C5B69D /* ConfirmClassViewController.xib */; };
 		99DFB1772355671500C5B69D /* RegistClassCompleteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DFB1752355671400C5B69D /* RegistClassCompleteListViewController.swift */; };
 		99DFB17923556E7F00C5B69D /* RegistClassCompleteListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99DFB1762355671400C5B69D /* RegistClassCompleteListViewController.xib */; };
+		99DFB1802355808200C5B69D /* ManageChildrenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DFB17E2355808200C5B69D /* ManageChildrenViewController.swift */; };
+		99DFB1812355808200C5B69D /* ManageChildrenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99DFB17F2355808200C5B69D /* ManageChildrenViewController.xib */; };
+		99DFB184235581E300C5B69D /* ChildTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DFB182235581E300C5B69D /* ChildTableViewCell.swift */; };
+		99DFB185235581E300C5B69D /* ChildTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99DFB183235581E300C5B69D /* ChildTableViewCell.xib */; };
 		99F7DC9D23470EA9007C4ABE /* RegistedClassMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F7DC9B23470EA9007C4ABE /* RegistedClassMainViewController.swift */; };
 		99F7DC9E23470EA9007C4ABE /* RegistedClassMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99F7DC9C23470EA9007C4ABE /* RegistedClassMainViewController.xib */; };
 		99F7DCA323471F86007C4ABE /* FillClassPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F7DCA123471F86007C4ABE /* FillClassPopUpViewController.swift */; };
@@ -196,6 +200,10 @@
 		99DFB16A2354236600C5B69D /* ConfirmClassViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConfirmClassViewController.xib; sourceTree = "<group>"; };
 		99DFB1752355671400C5B69D /* RegistClassCompleteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistClassCompleteListViewController.swift; sourceTree = "<group>"; };
 		99DFB1762355671400C5B69D /* RegistClassCompleteListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistClassCompleteListViewController.xib; sourceTree = "<group>"; };
+		99DFB17E2355808200C5B69D /* ManageChildrenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageChildrenViewController.swift; sourceTree = "<group>"; };
+		99DFB17F2355808200C5B69D /* ManageChildrenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ManageChildrenViewController.xib; sourceTree = "<group>"; };
+		99DFB182235581E300C5B69D /* ChildTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildTableViewCell.swift; sourceTree = "<group>"; };
+		99DFB183235581E300C5B69D /* ChildTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChildTableViewCell.xib; sourceTree = "<group>"; };
 		99F7DC9B23470EA9007C4ABE /* RegistedClassMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistedClassMainViewController.swift; sourceTree = "<group>"; };
 		99F7DC9C23470EA9007C4ABE /* RegistedClassMainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistedClassMainViewController.xib; sourceTree = "<group>"; };
 		99F7DCA123471F86007C4ABE /* FillClassPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillClassPopUpViewController.swift; sourceTree = "<group>"; };
@@ -285,6 +293,7 @@
 				9962A4C723470B340027FEB6 /* RegistClassTableViewCell.swift */,
 				99DFB1482350481C00C5B69D /* RegistCompClassTableViewCell.swift */,
 				99DFB1622350628700C5B69D /* TeacherHomeTableViewCell.swift */,
+				99DFB182235581E300C5B69D /* ChildTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -327,6 +336,7 @@
 				99F7DC9C23470EA9007C4ABE /* RegistedClassMainViewController.xib */,
 				99DFB12F234EF83300C5B69D /* RegistChildViewController.xib */,
 				99DFB1762355671400C5B69D /* RegistClassCompleteListViewController.xib */,
+				99DFB17F2355808200C5B69D /* ManageChildrenViewController.xib */,
 			);
 			path = ModalViews;
 			sourceTree = "<group>";
@@ -340,6 +350,7 @@
 				99F7DC9B23470EA9007C4ABE /* RegistedClassMainViewController.swift */,
 				99DFB12E234EF83300C5B69D /* RegistChildViewController.swift */,
 				99DFB1752355671400C5B69D /* RegistClassCompleteListViewController.swift */,
+				99DFB17E2355808200C5B69D /* ManageChildrenViewController.swift */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
@@ -424,6 +435,7 @@
 				9962A4C823470B340027FEB6 /* RegistClassTableViewCell.xib */,
 				99DFB1492350481C00C5B69D /* RegistCompClassTableViewCell.xib */,
 				99DFB1632350628700C5B69D /* TeacherHomeTableViewCell.xib */,
+				99DFB183235581E300C5B69D /* ChildTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -679,7 +691,9 @@
 				9914AA0123431447001C0112 /* NotoSansCJKkr-Regular.otf in Resources */,
 				9914AA2B2345C861001C0112 /* CourseRegistrationViewController.xib in Resources */,
 				99DFB1612350605F00C5B69D /* TeacherHomeViewController.xib in Resources */,
+				99DFB185235581E300C5B69D /* ChildTableViewCell.xib in Resources */,
 				99DFB16C2354236600C5B69D /* ConfirmClassViewController.xib in Resources */,
+				99DFB1812355808200C5B69D /* ManageChildrenViewController.xib in Resources */,
 				9914AA042343174A001C0112 /* NanumSquareRound-Light.otf in Resources */,
 				9914A9FE23431447001C0112 /* NotoSansMonoCJKkr-Regular.otf in Resources */,
 				9962A4C623470B160027FEB6 /* RegistedClassTableViewCell.xib in Resources */,
@@ -809,6 +823,7 @@
 				99DFB133234EFBAB00C5B69D /* GlobalDatas.swift in Sources */,
 				9914AA342346FC4B001C0112 /* ParentsHomeScheduleTableViewCell.swift in Sources */,
 				9914A9D723430B32001C0112 /* ServerUtil.swift in Sources */,
+				99DFB1802355808200C5B69D /* ManageChildrenViewController.swift in Sources */,
 				9914A9DC23430B8F001C0112 /* AlertHandler.swift in Sources */,
 				99DFB1682352BD3B00C5B69D /* LectureAreaData.swift in Sources */,
 				99DFB15623504F1500C5B69D /* TeacherSignUpViewController.swift in Sources */,
@@ -817,6 +832,7 @@
 				99DFB130234EF83300C5B69D /* RegistChildViewController.swift in Sources */,
 				99DFB1642350628700C5B69D /* TeacherHomeTableViewCell.swift in Sources */,
 				99DFB1772355671500C5B69D /* RegistClassCompleteListViewController.swift in Sources */,
+				99DFB184235581E300C5B69D /* ChildTableViewCell.swift in Sources */,
 				9914AA262345C12C001C0112 /* ParentsHomeViewController.swift in Sources */,
 				9914AA2A2345C861001C0112 /* CourseRegistrationViewController.swift in Sources */,
 				9914A9DE23430B99001C0112 /* CustomPageControl.swift in Sources */,

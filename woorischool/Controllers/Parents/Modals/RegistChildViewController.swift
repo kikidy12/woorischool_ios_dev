@@ -10,6 +10,8 @@ import UIKit
 
 class RegistChildViewController: UIViewController {
     
+    var preVC: UIViewController!
+    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var schoolNumberTextField: UITextField!
@@ -77,6 +79,8 @@ extension RegistChildViewController {
             "class_number": classNum,
             "number": number
         ] as [String: Any]
+        
+        print(parameters)
         ServerUtil.shared.postParentStudent(self, parameters: parameters) { (success, dict, message) in
             guard success else {
                 AlertHandler.shared.showAlert(vc: self, message: message ?? "error", okTitle: "확인")

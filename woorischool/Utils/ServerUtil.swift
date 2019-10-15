@@ -75,6 +75,16 @@ class ServerUtil: NSObject {
         apiRequest("phone_auth", method: .post, parameters: parameters, completion: completion)
     }
     
+    func getParentStudent(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("parent_student", method: .get, parameters: parameters, completion: completion)
+    }
+    
+    func deleteParentStudent(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("parent_student", method: .delete, parameters: parameters, completion: completion)
+    }
+    
     func postParentStudent(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
         currentVc = vc
         apiRequest("parent_student", method: .post, parameters: parameters, completion: completion)

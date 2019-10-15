@@ -102,6 +102,11 @@ class ParentsHomeViewController: UIViewController {
         dateStackViewSetting()
     }
     
+    @IBAction func showChidrenEvent() {
+        let vc = ManageChildrenViewController()
+        self.show(vc, sender: nil)
+    }
+    
     func setUserInfo() {
         let user = GlobalDatas.currentUser
         

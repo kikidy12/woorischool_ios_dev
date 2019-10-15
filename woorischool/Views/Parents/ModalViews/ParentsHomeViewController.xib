@@ -72,6 +72,9 @@
                             <real key="value" value="1"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="showChidrenEvent" destination="-1" eventType="touchUpInside" id="cXQ-bW-8tt"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yml-12-tBt">
                     <rect key="frame" x="45" y="184" width="60" height="60"/>
