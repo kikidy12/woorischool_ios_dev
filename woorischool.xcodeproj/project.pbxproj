@@ -158,7 +158,7 @@
 		9962A4C423470B160027FEB6 /* RegistedClassTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistedClassTableViewCell.xib; sourceTree = "<group>"; };
 		9962A4C723470B340027FEB6 /* RegistClassTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistClassTableViewCell.swift; sourceTree = "<group>"; };
 		9962A4C823470B340027FEB6 /* RegistClassTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistClassTableViewCell.xib; sourceTree = "<group>"; };
-		9968CF2823418F3200B8D095 /* woorischool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = woorischool.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9968CF2823418F3200B8D095 /* 우리스쿨.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "우리스쿨.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9968CF2B23418F3200B8D095 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9968CF2D23418F3200B8D095 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9968CF3023418F3200B8D095 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -456,7 +456,7 @@
 		9968CF2923418F3200B8D095 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9968CF2823418F3200B8D095 /* woorischool.app */,
+				9968CF2823418F3200B8D095 /* 우리스쿨.app */,
 				9968CF3F23418F3500B8D095 /* woorischoolTests.xctest */,
 				9968CF4A23418F3500B8D095 /* woorischoolUITests.xctest */,
 			);
@@ -579,7 +579,7 @@
 			);
 			name = woorischool;
 			productName = woorischool;
-			productReference = 9968CF2823418F3200B8D095 /* woorischool.app */;
+			productReference = 9968CF2823418F3200B8D095 /* 우리스쿨.app */;
 			productType = "com.apple.product-type.application";
 		};
 		9968CF3E23418F3500B8D095 /* woorischoolTests */ = {
@@ -1036,17 +1036,19 @@
 				CODE_SIGN_ENTITLEMENTS = woorischool/woorischool.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 4TNGT36HA9;
 				INFOPLIST_FILE = woorischool/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.beanfactory.woorischool;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "우리스쿨";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1058,17 +1060,19 @@
 				CODE_SIGN_ENTITLEMENTS = woorischool/woorischool.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 4TNGT36HA9;
 				INFOPLIST_FILE = woorischool/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.beanfactory.woorischool;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "우리스쿨";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

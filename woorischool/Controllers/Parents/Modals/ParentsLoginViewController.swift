@@ -53,8 +53,12 @@ extension ParentsLoginViewController {
             "type": "PARENTS"
         ] as[String: Any]
         
+        print(parameters)
         ServerUtil.shared.postAuth(self, parameters: parameters) { (success, dict, message) in
-            guard success, let user = dict?["user"] as? NSDictionary, let token = dict?["token"] as? String else { return }
+            guard success, let user = dict?["user"] as? NSDictionary, let token = dict?["token"] as? String else {
+                AlertHandler.shared.showAlert(vc: self, message: message ?? "Server Error", okTitle: "확인")
+                return
+            }
             
             GlobalDatas.currentUser = UserData(user)
             

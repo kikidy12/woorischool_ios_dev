@@ -19,11 +19,13 @@ class SelectUserTypeViewController: UIViewController {
     }
     
     @IBAction func showStudentLoginViewEvent() {
-        showLoginView(type: .student)
+        showToast(message: "준비중인 기능입니다.", font: .systemFont(ofSize: 15))
+//        showLoginView(type: .student)
     }
     
     @IBAction func showTeacherLoginViewEvent() {
-        showLoginView(type: .teacher)
+        showToast(message: "준비중인 기능입니다.", font: .systemFont(ofSize: 15))
+//        showLoginView(type: .teacher)
     }
     
     func showLoginView(type: UserType) {
@@ -46,6 +48,7 @@ class SelectUserTypeViewController: UIViewController {
         let navi = UINavigationController(rootViewController: vc)
         navi.navigationBar.tintColor = .black
         navi.navigationBar.barTintColor = .white
+        navi.modalPresentationStyle = .fullScreen
         navi.navigationBar.shadowImage = UIImage()
         self.present(navi, animated: true, completion: nil)
     }

@@ -83,6 +83,7 @@ class ParentsHomeViewController: UIViewController {
         let myBtn = UIBarButtonItem(image: UIImage(named: "myIcon"), style: .plain, target: self, action: #selector(showSettingEvent))
         
         navigationItem.rightBarButtonItems = [alarmBtn, myBtn]
+        navigationItem.leftBarButtonItem = UIBarButtonItem()
     }
     
     @objc func showAlarmEvent() {

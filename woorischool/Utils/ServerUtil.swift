@@ -19,7 +19,7 @@ class ServerUtil: NSObject {
     
     fileprivate let liveServer:String = ""
     
-    fileprivate let devServer:String = "http://52.78.148.252/"
+    fileprivate let devServer:String = "http://ec2-52-78-148-252.ap-northeast-2.compute.amazonaws.com/"
     
     fileprivate let localServer:String = ""
     
