@@ -14,6 +14,10 @@ class SelectUserTypeViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     @IBAction func showParentsLoginViewEvent() {
         showLoginView(type: .parents)
     }
@@ -48,8 +52,7 @@ class SelectUserTypeViewController: UIViewController {
         let navi = UINavigationController(rootViewController: vc)
         navi.navigationBar.tintColor = .black
         navi.navigationBar.barTintColor = .white
-        navi.modalPresentationStyle = .fullScreen
         navi.navigationBar.shadowImage = UIImage()
-        self.present(navi, animated: true, completion: nil)
+        UIApplication.shared.keyWindow?.rootViewController = navi
     }
 }
