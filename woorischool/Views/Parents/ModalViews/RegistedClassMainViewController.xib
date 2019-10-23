@@ -19,7 +19,9 @@
                 <outlet property="alertLabel" destination="crJ-uX-sca" id="pCh-NN-ZMZ"/>
                 <outlet property="classTabelView" destination="8QG-yu-PEd" id="dQx-OM-R1y"/>
                 <outlet property="classTableViewHeightConstraint" destination="ril-9q-mBn" id="VlU-wO-tsz"/>
+                <outlet property="headerFirstBtn" destination="35T-qr-WD2" id="MKQ-oQ-wM5"/>
                 <outlet property="headerFirstView" destination="7ZU-WB-X2p" id="qdt-u1-nHK"/>
+                <outlet property="headerSecondBtn" destination="z9q-Al-M7r" id="GGt-YG-k0E"/>
                 <outlet property="headerSecondView" destination="wRp-kE-Rdh" id="kLn-6w-Lqa"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>

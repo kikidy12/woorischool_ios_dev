@@ -26,7 +26,9 @@ class RegistedClassMainViewController: UIViewController {
     }
     
     @IBOutlet weak var headerFirstView: UIView!
+    @IBOutlet weak var headerFirstBtn: UIButton!
     @IBOutlet weak var headerSecondView: UIView!
+    @IBOutlet weak var headerSecondBtn: UIButton!
     @IBOutlet weak var alertLabel: UILabel!
     
     @IBOutlet weak var classTabelView: UITableView!
@@ -48,16 +50,22 @@ class RegistedClassMainViewController: UIViewController {
         attributedString.addAttribute(.font, value: UIFont(name: "NotoSansCJKkr-Medium", size: 14.0)!, range: NSRange(location: 0, length: 5))
 
         alertLabel.attributedText = attributedString
-        
-        getLectureClass()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         title = "신청현황"
     }
-
-
-    @IBAction func selectHeader(_ sender: UIButton) {
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if type == "APPLY" {
+            setHeaderViews(headerFirstBtn)
+        }
+        else {
+            setHeaderViews(headerSecondBtn)
+        }
+    }
+    
+    func setHeaderViews(_ sender: UIButton) {
         if sender.superview == headerFirstView {
             if let lineView = headerFirstView.subviews.last {
                 sender.setTitleColor(.greyishBrown, for: .normal)
@@ -83,6 +91,11 @@ class RegistedClassMainViewController: UIViewController {
         }
         
         getLectureClass()
+    }
+
+
+    @IBAction func selectHeader(_ sender: UIButton) {
+        setHeaderViews(sender)
     }
 
 }

@@ -36,6 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
     }
     
+    
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
         print("FCM token: \(messaging.fcmToken ?? "")")
         GlobalDatas.deviceToken = messaging.fcmToken ?? ""
@@ -48,7 +49,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         print("APNs device token: \(deviceTokenString)")
         Messaging.messaging().apnsToken = deviceToken
     }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
 
+        print(userInfo)
+        guard let type = userInfo["type"] as? String else  {
+            return
+        }
+        
+        if type == "wait_push" {
+            if let navi = window?.rootViewController as? UINavigationController {
+//                navi.popToRootViewController(animated: false)
+//                let vc = RegistedClassMainViewController()
+//                vc.type = "WAIT"
+//                navi.show(vc, sender: nil)
+            }
+            else {
+                let navi = UINavigationController(rootViewController: ParentsHomeViewController())
+                navi.navigationBar.tintColor = .black
+                navi.navigationBar.barTintColor = .white
+                navi.navigationBar.shadowImage = UIImage()
+                UIApplication.shared.keyWindow?.rootViewController = navi
+                let vc = RegistedClassMainViewController()
+                vc.type = "WAIT"
+                navi.show(vc, sender: nil)
+            }
+        }
+    }
+    
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

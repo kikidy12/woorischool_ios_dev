@@ -1116,7 +1116,7 @@
 				CODE_SIGN_ENTITLEMENTS = woorischool/woorischool.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 4TNGT36HA9;
 				INFOPLIST_FILE = woorischool/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1140,7 +1140,7 @@
 				CODE_SIGN_ENTITLEMENTS = woorischool/woorischool.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = 4TNGT36HA9;
 				INFOPLIST_FILE = woorischool/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
