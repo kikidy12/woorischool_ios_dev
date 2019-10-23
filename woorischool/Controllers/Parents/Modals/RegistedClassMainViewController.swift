@@ -93,7 +93,7 @@ extension RegistedClassMainViewController: UITableViewDelegate, UITableViewDataS
             cell.initView(lectureClassList[indexPath.item], type: type)
         }
         if indexPath.item == (tableView.indexPathsForVisibleRows!.last!).item {
-            classTableViewHeightConstraint.constant = tableView.contentSize.height
+            classTableViewHeightConstraint.constant = cell.frame.height * CGFloat(lectureClassList.count)
         }
     }
     

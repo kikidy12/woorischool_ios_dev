@@ -142,7 +142,7 @@ extension CourseRegistrationViewController: UITableViewDelegate, UITableViewData
             cell.initView(filterLectureList[indexPath.item])
         }
         if indexPath.item == (tableView.indexPathsForVisibleRows!.last!).item {
-            chooseableCorseTableViewHeightConstraint.constant = tableView.contentSize.height
+            chooseableCorseTableViewHeightConstraint.constant = cell.frame.height * CGFloat(filterLectureList.count)
         }
     }
     
