@@ -28,23 +28,23 @@ class SplashViewController: UIViewController {
         print(UserDefs.lastUserType)
         print(UserDefs.hasChildren)
         if UserDefs.userToken != "" {
-            UIApplication.shared.keyWindow?.rootViewController = SelectUserTypeViewController()
-//            if UserDefs.lastUserType == UserType.parents.rawValue, UserDefs.hasChildren {
-//                let navi = UINavigationController(rootViewController: ParentsHomeViewController())
-//                navi.navigationBar.tintColor = .black
-//                navi.navigationBar.barTintColor = .white
-//                navi.navigationBar.shadowImage = UIImage()
-//                UIApplication.shared.keyWindow?.rootViewController = navi
-//            }
-//            else if UserDefs.lastUserType == UserType.teacher.rawValue {
-//
-//            }
-//            else if UserDefs.lastUserType == UserType.student.rawValue {
-//
-//            }
-//            else {
-//                UIApplication.shared.keyWindow?.rootViewController = SelectUserTypeViewController()
-//            }
+//            UIApplication.shared.keyWindow?.rootViewController = SelectUserTypeViewController()
+            if UserDefs.lastUserType == UserType.parents.rawValue, UserDefs.hasChildren {
+                let navi = UINavigationController(rootViewController: ParentsHomeViewController())
+                navi.navigationBar.tintColor = .black
+                navi.navigationBar.barTintColor = .white
+                navi.navigationBar.shadowImage = UIImage()
+                UIApplication.shared.keyWindow?.rootViewController = navi
+            }
+            else if UserDefs.lastUserType == UserType.teacher.rawValue {
+
+            }
+            else if UserDefs.lastUserType == UserType.student.rawValue {
+
+            }
+            else {
+                UIApplication.shared.keyWindow?.rootViewController = SelectUserTypeViewController()
+            }
             
         }
         else {
