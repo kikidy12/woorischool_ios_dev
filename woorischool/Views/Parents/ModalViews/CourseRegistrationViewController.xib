@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,7 +17,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CourseRegistrationViewController" customModule="woorischool" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CourseRegistrationViewController" customModule="우리스쿨" customModuleProvider="target">
             <connections>
                 <outlet property="chooseableCorseTableView" destination="HL7-gM-MgT" id="MOh-eZ-qGZ"/>
                 <outlet property="chooseableCorseTableViewHeightConstraint" destination="M1s-Yn-veb" id="NYE-fo-2Tg"/>
@@ -92,7 +92,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hil-AY-Tnb">
                                     <rect key="frame" x="0.0" y="57" width="414" height="642.5"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SL4-0m-Obw" customClass="CustomView" customModule="woorischool" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SL4-0m-Obw" customClass="CustomView" customModule="우리스쿨" customModuleProvider="target">
                                             <rect key="frame" x="20" y="15" width="374" height="45"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="강좌명으로 검색" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gtw-wP-gDa">
@@ -215,7 +215,7 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="rha-Cy-U67">
                                     <rect key="frame" x="40" y="232" width="334" height="40"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ZX-8N-7tf" customClass="CustomButton" customModule="woorischool" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ZX-8N-7tf" customClass="CustomButton" customModule="우리스쿨" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="2ZX-8N-7tf" secondAttribute="height" multiplier="1:1" id="eAy-1T-vTo"/>
@@ -239,7 +239,7 @@
                                                 <action selector="selectDay:" destination="-1" eventType="touchUpInside" id="2zA-zW-bXC"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ix-fU-Hlg" customClass="CustomButton" customModule="woorischool" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1ix-fU-Hlg" customClass="CustomButton" customModule="우리스쿨" customModuleProvider="target">
                                             <rect key="frame" x="59" y="0.0" width="40" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="1ix-fU-Hlg" secondAttribute="height" multiplier="1:1" id="pLJ-kp-zVg"/>
@@ -263,7 +263,7 @@
                                                 <action selector="selectDay:" destination="-1" eventType="touchUpInside" id="4PF-9u-CwL"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H2p-wD-lIU" customClass="CustomButton" customModule="woorischool" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H2p-wD-lIU" customClass="CustomButton" customModule="우리스쿨" customModuleProvider="target">
                                             <rect key="frame" x="117.5" y="0.0" width="40" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="H2p-wD-lIU" secondAttribute="height" multiplier="1:1" id="yHf-hh-Lpa"/>
@@ -287,7 +287,7 @@
                                                 <action selector="selectDay:" destination="-1" eventType="touchUpInside" id="t5Y-pU-4NU"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PPP-Z1-9fB" customClass="CustomButton" customModule="woorischool" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PPP-Z1-9fB" customClass="CustomButton" customModule="우리스쿨" customModuleProvider="target">
                                             <rect key="frame" x="176.5" y="0.0" width="40" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="PPP-Z1-9fB" secondAttribute="height" multiplier="1:1" id="T5m-Mu-Wgf"/>
@@ -311,7 +311,7 @@
                                                 <action selector="selectDay:" destination="-1" eventType="touchUpInside" id="IYW-8j-Bnc"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbP-eG-O7C" customClass="CustomButton" customModule="woorischool" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qbP-eG-O7C" customClass="CustomButton" customModule="우리스쿨" customModuleProvider="target">
                                             <rect key="frame" x="235" y="0.0" width="40" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="qbP-eG-O7C" secondAttribute="height" multiplier="1:1" id="gKg-LS-Xub"/>
@@ -335,7 +335,7 @@
                                                 <action selector="selectDay:" destination="-1" eventType="touchUpInside" id="ixw-ZE-MAD"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezO-CY-xLu" customClass="CustomButton" customModule="woorischool" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezO-CY-xLu" customClass="CustomButton" customModule="우리스쿨" customModuleProvider="target">
                                             <rect key="frame" x="294" y="0.0" width="40" height="40"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="ezO-CY-xLu" secondAttribute="height" multiplier="1:1" id="XoW-ax-yQM"/>
@@ -372,7 +372,7 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Aki-T7-19V">
                                     <rect key="frame" x="15" y="312" width="384" height="44"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXz-Ve-qL1" customClass="CustomButton" customModule="woorischool" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SXz-Ve-qL1" customClass="CustomButton" customModule="우리스쿨" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="187" height="44"/>
                                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="16"/>
                                             <state key="normal" title="취소">
@@ -393,7 +393,7 @@
                                                 <action selector="hideFilterView" destination="-1" eventType="touchUpInside" id="fGX-ra-j45"/>
                                             </connections>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oRT-ET-5fO" customClass="CustomButton" customModule="woorischool" customModuleProvider="target">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oRT-ET-5fO" customClass="CustomButton" customModule="우리스쿨" customModuleProvider="target">
                                             <rect key="frame" x="197" y="0.0" width="187" height="44"/>
                                             <color key="backgroundColor" name="greenishTeal"/>
                                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="16"/>

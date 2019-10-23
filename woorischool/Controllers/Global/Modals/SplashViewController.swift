@@ -31,10 +31,14 @@ class SplashViewController: UIViewController {
                 self.present(navi, animated: true, completion: nil)
             }
             else if UserDefs.lastUserType == UserType.teacher.rawValue {
-
+                let vc = SelectUserTypeViewController()
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true, completion: nil)
             }
             else if UserDefs.lastUserType == UserType.student.rawValue {
-
+                let vc = SelectUserTypeViewController()
+                vc.modalPresentationStyle = .fullScreen
+                self.present(vc, animated: true, completion: nil)
             }
             else {
                 let vc = SelectUserTypeViewController()

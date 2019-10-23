@@ -19,8 +19,8 @@ class SelectUserTypeViewController: UIViewController {
     }
     
     @IBAction func showStudentLoginViewEvent() {
-        showToast(message: "준비중인 기능입니다.", font: .systemFont(ofSize: 15))
-//        showLoginView(type: .student)
+//        showToast(message: "준비중인 기능입니다.", font: .systemFont(ofSize: 15))
+        showLoginView(type: .student)
     }
     
     @IBAction func showTeacherLoginViewEvent() {
@@ -32,7 +32,7 @@ class SelectUserTypeViewController: UIViewController {
         var vc: UIViewController!
         switch type {
         case .student:
-            vc = ParentsLoginViewController()
+            vc = StudentMainViewController()
             vc.title = " "
             break
         case .parents:
