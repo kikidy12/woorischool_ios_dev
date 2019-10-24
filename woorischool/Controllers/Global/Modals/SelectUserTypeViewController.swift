@@ -48,11 +48,7 @@ class SelectUserTypeViewController: UIViewController {
             vc.title = " "
             break
         }
-        
-        let navi = UINavigationController(rootViewController: vc)
-        navi.navigationBar.tintColor = .black
-        navi.navigationBar.barTintColor = .white
-        navi.navigationBar.shadowImage = UIImage()
-        UIApplication.shared.keyWindow?.rootViewController = navi
+        vc.title = " "
+        show(vc, sender: nil)
     }
 }

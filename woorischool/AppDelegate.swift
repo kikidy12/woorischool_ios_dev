@@ -28,6 +28,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         window!.makeKeyAndVisible()
         window?.rootViewController = SplashViewController()
+        
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        UNUserNotificationCenter.current().removeAllDeliveredNotifications()
         return true
     }
     
@@ -58,22 +61,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         if type == "wait_push" {
-            if let navi = window?.rootViewController as? UINavigationController {
-//                navi.popToRootViewController(animated: false)
-//                let vc = RegistedClassMainViewController()
-//                vc.type = "WAIT"
-//                navi.show(vc, sender: nil)
-            }
-            else {
-                let navi = UINavigationController(rootViewController: ParentsHomeViewController())
-                navi.navigationBar.tintColor = .black
-                navi.navigationBar.barTintColor = .white
-                navi.navigationBar.shadowImage = UIImage()
-                UIApplication.shared.keyWindow?.rootViewController = navi
+            notiTypeWaitPush()
+        }
+        
+        UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        UNUserNotificationCenter.current().removeAllDeliveredNotifications()
+    }
+    
+    func notiTypeWaitPush() {
+        
+        guard UserDefs.userToken != "" else {
+            return
+        }
+        
+        let state = UIApplication.shared.applicationState
+        
+        if let navi = window?.rootViewController as? UINavigationController {
+            if state == .background || state == .inactive {
+                navi.popToRootViewController(animated: false)
                 let vc = RegistedClassMainViewController()
                 vc.type = "WAIT"
                 navi.show(vc, sender: nil)
+            } else if state == .active {
+                // foreground
             }
+        }
+        else {
+            let navi = UINavigationController(rootViewController: ParentsHomeViewController())
+            navi.navigationBar.tintColor = .black
+            navi.navigationBar.barTintColor = .white
+            navi.navigationBar.shadowImage = UIImage()
+            UIApplication.shared.keyWindow?.rootViewController = navi
+            let vc = RegistedClassMainViewController()
+            vc.type = "WAIT"
+            navi.show(vc, sender: nil)
         }
     }
     
