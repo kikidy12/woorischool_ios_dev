@@ -105,6 +105,8 @@ extension UIViewController {
         toastView.addSubview(label)
         self.view.addSubview(toastView)
         
+    
+        
         UIView.animate(withDuration: 2.0, delay: 0.1, options: .curveEaseIn, animations: {
              toastView.alpha = 0.0
         }, completion: {(isCompleted) in
