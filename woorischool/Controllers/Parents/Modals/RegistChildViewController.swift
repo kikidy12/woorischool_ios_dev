@@ -30,7 +30,20 @@ class RegistChildViewController: UIViewController {
     }
     
     @IBAction func addChildEvent() {
-        registChild()
+//        registChild()
+        
+        if UIApplication.shared.keyWindow?.rootViewController == self {
+            print("login")
+            let navi = UINavigationController(rootViewController: ParentsHomeViewController())
+            navi.navigationBar.tintColor = .black
+            navi.navigationBar.barTintColor = .white
+            navi.navigationBar.shadowImage = UIImage()
+            UIApplication.shared.keyWindow?.rootViewController = navi
+        }
+        else {
+            print("main")
+            self.navigationController?.popViewController(animated: true)
+        }
     }
 }
 
@@ -87,13 +100,23 @@ extension RegistChildViewController {
                 return
             }
             UserDefs.setHasChildren(true)
-            if self.navigationController!.viewControllers.contains(where: {$0 is ParentsLoginViewController}) {
-                let vc = ParentsHomeViewController()
-                self.show(vc, sender: nil)
+            if self.navigationController == nil {
+                let navi = UINavigationController(rootViewController: ParentsHomeViewController())
+                navi.navigationBar.tintColor = .black
+                navi.navigationBar.barTintColor = .white
+                navi.navigationBar.shadowImage = UIImage()
+                UIApplication.shared.keyWindow?.rootViewController = navi
             }
             else {
                 self.navigationController?.popViewController(animated: true)
             }
+//            if self.navigationController!.viewControllers.contains(where: {$0 is ParentsLoginViewController}) {
+//                let vc = ParentsHomeViewController()
+//                self.show(vc, sender: nil)
+//            }
+//            else {
+//                self.navigationController?.popViewController(animated: true)
+//            }
         }
     }
 }

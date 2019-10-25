@@ -45,6 +45,12 @@
 		9914AA302345CEFC001C0112 /* CourseCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9914AA2E2345CEFC001C0112 /* CourseCollectionViewCell.xib */; };
 		9914AA342346FC4B001C0112 /* ParentsHomeScheduleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9914AA322346FC4B001C0112 /* ParentsHomeScheduleTableViewCell.swift */; };
 		9914AA352346FC4B001C0112 /* ParentsHomeScheduleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9914AA332346FC4B001C0112 /* ParentsHomeScheduleTableViewCell.xib */; };
+		9915B60F236307A400ACE9B6 /* TeacherPhoneAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9915B60D236307A400ACE9B6 /* TeacherPhoneAuthViewController.swift */; };
+		9915B610236307A400ACE9B6 /* TeacherPhoneAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9915B60E236307A400ACE9B6 /* TeacherPhoneAuthViewController.xib */; };
+		9915B61323631F4700ACE9B6 /* TeacherMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9915B61123631F4700ACE9B6 /* TeacherMainViewController.swift */; };
+		9915B61423631F4700ACE9B6 /* TeacherMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9915B61223631F4700ACE9B6 /* TeacherMainViewController.xib */; };
+		9915B61723633A1400ACE9B6 /* MainTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9915B61623633A1400ACE9B6 /* MainTitleView.swift */; };
+		9915B61923633A4800ACE9B6 /* MainTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9915B61823633A4800ACE9B6 /* MainTitleView.xib */; };
 		994A6B22235ECA530088D46E /* ParentsHomeMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994A6B20235ECA530088D46E /* ParentsHomeMainViewController.swift */; };
 		994A6B23235ECA530088D46E /* ParentsHomeMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 994A6B21235ECA530088D46E /* ParentsHomeMainViewController.xib */; };
 		994A6B2B235ECB910088D46E /* StudentMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994A6B29235ECB910088D46E /* StudentMainViewController.swift */; };
@@ -166,6 +172,12 @@
 		9914AA2E2345CEFC001C0112 /* CourseCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CourseCollectionViewCell.xib; sourceTree = "<group>"; };
 		9914AA322346FC4B001C0112 /* ParentsHomeScheduleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentsHomeScheduleTableViewCell.swift; sourceTree = "<group>"; };
 		9914AA332346FC4B001C0112 /* ParentsHomeScheduleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParentsHomeScheduleTableViewCell.xib; sourceTree = "<group>"; };
+		9915B60D236307A400ACE9B6 /* TeacherPhoneAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherPhoneAuthViewController.swift; sourceTree = "<group>"; };
+		9915B60E236307A400ACE9B6 /* TeacherPhoneAuthViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeacherPhoneAuthViewController.xib; sourceTree = "<group>"; };
+		9915B61123631F4700ACE9B6 /* TeacherMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherMainViewController.swift; sourceTree = "<group>"; };
+		9915B61223631F4700ACE9B6 /* TeacherMainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeacherMainViewController.xib; sourceTree = "<group>"; };
+		9915B61623633A1400ACE9B6 /* MainTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTitleView.swift; sourceTree = "<group>"; };
+		9915B61823633A4800ACE9B6 /* MainTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainTitleView.xib; sourceTree = "<group>"; };
 		994A6B20235ECA530088D46E /* ParentsHomeMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentsHomeMainViewController.swift; sourceTree = "<group>"; };
 		994A6B21235ECA530088D46E /* ParentsHomeMainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParentsHomeMainViewController.xib; sourceTree = "<group>"; };
 		994A6B29235ECB910088D46E /* StudentMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentMainViewController.swift; sourceTree = "<group>"; };
@@ -469,6 +481,15 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		9915B615236339F000ACE9B6 /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				9915B61623633A1400ACE9B6 /* MainTitleView.swift */,
+				9915B61823633A4800ACE9B6 /* MainTitleView.xib */,
+			);
+			path = CustomView;
+			sourceTree = "<group>";
+		};
 		994A6B24235ECAED0088D46E /* Students */ = {
 			isa = PBXGroup;
 			children = (
@@ -536,6 +557,7 @@
 			children = (
 				99DFB166235220D000C5B69D /* woorischool.entitlements */,
 				99DFB134234EFD5400C5B69D /* GoogleService-Info.plist */,
+				9915B615236339F000ACE9B6 /* CustomView */,
 				9914A9E823430E3C001C0112 /* Fonts */,
 				9914A9CD23430945001C0112 /* Utils */,
 				9914A9CC23430939001C0112 /* Datas */,
@@ -590,7 +612,9 @@
 			isa = PBXGroup;
 			children = (
 				99DFB15123504D6000C5B69D /* TeacherLoginViewController.xib */,
+				9915B60E236307A400ACE9B6 /* TeacherPhoneAuthViewController.xib */,
 				99DFB15523504F1500C5B69D /* TeacherSignUpViewController.xib */,
+				9915B61223631F4700ACE9B6 /* TeacherMainViewController.xib */,
 				99DFB15F2350605F00C5B69D /* TeacherHomeViewController.xib */,
 			);
 			path = ModalViews;
@@ -600,7 +624,9 @@
 			isa = PBXGroup;
 			children = (
 				99DFB15023504D6000C5B69D /* TeacherLoginViewController.swift */,
+				9915B60D236307A400ACE9B6 /* TeacherPhoneAuthViewController.swift */,
 				99DFB15423504F1500C5B69D /* TeacherSignUpViewController.swift */,
+				9915B61123631F4700ACE9B6 /* TeacherMainViewController.swift */,
 				99DFB15E2350605F00C5B69D /* TeacherHomeViewController.swift */,
 			);
 			path = Modals;
@@ -743,7 +769,9 @@
 				994A6B34235ED5C10088D46E /* StudentBoardListViewController.xib in Resources */,
 				994A6B23235ECA530088D46E /* ParentsHomeMainViewController.xib in Resources */,
 				9914AA0623431780001C0112 /* NanumSquareRound-Regular.otf in Resources */,
+				9915B61423631F4700ACE9B6 /* TeacherMainViewController.xib in Resources */,
 				9914AA352346FC4B001C0112 /* ParentsHomeScheduleTableViewCell.xib in Resources */,
+				9915B610236307A400ACE9B6 /* TeacherPhoneAuthViewController.xib in Resources */,
 				9914A9FC23431447001C0112 /* NotoSansCJKkr-Black.otf in Resources */,
 				99F7DC9E23470EA9007C4ABE /* RegistedClassMainViewController.xib in Resources */,
 				99F7DCA423471F86007C4ABE /* FillClassPopUpViewController.xib in Resources */,
@@ -770,6 +798,7 @@
 				9962A4C623470B160027FEB6 /* RegistedClassTableViewCell.xib in Resources */,
 				9914A9FF23431447001C0112 /* NotoSansCJKkr-Bold.otf in Resources */,
 				9914AA272345C12C001C0112 /* ParentsHomeViewController.xib in Resources */,
+				9915B61923633A4800ACE9B6 /* MainTitleView.xib in Resources */,
 				994A6B30235ED5770088D46E /* StudentHomeViewController.xib in Resources */,
 				9968CF3123418F3200B8D095 /* Main.storyboard in Resources */,
 				994A6B3C235ED6030088D46E /* StudentMyInfoViewController.xib in Resources */,
@@ -919,6 +948,7 @@
 				9962A4C523470B160027FEB6 /* RegistedClassTableViewCell.swift in Sources */,
 				99DFB1592350575F00C5B69D /* LectureData.swift in Sources */,
 				9914AA0D23431B00001C0112 /* SelectUserTypeViewController.swift in Sources */,
+				9915B61323631F4700ACE9B6 /* TeacherMainViewController.swift in Sources */,
 				9968CF2E23418F3200B8D095 /* ViewController.swift in Sources */,
 				994A6B22235ECA530088D46E /* ParentsHomeMainViewController.swift in Sources */,
 				9968CF2C23418F3200B8D095 /* AppDelegate.swift in Sources */,
@@ -929,12 +959,14 @@
 				99DFB1602350605F00C5B69D /* TeacherHomeViewController.swift in Sources */,
 				9914AA2F2345CEFC001C0112 /* CourseCollectionViewCell.swift in Sources */,
 				99DFB137234F035400C5B69D /* StudentInfoData.swift in Sources */,
+				9915B60F236307A400ACE9B6 /* TeacherPhoneAuthViewController.swift in Sources */,
 				9914A9D523430AC6001C0112 /* CustomViews.swift in Sources */,
 				9914A9D1234309BB001C0112 /* Extensions+Obejcts.swift in Sources */,
 				99DFB15D2350579100C5B69D /* LectureClassDayData.swift in Sources */,
 				9914A9DA23430B8C001C0112 /* UserDefs.swift in Sources */,
 				994A6B37235ED5ED0088D46E /* StudentChattingRoomListViewController.swift in Sources */,
 				9968CF3423418F3200B8D095 /* woorischool.xcdatamodeld in Sources */,
+				9915B61723633A1400ACE9B6 /* MainTitleView.swift in Sources */,
 				9914A9D323430A57001C0112 /* EnumObjects.swift in Sources */,
 				99F7DCA323471F86007C4ABE /* FillClassPopUpViewController.swift in Sources */,
 				994A6B33235ED5C10088D46E /* StudentBoardListViewController.swift in Sources */,

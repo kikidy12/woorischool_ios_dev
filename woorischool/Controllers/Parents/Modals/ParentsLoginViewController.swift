@@ -67,13 +67,16 @@ extension ParentsLoginViewController {
             
             if GlobalDatas.currentUser.childlen == nil {
                 UserDefs.setHasChildren(false)
-                let vc = RegistChildViewController()
-                self.show(vc, sender: nil)
+                UIApplication.shared.keyWindow?.rootViewController = RegistChildViewController()
             }
             else {
                 UserDefs.setHasChildren(true)
-                let vc = ParentsHomeViewController()
-                self.show(vc, sender: nil)
+                let navi = UINavigationController(rootViewController: ParentsHomeViewController())
+                navi.navigationBar.tintColor = .black
+                navi.navigationBar.barTintColor = .white
+                navi.navigationBar.shadowImage = UIImage()
+                UIApplication.shared.keyWindow?.rootViewController = navi
+                
             }
         }
     }

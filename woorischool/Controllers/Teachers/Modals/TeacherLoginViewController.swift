@@ -9,6 +9,9 @@
 import UIKit
 
 class TeacherLoginViewController: UIViewController {
+    
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,16 +22,42 @@ class TeacherLoginViewController: UIViewController {
     }
     
     @IBAction func loginEvent() {
-        let navi = UINavigationController(rootViewController: TeacherHomeViewController())
-        navi.navigationBar.tintColor = .black
-        navi.navigationBar.barTintColor = .white
-        navi.navigationBar.shadowImage = UIImage()
-        self.present(navi, animated: true, completion: nil)
+        login()
     }
     
     @IBAction func signUpEvnent() {
-        let vc = TeacherSignUpViewController()
-        self.showPopupView(vc: vc)
+        show(TeacherPhoneAuthViewController(), sender: nil)
     }
 
+}
+
+
+extension TeacherLoginViewController {
+    func login() {
+        guard let email = emailTextField.text, !email.isEmpty, let password = passwordTextField.text, !password.isEmpty else {
+            return
+        }
+        
+        let parameters = [
+            "email": email,
+            "password": password,
+            "type": "TEACHER"
+        ] as [String: Any]
+        
+        ServerUtil.shared.postAuth(self, parameters: parameters) { (success, dict, message) in
+            guard success, let token = dict?["token"] as? String else {
+                AlertHandler.shared.showAlert(vc: self, message: message ?? "Server Error", okTitle: "확인")
+                return
+            }
+            
+            UserDefs.setLastUserType(type: "TEACHER")
+            UserDefs.setUserToken(token: token)
+            
+            let navi = UINavigationController(rootViewController: TeacherMainViewController())
+            navi.navigationBar.tintColor = .black
+            navi.navigationBar.barTintColor = .white
+            navi.navigationBar.shadowImage = UIImage()
+            UIApplication.shared.keyWindow?.rootViewController = navi
+        }
+    }
 }

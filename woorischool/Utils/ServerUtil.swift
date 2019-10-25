@@ -60,6 +60,8 @@ class ServerUtil: NSObject {
         progressLabel.font = .systemFont(ofSize: 20, weight: .medium)
     }
     
+    //parents
+    
     func getMeInfo(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
         currentVc = vc
         apiRequest("me_info", method: .get, parameters: parameters, completion: completion)
@@ -133,6 +135,33 @@ class ServerUtil: NSObject {
     func patchLectureApply(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
         currentVc = vc
         apiRequest("lecture_apply", method: .patch, parameters: parameters, completion: completion)
+    }
+    
+    //teacher
+    
+    func putAuth(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("auth", method: .put, parameters: parameters, completion: completion)
+    }
+    
+    func postPhoneAuthNumCheck(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("phone_auth_num_check", method: .post, parameters: parameters, completion: completion)
+    }
+    
+    func postTeacherEmailCheck(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("teacher_email_check", method: .post, parameters: parameters, completion: completion)
+    }
+    
+    func postTeacherPhoneAuth(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("teacher_phone_auth", method: .post, parameters: parameters, completion: completion)
+    }
+    
+    func postStudentList(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("student_list", method: .post, parameters: parameters, completion: completion)
     }
     
     //upload
