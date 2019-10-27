@@ -66,7 +66,9 @@ extension TeacherHomeViewController: UITableViewDelegate, UITableViewDataSource 
             self.navigationController?.showToast(message: "준비중인 기능입니다.", font: .systemFont(ofSize: 15))
         }
         cell.classStudentClouser = {
-            
+            let vc = TeacherStudentListViewController()
+            vc.lectureClass = self.classList[indexPath.item]
+            self.show(vc, sender: nil)
         }
         cell.classAttendClouser = {
             self.navigationController?.showToast(message: "준비중인 기능입니다.", font: .systemFont(ofSize: 15))

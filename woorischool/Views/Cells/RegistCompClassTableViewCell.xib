@@ -27,7 +27,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OXb-hn-SPt" customClass="CustomView" customModule="우리스쿨" customModuleProvider="target">
-                        <rect key="frame" x="0.0" y="0.0" width="434" height="181"/>
+                        <rect key="frame" x="0.0" y="0.0" width="434" height="200"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="courseIcon1" translatesAutoresizingMaskIntoConstraints="NO" id="UG6-JJ-Y4p">
                                 <rect key="frame" x="16" y="9" width="32" height="32"/>
@@ -62,19 +62,19 @@
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="69n-Ul-QEo">
-                                <rect key="frame" x="0.0" y="61" width="434" height="100"/>
+                                <rect key="frame" x="0.0" y="61" width="434" height="119"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xbC-kK-Zpg">
-                                        <rect key="frame" x="0.0" y="0.0" width="144" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="144" height="119"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="강사명" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bhL-Th-pYX">
-                                                <rect key="frame" x="0.0" y="0.0" width="144" height="79.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="144" height="98.5"/>
                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="13"/>
                                                 <color key="textColor" name="brownGrey"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ux6-lf-TMj">
-                                                <rect key="frame" x="0.0" y="84.5" width="144" height="15.5"/>
+                                                <rect key="frame" x="0.0" y="103.5" width="144" height="15.5"/>
                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="13"/>
                                                 <color key="textColor" name="greyishBrown"/>
                                                 <nil key="highlightedColor"/>
@@ -92,17 +92,17 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TEH-Ta-c65">
-                                        <rect key="frame" x="144" y="0.0" width="1" height="100"/>
+                                        <rect key="frame" x="144" y="0.0" width="1" height="119"/>
                                         <color key="backgroundColor" name="veryLightPink"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="1" id="LEb-fu-XF5"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HFS-ck-62g">
-                                        <rect key="frame" x="145" y="0.0" width="144" height="100"/>
+                                        <rect key="frame" x="145" y="0.0" width="144" height="119"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="13:00-13:40" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EkK-Mv-acj">
-                                                <rect key="frame" x="0.0" y="20.5" width="144" height="79.5"/>
+                                                <rect key="frame" x="0.0" y="20.5" width="144" height="98.5"/>
                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="13"/>
                                                 <color key="textColor" name="greyishBrown"/>
                                                 <nil key="highlightedColor"/>
@@ -126,14 +126,14 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sgr-qz-jGR">
-                                        <rect key="frame" x="289" y="0.0" width="1" height="100"/>
+                                        <rect key="frame" x="289" y="0.0" width="1" height="119"/>
                                         <color key="backgroundColor" name="veryLightPink"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="1" id="deB-Gw-QGP"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yeY-9l-NKy">
-                                        <rect key="frame" x="290" y="0.0" width="144" height="100"/>
+                                        <rect key="frame" x="290" y="0.0" width="144" height="119"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수강료" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W6q-VH-P9S">
                                                 <rect key="frame" x="0.0" y="0.0" width="144" height="15.5"/>
@@ -142,7 +142,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xJu-KW-T3b">
-                                                <rect key="frame" x="0.0" y="20.5" width="144" height="79.5"/>
+                                                <rect key="frame" x="0.0" y="20.5" width="144" height="98.5"/>
                                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="13"/>
                                                 <color key="textColor" name="greyishBrown"/>
                                                 <nil key="highlightedColor"/>

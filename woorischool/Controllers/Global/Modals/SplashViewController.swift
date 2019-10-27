@@ -22,11 +22,12 @@ class SplashViewController: UIViewController {
           }
         }
     }
-
     
     override func viewDidAppear(_ animated: Bool) {
         print(UserDefs.lastUserType)
         print(UserDefs.hasChildren)
+        
+        
         if UserDefs.userToken != "" {
 //            let navi = UINavigationController(rootViewController: SelectUserTypeViewController())
 //            navi.navigationBar.tintColor = .black

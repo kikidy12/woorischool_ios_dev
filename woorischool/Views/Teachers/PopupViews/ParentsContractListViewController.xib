@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansCJKkr-Medium.otf">
+            <string>NotoSansCJKkr-Medium</string>
+        </array>
+        <array key="NotoSansCJKkr-Regular.otf">
+            <string>NotoSansCJKkr-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ParentsContractListViewController" customModule="우리스쿨" customModuleProvider="target">
+            <connections>
+                <outlet property="parentsCountLabel" destination="27E-EP-2hd" id="jeN-Oi-XZ8"/>
+                <outlet property="parentsTableView" destination="Iie-eR-Loi" id="zgU-Ru-gqd"/>
+                <outlet property="parentsTableViewHeightConstrant" destination="Tkt-6p-mPf" id="iJu-F3-AHM"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NzY-46-7Xo">
+                    <rect key="frame" x="30" y="304.5" width="354" height="287.5"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2건의 학부모 연락처가 있습니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27E-EP-2hd">
+                            <rect key="frame" x="30" y="20" width="294" height="17.5"/>
+                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="15"/>
+                            <color key="textColor" name="greyishBrown"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Iie-eR-Loi">
+                            <rect key="frame" x="20" y="57.5" width="314" height="150"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="150" id="Tkt-6p-mPf"/>
+                            </constraints>
+                            <color key="separatorColor" name="veryLightPinkTwo"/>
+                            <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="chn-62-Mc2"/>
+                                <outlet property="delegate" destination="-1" id="0L0-Bc-11L"/>
+                            </connections>
+                        </tableView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CSp-qH-LaQ" customClass="CustomButton" customModule="우리스쿨" customModuleProvider="target">
+                            <rect key="frame" x="15" y="232.5" width="324" height="40"/>
+                            <color key="backgroundColor" name="greenishTeal"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="Bdz-dP-134"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="16"/>
+                            <state key="normal" title="확인">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="closeView" destination="-1" eventType="touchUpInside" id="kLL-yh-d7P"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="27E-EP-2hd" secondAttribute="trailing" constant="30" id="41C-qw-eut"/>
+                        <constraint firstAttribute="bottom" secondItem="CSp-qH-LaQ" secondAttribute="bottom" constant="15" id="50Z-yR-id5"/>
+                        <constraint firstItem="27E-EP-2hd" firstAttribute="leading" secondItem="NzY-46-7Xo" secondAttribute="leading" constant="30" id="6ht-WB-xmv"/>
+                        <constraint firstItem="27E-EP-2hd" firstAttribute="top" secondItem="NzY-46-7Xo" secondAttribute="top" constant="20" id="NSc-O1-2ub"/>
+                        <constraint firstItem="Iie-eR-Loi" firstAttribute="top" secondItem="27E-EP-2hd" secondAttribute="bottom" constant="20" id="Q2g-WV-eaF"/>
+                        <constraint firstItem="Iie-eR-Loi" firstAttribute="leading" secondItem="NzY-46-7Xo" secondAttribute="leading" constant="20" id="Us3-oB-bif"/>
+                        <constraint firstAttribute="trailing" secondItem="Iie-eR-Loi" secondAttribute="trailing" constant="20" id="ZD7-AC-5AV"/>
+                        <constraint firstItem="CSp-qH-LaQ" firstAttribute="leading" secondItem="NzY-46-7Xo" secondAttribute="leading" constant="15" id="g8h-nV-7SG"/>
+                        <constraint firstAttribute="trailing" secondItem="CSp-qH-LaQ" secondAttribute="trailing" constant="15" id="sdh-B5-V7f"/>
+                        <constraint firstItem="CSp-qH-LaQ" firstAttribute="top" secondItem="Iie-eR-Loi" secondAttribute="bottom" constant="25" id="t8t-o1-XPW"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" name="black60"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NzY-46-7Xo" secondAttribute="trailing" constant="30" id="3LI-mD-gyn"/>
+                <constraint firstItem="NzY-46-7Xo" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="5YK-Nb-q7m"/>
+                <constraint firstItem="NzY-46-7Xo" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="SDX-Tx-qOg"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="47.544642857142854"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="black60">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.60000002384185791" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="greenishTeal">
+            <color red="0.17254901960784313" green="0.77647058823529413" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="greyishBrown">
+            <color red="0.29019607843137257" green="0.29019607843137257" blue="0.29019607843137257" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="veryLightPinkTwo">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.81960784313725488" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
