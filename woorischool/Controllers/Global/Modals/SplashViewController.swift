@@ -35,7 +35,7 @@ class SplashViewController: UIViewController {
 //            navi.navigationBar.shadowImage = UIImage()
 //            UIApplication.shared.keyWindow?.rootViewController = navi
             if UserDefs.lastUserType == UserType.parents.rawValue, UserDefs.hasChildren {
-                let navi = UINavigationController(rootViewController: ParentsHomeViewController())
+                let navi = UINavigationController(rootViewController: ParentsMainViewController())
                 navi.navigationBar.tintColor = .black
                 navi.navigationBar.barTintColor = .white
                 navi.navigationBar.shadowImage = UIImage()

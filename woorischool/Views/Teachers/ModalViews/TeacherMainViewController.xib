@@ -38,7 +38,7 @@
                     </constraints>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="pq0-vt-0T3">
-                    <rect key="frame" x="0.0" y="812" width="414" height="50"/>
+                    <rect key="frame" x="25" y="812" width="364" height="50"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xZL-T8-Nko" userLabel="homeTab">
                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
@@ -82,7 +82,7 @@
                             </connections>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kll-P4-tVx" userLabel="boardTab">
-                            <rect key="frame" x="121.5" y="0.0" width="50" height="50"/>
+                            <rect key="frame" x="104.5" y="0.0" width="50" height="50"/>
                             <subviews>
                                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iET-ge-F4D">
                                     <rect key="frame" x="0.0" y="0.0" width="50" height="2"/>
@@ -123,7 +123,7 @@
                             </connections>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V4W-In-iPk" userLabel="talkTab">
-                            <rect key="frame" x="242.5" y="0.0" width="50" height="50"/>
+                            <rect key="frame" x="209.5" y="0.0" width="50" height="50"/>
                             <subviews>
                                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w88-Yv-Xs7">
                                     <rect key="frame" x="0.0" y="0.0" width="50" height="2"/>
@@ -164,7 +164,7 @@
                             </connections>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ul9-2w-LFz" userLabel="myTab">
-                            <rect key="frame" x="364" y="0.0" width="50" height="50"/>
+                            <rect key="frame" x="314" y="0.0" width="50" height="50"/>
                             <subviews>
                                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RWp-rT-X4t">
                                     <rect key="frame" x="0.0" y="0.0" width="50" height="2"/>
@@ -212,7 +212,7 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="pq0-vt-0T3" secondAttribute="trailing" id="15i-l9-jz2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="pq0-vt-0T3" secondAttribute="trailing" constant="25" id="15i-l9-jz2"/>
                 <constraint firstAttribute="trailing" secondItem="5ul-M8-LMu" secondAttribute="trailing" id="952-2c-Xhw"/>
                 <constraint firstItem="pq0-vt-0T3" firstAttribute="top" secondItem="5ul-M8-LMu" secondAttribute="bottom" constant="-1.5" id="EKP-1g-K78"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="pq0-vt-0T3" secondAttribute="bottom" id="GAK-MB-UsG"/>
@@ -220,7 +220,7 @@
                 <constraint firstItem="5ul-M8-LMu" firstAttribute="top" secondItem="4la-Jz-QnH" secondAttribute="bottom" id="XMq-Ub-zh9"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4la-Jz-QnH" secondAttribute="trailing" id="c1Y-tl-SDQ"/>
                 <constraint firstItem="4la-Jz-QnH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="maH-7h-jJ5"/>
-                <constraint firstItem="pq0-vt-0T3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="poo-oK-uhL"/>
+                <constraint firstItem="pq0-vt-0T3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="poo-oK-uhL"/>
                 <constraint firstItem="4la-Jz-QnH" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="vxo-dz-rDw"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

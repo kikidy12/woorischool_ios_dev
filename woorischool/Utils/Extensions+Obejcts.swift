@@ -18,10 +18,19 @@ extension DateFormatter {
     }
     
     func stringToDate(_ str: String) -> Date? {
-        self.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        self.dateFormat = "yyyy-MM-dd"
         return self.date(from: str)
     }
     
+    func dateToString(_ date: Date) -> String {
+        self.dateFormat = "yyyy-MM-dd"
+        return self.string(from: date)
+    }
+    
+    func stringToDateTime(_ str: String) -> Date? {
+        self.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        return self.date(from: str)
+    }
     
 }
 
@@ -30,6 +39,32 @@ extension Date {
         let gregorian = Calendar(identifier: .gregorian)
         guard let sunday = gregorian.date(from: gregorian.dateComponents([.yearForWeekOfYear, .weekOfYear], from: self)) else { return nil }
         return gregorian.date(byAdding: .day, value: 1, to: sunday)
+    }
+    
+    func dayStringOfWeek() -> String {
+        let weekday = Calendar.current.dateComponents([.weekday], from: self).weekday
+        
+        if weekday == 1 {
+            return "일"
+        }
+        else if weekday == 2 {
+            return "월"
+        }
+        else if weekday == 3 {
+            return "화"
+        }
+        else if weekday == 4 {
+            return "수"
+        }
+        else if weekday == 5 {
+            return "목"
+        }
+        else if weekday == 6 {
+            return "금"
+        }
+        else {
+            return "토"
+        }
     }
 }
 

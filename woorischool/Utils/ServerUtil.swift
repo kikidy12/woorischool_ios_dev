@@ -7,11 +7,8 @@
 //
 
 import UIKit
-
-
-import UIKit
 import Alamofire
-//import Lottie
+import Lottie
 
 class ServerUtil: NSObject {
     
@@ -42,20 +39,21 @@ class ServerUtil: NSObject {
     fileprivate var currentVc: UIViewController!
     
     override init() {
-//        let lottie = AnimationView()
-//        let ani = Animation.named("loading")!
+        let lottie = AnimationView()
+        let ani = Animation.named("loading")!
         
-//        lottie.animation = ani
-//        lottie.frame = .init(x: 0, y: 0, width: 150, height: 150)
-//        lottie.sizeToFit()
-//        lottie.loopMode = .loop
-//        lottie.contentMode = .scaleAspectFill
+        lottie.animation = ani
+        lottie.frame = .init(x: 0, y: 0, width: 150, height: 150)
+        lottie.sizeToFit()
+        lottie.loopMode = .loop
+        lottie.contentMode = .scaleAspectFill
         serverAddress = devServer
-        loadingView.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.376177226)
+//        loadingView.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.376177226)
+        loadingView.backgroundColor = .clear
         loadingView.frame = UIScreen.main.bounds
-//        lottie.center = loadingView.center
-//        loadingView.addSubview(lottie)
-//        lottie.play()
+        lottie.center = loadingView.center
+        loadingView.addSubview(lottie)
+        lottie.play()
         progressLabel.numberOfLines = 1
         progressLabel.font = .systemFont(ofSize: 20, weight: .medium)
     }

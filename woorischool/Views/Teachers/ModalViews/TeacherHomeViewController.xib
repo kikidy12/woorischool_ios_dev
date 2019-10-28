@@ -96,16 +96,16 @@
                     <rect key="frame" x="0.0" y="185" width="414" height="677"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="juB-fM-3Q8">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="560"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="570"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="담당 강좌 총 2개" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ki6-lp-lQk">
-                                    <rect key="frame" x="20" y="20" width="112" height="20"/>
+                                    <rect key="frame" x="20" y="30" width="112" height="20"/>
                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="17"/>
                                     <color key="textColor" name="greyishBrown"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sP7-oj-uhg">
-                                    <rect key="frame" x="20" y="60" width="374" height="500"/>
+                                    <rect key="frame" x="20" y="70" width="374" height="500"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="500" id="hYD-9j-xqH"/>
@@ -115,7 +115,7 @@
                             </subviews>
                             <color key="backgroundColor" name="paleGrey"/>
                             <constraints>
-                                <constraint firstItem="Ki6-lp-lQk" firstAttribute="top" secondItem="juB-fM-3Q8" secondAttribute="top" constant="20" id="3ps-a4-Mog"/>
+                                <constraint firstItem="Ki6-lp-lQk" firstAttribute="top" secondItem="juB-fM-3Q8" secondAttribute="top" constant="30" id="0kx-oe-H5I"/>
                                 <constraint firstItem="sP7-oj-uhg" firstAttribute="top" secondItem="Ki6-lp-lQk" secondAttribute="bottom" constant="20" id="AdW-8B-074"/>
                                 <constraint firstAttribute="bottom" secondItem="sP7-oj-uhg" secondAttribute="bottom" id="KTg-Bw-Ozt"/>
                                 <constraint firstAttribute="trailing" secondItem="sP7-oj-uhg" secondAttribute="trailing" constant="20" id="Vla-HN-dvH"/>

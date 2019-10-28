@@ -1,14 +1,14 @@
 //
-//  ParentsHomeMainViewController.swift
+//  TeacherStudentAttendViewController.swift
 //  woorischool
 //
-//  Created by 권성민 on 2019/10/22.
+//  Created by 권성민 on 2019/10/28.
 //  Copyright © 2019 beanfactory. All rights reserved.
 //
 
 import UIKit
 
-class ParentsHomeMainViewController: UIViewController {
+class TeacherStudentAttendViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

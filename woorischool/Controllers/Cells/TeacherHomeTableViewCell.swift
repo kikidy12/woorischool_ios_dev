@@ -53,6 +53,12 @@ class TeacherHomeTableViewCell: UITableViewCell {
     func initView(_ data: LectureClassData) {
         lectureClass = data
         classNameAndStuCountLabel.text = "\(lectureClass.lecture?.name ?? "") \(lectureClass.name ?? "") (\(0))"
+        
+        guard !lectureClass.dayList.isEmpty else {
+            return
+        }
+        weekDaysLabel.text = lectureClass.daysStr
+        eduTimeLabel.text = lectureClass.dayList.first?.eduTime
     }
     
 }
