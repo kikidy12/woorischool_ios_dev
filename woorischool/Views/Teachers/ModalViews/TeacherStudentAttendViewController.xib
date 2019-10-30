@@ -19,6 +19,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TeacherStudentAttendViewController" customModule="우리스쿨" customModuleProvider="target">
             <connections>
+                <outlet property="studentTableView" destination="ixG-OS-XQc" id="AO7-EV-acT"/>
+                <outlet property="studentTableViewHeightConstraint" destination="xWk-cX-35r" id="VkT-25-XXO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -27,8 +29,8 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JNZ-dE-HJg">
-                    <rect key="frame" x="0.0" y="74" width="414" height="788"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JNZ-dE-HJg">
+                    <rect key="frame" x="0.0" y="275" width="414" height="587"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DrO-Zl-Wrm">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="417.5"/>
@@ -105,6 +107,10 @@
                                     </constraints>
                                     <color key="separatorColor" name="veryLightPinkTwo"/>
                                     <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <connections>
+                                        <outlet property="dataSource" destination="-1" id="i78-bj-I0F"/>
+                                        <outlet property="delegate" destination="-1" id="6Jm-zW-nqi"/>
+                                    </connections>
                                 </tableView>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -135,7 +141,7 @@
                     <viewLayoutGuide key="frameLayoutGuide" id="ekQ-L7-7x4"/>
                 </scrollView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="51E-FS-es1" customClass="CustomView" customModule="우리스쿨" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="44" width="414" height="30"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="231"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="강의 시간" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NRn-ZH-BkI">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
@@ -146,13 +152,107 @@
                             <color key="textColor" name="greyishBrown"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cco-W1-h6U" customClass="CustomLabel" customModule="우리스쿨" customModuleProvider="target">
+                            <rect key="frame" x="15" y="50" width="384" height="60"/>
+                            <color key="backgroundColor" name="ice"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="bYF-fC-IPI"/>
+                            </constraints>
+                            <string key="text">출결 저장 시 출결 상태가 학부모님께 전달되며
+저장 후에도 변경 가능합니다</string>
+                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="14"/>
+                            <color key="textColor" name="greenishTeal"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
+                                    <real key="value" value="6"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="ksi-z9-J7d">
+                            <rect key="frame" x="60" y="133" width="294" height="70"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Zq-hl-VVR" customClass="CustomButton" customModule="우리스쿨" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="70" id="LY1-HI-8d4"/>
+                                        <constraint firstAttribute="height" constant="70" id="tOD-xB-os8"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="15"/>
+                                    <state key="normal" title="수업시작">
+                                        <color key="titleColor" name="veryLightPink"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
+                                            <real key="value" value="35"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" name="veryLightPink"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JR2-Xj-9dD" customClass="CustomButton" customModule="우리스쿨" customModuleProvider="target">
+                                    <rect key="frame" x="112" y="0.0" width="70" height="70"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="70" id="R8V-rW-8Ah"/>
+                                        <constraint firstAttribute="height" constant="70" id="fwy-9m-Tnb"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="15"/>
+                                    <state key="normal" title="교시완료">
+                                        <color key="titleColor" name="veryLightPink"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
+                                            <real key="value" value="35"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" name="veryLightPink"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oGS-1F-Sjr" customClass="CustomButton" customModule="우리스쿨" customModuleProvider="target">
+                                    <rect key="frame" x="224" y="0.0" width="70" height="70"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="70" id="g0R-8z-9Ek"/>
+                                        <constraint firstAttribute="height" constant="70" id="xRg-KJ-quc"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="15"/>
+                                    <state key="normal" title="수업완료">
+                                        <color key="titleColor" name="veryLightPink"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
+                                            <real key="value" value="35"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" name="veryLightPink"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                        </stackView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
+                        <constraint firstItem="cco-W1-h6U" firstAttribute="leading" secondItem="51E-FS-es1" secondAttribute="leading" constant="15" id="4rY-I9-3U2"/>
                         <constraint firstItem="NRn-ZH-BkI" firstAttribute="leading" secondItem="51E-FS-es1" secondAttribute="leading" id="7Bl-ys-Wzn"/>
+                        <constraint firstItem="ksi-z9-J7d" firstAttribute="top" secondItem="cco-W1-h6U" secondAttribute="bottom" constant="23" id="7ek-DP-Nfe"/>
+                        <constraint firstItem="cco-W1-h6U" firstAttribute="top" secondItem="NRn-ZH-BkI" secondAttribute="bottom" constant="20" id="RVG-Pe-mPx"/>
                         <constraint firstItem="NRn-ZH-BkI" firstAttribute="top" secondItem="51E-FS-es1" secondAttribute="top" id="ZDM-Wk-Fsf"/>
+                        <constraint firstAttribute="trailing" secondItem="ksi-z9-J7d" secondAttribute="trailing" constant="60" id="by2-pV-zfr"/>
+                        <constraint firstAttribute="bottom" secondItem="ksi-z9-J7d" secondAttribute="bottom" constant="28" id="eup-3P-OgV"/>
+                        <constraint firstItem="ksi-z9-J7d" firstAttribute="leading" secondItem="51E-FS-es1" secondAttribute="leading" constant="60" id="hXQ-uJ-1lm"/>
+                        <constraint firstAttribute="trailing" secondItem="cco-W1-h6U" secondAttribute="trailing" constant="15" id="hhK-ab-3o9"/>
                         <constraint firstAttribute="trailing" secondItem="NRn-ZH-BkI" secondAttribute="trailing" id="vJA-sQ-chV"/>
-                        <constraint firstAttribute="bottom" secondItem="NRn-ZH-BkI" secondAttribute="bottom" id="w3F-at-0z2"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
@@ -162,7 +262,7 @@
                             <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                            <real key="value" value="0.29999999999999999"/>
+                            <real key="value" value="0.070000000000000007"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
                             <size key="value" width="0.0" height="2"/>
@@ -185,11 +285,20 @@
         </view>
     </objects>
     <resources>
+        <namedColor name="greenishTeal">
+            <color red="0.17254901960784313" green="0.77647058823529413" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="greyishBrown">
             <color red="0.29019607843137257" green="0.29019607843137257" blue="0.29019607843137257" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="ice">
+            <color red="0.89411764705882357" green="0.97254901960784312" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="paleGrey">
             <color red="0.96078431372549022" green="0.96078431372549022" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="veryLightPink">
+            <color red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="veryLightPinkTwo">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.81960784313725488" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

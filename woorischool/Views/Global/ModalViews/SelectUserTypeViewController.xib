@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,7 +17,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectUserTypeViewController" customModule="woorischool" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SelectUserTypeViewController" customModule="우리스쿨" customModuleProvider="target">
             <connections>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -30,7 +28,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="저는" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySg-wk-oOF">
-                    <rect key="frame" x="89" y="436.5" width="38.5" height="23.5"/>
+                    <rect key="frame" x="91" y="436" width="36.5" height="24.5"/>
                     <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="21"/>
                     <color key="textColor" name="greyishBrown"/>
                     <nil key="highlightedColor"/>
@@ -38,7 +36,7 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="22" translatesAutoresizingMaskIntoConstraints="NO" id="y9P-H9-4my">
                     <rect key="frame" x="168.5" y="310.5" width="77" height="275"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gF6-UC-0LH" customClass="CustomButton" customModule="woorischool" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gF6-UC-0LH" customClass="CustomButton" customModule="우리스쿨" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="77" height="77"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="77" id="YNv-pi-QsI"/>
@@ -63,7 +61,7 @@
                                 <action selector="showStudentLoginViewEvent" destination="-1" eventType="touchUpInside" id="aCg-V0-B2q"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zF5-VQ-tfo" customClass="CustomButton" customModule="woorischool" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zF5-VQ-tfo" customClass="CustomButton" customModule="우리스쿨" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="99" width="77" height="77"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="77" id="Laf-uO-seF"/>
@@ -88,7 +86,7 @@
                                 <action selector="showParentsLoginViewEvent" destination="-1" eventType="touchUpInside" id="88O-vO-aAt"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0B-Z0-EaB" customClass="CustomButton" customModule="woorischool" customModuleProvider="target">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0B-Z0-EaB" customClass="CustomButton" customModule="우리스쿨" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="198" width="77" height="77"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="77" id="8fC-PQ-fD2"/>
@@ -116,7 +114,7 @@
                     </subviews>
                 </stackView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="입니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Msi-Jf-fPG">
-                    <rect key="frame" x="282.5" y="436.5" width="57.5" height="23.5"/>
+                    <rect key="frame" x="282.5" y="436" width="54.5" height="24.5"/>
                     <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="21"/>
                     <color key="textColor" name="greyishBrown"/>
                     <nil key="highlightedColor"/>
@@ -132,6 +130,7 @@
                 <constraint firstItem="y9P-H9-4my" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="mM3-qE-vpJ"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="94"/>
         </view>
     </objects>
     <resources>

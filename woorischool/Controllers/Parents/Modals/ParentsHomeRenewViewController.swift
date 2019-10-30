@@ -8,10 +8,51 @@
 
 import UIKit
 
+class TestData: NSObject {
+    var id: Int!
+    var start: Int!
+    var end: Int!
+    
+    override init() {
+        
+    }
+    
+    init(id: Int, start: Int, end: Int) {
+        self.id = id
+        self.start = start
+        self.end = end
+    }
+}
+
 class ParentsHomeRenewViewController: UIViewController {
     
     var selectMonthDateIndex: IndexPath?
     var lastDate: Date = Date()
+    
+    var mondayData: [TestData] = [TestData(id: 0, start: 1, end: 2), TestData(id: 1, start: 3, end: 4), TestData(id: 2, start: 7, end: 8)]
+    
+    var sortMondayData = [[TestData:Int]]()
+    
+    var tuesdayData: [TestData] = [TestData(id: 0, start: 2, end: 2), TestData(id: 1, start: 4, end: 5), TestData(id: 2, start: 8, end: 9)]
+    
+    var sortTuesdayData = [[TestData:Int]]()
+    
+    var wendsdayData: [TestData] = [TestData(id: 0, start: 1, end: 2), TestData(id: 1, start: 3, end: 4), TestData(id: 2, start: 7, end: 8)]
+    
+    var sortWendsdayData = [[TestData:Int]]()
+    
+    var thursdayData: [TestData] = [TestData(id: 0, start: 2, end: 2), TestData(id: 1, start: 4, end: 5), TestData(id: 2, start: 8, end: 9)]
+    
+    var sortThursdayData = [[TestData:Int]]()
+    
+    var fridayData: [TestData] = [TestData(id: 0, start: 1, end: 2), TestData(id: 1, start: 3, end: 4), TestData(id: 2, start: 7, end: 8)]
+    
+    var sortFridayData = [[TestData:Int]]()
+    
+    var saturdayData: [TestData] = [TestData(id: 0, start: 2, end: 2), TestData(id: 1, start: 4, end: 5), TestData(id: 2, start: 8, end: 9)]
+    
+    var sortSaturdayData = [[TestData:Int]]()
+    
     
     var classDayList = [LectureClassDayData]() {
         didSet {
@@ -52,7 +93,7 @@ class ParentsHomeRenewViewController: UIViewController {
             }
             monthDatesCollectionView.reloadData()
             monthDatesCollectionView.performBatchUpdates(nil) { (result) in
-                self.monthDatesCollectionView.scrollToItem(at: self.selectMonthDateIndex!, at: .centeredHorizontally, animated: true)
+                self.monthDatesCollectionView.scrollToItem(at: self.selectMonthDateIndex!, at: .centeredHorizontally, animated: false)
                 self.getInfo(dateStr: DateFormatter().dateToString(self.monthDateList[selectIndex]))
             }
         }
@@ -68,6 +109,13 @@ class ParentsHomeRenewViewController: UIViewController {
     
     @IBOutlet weak var monthDatesCollectionView: UICollectionView!
     @IBOutlet weak var dayClassInfoCollectionView: UICollectionView!
+    
+    @IBOutlet weak var mondayTableView: UITableView!
+    @IBOutlet weak var tuesdayTableView: UITableView!
+    @IBOutlet weak var wendsdayTableView: UITableView!
+    @IBOutlet weak var thursdayTableView: UITableView!
+    @IBOutlet weak var fridayTableView: UITableView!
+    @IBOutlet weak var saturdayTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,6 +123,21 @@ class ParentsHomeRenewViewController: UIViewController {
         monthDatesCollectionView.register(UINib(nibName: "MonthDaysCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "dateCell")
         dayClassInfoCollectionView.register(UINib(nibName: "SPHomeClassInfoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "dayclassCell")
         setDate()
+        
+        sortMondayData = sortWeekday(array: mondayData)
+        sortTuesdayData = sortWeekday(array: tuesdayData)
+        sortWendsdayData = sortWeekday(array: wendsdayData)
+        sortThursdayData = sortWeekday(array: thursdayData)
+        sortFridayData = sortWeekday(array: fridayData)
+        sortSaturdayData = sortWeekday(array: saturdayData)
+        
+        mondayTableView.register(UINib(nibName: "HomeScheduleTableViewCell", bundle: nil), forCellReuseIdentifier: "scheduleCell")
+        tuesdayTableView.register(UINib(nibName: "HomeScheduleTableViewCell", bundle: nil), forCellReuseIdentifier: "scheduleCell")
+        wendsdayTableView.register(UINib(nibName: "HomeScheduleTableViewCell", bundle: nil), forCellReuseIdentifier: "scheduleCell")
+        thursdayTableView.register(UINib(nibName: "HomeScheduleTableViewCell", bundle: nil), forCellReuseIdentifier: "scheduleCell")
+        fridayTableView.register(UINib(nibName: "HomeScheduleTableViewCell", bundle: nil), forCellReuseIdentifier: "scheduleCell")
+        saturdayTableView.register(UINib(nibName: "HomeScheduleTableViewCell", bundle: nil), forCellReuseIdentifier: "scheduleCell")
+        
     }
     
     func setUserInfo() {
@@ -82,6 +145,43 @@ class ParentsHomeRenewViewController: UIViewController {
         
         nameLabel.text = "\(user?.childlen?.name ?? "아무개") 학부모님\n안녕하세요"
         
+    }
+    
+    func sortWeekday(array: [TestData]) -> [[TestData:Int]] {
+        var sortData = [[TestData:Int]]()
+        array.enumerated().forEach {
+            if $0.element == array.first {
+                if $0.element.start != 1 {
+                    sortData.append([TestData() : $0.element.start - 1])
+                }
+                sortData.append([$0.element : $0.element.end - $0.element.start + 1])
+            }
+            else {
+                
+                let lastData = array[$0.offset - 1]
+                
+                if lastData.end + 1 != $0.element.start {
+                    print("addEmpty : ",  $0.element.start - lastData.end - 1)
+                    
+                    for _ in 0 ..< $0.element.start - lastData.end - 1 {
+                        sortData.append([TestData() : 1])
+                    }
+                }
+                
+                print("addRow : ",  $0.element.end - $0.element.start + 1)
+                sortData.append([$0.element : $0.element.end - $0.element.start + 1])
+                                
+                
+                if $0.element == array.last, $0.element.end != 10 {
+                    
+                    for _ in 0 ..< 10 - $0.element.end {
+                        sortData.append([TestData() : 1])
+                    }
+                }
+            }
+        }
+        
+        return sortData
     }
 
     func setDate(byAdding: Int = 0) {
@@ -105,6 +205,113 @@ class ParentsHomeRenewViewController: UIViewController {
 
     @IBAction func nextMonthSelectEvent() {
         setDate(byAdding: 1)
+    }
+}
+
+extension ParentsHomeRenewViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if tableView == mondayTableView {
+            return sortMondayData.count
+        }
+        else if tableView == tuesdayTableView {
+            return sortTuesdayData.count
+        }
+        else if tableView == wendsdayTableView {
+            return sortWendsdayData.count
+        }
+        else if tableView == thursdayTableView {
+            return sortThursdayData.count
+        }
+        else if tableView == fridayTableView {
+            return sortFridayData.count
+        }
+        else if tableView == saturdayTableView {
+            return sortSaturdayData.count
+        }
+        else {
+            return 0
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "scheduleCell", for: indexPath) as! HomeScheduleTableViewCell
+        if tableView == mondayTableView {
+            cell.initView(sortMondayData[indexPath.item].keys.first!)
+        }
+        else if tableView == tuesdayTableView {
+            cell.initView(sortTuesdayData[indexPath.item].keys.first!)
+        }
+        else if tableView == wendsdayTableView {
+            cell.initView(sortWendsdayData[indexPath.item].keys.first!)
+        }
+        else if tableView == thursdayTableView {
+            cell.initView(sortThursdayData[indexPath.item].keys.first!)
+        }
+        else if tableView == fridayTableView {
+            cell.initView(sortFridayData[indexPath.item].keys.first!)
+        }
+        else if tableView == saturdayTableView {
+            cell.initView(sortSaturdayData[indexPath.item].keys.first!)
+        }
+        else {
+            return UITableViewCell()
+        }
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        var count = 0
+        if tableView == mondayTableView {
+            count = sortMondayData[indexPath.item].values.first!
+        }
+        else if tableView == tuesdayTableView {
+            count = sortTuesdayData[indexPath.item].values.first!
+        }
+        else if tableView == wendsdayTableView {
+            count = sortWendsdayData[indexPath.item].values.first!
+        }
+        else if tableView == thursdayTableView {
+            count = sortThursdayData[indexPath.item].values.first!
+        }
+        else if tableView == fridayTableView {
+            count = sortFridayData[indexPath.item].values.first!
+        }
+        else if tableView == saturdayTableView {
+            count = sortSaturdayData[indexPath.item].values.first!
+        }
+        else {
+            return 0
+        }
+        
+        return CGFloat(integerLiteral: count) * tableView.frame.height/9.0
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        var count = 0
+        if tableView == mondayTableView {
+            count = sortMondayData[indexPath.item].values.first!
+        }
+        else if tableView == tuesdayTableView {
+            count = sortTuesdayData[indexPath.item].values.first!
+        }
+        else if tableView == wendsdayTableView {
+            count = sortWendsdayData[indexPath.item].values.first!
+        }
+        else if tableView == thursdayTableView {
+            count = sortThursdayData[indexPath.item].values.first!
+        }
+        else if tableView == fridayTableView {
+            count = sortFridayData[indexPath.item].values.first!
+        }
+        else if tableView == saturdayTableView {
+            count = sortSaturdayData[indexPath.item].values.first!
+        }
+        else {
+            return 0
+        }
+        
+        return CGFloat(integerLiteral: count) * tableView.frame.height/9.0
     }
 }
 
@@ -191,6 +398,7 @@ extension ParentsHomeRenewViewController: UICollectionViewDelegate, UICollection
         }
     }
 }
+
 
 extension ParentsHomeRenewViewController {
     func getInfo(dateStr: String) {

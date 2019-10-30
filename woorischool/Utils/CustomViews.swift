@@ -42,7 +42,7 @@ class CustomView: UIView {
     }
     
     //border
-    @IBInspectable var borderWidth: CGFloat = 0.0{
+    @IBInspectable var borderWidth: CGFloat = 0.0 {
         didSet{
             self.layer.borderWidth = borderWidth
         }
@@ -89,7 +89,7 @@ class CustomButton: UIButton {
     }
     
     //border
-    @IBInspectable var borderWidth: CGFloat = 0.0{
+    @IBInspectable var borderWidth: CGFloat = 0.0 {
         didSet{
             self.layer.borderWidth = borderWidth
         }
@@ -115,7 +115,7 @@ class CustomLabel: UILabel {
     }
     
     //border
-    @IBInspectable var borderWidth: CGFloat = 0.0{
+    @IBInspectable var borderWidth: CGFloat = 0.0 {
         didSet{
             self.layer.borderWidth = borderWidth
         }
@@ -128,7 +128,6 @@ class CustomLabel: UILabel {
         }
     }
 }
-
 
 //@IBDesignable
 //class CustomLabel: UILabel {

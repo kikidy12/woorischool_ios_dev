@@ -85,7 +85,6 @@ extension UIViewController {
     }
     
     func showToast(message : String, font: UIFont) {
-        
         let label = UILabel()
         label.text = message
         label.font = font
@@ -95,8 +94,7 @@ extension UIViewController {
         let toastView = UIView()
         toastView.frame.size = CGSize(width: label.frame.width + 40, height: label.frame.height + 20)
         toastView.center.x = view.center.x
-        toastView.frame.origin.y = UIScreen.main.bounds.height - label.frame.height - 20 - 50
-        print(toastView.frame)
+        toastView.frame.origin.y = UIScreen.main.bounds.height - label.frame.height - 90
         toastView.backgroundColor = UIColor.black.withAlphaComponent(0.6)
         toastView.alpha = 1.0
         toastView.layer.cornerRadius = 10;
@@ -104,8 +102,6 @@ extension UIViewController {
         label.frame = toastView.bounds
         toastView.addSubview(label)
         self.view.addSubview(toastView)
-        
-    
         
         UIView.animate(withDuration: 2.0, delay: 0.1, options: .curveEaseIn, animations: {
              toastView.alpha = 0.0

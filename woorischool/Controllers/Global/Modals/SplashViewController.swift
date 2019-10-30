@@ -29,31 +29,31 @@ class SplashViewController: UIViewController {
         
         
         if UserDefs.userToken != "" {
-//            let navi = UINavigationController(rootViewController: SelectUserTypeViewController())
-//            navi.navigationBar.tintColor = .black
-//            navi.navigationBar.barTintColor = .white
-//            navi.navigationBar.shadowImage = UIImage()
-//            UIApplication.shared.keyWindow?.rootViewController = navi
-            if UserDefs.lastUserType == UserType.parents.rawValue, UserDefs.hasChildren {
-                let navi = UINavigationController(rootViewController: ParentsMainViewController())
-                navi.navigationBar.tintColor = .black
-                navi.navigationBar.barTintColor = .white
-                navi.navigationBar.shadowImage = UIImage()
-                UIApplication.shared.keyWindow?.rootViewController = navi
-            }
-            else if UserDefs.lastUserType == UserType.teacher.rawValue {
-                let navi = UINavigationController(rootViewController: TeacherMainViewController())
-                navi.navigationBar.tintColor = .black
-                navi.navigationBar.barTintColor = .white
-                navi.navigationBar.shadowImage = UIImage()
-                UIApplication.shared.keyWindow?.rootViewController = navi
-            }
-            else if UserDefs.lastUserType == UserType.student.rawValue {
-
-            }
-            else {
-                UIApplication.shared.keyWindow?.rootViewController = SelectUserTypeViewController()
-            }
+            let navi = UINavigationController(rootViewController: SelectUserTypeViewController())
+            navi.navigationBar.tintColor = .black
+            navi.navigationBar.barTintColor = .white
+            navi.navigationBar.shadowImage = UIImage()
+            UIApplication.shared.keyWindow?.rootViewController = navi
+//            if UserDefs.lastUserType == UserType.parents.rawValue, UserDefs.hasChildren {
+//                let navi = UINavigationController(rootViewController: ParentsMainViewController())
+//                navi.navigationBar.tintColor = .black
+//                navi.navigationBar.barTintColor = .white
+//                navi.navigationBar.shadowImage = UIImage()
+//                UIApplication.shared.keyWindow?.rootViewController = navi
+//            }
+//            else if UserDefs.lastUserType == UserType.teacher.rawValue {
+//                let navi = UINavigationController(rootViewController: TeacherMainViewController())
+//                navi.navigationBar.tintColor = .black
+//                navi.navigationBar.barTintColor = .white
+//                navi.navigationBar.shadowImage = UIImage()
+//                UIApplication.shared.keyWindow?.rootViewController = navi
+//            }
+//            else if UserDefs.lastUserType == UserType.student.rawValue {
+//
+//            }
+//            else {
+//                UIApplication.shared.keyWindow?.rootViewController = SelectUserTypeViewController()
+//            }
             
         }
         else {

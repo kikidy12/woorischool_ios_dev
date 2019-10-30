@@ -9,22 +9,47 @@
 import UIKit
 
 class TeacherStudentAttendViewController: UIViewController {
+    
+    var studentList = [UserData]() {
+        didSet {
+            studentTableView.reloadData()
+            studentTableView.performBatchUpdates(nil) { (result) in
+                if let cellHeight = self.studentTableView.visibleCells.first?.frame.height {
+                    self.studentTableViewHeightConstraint.constant = cellHeight * CGFloat(integerLiteral: self.studentList.count)
+                }
+            }
+        }
+    }
+    
+    @IBOutlet weak var studentTableView: UITableView!
+    @IBOutlet weak var studentTableViewHeightConstraint: NSLayoutConstraint!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        studentTableView.register(UINib(nibName: "TeacherStudentAttandTableViewCell", bundle: nil), forCellReuseIdentifier: "studentCell")
+        
+        studentTableView.reloadData()
+        studentTableView.performBatchUpdates(nil) { (result) in
+            if let cellHeight = self.studentTableView.visibleCells.first?.frame.height {
+                self.studentTableViewHeightConstraint.constant = cellHeight * CGFloat(integerLiteral: 20)
+            }
+        }
     }
+    
+    
+}
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension TeacherStudentAttendViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 20
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "studentCell", for: indexPath) as! TeacherStudentAttandTableViewCell
+        
+        return cell
+    }
 }
