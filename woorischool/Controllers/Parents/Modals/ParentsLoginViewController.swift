@@ -71,7 +71,7 @@ extension ParentsLoginViewController {
             }
             else {
                 UserDefs.setHasChildren(true)
-                let navi = UINavigationController(rootViewController: ParentsMainViewController())
+                let navi = UINavigationController(rootViewController: ParentsHomeViewController())
                 navi.navigationBar.tintColor = .black
                 navi.navigationBar.barTintColor = .white
                 navi.navigationBar.shadowImage = UIImage()

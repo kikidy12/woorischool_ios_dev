@@ -28,8 +28,8 @@ class SelectUserTypeViewController: UIViewController {
     }
     
     @IBAction func showTeacherLoginViewEvent() {
-//        showToast(message: "준비중인 기능입니다.", font: .systemFont(ofSize: 15))
-        showLoginView(type: .teacher)
+        showToast(message: "준비중인 기능입니다.", font: .systemFont(ofSize: 15))
+//        showLoginView(type: .teacher)
     }
     
     func showLoginView(type: UserType) {
