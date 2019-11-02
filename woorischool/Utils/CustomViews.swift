@@ -58,6 +58,19 @@ class CustomView: UIView {
 
 @IBDesignable
 class CustomButton: UIButton {
+    var gradient = CAGradientLayer()
+    
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        gradient.startPoint = CGPoint(x: 0, y: 0)
+        gradient.endPoint = CGPoint(x: 1, y: 0)
+        gradient.locations = [0.0, 1.0]
+        gradient.colors = [UIColor.clear.cgColor, UIColor.clear.cgColor]
+        self.gradient.frame = self.bounds
+        self.layer.addSublayer(self.gradient)
+        self.bringSubviewToFront(self.titleLabel!)
+    }
+
     
     //Shadow
     @IBInspectable var shadowColor: UIColor = .clear {
@@ -85,6 +98,7 @@ class CustomButton: UIButton {
     @IBInspectable var conerRadius : CGFloat = 0.0 {
         didSet {
             self.layer.cornerRadius = self.conerRadius
+            self.gradient.cornerRadius = self.conerRadius
         }
     }
     
@@ -100,6 +114,22 @@ class CustomButton: UIButton {
         didSet {
             self.layer.borderColor = borderColor.cgColor
         }
+    }
+    
+    @IBInspectable var startColor: UIColor = .clear {
+        didSet {
+            layoutSubviews()
+        }
+    }
+
+    @IBInspectable var endColor: UIColor = .clear {
+        didSet {
+            layoutSubviews()
+        }
+    }
+    
+    override func layoutSubviews() {
+        gradient.colors = [startColor.cgColor, endColor.cgColor]
     }
 }
 
@@ -126,6 +156,13 @@ class CustomLabel: UILabel {
         didSet {
             self.layer.borderColor = borderColor.cgColor
         }
+    }
+}
+
+@IBDesignable
+class GradientButton: UIButton {
+    override func layoutSubviews() {
+        super.layoutSubviews()
     }
 }
 

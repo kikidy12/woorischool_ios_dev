@@ -74,11 +74,11 @@ class ParentsMainViewController: UIViewController {
                         setLeftTitleSetting("OSchool")
                         break
                     case 1:
-                        setMainViews(vc: StudentBoardListViewController())
+                        setMainViews(vc: ParentsEnrolmentClassViewController())
                         setLeftTitleSetting("방과후수업")
                         break
                     case 2:
-                        setMainViews(vc: StudentBoardListViewController())
+                        setMainViews(vc: BoardListViewController())
                         setLeftTitleSetting("게시판")
                         break
                     case 3:
@@ -86,7 +86,7 @@ class ParentsMainViewController: UIViewController {
                         setLeftTitleSetting("소통방")
                         break
                     case 4:
-                        setMainViews(vc: StudentMyInfoViewController())
+                        setMainViews(vc: DailyNotiViewController())
                         setLeftTitleSetting("알림장")
                     break
                     default:

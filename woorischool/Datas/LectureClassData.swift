@@ -75,6 +75,7 @@ class LectureClassData: NSObject {
         if let array = data["lecture_class_day"] as? NSArray {
             dayList = array.compactMap { LectureClassDayData($0 as! NSDictionary) }
         }
+        
     }
 
     

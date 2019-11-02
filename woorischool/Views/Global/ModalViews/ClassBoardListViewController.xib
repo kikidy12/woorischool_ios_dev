@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ClassBoardListViewController" customModule="우리스쿨" customModuleProvider="target">
+            <connections>
+                <outlet property="boardTableView" destination="5Gu-Se-Z3A" id="C4b-NE-hry"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tpr-n7-nU1">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5Gu-Se-Z3A">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="Hc9-i0-ug4"/>
+                                <outlet property="delegate" destination="-1" id="6i6-fe-3iS"/>
+                            </connections>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" name="paleGrey"/>
+                    <constraints>
+                        <constraint firstItem="5Gu-Se-Z3A" firstAttribute="leading" secondItem="tpr-n7-nU1" secondAttribute="leading" id="95P-Ka-3nO"/>
+                        <constraint firstAttribute="bottom" secondItem="5Gu-Se-Z3A" secondAttribute="bottom" id="SBY-cw-wYo"/>
+                        <constraint firstItem="5Gu-Se-Z3A" firstAttribute="top" secondItem="tpr-n7-nU1" secondAttribute="top" id="hVF-Uc-tev"/>
+                        <constraint firstAttribute="trailing" secondItem="5Gu-Se-Z3A" secondAttribute="trailing" id="js4-gV-aX1"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="tpr-n7-nU1" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="FNV-gP-pq4"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tpr-n7-nU1" secondAttribute="trailing" id="ahg-gO-c2a"/>
+                <constraint firstItem="tpr-n7-nU1" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="blH-02-hlw"/>
+                <constraint firstItem="tpr-n7-nU1" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="emt-Cb-hGe"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="94"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="paleGrey">
+            <color red="0.96078431372549022" green="0.96078431372549022" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
