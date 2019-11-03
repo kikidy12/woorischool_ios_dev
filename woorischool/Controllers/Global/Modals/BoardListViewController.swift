@@ -15,7 +15,7 @@ class BoardListViewController: UIViewController {
             
         }
     }
-    
+    @IBOutlet weak var emoInputView: EmoInputView!
     @IBOutlet weak var boardTableView: UITableView!
     @IBOutlet weak var boardTableViewConstraintHeight: NSLayoutConstraint!
 

@@ -30,6 +30,14 @@
 		991182EE236CEE950020D6CE /* ReReplyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 991182EC236CEE950020D6CE /* ReReplyTableViewCell.xib */; };
 		991182F5236CF84B0020D6CE /* DailyNotiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991182F3236CF84B0020D6CE /* DailyNotiViewController.swift */; };
 		991182F6236CF84B0020D6CE /* DailyNotiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 991182F4236CF84B0020D6CE /* DailyNotiViewController.xib */; };
+		991182FB236D7E000020D6CE /* EmoticonCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991182F9236D7E000020D6CE /* EmoticonCollectionViewCell.swift */; };
+		991182FC236D7E000020D6CE /* EmoticonCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 991182FA236D7E000020D6CE /* EmoticonCollectionViewCell.xib */; };
+		991182FE236D86DC0020D6CE /* EmoInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991182FD236D86DC0020D6CE /* EmoInputView.swift */; };
+		99118300236D86E80020D6CE /* EmoInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 991182FF236D86E80020D6CE /* EmoInputView.xib */; };
+		9911830A236E94CB0020D6CE /* CustomInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99118309236E94CB0020D6CE /* CustomInputView.swift */; };
+		9911830C236E94DC0020D6CE /* CustomInputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9911830B236E94DC0020D6CE /* CustomInputView.xib */; };
+		9911830E236EBA200020D6CE /* MessageDatas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9911830D236EBA200020D6CE /* MessageDatas.swift */; };
+		99118310236EBC090020D6CE /* EmoticonDatas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9911830F236EBC090020D6CE /* EmoticonDatas.swift */; };
 		9914A9CF2343098F001C0112 /* Extensions+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9914A9CE2343098F001C0112 /* Extensions+Views.swift */; };
 		9914A9D1234309BB001C0112 /* Extensions+Obejcts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9914A9D0234309BB001C0112 /* Extensions+Obejcts.swift */; };
 		9914A9D323430A57001C0112 /* EnumObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9914A9D223430A57001C0112 /* EnumObjects.swift */; };
@@ -198,6 +206,14 @@
 		991182EC236CEE950020D6CE /* ReReplyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReReplyTableViewCell.xib; sourceTree = "<group>"; };
 		991182F3236CF84B0020D6CE /* DailyNotiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyNotiViewController.swift; sourceTree = "<group>"; };
 		991182F4236CF84B0020D6CE /* DailyNotiViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyNotiViewController.xib; sourceTree = "<group>"; };
+		991182F9236D7E000020D6CE /* EmoticonCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonCollectionViewCell.swift; sourceTree = "<group>"; };
+		991182FA236D7E000020D6CE /* EmoticonCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmoticonCollectionViewCell.xib; sourceTree = "<group>"; };
+		991182FD236D86DC0020D6CE /* EmoInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoInputView.swift; sourceTree = "<group>"; };
+		991182FF236D86E80020D6CE /* EmoInputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmoInputView.xib; sourceTree = "<group>"; };
+		99118309236E94CB0020D6CE /* CustomInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInputView.swift; sourceTree = "<group>"; };
+		9911830B236E94DC0020D6CE /* CustomInputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomInputView.xib; sourceTree = "<group>"; };
+		9911830D236EBA200020D6CE /* MessageDatas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageDatas.swift; sourceTree = "<group>"; };
+		9911830F236EBC090020D6CE /* EmoticonDatas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmoticonDatas.swift; sourceTree = "<group>"; };
 		9914A9CE2343098F001C0112 /* Extensions+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+Views.swift"; sourceTree = "<group>"; };
 		9914A9D0234309BB001C0112 /* Extensions+Obejcts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extensions+Obejcts.swift"; sourceTree = "<group>"; };
 		9914A9D223430A57001C0112 /* EnumObjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumObjects.swift; sourceTree = "<group>"; };
@@ -425,6 +441,8 @@
 				991182D7236C618A0020D6CE /* ClassBoardTableViewCell.swift */,
 				991182DF236C8F9D0020D6CE /* BoardReplyTableViewCell.swift */,
 				991182EB236CEE950020D6CE /* ReReplyTableViewCell.swift */,
+				991182F9236D7E000020D6CE /* EmoticonCollectionViewCell.swift */,
+				991182FA236D7E000020D6CE /* EmoticonCollectionViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -438,6 +456,8 @@
 				99DFB15A2350576B00C5B69D /* LectureClassData.swift */,
 				99DFB15C2350579100C5B69D /* LectureClassDayData.swift */,
 				99DFB1672352BD3B00C5B69D /* LectureAreaData.swift */,
+				9911830D236EBA200020D6CE /* MessageDatas.swift */,
+				9911830F236EBC090020D6CE /* EmoticonDatas.swift */,
 			);
 			path = Datas;
 			sourceTree = "<group>";
@@ -602,6 +622,10 @@
 			children = (
 				9915B61623633A1400ACE9B6 /* MainTitleView.swift */,
 				9915B61823633A4800ACE9B6 /* MainTitleView.xib */,
+				991182FD236D86DC0020D6CE /* EmoInputView.swift */,
+				991182FF236D86E80020D6CE /* EmoInputView.xib */,
+				99118309236E94CB0020D6CE /* CustomInputView.swift */,
+				9911830B236E94DC0020D6CE /* CustomInputView.xib */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -935,6 +959,7 @@
 				9956BF792366B5670069E661 /* TeacherStudentAttendViewController.xib in Resources */,
 				9914AA0A234317E9001C0112 /* NanumSquareRound-Bold.otf in Resources */,
 				9956BF93236857100069E661 /* TeacherStudentAttandTableViewCell.xib in Resources */,
+				99118300236D86E80020D6CE /* EmoInputView.xib in Resources */,
 				99DFB13B234F736F00C5B69D /* ClassInfoPopupViewController.xib in Resources */,
 				991182DE236C8C8A0020D6CE /* BoardDetailViewController.xib in Resources */,
 				99DFB14B2350481C00C5B69D /* RegistCompClassTableViewCell.xib in Resources */,
@@ -959,6 +984,7 @@
 				9914A9FE23431447001C0112 /* NotoSansMonoCJKkr-Regular.otf in Resources */,
 				9962A4C623470B160027FEB6 /* RegistedClassTableViewCell.xib in Resources */,
 				991182DA236C618A0020D6CE /* ClassBoardTableViewCell.xib in Resources */,
+				991182FC236D7E000020D6CE /* EmoticonCollectionViewCell.xib in Resources */,
 				9914A9FF23431447001C0112 /* NotoSansCJKkr-Bold.otf in Resources */,
 				9914AA272345C12C001C0112 /* ParentsHomeViewController.xib in Resources */,
 				9915B61923633A4800ACE9B6 /* MainTitleView.xib in Resources */,
@@ -973,6 +999,7 @@
 				99DFB13F234F7AE400C5B69D /* RegistClassPopupViewController.xib in Resources */,
 				99DFB15323504D6000C5B69D /* TeacherLoginViewController.xib in Resources */,
 				9914A9E723430DA9001C0112 /* SplashViewController.xib in Resources */,
+				9911830C236E94DC0020D6CE /* CustomInputView.xib in Resources */,
 				9956BF8B23672A2E0069E661 /* SPHomeClassInfoCollectionViewCell.xib in Resources */,
 				9914AA302345CEFC001C0112 /* CourseCollectionViewCell.xib in Resources */,
 				9956BF8F2367A56C0069E661 /* HomeScheduleTableViewCell.xib in Resources */,
@@ -1104,6 +1131,7 @@
 				9915B61C2365213700ACE9B6 /* TeacherStudentListViewController.swift in Sources */,
 				991182D5236C60CF0020D6CE /* ClassBoardListViewController.swift in Sources */,
 				991182ED236CEE950020D6CE /* ReReplyTableViewCell.swift in Sources */,
+				991182FB236D7E000020D6CE /* EmoticonCollectionViewCell.swift in Sources */,
 				9915B62023652A4600ACE9B6 /* StudentContactTableViewCell.swift in Sources */,
 				99DFB1682352BD3B00C5B69D /* LectureAreaData.swift in Sources */,
 				99DFB15623504F1500C5B69D /* TeacherSignUpViewController.swift in Sources */,
@@ -1112,6 +1140,9 @@
 				99DFB13E234F7AE400C5B69D /* RegistClassPopupViewController.swift in Sources */,
 				9956BF782366B5670069E661 /* TeacherStudentAttendViewController.swift in Sources */,
 				994A6B3B235ED6030088D46E /* StudentMyInfoViewController.swift in Sources */,
+				991182FE236D86DC0020D6CE /* EmoInputView.swift in Sources */,
+				9911830A236E94CB0020D6CE /* CustomInputView.swift in Sources */,
+				9911830E236EBA200020D6CE /* MessageDatas.swift in Sources */,
 				99DFB130234EF83300C5B69D /* RegistChildViewController.swift in Sources */,
 				99DFB1642350628700C5B69D /* TeacherHomeTableViewCell.swift in Sources */,
 				99DFB1772355671500C5B69D /* RegistClassCompleteListViewController.swift in Sources */,
@@ -1148,6 +1179,7 @@
 				99DFB137234F035400C5B69D /* StudentInfoData.swift in Sources */,
 				9915B60F236307A400ACE9B6 /* TeacherPhoneAuthViewController.swift in Sources */,
 				9914A9D523430AC6001C0112 /* CustomViews.swift in Sources */,
+				99118310236EBC090020D6CE /* EmoticonDatas.swift in Sources */,
 				9914A9D1234309BB001C0112 /* Extensions+Obejcts.swift in Sources */,
 				99DFB15D2350579100C5B69D /* LectureClassDayData.swift in Sources */,
 				991182D1236BE0460020D6CE /* BoardListTableViewCell.swift in Sources */,

@@ -10,6 +10,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StudentChattingRoomListViewController" customModule="우리스쿨" customModuleProvider="target">
             <connections>
+                <outlet property="chatTextViewBottomConstraint" destination="j9F-xW-fms" id="nyS-hW-XyD"/>
+                <outlet property="customInputView" destination="aYh-eD-2lO" id="MZP-dT-O6m"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,7 +19,21 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aYh-eD-2lO" customClass="CustomInputView" customModule="우리스쿨" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="822" width="414" height="40"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" priority="1" constant="40" id="qWQ-D9-OIQ"/>
+                    </constraints>
+                </view>
+            </subviews>
             <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="aYh-eD-2lO" secondAttribute="trailing" id="Mqx-ce-J0o"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="aYh-eD-2lO" secondAttribute="bottom" id="j9F-xW-fms"/>
+                <constraint firstItem="aYh-eD-2lO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="uyf-J7-1f4"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="94"/>
         </view>

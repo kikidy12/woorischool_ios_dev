@@ -10,12 +10,21 @@ import UIKit
 
 class BoardDetailViewController: UIViewController {
     
+    var replyList:[String] = ["dfsdfdsfanjfnlsf","nfjdskfndskfvnsdajfnsdkjanfkjdsfln","njdsfvndsjlfnsdjafnjksdfn","dfnjdsfndsajfndsjnfaklsdjnfjkdf","fnasdfdsfjfnwejflfa"] {
+        didSet {
+            replyTableView.reloadData()
+            replyTableView.layoutIfNeeded()
+            replyTableViewHeightConstraint.constant = self.replyTableView.contentSize.height
+            let bottomOffset = CGPoint(x: 0, y: scrollView.contentSize.height)
+            scrollView.setContentOffset(bottomOffset, animated: false)
+        }
+    }
+    
     var count = 10
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var scrollContentView: UIView!
-    @IBOutlet weak var chatTextView: UITextView!
-    @IBOutlet weak var chatTextViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var customInputView: CustomInputView!
     @IBOutlet weak var chatTextViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var replyTableView: UITableView!
     @IBOutlet weak var replyTableViewHeightConstraint: NSLayoutConstraint!
@@ -26,23 +35,11 @@ class BoardDetailViewController: UIViewController {
         replyTableView.register(UINib(nibName: "BoardReplyTableViewCell", bundle: nil), forCellReuseIdentifier: "replyCell")
         let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyBoard))
         tapGesture.cancelsTouchesInView = false
-
         scrollView.addGestureRecognizer(tapGesture)
+        customInputView.chatTextViewBottomConstraint = chatTextViewBottomConstraint
+        customInputView.delegate = self
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        let size = CGSize(width: chatTextView.frame.width, height: .greatestFiniteMagnitude)
-        let estimatedSize = chatTextView.sizeThatFits(size)
-        chatTextViewHeightConstraint.constant = estimatedSize.height
-        
-        NotificationCenter.default.addObserver(self, selector:#selector(keyboardWillShow(note:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector:#selector(keyboardWillHide(note:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
     
     override func viewWillLayoutSubviews() {
         replyTableView.updateConstraints()
@@ -50,8 +47,7 @@ class BoardDetailViewController: UIViewController {
     }
     
     
-    @IBAction func registReply() {
-        chatTextView.resignFirstResponder()
+    func registReply() {
         count += 1
         replyTableView.reloadData()
         
@@ -61,32 +57,21 @@ class BoardDetailViewController: UIViewController {
         scrollView.setContentOffset(bottomOffset, animated: false)
     }
     
-    @objc func keyboardWillShow(note: NSNotification) {
-        if let keyboardSize = (note.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            UIView.animate(withDuration: 0.7) {
-                self.chatTextViewBottomConstraint.constant = keyboardSize.height - self.view.safeAreaInsets.bottom
-                self.view.layoutIfNeeded()
-            }
-        }
-    }
-
-    @objc func keyboardWillHide(note: NSNotification) {
-        self.chatTextViewBottomConstraint.constant = 0
-    }
-    
     @objc func hideKeyBoard() {
-        chatTextView.resignFirstResponder()
+        customInputView.textView.resignFirstResponder()
+        customInputView.messageTextView.resignFirstResponder()
     }
 }
-
-extension BoardDetailViewController: UITextViewDelegate {
-    func textViewDidChange(_ textView: UITextView) {
-        let size = CGSize(width: textView.frame.width, height: .greatestFiniteMagnitude) // ---- 1
-        let estimatedSize = textView.sizeThatFits(size) // ---- 2
-        self.chatTextViewHeightConstraint.constant = estimatedSize.height
+extension BoardDetailViewController: CustomInputViewDelegate {
+    func sendMessage(message: String, image: UIImage?) {
+        guard !message.isEmpty else {
+            AlertHandler.shared.showAlert(vc: self, message: "메시지를 입력해주세요.", okTitle: "확인")
+            return
+        }
+        
+        replyList.append(message)
     }
 }
-
 
 extension BoardDetailViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -102,22 +87,17 @@ extension BoardDetailViewController: UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return count
+        return replyList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "replyCell", for: indexPath) as! BoardReplyTableViewCell
-        if indexPath.item % 2 == 0 {
-            cell.contentLabel.text = "jkgnagmnaslkfmakdsfmkladmflkadsmflkadmfklamflamlkfmsadlkfmlkasdmflkdamfklamlkfmsadlfmls;admflkamflkadmflk;mdaf"
-        }
-        else {
-            cell.contentLabel.text = "sdfdasfasfads"
-        }
+        cell.contentLabel.text = replyList[indexPath.item]
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let vc = ReplyListViewController()
-        self.show(vc, sender: nil)
+//        let vc = ReplyListViewController()
+//        self.show(vc, sender: nil)
     }
 }
