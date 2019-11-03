@@ -8,9 +8,19 @@
 
 import UIKit
 
+class TempMessageDatas: NSObject {
+    var message: String = ""
+    var image: UIImage?
+    
+    init(message: String, image: UIImage? = nil) {
+        self.message = message
+        self.image = image
+    }
+}
+
 class BoardDetailViewController: UIViewController {
     
-    var replyList:[String] = ["dfsdfdsfanjfnlsf","nfjdskfndskfvnsdajfnsdkjanfkjdsfln","njdsfvndsjlfnsdjafnjksdfn","dfnjdsfndsajfndsjnfaklsdjnfjkdf","fnasdfdsfjfnwejflfa"] {
+    var replyList:[TempMessageDatas] = [TempMessageDatas(message: "dfsdfdsfanjfnlsf", image: nil),TempMessageDatas(message: "dfsdfdsfanjfnlsf", image: nil),TempMessageDatas(message: "dfsdfdsfanjfnlsf", image: UIImage(named: "chatUpIcon")!),TempMessageDatas(message: "dfsdfdsfanjfnlsf", image: nil),TempMessageDatas(message: "dfsdfdsfanjfnlsf", image: UIImage(named: "chatUpIcon")!),TempMessageDatas(message: "dfsdfdsfanjfnlsf", image: nil)] {
         didSet {
             replyTableView.reloadData()
             replyTableView.layoutIfNeeded()
@@ -58,18 +68,17 @@ class BoardDetailViewController: UIViewController {
     }
     
     @objc func hideKeyBoard() {
-        customInputView.textView.resignFirstResponder()
-        customInputView.messageTextView.resignFirstResponder()
+        customInputView.lastSelectTextView.resignFirstResponder()
     }
 }
 extension BoardDetailViewController: CustomInputViewDelegate {
     func sendMessage(message: String, image: UIImage?) {
-        guard !message.isEmpty else {
-            AlertHandler.shared.showAlert(vc: self, message: "메시지를 입력해주세요.", okTitle: "확인")
+        if message.isEmpty, image == nil {
             return
         }
-        
-        replyList.append(message)
+        else {
+            replyList.append(TempMessageDatas(message: message, image: image))
+        }
     }
 }
 
@@ -92,7 +101,20 @@ extension BoardDetailViewController: UITableViewDataSource, UITableViewDelegate 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "replyCell", for: indexPath) as! BoardReplyTableViewCell
-        cell.contentLabel.text = replyList[indexPath.item]
+        if !replyList[indexPath.item].message.isEmpty {
+            cell.contentLabel.isHidden = false
+            cell.contentLabel.text = replyList[indexPath.item].message
+        }
+        else {
+            cell.contentLabel.isHidden = true
+        }
+        if let image = replyList[indexPath.item].image {
+            cell.imageContainerView.isHidden = false
+            cell.messageImageView.image = image
+        }
+        else {
+            cell.imageContainerView.isHidden = true
+        }
         return cell
     }
     

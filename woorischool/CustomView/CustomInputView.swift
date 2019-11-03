@@ -20,9 +20,11 @@ extension CustomInputViewDelegate {
 
 class CustomInputView: UIView {
     
-    var emoTextView = UITextField(frame: .zero)
+    var emoTextView = UITextView(frame: .zero)
     
     var emoInPutView = EmoInputView(frame: .zero)
+    
+    var lastSelectTextView = UITextView()
     
     var delegate: CustomInputViewDelegate?
     
@@ -56,7 +58,6 @@ class CustomInputView: UIView {
         
         NotificationCenter.default.addObserver(self, selector:#selector(keyboardWillShow(note:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector:#selector(keyboardWillHide(note:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
         emoInPutView.delegate = self
         emoTextView.inputView = emoInPutView
         emoInPutView.autoresizingMask = .flexibleHeight
@@ -74,15 +75,13 @@ class CustomInputView: UIView {
     
     @IBAction func sendMessageEvent() {
         if tempEmoView.isHidden {
-            print(messageTextView.text!)
             delegate?.sendMessage(message: messageTextView.text!, image: nil)
         }
         else {
             delegate?.sendMessage(message: messageTextView.text!, image: emoImageView.image!)
         }
         messageTextView.text = ""
-        messageTextView.resignFirstResponder()
-        textView.resignFirstResponder()
+        lastSelectTextView.resignFirstResponder()
     }
     
     @IBAction func showCameraViewEvent() {
@@ -90,6 +89,7 @@ class CustomInputView: UIView {
     }
     
     @IBAction func showEmoEvent() {
+        lastSelectTextView = emoTextView
         emoTextView.becomeFirstResponder()
     }
     
@@ -125,5 +125,9 @@ extension CustomInputView: UITextViewDelegate {
         let size = CGSize(width: textView.frame.width, height: .greatestFiniteMagnitude)
         let estimatedSize = textView.sizeThatFits(size)
         self.textViewHeightConstraint.constant = estimatedSize.height
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        lastSelectTextView = textView
     }
 }

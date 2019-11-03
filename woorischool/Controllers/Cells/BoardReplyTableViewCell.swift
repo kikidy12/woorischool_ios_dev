@@ -10,6 +10,9 @@ import UIKit
 
 class BoardReplyTableViewCell: UITableViewCell {
     @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var imageContainerView: UIView!
+    @IBOutlet weak var messageImageView: UIImageView!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

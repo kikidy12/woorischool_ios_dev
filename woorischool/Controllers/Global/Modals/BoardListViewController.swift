@@ -15,24 +15,19 @@ class BoardListViewController: UIViewController {
             
         }
     }
-    @IBOutlet weak var emoInputView: EmoInputView!
+    
     @IBOutlet weak var boardTableView: UITableView!
-    @IBOutlet weak var boardTableViewConstraintHeight: NSLayoutConstraint!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        boardTableView.contentInset = UIEdgeInsets(top: 32, left: 0, bottom: 0, right: 0)
         boardTableView.register(UINib(nibName: "BoardListTableViewCell", bundle: nil), forCellReuseIdentifier: "boardCell")
     }
 
 }
 
 extension BoardListViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.item == (tableView.indexPathsForVisibleRows!.last!).item {
-            boardTableViewConstraintHeight.constant = tableView.contentSize.height
-        }
-    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
@@ -48,16 +43,26 @@ extension BoardListViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let titleView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 35))
+        titleView.backgroundColor = .clear
+        let label = UILabel()
+        label.frame.origin = CGPoint(x: 20, y: 0)
+        label.font = UIFont(name: "NotoSansCJKkr-Medium", size: 18.0)!
+        label.textColor = .greyishBrown
+        label.text = "게시판 목록"
+        label.frame.size = label.sizeThatFits(CGSize(width: titleView.frame.width, height: .greatestFiniteMagnitude))
+        titleView.addSubview(label)
+        
+        return titleView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 35
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = ClassBoardListViewController()
         self.show(vc, sender: nil)
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-    
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
     }
 }
