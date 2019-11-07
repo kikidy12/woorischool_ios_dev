@@ -25,6 +25,7 @@ class HomeScheduleTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    
     func initView(_ data: TestData) {
         classDayData = data
         let eduTimeStr = "11:30-13:00\n"
@@ -40,11 +41,24 @@ class HomeScheduleTableViewCell: UITableViewCell {
             eduTimeLabel.isHidden = true
         }
         else {
-            backgroundColor = .greenishTeal
             eduTimeLabel.isHidden = false
-            eduTimeLabel.textColor = .greyishBrown
             eduTimeLabel.attributedText = attributedString
+            
+            let color = getRandomColor()
+            backgroundColor = color.withAlphaComponent(0.2)
+            eduTimeLabel.textColor = color
         }
+    }
+    
+    func getRandomColor() -> UIColor {
+            
+            let randomRed:CGFloat = CGFloat(drand48())
+            
+            let randomGreen:CGFloat = CGFloat(drand48())
+            
+            let randomBlue:CGFloat = CGFloat(drand48())
+            
+            return UIColor(red: randomRed, green: randomGreen, blue: randomBlue, alpha: 1.0)
     }
     
 }

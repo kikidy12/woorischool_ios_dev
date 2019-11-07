@@ -50,7 +50,7 @@ extension ParentsLoginViewController {
         let parameters = [
             "phone_num": phoneNumTextField.text!,
             "phone_auth_num": codeTextField.text!,
-            "type": UserType.parents
+            "type": UserType.parents.rawValue
         ] as[String: Any]
         
         print(parameters)

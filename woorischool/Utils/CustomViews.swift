@@ -56,6 +56,55 @@ class CustomView: UIView {
     }
 }
 
+
+@IBDesignable
+class CustomImageView: UIImageView {
+    
+    //Shadow
+    @IBInspectable var shadowColor: UIColor = .clear {
+        didSet {
+            self.layer.shadowColor = self.shadowColor.cgColor
+        }
+    }
+    @IBInspectable var shadowOpacity: Float = 0 {
+        didSet {
+            self.layer.shadowOpacity = self.shadowOpacity
+        }
+    }
+    @IBInspectable var shadowOffset: CGSize = CGSize(width: 0, height: 0) {
+        didSet {
+            self.layer.shadowOffset = self.shadowOffset
+        }
+    }
+    @IBInspectable var shadowRadius: CGFloat = 0.0 {
+        didSet {
+            self.layer.shadowRadius = self.shadowRadius
+        }
+    }
+    
+    //coner
+    @IBInspectable var conerRadius : CGFloat = 0.0 {
+        didSet {
+            self.layer.cornerRadius = self.conerRadius
+        }
+    }
+    
+    //border
+    @IBInspectable var borderWidth: CGFloat = 0.0 {
+        didSet{
+            self.layer.borderWidth = borderWidth
+        }
+    }
+    
+    
+    @IBInspectable var borderColor: UIColor = .clear {
+        didSet {
+            self.layer.borderColor = borderColor.cgColor
+        }
+    }
+}
+
+
 @IBDesignable
 class CustomButton: UIButton {
     var gradient = CAGradientLayer()

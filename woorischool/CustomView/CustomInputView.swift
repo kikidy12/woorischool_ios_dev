@@ -96,8 +96,11 @@ class CustomInputView: UIView {
     @objc func keyboardWillShow(note: NSNotification) {
         if let keyboardSize = (note.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             UIView.animate(withDuration: 0.7) {
-                self.chatTextViewBottomConstraint.constant = keyboardSize.height - self.superview!.safeAreaInsets.bottom
-                self.superview!.layoutIfNeeded()
+                if self.chatTextViewBottomConstraint != nil, let superView = self.superview {
+                    superView.layoutIfNeeded()
+                    self.chatTextViewBottomConstraint.constant = keyboardSize.height - self.superview!.safeAreaInsets.bottom
+                    
+                }
             }
         }
     }

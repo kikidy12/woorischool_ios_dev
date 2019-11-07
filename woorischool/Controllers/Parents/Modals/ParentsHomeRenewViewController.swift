@@ -26,6 +26,7 @@ class TestData: NSObject {
 
 class ParentsHomeRenewViewController: UIViewController {
     
+    var selectedDate = Date()
     var selectMonthDateIndex: IndexPath?
     var lastDate: Date = Date()
     
@@ -105,6 +106,7 @@ class ParentsHomeRenewViewController: UIViewController {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var monthLabel: UILabel!
+    @IBOutlet weak var notiLabel: UILabel!
     @IBOutlet weak var pageControl: UIPageControl!
     
     @IBOutlet weak var monthDatesCollectionView: UICollectionView!
@@ -119,6 +121,17 @@ class ParentsHomeRenewViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        var count = 0
+        
+        Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (timer) in
+            if count < 10 {
+                count += 1
+            }
+            else {
+                count = 0
+            }
+            self.notiLabel.text = "\(count)"
+        }
         
         monthDatesCollectionView.register(UINib(nibName: "MonthDaysCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "dateCell")
         dayClassInfoCollectionView.register(UINib(nibName: "SPHomeClassInfoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "dayclassCell")
@@ -138,6 +151,11 @@ class ParentsHomeRenewViewController: UIViewController {
         fridayTableView.register(UINib(nibName: "HomeScheduleTableViewCell", bundle: nil), forCellReuseIdentifier: "scheduleCell")
         saturdayTableView.register(UINib(nibName: "HomeScheduleTableViewCell", bundle: nil), forCellReuseIdentifier: "scheduleCell")
         
+    }
+    
+    @IBAction func showChildrenListEvent() {
+        let vc = ManageChildrenViewController()
+        self.show(vc, sender: nil)
     }
     
     func setUserInfo() {
@@ -237,6 +255,7 @@ extension ParentsHomeRenewViewController: UITableViewDelegate, UITableViewDataSo
         let cell = tableView.dequeueReusableCell(withIdentifier: "scheduleCell", for: indexPath) as! HomeScheduleTableViewCell
         if tableView == mondayTableView {
             cell.initView(sortMondayData[indexPath.item].keys.first!)
+            
         }
         else if tableView == tuesdayTableView {
             cell.initView(sortTuesdayData[indexPath.item].keys.first!)
@@ -324,7 +343,7 @@ extension ParentsHomeRenewViewController: UICollectionViewDelegate, UICollection
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView == monthDatesCollectionView {
-            
+            selectedDate = monthDateList[indexPath.item]
             collectionView.performBatchUpdates(nil) { (result) in
                 collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
                 self.getInfo(dateStr: DateFormatter().dateToString(self.monthDateList[indexPath.item]))
@@ -336,7 +355,6 @@ extension ParentsHomeRenewViewController: UICollectionViewDelegate, UICollection
             else {
                 selectMonthDateIndex = indexPath
             }
-            
             
         }
         else if collectionView == dayClassInfoCollectionView {
@@ -373,12 +391,20 @@ extension ParentsHomeRenewViewController: UICollectionViewDelegate, UICollection
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dateCell", for: indexPath) as! MonthDaysCollectionViewCell
             cell.initView(monthDateList[indexPath.item])
             cell.isSelected = (selectMonthDateIndex == indexPath)
-            
             return cell
         }
         else if collectionView == dayClassInfoCollectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dayclassCell", for: indexPath) as! SPHomeClassInfoCollectionViewCell
             cell.initView(classDayList[indexPath.item])
+            cell.dateLabel.text = selectedDate.dateToString(formatter: "MM월 dd일") + "자 알림장"
+            cell.showDailyNotiColouser = { isDailyNoti in
+                if !isDailyNoti {
+                    
+                }
+                else {
+                    self.navigationController?.showToast(message: "등록된 알림장이 없습니다.", font: .systemFont(ofSize: 15))
+                }
+            }
             return cell
         }
         else {

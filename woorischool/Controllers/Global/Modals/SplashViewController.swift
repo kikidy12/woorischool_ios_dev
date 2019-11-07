@@ -24,9 +24,6 @@ class SplashViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        print(UserDefs.lastUserType)
-        print(UserDefs.hasChildren)
-        
         
         if UserDefs.userToken != "" {
 //            let navi = UINavigationController(rootViewController: SelectUserTypeViewController())
@@ -49,7 +46,11 @@ class SplashViewController: UIViewController {
                 UIApplication.shared.keyWindow?.rootViewController = navi
             }
             else if UserDefs.lastUserType == UserType.student.rawValue {
-
+                let navi = UINavigationController(rootViewController: StudentMainViewController())
+                navi.navigationBar.tintColor = .black
+                navi.navigationBar.barTintColor = .white
+                navi.navigationBar.shadowImage = UIImage()
+                UIApplication.shared.keyWindow?.rootViewController = navi
             }
             else {
                 UIApplication.shared.keyWindow?.rootViewController = SelectUserTypeViewController()

@@ -49,7 +49,52 @@ extension TeacherStudentAttendViewController: UITableViewDelegate, UITableViewDa
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "studentCell", for: indexPath) as! TeacherStudentAttandTableViewCell
+        cell.initView(studentList[indexPath.item])
         
+        cell.attendClouser = { (type, selectBtn) in
+            self.setAttendence(id: self.studentList[indexPath.item].id, type: type) { (_) in
+                cell.attandStackView.subviews.forEach {
+                    guard let btn = $0 as? UIButton else {
+                        return
+                    }
+                    btn.backgroundColor = .clear
+                    btn.setTitleColor(.brownGrey, for: .normal)
+                    btn.layer.borderWidth = 1
+                }
+                
+                if type == .attendance {
+                    selectBtn.backgroundColor = .greenishTeal
+                    selectBtn.setTitleColor(.greenishTeal, for: .normal)
+                    selectBtn.layer.borderWidth = 0
+                }
+                else if type == .tardy {
+                    selectBtn.backgroundColor = .blueGrey
+                    selectBtn.setTitleColor(.blueGrey, for: .normal)
+                    selectBtn.layer.borderWidth = 0
+                }
+                else if type == .absent {
+                    selectBtn.backgroundColor = .grapefruit
+                    selectBtn.setTitleColor(.grapefruit, for: .normal)
+                    selectBtn.layer.borderWidth = 0
+                }
+            }
+        }
         return cell
+    }
+}
+
+extension TeacherStudentAttendViewController {
+    func setAttendence(id: Int, type: AttendenceType, complete: @escaping (Bool) -> ()) {
+        let parameters = [
+            "student_id": id,
+            "type": type.rawValue
+        ] as [String:Any]
+        ServerUtil.shared.postPushTest(self, parameters: parameters) { (success, dict, message) in
+            guard success else {
+                return
+            }
+            
+            complete(success)
+        }
     }
 }

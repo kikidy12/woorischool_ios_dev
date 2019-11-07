@@ -86,8 +86,8 @@ class ParentsMainViewController: UIViewController {
                         setLeftTitleSetting("소통방")
                         break
                     case 4:
-                        setMainViews(vc: DailyNotiViewController())
-                        setLeftTitleSetting("알림장")
+                        setMainViews(vc: MyPageViewController())
+                        setLeftTitleSetting("내 정보")
                     break
                     default:
                         break

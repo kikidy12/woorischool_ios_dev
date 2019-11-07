@@ -12,6 +12,18 @@ class RegistChildViewController: UIViewController {
     
     var preVC: UIViewController!
     
+    var schoolList = [SchoolData]() {
+        didSet {
+            pickerView.reloadAllComponents()
+        }
+    }
+    
+    var selectedSchool: SchoolData!
+    
+    var pickerView = UIPickerView(frame: .zero)
+    
+    var accessaryView: UIToolbar!
+    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var schoolNumberTextField: UITextField!
@@ -21,12 +33,34 @@ class RegistChildViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        accessaryView = UIToolbar()
+        accessaryView.sizeToFit()
+        let selectBtn = UIBarButtonItem(title: "선택", style: .plain, target: self, action: #selector(selectSchool))
+        let spaceBar = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        let closeBtn = UIBarButtonItem(title: "닫기", style: .plain, target: self, action: #selector(closePickerView))
+        
+        accessaryView.items = [closeBtn, spaceBar, selectBtn]
+        
+        schoolNumberTextField.inputView = pickerView
+        schoolNumberTextField.inputAccessoryView = accessaryView
+        
+        getSchoolList()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
+    }
+    
+    @objc func selectSchool() {
+        selectedSchool = schoolList[pickerView.selectedRow(inComponent: 0)]
+        schoolNumberTextField.text = selectedSchool.name
+        schoolNumberTextField.resignFirstResponder()
+    }
+    
+    @objc func closePickerView() {
+        schoolNumberTextField.resignFirstResponder()
     }
     
     @IBAction func addChildEvent() {
@@ -47,10 +81,37 @@ class RegistChildViewController: UIViewController {
     }
 }
 
+extension RegistChildViewController: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return schoolList.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return schoolList[row].name
+    }
+}
+
 extension RegistChildViewController {
+    
+    func getSchoolList() {
+        let parameters = [
+            "name": ""
+        ] as [String:Any]
+        ServerUtil.shared.getSchool(self, parameters: parameters) { (success, dict, message) in
+            guard success, let array = dict?["school"] as? NSArray else {
+                return
+            }
+            
+            self.schoolList = array.compactMap { SchoolData($0 as! NSDictionary) }
+        }
+    }
     func registChild() {
         
-        guard let name = nameTextField.text, let password = passwordTextField.text, let schoolNum = schoolNumberTextField.text, let grade = gradeTextField.text, let classNum = classNumberTextField.text, let number = numberTextField.text else {
+        guard let name = nameTextField.text, let password = passwordTextField.text, let grade = gradeTextField.text, let classNum = classNumberTextField.text, let number = numberTextField.text else {
             return
         }
         
@@ -60,34 +121,34 @@ extension RegistChildViewController {
         }
         
         if password.isEmpty {
-            AlertHandler.shared.showAlert(vc: self, message: "이름을 입력해주세요.", okTitle: "확인")
+            AlertHandler.shared.showAlert(vc: self, message: "비밀번호를 입력해주세요.", okTitle: "확인")
             return
         }
         
-        if schoolNum.isEmpty {
-            AlertHandler.shared.showAlert(vc: self, message: "이름을 입력해주세요.", okTitle: "확인")
+        if selectedSchool == nil {
+            AlertHandler.shared.showAlert(vc: self, message: "학교를 선택해주세요.", okTitle: "확인")
             return
         }
         
         if grade.isEmpty {
-            AlertHandler.shared.showAlert(vc: self, message: "이름을 입력해주세요.", okTitle: "확인")
+            AlertHandler.shared.showAlert(vc: self, message: "학년을 입력해주세요.", okTitle: "확인")
             return
         }
         
         if classNum.isEmpty {
-            AlertHandler.shared.showAlert(vc: self, message: "이름을 입력해주세요.", okTitle: "확인")
+            AlertHandler.shared.showAlert(vc: self, message: "반을 입력해주세요.", okTitle: "확인")
             return
         }
         
         if number.isEmpty {
-            AlertHandler.shared.showAlert(vc: self, message: "이름을 입력해주세요.", okTitle: "확인")
+            AlertHandler.shared.showAlert(vc: self, message: "학생번호를 입력해주세요.", okTitle: "확인")
             return
         }
         
         let parameters = [
             "name": name,
             "password": password,
-            "school_number": schoolNum,
+            "school_number": selectedSchool.number!,
             "grade": grade,
             "class_number": classNum,
             "number": number

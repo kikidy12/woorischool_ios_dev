@@ -22,6 +22,12 @@ enum UserType: String {
     case teacher = "TEACHER"
 }
 
+enum AttendenceType: String {
+    case attendance = "attendance"
+    case tardy = "tardy"
+    case absent = "absent"
+}
+
 enum NanumSquareRound: String {
     case light = "Light"
     case regular = "Regular"

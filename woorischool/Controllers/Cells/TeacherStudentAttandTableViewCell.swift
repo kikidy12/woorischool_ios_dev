@@ -9,7 +9,16 @@
 import UIKit
 
 class TeacherStudentAttandTableViewCell: UITableViewCell {
+    
+    var attendClouser: ((AttendenceType, UIButton)->())!
+    
+    var student: UserData!
 
+    @IBOutlet weak var attandStackView: UIStackView!
+    @IBOutlet weak var profileImageVIew: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var infoLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,4 +30,22 @@ class TeacherStudentAttandTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func initView(_ data: UserData) {
+        student = data
+        nameLabel.text = student.name
+        infoLabel.text = "\(student.studentInfo.grade ?? 1)학년 \(student.studentInfo.classNumber ?? 1)반 \(student.studentInfo.number ?? 1)번"
+    }
+    
+    
+    @IBAction func seletAttendence(_ sender: UIButton) {
+        if sender.tag == 0 {
+            attendClouser(.absent, sender)
+        }
+        if sender.tag == 1 {
+            attendClouser(.tardy, sender)
+        }
+        if sender.tag == 2 {
+            attendClouser(.attendance, sender)
+        }
+    }
 }

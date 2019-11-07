@@ -162,6 +162,21 @@ class ServerUtil: NSObject {
         apiRequest("student_list", method: .post, parameters: parameters, completion: completion)
     }
     
+    func getSchool(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("school", method: .get, parameters: parameters, completion: completion)
+    }
+    
+    func postPushTest(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("push_test", method: .post, parameters: parameters, completion: completion)
+    }
+    
+    func deleteAuth(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("auth", method: .delete, parameters: parameters, completion: completion)
+    }
+    
     //upload
     func putAuth(vc: UIViewController, multipartFormData: @escaping (MultipartFormData) -> Void, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
         currentVc = vc

@@ -85,7 +85,7 @@ class TeacherMainViewController: UIViewController {
                     setLeftTitleSetting("소통방")
                     break
                 case 3:
-                    setMainViews(vc: StudentMyInfoViewController())
+                    setMainViews(vc: MyPageViewController())
                     setLeftTitleSetting("내 정보")
                     break
                 default:

@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansCJKkr-Medium.otf">
+            <string>NotoSansCJKkr-Medium</string>
+        </array>
+        <array key="NotoSansCJKkr-Regular.otf">
+            <string>NotoSansCJKkr-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegistDailyNoteViewController" customModule="우리스쿨" customModuleProvider="target">
+            <connections>
+                <outlet property="homeWorkTextField" destination="469-f7-SwX" id="fW3-Bt-MHk"/>
+                <outlet property="imageCollectionView" destination="cnq-8Y-9gi" id="dQ8-YM-9gi"/>
+                <outlet property="imagePlaceHolderView" destination="zUv-Nx-xGl" id="XuF-oh-qXB"/>
+                <outlet property="materialTextField" destination="3iC-D7-ddu" id="yut-v0-wG8"/>
+                <outlet property="scrollView" destination="Nwv-5s-7BE" id="wJ5-xj-fjW"/>
+                <outlet property="textView" destination="IKA-sb-mT5" id="Ia7-W5-dfO"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="1274"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gi7-oy-bm8">
+                    <rect key="frame" x="0.0" y="44" width="414" height="1"/>
+                    <color key="backgroundColor" name="veryLightPink"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="Wt2-S7-VlI"/>
+                    </constraints>
+                </view>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nwv-5s-7BE">
+                    <rect key="frame" x="0.0" y="45" width="414" height="1195"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yyl-6d-TVX">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="663"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10월 21일자 알림장" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKb-vV-vuj">
+                                    <rect key="frame" x="17" y="25" width="151.5" height="22.5"/>
+                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="19"/>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fe6-AY-XBf" customClass="CustomView" customModule="우리스쿨" customModuleProvider="target">
+                                    <rect key="frame" x="17" y="59.5" width="380" height="140"/>
+                                    <subviews>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="IKA-sb-mT5">
+                                            <rect key="frame" x="10" y="10" width="360" height="120"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <color key="textColor" name="greyishBrown"/>
+                                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="15"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="140" id="2mI-Up-xAh"/>
+                                        <constraint firstAttribute="bottom" secondItem="IKA-sb-mT5" secondAttribute="bottom" constant="10" id="GlP-aB-a6v"/>
+                                        <constraint firstAttribute="trailing" secondItem="IKA-sb-mT5" secondAttribute="trailing" constant="10" id="SXx-nT-lTC"/>
+                                        <constraint firstItem="IKA-sb-mT5" firstAttribute="top" secondItem="Fe6-AY-XBf" secondAttribute="top" constant="10" id="Z7U-dR-CNr"/>
+                                        <constraint firstItem="IKA-sb-mT5" firstAttribute="leading" secondItem="Fe6-AY-XBf" secondAttribute="leading" constant="10" id="i56-8k-K4h"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" name="veryLightPink"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="다음 수업 준비물" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ARD-tD-Fal">
+                                    <rect key="frame" x="17" y="219.5" width="126" height="22.5"/>
+                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="19"/>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2cj-bu-7iZ" customClass="CustomView" customModule="우리스쿨" customModuleProvider="target">
+                                    <rect key="frame" x="17" y="248" width="380" height="50"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="내용 입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3iC-D7-ddu">
+                                            <rect key="frame" x="12" y="0.0" width="356" height="50"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="3iC-D7-ddu" secondAttribute="bottom" id="GBm-3n-5TZ"/>
+                                        <constraint firstItem="3iC-D7-ddu" firstAttribute="leading" secondItem="2cj-bu-7iZ" secondAttribute="leading" constant="12" id="ZyG-OL-5UN"/>
+                                        <constraint firstAttribute="height" constant="50" id="cj2-J4-2m3"/>
+                                        <constraint firstAttribute="trailing" secondItem="3iC-D7-ddu" secondAttribute="trailing" constant="12" id="jFs-C4-UaY"/>
+                                        <constraint firstItem="3iC-D7-ddu" firstAttribute="top" secondItem="2cj-bu-7iZ" secondAttribute="top" id="koS-R0-FoP"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" name="veryLightPink"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="다음 수업 숙제" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQb-Vg-ELT">
+                                    <rect key="frame" x="17" y="328" width="109.5" height="22.5"/>
+                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="19"/>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BUs-dv-uwt" customClass="CustomView" customModule="우리스쿨" customModuleProvider="target">
+                                    <rect key="frame" x="17" y="356.5" width="380" height="50"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="내용 입력" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="469-f7-SwX">
+                                            <rect key="frame" x="12" y="0.0" width="356" height="50"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstItem="469-f7-SwX" firstAttribute="top" secondItem="BUs-dv-uwt" secondAttribute="top" id="Ic2-M9-fcX"/>
+                                        <constraint firstAttribute="bottom" secondItem="469-f7-SwX" secondAttribute="bottom" id="Ohu-Mj-Axu"/>
+                                        <constraint firstItem="469-f7-SwX" firstAttribute="leading" secondItem="BUs-dv-uwt" secondAttribute="leading" constant="12" id="R4g-2P-5DL"/>
+                                        <constraint firstAttribute="trailing" secondItem="469-f7-SwX" secondAttribute="trailing" constant="12" id="Uil-FV-dEF"/>
+                                        <constraint firstAttribute="height" constant="50" id="fQB-RY-T7A"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" name="veryLightPink"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사진 등록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="86F-Mk-Y9T">
+                                    <rect key="frame" x="17" y="426.5" width="71.5" height="22.5"/>
+                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="19"/>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GN9-m9-14O" customClass="CustomButton" customModule="우리스쿨" customModuleProvider="target">
+                                    <rect key="frame" x="335" y="425.5" width="62" height="25"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="62" id="N60-Eb-Pe0"/>
+                                        <constraint firstAttribute="height" constant="25" id="adC-Hc-Mkr"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="13"/>
+                                    <state key="normal" title="등록 +">
+                                        <color key="titleColor" name="greenishTeal"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
+                                            <real key="value" value="12.5"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" name="greenishTeal"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="showCameraSelectViewEvent" destination="-1" eventType="touchUpInside" id="5RD-cQ-gha"/>
+                                    </connections>
+                                </button>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HhR-rs-OE6" customClass="CustomView" customModule="우리스쿨" customModuleProvider="target">
+                                    <rect key="frame" x="17" y="461" width="380" height="102"/>
+                                    <subviews>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="cnq-8Y-9gi">
+                                            <rect key="frame" x="0.0" y="0.0" width="380" height="102"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="44G-ZR-VLj">
+                                                <size key="itemSize" width="50" height="50"/>
+                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                            </collectionViewFlowLayout>
+                                            <connections>
+                                                <outlet property="dataSource" destination="-1" id="UbF-NT-fL0"/>
+                                                <outlet property="delegate" destination="-1" id="TRK-kF-FAJ"/>
+                                            </connections>
+                                        </collectionView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zUv-Nx-xGl">
+                                            <rect key="frame" x="0.0" y="0.0" width="380" height="102"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Lyc-9P-73T">
+                                                    <rect key="frame" x="176.5" y="30.5" width="27" height="22"/>
+                                                    <color key="tintColor" name="brownGrey"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="24" id="1V0-n1-S1e"/>
+                                                        <constraint firstAttribute="width" constant="27" id="MDa-B3-Hci"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사진 등록" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tnh-DX-EQs">
+                                                    <rect key="frame" x="162" y="54" width="56.5" height="17.5"/>
+                                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="15"/>
+                                                    <color key="textColor" name="brownGrey"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <gestureRecognizers/>
+                                            <constraints>
+                                                <constraint firstItem="Tnh-DX-EQs" firstAttribute="top" secondItem="Lyc-9P-73T" secondAttribute="bottom" id="3Ew-TG-Dsb"/>
+                                                <constraint firstItem="Lyc-9P-73T" firstAttribute="top" secondItem="zUv-Nx-xGl" secondAttribute="top" constant="30" id="BVu-Im-zXA"/>
+                                                <constraint firstItem="Tnh-DX-EQs" firstAttribute="centerX" secondItem="zUv-Nx-xGl" secondAttribute="centerX" id="c83-K7-p1n"/>
+                                                <constraint firstItem="Lyc-9P-73T" firstAttribute="centerX" secondItem="zUv-Nx-xGl" secondAttribute="centerX" id="klB-jl-HjL"/>
+                                            </constraints>
+                                            <connections>
+                                                <outletCollection property="gestureRecognizers" destination="Yxh-oe-SsD" appends="YES" id="JKF-0v-v7Q"/>
+                                            </connections>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstItem="cnq-8Y-9gi" firstAttribute="top" secondItem="HhR-rs-OE6" secondAttribute="top" id="4A3-A7-trh"/>
+                                        <constraint firstItem="zUv-Nx-xGl" firstAttribute="top" secondItem="HhR-rs-OE6" secondAttribute="top" id="EgO-oo-Cvd"/>
+                                        <constraint firstItem="cnq-8Y-9gi" firstAttribute="leading" secondItem="HhR-rs-OE6" secondAttribute="leading" id="Ihd-WM-1S8"/>
+                                        <constraint firstAttribute="trailing" secondItem="cnq-8Y-9gi" secondAttribute="trailing" id="JhX-GY-xb5"/>
+                                        <constraint firstAttribute="bottom" secondItem="zUv-Nx-xGl" secondAttribute="bottom" id="T7b-ar-EHj"/>
+                                        <constraint firstItem="zUv-Nx-xGl" firstAttribute="leading" secondItem="HhR-rs-OE6" secondAttribute="leading" id="dwl-pB-DTC"/>
+                                        <constraint firstAttribute="bottom" secondItem="cnq-8Y-9gi" secondAttribute="bottom" id="gy0-ea-NBR"/>
+                                        <constraint firstAttribute="trailing" secondItem="zUv-Nx-xGl" secondAttribute="trailing" id="iLn-4s-maT"/>
+                                        <constraint firstAttribute="height" constant="102" id="jJW-Ec-ZHk"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" name="veryLightPink"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="ARD-tD-Fal" firstAttribute="top" secondItem="Fe6-AY-XBf" secondAttribute="bottom" constant="20" id="2Pg-Vl-dMy"/>
+                                <constraint firstItem="86F-Mk-Y9T" firstAttribute="leading" secondItem="yyl-6d-TVX" secondAttribute="leading" constant="17" id="F3y-e2-zWc"/>
+                                <constraint firstItem="Fe6-AY-XBf" firstAttribute="leading" secondItem="yyl-6d-TVX" secondAttribute="leading" constant="17" id="GvQ-6i-0ki"/>
+                                <constraint firstItem="NQb-Vg-ELT" firstAttribute="top" secondItem="2cj-bu-7iZ" secondAttribute="bottom" constant="30" id="Hg9-0g-kFE"/>
+                                <constraint firstItem="NQb-Vg-ELT" firstAttribute="leading" secondItem="yyl-6d-TVX" secondAttribute="leading" constant="17" id="IRZ-px-fna"/>
+                                <constraint firstItem="2cj-bu-7iZ" firstAttribute="leading" secondItem="yyl-6d-TVX" secondAttribute="leading" constant="17" id="KLZ-Mz-kKU"/>
+                                <constraint firstAttribute="trailing" secondItem="HhR-rs-OE6" secondAttribute="trailing" constant="17" id="Mbq-gy-eXA"/>
+                                <constraint firstItem="86F-Mk-Y9T" firstAttribute="top" secondItem="BUs-dv-uwt" secondAttribute="bottom" constant="20" id="Q6J-hw-858"/>
+                                <constraint firstItem="HhR-rs-OE6" firstAttribute="top" secondItem="86F-Mk-Y9T" secondAttribute="bottom" constant="12" id="VUg-4n-KqN"/>
+                                <constraint firstItem="2cj-bu-7iZ" firstAttribute="top" secondItem="ARD-tD-Fal" secondAttribute="bottom" constant="6" id="Vrh-Xz-9eE"/>
+                                <constraint firstItem="GN9-m9-14O" firstAttribute="centerY" secondItem="86F-Mk-Y9T" secondAttribute="centerY" id="WmM-qS-Kva"/>
+                                <constraint firstAttribute="bottom" secondItem="HhR-rs-OE6" secondAttribute="bottom" constant="100" id="XU3-mn-egM"/>
+                                <constraint firstAttribute="trailing" secondItem="BUs-dv-uwt" secondAttribute="trailing" constant="17" id="XXy-zB-WTf"/>
+                                <constraint firstAttribute="height" priority="1" constant="1000" id="auZ-5U-ugc"/>
+                                <constraint firstItem="MKb-vV-vuj" firstAttribute="leading" secondItem="yyl-6d-TVX" secondAttribute="leading" constant="17" id="ayu-tM-IoQ"/>
+                                <constraint firstAttribute="trailing" secondItem="GN9-m9-14O" secondAttribute="trailing" constant="17" id="d0k-0g-U6H"/>
+                                <constraint firstAttribute="trailing" secondItem="2cj-bu-7iZ" secondAttribute="trailing" constant="17" id="hGo-cQ-TV3"/>
+                                <constraint firstItem="ARD-tD-Fal" firstAttribute="leading" secondItem="yyl-6d-TVX" secondAttribute="leading" constant="17" id="lFv-f8-Cpv"/>
+                                <constraint firstAttribute="trailing" secondItem="Fe6-AY-XBf" secondAttribute="trailing" constant="17" id="mIJ-EB-IBe"/>
+                                <constraint firstItem="HhR-rs-OE6" firstAttribute="leading" secondItem="yyl-6d-TVX" secondAttribute="leading" constant="17" id="pTo-D1-Hgi"/>
+                                <constraint firstItem="BUs-dv-uwt" firstAttribute="leading" secondItem="yyl-6d-TVX" secondAttribute="leading" constant="17" id="qDW-Km-b7m"/>
+                                <constraint firstItem="MKb-vV-vuj" firstAttribute="top" secondItem="yyl-6d-TVX" secondAttribute="top" constant="25" id="rEq-AK-vhd"/>
+                                <constraint firstItem="BUs-dv-uwt" firstAttribute="top" secondItem="NQb-Vg-ELT" secondAttribute="bottom" constant="6" id="xOl-al-rHg"/>
+                                <constraint firstItem="Fe6-AY-XBf" firstAttribute="top" secondItem="MKb-vV-vuj" secondAttribute="bottom" constant="12" id="zgQ-UO-dia"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="0.96078431372549022" green="0.96470588235294119" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstItem="yyl-6d-TVX" firstAttribute="top" secondItem="Rub-2O-aoj" secondAttribute="top" id="7G1-bj-Bjh"/>
+                        <constraint firstItem="yyl-6d-TVX" firstAttribute="trailing" secondItem="Rub-2O-aoj" secondAttribute="trailing" id="BJp-SE-mi9"/>
+                        <constraint firstItem="yyl-6d-TVX" firstAttribute="bottom" secondItem="Rub-2O-aoj" secondAttribute="bottom" id="LYC-y3-itl"/>
+                        <constraint firstItem="yyl-6d-TVX" firstAttribute="leading" secondItem="Rub-2O-aoj" secondAttribute="leading" id="hfZ-4Y-0a0"/>
+                        <constraint firstItem="yyl-6d-TVX" firstAttribute="width" secondItem="9IW-PW-RDo" secondAttribute="width" id="kaR-FN-t6b"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="Rub-2O-aoj"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="9IW-PW-RDo"/>
+                </scrollView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gi7-oy-bm8" secondAttribute="trailing" id="2cE-pb-xnS"/>
+                <constraint firstItem="Nwv-5s-7BE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="A8o-BK-2BT"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Nwv-5s-7BE" secondAttribute="trailing" id="DJV-uz-Rnv"/>
+                <constraint firstItem="gi7-oy-bm8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="GiE-gi-UjC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Nwv-5s-7BE" secondAttribute="bottom" id="JuA-2t-uZN"/>
+                <constraint firstItem="Nwv-5s-7BE" firstAttribute="top" secondItem="gi7-oy-bm8" secondAttribute="bottom" id="Tc9-22-zVT"/>
+                <constraint firstItem="gi7-oy-bm8" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="rPu-KD-DSf"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="137.68115942028987" y="220.3125"/>
+        </view>
+        <tapGestureRecognizer id="Yxh-oe-SsD">
+            <connections>
+                <action selector="showCameraSelectViewEvent" destination="-1" id="Beg-tN-DsD"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="camera.fill" catalog="system" width="64" height="48"/>
+        <namedColor name="brownGrey">
+            <color red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="greenishTeal">
+            <color red="0.17254901960784313" green="0.77647058823529413" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="greyishBrown">
+            <color red="0.29019607843137257" green="0.29019607843137257" blue="0.29019607843137257" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="veryLightPink">
+            <color red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

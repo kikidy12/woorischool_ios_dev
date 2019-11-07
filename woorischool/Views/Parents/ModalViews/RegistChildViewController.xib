@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,7 +17,7 @@
         </array>
     </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegistChildViewController" customModule="woorischool" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegistChildViewController" customModule="우리스쿨" customModuleProvider="target">
             <connections>
                 <outlet property="classNumberTextField" destination="x5D-iO-XCh" id="dEM-xQ-x6X"/>
                 <outlet property="gradeTextField" destination="lC2-Fh-jYf" id="oeU-UC-e9N"/>
@@ -39,13 +39,13 @@
                     <color key="textColor" name="greyishBrown"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tzh-gi-Zx5" customClass="CustomView" customModule="woorischool" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tzh-gi-Zx5" customClass="CustomView" customModule="우리스쿨" customModuleProvider="target">
                     <rect key="frame" x="30" y="113" width="354" height="95"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ysU-Tb-850">
                             <rect key="frame" x="0.0" y="0.0" width="354" height="47"/>
                             <subviews>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="학교번호 6자리" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CDk-BQ-lMS">
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="학교선택" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CDk-BQ-lMS">
                                     <rect key="frame" x="14" y="0.0" width="326" height="47"/>
                                     <color key="textColor" name="greyishBrown"/>
                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
@@ -200,7 +200,7 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VWl-2t-skg" customClass="CustomView" customModule="woorischool" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VWl-2t-skg" customClass="CustomView" customModule="우리스쿨" customModuleProvider="target">
                     <rect key="frame" x="30" y="223" width="354" height="95"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lcG-ie-oYA">
@@ -276,7 +276,7 @@
                     <color key="textColor" name="brownGrey"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MdL-WK-jSY" customClass="CustomButton" customModule="woorischool" customModuleProvider="target">
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MdL-WK-jSY" customClass="CustomButton" customModule="우리스쿨" customModuleProvider="target">
                     <rect key="frame" x="30" y="750" width="354" height="47"/>
                     <color key="backgroundColor" name="greenishTeal"/>
                     <constraints>

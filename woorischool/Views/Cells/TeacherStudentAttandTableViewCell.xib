@@ -94,8 +94,11 @@
                                                 <color key="value" name="veryLightPink"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="seletAttendence:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="bvS-pP-pAS"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ug-y7-7sd" customClass="CustomButton" customModule="우리스쿨" customModuleProvider="target">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ug-y7-7sd" customClass="CustomButton" customModule="우리스쿨" customModuleProvider="target">
                                         <rect key="frame" x="41.5" y="5" width="34" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="34" id="L0D-Xv-wX6"/>
@@ -114,8 +117,11 @@
                                                 <color key="value" name="veryLightPink"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="seletAttendence:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="hSG-n1-a1e"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GPg-HO-aEX" customClass="CustomButton" customModule="우리스쿨" customModuleProvider="target">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GPg-HO-aEX" customClass="CustomButton" customModule="우리스쿨" customModuleProvider="target">
                                         <rect key="frame" x="82.5" y="5" width="34" height="34"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="34" id="0QB-2F-S8F"/>
@@ -134,6 +140,9 @@
                                                 <color key="value" name="veryLightPink"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="seletAttendence:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="HsF-5Y-4L5"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -164,6 +173,12 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="attandStackView" destination="cus-9n-jzz" id="rhK-q5-tTo"/>
+                <outlet property="infoLabel" destination="jvD-Vt-dbU" id="1ho-Fz-mbd"/>
+                <outlet property="nameLabel" destination="8iN-3C-x8a" id="y6i-lc-TGL"/>
+                <outlet property="profileImageVIew" destination="ujy-rE-vFQ" id="f67-3N-rXq"/>
+            </connections>
             <point key="canvasLocation" x="137.68115942028987" y="125.89285714285714"/>
         </tableViewCell>
     </objects>

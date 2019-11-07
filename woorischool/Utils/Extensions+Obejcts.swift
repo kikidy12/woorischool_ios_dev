@@ -35,6 +35,23 @@ extension DateFormatter {
 }
 
 extension Date {
+    func dateToString(formatter:String = "yyyy-MM-dd HH:mm:ss") -> String {
+        let dateForamtter = DateFormatter()
+        dateForamtter.dateFormat = formatter
+        
+        return dateForamtter.string(from: self)
+    }
+}
+
+extension String {
+    func stringToDate(formatter:String = "yyyy-MM-dd HH:mm:ss") -> Date? {
+        let dateForamtter = DateFormatter()
+        dateForamtter.dateFormat = formatter
+        return dateForamtter.date(from: self)
+    }
+}
+
+extension Date {
     var startOfWeek: Date? {
         let gregorian = Calendar(identifier: .gregorian)
         guard let sunday = gregorian.date(from: gregorian.dateComponents([.yearForWeekOfYear, .weekOfYear], from: self)) else { return nil }
@@ -69,47 +86,91 @@ extension Date {
 }
 
 extension UIColor {
-    
-    @nonobjc class var greyishBrown: UIColor {
-        return UIColor(white: 74.0 / 255.0, alpha: 1.0)
-    }
-    
-    @nonobjc class var greenishTeal: UIColor {
-        return UIColor(red: 44.0 / 255.0, green: 198.0 / 255.0, blue: 143.0 / 255.0, alpha: 1.0)
-    }
-    
-    @nonobjc class var brownGrey: UIColor {
-        return UIColor(white: 155.0 / 255.0, alpha: 1.0)
-    }
-    
-    @nonobjc class var softBlue: UIColor {
-        return UIColor(red: 97.0 / 255.0, green: 173.0 / 255.0, blue: 242.0 / 255.0, alpha: 1.0)
-    }
-    
-    @nonobjc class var marigold: UIColor {
-        return UIColor(red: 1.0, green: 198.0 / 255.0, blue: 0.0, alpha: 1.0)
-    }
-    
-    @nonobjc class var veryLightPink: UIColor {
-        return UIColor(white: 224.0 / 255.0, alpha: 1.0)
-    }
-    
-    @nonobjc class var grapefruit: UIColor {
-        return UIColor(red: 242.0 / 255.0, green: 103.0 / 255.0, blue: 100.0 / 255.0, alpha: 1.0)
-    }
-    
-    @nonobjc class var veryLightPinkTwo: UIColor {
-        return UIColor(white: 209.0 / 255.0, alpha: 1.0)
-    }
-    
-    @nonobjc class var paleGrey: UIColor {
-        return UIColor(red: 245.0 / 255.0, green: 245.0 / 255.0, blue: 247.0 / 255.0, alpha: 1.0)
-    }
-    
-    @nonobjc class var paleGreyTwo: UIColor {
-        return UIColor(red: 245.0 / 255.0, green: 246.0 / 255.0, blue: 250.0 / 255.0, alpha: 1.0)
-    }
-    
+
+  @nonobjc class var greyishBrown: UIColor {
+    return UIColor(white: 74.0 / 255.0, alpha: 1.0)
+  }
+
+  @nonobjc class var greenishTeal: UIColor {
+    return UIColor(red: 44.0 / 255.0, green: 198.0 / 255.0, blue: 143.0 / 255.0, alpha: 1.0)
+  }
+
+  @nonobjc class var brownGrey: UIColor {
+    return UIColor(white: 155.0 / 255.0, alpha: 1.0)
+  }
+
+  @nonobjc class var softBlue: UIColor {
+    return UIColor(red: 97.0 / 255.0, green: 173.0 / 255.0, blue: 242.0 / 255.0, alpha: 1.0)
+  }
+
+  @nonobjc class var marigold: UIColor {
+    return UIColor(red: 1.0, green: 198.0 / 255.0, blue: 0.0, alpha: 1.0)
+  }
+
+  @nonobjc class var veryLightPink: UIColor {
+    return UIColor(white: 224.0 / 255.0, alpha: 1.0)
+  }
+
+  @nonobjc class var grapefruit: UIColor {
+    return UIColor(red: 242.0 / 255.0, green: 103.0 / 255.0, blue: 100.0 / 255.0, alpha: 1.0)
+  }
+
+  @nonobjc class var veryLightPinkTwo: UIColor {
+    return UIColor(white: 209.0 / 255.0, alpha: 1.0)
+  }
+
+  @nonobjc class var paleGrey: UIColor {
+    return UIColor(red: 245.0 / 255.0, green: 245.0 / 255.0, blue: 247.0 / 255.0, alpha: 1.0)
+  }
+
+  @nonobjc class var paleGreyTwo: UIColor {
+    return UIColor(red: 245.0 / 255.0, green: 246.0 / 255.0, blue: 250.0 / 255.0, alpha: 1.0)
+  }
+
+  @nonobjc class var grapefruit10: UIColor {
+    return UIColor(red: 242.0 / 255.0, green: 103.0 / 255.0, blue: 100.0 / 255.0, alpha: 0.1)
+  }
+
+  @nonobjc class var black60: UIColor {
+    return UIColor(white: 0.0, alpha: 0.6)
+  }
+
+  @nonobjc class var whiteTwo: UIColor {
+    return UIColor(white: 245.0 / 255.0, alpha: 1.0)
+  }
+
+  @nonobjc class var veryLightPinkThree: UIColor {
+    return UIColor(white: 230.0 / 255.0, alpha: 1.0)
+  }
+
+  @nonobjc class var iceBlue: UIColor {
+    return UIColor(red: 233.0 / 255.0, green: 243.0 / 255.0, blue: 253.0 / 255.0, alpha: 1.0)
+  }
+
+  @nonobjc class var whiteThree: UIColor {
+    return UIColor(white: 247.0 / 255.0, alpha: 1.0)
+  }
+
+  @nonobjc class var dodgerBlue: UIColor {
+    return UIColor(red: 50.0 / 255.0, green: 157.0 / 255.0, blue: 1.0, alpha: 1.0)
+  }
+
+  @nonobjc class var paleGreyThree: UIColor {
+    return UIColor(red: 245.0 / 255.0, green: 246.0 / 255.0, blue: 247.0 / 255.0, alpha: 1.0)
+  }
+
+  @nonobjc class var ice: UIColor {
+    return UIColor(red: 228.0 / 255.0, green: 248.0 / 255.0, blue: 241.0 / 255.0, alpha: 1.0)
+  }
+
+  @nonobjc class var turquoiseBlue: UIColor {
+    return UIColor(red: 18.0 / 255.0, green: 182.0 / 255.0, blue: 215.0 / 255.0, alpha: 1.0)
+  }
+
+  @nonobjc class var blueGrey: UIColor {
+    return UIColor(red: 124.0 / 255.0, green: 133.0 / 255.0, blue: 151.0 / 255.0, alpha: 1.0)
+  }
+
 }
 
 extension String {

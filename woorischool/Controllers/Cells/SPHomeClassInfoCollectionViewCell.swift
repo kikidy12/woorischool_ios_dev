@@ -12,19 +12,26 @@ class SPHomeClassInfoCollectionViewCell: UICollectionViewCell {
     
     var lectureClassDay: LectureClassDayData!
     
+    var showDailyNotiColouser: ((Bool)->())!
+    
+    @IBOutlet weak var newImageView: UIImageView!
     @IBOutlet weak var attandImageView: UIImageView!
     @IBOutlet weak var classTypeImageView: UIImageView!
     @IBOutlet weak var lectureNameLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var eduTimeLabel: UILabel!
-    @IBOutlet weak var prepareLabel: UILabel!
-    @IBOutlet weak var homeWorkLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     
 
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
+    
+    @IBAction func showDailyNotiVIewEvent(_ sender: Any) {
+        showDailyNotiColouser(true)
+    }
+    
 
     func initView(_ data: LectureClassDayData) {
         lectureClassDay = data
