@@ -10,6 +10,16 @@ import UIKit
 
 class RegistDailyNoteViewController: UIViewController {
     
+    var scheduleList = [LectureScheduleData]()
+    
+    var lectureClass: LectureClassData!
+    
+    var selectedSchedule: LectureScheduleData! {
+        didSet {
+            dateLabel.text = selectedSchedule.date.dateToString(formatter: "MM월 dd일자 알림장")
+        }
+    }
+    
     var imageList = [UIImage]() {
         didSet {
             if imageList.isEmpty {
@@ -28,6 +38,7 @@ class RegistDailyNoteViewController: UIViewController {
     
     var selectTextInputType:UIView!
     
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var materialTextField: UITextField!
     @IBOutlet weak var homeWorkTextField: UITextField!
     @IBOutlet weak var textView: UITextView!
@@ -50,12 +61,46 @@ class RegistDailyNoteViewController: UIViewController {
         materialTextField.delegate = self
         
         imageCollectionView.register(UINib(nibName: "PictureImageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "imageCell")
+        
+        let tempList = scheduleList.filter({
+            $0.date.dateToString(formatter: "yyyy-MM-dd") >= Date().dateToString(formatter: "yyyy-MM-dd")
+        })
+        
+        tempList.forEach {
+            print($0.date.dateToString(formatter: "yyyy-MM-dd"))
+        }
+        if tempList.isEmpty {
+            selectedSchedule = scheduleList.last
+        }
+        else {
+            selectedSchedule = tempList.last
+        }
+        
+        
+        navibarSetting()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
+    
+    
+    func navibarSetting() {
+        title = "\(lectureClass.lecture?.name ?? "강좌") \(lectureClass.name ?? "클래스")"
+        let uploadBtn = UIBarButtonItem(title: "업로드", style: .plain, target: self, action: #selector(uploadEvnet))
+        
+        uploadBtn.tintColor = .greenishTeal
+        
+        navigationItem.rightBarButtonItem = uploadBtn
+    }
+    
+    @objc func uploadEvnet() {
+        
+    }
+    
+    
+    
     
     @IBAction func showCameraSelectViewEvent() {
         let vc = SelectCameraTypeViewController()
@@ -104,6 +149,25 @@ extension RegistDailyNoteViewController: UITextViewDelegate, UITextFieldDelegate
             var contentInset:UIEdgeInsets = self.scrollView.contentInset
             contentInset.bottom = keyboardHeight
             scrollView.contentInset = contentInset
+        }
+    }
+    
+    @IBAction func selectNextDateEvent() {
+        if let index = scheduleList.firstIndex(of: selectedSchedule), index > 0 {
+            selectedSchedule = scheduleList[index + 1]
+        }
+        else {
+            
+        }
+        
+    }
+    
+    @IBAction func selectPreviosDateEvent() {
+        if let index = scheduleList.firstIndex(of: selectedSchedule), index < scheduleList.count - 1 {
+            selectedSchedule = scheduleList[index - 1]
+        }
+        else {
+            
         }
     }
 }

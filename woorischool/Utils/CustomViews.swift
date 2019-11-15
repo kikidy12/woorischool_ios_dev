@@ -106,11 +106,15 @@ class CustomImageView: UIImageView {
 
 
 @IBDesignable
-class CustomButton: UIButton {
+class CustomGradientButton: UIButton {
     var gradient = CAGradientLayer()
     
     override func draw(_ rect: CGRect) {
         super.draw(rect)
+        layoutIfNeeded()
+    }
+
+    override func layoutIfNeeded() {
         gradient.startPoint = CGPoint(x: 0, y: 0)
         gradient.endPoint = CGPoint(x: 1, y: 0)
         gradient.locations = [0.0, 1.0]
@@ -119,12 +123,11 @@ class CustomButton: UIButton {
         self.layer.addSublayer(self.gradient)
         self.bringSubviewToFront(self.titleLabel!)
     }
-
-    
     //Shadow
     @IBInspectable var shadowColor: UIColor = .clear {
         didSet {
             self.layer.shadowColor = self.shadowColor.cgColor
+            
         }
     }
     @IBInspectable var shadowOpacity: Float = 0 {
@@ -179,6 +182,52 @@ class CustomButton: UIButton {
     
     override func layoutSubviews() {
         gradient.colors = [startColor.cgColor, endColor.cgColor]
+    }
+}
+
+@IBDesignable
+class CustomButton: UIButton {
+    //Shadow
+    @IBInspectable var shadowColor: UIColor = .clear {
+        didSet {
+            self.layer.shadowColor = self.shadowColor.cgColor
+        }
+    }
+    @IBInspectable var shadowOpacity: Float = 0 {
+        didSet {
+            self.layer.shadowOpacity = self.shadowOpacity
+        }
+    }
+    @IBInspectable var shadowOffset: CGSize = CGSize(width: 0, height: 0) {
+        didSet {
+            self.layer.shadowOffset = self.shadowOffset
+        }
+    }
+    @IBInspectable var shadowRadius: CGFloat = 0.0 {
+        didSet {
+            self.layer.shadowRadius = self.shadowRadius
+        }
+    }
+    
+    //coner
+    @IBInspectable var conerRadius : CGFloat = 0.0 {
+        didSet {
+            self.layer.cornerRadius = self.conerRadius
+        }
+    }
+    
+    //border
+    @IBInspectable var borderWidth: CGFloat = 0.0 {
+        didSet{
+            self.layer.borderWidth = borderWidth
+        }
+    }
+    
+    
+    @IBInspectable var borderColor: UIColor = .clear {
+        didSet {
+            self.layer.borderColor = borderColor.cgColor
+        }
     }
 }
 

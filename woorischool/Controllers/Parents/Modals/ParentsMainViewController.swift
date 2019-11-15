@@ -82,7 +82,7 @@ class ParentsMainViewController: UIViewController {
                         setLeftTitleSetting("게시판")
                         break
                     case 3:
-                        setMainViews(vc: StudentChattingRoomListViewController())
+                        setMainViews(vc: ChattingRoomListViewController())
                         setLeftTitleSetting("소통방")
                         break
                     case 4:

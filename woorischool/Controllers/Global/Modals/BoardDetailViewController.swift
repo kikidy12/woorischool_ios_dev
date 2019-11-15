@@ -35,7 +35,7 @@ class BoardDetailViewController: UIViewController {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var scrollContentView: UIView!
     @IBOutlet weak var customInputView: CustomInputView!
-    @IBOutlet weak var chatTextViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var chatViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var replyTableView: UITableView!
     @IBOutlet weak var replyTableViewHeightConstraint: NSLayoutConstraint!
 
@@ -46,25 +46,15 @@ class BoardDetailViewController: UIViewController {
         let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyBoard))
         tapGesture.cancelsTouchesInView = false
         scrollView.addGestureRecognizer(tapGesture)
-        customInputView.chatTextViewBottomConstraint = chatTextViewBottomConstraint
+        customInputView.parentsVc = self
+//        customInputView.chatTextViewBottomConstraint = chatTextViewBottomConstraint
         customInputView.delegate = self
     }
     
     
     override func viewWillLayoutSubviews() {
-        replyTableView.updateConstraints()
-        replyTableViewHeightConstraint.constant = self.replyTableView.contentSize.height
-    }
-    
-    
-    func registReply() {
-        count += 1
-        replyTableView.reloadData()
-        
         replyTableView.layoutIfNeeded()
         replyTableViewHeightConstraint.constant = self.replyTableView.contentSize.height
-        let bottomOffset = CGPoint(x: 0, y: scrollView.contentSize.height)
-        scrollView.setContentOffset(bottomOffset, animated: false)
     }
     
     @objc func hideKeyBoard() {
@@ -79,6 +69,16 @@ extension BoardDetailViewController: CustomInputViewDelegate {
         else {
             replyList.append(TempMessageDatas(message: message, image: image))
         }
+    }
+    
+    func keyboardSizeChange(height: CGFloat) {
+        if height == 0 {
+            chatViewBottomConstraint.constant = 0
+        }
+        else {
+            chatViewBottomConstraint.constant = height - view.safeAreaInsets.bottom
+        }
+        view.updateConstraints()
     }
 }
 
@@ -119,7 +119,7 @@ extension BoardDetailViewController: UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let vc = ReplyListViewController()
-//        self.show(vc, sender: nil)
+        let vc = ReplyListViewController()
+        self.show(vc, sender: nil)
     }
 }

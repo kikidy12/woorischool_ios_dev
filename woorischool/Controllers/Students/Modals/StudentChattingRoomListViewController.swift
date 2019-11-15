@@ -15,6 +15,7 @@ class StudentChattingRoomListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        customInputView.parentsVc = self
         customInputView.chatTextViewBottomConstraint = chatTextViewBottomConstraint
     }
     

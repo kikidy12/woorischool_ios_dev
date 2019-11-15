@@ -19,6 +19,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TeacherStudentAttendViewController" customModule="우리스쿨" customModuleProvider="target">
             <connections>
+                <outlet property="bottomScrollView" destination="JNZ-dE-HJg" id="za1-Sc-3b7"/>
+                <outlet property="classTimeLabel" destination="NRn-ZH-BkI" id="XRC-2I-GdC"/>
+                <outlet property="endBtn" destination="oGS-1F-Sjr" id="Q19-US-T3Z"/>
+                <outlet property="mainHeaderView" destination="51E-FS-es1" id="G47-sN-4wS"/>
+                <outlet property="startBtn" destination="1Zq-hl-VVR" id="fCc-gE-RjL"/>
+                <outlet property="studentCountLabel" destination="pnn-dq-Fj2" id="EZd-4K-6qj"/>
                 <outlet property="studentTableView" destination="ixG-OS-XQc" id="AO7-EV-acT"/>
                 <outlet property="studentTableViewHeightConstraint" destination="xWk-cX-35r" id="VkT-25-XXO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -29,8 +35,120 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="51E-FS-es1" customClass="CustomView" customModule="우리스쿨" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="44" width="414" height="241"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="강의 시간" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NRn-ZH-BkI">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="E1m-IP-hFA"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
+                            <color key="textColor" name="greyishBrown"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cco-W1-h6U" customClass="CustomLabel" customModule="우리스쿨" customModuleProvider="target">
+                            <rect key="frame" x="15" y="50" width="384" height="60"/>
+                            <color key="backgroundColor" name="ice"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="bYF-fC-IPI"/>
+                            </constraints>
+                            <string key="text">출결 저장 시 출결 상태가 학부모님께 전달되며
+저장 후에도 변경 가능합니다</string>
+                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="14"/>
+                            <color key="textColor" name="greenishTeal"/>
+                            <nil key="highlightedColor"/>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
+                                    <real key="value" value="6"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="ksi-z9-J7d">
+                            <rect key="frame" x="107" y="133" width="200" height="80"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Zq-hl-VVR" customClass="CustomButton" customModule="우리스쿨" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="80" id="LY1-HI-8d4"/>
+                                        <constraint firstAttribute="height" constant="80" id="tOD-xB-os8"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="15"/>
+                                    <state key="normal" title="수업시작">
+                                        <color key="titleColor" name="veryLightPink"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
+                                            <real key="value" value="40"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" name="veryLightPink"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="selectStartEndEvnet:" destination="-1" eventType="touchUpInside" id="FR9-vG-3dG"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oGS-1F-Sjr" customClass="CustomButton" customModule="우리스쿨" customModuleProvider="target">
+                                    <rect key="frame" x="120" y="0.0" width="80" height="80"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="80" id="g0R-8z-9Ek"/>
+                                        <constraint firstAttribute="height" constant="80" id="xRg-KJ-quc"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="15"/>
+                                    <state key="normal" title="수업완료">
+                                        <color key="titleColor" name="veryLightPink"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
+                                            <real key="value" value="40"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                            <real key="value" value="1"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                            <color key="value" name="veryLightPink"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="selectStartEndEvnet:" destination="-1" eventType="touchUpInside" id="Meg-uL-otz"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="cco-W1-h6U" firstAttribute="leading" secondItem="51E-FS-es1" secondAttribute="leading" constant="15" id="4rY-I9-3U2"/>
+                        <constraint firstItem="NRn-ZH-BkI" firstAttribute="leading" secondItem="51E-FS-es1" secondAttribute="leading" id="7Bl-ys-Wzn"/>
+                        <constraint firstItem="ksi-z9-J7d" firstAttribute="top" secondItem="cco-W1-h6U" secondAttribute="bottom" constant="23" id="7ek-DP-Nfe"/>
+                        <constraint firstItem="ksi-z9-J7d" firstAttribute="centerX" secondItem="51E-FS-es1" secondAttribute="centerX" id="GfS-KT-T9B"/>
+                        <constraint firstItem="cco-W1-h6U" firstAttribute="top" secondItem="NRn-ZH-BkI" secondAttribute="bottom" constant="20" id="RVG-Pe-mPx"/>
+                        <constraint firstItem="NRn-ZH-BkI" firstAttribute="top" secondItem="51E-FS-es1" secondAttribute="top" id="ZDM-Wk-Fsf"/>
+                        <constraint firstAttribute="bottom" secondItem="ksi-z9-J7d" secondAttribute="bottom" constant="28" id="eup-3P-OgV"/>
+                        <constraint firstAttribute="trailing" secondItem="cco-W1-h6U" secondAttribute="trailing" constant="15" id="hhK-ab-3o9"/>
+                        <constraint firstAttribute="trailing" secondItem="NRn-ZH-BkI" secondAttribute="trailing" id="vJA-sQ-chV"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                            <real key="value" value="0.070000000000000007"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                            <size key="value" width="0.0" height="2"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JNZ-dE-HJg">
-                    <rect key="frame" x="0.0" y="275" width="414" height="587"/>
+                    <rect key="frame" x="0.0" y="285" width="414" height="577"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DrO-Zl-Wrm">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="417.5"/>
@@ -140,135 +258,6 @@
                     <viewLayoutGuide key="contentLayoutGuide" id="gly-c9-Ff9"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="ekQ-L7-7x4"/>
                 </scrollView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="51E-FS-es1" customClass="CustomView" customModule="우리스쿨" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="44" width="414" height="231"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="강의 시간" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NRn-ZH-BkI">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="30" id="E1m-IP-hFA"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
-                            <color key="textColor" name="greyishBrown"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cco-W1-h6U" customClass="CustomLabel" customModule="우리스쿨" customModuleProvider="target">
-                            <rect key="frame" x="15" y="50" width="384" height="60"/>
-                            <color key="backgroundColor" name="ice"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="60" id="bYF-fC-IPI"/>
-                            </constraints>
-                            <string key="text">출결 저장 시 출결 상태가 학부모님께 전달되며
-저장 후에도 변경 가능합니다</string>
-                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="14"/>
-                            <color key="textColor" name="greenishTeal"/>
-                            <nil key="highlightedColor"/>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
-                                    <real key="value" value="6"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </label>
-                        <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="ksi-z9-J7d">
-                            <rect key="frame" x="60" y="133" width="294" height="70"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Zq-hl-VVR" customClass="CustomButton" customModule="우리스쿨" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="70" id="LY1-HI-8d4"/>
-                                        <constraint firstAttribute="height" constant="70" id="tOD-xB-os8"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="15"/>
-                                    <state key="normal" title="수업시작">
-                                        <color key="titleColor" name="veryLightPink"/>
-                                    </state>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
-                                            <real key="value" value="35"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                            <real key="value" value="1"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                            <color key="value" name="veryLightPink"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JR2-Xj-9dD" customClass="CustomButton" customModule="우리스쿨" customModuleProvider="target">
-                                    <rect key="frame" x="112" y="0.0" width="70" height="70"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="70" id="R8V-rW-8Ah"/>
-                                        <constraint firstAttribute="height" constant="70" id="fwy-9m-Tnb"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="15"/>
-                                    <state key="normal" title="교시완료">
-                                        <color key="titleColor" name="veryLightPink"/>
-                                    </state>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
-                                            <real key="value" value="35"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                            <real key="value" value="1"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                            <color key="value" name="veryLightPink"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oGS-1F-Sjr" customClass="CustomButton" customModule="우리스쿨" customModuleProvider="target">
-                                    <rect key="frame" x="224" y="0.0" width="70" height="70"/>
-                                    <constraints>
-                                        <constraint firstAttribute="width" constant="70" id="g0R-8z-9Ek"/>
-                                        <constraint firstAttribute="height" constant="70" id="xRg-KJ-quc"/>
-                                    </constraints>
-                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="15"/>
-                                    <state key="normal" title="수업완료">
-                                        <color key="titleColor" name="veryLightPink"/>
-                                    </state>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
-                                            <real key="value" value="35"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                            <real key="value" value="1"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                            <color key="value" name="veryLightPink"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                </button>
-                            </subviews>
-                        </stackView>
-                    </subviews>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstItem="cco-W1-h6U" firstAttribute="leading" secondItem="51E-FS-es1" secondAttribute="leading" constant="15" id="4rY-I9-3U2"/>
-                        <constraint firstItem="NRn-ZH-BkI" firstAttribute="leading" secondItem="51E-FS-es1" secondAttribute="leading" id="7Bl-ys-Wzn"/>
-                        <constraint firstItem="ksi-z9-J7d" firstAttribute="top" secondItem="cco-W1-h6U" secondAttribute="bottom" constant="23" id="7ek-DP-Nfe"/>
-                        <constraint firstItem="cco-W1-h6U" firstAttribute="top" secondItem="NRn-ZH-BkI" secondAttribute="bottom" constant="20" id="RVG-Pe-mPx"/>
-                        <constraint firstItem="NRn-ZH-BkI" firstAttribute="top" secondItem="51E-FS-es1" secondAttribute="top" id="ZDM-Wk-Fsf"/>
-                        <constraint firstAttribute="trailing" secondItem="ksi-z9-J7d" secondAttribute="trailing" constant="60" id="by2-pV-zfr"/>
-                        <constraint firstAttribute="bottom" secondItem="ksi-z9-J7d" secondAttribute="bottom" constant="28" id="eup-3P-OgV"/>
-                        <constraint firstItem="ksi-z9-J7d" firstAttribute="leading" secondItem="51E-FS-es1" secondAttribute="leading" constant="60" id="hXQ-uJ-1lm"/>
-                        <constraint firstAttribute="trailing" secondItem="cco-W1-h6U" secondAttribute="trailing" constant="15" id="hhK-ab-3o9"/>
-                        <constraint firstAttribute="trailing" secondItem="NRn-ZH-BkI" secondAttribute="trailing" id="vJA-sQ-chV"/>
-                    </constraints>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                            <real key="value" value="1"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                            <real key="value" value="0.070000000000000007"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                            <size key="value" width="0.0" height="2"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>

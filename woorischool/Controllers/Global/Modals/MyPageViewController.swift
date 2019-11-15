@@ -49,7 +49,9 @@ class MyPageViewController: UIViewController {
     }
     
     @IBAction func logoutEvent() {
-        logout()
+        AlertHandler.shared.showAlert(vc: self, message: "로그아웃 하시겠습니까", okTitle: "로그아웃", cancelTitle: "취소", okHandler: { (_) in
+            self.logout()
+        })
     }
     
     @IBAction func resignEvent() {

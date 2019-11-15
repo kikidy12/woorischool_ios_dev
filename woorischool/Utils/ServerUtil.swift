@@ -22,7 +22,7 @@ class ServerUtil: NSObject {
     
     fileprivate var serverAddress: String!
     
-    fileprivate var headers:HTTPHeaders = ["X-Http-Token": UserDefs.userToken]
+    var headers:HTTPHeaders = ["X-Http-Token": UserDefs.userToken]
     
     fileprivate var progressLabel = UILabel()
     
@@ -135,6 +135,22 @@ class ServerUtil: NSObject {
         apiRequest("lecture_apply", method: .patch, parameters: parameters, completion: completion)
     }
     
+    //v2
+    func getV2Info(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("v2_info", method: .get, parameters: parameters, completion: completion)
+    }
+    
+    func getV2MeInfo(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("v2_me_info", method: .get, parameters: parameters, completion: completion)
+    }
+    
+    func postV2Announcement(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("v2_announcement", method: .post, parameters: parameters, completion: completion)
+    }
+    
     //teacher
     
     func putAuth(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
@@ -177,6 +193,21 @@ class ServerUtil: NSObject {
         apiRequest("auth", method: .delete, parameters: parameters, completion: completion)
     }
     
+    func getLectureSchedule(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("lecture_schedule", method: .get, parameters: parameters, completion: completion)
+    }
+    
+    func postLectureSchedule(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("lecture_schedule", method: .post, parameters: parameters, completion: completion)
+    }
+    
+    func postLectureStatus(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("lecture_status", method: .post, parameters: parameters, completion: completion)
+    }
+    
     //upload
     func putAuth(vc: UIViewController, multipartFormData: @escaping (MultipartFormData) -> Void, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
         currentVc = vc
@@ -207,7 +238,7 @@ extension ServerUtil {
     }
     
     
-    fileprivate func apiRequest(_ api: String, method: HTTPMethod, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+    fileprivate func apiRequest(version: String = "", _ api: String, method: HTTPMethod, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
         showLoadding()
         var request: DataRequest!
 //        switch method {
@@ -227,14 +258,14 @@ extension ServerUtil {
         
     }
     
-    fileprivate func uploadRequest(_ api: String, method: HTTPMethod, showUploadProgress:Bool = false, multipartFormData: @escaping (MultipartFormData) -> Void, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+    fileprivate func uploadRequest(version: String = "", _ api: String, method: HTTPMethod, showUploadProgress:Bool = false, multipartFormData: @escaping (MultipartFormData) -> Void, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
         if showUploadProgress {
             self.currentVc.view.addSubview(self.progressLabel)
         }
         else {
             showLoadding()
         }
-        Alamofire.upload(multipartFormData: multipartFormData, to: serverAddress + api, method: method, headers: headers) { (encodingResult) in
+        Alamofire.upload(multipartFormData: multipartFormData, to: serverAddress + version + api, method: method, headers: headers) { (encodingResult) in
             switch encodingResult {
             case .success(let upload,_,_):
                 upload.uploadProgress(closure: { (progress) in
@@ -246,7 +277,7 @@ extension ServerUtil {
                     print(self.progressString)
                 })
                 upload.responseJSON(completionHandler: { (response) in
-                    self.responseProcess(response: response, completion: completion)
+                    self.responseProcess(version: version, response: response, completion: completion)
                 })
             case .failure(let error):
                 print(error)
@@ -255,7 +286,7 @@ extension ServerUtil {
         }
     }
     
-    fileprivate func responseProcess(response: DataResponse<Any>, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+    fileprivate func responseProcess(version: String = "", response: DataResponse<Any>, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
         if serverAddress != liveServer {
             print(response.request?.description ?? "ServerError")
             print(response.description)

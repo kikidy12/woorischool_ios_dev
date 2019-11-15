@@ -11,11 +11,22 @@ import UIKit
 class ReplyListViewController: UIViewController {
     
     
-    @IBOutlet weak var scrollView: UIScrollView!
-    @IBOutlet weak var chatTextView: UITextView!
-    @IBOutlet weak var chatTextViewHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var chatTextViewBottomConstraint: NSLayoutConstraint!
+    var replyList:[TempMessageDatas] = [TempMessageDatas(message: "dfsdfdsfanjfnlsf", image: nil),TempMessageDatas(message: "dfsdfdsfanjfnlsf", image: nil),TempMessageDatas(message: "dfsdfdsfanjfnlsf", image: UIImage(named: "chatUpIcon")!),TempMessageDatas(message: "dfsdfdsfanjfnlsf", image: nil),TempMessageDatas(message: "dfsdfdsfanjfnlsf", image: UIImage(named: "chatUpIcon")!),TempMessageDatas(message: "dfsdfdsfanjfnlsf", image: nil)] {
+        didSet {
+            replyTableView.reloadData()
+            replyTableView.layoutIfNeeded()
+            replyTableViewHeightConstraint.constant = self.replyTableView.contentSize.height
+            let bottomOffset = CGPoint(x: 0, y: scrollView.contentSize.height)
+            scrollView.setContentOffset(bottomOffset, animated: false)
+        }
+    }
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    
+    
+    @IBOutlet weak var customInputView: CustomInputView!
+    @IBOutlet weak var chatTextViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var replyTableView: UITableView!
     @IBOutlet weak var replyTableViewHeightConstraint: NSLayoutConstraint!
 
@@ -26,58 +37,47 @@ class ReplyListViewController: UIViewController {
         
         let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyBoard))
         tapGesture.cancelsTouchesInView = false
-
         scrollView.addGestureRecognizer(tapGesture)
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        let size = CGSize(width: chatTextView.frame.width, height: .greatestFiniteMagnitude)
-        let estimatedSize = chatTextView.sizeThatFits(size)
-        chatTextViewHeightConstraint.constant = estimatedSize.height
         
-        NotificationCenter.default.addObserver(self, selector:#selector(keyboardWillShow(note:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector:#selector(keyboardWillHide(note:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        customInputView.parentsVc = self
+        customInputView.delegate = self
     }
     
-    override func viewWillDisappear(_ animated: Bool) {
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        replyTableView.reloadData()
+    override func viewWillLayoutSubviews() {
         replyTableView.layoutIfNeeded()
         replyTableViewHeightConstraint.constant = self.replyTableView.contentSize.height
     }
     
     @objc func hideKeyBoard() {
-        chatTextView.resignFirstResponder()
-    }
-
-    @objc func keyboardWillShow(note: NSNotification) {
-        if let keyboardSize = (note.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            UIView.animate(withDuration: 0.7) {
-                self.chatTextViewBottomConstraint.constant = keyboardSize.height - self.view.safeAreaInsets.bottom
-                self.view.layoutIfNeeded()
-            }
-        }
-    }
-
-    @objc func keyboardWillHide(note: NSNotification) {
-        self.chatTextViewBottomConstraint.constant = 0
+        customInputView.lastSelectTextView.resignFirstResponder()
     }
 }
 
-
-extension ReplyListViewController: UITextViewDelegate {
-    func textViewDidChange(_ textView: UITextView) {
-        let size = CGSize(width: textView.frame.width, height: .greatestFiniteMagnitude) // ---- 1
-        let estimatedSize = textView.sizeThatFits(size) // ---- 2
-        self.chatTextViewHeightConstraint.constant = estimatedSize.height
+extension ReplyListViewController: CustomInputViewDelegate {
+    func sendMessage(message: String, image: UIImage?) {
+        if message.isEmpty, image == nil {
+            return
+        }
+        else {
+            replyList.append(TempMessageDatas(message: message, image: image))
+        }
+    }
+    
+    func keyboardSizeChange(height: CGFloat) {
+        if height == 0 {
+            chatTextViewBottomConstraint.constant = 0
+        }
+        else {
+            chatTextViewBottomConstraint.constant = height - view.safeAreaInsets.bottom
+        }
     }
 }
 
 extension ReplyListViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        self.viewWillLayoutSubviews()
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }

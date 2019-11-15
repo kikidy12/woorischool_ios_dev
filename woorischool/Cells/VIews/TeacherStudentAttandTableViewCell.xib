@@ -84,14 +84,14 @@
                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
                                         <state key="normal" title="결석"/>
                                         <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
-                                                <real key="value" value="17"/>
-                                            </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="1"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                 <color key="value" name="veryLightPink"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
+                                                <real key="value" value="17"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
@@ -167,7 +167,7 @@
                 <constraints>
                     <constraint firstItem="eab-jG-4Jc" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="UMw-zq-eHu"/>
                     <constraint firstItem="eab-jG-4Jc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="oRo-oi-Z9W"/>
-                    <constraint firstAttribute="bottom" secondItem="eab-jG-4Jc" secondAttribute="bottom" id="vbx-Be-eKm"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="eab-jG-4Jc" secondAttribute="bottom" id="vbx-Be-eKm"/>
                     <constraint firstAttribute="trailing" secondItem="eab-jG-4Jc" secondAttribute="trailing" id="w06-O0-lUX"/>
                 </constraints>
             </tableViewCellContentView>

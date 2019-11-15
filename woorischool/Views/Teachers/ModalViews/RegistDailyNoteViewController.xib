@@ -19,6 +19,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegistDailyNoteViewController" customModule="우리스쿨" customModuleProvider="target">
             <connections>
+                <outlet property="dateLabel" destination="MKb-vV-vuj" id="QV3-oE-ZJR"/>
                 <outlet property="homeWorkTextField" destination="469-f7-SwX" id="fW3-Bt-MHk"/>
                 <outlet property="imageCollectionView" destination="cnq-8Y-9gi" id="dQ8-YM-9gi"/>
                 <outlet property="imagePlaceHolderView" destination="zUv-Nx-xGl" id="XuF-oh-qXB"/>
@@ -46,8 +47,19 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yyl-6d-TVX">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="663"/>
                             <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMF-z9-MpC">
+                                    <rect key="frame" x="87.5" y="24.5" width="24" height="24"/>
+                                    <color key="backgroundColor" name="greenishTeal"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="24" id="MaE-fI-1pO"/>
+                                        <constraint firstAttribute="height" constant="24" id="tJN-fg-tv8"/>
+                                    </constraints>
+                                    <connections>
+                                        <action selector="selectPreviosDateEvent" destination="-1" eventType="touchUpInside" id="ZSv-jL-4A5"/>
+                                    </connections>
+                                </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10월 21일자 알림장" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKb-vV-vuj">
-                                    <rect key="frame" x="17" y="25" width="151.5" height="22.5"/>
+                                    <rect key="frame" x="131.5" y="25" width="151.5" height="22.5"/>
                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="19"/>
                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
@@ -244,16 +256,29 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </view>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g07-43-j68">
+                                    <rect key="frame" x="303" y="24.5" width="24" height="24"/>
+                                    <color key="backgroundColor" name="greenishTeal"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="24" id="KMH-gS-JYr"/>
+                                        <constraint firstAttribute="height" constant="24" id="xzL-zh-Jq1"/>
+                                    </constraints>
+                                    <connections>
+                                        <action selector="selectNextDateEvent" destination="-1" eventType="touchUpInside" id="g2g-KG-vci"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="ARD-tD-Fal" firstAttribute="top" secondItem="Fe6-AY-XBf" secondAttribute="bottom" constant="20" id="2Pg-Vl-dMy"/>
+                                <constraint firstItem="MKb-vV-vuj" firstAttribute="centerX" secondItem="yyl-6d-TVX" secondAttribute="centerX" id="2Ul-w4-hiS"/>
                                 <constraint firstItem="86F-Mk-Y9T" firstAttribute="leading" secondItem="yyl-6d-TVX" secondAttribute="leading" constant="17" id="F3y-e2-zWc"/>
                                 <constraint firstItem="Fe6-AY-XBf" firstAttribute="leading" secondItem="yyl-6d-TVX" secondAttribute="leading" constant="17" id="GvQ-6i-0ki"/>
                                 <constraint firstItem="NQb-Vg-ELT" firstAttribute="top" secondItem="2cj-bu-7iZ" secondAttribute="bottom" constant="30" id="Hg9-0g-kFE"/>
                                 <constraint firstItem="NQb-Vg-ELT" firstAttribute="leading" secondItem="yyl-6d-TVX" secondAttribute="leading" constant="17" id="IRZ-px-fna"/>
                                 <constraint firstItem="2cj-bu-7iZ" firstAttribute="leading" secondItem="yyl-6d-TVX" secondAttribute="leading" constant="17" id="KLZ-Mz-kKU"/>
                                 <constraint firstAttribute="trailing" secondItem="HhR-rs-OE6" secondAttribute="trailing" constant="17" id="Mbq-gy-eXA"/>
+                                <constraint firstItem="g07-43-j68" firstAttribute="centerY" secondItem="MKb-vV-vuj" secondAttribute="centerY" id="Mny-P7-6wv"/>
                                 <constraint firstItem="86F-Mk-Y9T" firstAttribute="top" secondItem="BUs-dv-uwt" secondAttribute="bottom" constant="20" id="Q6J-hw-858"/>
                                 <constraint firstItem="HhR-rs-OE6" firstAttribute="top" secondItem="86F-Mk-Y9T" secondAttribute="bottom" constant="12" id="VUg-4n-KqN"/>
                                 <constraint firstItem="2cj-bu-7iZ" firstAttribute="top" secondItem="ARD-tD-Fal" secondAttribute="bottom" constant="6" id="Vrh-Xz-9eE"/>
@@ -261,14 +286,16 @@
                                 <constraint firstAttribute="bottom" secondItem="HhR-rs-OE6" secondAttribute="bottom" constant="100" id="XU3-mn-egM"/>
                                 <constraint firstAttribute="trailing" secondItem="BUs-dv-uwt" secondAttribute="trailing" constant="17" id="XXy-zB-WTf"/>
                                 <constraint firstAttribute="height" priority="1" constant="1000" id="auZ-5U-ugc"/>
-                                <constraint firstItem="MKb-vV-vuj" firstAttribute="leading" secondItem="yyl-6d-TVX" secondAttribute="leading" constant="17" id="ayu-tM-IoQ"/>
                                 <constraint firstAttribute="trailing" secondItem="GN9-m9-14O" secondAttribute="trailing" constant="17" id="d0k-0g-U6H"/>
+                                <constraint firstItem="lMF-z9-MpC" firstAttribute="centerY" secondItem="MKb-vV-vuj" secondAttribute="centerY" id="f6p-UW-IYH"/>
                                 <constraint firstAttribute="trailing" secondItem="2cj-bu-7iZ" secondAttribute="trailing" constant="17" id="hGo-cQ-TV3"/>
                                 <constraint firstItem="ARD-tD-Fal" firstAttribute="leading" secondItem="yyl-6d-TVX" secondAttribute="leading" constant="17" id="lFv-f8-Cpv"/>
+                                <constraint firstItem="g07-43-j68" firstAttribute="leading" secondItem="MKb-vV-vuj" secondAttribute="trailing" constant="20" id="lZg-u7-7jw"/>
                                 <constraint firstAttribute="trailing" secondItem="Fe6-AY-XBf" secondAttribute="trailing" constant="17" id="mIJ-EB-IBe"/>
                                 <constraint firstItem="HhR-rs-OE6" firstAttribute="leading" secondItem="yyl-6d-TVX" secondAttribute="leading" constant="17" id="pTo-D1-Hgi"/>
                                 <constraint firstItem="BUs-dv-uwt" firstAttribute="leading" secondItem="yyl-6d-TVX" secondAttribute="leading" constant="17" id="qDW-Km-b7m"/>
                                 <constraint firstItem="MKb-vV-vuj" firstAttribute="top" secondItem="yyl-6d-TVX" secondAttribute="top" constant="25" id="rEq-AK-vhd"/>
+                                <constraint firstItem="MKb-vV-vuj" firstAttribute="leading" secondItem="lMF-z9-MpC" secondAttribute="trailing" constant="20" id="wAy-Ww-Q45"/>
                                 <constraint firstItem="BUs-dv-uwt" firstAttribute="top" secondItem="NQb-Vg-ELT" secondAttribute="bottom" constant="6" id="xOl-al-rHg"/>
                                 <constraint firstItem="Fe6-AY-XBf" firstAttribute="top" secondItem="MKb-vV-vuj" secondAttribute="bottom" constant="12" id="zgQ-UO-dia"/>
                             </constraints>

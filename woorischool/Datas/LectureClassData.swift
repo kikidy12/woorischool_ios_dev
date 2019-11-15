@@ -32,6 +32,8 @@ class LectureClassData: NSObject {
     
     var dayList = [LectureClassDayData]()
     
+    var scheduleList = [LectureScheduleData]()
+    
     var daysStr: String {
         var weekDaysStr = ""
         dayList.forEach {
@@ -74,6 +76,10 @@ class LectureClassData: NSObject {
         
         if let array = data["lecture_class_day"] as? NSArray {
             dayList = array.compactMap { LectureClassDayData($0 as! NSDictionary) }
+        }
+        
+        if let array = data["lecture_schedule"] as? NSArray {
+            scheduleList = array.compactMap { LectureScheduleData($0 as! NSDictionary) }
         }
         
     }

@@ -24,7 +24,7 @@ class RegistClassTableViewCell: UITableViewCell {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var countLabel: UILabel!
     
-    @IBOutlet weak var registBtn: CustomButton!
+    @IBOutlet weak var registBtn: UIButton!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -71,20 +71,23 @@ class RegistClassTableViewCell: UITableViewCell {
         attributedString.addAttribute(.foregroundColor, value: UIColor.grapefruit, range: NSRange(location: 0, length: "\(userCount)".count))
         
         countLabel.attributedText = attributedString
-        
         if lectureClass.isApply {
-            registBtn.setTitleColor(.white, for: .normal)
-            registBtn.setTitle("신청하기", for: .normal)
             registBtn.layer.borderWidth = 0
             registBtn.backgroundColor = .greenishTeal
             registBtn.isEnabled = true
+            
+            
+            registBtn.setTitleColor(.white, for: .normal)
+            registBtn.setTitle("신청하기", for: .normal)
         }
         else {
-            registBtn.setTitleColor(.brownGrey, for: .normal)
-            registBtn.setTitle("신청완료", for: .normal)
             registBtn.layer.borderWidth = 1
             registBtn.backgroundColor = .clear
             registBtn.isEnabled = false
+            
+            
+            registBtn.setTitleColor(.brownGrey, for: .normal)
+            registBtn.setTitle("신청완료", for: .normal)
         }
     }
 }

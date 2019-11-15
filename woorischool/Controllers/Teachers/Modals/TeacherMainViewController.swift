@@ -77,11 +77,11 @@ class TeacherMainViewController: UIViewController {
                     setLeftTitleSetting("OSchool")
                     break
                 case 1:
-                    setMainViews(vc: StudentBoardListViewController())
+                    setMainViews(vc: BoardListViewController())
                     setLeftTitleSetting("게시판")
                     break
                 case 2:
-                    setMainViews(vc: StudentChattingRoomListViewController())
+                    setMainViews(vc: ChattingRoomListViewController())
                     setLeftTitleSetting("소통방")
                     break
                 case 3:

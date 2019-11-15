@@ -12,6 +12,23 @@
 		6E6A417BE18C14AC419C187E /* Pods_woorischool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DF9025D4AFF6AA15336F7F8 /* Pods_woorischool.framework */; };
 		99057904236BD06B002842AB /* ParentsEnrolmentClassViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99057902236BD06B002842AB /* ParentsEnrolmentClassViewController.swift */; };
 		99057905236BD06B002842AB /* ParentsEnrolmentClassViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99057903236BD06B002842AB /* ParentsEnrolmentClassViewController.xib */; };
+		99088BCD2375413D009C9AE6 /* NotiListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99088BCB2375413D009C9AE6 /* NotiListViewController.swift */; };
+		99088BCE2375413D009C9AE6 /* NotiListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99088BCC2375413D009C9AE6 /* NotiListViewController.xib */; };
+		99088BD123754235009C9AE6 /* NotiTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99088BCF23754235009C9AE6 /* NotiTableViewCell.swift */; };
+		99088BD223754235009C9AE6 /* NotiTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99088BD023754235009C9AE6 /* NotiTableViewCell.xib */; };
+		99088BD523754ABF009C9AE6 /* ChattingRoomListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99088BD323754ABF009C9AE6 /* ChattingRoomListViewController.swift */; };
+		99088BD623754ABF009C9AE6 /* ChattingRoomListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99088BD423754ABF009C9AE6 /* ChattingRoomListViewController.xib */; };
+		99088BD823755179009C9AE6 /* ChattingRoomTableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99088BD723755179009C9AE6 /* ChattingRoomTableHeaderView.swift */; };
+		99088BDA23755185009C9AE6 /* ChattingRoomTableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99088BD923755185009C9AE6 /* ChattingRoomTableHeaderView.xib */; };
+		99088BDD237554B1009C9AE6 /* ChattingRoomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99088BDB237554B1009C9AE6 /* ChattingRoomTableViewCell.swift */; };
+		99088BDE237554B1009C9AE6 /* ChattingRoomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99088BDC237554B1009C9AE6 /* ChattingRoomTableViewCell.xib */; };
+		99088BE1237CF351009C9AE6 /* DailyNoteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99088BDF237CF351009C9AE6 /* DailyNoteListViewController.swift */; };
+		99088BE2237CF351009C9AE6 /* DailyNoteListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99088BE0237CF351009C9AE6 /* DailyNoteListViewController.xib */; };
+		99088BE5237CF3D8009C9AE6 /* DailyNoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99088BE3237CF3D8009C9AE6 /* DailyNoteTableViewCell.swift */; };
+		99088BE6237CF3D8009C9AE6 /* DailyNoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99088BE4237CF3D8009C9AE6 /* DailyNoteTableViewCell.xib */; };
+		99088BE8237E1E48009C9AE6 /* LectureScheduleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99088BE7237E1E48009C9AE6 /* LectureScheduleData.swift */; };
+		99088BEA237E2253009C9AE6 /* DailyNoteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99088BE9237E2253009C9AE6 /* DailyNoteData.swift */; };
+		99088BEC237E22A3009C9AE6 /* ImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99088BEB237E22A3009C9AE6 /* ImageData.swift */; };
 		991182CD236BDEE40020D6CE /* BoardListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991182CB236BDEE40020D6CE /* BoardListViewController.swift */; };
 		991182CE236BDEE40020D6CE /* BoardListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 991182CC236BDEE40020D6CE /* BoardListViewController.xib */; };
 		991182D1236BE0460020D6CE /* BoardListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991182CF236BE0460020D6CE /* BoardListTableViewCell.swift */; };
@@ -197,6 +214,23 @@
 		976225E4F1BC256AAEF8F4BB /* Pods-woorischool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-woorischool.release.xcconfig"; path = "Target Support Files/Pods-woorischool/Pods-woorischool.release.xcconfig"; sourceTree = "<group>"; };
 		99057902236BD06B002842AB /* ParentsEnrolmentClassViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentsEnrolmentClassViewController.swift; sourceTree = "<group>"; };
 		99057903236BD06B002842AB /* ParentsEnrolmentClassViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParentsEnrolmentClassViewController.xib; sourceTree = "<group>"; };
+		99088BCB2375413D009C9AE6 /* NotiListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotiListViewController.swift; sourceTree = "<group>"; };
+		99088BCC2375413D009C9AE6 /* NotiListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotiListViewController.xib; sourceTree = "<group>"; };
+		99088BCF23754235009C9AE6 /* NotiTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotiTableViewCell.swift; sourceTree = "<group>"; };
+		99088BD023754235009C9AE6 /* NotiTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotiTableViewCell.xib; sourceTree = "<group>"; };
+		99088BD323754ABF009C9AE6 /* ChattingRoomListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingRoomListViewController.swift; sourceTree = "<group>"; };
+		99088BD423754ABF009C9AE6 /* ChattingRoomListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChattingRoomListViewController.xib; sourceTree = "<group>"; };
+		99088BD723755179009C9AE6 /* ChattingRoomTableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingRoomTableHeaderView.swift; sourceTree = "<group>"; };
+		99088BD923755185009C9AE6 /* ChattingRoomTableHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChattingRoomTableHeaderView.xib; sourceTree = "<group>"; };
+		99088BDB237554B1009C9AE6 /* ChattingRoomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChattingRoomTableViewCell.swift; sourceTree = "<group>"; };
+		99088BDC237554B1009C9AE6 /* ChattingRoomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChattingRoomTableViewCell.xib; sourceTree = "<group>"; };
+		99088BDF237CF351009C9AE6 /* DailyNoteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyNoteListViewController.swift; sourceTree = "<group>"; };
+		99088BE0237CF351009C9AE6 /* DailyNoteListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyNoteListViewController.xib; sourceTree = "<group>"; };
+		99088BE3237CF3D8009C9AE6 /* DailyNoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyNoteTableViewCell.swift; sourceTree = "<group>"; };
+		99088BE4237CF3D8009C9AE6 /* DailyNoteTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DailyNoteTableViewCell.xib; sourceTree = "<group>"; };
+		99088BE7237E1E48009C9AE6 /* LectureScheduleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureScheduleData.swift; sourceTree = "<group>"; };
+		99088BE9237E2253009C9AE6 /* DailyNoteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyNoteData.swift; sourceTree = "<group>"; };
+		99088BEB237E22A3009C9AE6 /* ImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageData.swift; sourceTree = "<group>"; };
 		991182CB236BDEE40020D6CE /* BoardListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardListViewController.swift; sourceTree = "<group>"; };
 		991182CC236BDEE40020D6CE /* BoardListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BoardListViewController.xib; sourceTree = "<group>"; };
 		991182CF236BE0460020D6CE /* BoardListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardListTableViewCell.swift; sourceTree = "<group>"; };
@@ -415,10 +449,18 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		99088BCA23754085009C9AE6 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				9914A9CB2343092F001C0112 /* Objects */,
+				9914AA312345CF19001C0112 /* VIews */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		9914A9C9234308CC001C0112 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				9914AA312345CF19001C0112 /* Cells */,
 				9914AA152343258D001C0112 /* Global */,
 				994A6B27235ECB4D0088D46E /* Students */,
 				9914AA142343257A001C0112 /* Parents */,
@@ -430,7 +472,6 @@
 		9914A9CA23430925001C0112 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				9914A9CB2343092F001C0112 /* Cells */,
 				9914AA182343268D001C0112 /* Global */,
 				994A6B24235ECAED0088D46E /* Students */,
 				9914AA1723432686001C0112 /* Parents */,
@@ -439,7 +480,7 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
-		9914A9CB2343092F001C0112 /* Cells */ = {
+		9914A9CB2343092F001C0112 /* Objects */ = {
 			isa = PBXGroup;
 			children = (
 				9914AA2D2345CEFC001C0112 /* CourseCollectionViewCell.swift */,
@@ -461,8 +502,11 @@
 				991182EB236CEE950020D6CE /* ReReplyTableViewCell.swift */,
 				991182F9236D7E000020D6CE /* EmoticonCollectionViewCell.swift */,
 				996EA4D223730D2B000C6D34 /* PictureImageCollectionViewCell.swift */,
+				99088BCF23754235009C9AE6 /* NotiTableViewCell.swift */,
+				99088BDB237554B1009C9AE6 /* ChattingRoomTableViewCell.swift */,
+				99088BE3237CF3D8009C9AE6 /* DailyNoteTableViewCell.swift */,
 			);
-			path = Cells;
+			path = Objects;
 			sourceTree = "<group>";
 		};
 		9914A9CC23430939001C0112 /* Datas */ = {
@@ -477,6 +521,9 @@
 				9911830D236EBA200020D6CE /* MessageDatas.swift */,
 				9911830F236EBC090020D6CE /* EmoticonDatas.swift */,
 				99766E1623711FAE002573FD /* SchoolData.swift */,
+				99088BE7237E1E48009C9AE6 /* LectureScheduleData.swift */,
+				99088BE9237E2253009C9AE6 /* DailyNoteData.swift */,
+				99088BEB237E22A3009C9AE6 /* ImageData.swift */,
 			);
 			path = Datas;
 			sourceTree = "<group>";
@@ -580,6 +627,8 @@
 				991182E8236CED070020D6CE /* ReplyListViewController.xib */,
 				99EBAC02237306AC00091905 /* SelectCameraTypeViewController.xib */,
 				996EA4D723739849000C6D34 /* MyPageViewController.xib */,
+				99088BCC2375413D009C9AE6 /* NotiListViewController.xib */,
+				99088BD423754ABF009C9AE6 /* ChattingRoomListViewController.xib */,
 			);
 			path = ModalViews;
 			sourceTree = "<group>";
@@ -612,11 +661,13 @@
 				991182E7236CED070020D6CE /* ReplyListViewController.swift */,
 				99EBAC01237306AC00091905 /* SelectCameraTypeViewController.swift */,
 				996EA4D623739849000C6D34 /* MyPageViewController.swift */,
+				99088BCB2375413D009C9AE6 /* NotiListViewController.swift */,
+				99088BD323754ABF009C9AE6 /* ChattingRoomListViewController.swift */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
 		};
-		9914AA312345CF19001C0112 /* Cells */ = {
+		9914AA312345CF19001C0112 /* VIews */ = {
 			isa = PBXGroup;
 			children = (
 				9914AA2E2345CEFC001C0112 /* CourseCollectionViewCell.xib */,
@@ -638,8 +689,11 @@
 				991182EC236CEE950020D6CE /* ReReplyTableViewCell.xib */,
 				991182FA236D7E000020D6CE /* EmoticonCollectionViewCell.xib */,
 				996EA4D323730D2B000C6D34 /* PictureImageCollectionViewCell.xib */,
+				99088BD023754235009C9AE6 /* NotiTableViewCell.xib */,
+				99088BDC237554B1009C9AE6 /* ChattingRoomTableViewCell.xib */,
+				99088BE4237CF3D8009C9AE6 /* DailyNoteTableViewCell.xib */,
 			);
-			path = Cells;
+			path = VIews;
 			sourceTree = "<group>";
 		};
 		9915B615236339F000ACE9B6 /* CustomView */ = {
@@ -651,6 +705,8 @@
 				991182FF236D86E80020D6CE /* EmoInputView.xib */,
 				99118309236E94CB0020D6CE /* CustomInputView.swift */,
 				9911830B236E94DC0020D6CE /* CustomInputView.xib */,
+				99088BD723755179009C9AE6 /* ChattingRoomTableHeaderView.swift */,
+				99088BD923755185009C9AE6 /* ChattingRoomTableHeaderView.xib */,
 			);
 			path = CustomView;
 			sourceTree = "<group>";
@@ -751,6 +807,7 @@
 				9914A9E823430E3C001C0112 /* Fonts */,
 				9914A9CD23430945001C0112 /* Utils */,
 				9914A9CC23430939001C0112 /* Datas */,
+				99088BCA23754085009C9AE6 /* Cells */,
 				9914A9CA23430925001C0112 /* Controllers */,
 				9914A9C9234308CC001C0112 /* Views */,
 				9968CF2B23418F3200B8D095 /* AppDelegate.swift */,
@@ -810,6 +867,8 @@
 				99DFB15F2350605F00C5B69D /* TeacherHomeViewController.xib */,
 				9915B61B2365213700ACE9B6 /* TeacherStudentListViewController.xib */,
 				9956BF772366B5670069E661 /* TeacherStudentAttendViewController.xib */,
+				99088BE0237CF351009C9AE6 /* DailyNoteListViewController.xib */,
+				99468CE52372823E00AAB535 /* RegistDailyNoteViewController.xib */,
 			);
 			path = ModalViews;
 			sourceTree = "<group>";
@@ -824,8 +883,8 @@
 				99DFB15E2350605F00C5B69D /* TeacherHomeViewController.swift */,
 				9915B61A2365213700ACE9B6 /* TeacherStudentListViewController.swift */,
 				9956BF762366B5670069E661 /* TeacherStudentAttendViewController.swift */,
+				99088BDF237CF351009C9AE6 /* DailyNoteListViewController.swift */,
 				99468CE42372823E00AAB535 /* RegistDailyNoteViewController.swift */,
-				99468CE52372823E00AAB535 /* RegistDailyNoteViewController.xib */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
@@ -960,14 +1019,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99088BE2237CF351009C9AE6 /* DailyNoteListViewController.xib in Resources */,
 				991182CE236BDEE40020D6CE /* BoardListViewController.xib in Resources */,
 				99DFB17923556E7F00C5B69D /* RegistClassCompleteListViewController.xib in Resources */,
+				99088BE6237CF3D8009C9AE6 /* DailyNoteTableViewCell.xib in Resources */,
 				991182D2236BE0460020D6CE /* BoardListTableViewCell.xib in Resources */,
 				991182E2236C8F9D0020D6CE /* BoardReplyTableViewCell.xib in Resources */,
 				991182D6236C60CF0020D6CE /* ClassBoardListViewController.xib in Resources */,
 				9914A9FD23431447001C0112 /* NotoSansCJKkr-Light.otf in Resources */,
 				9968CF3923418F3500B8D095 /* LaunchScreen.storyboard in Resources */,
 				9956BF722365A65B0069E661 /* ParentContractTableViewCell.xib in Resources */,
+				99088BDE237554B1009C9AE6 /* ChattingRoomTableViewCell.xib in Resources */,
 				99DFB131234EF83300C5B69D /* RegistChildViewController.xib in Resources */,
 				994A6B34235ED5C10088D46E /* StudentBoardListViewController.xib in Resources */,
 				9956BF872366FE200069E661 /* MonthDaysCollectionViewCell.xib in Resources */,
@@ -977,6 +1039,7 @@
 				9914AA352346FC4B001C0112 /* ParentsHomeScheduleTableViewCell.xib in Resources */,
 				9915B610236307A400ACE9B6 /* TeacherPhoneAuthViewController.xib in Resources */,
 				9914A9FC23431447001C0112 /* NotoSansCJKkr-Black.otf in Resources */,
+				99088BCE2375413D009C9AE6 /* NotiListViewController.xib in Resources */,
 				99F7DC9E23470EA9007C4ABE /* RegistedClassMainViewController.xib in Resources */,
 				99F7DCA423471F86007C4ABE /* FillClassPopUpViewController.xib in Resources */,
 				9914AA0E23431B00001C0112 /* SelectUserTypeViewController.xib in Resources */,
@@ -1002,6 +1065,8 @@
 				9915B62123652A4600ACE9B6 /* StudentContactTableViewCell.xib in Resources */,
 				991182EA236CED070020D6CE /* ReplyListViewController.xib in Resources */,
 				9914AA0123431447001C0112 /* NotoSansCJKkr-Regular.otf in Resources */,
+				99088BDA23755185009C9AE6 /* ChattingRoomTableHeaderView.xib in Resources */,
+				99088BD623754ABF009C9AE6 /* ChattingRoomListViewController.xib in Resources */,
 				994A6B2C235ECB910088D46E /* StudentMainViewController.xib in Resources */,
 				996EA4D923739849000C6D34 /* MyPageViewController.xib in Resources */,
 				9914AA2B2345C861001C0112 /* CourseRegistrationViewController.xib in Resources */,
@@ -1018,6 +1083,7 @@
 				9914A9FF23431447001C0112 /* NotoSansCJKkr-Bold.otf in Resources */,
 				9914AA272345C12C001C0112 /* ParentsHomeViewController.xib in Resources */,
 				9915B61923633A4800ACE9B6 /* MainTitleView.xib in Resources */,
+				99088BD223754235009C9AE6 /* NotiTableViewCell.xib in Resources */,
 				994A6B30235ED5770088D46E /* StudentHomeViewController.xib in Resources */,
 				9968CF3123418F3200B8D095 /* Main.storyboard in Resources */,
 				994A6B3C235ED6030088D46E /* StudentMyInfoViewController.xib in Resources */,
@@ -1151,6 +1217,7 @@
 				99F7DC9D23470EA9007C4ABE /* RegistedClassMainViewController.swift in Sources */,
 				9956BF6D2365A42B0069E661 /* ParentsContractListViewController.swift in Sources */,
 				996EA4D423730D2B000C6D34 /* PictureImageCollectionViewCell.swift in Sources */,
+				99088BE5237CF3D8009C9AE6 /* DailyNoteTableViewCell.swift in Sources */,
 				994A6B2F235ED5770088D46E /* StudentHomeViewController.swift in Sources */,
 				9956BF822366C3850069E661 /* ParentsMainViewController.swift in Sources */,
 				99DFB16B2354236600C5B69D /* ConfirmClassViewController.swift in Sources */,
@@ -1161,11 +1228,14 @@
 				9914A9D723430B32001C0112 /* ServerUtil.swift in Sources */,
 				99DFB1802355808200C5B69D /* ManageChildrenViewController.swift in Sources */,
 				9914A9DC23430B8F001C0112 /* AlertHandler.swift in Sources */,
+				99088BEA237E2253009C9AE6 /* DailyNoteData.swift in Sources */,
 				9915B61C2365213700ACE9B6 /* TeacherStudentListViewController.swift in Sources */,
 				991182D5236C60CF0020D6CE /* ClassBoardListViewController.swift in Sources */,
 				991182ED236CEE950020D6CE /* ReReplyTableViewCell.swift in Sources */,
 				991182FB236D7E000020D6CE /* EmoticonCollectionViewCell.swift in Sources */,
+				99088BD123754235009C9AE6 /* NotiTableViewCell.swift in Sources */,
 				9915B62023652A4600ACE9B6 /* StudentContactTableViewCell.swift in Sources */,
+				99088BEC237E22A3009C9AE6 /* ImageData.swift in Sources */,
 				99DFB1682352BD3B00C5B69D /* LectureAreaData.swift in Sources */,
 				99DFB15623504F1500C5B69D /* TeacherSignUpViewController.swift in Sources */,
 				994A6B2B235ECB910088D46E /* StudentMainViewController.swift in Sources */,
@@ -1175,12 +1245,14 @@
 				994A6B3B235ED6030088D46E /* StudentMyInfoViewController.swift in Sources */,
 				991182FE236D86DC0020D6CE /* EmoInputView.swift in Sources */,
 				9911830A236E94CB0020D6CE /* CustomInputView.swift in Sources */,
+				99088BD523754ABF009C9AE6 /* ChattingRoomListViewController.swift in Sources */,
 				9911830E236EBA200020D6CE /* MessageDatas.swift in Sources */,
 				99DFB130234EF83300C5B69D /* RegistChildViewController.swift in Sources */,
 				99DFB1642350628700C5B69D /* TeacherHomeTableViewCell.swift in Sources */,
 				99DFB1772355671500C5B69D /* RegistClassCompleteListViewController.swift in Sources */,
 				99468CE62372823E00AAB535 /* RegistDailyNoteViewController.swift in Sources */,
 				99DFB184235581E300C5B69D /* ChildTableViewCell.swift in Sources */,
+				99088BD823755179009C9AE6 /* ChattingRoomTableHeaderView.swift in Sources */,
 				9914AA262345C12C001C0112 /* ParentsHomeViewController.swift in Sources */,
 				991182D9236C618A0020D6CE /* ClassBoardTableViewCell.swift in Sources */,
 				991182CD236BDEE40020D6CE /* BoardListViewController.swift in Sources */,
@@ -1199,12 +1271,15 @@
 				9914AA0D23431B00001C0112 /* SelectUserTypeViewController.swift in Sources */,
 				9956BF862366FE200069E661 /* MonthDaysCollectionViewCell.swift in Sources */,
 				9915B61323631F4700ACE9B6 /* TeacherMainViewController.swift in Sources */,
+				99088BE1237CF351009C9AE6 /* DailyNoteListViewController.swift in Sources */,
 				9968CF2E23418F3200B8D095 /* ViewController.swift in Sources */,
 				9968CF2C23418F3200B8D095 /* AppDelegate.swift in Sources */,
 				996EA4D823739849000C6D34 /* MyPageViewController.swift in Sources */,
 				9956BF7C2366C3070069E661 /* ParentsHomeRenewViewController.swift in Sources */,
 				991182E9236CED070020D6CE /* ReplyListViewController.swift in Sources */,
+				99088BE8237E1E48009C9AE6 /* LectureScheduleData.swift in Sources */,
 				99DFB15223504D6000C5B69D /* TeacherLoginViewController.swift in Sources */,
+				99088BDD237554B1009C9AE6 /* ChattingRoomTableViewCell.swift in Sources */,
 				99EBAC03237306AC00091905 /* SelectCameraTypeViewController.swift in Sources */,
 				9914A9CF2343098F001C0112 /* Extensions+Views.swift in Sources */,
 				9914AA1123431CF8001C0112 /* ParentsLoginViewController.swift in Sources */,
@@ -1226,6 +1301,7 @@
 				9914A9D323430A57001C0112 /* EnumObjects.swift in Sources */,
 				99F7DCA323471F86007C4ABE /* FillClassPopUpViewController.swift in Sources */,
 				994A6B33235ED5C10088D46E /* StudentBoardListViewController.swift in Sources */,
+				99088BCD2375413D009C9AE6 /* NotiListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

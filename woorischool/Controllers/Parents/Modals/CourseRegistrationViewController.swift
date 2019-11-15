@@ -130,7 +130,7 @@ class CourseRegistrationViewController: UIViewController {
         }
         else {
             filterLectureList = lectureList.filter {
-                return $0.name.contains(text)
+                return $0.lecture.name.contains(text)
             }
         }
     }
@@ -138,6 +138,7 @@ class CourseRegistrationViewController: UIViewController {
 
 extension CourseRegistrationViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
         if let cell = cell as? RegistClassTableViewCell {
             cell.initView(filterLectureList[indexPath.item])
         }

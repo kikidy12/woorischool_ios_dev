@@ -10,15 +10,22 @@ import UIKit
 
 protocol CustomInputViewDelegate {
     func sendMessage(message: String, image: UIImage?)
+    func keyboardSizeChange(height: CGFloat)
 }
 
 extension CustomInputViewDelegate {
     func sendMessage(message: String, image: UIImage?) {
         
     }
+    
+    func keyboardSizeChange(height: CGFloat) {
+        
+    }
 }
 
 class CustomInputView: UIView {
+    var view = UIView()
+    var defaultFrame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 60)
     
     var emoTextView = UITextView(frame: .zero)
     
@@ -26,9 +33,11 @@ class CustomInputView: UIView {
     
     var lastSelectTextView = UITextView()
     
+    var keyboardHeight:CGFloat = 0.0
+    
     var delegate: CustomInputViewDelegate?
     
-    var vc: UIViewController!
+    var parentsVc: UIViewController!
     var chatTextViewBottomConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var textView: UITextView!
@@ -48,20 +57,23 @@ class CustomInputView: UIView {
     }
     
     private func commonInit(){
-        let view = Bundle.main.loadNibNamed("CustomInputView", owner: self, options: nil)?.first as! UIView
+        view = Bundle.main.loadNibNamed("CustomInputView", owner: self, options: nil)?.first as! UIView
         view.frame = self.bounds
         self.addSubview(view)
-        
-        let size = CGSize(width: textView.frame.width, height: .greatestFiniteMagnitude)
-        let estimatedSize = textView.sizeThatFits(size)
-        textViewHeightConstraint.constant = estimatedSize.height
-        
+        defaultFrame = self.frame
+//        self.textView.frame.size = estimatedSize
         NotificationCenter.default.addObserver(self, selector:#selector(keyboardWillShow(note:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector:#selector(keyboardWillHide(note:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         emoInPutView.delegate = self
+        textView.delegate = self
         emoTextView.inputView = emoInPutView
         emoInPutView.autoresizingMask = .flexibleHeight
+        textView.keyboardDismissMode = .interactive
+        emoTextView.keyboardDismissMode = .interactive
         view.addSubview(emoTextView)
+        view.layoutIfNeeded()
+        let height = textView.sizeThatFits(CGSize(width: textView.frame.width, height: .infinity)).height
+        self.textViewHeightConstraint.constant = height
     }
     
     deinit {
@@ -85,7 +97,12 @@ class CustomInputView: UIView {
     }
     
     @IBAction func showCameraViewEvent() {
+        let vc = SelectCameraTypeViewController()
+        vc.selectImagePickClouser = { image in
+            self.delegate?.sendMessage(message: "", image: image)
+        }
         
+        parentsVc.showPopupView(vc: vc)
     }
     
     @IBAction func showEmoEvent() {
@@ -95,22 +112,14 @@ class CustomInputView: UIView {
     
     @objc func keyboardWillShow(note: NSNotification) {
         if let keyboardSize = (note.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            UIView.animate(withDuration: 0.7) {
-                if self.chatTextViewBottomConstraint != nil, let superView = self.superview {
-                    superView.layoutIfNeeded()
-                    self.chatTextViewBottomConstraint.constant = keyboardSize.height - self.superview!.safeAreaInsets.bottom
-                    
-                }
-            }
+            keyboardHeight = keyboardSize.height
+            delegate?.keyboardSizeChange(height: keyboardSize.height)
         }
     }
 
     @objc func keyboardWillHide(note: NSNotification) {
-        UIView.animate(withDuration: 0.3, animations: {
-            self.chatTextViewBottomConstraint.constant = 0
-        }) { (_) in
-            self.tempEmoView.isHidden = true
-        }
+        delegate?.keyboardSizeChange(height: 0)
+        tempEmoView.isHidden = true
     }
 }
 
@@ -124,13 +133,16 @@ extension CustomInputView: EmoInputViewDelegate {
 
 
 extension CustomInputView: UITextViewDelegate {
+    
     func textViewDidChange(_ textView: UITextView) {
-        let size = CGSize(width: textView.frame.width, height: .greatestFiniteMagnitude)
-        let estimatedSize = textView.sizeThatFits(size)
-        self.textViewHeightConstraint.constant = estimatedSize.height
+        self.layoutIfNeeded()
+        let height = textView.sizeThatFits(CGSize(width: textView.frame.width, height: .infinity)).height
+        self.textViewHeightConstraint.constant = height
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         lastSelectTextView = textView
     }
 }
+
+

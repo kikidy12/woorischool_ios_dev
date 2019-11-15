@@ -13,6 +13,7 @@ class UserData: NSObject {
     var type: UserType!
     var name: String!
     var phoneNum: String!
+    var attendence: AttendenceType!
     
     var childlen: UserData!
     
@@ -36,6 +37,10 @@ class UserData: NSObject {
         
         if let dict = data["student_info"] as? NSDictionary {
             studentInfo = StudentInfoData(dict)
+        }
+        
+        if let str = data["attendance"] as? String {
+            attendence = AttendenceType(rawValue: str)
         }
     }
 }

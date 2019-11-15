@@ -43,6 +43,8 @@ class TeacherHomeViewController: UIViewController {
     func setUserInfo() {
         let user = GlobalDatas.currentUser
         nameLabel.text = "\(user?.name ?? "미확인") 선생님\n안녕하세요"
+        
+        getClassInfo()
     }
 }
 
@@ -63,9 +65,9 @@ extension TeacherHomeViewController: UITableViewDelegate, UITableViewDataSource 
         cell.initView(classList[indexPath.item])
         
         cell.classNoteClouser = {
-            let vc = RegistDailyNoteViewController()
+            let vc = DailyNoteListViewController()
+            vc.lectureClass = self.classList[indexPath.item]
             self.show(vc, sender: nil)
-//            self.navigationController?.showToast(message: "준비중인 기능입니다.", font: .systemFont(ofSize: 15))
         }
         cell.classStudentClouser = {
             let vc = TeacherStudentListViewController()
@@ -74,6 +76,7 @@ extension TeacherHomeViewController: UITableViewDelegate, UITableViewDataSource 
         }
         cell.classAttendClouser = {
             let vc = TeacherStudentAttendViewController()
+            vc.lectureClass = self.classList[indexPath.item]
             self.show(vc, sender: nil)
         }
         cell.classIntroductionClouser = {
@@ -93,16 +96,30 @@ extension TeacherHomeViewController {
             "os": "iOS"
         ] as [String:Any]
         
-        ServerUtil.shared.getMeInfo(self, parameters: paramterts) { (success, dict, message) in
-            guard success, let user = dict?["user"] as? NSDictionary, let array = dict?["lecture"] as? NSArray else {
+        ServerUtil.shared.getV2Info(self, parameters: paramterts) { (success, dict, message) in
+            guard success, let user = dict?["user"] as? NSDictionary else {
                 AlertHandler.shared.showAlert(vc: self, message: message ?? "Server Error", okTitle: "확인")
                 return
             }
             
             GlobalDatas.currentUser = UserData(user)
             self.setUserInfo()
-            
-            self.classList = array.compactMap { LectureClassData(($0 as! NSDictionary)["lecture_class"] as! NSDictionary) }
         }
     }
+    
+    func getClassInfo() {
+            let paramterts = [
+                "device_token": GlobalDatas.deviceToken,
+                "os": "iOS"
+            ] as [String:Any]
+            
+            ServerUtil.shared.getV2MeInfo(self, parameters: paramterts) { (success, dict, message) in
+                guard success, let array = dict?["lecture_class"] as? NSArray else {
+                    AlertHandler.shared.showAlert(vc: self, message: message ?? "Server Error", okTitle: "확인")
+                    return
+                }
+                
+                self.classList = array.compactMap { LectureClassData($0 as! NSDictionary) }
+            }
+        }
 }

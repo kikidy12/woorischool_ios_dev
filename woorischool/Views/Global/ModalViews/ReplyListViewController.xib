@@ -16,9 +16,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReplyListViewController" customModule="우리스쿨" customModuleProvider="target">
             <connections>
-                <outlet property="chatTextView" destination="36C-5Z-wpE" id="KUj-vI-is8"/>
                 <outlet property="chatTextViewBottomConstraint" destination="oeN-XO-qlu" id="J6b-32-GuD"/>
-                <outlet property="chatTextViewHeightConstraint" destination="DEM-Ob-6Rh" id="iqR-bj-4qZ"/>
+                <outlet property="customInputView" destination="MIC-ox-UxU" id="0nT-A4-gYf"/>
                 <outlet property="replyTableView" destination="R42-rU-nyl" id="nkH-rJ-4Wg"/>
                 <outlet property="replyTableViewHeightConstraint" destination="caD-1R-LOd" id="lbc-nk-d4d"/>
                 <outlet property="scrollView" destination="9pT-LX-CFe" id="P05-mk-NFK"/>
@@ -34,7 +33,7 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n7t-De-K3J">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="416"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="481"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilePlaceHolder" translatesAutoresizingMaskIntoConstraints="NO" id="j2c-Ii-AZ0">
                                     <rect key="frame" x="20" y="25.5" width="35" height="35"/>
@@ -74,7 +73,7 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </view>
-                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="R42-rU-nyl">
+                                <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="R42-rU-nyl">
                                     <rect key="frame" x="35" y="116" width="359" height="300"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
@@ -102,7 +101,7 @@
                                 <constraint firstItem="7tF-yE-pFl" firstAttribute="trailing" secondItem="7RJ-pe-BhB" secondAttribute="trailing" id="Zmp-4X-VLX"/>
                                 <constraint firstItem="j2c-Ii-AZ0" firstAttribute="leading" secondItem="n7t-De-K3J" secondAttribute="leading" constant="20" id="gWu-Rj-k7h"/>
                                 <constraint firstItem="R42-rU-nyl" firstAttribute="top" secondItem="7RJ-pe-BhB" secondAttribute="bottom" constant="50" id="hAx-Tf-ZjS"/>
-                                <constraint firstAttribute="bottom" secondItem="R42-rU-nyl" secondAttribute="bottom" id="jUR-Z0-Hjs"/>
+                                <constraint firstAttribute="bottom" secondItem="R42-rU-nyl" secondAttribute="bottom" constant="65" id="jUR-Z0-Hjs"/>
                                 <constraint firstItem="7RJ-pe-BhB" firstAttribute="top" secondItem="n7t-De-K3J" secondAttribute="top" constant="20" id="tyo-GQ-dtX"/>
                                 <constraint firstAttribute="trailing" secondItem="R42-rU-nyl" secondAttribute="trailing" constant="20" id="y6D-b9-y36"/>
                             </constraints>
@@ -118,85 +117,11 @@
                     <viewLayoutGuide key="contentLayoutGuide" id="bch-kd-ALh"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="NVs-ka-Xa6"/>
                 </scrollView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MIC-ox-UxU">
-                    <rect key="frame" x="0.0" y="805" width="414" height="57"/>
-                    <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vMq-Jr-K87">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="1"/>
-                            <color key="backgroundColor" name="veryLightPink"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="1" id="A2l-uE-aqa"/>
-                            </constraints>
-                        </view>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilePlaceHolder" translatesAutoresizingMaskIntoConstraints="NO" id="CQn-De-XJf">
-                            <rect key="frame" x="11" y="7" width="35" height="35"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="35" id="osi-U2-SHL"/>
-                                <constraint firstAttribute="width" constant="35" id="z6J-r1-QWE"/>
-                            </constraints>
-                        </imageView>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lRs-JH-gpO" customClass="CustomView" customModule="우리스쿨" customModuleProvider="target">
-                            <rect key="frame" x="56" y="7" width="345" height="42"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byl-0r-U26">
-                                    <rect key="frame" x="314" y="11" width="25" height="25"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="25" id="ViD-pR-rWc"/>
-                                        <constraint firstAttribute="width" constant="25" id="rgJ-r1-3Ip"/>
-                                    </constraints>
-                                    <state key="normal" backgroundImage="chatUpIcon"/>
-                                </button>
-                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="36C-5Z-wpE">
-                                    <rect key="frame" x="18" y="6" width="252" height="30"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="30" id="DEM-Ob-6Rh"/>
-                                    </constraints>
-                                    <color key="textColor" name="greyishBrown"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                    <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
-                                    <connections>
-                                        <outlet property="delegate" destination="-1" id="vGW-x7-pKw"/>
-                                    </connections>
-                                </textView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jgk-8s-EpJ">
-                                    <rect key="frame" x="278" y="11" width="25" height="25"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="25" id="Ebu-Bd-sco"/>
-                                        <constraint firstAttribute="width" constant="25" id="xIS-zC-2Jd"/>
-                                    </constraints>
-                                    <state key="normal" backgroundImage="emoIcon"/>
-                                </button>
-                            </subviews>
-                            <color key="backgroundColor" name="veryLightPink"/>
-                            <constraints>
-                                <constraint firstAttribute="bottom" secondItem="byl-0r-U26" secondAttribute="bottom" constant="6" id="0Bp-Ov-FEP"/>
-                                <constraint firstItem="byl-0r-U26" firstAttribute="leading" secondItem="Jgk-8s-EpJ" secondAttribute="trailing" constant="11" id="4FR-af-SVo"/>
-                                <constraint firstItem="Jgk-8s-EpJ" firstAttribute="leading" secondItem="36C-5Z-wpE" secondAttribute="trailing" constant="8" id="BaU-lC-VA2"/>
-                                <constraint firstAttribute="bottom" secondItem="Jgk-8s-EpJ" secondAttribute="bottom" constant="6" id="LdI-IX-gML"/>
-                                <constraint firstItem="36C-5Z-wpE" firstAttribute="leading" secondItem="lRs-JH-gpO" secondAttribute="leading" constant="18" id="MyH-UK-nRa"/>
-                                <constraint firstAttribute="trailing" secondItem="byl-0r-U26" secondAttribute="trailing" constant="6" id="Q50-nx-1Ta"/>
-                                <constraint firstAttribute="bottom" secondItem="36C-5Z-wpE" secondAttribute="bottom" constant="6" id="WOg-gj-1mN"/>
-                                <constraint firstItem="36C-5Z-wpE" firstAttribute="top" secondItem="lRs-JH-gpO" secondAttribute="top" constant="6" id="fnv-fF-4Dp"/>
-                            </constraints>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
-                                    <real key="value" value="18"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                        </view>
-                    </subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MIC-ox-UxU" customClass="CustomInputView" customModule="우리스쿨" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="802" width="414" height="60"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstItem="lRs-JH-gpO" firstAttribute="top" secondItem="MIC-ox-UxU" secondAttribute="top" constant="7" id="2cg-cy-csj"/>
-                        <constraint firstAttribute="trailing" secondItem="lRs-JH-gpO" secondAttribute="trailing" constant="13" id="6YN-JC-UJf"/>
-                        <constraint firstAttribute="trailing" secondItem="vMq-Jr-K87" secondAttribute="trailing" id="Ny7-9Q-YJK"/>
-                        <constraint firstItem="vMq-Jr-K87" firstAttribute="leading" secondItem="MIC-ox-UxU" secondAttribute="leading" id="TJD-xH-wAs"/>
-                        <constraint firstAttribute="bottom" secondItem="lRs-JH-gpO" secondAttribute="bottom" constant="8" id="XH4-Ea-nhQ"/>
-                        <constraint firstItem="CQn-De-XJf" firstAttribute="leading" secondItem="MIC-ox-UxU" secondAttribute="leading" constant="11" id="Yuo-Y8-yLp"/>
-                        <constraint firstItem="vMq-Jr-K87" firstAttribute="top" secondItem="MIC-ox-UxU" secondAttribute="top" id="bCU-7m-DvW"/>
-                        <constraint firstItem="lRs-JH-gpO" firstAttribute="leading" secondItem="CQn-De-XJf" secondAttribute="trailing" constant="10" id="ngr-hV-BL6"/>
-                        <constraint firstItem="CQn-De-XJf" firstAttribute="top" secondItem="MIC-ox-UxU" secondAttribute="top" constant="7" id="zxe-mB-220"/>
+                        <constraint firstAttribute="height" priority="1" constant="60" id="WZq-yA-fD7"/>
                     </constraints>
                 </view>
             </subviews>
@@ -215,17 +140,9 @@
         </view>
     </objects>
     <resources>
-        <image name="chatUpIcon" width="26" height="26"/>
-        <image name="emoIcon" width="25" height="25"/>
         <image name="profilePlaceHolder" width="60" height="60"/>
         <namedColor name="brownGrey">
             <color red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="greyishBrown">
-            <color red="0.29019607843137257" green="0.29019607843137257" blue="0.29019607843137257" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="veryLightPink">
-            <color red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="veryLightPinkTwo">
             <color red="0.81960784313725488" green="0.81960784313725488" blue="0.81960784313725488" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

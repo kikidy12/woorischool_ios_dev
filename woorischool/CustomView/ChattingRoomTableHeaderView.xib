@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansCJKkr-Medium.otf">
+            <string>NotoSansCJKkr-Medium</string>
+        </array>
+        <array key="NotoSansCJKkr-Regular.otf">
+            <string>NotoSansCJKkr-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ChattingRoomTableHeaderView" customModule="우리스쿨" customModuleProvider="target">
+            <connections>
+                <outlet property="manageTimeBtn" destination="qRU-ST-KGc" id="xCl-ia-tw6"/>
+                <outlet property="timeInfoLabel" destination="nCi-1I-yqy" id="omp-dV-Mtl"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xHp-RI-etA" customClass="CustomView" customModule="우리스쿨" customModuleProvider="target">
+                    <rect key="frame" x="20" y="420.5" width="374" height="55"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="채팅 가능시간 12:00pm - 2:00 pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nCi-1I-yqy">
+                            <rect key="frame" x="16" y="8" width="200.5" height="16.5"/>
+                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="14"/>
+                            <color key="textColor" name="greenishTeal"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="설정된 시간에만 채팅을 주고받을 수 있습니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z5Q-Q4-s1F">
+                            <rect key="frame" x="16" y="33" width="214" height="14"/>
+                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
+                            <color key="textColor" name="greenishTeal"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qRU-ST-KGc" customClass="CustomButton" customModule="우리스쿨" customModuleProvider="target">
+                            <rect key="frame" x="309" y="15.5" width="53" height="24"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="24" id="DAG-4M-dhT"/>
+                                <constraint firstAttribute="width" constant="53" id="WP1-bX-idG"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="13"/>
+                            <state key="normal" title="관리">
+                                <color key="titleColor" name="greenishTeal"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
+                                    <real key="value" value="12"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                    <real key="value" value="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                    <color key="value" name="greenishTeal"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="showManageChattingTimeEvent" destination="-1" eventType="touchUpInside" id="lWO-i3-Wjn"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" name="greenishTeal10"/>
+                    <constraints>
+                        <constraint firstItem="qRU-ST-KGc" firstAttribute="centerY" secondItem="xHp-RI-etA" secondAttribute="centerY" id="Cbj-HO-g7o"/>
+                        <constraint firstAttribute="height" constant="55" id="JM1-Fx-KCX"/>
+                        <constraint firstItem="nCi-1I-yqy" firstAttribute="top" secondItem="xHp-RI-etA" secondAttribute="top" constant="8" id="N7f-9Z-MT4"/>
+                        <constraint firstAttribute="bottom" secondItem="Z5Q-Q4-s1F" secondAttribute="bottom" constant="8" id="bQk-GN-siB"/>
+                        <constraint firstItem="Z5Q-Q4-s1F" firstAttribute="leading" secondItem="xHp-RI-etA" secondAttribute="leading" constant="16" id="cLJ-MY-vGi"/>
+                        <constraint firstItem="nCi-1I-yqy" firstAttribute="leading" secondItem="xHp-RI-etA" secondAttribute="leading" constant="16" id="qBO-t7-ebD"/>
+                        <constraint firstAttribute="trailing" secondItem="qRU-ST-KGc" secondAttribute="trailing" constant="12" id="xlm-Qp-hTQ"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
+                            <real key="value" value="5"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="xHp-RI-etA" secondAttribute="trailing" constant="20" id="0h0-I0-1jg"/>
+                <constraint firstItem="xHp-RI-etA" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="WqR-Dd-5GH"/>
+                <constraint firstItem="xHp-RI-etA" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="v1h-1W-zz0"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="139" y="94"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="greenishTeal">
+            <color red="0.17254901960784313" green="0.77647058823529413" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="greenishTeal10">
+            <color red="0.17254901960784313" green="0.77647058823529413" blue="0.5607843137254902" alpha="0.10000000149011612" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

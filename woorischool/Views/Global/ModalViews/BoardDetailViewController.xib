@@ -16,8 +16,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BoardDetailViewController" customModule="우리스쿨" customModuleProvider="target">
             <connections>
-                <outlet property="chatTextViewBottomConstraint" destination="Oxs-V8-YSK" id="Wos-Jw-q6y"/>
-                <outlet property="customInputView" destination="WQ6-v0-bx0" id="pig-z9-0ja"/>
+                <outlet property="chatViewBottomConstraint" destination="sLH-QZ-ggd" id="7Xi-W7-yNC"/>
+                <outlet property="customInputView" destination="V8G-n6-9rU" id="gD2-cy-IT2"/>
                 <outlet property="replyTableView" destination="jZe-sV-TyT" id="1JK-pD-slb"/>
                 <outlet property="replyTableViewHeightConstraint" destination="TQd-He-F6z" id="YNy-A1-C6U"/>
                 <outlet property="scrollContentView" destination="bMS-5h-hfd" id="5Sf-RR-TqS"/>
@@ -146,7 +146,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstItem="ShW-P8-b89" firstAttribute="top" secondItem="ykG-YC-BiJ" secondAttribute="bottom" constant="15" id="1lk-39-fqq"/>
                                         <constraint firstItem="g9f-Du-3v0" firstAttribute="leading" secondItem="fen-hI-mN7" secondAttribute="leading" constant="20" id="2KY-Nd-305"/>
@@ -234,7 +234,7 @@
                                 </view>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jZe-sV-TyT">
                                     <rect key="frame" x="0.0" y="364.5" width="414" height="300"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="300" id="TQd-He-F6z"/>
                                     </constraints>
@@ -276,26 +276,26 @@
                     <viewLayoutGuide key="contentLayoutGuide" id="KZb-Be-oDK"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="QWw-g2-8Hg"/>
                 </scrollView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WQ6-v0-bx0" customClass="CustomInputView" customModule="우리스쿨" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="V8G-n6-9rU" customClass="CustomInputView" customModule="우리스쿨" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="802" width="414" height="60"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
-                        <constraint firstAttribute="height" priority="1" constant="60" id="5iR-ao-WeM"/>
+                        <constraint firstAttribute="height" priority="1" constant="60" id="A8W-nO-Wde"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="WQ6-v0-bx0" secondAttribute="trailing" id="3X9-B7-Dsv"/>
                 <constraint firstItem="NuN-CS-4WZ" firstAttribute="top" secondItem="KCH-9X-UbI" secondAttribute="bottom" id="6T5-ha-44T"/>
+                <constraint firstItem="V8G-n6-9rU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="JnT-da-fpX"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NuN-CS-4WZ" secondAttribute="trailing" id="MOC-GJ-H4V"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="WQ6-v0-bx0" secondAttribute="bottom" id="Oxs-V8-YSK"/>
                 <constraint firstItem="NuN-CS-4WZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="TrR-DU-H1z"/>
                 <constraint firstItem="KCH-9X-UbI" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="Vyv-wJ-K9E"/>
                 <constraint firstItem="KCH-9X-UbI" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Wd2-Fj-wzm"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="NuN-CS-4WZ" secondAttribute="bottom" id="Zbw-aN-Fak"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="V8G-n6-9rU" secondAttribute="trailing" id="e3r-Jy-iCQ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="KCH-9X-UbI" secondAttribute="trailing" id="jg6-G2-gCC"/>
-                <constraint firstItem="WQ6-v0-bx0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="zng-oj-fFZ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="V8G-n6-9rU" secondAttribute="bottom" id="sLH-QZ-ggd"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="93.75"/>

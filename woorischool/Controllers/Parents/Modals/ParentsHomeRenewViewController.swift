@@ -106,7 +106,7 @@ class ParentsHomeRenewViewController: UIViewController {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var monthLabel: UILabel!
-    @IBOutlet weak var notiLabel: UILabel!
+    @IBOutlet weak var notiBtn: UIButton!
     @IBOutlet weak var pageControl: UIPageControl!
     
     @IBOutlet weak var monthDatesCollectionView: UICollectionView!
@@ -130,7 +130,7 @@ class ParentsHomeRenewViewController: UIViewController {
             else {
                 count = 0
             }
-            self.notiLabel.text = "\(count)"
+            self.notiBtn.setTitle("\(count)", for: .normal) 
         }
         
         monthDatesCollectionView.register(UINib(nibName: "MonthDaysCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "dateCell")
@@ -223,6 +223,11 @@ class ParentsHomeRenewViewController: UIViewController {
 
     @IBAction func nextMonthSelectEvent() {
         setDate(byAdding: 1)
+    }
+    
+    @IBAction func showNotiListViewEvent() {
+        let vc = NotiListViewController()
+        self.show(vc, sender: nil)
     }
 }
 

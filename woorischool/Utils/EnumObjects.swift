@@ -16,6 +16,11 @@ enum DateFormatterStyle: String {
     case hypoon = "-"
 }
 
+enum ChatType: String {
+    case oneToOne = "1대1"
+    case manyToMany = "단체체팅"
+}
+
 enum UserType: String {
     case student = "STUDENT"
     case parents = "PARENTS"
@@ -23,9 +28,9 @@ enum UserType: String {
 }
 
 enum AttendenceType: String {
-    case attendance = "attendance"
-    case tardy = "tardy"
-    case absent = "absent"
+    case attendance = "ATTENDANCE"
+    case tardy = "TARDY"
+    case absent = "ABSENT"
 }
 
 enum NanumSquareRound: String {
