@@ -47,8 +47,8 @@ class ServerUtil: NSObject {
         lottie.sizeToFit()
         lottie.loopMode = .loop
         lottie.contentMode = .scaleAspectFill
-//        serverAddress = devServer
-        serverAddress = localServer
+        serverAddress = devServer
+//        serverAddress = localServer
 //        loadingView.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.376177226)
         loadingView.backgroundColor = .clear
         loadingView.frame = UIScreen.main.bounds
