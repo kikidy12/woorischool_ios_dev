@@ -18,7 +18,7 @@ class ServerUtil: NSObject {
     
     fileprivate let devServer:String = "http://ec2-52-78-148-252.ap-northeast-2.compute.amazonaws.com/"
     
-    fileprivate let localServer:String = ""
+    fileprivate let localServer:String = "http://172.30.1.17:5000/"
     
     fileprivate var serverAddress: String!
     
@@ -47,7 +47,8 @@ class ServerUtil: NSObject {
         lottie.sizeToFit()
         lottie.loopMode = .loop
         lottie.contentMode = .scaleAspectFill
-        serverAddress = devServer
+//        serverAddress = devServer
+        serverAddress = localServer
 //        loadingView.backgroundColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 0.376177226)
         loadingView.backgroundColor = .clear
         loadingView.frame = UIScreen.main.bounds
@@ -208,10 +209,25 @@ class ServerUtil: NSObject {
         apiRequest("lecture_status", method: .post, parameters: parameters, completion: completion)
     }
     
+    func getV2Announcement(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("v2_announcement", method: .get, parameters: parameters, completion: completion)
+    }
+    
     //upload
     func putAuth(vc: UIViewController, multipartFormData: @escaping (MultipartFormData) -> Void, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
         currentVc = vc
         uploadRequest("auth", method: .put, showUploadProgress: true, multipartFormData: multipartFormData, completion: completion)
+    }
+    
+    func putV2Announcement(vc: UIViewController, multipartFormData: @escaping (MultipartFormData) -> Void, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        uploadRequest("v2_announcement", method: .put, showUploadProgress: true, multipartFormData: multipartFormData, completion: completion)
+    }
+    
+    func patchV2Announcement(vc: UIViewController, multipartFormData: @escaping (MultipartFormData) -> Void, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        uploadRequest("v2_announcement", method: .patch, showUploadProgress: true, multipartFormData: multipartFormData, completion: completion)
     }
 }
 

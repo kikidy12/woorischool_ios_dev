@@ -89,6 +89,9 @@ extension DailyNoteListViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = RegistDailyNoteViewController()
+        vc.scheduleList = lectureClass.scheduleList
+        vc.lectureClass = lectureClass
+        vc.editSchedule = noteList[indexPath.item].lectureSchedule
         show(vc, sender: nil)
     }
 }
@@ -100,7 +103,7 @@ extension DailyNoteListViewController {
             "lecture_class_id": lectureClass.id!
         ] as [String: Any]
         
-        ServerUtil.shared.postV2Announcement(self, parameters: parameters) { (success, dict, message) in
+        ServerUtil.shared.getV2Announcement(self, parameters: parameters) { (success, dict, message) in
             guard success, let array = dict?["announcements"] as? NSArray else {
                 AlertHandler.shared.showAlert(vc: self, message: message ?? "Server Error", okTitle: "확인")
                 return

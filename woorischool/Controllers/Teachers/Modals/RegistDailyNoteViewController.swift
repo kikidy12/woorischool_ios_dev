@@ -10,13 +10,29 @@ import UIKit
 
 class RegistDailyNoteViewController: UIViewController {
     
+    var editMode = false
+    
     var scheduleList = [LectureScheduleData]()
     
     var lectureClass: LectureClassData!
     
+    var editSchedule: LectureScheduleData!
+    
+    var dailyNote: DailyNoteData! {
+        didSet {
+            if dailyNote == nil {
+                settingDailyNote(false)
+            }
+            else {
+                settingDailyNote(true)
+            }
+        }
+    }
+    
     var selectedSchedule: LectureScheduleData! {
         didSet {
             dateLabel.text = selectedSchedule.date.dateToString(formatter: "MM월 dd일자 알림장")
+            getDailyNote()
         }
     }
     
@@ -62,6 +78,7 @@ class RegistDailyNoteViewController: UIViewController {
         
         imageCollectionView.register(UINib(nibName: "PictureImageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "imageCell")
         
+        
         let tempList = scheduleList.filter({
             $0.date.dateToString(formatter: "yyyy-MM-dd") >= Date().dateToString(formatter: "yyyy-MM-dd")
         })
@@ -69,7 +86,10 @@ class RegistDailyNoteViewController: UIViewController {
         tempList.forEach {
             print($0.date.dateToString(formatter: "yyyy-MM-dd"))
         }
-        if tempList.isEmpty {
+        if editSchedule != nil {
+            selectedSchedule = editSchedule
+        }
+        else if tempList.isEmpty {
             selectedSchedule = scheduleList.last
         }
         else {
@@ -96,10 +116,38 @@ class RegistDailyNoteViewController: UIViewController {
     }
     
     @objc func uploadEvnet() {
-        
+        if editMode {
+            editDailyNote()
+        }
+        else {
+            addDailyNote()
+        }
     }
     
     
+    func settingDailyNote(_ mode: Bool) {
+        editMode = mode
+        
+        if editMode {
+            textView.text = dailyNote.content
+            materialTextField.text = dailyNote.materials
+            homeWorkTextField.text = dailyNote.homework
+            
+            imageList = dailyNote.imageList.compactMap {
+                guard let url = $0.url, let data = try? Data(contentsOf: url)  else {
+                    return nil
+                }
+                return UIImage(data: data)
+            }
+        }
+        else {
+            textView.text = ""
+            materialTextField.text = ""
+            homeWorkTextField.text = ""
+            
+            imageList = [UIImage]()
+        }
+    }
     
     
     @IBAction func showCameraSelectViewEvent() {
@@ -153,7 +201,7 @@ extension RegistDailyNoteViewController: UITextViewDelegate, UITextFieldDelegate
     }
     
     @IBAction func selectNextDateEvent() {
-        if let index = scheduleList.firstIndex(of: selectedSchedule), index > 0 {
+        if let index = scheduleList.firstIndex(of: selectedSchedule), index < scheduleList.count - 1 {
             selectedSchedule = scheduleList[index + 1]
         }
         else {
@@ -163,7 +211,7 @@ extension RegistDailyNoteViewController: UITextViewDelegate, UITextFieldDelegate
     }
     
     @IBAction func selectPreviosDateEvent() {
-        if let index = scheduleList.firstIndex(of: selectedSchedule), index < scheduleList.count - 1 {
+        if let index = scheduleList.firstIndex(of: selectedSchedule), index > 0 {
             selectedSchedule = scheduleList[index - 1]
         }
         else {
@@ -196,5 +244,99 @@ extension RegistDailyNoteViewController: UICollectionViewDelegate, UICollectionV
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 8
+    }
+}
+
+extension RegistDailyNoteViewController {
+    func getDailyNote() {
+        let parameters = [
+            "lecture_schedule_id": selectedSchedule.id!
+        ] as [String: Any]
+        print(parameters)
+        ServerUtil.shared.postV2Announcement(self, parameters: parameters) { (success, dict, message) in
+            guard success else {
+                AlertHandler.shared.showAlert(vc: self, message: message ?? "Server Error", okTitle: "확인")
+                return
+            }
+            guard let dailynote = dict?["announcement"] as? NSDictionary else {
+                return
+            }
+            
+            self.dailyNote = DailyNoteData(dailynote)
+        }
+    }
+    
+    func editDailyNote() {
+        guard let id = selectedSchedule.id, let idData = "\(id)".data(using: .utf8) else {
+            return
+        }
+        guard let content = textView.text, content.isEmpty, let contentData = content.data(using: .utf8) else {
+            return
+        }
+        guard let material = materialTextField.text else {
+            return
+        }
+        guard let homework = homeWorkTextField.text else {
+            return
+        }
+        
+        ServerUtil.shared.patchV2Announcement(vc: self, multipartFormData: { (formData) in
+            formData.append(idData, withName: "lecture_schedule_id")
+            formData.append(contentData, withName: "content")
+            if !material.isEmpty {
+                formData.append(material.data(using: .utf8)!, withName: "materials")
+            }
+            if !homework.isEmpty {
+                formData.append(homework.data(using: .utf8)!, withName: "homework")
+            }
+            
+            self.imageList.forEach {
+                formData.append($0.jpegData(compressionQuality: 1.0)!, withName: "image", fileName: "announceImage", mimeType: "image/jpeg")
+            }
+            
+        }) { (success, dict, message) in
+            guard success else {
+                return
+            }
+            
+            self.navigationController?.popViewController(animated: true)
+        }
+    }
+    
+    func addDailyNote() {
+        guard let id = selectedSchedule.id, let idData = "\(id)".data(using: .utf8) else {
+            return
+        }
+        guard let content = textView.text, content.isEmpty, let contentData = content.data(using: .utf8) else {
+            return
+        }
+        guard let material = materialTextField.text else {
+            return
+        }
+        guard let homework = homeWorkTextField.text else {
+            return
+        }
+        
+        ServerUtil.shared.putV2Announcement(vc: self, multipartFormData: { (formData) in
+            formData.append(idData, withName: "lecture_schedule_id")
+            formData.append(contentData, withName: "content")
+            if !material.isEmpty {
+                formData.append(material.data(using: .utf8)!, withName: "materials")
+            }
+            if !homework.isEmpty {
+                formData.append(homework.data(using: .utf8)!, withName: "homework")
+            }
+            
+            self.imageList.forEach {
+                formData.append($0.jpegData(compressionQuality: 1.0)!, withName: "image", fileName: "announceImage", mimeType: "image/jpeg")
+            }
+            
+        }) { (success, dict, message) in
+            guard success else {
+                return
+            }
+            
+            self.navigationController?.popViewController(animated: true)
+        }
     }
 }
