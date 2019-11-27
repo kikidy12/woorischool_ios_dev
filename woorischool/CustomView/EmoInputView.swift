@@ -9,7 +9,7 @@
 import UIKit
 
 protocol EmoInputViewDelegate {
-    func selectEmoticon(image: UIImage)
+    func selectEmoticon(emoticon: ImageData)
 }
 
 class EmoInputView: UIView, UICollectionViewDataSource, UICollectionViewDelegate {
@@ -18,13 +18,7 @@ class EmoInputView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
     
     var delegate: EmoInputViewDelegate?
     
-    var emoItemList = [String]() {
-        didSet {
-            collectionView.reloadData()
-        }
-    }
-    
-    var count = 10 {
+    var emoItemList = [ImageData]() {
         didSet {
             collectionView.reloadData()
         }
@@ -52,15 +46,17 @@ class EmoInputView: UIView, UICollectionViewDataSource, UICollectionViewDelegate
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return count
+        return emoItemList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "emoCell", for: indexPath)
-        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "emoCell", for: indexPath) as! EmoticonCollectionViewCell
+        if let url = emoItemList[indexPath.item].url {
+            cell.emoImageView.kf.setImage(with: url, placeholder: UIImage(named: "tempImage"))
+        }
         return cell
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        delegate?.selectEmoticon(image: UIImage(named: "attandCheckIcon")!)
+        delegate?.selectEmoticon(emoticon: emoItemList[indexPath.item])
     }
 }

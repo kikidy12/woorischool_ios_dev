@@ -118,13 +118,13 @@
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="다음 수업 숙제" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Z9-S4-5qS">
-                                                        <rect key="frame" x="52" y="11" width="80.5" height="16.5"/>
+                                                        <rect key="frame" x="52" y="11" width="80.5" height="34.5"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                                         <color key="textColor" name="brownGrey"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fkk-72-ZXf">
-                                                        <rect key="frame" x="52" y="30.5" width="34.5" height="34.5"/>
+                                                        <rect key="frame" x="52" y="48.5" width="34.5" height="16.5"/>
                                                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -168,13 +168,9 @@
                                 <state key="normal" title="삭제">
                                     <color key="titleColor" name="grapefruit"/>
                                 </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zy0-nd-kOe">
-                                <rect key="frame" x="200" y="415" width="30" height="29"/>
-                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
-                                <state key="normal" title="수정">
-                                    <color key="titleColor" name="brownGrey"/>
-                                </state>
+                                <connections>
+                                    <action selector="deleteDailyNoteEvnet:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="pm5-aI-33B"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -187,13 +183,11 @@
                             <constraint firstAttribute="trailing" secondItem="ZoM-Ko-Cgb" secondAttribute="trailing" constant="19" id="PLF-gB-y7E"/>
                             <constraint firstItem="u5D-M8-JBW" firstAttribute="centerY" secondItem="ba6-fc-cwA" secondAttribute="centerY" id="RIh-DO-Q8Y"/>
                             <constraint firstAttribute="trailing" secondItem="u5D-M8-JBW" secondAttribute="trailing" constant="20" id="SXA-OG-hFW"/>
-                            <constraint firstItem="Zy0-nd-kOe" firstAttribute="top" secondItem="ZoM-Ko-Cgb" secondAttribute="bottom" constant="15" id="YBB-5f-wQZ"/>
                             <constraint firstItem="8ky-0r-HbH" firstAttribute="leading" secondItem="8VG-l7-DgF" secondAttribute="leading" constant="20" id="YwT-D0-6z6"/>
                             <constraint firstItem="ZoM-Ko-Cgb" firstAttribute="leading" secondItem="8VG-l7-DgF" secondAttribute="leading" constant="19" id="ckQ-GX-qvm"/>
                             <constraint firstAttribute="bottom" secondItem="7rQ-iR-JXX" secondAttribute="bottom" constant="12" id="fuL-yx-vF3"/>
                             <constraint firstItem="ba6-fc-cwA" firstAttribute="leading" secondItem="8VG-l7-DgF" secondAttribute="leading" constant="20" id="gkB-za-G43"/>
-                            <constraint firstAttribute="bottom" secondItem="Zy0-nd-kOe" secondAttribute="bottom" constant="12" id="jTY-3A-5Rx"/>
-                            <constraint firstItem="7rQ-iR-JXX" firstAttribute="leading" secondItem="Zy0-nd-kOe" secondAttribute="trailing" constant="8" id="mwb-3E-2Ty"/>
+                            <constraint firstItem="7rQ-iR-JXX" firstAttribute="top" secondItem="ZoM-Ko-Cgb" secondAttribute="bottom" constant="15" id="zpF-RB-dMN"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">

@@ -21,6 +21,9 @@ class LectureClassData: NSObject {
     var maxPerson: Int!
     var applyPerson: Int!
     var waitCount: Int!
+    var confirmCount: Int!
+    var isTodayWrite: Bool!
+    var attendance: AttendenceType!
     
     var isApply: Bool!
     
@@ -33,6 +36,8 @@ class LectureClassData: NSObject {
     var dayList = [LectureClassDayData]()
     
     var scheduleList = [LectureScheduleData]()
+    
+    var lectureSchedule: LectureScheduleData!
     
     var daysStr: String {
         var weekDaysStr = ""
@@ -62,9 +67,11 @@ class LectureClassData: NSObject {
         location = data["class_location"] as? String
         maxPerson = data["max_person"] as? Int
         applyPerson = data["apply_person"] as? Int
+        confirmCount = data["confirm_count"] as? Int
         applyId = data["lecture_apply_id"] as? Int
         isApply = data["is_apply"] as? Bool
         waitCount = data["wait_count"] as? Int
+        isTodayWrite = data["is_today_write"] as? Bool
         
         if let dict = data["lecture"] as? NSDictionary {
             lecture = LectureData(dict)
@@ -82,6 +89,14 @@ class LectureClassData: NSObject {
             scheduleList = array.compactMap { LectureScheduleData($0 as! NSDictionary) }
         }
         
+        if let str = data["attendance"] as? String {
+            attendance = AttendenceType(rawValue: str)
+        }
+        
+        
+        if let schedule = data["schedule"] as? NSDictionary {
+            lectureSchedule = LectureScheduleData(schedule)
+        }
     }
 
     

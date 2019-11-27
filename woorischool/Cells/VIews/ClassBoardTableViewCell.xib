@@ -63,34 +63,16 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6vo-gq-g7R">
                                         <rect key="frame" x="0.0" y="0.0" width="244" height="176"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.grid.3x2" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="QZj-Xs-6AO">
-                                                <rect key="frame" x="0.0" y="1" width="244" height="173.5"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tempImage" translatesAutoresizingMaskIntoConstraints="NO" id="QZj-Xs-6AO">
+                                                <rect key="frame" x="0.0" y="0.0" width="244" height="176"/>
                                                 <color key="tintColor" name="brownGrey"/>
                                             </imageView>
-                                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPa-Fe-nPg" customClass="CustomLabel" customModule="우리스쿨" customModuleProvider="target">
-                                                <rect key="frame" x="188" y="10" width="46" height="24"/>
-                                                <color key="backgroundColor" name="black60"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="24" id="FNd-jM-tmS"/>
-                                                    <constraint firstAttribute="width" constant="46" id="iGb-TE-ehu"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="13"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
-                                                        <real key="value" value="12"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstItem="QZj-Xs-6AO" firstAttribute="leading" secondItem="6vo-gq-g7R" secondAttribute="leading" id="2n4-jt-Mbi"/>
-                                            <constraint firstAttribute="trailing" secondItem="MPa-Fe-nPg" secondAttribute="trailing" constant="10" id="5oV-KY-Zax"/>
                                             <constraint firstAttribute="height" constant="176" id="6ME-7h-MoM"/>
                                             <constraint firstItem="QZj-Xs-6AO" firstAttribute="top" secondItem="6vo-gq-g7R" secondAttribute="top" id="OY4-hC-rMJ"/>
-                                            <constraint firstItem="MPa-Fe-nPg" firstAttribute="top" secondItem="6vo-gq-g7R" secondAttribute="top" constant="10" id="QJI-QT-6hQ"/>
                                             <constraint firstAttribute="trailing" secondItem="QZj-Xs-6AO" secondAttribute="trailing" id="a9f-w7-nPX"/>
                                             <constraint firstAttribute="bottom" secondItem="QZj-Xs-6AO" secondAttribute="bottom" id="r9n-iy-8N0"/>
                                         </constraints>
@@ -175,6 +157,16 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="contentLabel" destination="ozi-HM-yWL" id="dID-b2-5XQ"/>
+                <outlet property="firstImageView" destination="QZj-Xs-6AO" id="jwh-DY-YYk"/>
+                <outlet property="imaegContainerView" destination="6vo-gq-g7R" id="lPs-Ql-lz2"/>
+                <outlet property="likeCountLabel" destination="kgm-QG-izX" id="Awl-H7-QbQ"/>
+                <outlet property="nameLabel" destination="yff-aA-DPE" id="ci5-nV-3lu"/>
+                <outlet property="profileImageView" destination="r4s-vM-p5O" id="e8x-mv-Yxh"/>
+                <outlet property="replyCountLabel" destination="Nr2-iQ-Sb1" id="8J6-A8-EUs"/>
+                <outlet property="timeLabel" destination="nmN-Fo-OOJ" id="kYK-NJ-gQU"/>
+            </connections>
             <point key="canvasLocation" x="137.68115942028987" y="199.88839285714286"/>
         </tableViewCell>
     </objects>
@@ -182,10 +174,7 @@
         <image name="ellipses.bubble" catalog="system" width="64" height="54"/>
         <image name="heart" catalog="system" width="64" height="54"/>
         <image name="profilePlaceHolder" width="60" height="60"/>
-        <image name="square.grid.3x2" catalog="system" width="64" height="40"/>
-        <namedColor name="black60">
-            <color red="0.0" green="0.0" blue="0.0" alpha="0.60000002384185791" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
+        <image name="tempImage" width="276" height="183"/>
         <namedColor name="brownGrey">
             <color red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

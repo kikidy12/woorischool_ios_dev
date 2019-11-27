@@ -59,6 +59,52 @@ class ServerUtil: NSObject {
         progressLabel.font = .systemFont(ofSize: 20, weight: .medium)
     }
     
+    //global
+    func postV2Announcement(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("v2_announcement", method: .post, parameters: parameters, completion: completion)
+    }
+    
+    func getV2Board(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("v2_board", method: .get, parameters: parameters, completion: completion)
+    }
+    
+    func postv2BoardDetail(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("v2_board_detail", method: .post, parameters: parameters, completion: completion)
+    }
+    
+    func postV2Board(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("v2_board", method: .post, parameters: parameters, completion: completion)
+    }
+    
+    func deleteV2Board(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("v2_board", method: .delete, parameters: parameters, completion: completion)
+    }
+    
+    func getV2Comment(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("v2_comment", method: .get, parameters: parameters, completion: completion)
+    }
+    
+    func deleteV2Comment(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("v2_comment", method: .delete, parameters: parameters, completion: completion)
+    }
+    
+    func postV2Comment(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("v2_comment", method: .post, parameters: parameters, completion: completion)
+    }
+    
+    func getV2Emoticon(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("v2_emoticon", method: .get, parameters: parameters, completion: completion)
+    }
+    
     //parents
     
     func getMeInfo(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
@@ -147,11 +193,6 @@ class ServerUtil: NSObject {
         apiRequest("v2_me_info", method: .get, parameters: parameters, completion: completion)
     }
     
-    func postV2Announcement(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
-        currentVc = vc
-        apiRequest("v2_announcement", method: .post, parameters: parameters, completion: completion)
-    }
-    
     //teacher
     
     func putAuth(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
@@ -214,6 +255,11 @@ class ServerUtil: NSObject {
         apiRequest("v2_announcement", method: .get, parameters: parameters, completion: completion)
     }
     
+    func deleteV2Announcement(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("v2_announcement", method: .delete, parameters: parameters, completion: completion)
+    }
+    
     //upload
     func putAuth(vc: UIViewController, multipartFormData: @escaping (MultipartFormData) -> Void, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
         currentVc = vc
@@ -229,6 +275,22 @@ class ServerUtil: NSObject {
         currentVc = vc
         uploadRequest("v2_announcement", method: .patch, showUploadProgress: true, multipartFormData: multipartFormData, completion: completion)
     }
+    
+    func putV2Comment(vc: UIViewController, multipartFormData: @escaping (MultipartFormData) -> Void, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        uploadRequest("v2_comment", method: .put, showUploadProgress: true, multipartFormData: multipartFormData, completion: completion)
+    }
+    
+    func putV2Board(vc: UIViewController, multipartFormData: @escaping (MultipartFormData) -> Void, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        uploadRequest("v2_board", method: .put, showUploadProgress: true, multipartFormData: multipartFormData, completion: completion)
+    }
+    
+    func patchV2Board(vc: UIViewController, multipartFormData: @escaping (MultipartFormData) -> Void, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        uploadRequest("v2_board", method: .patch, showUploadProgress: true, multipartFormData: multipartFormData, completion: completion)
+    }
+    
 }
 
 extension ServerUtil {

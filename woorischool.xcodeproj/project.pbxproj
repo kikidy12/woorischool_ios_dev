@@ -29,6 +29,8 @@
 		99088BE8237E1E48009C9AE6 /* LectureScheduleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99088BE7237E1E48009C9AE6 /* LectureScheduleData.swift */; };
 		99088BEA237E2253009C9AE6 /* DailyNoteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99088BE9237E2253009C9AE6 /* DailyNoteData.swift */; };
 		99088BEC237E22A3009C9AE6 /* ImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99088BEB237E22A3009C9AE6 /* ImageData.swift */; };
+		99088BF223828B3D009C9AE6 /* BoardData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99088BF123828B3D009C9AE6 /* BoardData.swift */; };
+		99088BF423829170009C9AE6 /* ReplyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99088BF323829170009C9AE6 /* ReplyData.swift */; };
 		991182CD236BDEE40020D6CE /* BoardListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991182CB236BDEE40020D6CE /* BoardListViewController.swift */; };
 		991182CE236BDEE40020D6CE /* BoardListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 991182CC236BDEE40020D6CE /* BoardListViewController.xib */; };
 		991182D1236BE0460020D6CE /* BoardListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 991182CF236BE0460020D6CE /* BoardListTableViewCell.swift */; };
@@ -148,6 +150,13 @@
 		996EA4D823739849000C6D34 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996EA4D623739849000C6D34 /* MyPageViewController.swift */; };
 		996EA4D923739849000C6D34 /* MyPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 996EA4D723739849000C6D34 /* MyPageViewController.xib */; };
 		99766E1723711FAE002573FD /* SchoolData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99766E1623711FAE002573FD /* SchoolData.swift */; };
+		99CF8697238560CF00812A36 /* ImagePagingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CF8695238560CF00812A36 /* ImagePagingCollectionViewCell.swift */; };
+		99CF8698238560CF00812A36 /* ImagePagingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99CF8696238560CF00812A36 /* ImagePagingCollectionViewCell.xib */; };
+		99CF869B2385934500812A36 /* BoardAddAndEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CF86992385934500812A36 /* BoardAddAndEditViewController.swift */; };
+		99CF869C2385934500812A36 /* BoardAddAndEditViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99CF869A2385934500812A36 /* BoardAddAndEditViewController.xib */; };
+		99CF869E23866CAB00812A36 /* NoticeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CF869D23866CAB00812A36 /* NoticeData.swift */; };
+		99CF86A12387739600812A36 /* PSDailyNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CF869F2387739600812A36 /* PSDailyNoteViewController.swift */; };
+		99CF86A22387739600812A36 /* PSDailyNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99CF86A02387739600812A36 /* PSDailyNoteViewController.xib */; };
 		99DFB130234EF83300C5B69D /* RegistChildViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DFB12E234EF83300C5B69D /* RegistChildViewController.swift */; };
 		99DFB131234EF83300C5B69D /* RegistChildViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99DFB12F234EF83300C5B69D /* RegistChildViewController.xib */; };
 		99DFB133234EFBAB00C5B69D /* GlobalDatas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DFB132234EFBAB00C5B69D /* GlobalDatas.swift */; };
@@ -231,6 +240,8 @@
 		99088BE7237E1E48009C9AE6 /* LectureScheduleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureScheduleData.swift; sourceTree = "<group>"; };
 		99088BE9237E2253009C9AE6 /* DailyNoteData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyNoteData.swift; sourceTree = "<group>"; };
 		99088BEB237E22A3009C9AE6 /* ImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageData.swift; sourceTree = "<group>"; };
+		99088BF123828B3D009C9AE6 /* BoardData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardData.swift; sourceTree = "<group>"; };
+		99088BF323829170009C9AE6 /* ReplyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReplyData.swift; sourceTree = "<group>"; };
 		991182CB236BDEE40020D6CE /* BoardListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardListViewController.swift; sourceTree = "<group>"; };
 		991182CC236BDEE40020D6CE /* BoardListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BoardListViewController.xib; sourceTree = "<group>"; };
 		991182CF236BE0460020D6CE /* BoardListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardListTableViewCell.swift; sourceTree = "<group>"; };
@@ -356,6 +367,13 @@
 		996EA4D623739849000C6D34 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		996EA4D723739849000C6D34 /* MyPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageViewController.xib; sourceTree = "<group>"; };
 		99766E1623711FAE002573FD /* SchoolData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolData.swift; sourceTree = "<group>"; };
+		99CF8695238560CF00812A36 /* ImagePagingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePagingCollectionViewCell.swift; sourceTree = "<group>"; };
+		99CF8696238560CF00812A36 /* ImagePagingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImagePagingCollectionViewCell.xib; sourceTree = "<group>"; };
+		99CF86992385934500812A36 /* BoardAddAndEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardAddAndEditViewController.swift; sourceTree = "<group>"; };
+		99CF869A2385934500812A36 /* BoardAddAndEditViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BoardAddAndEditViewController.xib; sourceTree = "<group>"; };
+		99CF869D23866CAB00812A36 /* NoticeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeData.swift; sourceTree = "<group>"; };
+		99CF869F2387739600812A36 /* PSDailyNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSDailyNoteViewController.swift; sourceTree = "<group>"; };
+		99CF86A02387739600812A36 /* PSDailyNoteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PSDailyNoteViewController.xib; sourceTree = "<group>"; };
 		99DFB12E234EF83300C5B69D /* RegistChildViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistChildViewController.swift; sourceTree = "<group>"; };
 		99DFB12F234EF83300C5B69D /* RegistChildViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistChildViewController.xib; sourceTree = "<group>"; };
 		99DFB132234EFBAB00C5B69D /* GlobalDatas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalDatas.swift; sourceTree = "<group>"; };
@@ -505,6 +523,7 @@
 				99088BCF23754235009C9AE6 /* NotiTableViewCell.swift */,
 				99088BDB237554B1009C9AE6 /* ChattingRoomTableViewCell.swift */,
 				99088BE3237CF3D8009C9AE6 /* DailyNoteTableViewCell.swift */,
+				99CF8695238560CF00812A36 /* ImagePagingCollectionViewCell.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -524,6 +543,9 @@
 				99088BE7237E1E48009C9AE6 /* LectureScheduleData.swift */,
 				99088BE9237E2253009C9AE6 /* DailyNoteData.swift */,
 				99088BEB237E22A3009C9AE6 /* ImageData.swift */,
+				99088BF123828B3D009C9AE6 /* BoardData.swift */,
+				99088BF323829170009C9AE6 /* ReplyData.swift */,
+				99CF869D23866CAB00812A36 /* NoticeData.swift */,
 			);
 			path = Datas;
 			sourceTree = "<group>";
@@ -629,6 +651,7 @@
 				996EA4D723739849000C6D34 /* MyPageViewController.xib */,
 				99088BCC2375413D009C9AE6 /* NotiListViewController.xib */,
 				99088BD423754ABF009C9AE6 /* ChattingRoomListViewController.xib */,
+				99CF869A2385934500812A36 /* BoardAddAndEditViewController.xib */,
 			);
 			path = ModalViews;
 			sourceTree = "<group>";
@@ -663,6 +686,7 @@
 				996EA4D623739849000C6D34 /* MyPageViewController.swift */,
 				99088BCB2375413D009C9AE6 /* NotiListViewController.swift */,
 				99088BD323754ABF009C9AE6 /* ChattingRoomListViewController.swift */,
+				99CF86992385934500812A36 /* BoardAddAndEditViewController.swift */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
@@ -692,6 +716,7 @@
 				99088BD023754235009C9AE6 /* NotiTableViewCell.xib */,
 				99088BDC237554B1009C9AE6 /* ChattingRoomTableViewCell.xib */,
 				99088BE4237CF3D8009C9AE6 /* DailyNoteTableViewCell.xib */,
+				99CF8696238560CF00812A36 /* ImagePagingCollectionViewCell.xib */,
 			);
 			path = VIews;
 			sourceTree = "<group>";
@@ -896,6 +921,7 @@
 				99DFB138234F736F00C5B69D /* ClassInfoPopupViewController.swift */,
 				99DFB13C234F7AE400C5B69D /* RegistClassPopupViewController.swift */,
 				99DFB1692354236600C5B69D /* ConfirmClassViewController.swift */,
+				99CF869F2387739600812A36 /* PSDailyNoteViewController.swift */,
 			);
 			path = Popups;
 			sourceTree = "<group>";
@@ -907,6 +933,7 @@
 				99DFB139234F736F00C5B69D /* ClassInfoPopupViewController.xib */,
 				99DFB13D234F7AE400C5B69D /* RegistClassPopupViewController.xib */,
 				99DFB16A2354236600C5B69D /* ConfirmClassViewController.xib */,
+				99CF86A02387739600812A36 /* PSDailyNoteViewController.xib */,
 			);
 			path = PopupViews;
 			sourceTree = "<group>";
@@ -1077,17 +1104,20 @@
 				99DFB1812355808200C5B69D /* ManageChildrenViewController.xib in Resources */,
 				9914AA042343174A001C0112 /* NanumSquareRound-Light.otf in Resources */,
 				9914A9FE23431447001C0112 /* NotoSansMonoCJKkr-Regular.otf in Resources */,
+				99CF8698238560CF00812A36 /* ImagePagingCollectionViewCell.xib in Resources */,
 				9962A4C623470B160027FEB6 /* RegistedClassTableViewCell.xib in Resources */,
 				991182DA236C618A0020D6CE /* ClassBoardTableViewCell.xib in Resources */,
 				991182FC236D7E000020D6CE /* EmoticonCollectionViewCell.xib in Resources */,
 				9914A9FF23431447001C0112 /* NotoSansCJKkr-Bold.otf in Resources */,
 				9914AA272345C12C001C0112 /* ParentsHomeViewController.xib in Resources */,
 				9915B61923633A4800ACE9B6 /* MainTitleView.xib in Resources */,
+				99CF86A22387739600812A36 /* PSDailyNoteViewController.xib in Resources */,
 				99088BD223754235009C9AE6 /* NotiTableViewCell.xib in Resources */,
 				994A6B30235ED5770088D46E /* StudentHomeViewController.xib in Resources */,
 				9968CF3123418F3200B8D095 /* Main.storyboard in Resources */,
 				994A6B3C235ED6030088D46E /* StudentMyInfoViewController.xib in Resources */,
 				9914AA1223431CF8001C0112 /* ParentsLoginViewController.xib in Resources */,
+				99CF869C2385934500812A36 /* BoardAddAndEditViewController.xib in Resources */,
 				9914AA0223431447001C0112 /* NotoSansCJKkr-Medium.otf in Resources */,
 				9915B61D2365213700ACE9B6 /* TeacherStudentListViewController.xib in Resources */,
 				9956BF6E2365A42B0069E661 /* ParentsContractListViewController.xib in Resources */,
@@ -1249,9 +1279,11 @@
 				9911830E236EBA200020D6CE /* MessageDatas.swift in Sources */,
 				99DFB130234EF83300C5B69D /* RegistChildViewController.swift in Sources */,
 				99DFB1642350628700C5B69D /* TeacherHomeTableViewCell.swift in Sources */,
+				99CF86A12387739600812A36 /* PSDailyNoteViewController.swift in Sources */,
 				99DFB1772355671500C5B69D /* RegistClassCompleteListViewController.swift in Sources */,
 				99468CE62372823E00AAB535 /* RegistDailyNoteViewController.swift in Sources */,
 				99DFB184235581E300C5B69D /* ChildTableViewCell.swift in Sources */,
+				99088BF423829170009C9AE6 /* ReplyData.swift in Sources */,
 				99088BD823755179009C9AE6 /* ChattingRoomTableHeaderView.swift in Sources */,
 				9914AA262345C12C001C0112 /* ParentsHomeViewController.swift in Sources */,
 				991182D9236C618A0020D6CE /* ClassBoardTableViewCell.swift in Sources */,
@@ -1262,6 +1294,7 @@
 				9914AA2A2345C861001C0112 /* CourseRegistrationViewController.swift in Sources */,
 				9914A9DE23430B99001C0112 /* CustomPageControl.swift in Sources */,
 				991182E1236C8F9D0020D6CE /* BoardReplyTableViewCell.swift in Sources */,
+				99CF869E23866CAB00812A36 /* NoticeData.swift in Sources */,
 				9914AA1B234326D4001C0112 /* UserData.swift in Sources */,
 				991182F5236CF84B0020D6CE /* DailyNotiViewController.swift in Sources */,
 				99DFB15B2350576B00C5B69D /* LectureClassData.swift in Sources */,
@@ -1280,6 +1313,7 @@
 				99088BE8237E1E48009C9AE6 /* LectureScheduleData.swift in Sources */,
 				99DFB15223504D6000C5B69D /* TeacherLoginViewController.swift in Sources */,
 				99088BDD237554B1009C9AE6 /* ChattingRoomTableViewCell.swift in Sources */,
+				99CF869B2385934500812A36 /* BoardAddAndEditViewController.swift in Sources */,
 				99EBAC03237306AC00091905 /* SelectCameraTypeViewController.swift in Sources */,
 				9914A9CF2343098F001C0112 /* Extensions+Views.swift in Sources */,
 				9914AA1123431CF8001C0112 /* ParentsLoginViewController.swift in Sources */,
@@ -1290,9 +1324,11 @@
 				99DFB137234F035400C5B69D /* StudentInfoData.swift in Sources */,
 				9915B60F236307A400ACE9B6 /* TeacherPhoneAuthViewController.swift in Sources */,
 				9914A9D523430AC6001C0112 /* CustomViews.swift in Sources */,
+				99088BF223828B3D009C9AE6 /* BoardData.swift in Sources */,
 				99118310236EBC090020D6CE /* EmoticonDatas.swift in Sources */,
 				9914A9D1234309BB001C0112 /* Extensions+Obejcts.swift in Sources */,
 				99DFB15D2350579100C5B69D /* LectureClassDayData.swift in Sources */,
+				99CF8697238560CF00812A36 /* ImagePagingCollectionViewCell.swift in Sources */,
 				991182D1236BE0460020D6CE /* BoardListTableViewCell.swift in Sources */,
 				9914A9DA23430B8C001C0112 /* UserDefs.swift in Sources */,
 				994A6B37235ED5ED0088D46E /* StudentChattingRoomListViewController.swift in Sources */,

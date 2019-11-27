@@ -9,7 +9,19 @@
 import UIKit
 
 class ClassBoardTableViewCell: UITableViewCell {
-
+    
+    var board: BoardData!
+    
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var firstImageView: UIImageView!
+    @IBOutlet weak var imaegContainerView: UIView!
+    
+    @IBOutlet weak var replyCountLabel: UILabel!
+    @IBOutlet weak var likeCountLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var contentLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,6 +31,24 @@ class ClassBoardTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func initView(_ data: BoardData) {
+        board = data
+        
+        nameLabel.text = board.postingUser.name
+        timeLabel.text = board.writeTime
+        contentLabel.text = board.content
+        likeCountLabel.text = "\(board.likeCount ?? 0)개"
+        replyCountLabel.text = "\(board.commentCount ?? 0)개"
+        
+        if board.imageList.count == 0 {
+            imaegContainerView.isHidden = true
+        }
+        else {
+            imaegContainerView.isHidden = false
+            self.firstImageView.kf.setImage(with: self.board.imageList.first?.url, placeholder: UIImage(named: "tempImage"))
+        }
     }
     
 }

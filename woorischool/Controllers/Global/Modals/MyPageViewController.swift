@@ -29,7 +29,8 @@ class MyPageViewController: UIViewController {
     }
     
     @IBAction func showChildrenListViewEvent() {
-        
+        let vc = ManageChildrenViewController()
+        self.show(vc, sender: nil)
     }
     
     @IBAction func showChnagePasswordViewEvent() {
@@ -57,6 +58,10 @@ class MyPageViewController: UIViewController {
     @IBAction func resignEvent() {
         
     }
+    
+    func settingMeInfo() {
+        
+    }
 }
 
 extension MyPageViewController {
@@ -66,7 +71,11 @@ extension MyPageViewController {
                 return
             }
             UserDefs.setUserToken(token: "")
-            UIApplication.shared.keyWindow?.rootViewController = SelectUserTypeViewController()
+            let navi = UINavigationController(rootViewController: SelectUserTypeViewController())
+            navi.navigationBar.tintColor = .black
+            navi.navigationBar.barTintColor = .white
+            navi.navigationBar.shadowImage = UIImage()
+            UIApplication.shared.keyWindow?.rootViewController = navi
         }
     }
 }

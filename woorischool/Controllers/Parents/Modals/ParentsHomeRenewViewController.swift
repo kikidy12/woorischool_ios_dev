@@ -121,17 +121,6 @@ class ParentsHomeRenewViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        var count = 0
-        
-        Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (timer) in
-            if count < 10 {
-                count += 1
-            }
-            else {
-                count = 0
-            }
-            self.notiBtn.setTitle("\(count)", for: .normal) 
-        }
         
         monthDatesCollectionView.register(UINib(nibName: "MonthDaysCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "dateCell")
         dayClassInfoCollectionView.register(UINib(nibName: "SPHomeClassInfoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "dayclassCell")
@@ -150,7 +139,7 @@ class ParentsHomeRenewViewController: UIViewController {
         thursdayTableView.register(UINib(nibName: "HomeScheduleTableViewCell", bundle: nil), forCellReuseIdentifier: "scheduleCell")
         fridayTableView.register(UINib(nibName: "HomeScheduleTableViewCell", bundle: nil), forCellReuseIdentifier: "scheduleCell")
         saturdayTableView.register(UINib(nibName: "HomeScheduleTableViewCell", bundle: nil), forCellReuseIdentifier: "scheduleCell")
-        
+        setUserInfo()
     }
     
     @IBAction func showChildrenListEvent() {
@@ -160,9 +149,21 @@ class ParentsHomeRenewViewController: UIViewController {
     
     func setUserInfo() {
         let user = GlobalDatas.currentUser
-        
         nameLabel.text = "\(user?.childlen?.name ?? "아무개") 학부모님\n안녕하세요"
+        var count = 0
         
+        if !GlobalDatas.noticeList.isEmpty {
+            self.notiBtn.setTitle("[공지] " + GlobalDatas.noticeList[0].title, for: .normal)
+            Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (timer) in
+                if count < GlobalDatas.noticeList.count - 1 {
+                    count += 1
+                }
+                else {
+                    count = 0
+                }
+                self.notiBtn.setTitle("[공지] " + GlobalDatas.noticeList[count].title, for: .normal)
+            }
+        }
     }
     
     func sortWeekday(array: [TestData]) -> [[TestData:Int]] {
@@ -179,14 +180,10 @@ class ParentsHomeRenewViewController: UIViewController {
                 let lastData = array[$0.offset - 1]
                 
                 if lastData.end + 1 != $0.element.start {
-                    print("addEmpty : ",  $0.element.start - lastData.end - 1)
-                    
                     for _ in 0 ..< $0.element.start - lastData.end - 1 {
                         sortData.append([TestData() : 1])
                     }
                 }
-                
-                print("addRow : ",  $0.element.end - $0.element.start + 1)
                 sortData.append([$0.element : $0.element.end - $0.element.start + 1])
                                 
                 
@@ -402,12 +399,14 @@ extension ParentsHomeRenewViewController: UICollectionViewDelegate, UICollection
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "dayclassCell", for: indexPath) as! SPHomeClassInfoCollectionViewCell
             cell.initView(classDayList[indexPath.item])
             cell.dateLabel.text = selectedDate.dateToString(formatter: "MM월 dd일") + "자 알림장"
-            cell.showDailyNotiColouser = { isDailyNoti in
-                if !isDailyNoti {
-                    
+            cell.showDailyNotiColouser = { isDailyNote in
+                if !isDailyNote {
+                    self.navigationController?.showToast(message: "등록된 알림장이 없습니다.", font: .systemFont(ofSize: 15))
                 }
                 else {
-                    self.navigationController?.showToast(message: "등록된 알림장이 없습니다.", font: .systemFont(ofSize: 15))
+                    let vc = PSDailyNoteViewController()
+                    vc.schedule = self.classDayList[indexPath.item].lectureClass.lectureSchedule
+                    self.showPopupView(vc: vc)
                 }
             }
             return cell
@@ -432,6 +431,8 @@ extension ParentsHomeRenewViewController: UICollectionViewDelegate, UICollection
 
 
 extension ParentsHomeRenewViewController {
+    
+    
     func getInfo(dateStr: String) {
         let parameters = [
             "date": dateStr,
@@ -440,17 +441,12 @@ extension ParentsHomeRenewViewController {
         ] as [String:Any]
         print(UserDefs.userToken)
         print(parameters)
-        ServerUtil.shared.getMeInfo(self, parameters: parameters) { (success, dict, message) in
-            guard success, let array = dict?["lecture_list"] as? NSArray, let user = dict?["user"] as? NSDictionary else {
+        ServerUtil.shared.getV2MeInfo(self, parameters: parameters) { (success, dict, message) in
+            guard success, let array = dict?["lecture_class_day"] as? NSArray else {
                 return
             }
             
-            GlobalDatas.currentUser = UserData(user)
-            UserDefs.setHasChildren(true)
-            UserDefs.setLastUserType(type: UserType.parents.rawValue)
             self.classDayList = array.compactMap { LectureClassDayData($0 as! NSDictionary) }
-            self.setUserInfo()
-            
         }
     }
 }

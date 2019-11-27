@@ -4,15 +4,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="NotoSansCJKkr-Regular.otf">
-            <string>NotoSansCJKkr-Regular</string>
-        </array>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReplyListViewController" customModule="우리스쿨" customModuleProvider="target">
             <connections>
@@ -33,48 +27,10 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n7t-De-K3J">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="481"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="385"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilePlaceHolder" translatesAutoresizingMaskIntoConstraints="NO" id="j2c-Ii-AZ0">
-                                    <rect key="frame" x="20" y="25.5" width="35" height="35"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="35" id="1iq-NJ-nsf"/>
-                                        <constraint firstAttribute="width" constant="35" id="xjb-QE-NfS"/>
-                                    </constraints>
-                                </imageView>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7RJ-pe-BhB" customClass="CustomView" customModule="우리스쿨" customModuleProvider="target">
-                                    <rect key="frame" x="62" y="20" width="332" height="46"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5nA-Fw-ng7">
-                                            <rect key="frame" x="13" y="5" width="32" height="15.5"/>
-                                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="13"/>
-                                            <color key="textColor" name="brownGrey"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Labelffsafsadfasfasfadsfsafa" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N7b-46-zFD">
-                                            <rect key="frame" x="13" y="25.5" width="306" height="15.5"/>
-                                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="13"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <color key="backgroundColor" name="veryLightPinkTwo"/>
-                                    <constraints>
-                                        <constraint firstItem="5nA-Fw-ng7" firstAttribute="top" secondItem="7RJ-pe-BhB" secondAttribute="top" constant="5" id="1h5-yr-DkQ"/>
-                                        <constraint firstAttribute="trailing" secondItem="N7b-46-zFD" secondAttribute="trailing" constant="13" id="9uW-pg-Z1S"/>
-                                        <constraint firstItem="N7b-46-zFD" firstAttribute="leading" secondItem="7RJ-pe-BhB" secondAttribute="leading" constant="13" id="KVW-I0-S2E"/>
-                                        <constraint firstAttribute="bottom" secondItem="N7b-46-zFD" secondAttribute="bottom" constant="5" id="wGj-eU-5Uy"/>
-                                        <constraint firstItem="N7b-46-zFD" firstAttribute="top" secondItem="5nA-Fw-ng7" secondAttribute="bottom" constant="5" id="x5K-FM-Q6Z"/>
-                                        <constraint firstItem="5nA-Fw-ng7" firstAttribute="leading" secondItem="7RJ-pe-BhB" secondAttribute="leading" constant="13" id="xoX-4m-3yx"/>
-                                    </constraints>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
-                                            <real key="value" value="8"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                </view>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="R42-rU-nyl">
-                                    <rect key="frame" x="35" y="116" width="359" height="300"/>
+                                    <rect key="frame" x="0.0" y="20" width="414" height="300"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="300" id="caD-1R-LOd"/>
@@ -84,26 +40,13 @@
                                         <outlet property="delegate" destination="-1" id="y3J-Sm-LtP"/>
                                     </connections>
                                 </tableView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019.03.21" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7tF-yE-pFl">
-                                    <rect key="frame" x="334" y="66" width="60" height="14"/>
-                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
-                                    <color key="textColor" name="brownGrey"/>
-                                    <nil key="highlightedColor"/>
-                                </label>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             <constraints>
-                                <constraint firstItem="7tF-yE-pFl" firstAttribute="top" secondItem="7RJ-pe-BhB" secondAttribute="bottom" id="1Yl-NE-ups"/>
-                                <constraint firstItem="j2c-Ii-AZ0" firstAttribute="centerY" secondItem="7RJ-pe-BhB" secondAttribute="centerY" id="EKf-pb-ClK"/>
-                                <constraint firstItem="7RJ-pe-BhB" firstAttribute="leading" secondItem="j2c-Ii-AZ0" secondAttribute="trailing" constant="7" id="Nd5-Wh-En1"/>
-                                <constraint firstItem="R42-rU-nyl" firstAttribute="leading" secondItem="n7t-De-K3J" secondAttribute="leading" constant="35" id="Ri5-LN-jjG"/>
-                                <constraint firstAttribute="trailing" secondItem="7RJ-pe-BhB" secondAttribute="trailing" constant="20" id="ZGU-f7-gjf"/>
-                                <constraint firstItem="7tF-yE-pFl" firstAttribute="trailing" secondItem="7RJ-pe-BhB" secondAttribute="trailing" id="Zmp-4X-VLX"/>
-                                <constraint firstItem="j2c-Ii-AZ0" firstAttribute="leading" secondItem="n7t-De-K3J" secondAttribute="leading" constant="20" id="gWu-Rj-k7h"/>
-                                <constraint firstItem="R42-rU-nyl" firstAttribute="top" secondItem="7RJ-pe-BhB" secondAttribute="bottom" constant="50" id="hAx-Tf-ZjS"/>
+                                <constraint firstItem="R42-rU-nyl" firstAttribute="leading" secondItem="n7t-De-K3J" secondAttribute="leading" id="Ri5-LN-jjG"/>
                                 <constraint firstAttribute="bottom" secondItem="R42-rU-nyl" secondAttribute="bottom" constant="65" id="jUR-Z0-Hjs"/>
-                                <constraint firstItem="7RJ-pe-BhB" firstAttribute="top" secondItem="n7t-De-K3J" secondAttribute="top" constant="20" id="tyo-GQ-dtX"/>
-                                <constraint firstAttribute="trailing" secondItem="R42-rU-nyl" secondAttribute="trailing" constant="20" id="y6D-b9-y36"/>
+                                <constraint firstItem="R42-rU-nyl" firstAttribute="top" secondItem="n7t-De-K3J" secondAttribute="top" constant="20" id="mnb-uU-4Nm"/>
+                                <constraint firstAttribute="trailing" secondItem="R42-rU-nyl" secondAttribute="trailing" id="y6D-b9-y36"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -136,16 +79,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="9pT-LX-CFe" secondAttribute="bottom" id="uSu-zW-MI0"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="137.68115942028987" y="93.75"/>
+            <point key="canvasLocation" x="136" y="98"/>
         </view>
     </objects>
-    <resources>
-        <image name="profilePlaceHolder" width="60" height="60"/>
-        <namedColor name="brownGrey">
-            <color red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="veryLightPinkTwo">
-            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.81960784313725488" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-    </resources>
 </document>

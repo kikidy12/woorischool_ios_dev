@@ -48,6 +48,9 @@ extension DailyNoteListViewController: UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "noteCell", for: indexPath) as! DailyNoteTableViewCell
         cell.initView(noteList[indexPath.item])
+        cell.deleteColuser = {
+            self.deleteDailyNote(id: self.noteList[indexPath.item].lectureSchedule.id!)
+        }
         return cell
     }
     
@@ -91,7 +94,7 @@ extension DailyNoteListViewController: UITableViewDelegate, UITableViewDataSourc
         let vc = RegistDailyNoteViewController()
         vc.scheduleList = lectureClass.scheduleList
         vc.lectureClass = lectureClass
-        vc.editSchedule = noteList[indexPath.item].lectureSchedule
+        vc.preSchedule = noteList[indexPath.item].lectureSchedule
         show(vc, sender: nil)
     }
 }
@@ -110,6 +113,20 @@ extension DailyNoteListViewController {
             }
             
             self.noteList = array.compactMap { DailyNoteData($0 as! NSDictionary) }
+        }
+    }
+    
+    func deleteDailyNote(id: Int) {
+        let parameters = [
+            "lecture_schedule_id": id
+        ] as [String:Any]
+        
+        ServerUtil.shared.deleteV2Announcement(self, parameters: parameters) { (success, dict, message) in
+            guard success else {
+                return
+            }
+            
+            self.getDailyNoteList()
         }
     }
 }

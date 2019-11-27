@@ -15,9 +15,6 @@
         <array key="NotoSansCJKkr-Medium.otf">
             <string>NotoSansCJKkr-Medium</string>
         </array>
-        <array key="NotoSansCJKkr-Regular.otf">
-            <string>NotoSansCJKkr-Regular</string>
-        </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TeacherHomeViewController" customModule="우리스쿨" customModuleProvider="target">
@@ -26,6 +23,7 @@
                 <outlet property="classTableView" destination="sP7-oj-uhg" id="FFU-vj-Fr9"/>
                 <outlet property="classTableViewHeightContraint" destination="hYD-9j-xqH" id="5S3-Qs-Y7U"/>
                 <outlet property="nameLabel" destination="TFf-Qj-Xb2" id="UNj-ok-928"/>
+                <outlet property="notiBtn" destination="a7N-dV-SvW" id="bab-bb-sAv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -59,27 +57,22 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Efq-Hq-Hdh">
                     <rect key="frame" x="0.0" y="144" width="414" height="40"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="공지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKF-wi-KlQ">
-                            <rect key="frame" x="27" y="11.5" width="26" height="17.5"/>
-                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="15"/>
-                            <color key="textColor" name="greyishBrown"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="16a-Y2-a0f">
-                            <rect key="frame" x="76" y="12" width="34.5" height="16.5"/>
-                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
-                            <color key="textColor" name="greyishBrown"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a7N-dV-SvW">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="40"/>
+                            <inset key="titleEdgeInsets" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <state key="normal" title="Button">
+                                <color key="titleColor" name="greyishBrown"/>
+                            </state>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <gestureRecognizers/>
                     <constraints>
-                        <constraint firstItem="16a-Y2-a0f" firstAttribute="centerY" secondItem="Efq-Hq-Hdh" secondAttribute="centerY" id="3Wc-3Q-7Di"/>
-                        <constraint firstItem="aKF-wi-KlQ" firstAttribute="leading" secondItem="Efq-Hq-Hdh" secondAttribute="leading" constant="27" id="Y1g-Aw-6mH"/>
-                        <constraint firstItem="aKF-wi-KlQ" firstAttribute="centerY" secondItem="Efq-Hq-Hdh" secondAttribute="centerY" id="dSJ-xm-nzn"/>
+                        <constraint firstAttribute="bottom" secondItem="a7N-dV-SvW" secondAttribute="bottom" id="0hZ-JA-P25"/>
+                        <constraint firstAttribute="trailing" secondItem="a7N-dV-SvW" secondAttribute="trailing" id="4A3-3T-Xnx"/>
+                        <constraint firstItem="a7N-dV-SvW" firstAttribute="top" secondItem="Efq-Hq-Hdh" secondAttribute="top" id="FeY-gU-KxK"/>
+                        <constraint firstItem="a7N-dV-SvW" firstAttribute="leading" secondItem="Efq-Hq-Hdh" secondAttribute="leading" id="kYK-qb-2uX"/>
                         <constraint firstAttribute="height" constant="40" id="loy-8M-AkG"/>
-                        <constraint firstItem="16a-Y2-a0f" firstAttribute="leading" secondItem="aKF-wi-KlQ" secondAttribute="trailing" constant="23" id="vEk-s2-F33"/>
                     </constraints>
                     <connections>
                         <outletCollection property="gestureRecognizers" destination="sJa-Bb-ilI" appends="YES" id="Lz7-Yt-kRL"/>

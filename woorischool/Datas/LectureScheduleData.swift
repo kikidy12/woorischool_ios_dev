@@ -14,6 +14,8 @@ class LectureScheduleData: NSObject {
     var startTime: Date!
     var endTime: Date!
     
+    var isAnnouncement: Bool = false
+    
     override init() {
         
     }
@@ -29,5 +31,7 @@ class LectureScheduleData: NSObject {
         if let dateStr = data["end_time"] as? String {
             endTime = dateStr.stringToDate(formatter: "yyyy-MM-dd HH:mm:ss")
         }
+        
+        isAnnouncement = data["is_announcement"] as? Bool ?? false
     }
 }

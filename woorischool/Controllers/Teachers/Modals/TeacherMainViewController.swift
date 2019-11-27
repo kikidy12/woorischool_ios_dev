@@ -23,8 +23,10 @@ class TeacherMainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        getTeacherInfo {
+            self.settingTabViews(self.tabStackView.arrangedSubviews.first!)
+        }
         
-        settingTabViews(tabStackView.arrangedSubviews.first!)
     }
     
     @objc func showAlarmEvent() {
@@ -38,7 +40,9 @@ class TeacherMainViewController: UIViewController {
     
     @IBAction func selectTapEvent(_ sender: UITapGestureRecognizer) {
         if sender.state == .ended {
-            settingTabViews(sender.view!)
+            getTeacherInfo {
+                self.settingTabViews(sender.view!)
+            }
         }
     }
     
@@ -111,4 +115,20 @@ class TeacherMainViewController: UIViewController {
         self.mainView.addSubview(vc.view)
     }
 
+    func getTeacherInfo(complete: @escaping ()->()) {
+        let paramterts = [
+            "device_token": GlobalDatas.deviceToken,
+            "os": "iOS"
+        ] as [String:Any]
+        
+        ServerUtil.shared.getV2Info(self, parameters: paramterts) { (success, dict, message) in
+            guard success, let user = dict?["user"] as? NSDictionary else {
+                AlertHandler.shared.showAlert(vc: self, message: message ?? "Server Error", okTitle: "확인")
+                return
+            }
+            
+            GlobalDatas.currentUser = UserData(user)
+            complete()
+        }
+    }
 }

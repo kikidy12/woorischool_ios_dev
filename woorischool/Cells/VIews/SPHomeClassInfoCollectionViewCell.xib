@@ -48,13 +48,32 @@
                                 <color key="textColor" name="greyishBrown"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gtd-ux-CO8">
+                            <view alpha="0.13" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vJU-XK-ixT" customClass="CustomView" customModule="우리스쿨" customModuleProvider="target">
                                 <rect key="frame" x="296" y="14" width="75" height="28"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="b4y-Zu-RK7"/>
-                                    <constraint firstAttribute="width" constant="75" id="lTg-7x-pq3"/>
+                                    <constraint firstAttribute="height" constant="28" id="QIx-6i-NFH"/>
+                                    <constraint firstAttribute="width" constant="75" id="voj-zJ-2fJ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
+                                        <real key="value" value="14"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="attandCheckIcon" translatesAutoresizingMaskIntoConstraints="NO" id="p6t-dT-Gpl">
+                                <rect key="frame" x="298" y="16" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="i3V-nR-3R2"/>
+                                    <constraint firstAttribute="height" constant="24" id="x9Y-ZG-qGD"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gpH-EG-jRn">
+                                <rect key="frame" x="330" y="20.5" width="32" height="15.5"/>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11:30-13:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8wt-2b-fDP">
                                 <rect key="frame" x="290" y="49" width="81" height="17.5"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="15"/>
@@ -108,16 +127,20 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="vJU-XK-ixT" firstAttribute="top" secondItem="Xwr-fQ-8AS" secondAttribute="top" constant="14" id="3eI-2N-CUS"/>
                             <constraint firstAttribute="trailing" secondItem="AfW-db-uvK" secondAttribute="trailing" constant="17" id="3s8-V7-Kd9"/>
+                            <constraint firstItem="gpH-EG-jRn" firstAttribute="centerY" secondItem="vJU-XK-ixT" secondAttribute="centerY" id="AV0-IR-sxp"/>
                             <constraint firstAttribute="trailing" secondItem="8wt-2b-fDP" secondAttribute="trailing" constant="17" id="BxX-ao-eDZ"/>
                             <constraint firstItem="lTP-zU-53f" firstAttribute="leading" secondItem="Xwr-fQ-8AS" secondAttribute="leading" constant="20" id="GAm-23-VsG"/>
+                            <constraint firstAttribute="trailing" secondItem="vJU-XK-ixT" secondAttribute="trailing" constant="17" id="GT7-Ol-skJ"/>
+                            <constraint firstItem="p6t-dT-Gpl" firstAttribute="leading" secondItem="vJU-XK-ixT" secondAttribute="leading" constant="2" id="HDF-h0-YpD"/>
                             <constraint firstItem="cyX-NE-4g1" firstAttribute="bottom" secondItem="lTP-zU-53f" secondAttribute="bottom" constant="5" id="KGw-jW-DKC"/>
-                            <constraint firstItem="8wt-2b-fDP" firstAttribute="top" secondItem="gtd-ux-CO8" secondAttribute="bottom" constant="7" id="cyM-bf-bj9"/>
+                            <constraint firstItem="p6t-dT-Gpl" firstAttribute="centerY" secondItem="vJU-XK-ixT" secondAttribute="centerY" id="L3N-ev-Dc9"/>
+                            <constraint firstItem="8wt-2b-fDP" firstAttribute="top" secondItem="vJU-XK-ixT" secondAttribute="bottom" constant="7" id="Sj8-Y8-SQ5"/>
+                            <constraint firstItem="gpH-EG-jRn" firstAttribute="leading" secondItem="p6t-dT-Gpl" secondAttribute="trailing" constant="8" id="T0e-np-Dbj"/>
                             <constraint firstItem="cyX-NE-4g1" firstAttribute="leading" secondItem="lTP-zU-53f" secondAttribute="trailing" constant="12" id="fr6-ur-rea"/>
                             <constraint firstItem="0kd-7N-87N" firstAttribute="top" secondItem="lTP-zU-53f" secondAttribute="top" constant="-5" id="hcf-GJ-R45"/>
                             <constraint firstItem="AfW-db-uvK" firstAttribute="top" secondItem="lTP-zU-53f" secondAttribute="bottom" constant="30" id="lAR-6P-6fF"/>
-                            <constraint firstAttribute="trailing" secondItem="gtd-ux-CO8" secondAttribute="trailing" constant="17" id="mVz-E8-pOP"/>
-                            <constraint firstItem="gtd-ux-CO8" firstAttribute="top" secondItem="Xwr-fQ-8AS" secondAttribute="top" constant="14" id="ud0-ia-vEJ"/>
                             <constraint firstItem="AfW-db-uvK" firstAttribute="leading" secondItem="Xwr-fQ-8AS" secondAttribute="leading" constant="17" id="vev-qS-2X7"/>
                             <constraint firstItem="0kd-7N-87N" firstAttribute="leading" secondItem="lTP-zU-53f" secondAttribute="trailing" constant="12" id="wCS-nL-bd4"/>
                             <constraint firstItem="lTP-zU-53f" firstAttribute="top" secondItem="Xwr-fQ-8AS" secondAttribute="top" constant="20" id="wil-a6-9EB"/>
@@ -151,7 +174,9 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="388" height="195"/>
             <connections>
-                <outlet property="attandImageView" destination="gtd-ux-CO8" id="FCB-Oo-i6d"/>
+                <outlet property="attendImageView" destination="p6t-dT-Gpl" id="xe2-eq-MS8"/>
+                <outlet property="attendLabel" destination="gpH-EG-jRn" id="uDR-Q2-oeG"/>
+                <outlet property="attendView" destination="vJU-XK-ixT" id="B9N-gK-Qbw"/>
                 <outlet property="classTypeImageView" destination="lTP-zU-53f" id="oDs-gd-k5r"/>
                 <outlet property="dateLabel" destination="aHq-IN-F2E" id="qGf-eC-u0x"/>
                 <outlet property="eduTimeLabel" destination="8wt-2b-fDP" id="OB6-lm-Tq8"/>
@@ -163,6 +188,7 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="attandCheckIcon" width="24" height="24"/>
         <image name="courseIcon1" width="44" height="44"/>
         <image name="n.circle.fill" catalog="system" width="64" height="60"/>
         <namedColor name="brownGrey">

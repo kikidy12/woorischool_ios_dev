@@ -28,6 +28,7 @@ class TeacherHomeViewController: UIViewController {
     @IBOutlet weak var classCountLabel: UILabel!
     @IBOutlet weak var classTableViewHeightContraint: NSLayoutConstraint!
     @IBOutlet weak var classTableView: UITableView!
+    @IBOutlet weak var notiBtn: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,12 +38,25 @@ class TeacherHomeViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        getTeacherInfo()
+        setUserInfo()
     }
     
     func setUserInfo() {
         let user = GlobalDatas.currentUser
         nameLabel.text = "\(user?.name ?? "미확인") 선생님\n안녕하세요"
+        var count = 0
+        if !GlobalDatas.noticeList.isEmpty {
+            self.notiBtn.setTitle("[공지] " + GlobalDatas.noticeList[0].title, for: .normal)
+            Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (timer) in
+                if count < GlobalDatas.noticeList.count - 1 {
+                    count += 1
+                }
+                else {
+                    count = 0
+                }
+                self.notiBtn.setTitle("[공지] " + GlobalDatas.noticeList[count].title, for: .normal)
+            }
+        }
         
         getClassInfo()
     }
@@ -90,22 +104,6 @@ extension TeacherHomeViewController: UITableViewDelegate, UITableViewDataSource 
 }
 
 extension TeacherHomeViewController {
-    func getTeacherInfo() {
-        let paramterts = [
-            "device_token": GlobalDatas.deviceToken,
-            "os": "iOS"
-        ] as [String:Any]
-        
-        ServerUtil.shared.getV2Info(self, parameters: paramterts) { (success, dict, message) in
-            guard success, let user = dict?["user"] as? NSDictionary else {
-                AlertHandler.shared.showAlert(vc: self, message: message ?? "Server Error", okTitle: "확인")
-                return
-            }
-            
-            GlobalDatas.currentUser = UserData(user)
-            self.setUserInfo()
-        }
-    }
     
     func getClassInfo() {
             let paramterts = [

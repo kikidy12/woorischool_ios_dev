@@ -15,7 +15,9 @@ class SPHomeClassInfoCollectionViewCell: UICollectionViewCell {
     var showDailyNotiColouser: ((Bool)->())!
     
     @IBOutlet weak var newImageView: UIImageView!
-    @IBOutlet weak var attandImageView: UIImageView!
+    @IBOutlet weak var attendImageView: UIImageView!
+    @IBOutlet weak var attendLabel: UILabel!
+    @IBOutlet weak var attendView: UIView!
     @IBOutlet weak var classTypeImageView: UIImageView!
     @IBOutlet weak var lectureNameLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
@@ -29,7 +31,12 @@ class SPHomeClassInfoCollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction func showDailyNotiVIewEvent(_ sender: Any) {
-        showDailyNotiColouser(true)
+        if let bool = lectureClassDay?.lectureClass?.lectureSchedule?.isAnnouncement, bool {
+            showDailyNotiColouser(true)
+        }
+        else {
+            showDailyNotiColouser(false)
+        }
     }
     
 
@@ -43,5 +50,31 @@ class SPHomeClassInfoCollectionViewCell: UICollectionViewCell {
         lectureNameLabel.text = lecture.name
         locationLabel.text = "(\(lectureClass.location ?? "미정"))"
         eduTimeLabel.text = lectureClassDay.eduTime
+        
+        switch lectureClass.attendance {
+        case .attendance:
+            attendImageView.image = #imageLiteral(resourceName: "attandCheckIcon1")
+            attendView.backgroundColor = .greenishTeal
+            attendLabel.textColor = .greenishTeal
+            attendLabel.text = "출석"
+            break
+        case .absent:
+            attendImageView.image = #imageLiteral(resourceName: "attandCheckIcon2")
+            attendView.backgroundColor = .grapefruit
+            attendLabel.textColor = .grapefruit
+            attendLabel.text = "결석"
+            break
+        case .tardy:
+            attendImageView.image = #imageLiteral(resourceName: "attandCheckIcon2")
+            attendView.backgroundColor = .grapefruit
+            attendLabel.textColor = .grapefruit
+            attendLabel.text = "지각"
+            break
+        case .none:
+            attendImageView.image = #imageLiteral(resourceName: "attandCheckIcon3")
+            attendView.backgroundColor = .greyishBrown
+            attendLabel.textColor = .brownGrey
+            attendLabel.text = "체크전"
+        }
     }
 }

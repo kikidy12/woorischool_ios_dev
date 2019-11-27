@@ -42,7 +42,10 @@ extension ParentsLoginViewController {
         ] as[String: Any]
         print(parameters)
         ServerUtil.shared.postPhoneAuth(self, parameters: parameters) { (success, dict, message) in
-            AlertHandler.shared.showAlert(vc: self, message: message ?? "error", okTitle: "확인")
+            guard success else {
+                AlertHandler.shared.showAlert(vc: self, message: message ?? "error", okTitle: "확인")
+                return
+            }
         }
     }
     

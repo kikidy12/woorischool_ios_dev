@@ -9,12 +9,12 @@
 import UIKit
 
 protocol CustomInputViewDelegate {
-    func sendMessage(message: String, image: UIImage?)
+    func sendMessage(message: String, image: UIImage?, emoticon: ImageData?)
     func keyboardSizeChange(height: CGFloat)
 }
 
 extension CustomInputViewDelegate {
-    func sendMessage(message: String, image: UIImage?) {
+    func sendMessage(message: String, image: UIImage?, emoticon: ImageData?) {
         
     }
     
@@ -24,6 +24,12 @@ extension CustomInputViewDelegate {
 }
 
 class CustomInputView: UIView {
+    
+    var selectedEmoticon: ImageData! {
+        didSet {
+            emoImageView.kf.setImage(with: selectedEmoticon.url, placeholder: UIImage(named: "tempImage"))
+        }
+    }
     var view = UIView()
     var defaultFrame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 60)
     
@@ -87,10 +93,10 @@ class CustomInputView: UIView {
     
     @IBAction func sendMessageEvent() {
         if tempEmoView.isHidden {
-            delegate?.sendMessage(message: messageTextView.text!, image: nil)
+            delegate?.sendMessage(message: messageTextView.text!, image: nil, emoticon: nil)
         }
         else {
-            delegate?.sendMessage(message: messageTextView.text!, image: emoImageView.image!)
+            delegate?.sendMessage(message: messageTextView.text!, image: nil, emoticon: selectedEmoticon)
         }
         messageTextView.text = ""
         lastSelectTextView.resignFirstResponder()
@@ -99,7 +105,7 @@ class CustomInputView: UIView {
     @IBAction func showCameraViewEvent() {
         let vc = SelectCameraTypeViewController()
         vc.selectImagePickClouser = { image in
-            self.delegate?.sendMessage(message: "", image: image)
+            self.delegate?.sendMessage(message: "", image: image, emoticon: nil)
         }
         
         parentsVc.showPopupView(vc: vc)
@@ -124,8 +130,8 @@ class CustomInputView: UIView {
 }
 
 extension CustomInputView: EmoInputViewDelegate {
-    func selectEmoticon(image: UIImage) {
-        emoImageView.image = image
+    func selectEmoticon(emoticon: ImageData) {
+        selectedEmoticon = emoticon
         tempEmoView.isHidden = false
     }
 }

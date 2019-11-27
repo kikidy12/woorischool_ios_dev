@@ -10,9 +10,15 @@ import UIKit
 
 class BoardListViewController: UIViewController {
     
-    var boardList = [String]() {
+    var classList = [LectureClassData]() {
         didSet {
-            
+            if classList.isEmpty {
+                
+            }
+            else {
+                
+            }
+            boardTableView.reloadData()
         }
     }
     
@@ -24,22 +30,20 @@ class BoardListViewController: UIViewController {
         boardTableView.register(UINib(nibName: "BoardListTableViewCell", bundle: nil), forCellReuseIdentifier: "boardCell")
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        getClassBoardList()
+    }
 }
 
 extension BoardListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return classList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "boardCell", for: indexPath) as! BoardListTableViewCell
-        if indexPath.item % 2 == 0 {
-            cell.userCountLabel.text = "2명"
-        }
-        else {
-            cell.userCountLabel.text = "1명"
-        }
+        cell.initView(classList[indexPath.item])
         return cell
     }
     
@@ -63,6 +67,21 @@ extension BoardListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = ClassBoardListViewController()
+        vc.lectureClass = classList[indexPath.item]
         self.show(vc, sender: nil)
+    }
+}
+
+
+
+extension BoardListViewController {
+    func getClassBoardList() {
+        ServerUtil.shared.getV2Board(self) { (success, dict, message) in
+            guard success, let array = dict?["lecture_class"] as? NSArray else {
+                return
+            }
+            
+            self.classList = array.compactMap { LectureClassData($0 as! NSDictionary) }
+        }
     }
 }

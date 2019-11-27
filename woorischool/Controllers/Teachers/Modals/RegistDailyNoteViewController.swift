@@ -16,7 +16,7 @@ class RegistDailyNoteViewController: UIViewController {
     
     var lectureClass: LectureClassData!
     
-    var editSchedule: LectureScheduleData!
+    var preSchedule: LectureScheduleData!
     
     var dailyNote: DailyNoteData! {
         didSet {
@@ -67,7 +67,7 @@ class RegistDailyNoteViewController: UIViewController {
 
         NotificationCenter.default.addObserver(self, selector:#selector(keyboardWillShow(note:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector:#selector(keyboardWillHide(note:)), name: UIResponder.keyboardWillHideNotification, object: nil)
-//
+        
         let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyBoard))
         tapGesture.cancelsTouchesInView = false
         scrollView.addGestureRecognizer(tapGesture)
@@ -78,7 +78,6 @@ class RegistDailyNoteViewController: UIViewController {
         
         imageCollectionView.register(UINib(nibName: "PictureImageCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "imageCell")
         
-        
         let tempList = scheduleList.filter({
             $0.date.dateToString(formatter: "yyyy-MM-dd") >= Date().dateToString(formatter: "yyyy-MM-dd")
         })
@@ -86,17 +85,17 @@ class RegistDailyNoteViewController: UIViewController {
         tempList.forEach {
             print($0.date.dateToString(formatter: "yyyy-MM-dd"))
         }
-        if editSchedule != nil {
-            selectedSchedule = editSchedule
+        if let schedule = preSchedule, let index = scheduleList.firstIndex(where: {$0.id == schedule.id} ) {
+            selectedSchedule = scheduleList[index]
         }
         else if tempList.isEmpty {
             selectedSchedule = scheduleList.last
         }
         else {
-            selectedSchedule = tempList.last
+            selectedSchedule = tempList.first
         }
         
-        
+        print("\(scheduleList.count)")
         navibarSetting()
     }
     
@@ -259,6 +258,7 @@ extension RegistDailyNoteViewController {
                 return
             }
             guard let dailynote = dict?["announcement"] as? NSDictionary else {
+                self.dailyNote = nil
                 return
             }
             
@@ -267,10 +267,11 @@ extension RegistDailyNoteViewController {
     }
     
     func editDailyNote() {
+        print("editDailyNote")
         guard let id = selectedSchedule.id, let idData = "\(id)".data(using: .utf8) else {
             return
         }
-        guard let content = textView.text, content.isEmpty, let contentData = content.data(using: .utf8) else {
+        guard let content = textView.text, !content.isEmpty, let contentData = content.data(using: .utf8) else {
             return
         }
         guard let material = materialTextField.text else {
@@ -291,9 +292,8 @@ extension RegistDailyNoteViewController {
             }
             
             self.imageList.forEach {
-                formData.append($0.jpegData(compressionQuality: 1.0)!, withName: "image", fileName: "announceImage", mimeType: "image/jpeg")
+                formData.append($0.resizeImage(width: 500)!, withName: "image", fileName: "announceImage.jpeg", mimeType: "image/jpeg")
             }
-            
         }) { (success, dict, message) in
             guard success else {
                 return
@@ -304,10 +304,11 @@ extension RegistDailyNoteViewController {
     }
     
     func addDailyNote() {
+        print("addDailyNote")
         guard let id = selectedSchedule.id, let idData = "\(id)".data(using: .utf8) else {
             return
         }
-        guard let content = textView.text, content.isEmpty, let contentData = content.data(using: .utf8) else {
+        guard let content = textView.text, !content.isEmpty, let contentData = content.data(using: .utf8) else {
             return
         }
         guard let material = materialTextField.text else {
@@ -328,7 +329,7 @@ extension RegistDailyNoteViewController {
             }
             
             self.imageList.forEach {
-                formData.append($0.jpegData(compressionQuality: 1.0)!, withName: "image", fileName: "announceImage", mimeType: "image/jpeg")
+                formData.append($0.resizeImage(width: 500)!, withName: "image", fileName: "announceImage.jpeg", mimeType: "image/jpeg")
             }
             
         }) { (success, dict, message) in

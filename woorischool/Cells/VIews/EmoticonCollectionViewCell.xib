@@ -18,9 +18,20 @@
                 <rect key="frame" x="0.0" y="0.0" width="174" height="134"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C44-2B-q4f" customClass="CustomView" customModule="우리스쿨" customModuleProvider="target">
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C44-2B-q4f" customClass="CustomView" customModule="우리스쿨" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="174" height="134"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tempImage" translatesAutoresizingMaskIntoConstraints="NO" id="w0Q-8i-Xp7">
+                                <rect key="frame" x="0.0" y="0.0" width="174" height="134"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" name="paleGrey"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="w0Q-8i-Xp7" secondAttribute="bottom" id="VPy-Te-hPc"/>
+                            <constraint firstItem="w0Q-8i-Xp7" firstAttribute="top" secondItem="C44-2B-q4f" secondAttribute="top" id="WaC-KM-gxy"/>
+                            <constraint firstItem="w0Q-8i-Xp7" firstAttribute="leading" secondItem="C44-2B-q4f" secondAttribute="leading" id="fwJ-sz-FdY"/>
+                            <constraint firstAttribute="trailing" secondItem="w0Q-8i-Xp7" secondAttribute="trailing" id="ryn-gL-TKa"/>
+                        </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                 <color key="value" name="veryLightPinkTwo"/>
@@ -40,10 +51,14 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="174" height="134"/>
+            <connections>
+                <outlet property="emoImageView" destination="w0Q-8i-Xp7" id="tSB-AP-ONv"/>
+            </connections>
             <point key="canvasLocation" x="227.536231884058" y="121.875"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="tempImage" width="276" height="183"/>
         <namedColor name="paleGrey">
             <color red="0.96078431372549022" green="0.96078431372549022" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

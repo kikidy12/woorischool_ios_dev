@@ -12,6 +12,8 @@ import Kingfisher
 class DailyNoteTableViewCell: UITableViewCell {
     
     var note: DailyNoteData!
+    
+    var deleteColuser: (()->())!
 
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var createTimeLabel: UILabel!
@@ -29,6 +31,9 @@ class DailyNoteTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    @IBAction func deleteDailyNoteEvnet(_ sender: Any) {
+        self.deleteColuser()
     }
     
     func initView(_ data: DailyNoteData) {
