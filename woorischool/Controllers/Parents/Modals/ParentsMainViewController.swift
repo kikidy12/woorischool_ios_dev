@@ -10,31 +10,31 @@ import UIKit
 
 class ParentsMainViewController: UIViewController {
     
-    var alarmList = [String]() {
-        didSet {
-            
-        }
-    }
-    
-    var alarmBtn = UIBarButtonItem(image: UIImage(), style: .plain, target: self, action: #selector(showAlarmEvent))
     
     @IBOutlet weak var tabStackView: UIStackView!
     @IBOutlet weak var mainView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navibarSetting()
         getInfo {
             self.settingTabViews(self.tabStackView.arrangedSubviews.first!)
         }
     }
     
     @objc func showAlarmEvent() {
-        
+        let vc = AlarmListViewController()
+        self.show(vc, sender: nil)
     }
     
     @objc func showSettingEvent() {
         
+    }
+    
+    func navibarSetting() {
+        let alarmBtn = UIBarButtonItem(image: #imageLiteral(resourceName: "alarmIcon"), style: .plain, target: self, action: #selector(showAlarmEvent))
+        
+        navigationItem.rightBarButtonItems = [alarmBtn]
     }
     
     
@@ -51,12 +51,8 @@ class ParentsMainViewController: UIViewController {
         let leftBtn = UIBarButtonItem(customView: customTitleView)
         self.navigationItem.leftBarButtonItem = leftBtn
         customTitleView.titleLabel.text = str
-    }
-    
-    func navibarSetting() {
-        alarmList = []
         
-        navigationItem.rightBarButtonItems = [alarmBtn]
+        
     }
     
     func settingTabViews(_ selectView: UIView) {

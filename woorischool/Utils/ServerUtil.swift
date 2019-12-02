@@ -65,6 +65,11 @@ class ServerUtil: NSObject {
         apiRequest("v2_announcement", method: .post, parameters: parameters, completion: completion)
     }
     
+    func getNotification(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("notification", method: .get, parameters: parameters, completion: completion)
+    }
+    
     func getV2Board(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
         currentVc = vc
         apiRequest("v2_board", method: .get, parameters: parameters, completion: completion)

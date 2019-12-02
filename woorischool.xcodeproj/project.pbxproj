@@ -104,6 +104,11 @@
 		9915B62123652A4600ACE9B6 /* StudentContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9915B61F23652A4600ACE9B6 /* StudentContactTableViewCell.xib */; };
 		99468CE62372823E00AAB535 /* RegistDailyNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99468CE42372823E00AAB535 /* RegistDailyNoteViewController.swift */; };
 		99468CE72372823E00AAB535 /* RegistDailyNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99468CE52372823E00AAB535 /* RegistDailyNoteViewController.xib */; };
+		994907A02394AAFF00A6D1F6 /* AlarmListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9949079E2394AAFF00A6D1F6 /* AlarmListViewController.swift */; };
+		994907A12394AAFF00A6D1F6 /* AlarmListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9949079F2394AAFF00A6D1F6 /* AlarmListViewController.xib */; };
+		994907A42394AB5300A6D1F6 /* AlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994907A22394AB5300A6D1F6 /* AlarmTableViewCell.swift */; };
+		994907A52394AB5300A6D1F6 /* AlarmTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 994907A32394AB5300A6D1F6 /* AlarmTableViewCell.xib */; };
+		994907A72394AE2100A6D1F6 /* AlarmData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994907A62394AE2100A6D1F6 /* AlarmData.swift */; };
 		994A6B2B235ECB910088D46E /* StudentMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994A6B29235ECB910088D46E /* StudentMainViewController.swift */; };
 		994A6B2C235ECB910088D46E /* StudentMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 994A6B2A235ECB910088D46E /* StudentMainViewController.xib */; };
 		994A6B2F235ED5770088D46E /* StudentHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994A6B2D235ED5770088D46E /* StudentHomeViewController.swift */; };
@@ -315,6 +320,11 @@
 		9915B61F23652A4600ACE9B6 /* StudentContactTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudentContactTableViewCell.xib; sourceTree = "<group>"; };
 		99468CE42372823E00AAB535 /* RegistDailyNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistDailyNoteViewController.swift; sourceTree = "<group>"; };
 		99468CE52372823E00AAB535 /* RegistDailyNoteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistDailyNoteViewController.xib; sourceTree = "<group>"; };
+		9949079E2394AAFF00A6D1F6 /* AlarmListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListViewController.swift; sourceTree = "<group>"; };
+		9949079F2394AAFF00A6D1F6 /* AlarmListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlarmListViewController.xib; sourceTree = "<group>"; };
+		994907A22394AB5300A6D1F6 /* AlarmTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTableViewCell.swift; sourceTree = "<group>"; };
+		994907A32394AB5300A6D1F6 /* AlarmTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlarmTableViewCell.xib; sourceTree = "<group>"; };
+		994907A62394AE2100A6D1F6 /* AlarmData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmData.swift; sourceTree = "<group>"; };
 		994A6B29235ECB910088D46E /* StudentMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentMainViewController.swift; sourceTree = "<group>"; };
 		994A6B2A235ECB910088D46E /* StudentMainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudentMainViewController.xib; sourceTree = "<group>"; };
 		994A6B2D235ED5770088D46E /* StudentHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentHomeViewController.swift; sourceTree = "<group>"; };
@@ -524,6 +534,7 @@
 				99088BDB237554B1009C9AE6 /* ChattingRoomTableViewCell.swift */,
 				99088BE3237CF3D8009C9AE6 /* DailyNoteTableViewCell.swift */,
 				99CF8695238560CF00812A36 /* ImagePagingCollectionViewCell.swift */,
+				994907A22394AB5300A6D1F6 /* AlarmTableViewCell.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -546,6 +557,7 @@
 				99088BF123828B3D009C9AE6 /* BoardData.swift */,
 				99088BF323829170009C9AE6 /* ReplyData.swift */,
 				99CF869D23866CAB00812A36 /* NoticeData.swift */,
+				994907A62394AE2100A6D1F6 /* AlarmData.swift */,
 			);
 			path = Datas;
 			sourceTree = "<group>";
@@ -687,6 +699,8 @@
 				99088BCB2375413D009C9AE6 /* NotiListViewController.swift */,
 				99088BD323754ABF009C9AE6 /* ChattingRoomListViewController.swift */,
 				99CF86992385934500812A36 /* BoardAddAndEditViewController.swift */,
+				9949079E2394AAFF00A6D1F6 /* AlarmListViewController.swift */,
+				9949079F2394AAFF00A6D1F6 /* AlarmListViewController.xib */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
@@ -717,6 +731,7 @@
 				99088BDC237554B1009C9AE6 /* ChattingRoomTableViewCell.xib */,
 				99088BE4237CF3D8009C9AE6 /* DailyNoteTableViewCell.xib */,
 				99CF8696238560CF00812A36 /* ImagePagingCollectionViewCell.xib */,
+				994907A32394AB5300A6D1F6 /* AlarmTableViewCell.xib */,
 			);
 			path = VIews;
 			sourceTree = "<group>";
@@ -1097,6 +1112,7 @@
 				994A6B2C235ECB910088D46E /* StudentMainViewController.xib in Resources */,
 				996EA4D923739849000C6D34 /* MyPageViewController.xib in Resources */,
 				9914AA2B2345C861001C0112 /* CourseRegistrationViewController.xib in Resources */,
+				994907A12394AAFF00A6D1F6 /* AlarmListViewController.xib in Resources */,
 				99DFB1612350605F00C5B69D /* TeacherHomeViewController.xib in Resources */,
 				99DFB185235581E300C5B69D /* ChildTableViewCell.xib in Resources */,
 				991182EE236CEE950020D6CE /* ReReplyTableViewCell.xib in Resources */,
@@ -1116,6 +1132,7 @@
 				994A6B30235ED5770088D46E /* StudentHomeViewController.xib in Resources */,
 				9968CF3123418F3200B8D095 /* Main.storyboard in Resources */,
 				994A6B3C235ED6030088D46E /* StudentMyInfoViewController.xib in Resources */,
+				994907A52394AB5300A6D1F6 /* AlarmTableViewCell.xib in Resources */,
 				9914AA1223431CF8001C0112 /* ParentsLoginViewController.xib in Resources */,
 				99CF869C2385934500812A36 /* BoardAddAndEditViewController.xib in Resources */,
 				9914AA0223431447001C0112 /* NotoSansCJKkr-Medium.otf in Resources */,
@@ -1284,6 +1301,8 @@
 				99468CE62372823E00AAB535 /* RegistDailyNoteViewController.swift in Sources */,
 				99DFB184235581E300C5B69D /* ChildTableViewCell.swift in Sources */,
 				99088BF423829170009C9AE6 /* ReplyData.swift in Sources */,
+				994907A72394AE2100A6D1F6 /* AlarmData.swift in Sources */,
+				994907A02394AAFF00A6D1F6 /* AlarmListViewController.swift in Sources */,
 				99088BD823755179009C9AE6 /* ChattingRoomTableHeaderView.swift in Sources */,
 				9914AA262345C12C001C0112 /* ParentsHomeViewController.swift in Sources */,
 				991182D9236C618A0020D6CE /* ClassBoardTableViewCell.swift in Sources */,
@@ -1316,6 +1335,7 @@
 				99CF869B2385934500812A36 /* BoardAddAndEditViewController.swift in Sources */,
 				99EBAC03237306AC00091905 /* SelectCameraTypeViewController.swift in Sources */,
 				9914A9CF2343098F001C0112 /* Extensions+Views.swift in Sources */,
+				994907A42394AB5300A6D1F6 /* AlarmTableViewCell.swift in Sources */,
 				9914AA1123431CF8001C0112 /* ParentsLoginViewController.swift in Sources */,
 				9962A4C923470B340027FEB6 /* RegistClassTableViewCell.swift in Sources */,
 				991182DD236C8C8A0020D6CE /* BoardDetailViewController.swift in Sources */,

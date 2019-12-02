@@ -121,7 +121,6 @@ class ParentsHomeRenewViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         monthDatesCollectionView.register(UINib(nibName: "MonthDaysCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "dateCell")
         dayClassInfoCollectionView.register(UINib(nibName: "SPHomeClassInfoCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "dayclassCell")
         setDate()
@@ -140,6 +139,10 @@ class ParentsHomeRenewViewController: UIViewController {
         fridayTableView.register(UINib(nibName: "HomeScheduleTableViewCell", bundle: nil), forCellReuseIdentifier: "scheduleCell")
         saturdayTableView.register(UINib(nibName: "HomeScheduleTableViewCell", bundle: nil), forCellReuseIdentifier: "scheduleCell")
         setUserInfo()
+    }
+    
+    @objc func showSettingEvent() {
+        
     }
     
     @IBAction func showChildrenListEvent() {

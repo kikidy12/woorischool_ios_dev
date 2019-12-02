@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -36,7 +36,7 @@
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gi7-oy-bm8">
                     <rect key="frame" x="0.0" y="44" width="414" height="1"/>
-                    <color key="backgroundColor" name="veryLightPink"/>
+                    <color key="backgroundColor" name="paleGreyThree"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="Wt2-S7-VlI"/>
                     </constraints>
@@ -49,11 +49,12 @@
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lMF-z9-MpC">
                                     <rect key="frame" x="87.5" y="24.5" width="24" height="24"/>
-                                    <color key="backgroundColor" name="greenishTeal"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="24" id="MaE-fI-1pO"/>
                                         <constraint firstAttribute="height" constant="24" id="tJN-fg-tv8"/>
                                     </constraints>
+                                    <state key="normal" backgroundImage="notePreIcon"/>
                                     <connections>
                                         <action selector="selectPreviosDateEvent" destination="-1" eventType="touchUpInside" id="ZSv-jL-4A5"/>
                                     </connections>
@@ -258,11 +259,12 @@
                                 </view>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g07-43-j68">
                                     <rect key="frame" x="303" y="24.5" width="24" height="24"/>
-                                    <color key="backgroundColor" name="greenishTeal"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="24" id="KMH-gS-JYr"/>
                                         <constraint firstAttribute="height" constant="24" id="xzL-zh-Jq1"/>
                                     </constraints>
+                                    <state key="normal" backgroundImage="noteNextIcon"/>
                                     <connections>
                                         <action selector="selectNextDateEvent" destination="-1" eventType="touchUpInside" id="g2g-KG-vci"/>
                                     </connections>
@@ -301,7 +303,7 @@
                             </constraints>
                         </view>
                     </subviews>
-                    <color key="backgroundColor" red="0.96078431372549022" green="0.96470588235294119" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="yyl-6d-TVX" firstAttribute="top" secondItem="Rub-2O-aoj" secondAttribute="top" id="7G1-bj-Bjh"/>
                         <constraint firstItem="yyl-6d-TVX" firstAttribute="trailing" secondItem="Rub-2O-aoj" secondAttribute="trailing" id="BJp-SE-mi9"/>
@@ -335,6 +337,8 @@
     </objects>
     <resources>
         <image name="camera.fill" catalog="system" width="64" height="48"/>
+        <image name="noteNextIcon" width="24" height="24"/>
+        <image name="notePreIcon" width="24" height="24"/>
         <namedColor name="brownGrey">
             <color red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -343,6 +347,9 @@
         </namedColor>
         <namedColor name="greyishBrown">
             <color red="0.29019607843137257" green="0.29019607843137257" blue="0.29019607843137257" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="paleGreyThree">
+            <color red="0.96078431372549022" green="0.96078431372549022" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="veryLightPink">
             <color red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
