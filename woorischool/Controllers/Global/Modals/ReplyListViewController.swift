@@ -24,8 +24,7 @@ class ReplyListViewController: UIViewController {
             }
             
             replyTableView.reloadData()
-            replyTableView.layoutIfNeeded()
-            replyTableViewHeightConstraint.constant = self.replyTableView.contentSize.height
+            self.viewWillLayoutSubviews()
             
             if isFirst {
                 isFirst = false
@@ -62,10 +61,12 @@ class ReplyListViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
         getReplyList()
     }
     
     override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
         replyTableView.layoutIfNeeded()
         replyTableViewHeightConstraint.constant = self.replyTableView.contentSize.height
     }
@@ -91,9 +92,6 @@ extension ReplyListViewController: CustomInputViewDelegate {
 }
 
 extension ReplyListViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        self.viewWillLayoutSubviews()
-    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension

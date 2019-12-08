@@ -12,6 +12,9 @@ class ClassBoardTableViewCell: UITableViewCell {
     
     var board: BoardData!
     
+    var isMyBoardList = false
+    
+    @IBOutlet weak var classNameLabel: UILabel!
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var firstImageView: UIImageView!
@@ -36,6 +39,13 @@ class ClassBoardTableViewCell: UITableViewCell {
     func initView(_ data: BoardData) {
         board = data
         
+        if isMyBoardList {
+            classNameLabel.superview?.isHidden = false
+            classNameLabel.text = "\(board?.lectureClass?.lecture?.name ?? "강의명") \(board.lectureClass?.name ?? "클래스명")"
+        }
+        else {
+            classNameLabel.superview?.isHidden = true
+        }
         nameLabel.text = board.postingUser.name
         timeLabel.text = board.writeTime
         contentLabel.text = board.content

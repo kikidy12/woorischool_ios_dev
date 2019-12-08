@@ -33,11 +33,18 @@ class ClassBoardListViewController: UIViewController {
         boardTableView.register(UINib(nibName: "ClassBoardTableViewCell", bundle: nil), forCellReuseIdentifier: "boardCell")
         
         boardTableView.contentInset = UIEdgeInsets(top: 12, left: 0, bottom: 0, right: 0)
-        naviBarSetting()
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        getClassBoardList()
+        if lectureClass == nil {
+            title = "내 게시글 관리"
+            getMyBoardList()
+        }
+        else {
+            title = "\(lectureClass.lecture?.name ?? "강의") \(lectureClass.name ?? "클래스")"
+            getClassBoardList()
+            naviBarSetting()
+        }
     }
     
     func naviBarSetting() {
@@ -60,6 +67,13 @@ extension ClassBoardListViewController: UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "boardCell", for: indexPath) as! ClassBoardTableViewCell
+
+        if lectureClass == nil {
+            cell.isMyBoardList = true
+        }
+        else {
+            cell.isMyBoardList = false
+        }
         cell.initView(boardList[indexPath.item])
         return cell
     }
@@ -79,6 +93,16 @@ extension ClassBoardListViewController {
         ] as [String: Any]
         ServerUtil.shared.postV2Board(self, parameters: parameters) { (success, dict, message) in
             guard success, let array = dict?["board"] as? NSArray else {
+                return
+            }
+            
+            self.boardList = array.compactMap { BoardData($0 as! NSDictionary) }
+        }
+    }
+    
+    func getMyBoardList() {
+        ServerUtil.shared.getUserMyPost(self) { (success, dict, message) in
+            guard success, let array = dict?["my_post_list"] as? NSArray else {
                 return
             }
             

@@ -115,6 +115,7 @@ class CustomGradientButton: UIButton {
     }
 
     override func layoutIfNeeded() {
+        super.layoutIfNeeded()
         gradient.startPoint = CGPoint(x: 0, y: 0)
         gradient.endPoint = CGPoint(x: 1, y: 0)
         gradient.locations = [0.0, 1.0]

@@ -109,6 +109,21 @@
 		994907A42394AB5300A6D1F6 /* AlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994907A22394AB5300A6D1F6 /* AlarmTableViewCell.swift */; };
 		994907A52394AB5300A6D1F6 /* AlarmTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 994907A32394AB5300A6D1F6 /* AlarmTableViewCell.xib */; };
 		994907A72394AE2100A6D1F6 /* AlarmData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994907A62394AE2100A6D1F6 /* AlarmData.swift */; };
+		994907AA2394C10000A6D1F6 /* SearchSchoolViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994907A82394C10000A6D1F6 /* SearchSchoolViewController.swift */; };
+		994907AB2394C10000A6D1F6 /* SearchSchoolViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 994907A92394C10000A6D1F6 /* SearchSchoolViewController.xib */; };
+		994907AD2394C4F800A6D1F6 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994907AC2394C4F800A6D1F6 /* SearchView.swift */; };
+		994907AF2394C50300A6D1F6 /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 994907AE2394C50300A6D1F6 /* SearchView.xib */; };
+		994907B22394DD1800A6D1F6 /* SchoolTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994907B02394DD1800A6D1F6 /* SchoolTableViewCell.swift */; };
+		994907B32394DD1800A6D1F6 /* SchoolTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 994907B12394DD1800A6D1F6 /* SchoolTableViewCell.xib */; };
+		994907B52394F8D800A6D1F6 /* QuaterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994907B42394F8D800A6D1F6 /* QuaterData.swift */; };
+		994907B823978F1A00A6D1F6 /* QuarterClassListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994907B623978F1A00A6D1F6 /* QuarterClassListViewController.swift */; };
+		994907B923978F1A00A6D1F6 /* QuarterClassListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 994907B723978F1A00A6D1F6 /* QuarterClassListViewController.xib */; };
+		994907D22398DAC700A6D1F6 /* MyRegistCourseHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994907D12398DAC700A6D1F6 /* MyRegistCourseHeaderView.swift */; };
+		994907D42398DAD200A6D1F6 /* MyRegistCourseHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 994907D32398DAD200A6D1F6 /* MyRegistCourseHeaderView.xib */; };
+		994907D72398DBC600A6D1F6 /* MyClassRecordTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994907D52398DBC600A6D1F6 /* MyClassRecordTableViewCell.swift */; };
+		994907D82398DBC600A6D1F6 /* MyClassRecordTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 994907D62398DBC600A6D1F6 /* MyClassRecordTableViewCell.xib */; };
+		994907DC239CD13E00A6D1F6 /* LectureClassDayEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994907DB239CD13E00A6D1F6 /* LectureClassDayEmptyView.swift */; };
+		994907DE239CD14B00A6D1F6 /* LectureClassDayEmptyView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 994907DD239CD14B00A6D1F6 /* LectureClassDayEmptyView.xib */; };
 		994A6B2B235ECB910088D46E /* StudentMainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994A6B29235ECB910088D46E /* StudentMainViewController.swift */; };
 		994A6B2C235ECB910088D46E /* StudentMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 994A6B2A235ECB910088D46E /* StudentMainViewController.xib */; };
 		994A6B2F235ED5770088D46E /* StudentHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994A6B2D235ED5770088D46E /* StudentHomeViewController.swift */; };
@@ -325,6 +340,21 @@
 		994907A22394AB5300A6D1F6 /* AlarmTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTableViewCell.swift; sourceTree = "<group>"; };
 		994907A32394AB5300A6D1F6 /* AlarmTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlarmTableViewCell.xib; sourceTree = "<group>"; };
 		994907A62394AE2100A6D1F6 /* AlarmData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmData.swift; sourceTree = "<group>"; };
+		994907A82394C10000A6D1F6 /* SearchSchoolViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchSchoolViewController.swift; sourceTree = "<group>"; };
+		994907A92394C10000A6D1F6 /* SearchSchoolViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchSchoolViewController.xib; sourceTree = "<group>"; };
+		994907AC2394C4F800A6D1F6 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		994907AE2394C50300A6D1F6 /* SearchView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
+		994907B02394DD1800A6D1F6 /* SchoolTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolTableViewCell.swift; sourceTree = "<group>"; };
+		994907B12394DD1800A6D1F6 /* SchoolTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SchoolTableViewCell.xib; sourceTree = "<group>"; };
+		994907B42394F8D800A6D1F6 /* QuaterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuaterData.swift; sourceTree = "<group>"; };
+		994907B623978F1A00A6D1F6 /* QuarterClassListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuarterClassListViewController.swift; sourceTree = "<group>"; };
+		994907B723978F1A00A6D1F6 /* QuarterClassListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuarterClassListViewController.xib; sourceTree = "<group>"; };
+		994907D12398DAC700A6D1F6 /* MyRegistCourseHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRegistCourseHeaderView.swift; sourceTree = "<group>"; };
+		994907D32398DAD200A6D1F6 /* MyRegistCourseHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyRegistCourseHeaderView.xib; sourceTree = "<group>"; };
+		994907D52398DBC600A6D1F6 /* MyClassRecordTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyClassRecordTableViewCell.swift; sourceTree = "<group>"; };
+		994907D62398DBC600A6D1F6 /* MyClassRecordTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyClassRecordTableViewCell.xib; sourceTree = "<group>"; };
+		994907DB239CD13E00A6D1F6 /* LectureClassDayEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureClassDayEmptyView.swift; sourceTree = "<group>"; };
+		994907DD239CD14B00A6D1F6 /* LectureClassDayEmptyView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LectureClassDayEmptyView.xib; sourceTree = "<group>"; };
 		994A6B29235ECB910088D46E /* StudentMainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentMainViewController.swift; sourceTree = "<group>"; };
 		994A6B2A235ECB910088D46E /* StudentMainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudentMainViewController.xib; sourceTree = "<group>"; };
 		994A6B2D235ED5770088D46E /* StudentHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentHomeViewController.swift; sourceTree = "<group>"; };
@@ -535,6 +565,8 @@
 				99088BE3237CF3D8009C9AE6 /* DailyNoteTableViewCell.swift */,
 				99CF8695238560CF00812A36 /* ImagePagingCollectionViewCell.swift */,
 				994907A22394AB5300A6D1F6 /* AlarmTableViewCell.swift */,
+				994907B02394DD1800A6D1F6 /* SchoolTableViewCell.swift */,
+				994907D52398DBC600A6D1F6 /* MyClassRecordTableViewCell.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -558,6 +590,7 @@
 				99088BF323829170009C9AE6 /* ReplyData.swift */,
 				99CF869D23866CAB00812A36 /* NoticeData.swift */,
 				994907A62394AE2100A6D1F6 /* AlarmData.swift */,
+				994907B42394F8D800A6D1F6 /* QuaterData.swift */,
 			);
 			path = Datas;
 			sourceTree = "<group>";
@@ -664,6 +697,9 @@
 				99088BCC2375413D009C9AE6 /* NotiListViewController.xib */,
 				99088BD423754ABF009C9AE6 /* ChattingRoomListViewController.xib */,
 				99CF869A2385934500812A36 /* BoardAddAndEditViewController.xib */,
+				9949079F2394AAFF00A6D1F6 /* AlarmListViewController.xib */,
+				994907A92394C10000A6D1F6 /* SearchSchoolViewController.xib */,
+				994907B723978F1A00A6D1F6 /* QuarterClassListViewController.xib */,
 			);
 			path = ModalViews;
 			sourceTree = "<group>";
@@ -671,6 +707,7 @@
 		9914AA1723432686001C0112 /* Parents */ = {
 			isa = PBXGroup;
 			children = (
+				994907DA239CD12500A6D1F6 /* EmptyViews */,
 				99F7DC9F23471F4B007C4ABE /* Popups */,
 				9914A9E223430C81001C0112 /* Modals */,
 			);
@@ -700,7 +737,8 @@
 				99088BD323754ABF009C9AE6 /* ChattingRoomListViewController.swift */,
 				99CF86992385934500812A36 /* BoardAddAndEditViewController.swift */,
 				9949079E2394AAFF00A6D1F6 /* AlarmListViewController.swift */,
-				9949079F2394AAFF00A6D1F6 /* AlarmListViewController.xib */,
+				994907A82394C10000A6D1F6 /* SearchSchoolViewController.swift */,
+				994907B623978F1A00A6D1F6 /* QuarterClassListViewController.swift */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
@@ -732,6 +770,8 @@
 				99088BE4237CF3D8009C9AE6 /* DailyNoteTableViewCell.xib */,
 				99CF8696238560CF00812A36 /* ImagePagingCollectionViewCell.xib */,
 				994907A32394AB5300A6D1F6 /* AlarmTableViewCell.xib */,
+				994907B12394DD1800A6D1F6 /* SchoolTableViewCell.xib */,
+				994907D62398DBC600A6D1F6 /* MyClassRecordTableViewCell.xib */,
 			);
 			path = VIews;
 			sourceTree = "<group>";
@@ -747,8 +787,21 @@
 				9911830B236E94DC0020D6CE /* CustomInputView.xib */,
 				99088BD723755179009C9AE6 /* ChattingRoomTableHeaderView.swift */,
 				99088BD923755185009C9AE6 /* ChattingRoomTableHeaderView.xib */,
+				994907AC2394C4F800A6D1F6 /* SearchView.swift */,
+				994907AE2394C50300A6D1F6 /* SearchView.xib */,
+				994907D12398DAC700A6D1F6 /* MyRegistCourseHeaderView.swift */,
+				994907D32398DAD200A6D1F6 /* MyRegistCourseHeaderView.xib */,
 			);
 			path = CustomView;
+			sourceTree = "<group>";
+		};
+		994907DA239CD12500A6D1F6 /* EmptyViews */ = {
+			isa = PBXGroup;
+			children = (
+				994907DB239CD13E00A6D1F6 /* LectureClassDayEmptyView.swift */,
+				994907DD239CD14B00A6D1F6 /* LectureClassDayEmptyView.xib */,
+			);
+			path = EmptyViews;
 			sourceTree = "<group>";
 		};
 		994A6B24235ECAED0088D46E /* Students */ = {
@@ -1088,6 +1141,7 @@
 				9914A9FA23431447001C0112 /* NotoSansCJKkr-Thin.otf in Resources */,
 				9968CF3623418F3500B8D095 /* Assets.xcassets in Resources */,
 				996EA4D523730D2B000C6D34 /* PictureImageCollectionViewCell.xib in Resources */,
+				994907AB2394C10000A6D1F6 /* SearchSchoolViewController.xib in Resources */,
 				99057905236BD06B002842AB /* ParentsEnrolmentClassViewController.xib in Resources */,
 				9956BF792366B5670069E661 /* TeacherStudentAttendViewController.xib in Resources */,
 				9914AA0A234317E9001C0112 /* NanumSquareRound-Bold.otf in Resources */,
@@ -1095,6 +1149,7 @@
 				9956BF93236857100069E661 /* TeacherStudentAttandTableViewCell.xib in Resources */,
 				99118300236D86E80020D6CE /* EmoInputView.xib in Resources */,
 				99DFB13B234F736F00C5B69D /* ClassInfoPopupViewController.xib in Resources */,
+				994907B32394DD1800A6D1F6 /* SchoolTableViewCell.xib in Resources */,
 				991182DE236C8C8A0020D6CE /* BoardDetailViewController.xib in Resources */,
 				99DFB14B2350481C00C5B69D /* RegistCompClassTableViewCell.xib in Resources */,
 				9956BF7523668BDF0069E661 /* loading.json in Resources */,
@@ -1102,11 +1157,13 @@
 				9914A9FB23431447001C0112 /* NotoSansMonoCJKkr-Bold.otf in Resources */,
 				99DFB1652350628700C5B69D /* TeacherHomeTableViewCell.xib in Resources */,
 				9956BF7D2366C3070069E661 /* ParentsHomeRenewViewController.xib in Resources */,
+				994907DE239CD14B00A6D1F6 /* LectureClassDayEmptyView.xib in Resources */,
 				99DFB135234EFD5400C5B69D /* GoogleService-Info.plist in Resources */,
 				9962A4CA23470B340027FEB6 /* RegistClassTableViewCell.xib in Resources */,
 				9915B62123652A4600ACE9B6 /* StudentContactTableViewCell.xib in Resources */,
 				991182EA236CED070020D6CE /* ReplyListViewController.xib in Resources */,
 				9914AA0123431447001C0112 /* NotoSansCJKkr-Regular.otf in Resources */,
+				994907B923978F1A00A6D1F6 /* QuarterClassListViewController.xib in Resources */,
 				99088BDA23755185009C9AE6 /* ChattingRoomTableHeaderView.xib in Resources */,
 				99088BD623754ABF009C9AE6 /* ChattingRoomListViewController.xib in Resources */,
 				994A6B2C235ECB910088D46E /* StudentMainViewController.xib in Resources */,
@@ -1129,6 +1186,7 @@
 				9915B61923633A4800ACE9B6 /* MainTitleView.xib in Resources */,
 				99CF86A22387739600812A36 /* PSDailyNoteViewController.xib in Resources */,
 				99088BD223754235009C9AE6 /* NotiTableViewCell.xib in Resources */,
+				994907D82398DBC600A6D1F6 /* MyClassRecordTableViewCell.xib in Resources */,
 				994A6B30235ED5770088D46E /* StudentHomeViewController.xib in Resources */,
 				9968CF3123418F3200B8D095 /* Main.storyboard in Resources */,
 				994A6B3C235ED6030088D46E /* StudentMyInfoViewController.xib in Resources */,
@@ -1144,8 +1202,10 @@
 				9914A9E723430DA9001C0112 /* SplashViewController.xib in Resources */,
 				9911830C236E94DC0020D6CE /* CustomInputView.xib in Resources */,
 				9956BF8B23672A2E0069E661 /* SPHomeClassInfoCollectionViewCell.xib in Resources */,
+				994907D42398DAD200A6D1F6 /* MyRegistCourseHeaderView.xib in Resources */,
 				9914AA302345CEFC001C0112 /* CourseCollectionViewCell.xib in Resources */,
 				9956BF8F2367A56C0069E661 /* HomeScheduleTableViewCell.xib in Resources */,
+				994907AF2394C50300A6D1F6 /* SearchView.xib in Resources */,
 				99EBAC04237306AC00091905 /* SelectCameraTypeViewController.xib in Resources */,
 				9914AA0023431447001C0112 /* NotoSansCJKkr-DemiLight.otf in Resources */,
 				994A6B38235ED5ED0088D46E /* StudentChattingRoomListViewController.xib in Resources */,
@@ -1271,6 +1331,7 @@
 				99DFB13A234F736F00C5B69D /* ClassInfoPopupViewController.swift in Sources */,
 				99DFB133234EFBAB00C5B69D /* GlobalDatas.swift in Sources */,
 				9956BF8A23672A2E0069E661 /* SPHomeClassInfoCollectionViewCell.swift in Sources */,
+				994907B823978F1A00A6D1F6 /* QuarterClassListViewController.swift in Sources */,
 				9914AA342346FC4B001C0112 /* ParentsHomeScheduleTableViewCell.swift in Sources */,
 				9914A9D723430B32001C0112 /* ServerUtil.swift in Sources */,
 				99DFB1802355808200C5B69D /* ManageChildrenViewController.swift in Sources */,
@@ -1288,6 +1349,7 @@
 				994A6B2B235ECB910088D46E /* StudentMainViewController.swift in Sources */,
 				99DFB14A2350481C00C5B69D /* RegistCompClassTableViewCell.swift in Sources */,
 				99DFB13E234F7AE400C5B69D /* RegistClassPopupViewController.swift in Sources */,
+				994907D72398DBC600A6D1F6 /* MyClassRecordTableViewCell.swift in Sources */,
 				9956BF782366B5670069E661 /* TeacherStudentAttendViewController.swift in Sources */,
 				994A6B3B235ED6030088D46E /* StudentMyInfoViewController.swift in Sources */,
 				991182FE236D86DC0020D6CE /* EmoInputView.swift in Sources */,
@@ -1297,15 +1359,18 @@
 				99DFB130234EF83300C5B69D /* RegistChildViewController.swift in Sources */,
 				99DFB1642350628700C5B69D /* TeacherHomeTableViewCell.swift in Sources */,
 				99CF86A12387739600812A36 /* PSDailyNoteViewController.swift in Sources */,
+				994907D22398DAC700A6D1F6 /* MyRegistCourseHeaderView.swift in Sources */,
 				99DFB1772355671500C5B69D /* RegistClassCompleteListViewController.swift in Sources */,
 				99468CE62372823E00AAB535 /* RegistDailyNoteViewController.swift in Sources */,
 				99DFB184235581E300C5B69D /* ChildTableViewCell.swift in Sources */,
 				99088BF423829170009C9AE6 /* ReplyData.swift in Sources */,
+				994907B52394F8D800A6D1F6 /* QuaterData.swift in Sources */,
 				994907A72394AE2100A6D1F6 /* AlarmData.swift in Sources */,
 				994907A02394AAFF00A6D1F6 /* AlarmListViewController.swift in Sources */,
 				99088BD823755179009C9AE6 /* ChattingRoomTableHeaderView.swift in Sources */,
 				9914AA262345C12C001C0112 /* ParentsHomeViewController.swift in Sources */,
 				991182D9236C618A0020D6CE /* ClassBoardTableViewCell.swift in Sources */,
+				994907DC239CD13E00A6D1F6 /* LectureClassDayEmptyView.swift in Sources */,
 				991182CD236BDEE40020D6CE /* BoardListViewController.swift in Sources */,
 				99057904236BD06B002842AB /* ParentsEnrolmentClassViewController.swift in Sources */,
 				9956BF712365A65B0069E661 /* ParentContractTableViewCell.swift in Sources */,
@@ -1323,6 +1388,7 @@
 				9914AA0D23431B00001C0112 /* SelectUserTypeViewController.swift in Sources */,
 				9956BF862366FE200069E661 /* MonthDaysCollectionViewCell.swift in Sources */,
 				9915B61323631F4700ACE9B6 /* TeacherMainViewController.swift in Sources */,
+				994907AA2394C10000A6D1F6 /* SearchSchoolViewController.swift in Sources */,
 				99088BE1237CF351009C9AE6 /* DailyNoteListViewController.swift in Sources */,
 				9968CF2E23418F3200B8D095 /* ViewController.swift in Sources */,
 				9968CF2C23418F3200B8D095 /* AppDelegate.swift in Sources */,
@@ -1337,6 +1403,7 @@
 				9914A9CF2343098F001C0112 /* Extensions+Views.swift in Sources */,
 				994907A42394AB5300A6D1F6 /* AlarmTableViewCell.swift in Sources */,
 				9914AA1123431CF8001C0112 /* ParentsLoginViewController.swift in Sources */,
+				994907B22394DD1800A6D1F6 /* SchoolTableViewCell.swift in Sources */,
 				9962A4C923470B340027FEB6 /* RegistClassTableViewCell.swift in Sources */,
 				991182DD236C8C8A0020D6CE /* BoardDetailViewController.swift in Sources */,
 				99DFB1602350605F00C5B69D /* TeacherHomeViewController.swift in Sources */,
@@ -1346,6 +1413,7 @@
 				9914A9D523430AC6001C0112 /* CustomViews.swift in Sources */,
 				99088BF223828B3D009C9AE6 /* BoardData.swift in Sources */,
 				99118310236EBC090020D6CE /* EmoticonDatas.swift in Sources */,
+				994907AD2394C4F800A6D1F6 /* SearchView.swift in Sources */,
 				9914A9D1234309BB001C0112 /* Extensions+Obejcts.swift in Sources */,
 				99DFB15D2350579100C5B69D /* LectureClassDayData.swift in Sources */,
 				99CF8697238560CF00812A36 /* ImagePagingCollectionViewCell.swift in Sources */,
@@ -1536,14 +1604,14 @@
 				CODE_SIGN_ENTITLEMENTS = woorischool/woorischool.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 4TNGT36HA9;
 				INFOPLIST_FILE = woorischool/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.beanfactory.woorischool;
 				PRODUCT_NAME = "우리스쿨";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1560,14 +1628,14 @@
 				CODE_SIGN_ENTITLEMENTS = woorischool/woorischool.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 4TNGT36HA9;
 				INFOPLIST_FILE = woorischool/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.beanfactory.woorischool;
 				PRODUCT_NAME = "우리스쿨";
 				PROVISIONING_PROFILE_SPECIFIER = "";

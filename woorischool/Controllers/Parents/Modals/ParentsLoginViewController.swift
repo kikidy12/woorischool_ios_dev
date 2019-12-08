@@ -64,7 +64,6 @@ extension ParentsLoginViewController {
             }
             
             GlobalDatas.currentUser = UserData(user)
-            
             UserDefs.setLastUserType(type: GlobalDatas.currentUser.type.rawValue)
             UserDefs.setUserToken(token: token)
             

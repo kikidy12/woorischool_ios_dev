@@ -18,6 +18,9 @@ class BoardData: NSObject {
     
     var imageList = [ImageData]()
     var postingUser: UserData!
+    
+    var lectureClass: LectureClassData!
+    
     override init() {
         
     }
@@ -35,6 +38,10 @@ class BoardData: NSObject {
         
         if let array = data["board_images"] as? NSArray {
             imageList = array.compactMap { ImageData($0 as! NSDictionary) }
+        }
+        
+        if let dict = data["lecture_class"] as? NSDictionary {
+            lectureClass = LectureClassData(dict)
         }
     }
 }

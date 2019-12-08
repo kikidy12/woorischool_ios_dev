@@ -79,6 +79,14 @@ class RegistChildViewController: UIViewController {
             self.navigationController?.popViewController(animated: true)
         }
     }
+    
+    @IBAction func showSchoolListEvent() {
+        let vc = SearchSchoolViewController()
+        vc.clouser = {
+            self.schoolNumberTextField.text = $0
+        }
+        self.show(vc, sender: nil)
+    }
 }
 
 extension RegistChildViewController: UIPickerViewDelegate, UIPickerViewDataSource {

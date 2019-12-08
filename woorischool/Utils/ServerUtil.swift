@@ -105,9 +105,19 @@ class ServerUtil: NSObject {
         apiRequest("v2_comment", method: .post, parameters: parameters, completion: completion)
     }
     
+    func getUserMyPost(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("user_my_post", method: .get, parameters: parameters, completion: completion)
+    }
+    
     func getV2Emoticon(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
         currentVc = vc
         apiRequest("v2_emoticon", method: .get, parameters: parameters, completion: completion)
+    }
+    
+    func getSchoolQuarterInfo(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("school_quarter_info", method: .get, parameters: parameters, completion: completion)
     }
     
     //parents
@@ -165,6 +175,11 @@ class ServerUtil: NSObject {
     func postLectureWait(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
         currentVc = vc
         apiRequest("lecture_wait", method: .post, parameters: parameters, completion: completion)
+    }
+    
+    func getLectureHistory(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("lecture_history", method: .get, parameters: parameters, completion: completion)
     }
     
     func getLectureApply(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
@@ -370,10 +385,6 @@ extension ServerUtil {
     }
     
     fileprivate func responseProcess(version: String = "", response: DataResponse<Any>, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
-        if serverAddress != liveServer {
-            print(response.request?.description ?? "ServerError")
-            print(response.description)
-        }
         
         loadingView.removeFromSuperview()
         progressLabel.removeFromSuperview()
@@ -381,6 +392,18 @@ extension ServerUtil {
             completion(false ,nil, nil)
             AlertHandler.shared.showAlert(vc: currentVc, message: "Server Error", okTitle: "확인")
             return
+        }
+        
+        if serverAddress != liveServer {
+            print(response.request?.description ?? "ServerError")
+            
+            do {
+                let jsonData = try JSONSerialization.data(withJSONObject: result, options: .prettyPrinted)
+                print(String(data: jsonData, encoding: .utf8)!)
+            }
+            catch {
+                print(error.localizedDescription)
+            }
         }
         
         guard let code = result["code"] as? Int else {

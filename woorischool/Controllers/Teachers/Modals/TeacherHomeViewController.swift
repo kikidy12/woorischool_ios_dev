@@ -10,6 +10,8 @@ import UIKit
 
 class TeacherHomeViewController: UIViewController {
     
+    var timer: Timer!
+    
     var classList = [LectureClassData]() {
         didSet {
             if classList.isEmpty {
@@ -41,13 +43,19 @@ class TeacherHomeViewController: UIViewController {
         setUserInfo()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        if timer != nil, timer.isValid {
+            timer.invalidate()
+        }
+    }
+    
     func setUserInfo() {
         let user = GlobalDatas.currentUser
         nameLabel.text = "\(user?.name ?? "미확인") 선생님\n안녕하세요"
         var count = 0
-        if !GlobalDatas.noticeList.isEmpty {
+        if !GlobalDatas.noticeList.isEmpty, (timer == nil || !timer.isValid) {
             self.notiBtn.setTitle("[공지] " + GlobalDatas.noticeList[0].title, for: .normal)
-            Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (timer) in
+            timer = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (timer) in
                 if count < GlobalDatas.noticeList.count - 1 {
                     count += 1
                 }

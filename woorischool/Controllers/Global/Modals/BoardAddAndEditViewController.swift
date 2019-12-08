@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class BoardAddAndEditViewController: UIViewController {
     
@@ -134,7 +135,7 @@ extension BoardAddAndEditViewController {
             formData.append(idData, withName: "board_id")
             formData.append(contentData, withName: "content")
             self.imageList.forEach {
-                formData.append($0.resizeImage(width: 500)!, withName: "image", fileName: "announceImage.jpeg", mimeType: "image/jpeg")
+                formData.append($0.resizeImage(width: 500)!, withName: "image", fileName: "boardImage.jpeg", mimeType: "image/jpeg")
             }
             
         }) { (success, dict, message) in
@@ -158,7 +159,7 @@ extension BoardAddAndEditViewController {
             formData.append(idData, withName: "lecture_class_id")
             formData.append(contentData, withName: "content")
             self.imageList.forEach {
-                formData.append($0.resizeImage(width: 500)!, withName: "image", fileName: "announceImage.jpeg", mimeType: "image/jpeg")
+                formData.append($0.resizeImage(width: 500)!, withName: "image", fileName: "boardImage.jpeg", mimeType: "image/jpeg")
             }
             
         }) { (success, dict, message) in

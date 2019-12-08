@@ -24,8 +24,7 @@ class BoardDetailViewController: UIViewController {
             }
             
             replyTableView.reloadData()
-            replyTableView.layoutIfNeeded()
-            replyTableViewHeightConstraint.constant = self.replyTableView.contentSize.height
+            self.viewWillLayoutSubviews()
             
             if isFirst {
                 isFirst = false
@@ -78,6 +77,7 @@ class BoardDetailViewController: UIViewController {
     }
     
     override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
         replyTableView.layoutIfNeeded()
         replyTableViewHeightConstraint.constant = self.replyTableView.contentSize.height
     }

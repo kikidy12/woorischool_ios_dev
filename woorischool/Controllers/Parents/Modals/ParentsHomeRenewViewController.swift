@@ -30,6 +30,8 @@ class ParentsHomeRenewViewController: UIViewController {
     var selectMonthDateIndex: IndexPath?
     var lastDate: Date = Date()
     
+    var timer: Timer!
+    
     var mondayData: [TestData] = [TestData(id: 0, start: 1, end: 2), TestData(id: 1, start: 3, end: 4), TestData(id: 2, start: 7, end: 8)]
     
     var sortMondayData = [[TestData:Int]]()
@@ -58,10 +60,10 @@ class ParentsHomeRenewViewController: UIViewController {
     var classDayList = [LectureClassDayData]() {
         didSet {
             if classDayList.isEmpty {
-                
+                lectureClassDayEmptyView.isHidden = false
             }
             else {
-                
+                lectureClassDayEmptyView.isHidden = true
             }
             pageControl.numberOfPages = classDayList.count
             dayClassInfoCollectionView.reloadData()
@@ -118,7 +120,8 @@ class ParentsHomeRenewViewController: UIViewController {
     @IBOutlet weak var thursdayTableView: UITableView!
     @IBOutlet weak var fridayTableView: UITableView!
     @IBOutlet weak var saturdayTableView: UITableView!
-
+    @IBOutlet weak var lectureClassDayEmptyView: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         monthDatesCollectionView.register(UINib(nibName: "MonthDaysCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "dateCell")
@@ -138,7 +141,16 @@ class ParentsHomeRenewViewController: UIViewController {
         thursdayTableView.register(UINib(nibName: "HomeScheduleTableViewCell", bundle: nil), forCellReuseIdentifier: "scheduleCell")
         fridayTableView.register(UINib(nibName: "HomeScheduleTableViewCell", bundle: nil), forCellReuseIdentifier: "scheduleCell")
         saturdayTableView.register(UINib(nibName: "HomeScheduleTableViewCell", bundle: nil), forCellReuseIdentifier: "scheduleCell")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         setUserInfo()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        if timer != nil, timer.isValid {
+            timer.invalidate()
+        }
     }
     
     @objc func showSettingEvent() {
@@ -154,10 +166,9 @@ class ParentsHomeRenewViewController: UIViewController {
         let user = GlobalDatas.currentUser
         nameLabel.text = "\(user?.childlen?.name ?? "아무개") 학부모님\n안녕하세요"
         var count = 0
-        
-        if !GlobalDatas.noticeList.isEmpty {
+        if !GlobalDatas.noticeList.isEmpty, (timer == nil || !timer.isValid) {
             self.notiBtn.setTitle("[공지] " + GlobalDatas.noticeList[0].title, for: .normal)
-            Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (timer) in
+            timer = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (timer) in
                 if count < GlobalDatas.noticeList.count - 1 {
                     count += 1
                 }

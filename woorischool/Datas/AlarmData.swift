@@ -18,6 +18,7 @@ struct AlarmData {
     var content: String!
     var time: String!
     
+    
     init() {
     }
     

@@ -23,7 +23,7 @@ class TeacherMainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        getTeacherInfo {
+        getInfo {
             self.settingTabViews(self.tabStackView.arrangedSubviews.first!)
         }
         
@@ -40,7 +40,7 @@ class TeacherMainViewController: UIViewController {
     
     @IBAction func selectTapEvent(_ sender: UITapGestureRecognizer) {
         if sender.state == .ended {
-            getTeacherInfo {
+            getInfo {
                 self.settingTabViews(sender.view!)
             }
         }
@@ -114,20 +114,21 @@ class TeacherMainViewController: UIViewController {
         vc.view.frame = self.mainView.bounds
         self.mainView.addSubview(vc.view)
     }
-
-    func getTeacherInfo(complete: @escaping ()->()) {
-        let paramterts = [
+    
+    func getInfo(complete: @escaping ()->()) {
+        let parameters = [
             "device_token": GlobalDatas.deviceToken,
             "os": "iOS"
         ] as [String:Any]
         
-        ServerUtil.shared.getV2Info(self, parameters: paramterts) { (success, dict, message) in
-            guard success, let user = dict?["user"] as? NSDictionary else {
-                AlertHandler.shared.showAlert(vc: self, message: message ?? "Server Error", okTitle: "확인")
+        ServerUtil.shared.getV2Info(self, parameters: parameters) { (success, dict, message) in
+            guard success, let array = dict?["notice"] as? NSArray, let user = dict?["user"] as? NSDictionary else {
                 return
             }
             
             GlobalDatas.currentUser = UserData(user)
+            GlobalDatas.noticeList = array.compactMap { NoticeData( $0 as! NSDictionary ) }
+            UserDefs.setLastUserType(type: UserType.teacher.rawValue)
             complete()
         }
     }

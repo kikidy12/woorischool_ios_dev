@@ -13,23 +13,39 @@ class MyPageViewController: UIViewController {
     var userType: UserType = UserType(rawValue: UserDefs.lastUserType) ?? .parents
     
     @IBOutlet weak var userTypeLabel: UILabel!
-    @IBOutlet weak var userIdLabel: UILabel!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var userInfoLabel: UILabel!
     
     @IBOutlet weak var childrenView: UIView!
+    @IBOutlet weak var quaterClassListView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        userNameLabel.text = GlobalDatas.currentUser.name
         if userType == .parents {
-            childrenView.isHidden = false
+            userTypeLabel.isHidden = true
+            userInfoLabel.text = GlobalDatas.currentUser.phoneNum
         }
         else {
             childrenView.isHidden = true
+            quaterClassListView.isHidden = true
+            userTypeLabel.text = "선생님"
+            userInfoLabel.text = GlobalDatas.currentUser.email
         }
+    }
+    
+    @IBAction func showMyBoardListEvent() {
+        let vc = ClassBoardListViewController()
+        self.show(vc, sender: nil)
     }
     
     @IBAction func showChildrenListViewEvent() {
         let vc = ManageChildrenViewController()
+        self.show(vc, sender: nil)
+    }
+    
+    @IBAction func showMyQuaterClassListEvent() {
+        let vc = QuarterClassListViewController()
         self.show(vc, sender: nil)
     }
     
@@ -38,7 +54,8 @@ class MyPageViewController: UIViewController {
     }
     
     @IBAction func showNotiListViewEvent() {
-        
+        let vc = NotiListViewController()
+        show(vc, sender: nil)
     }
     
     @IBAction func showAttractViewEvent() {

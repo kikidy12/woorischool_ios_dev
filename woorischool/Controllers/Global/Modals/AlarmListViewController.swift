@@ -25,10 +25,12 @@ class AlarmListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = "알림"
         alarmTableView.register(UINib(nibName: "AlarmTableViewCell", bundle: nil), forCellReuseIdentifier: "alarmCell")
         
         alarmTableView.tableFooterView = UIView(frame: .init(x: 0, y: 0, width: 0.001, height: 0.001))
+        alarmTableView.estimatedRowHeight = 100
+        alarmTableView.rowHeight = UITableView.automaticDimension
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,12 +48,13 @@ extension AlarmListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "alarmCell", for: indexPath) as! AlarmTableViewCell
+        
         cell.initView(alarmList[indexPath.item])
+        
         return cell
     }
-    
-    
 }
+
 
 extension AlarmListViewController {
     func getAlarmList() {

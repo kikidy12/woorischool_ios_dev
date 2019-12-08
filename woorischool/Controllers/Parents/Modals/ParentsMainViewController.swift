@@ -23,6 +23,7 @@ class ParentsMainViewController: UIViewController {
     }
     
     @objc func showAlarmEvent() {
+//        let vc = SearchSchoolViewController()
         let vc = AlarmListViewController()
         self.show(vc, sender: nil)
     }
@@ -47,12 +48,11 @@ class ParentsMainViewController: UIViewController {
     }
     
     func setLeftTitleSetting(_ str: String) {
+        
         let customTitleView = MainTitleView(frame: CGRect(x: 0, y: 0, width: 150, height: 42))
         let leftBtn = UIBarButtonItem(customView: customTitleView)
         self.navigationItem.leftBarButtonItem = leftBtn
         customTitleView.titleLabel.text = str
-        
-        
     }
     
     func settingTabViews(_ selectView: UIView) {
@@ -123,10 +123,9 @@ class ParentsMainViewController: UIViewController {
             }
             
             GlobalDatas.currentUser = UserData(user)
-            GlobalDatas.noticeList = array.compactMap { NoticeData( $0 as! NSDictionary ) }
             UserDefs.setHasChildren(true)
+            GlobalDatas.noticeList = array.compactMap { NoticeData( $0 as! NSDictionary ) }
             UserDefs.setLastUserType(type: UserType.parents.rawValue)
-            
             complete()
         }
     }

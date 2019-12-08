@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>UIUserInterfaceStyle</key>
-	<string>Light</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -27,6 +25,12 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>카메라를 사용합니다</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>현재 위치 정보를 불러옵니다.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>사진첩을 사용합니다</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>NanumSquareRound-Bold</string>
@@ -55,12 +59,6 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
-    <key>NSCameraUsageDescription</key>
-    <string>카메라를 사용합니다</string>
-    <key>NSLocationWhenInUseUsageDescription</key>
-    <string>현재 위치 정보를 불러옵니다.</string>
-    <key>NSPhotoLibraryUsageDescription</key>
-    <string>사진첩을 사용합니다</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
@@ -68,5 +66,7 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
 </dict>
 </plist>

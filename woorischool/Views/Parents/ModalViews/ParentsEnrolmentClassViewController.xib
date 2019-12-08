@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -19,6 +19,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ParentsEnrolmentClassViewController" customModule="우리스쿨" customModuleProvider="target">
             <connections>
+                <outlet property="dueDateLabel" destination="XUw-FA-mw9" id="vIm-kF-0yt"/>
+                <outlet property="quaterNameLabel" destination="Vql-cn-uJz" id="9BH-Lm-R0O"/>
+                <outlet property="registPeriodLabel" destination="K4Q-qX-Ji0" id="CaK-Yu-GRO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -149,7 +152,7 @@
                         <constraint firstAttribute="height" constant="54" id="fEG-wL-dQS"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="15"/>
-                    <state key="normal" title="지금은 수강신청기간입니다 (2019.05.23 까지)">
+                    <state key="normal">
                         <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </state>
                     <userDefinedRuntimeAttributes>
@@ -176,6 +179,12 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XUw-FA-mw9">
+                    <rect key="frame" x="188.5" y="378" width="37" height="17.5"/>
+                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="15"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nhP-bH-6qe" customClass="CustomView" customModule="우리스쿨" customModuleProvider="target">
                     <rect key="frame" x="14" y="429.5" width="386" height="108"/>
                     <subviews>
@@ -235,7 +244,9 @@
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="lHv-4d-Ard" secondAttribute="trailing" constant="14" id="6y3-Vb-t69"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="f6e-OM-s12" secondAttribute="trailing" constant="14" id="MkV-3Z-ZYR"/>
+                <constraint firstItem="XUw-FA-mw9" firstAttribute="centerY" secondItem="f6e-OM-s12" secondAttribute="centerY" id="brn-U1-YAm"/>
                 <constraint firstItem="f6e-OM-s12" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="14" id="dcC-3B-bh4"/>
+                <constraint firstItem="XUw-FA-mw9" firstAttribute="centerX" secondItem="f6e-OM-s12" secondAttribute="centerX" id="i4S-7J-yu2"/>
                 <constraint firstItem="nhP-bH-6qe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="14" id="mnT-Dx-WtZ"/>
                 <constraint firstItem="f6e-OM-s12" firstAttribute="top" secondItem="lHv-4d-Ard" secondAttribute="bottom" constant="15" id="oZU-kj-t9Q"/>
                 <constraint firstItem="nhP-bH-6qe" firstAttribute="top" secondItem="f6e-OM-s12" secondAttribute="bottom" constant="16" id="oyw-8R-s92"/>

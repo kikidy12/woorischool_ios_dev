@@ -13,6 +13,8 @@ class UserData: NSObject {
     var type: UserType!
     var name: String!
     var phoneNum: String!
+    var email: String!
+    
     var attendence: AttendenceType!
     
     var childlen: UserData!
@@ -26,6 +28,7 @@ class UserData: NSObject {
     init(_ data: NSDictionary) {
         id = data["id"] as? Int
         name = data["name"] as? String
+        email = data["email"] as? String
         phoneNum = data["phone_num"] as? String
         if let typeStr = data["type"] as? String {
             type = UserType(rawValue: typeStr)
