@@ -203,3 +203,11 @@ extension UIImage {
         return newImage?.jpegData(compressionQuality: 1.0)
     }
 }
+
+extension Collection {
+
+    subscript(optional i: Index) -> Iterator.Element? {
+        return self.indices.contains(i) ? self[i] : nil
+    }
+
+}

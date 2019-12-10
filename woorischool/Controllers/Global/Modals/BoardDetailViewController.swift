@@ -12,7 +12,9 @@ class BoardDetailViewController: UIViewController {
     
     var board: BoardData!
     
-    var isFirst = true
+    var isScrollToBottom = false
+    
+    var isTableViewUpdate = false
     
     var commentList = [ReplyData]() {
         didSet {
@@ -22,19 +24,20 @@ class BoardDetailViewController: UIViewController {
             else {
                 
             }
+            self.replyTableView.reloadData()
+            self.replyTableViewHeightConstraint.constant = self.replyTableView.contentSize.height
+            self.view.layoutIfNeeded()
+            self.replyTableViewHeightConstraint.constant = self.replyTableView.contentSize.height
             
-            replyTableView.reloadData()
-            self.viewWillLayoutSubviews()
-            
-            if isFirst {
-                isFirst = false
-            }
-            else {
+            if isScrollToBottom {
                 let bottomOffset = CGPoint(x: 0, y: scrollView.contentSize.height)
                 scrollView.setContentOffset(bottomOffset, animated: false)
+                isScrollToBottom = false
             }
         }
     }
+    
+    
     
     var rightBarBtnItem = UIBarButtonItem()
     
@@ -58,15 +61,16 @@ class BoardDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         replyTableView.register(UINib(nibName: "BoardReplyTableViewCell", bundle: nil), forCellReuseIdentifier: "replyCell")
+        replyTableView.estimatedRowHeight = 300
+        replyTableView.rowHeight = UITableView.automaticDimension
         let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyBoard))
         tapGesture.cancelsTouchesInView = false
         scrollView.addGestureRecognizer(tapGesture)
         customInputView.parentsVc = self
         customInputView.delegate = self
         boardImageCollectionView.register(UINib(nibName: "ImagePagingCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "imageCell")
-        
+//        replyTableView.addObserver(self, forKeyPath: "contentSize", options: [.new, .old, .prior], context: nil)
         settingNaviBar()
     }
     
@@ -78,14 +82,22 @@ class BoardDetailViewController: UIViewController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        replyTableView.layoutIfNeeded()
-        replyTableViewHeightConstraint.constant = self.replyTableView.contentSize.height
     }
     
     func settingNaviBar() {
         rightBarBtnItem = UIBarButtonItem(image: UIImage(named:"moreIcon"), style: .plain, target: self, action: #selector(showActionSheet))
-        if board.postingUser.id == GlobalDatas.currentUser.id {
+        if board?.postingUser?.id == GlobalDatas.currentUser.id {
             navigationItem.rightBarButtonItem = rightBarBtnItem
+        }
+    }
+    
+    
+
+    @objc override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if keyPath == "contentSize" {
+             // content size changed
+            print("height:", change?.values.first)
+            self.replyTableViewHeightConstraint.constant = self.replyTableView.contentSize.height
         }
     }
     
@@ -97,7 +109,6 @@ class BoardDetailViewController: UIViewController {
         let bottomSheet = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         let editAction = UIAlertAction(title: "수정하기", style: .default) { (_) in
             let vc = BoardAddAndEditViewController()
-            self.isFirst = true
             vc.board = self.board
             self.show(vc, sender: nil)
         }
@@ -151,26 +162,20 @@ extension BoardDetailViewController: CustomInputViewDelegate {
     
     func keyboardSizeChange(height: CGFloat) {
         if height == 0 {
-            chatViewBottomConstraint.constant = 0
+            self.chatViewBottomConstraint.constant = 0
         }
         else {
-            chatViewBottomConstraint.constant = height - view.safeAreaInsets.bottom
+            UIView.animate(withDuration: 1) {
+                self.chatViewBottomConstraint.constant = height - self.view.safeAreaInsets.bottom
+                self.view.layoutIfNeeded()
+            }
         }
-        view.updateConstraints()
     }
 }
 
 extension BoardDetailViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         self.viewWillLayoutSubviews()
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableView.automaticDimension
-    }
-    
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -182,7 +187,6 @@ extension BoardDetailViewController: UITableViewDataSource, UITableViewDelegate 
         cell.initView(commentList[indexPath.item])
         cell.showReReListClouser = {
             let vc = ReplyListViewController()
-            self.isFirst = true
             vc.parentReply = self.commentList[indexPath.item]
             self.show(vc, sender: nil)
         }
@@ -272,7 +276,7 @@ extension BoardDetailViewController {
             guard success else {
                 return
             }
-            
+            self.isScrollToBottom = true
             self.getReplyList()
         }
     }
@@ -310,9 +314,9 @@ extension BoardDetailViewController {
             guard success, let data = dict?["board"] as? NSDictionary else {
                 return
             }
-            
             self.board = BoardData(data)
             self.settingBoard()
         }
     }
 }
+

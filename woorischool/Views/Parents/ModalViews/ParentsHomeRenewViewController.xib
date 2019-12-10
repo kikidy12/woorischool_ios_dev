@@ -47,19 +47,122 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8AE-gp-dQv">
-                    <rect key="frame" x="0.0" y="164" width="414" height="1525"/>
+                    <rect key="frame" x="0.0" y="44" width="414" height="1645"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sv8-Qn-0sZ">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="1306.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1426.5"/>
                             <subviews>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BDT-6H-DSB" customClass="CustomView" customModule="우리스쿨" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilePlaceHolder" translatesAutoresizingMaskIntoConstraints="NO" id="e8n-vh-sYf">
+                                            <rect key="frame" x="20" y="30" width="60" height="60"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="60" id="iHE-li-aKW"/>
+                                                <constraint firstAttribute="height" constant="60" id="tXp-u4-D1d"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rc0-bn-y3i">
+                                            <rect key="frame" x="91" y="35.5" width="219" height="49"/>
+                                            <string key="text">길동이 학부모님
+안녕하세요</string>
+                                            <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="21"/>
+                                            <color key="textColor" name="greyishBrown"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jB5-ax-bim" customClass="CustomButton" customModule="우리스쿨" customModuleProvider="target">
+                                            <rect key="frame" x="320" y="45" width="78" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="30" id="0B3-eg-vWb"/>
+                                                <constraint firstAttribute="width" constant="78" id="DTB-30-LSj"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
+                                            <state key="normal" title="자녀전환">
+                                                <color key="titleColor" name="softBlue"/>
+                                            </state>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
+                                                    <real key="value" value="15"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                    <color key="value" name="softBlue"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <real key="value" value="1"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="showChildrenListEvent" destination="-1" eventType="touchUpInside" id="JqQ-oQ-R2b"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstItem="rc0-bn-y3i" firstAttribute="leading" secondItem="e8n-vh-sYf" secondAttribute="trailing" constant="11" id="20i-mg-2Dd"/>
+                                        <constraint firstItem="rc0-bn-y3i" firstAttribute="centerY" secondItem="e8n-vh-sYf" secondAttribute="centerY" id="8Et-Ud-S75"/>
+                                        <constraint firstAttribute="trailing" secondItem="jB5-ax-bim" secondAttribute="trailing" constant="16" id="Cpw-WB-u4F"/>
+                                        <constraint firstItem="e8n-vh-sYf" firstAttribute="leading" secondItem="BDT-6H-DSB" secondAttribute="leading" constant="20" id="TYH-SF-Xxr"/>
+                                        <constraint firstItem="jB5-ax-bim" firstAttribute="leading" secondItem="rc0-bn-y3i" secondAttribute="trailing" constant="10" id="gyi-ou-LA3"/>
+                                        <constraint firstItem="jB5-ax-bim" firstAttribute="centerY" secondItem="e8n-vh-sYf" secondAttribute="centerY" id="lrc-wK-61l"/>
+                                        <constraint firstAttribute="height" constant="120" id="maq-Ps-hSv"/>
+                                        <constraint firstItem="e8n-vh-sYf" firstAttribute="centerY" secondItem="BDT-6H-DSB" secondAttribute="centerY" id="p54-Vg-qBq"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                            <real key="value" value="0.050000000000000003"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                            <real key="value" value="5"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                            <size key="value" width="0.0" height="5"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nne-Uj-K3Y" customClass="CustomButton" customModule="우리스쿨" customModuleProvider="target">
+                                    <rect key="frame" x="20" y="140" width="374" height="57"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="57" id="ILB-fY-V0u"/>
+                                    </constraints>
+                                    <color key="tintColor" name="greenishTeal"/>
+                                    <inset key="contentEdgeInsets" minX="13" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="30" maxY="0.0"/>
+                                    <state key="normal" title="[공지] 원활한 서비스 제공을 위한 업데이트 안내" image="notiIcon">
+                                        <color key="titleColor" name="greyishBrown"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                            <real key="value" value="0.070000000000000007"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                            <size key="value" width="1" height="2"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                            <real key="value" value="8"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
+                                            <real key="value" value="8"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="showNotiListViewEvent" destination="-1" eventType="touchUpInside" id="qdG-Rr-9O4"/>
+                                    </connections>
+                                </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘 일정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KqJ-ZD-1Vf">
-                                    <rect key="frame" x="20" y="122" width="67.5" height="21"/>
+                                    <rect key="frame" x="20" y="242" width="67.5" height="21"/>
                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="18"/>
                                     <color key="textColor" name="greyishBrown"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sot-ZF-Yqc">
-                                    <rect key="frame" x="304" y="121.5" width="55" height="22"/>
+                                    <rect key="frame" x="304" y="241.5" width="55" height="22"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="55" id="rCm-Bj-mHI"/>
                                     </constraints>
@@ -71,13 +174,13 @@
                                     </connections>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="9월" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kqb-bW-6Jl">
-                                    <rect key="frame" x="304" y="124.5" width="110" height="16.5"/>
+                                    <rect key="frame" x="304" y="244.5" width="110" height="16.5"/>
                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="14"/>
                                     <color key="textColor" name="greyishBrown"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M80-K1-Mxx">
-                                    <rect key="frame" x="359" y="121.5" width="55" height="22"/>
+                                    <rect key="frame" x="359" y="241.5" width="55" height="22"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="55" id="5cf-Bg-umS"/>
                                     </constraints>
@@ -89,7 +192,7 @@
                                     </connections>
                                 </button>
                                 <collectionView multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="9PX-ux-KhE">
-                                    <rect key="frame" x="0.0" y="172" width="414" height="41"/>
+                                    <rect key="frame" x="0.0" y="292" width="414" height="41"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="41" id="rfS-vy-obG"/>
@@ -106,7 +209,7 @@
                                     </connections>
                                 </collectionView>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="0sx-KZ-jxd">
-                                    <rect key="frame" x="0.0" y="238" width="414" height="157"/>
+                                    <rect key="frame" x="0.0" y="358" width="414" height="157"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="157" id="BJj-Pu-lwr"/>
@@ -123,7 +226,7 @@
                                     </connections>
                                 </collectionView>
                                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R62-BQ-UFy" customClass="CustomView" customModule="우리스쿨" customModuleProvider="target">
-                                    <rect key="frame" x="18" y="238" width="378" height="157"/>
+                                    <rect key="frame" x="18" y="358" width="378" height="157"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tempEmptyImage" translatesAutoresizingMaskIntoConstraints="NO" id="EcT-Yw-CSC">
                                             <rect key="frame" x="154" y="28" width="70" height="70"/>
@@ -162,12 +265,12 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="pfD-E7-pRb">
-                                    <rect key="frame" x="187.5" y="405" width="39" height="37"/>
+                                    <rect key="frame" x="187.5" y="525" width="39" height="37"/>
                                     <color key="pageIndicatorTintColor" name="veryLightPinkTwo"/>
                                     <color key="currentPageIndicatorTintColor" name="greenishTeal"/>
                                 </pageControl>
                                 <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e7I-4h-YeU" customClass="CustomView" customModule="우리스쿨" customModuleProvider="target">
-                                    <rect key="frame" x="15" y="482" width="384" height="739.5"/>
+                                    <rect key="frame" x="15" y="602" width="384" height="739.5"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="scheduleIcon" translatesAutoresizingMaskIntoConstraints="NO" id="KZ7-18-3X6">
                                             <rect key="frame" x="20" y="20" width="20" height="20"/>
@@ -436,47 +539,15 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </view>
-                                <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nne-Uj-K3Y" customClass="CustomButton" customModule="우리스쿨" customModuleProvider="target">
-                                    <rect key="frame" x="20" y="20" width="374" height="57"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="57" id="ILB-fY-V0u"/>
-                                    </constraints>
-                                    <color key="tintColor" name="greenishTeal"/>
-                                    <inset key="contentEdgeInsets" minX="13" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                    <inset key="titleEdgeInsets" minX="8" minY="0.0" maxX="30" maxY="0.0"/>
-                                    <state key="normal" title="[공지] 원활한 서비스 제공을 위한 업데이트 안내" image="notiIcon">
-                                        <color key="titleColor" name="greyishBrown"/>
-                                    </state>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                            <real key="value" value="0.070000000000000007"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                                            <size key="value" width="1" height="2"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                                            <real key="value" value="8"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
-                                            <real key="value" value="8"/>
-                                        </userDefinedRuntimeAttribute>
-                                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                    <connections>
-                                        <action selector="showNotiListViewEvent" destination="-1" eventType="touchUpInside" id="qdG-Rr-9O4"/>
-                                    </connections>
-                                </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstItem="9PX-ux-KhE" firstAttribute="leading" secondItem="sv8-Qn-0sZ" secondAttribute="leading" id="3Bn-gs-SBp"/>
                                 <constraint firstItem="KqJ-ZD-1Vf" firstAttribute="leading" secondItem="sv8-Qn-0sZ" secondAttribute="leading" constant="20" id="4Mx-dT-kXI"/>
-                                <constraint firstItem="Nne-Uj-K3Y" firstAttribute="top" secondItem="sv8-Qn-0sZ" secondAttribute="top" constant="20" id="89S-p3-MUY"/>
+                                <constraint firstItem="Nne-Uj-K3Y" firstAttribute="top" secondItem="BDT-6H-DSB" secondAttribute="bottom" constant="20" id="8CI-d0-zmU"/>
                                 <constraint firstItem="e7I-4h-YeU" firstAttribute="top" secondItem="pfD-E7-pRb" secondAttribute="bottom" constant="40" id="9jf-g8-Sq6"/>
                                 <constraint firstAttribute="trailing" secondItem="e7I-4h-YeU" secondAttribute="trailing" constant="15" id="9sK-Xg-LGb"/>
+                                <constraint firstItem="BDT-6H-DSB" firstAttribute="leading" secondItem="sv8-Qn-0sZ" secondAttribute="leading" id="B5j-SY-OLE"/>
                                 <constraint firstAttribute="trailing" secondItem="M80-K1-Mxx" secondAttribute="trailing" id="Cbo-mS-Vrj"/>
                                 <constraint firstItem="R62-BQ-UFy" firstAttribute="top" secondItem="0sx-KZ-jxd" secondAttribute="top" id="Hkb-dy-hlt"/>
                                 <constraint firstItem="Kqb-bW-6Jl" firstAttribute="trailing" secondItem="M80-K1-Mxx" secondAttribute="trailing" id="IKr-WW-Oro"/>
@@ -485,8 +556,10 @@
                                 <constraint firstAttribute="trailing" secondItem="9PX-ux-KhE" secondAttribute="trailing" id="OX4-iD-gLh"/>
                                 <constraint firstItem="R62-BQ-UFy" firstAttribute="bottom" secondItem="0sx-KZ-jxd" secondAttribute="bottom" id="ObC-g5-Hg1"/>
                                 <constraint firstAttribute="bottom" secondItem="e7I-4h-YeU" secondAttribute="bottom" constant="85" id="PJI-7v-3gF"/>
+                                <constraint firstAttribute="trailing" secondItem="BDT-6H-DSB" secondAttribute="trailing" id="PZG-vi-ac8"/>
                                 <constraint firstItem="0sx-KZ-jxd" firstAttribute="top" secondItem="9PX-ux-KhE" secondAttribute="bottom" constant="25" id="QFa-BY-JCG"/>
                                 <constraint firstAttribute="trailing" secondItem="Nne-Uj-K3Y" secondAttribute="trailing" constant="20" id="XLj-ol-rRY"/>
+                                <constraint firstItem="BDT-6H-DSB" firstAttribute="top" secondItem="sv8-Qn-0sZ" secondAttribute="top" id="bji-OS-bDf"/>
                                 <constraint firstItem="R62-BQ-UFy" firstAttribute="leading" secondItem="sv8-Qn-0sZ" secondAttribute="leading" constant="18" id="cJC-Ic-lTH"/>
                                 <constraint firstItem="e7I-4h-YeU" firstAttribute="leading" secondItem="sv8-Qn-0sZ" secondAttribute="leading" constant="15" id="cSt-Nb-NzB"/>
                                 <constraint firstItem="M80-K1-Mxx" firstAttribute="leading" secondItem="sot-ZF-Yqc" secondAttribute="trailing" id="cVy-Su-a4g"/>
@@ -514,86 +587,13 @@
                     <viewLayoutGuide key="contentLayoutGuide" id="7u5-5E-JBu"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="xnf-eZ-0T7"/>
                 </scrollView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BDT-6H-DSB" customClass="CustomView" customModule="우리스쿨" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="44" width="414" height="120"/>
-                    <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilePlaceHolder" translatesAutoresizingMaskIntoConstraints="NO" id="e8n-vh-sYf">
-                            <rect key="frame" x="20" y="30" width="60" height="60"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="60" id="iHE-li-aKW"/>
-                                <constraint firstAttribute="height" constant="60" id="tXp-u4-D1d"/>
-                            </constraints>
-                        </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rc0-bn-y3i">
-                            <rect key="frame" x="91" y="35.5" width="219" height="49"/>
-                            <string key="text">길동이 학부모님
-안녕하세요</string>
-                            <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="21"/>
-                            <color key="textColor" name="greyishBrown"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jB5-ax-bim" customClass="CustomButton" customModule="우리스쿨" customModuleProvider="target">
-                            <rect key="frame" x="320" y="45" width="78" height="30"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="30" id="0B3-eg-vWb"/>
-                                <constraint firstAttribute="width" constant="78" id="DTB-30-LSj"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
-                            <state key="normal" title="자녀전환">
-                                <color key="titleColor" name="softBlue"/>
-                            </state>
-                            <userDefinedRuntimeAttributes>
-                                <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
-                                    <real key="value" value="15"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                    <color key="value" name="softBlue"/>
-                                </userDefinedRuntimeAttribute>
-                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                    <real key="value" value="1"/>
-                                </userDefinedRuntimeAttribute>
-                            </userDefinedRuntimeAttributes>
-                            <connections>
-                                <action selector="showChildrenListEvent" destination="-1" eventType="touchUpInside" id="JqQ-oQ-R2b"/>
-                            </connections>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                    <constraints>
-                        <constraint firstItem="rc0-bn-y3i" firstAttribute="leading" secondItem="e8n-vh-sYf" secondAttribute="trailing" constant="11" id="20i-mg-2Dd"/>
-                        <constraint firstItem="rc0-bn-y3i" firstAttribute="centerY" secondItem="e8n-vh-sYf" secondAttribute="centerY" id="8Et-Ud-S75"/>
-                        <constraint firstAttribute="trailing" secondItem="jB5-ax-bim" secondAttribute="trailing" constant="16" id="Cpw-WB-u4F"/>
-                        <constraint firstItem="e8n-vh-sYf" firstAttribute="leading" secondItem="BDT-6H-DSB" secondAttribute="leading" constant="20" id="TYH-SF-Xxr"/>
-                        <constraint firstItem="jB5-ax-bim" firstAttribute="leading" secondItem="rc0-bn-y3i" secondAttribute="trailing" constant="10" id="gyi-ou-LA3"/>
-                        <constraint firstItem="jB5-ax-bim" firstAttribute="centerY" secondItem="e8n-vh-sYf" secondAttribute="centerY" id="lrc-wK-61l"/>
-                        <constraint firstAttribute="height" constant="120" id="maq-Ps-hSv"/>
-                        <constraint firstItem="e8n-vh-sYf" firstAttribute="centerY" secondItem="BDT-6H-DSB" secondAttribute="centerY" id="p54-Vg-qBq"/>
-                    </constraints>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
-                            <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                            <real key="value" value="0.050000000000000003"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
-                            <real key="value" value="5"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
-                            <size key="value" width="0.0" height="5"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="BDT-6H-DSB" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="3R0-y1-e6o"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="BDT-6H-DSB" secondAttribute="trailing" id="AWK-Lv-Ucz"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8AE-gp-dQv" secondAttribute="trailing" id="BnB-sy-fJJ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="8AE-gp-dQv" secondAttribute="bottom" id="Dxf-46-n4m"/>
-                <constraint firstItem="BDT-6H-DSB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="E5E-zY-3Wz"/>
                 <constraint firstItem="8AE-gp-dQv" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Kzh-NA-aIB"/>
-                <constraint firstItem="8AE-gp-dQv" firstAttribute="top" secondItem="BDT-6H-DSB" secondAttribute="bottom" id="QiL-4v-mga"/>
+                <constraint firstItem="8AE-gp-dQv" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ttd-cC-eDR"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>

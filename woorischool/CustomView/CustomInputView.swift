@@ -25,6 +25,8 @@ extension CustomInputViewDelegate {
 
 class CustomInputView: UIView {
     
+    var isCahtting = false
+    
     var selectedEmoticon: ImageData! {
         didSet {
             emoImageView.kf.setImage(with: selectedEmoticon.url, placeholder: UIImage(named: "tempImage"))
@@ -68,8 +70,8 @@ class CustomInputView: UIView {
         self.addSubview(view)
         defaultFrame = self.frame
 //        self.textView.frame.size = estimatedSize
-        NotificationCenter.default.addObserver(self, selector:#selector(keyboardWillShow(note:)), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector:#selector(keyboardWillHide(note:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector:#selector(keyboardWillShow(noti:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector:#selector(keyboardWillHide(noti:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         emoInPutView.delegate = self
         textView.delegate = self
         emoTextView.inputView = emoInPutView
@@ -99,7 +101,12 @@ class CustomInputView: UIView {
             delegate?.sendMessage(message: messageTextView.text!, image: nil, emoticon: selectedEmoticon)
         }
         messageTextView.text = ""
-        lastSelectTextView.resignFirstResponder()
+        if isCahtting {
+            tempEmoView.isHidden = true
+        }
+        else {
+            lastSelectTextView.resignFirstResponder()
+        }
     }
     
     @IBAction func showCameraViewEvent() {
@@ -116,14 +123,14 @@ class CustomInputView: UIView {
         emoTextView.becomeFirstResponder()
     }
     
-    @objc func keyboardWillShow(note: NSNotification) {
-        if let keyboardSize = (note.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
+    @objc func keyboardWillShow(noti: NSNotification) {
+        if let keyboardSize = (noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             keyboardHeight = keyboardSize.height
             delegate?.keyboardSizeChange(height: keyboardSize.height)
         }
     }
 
-    @objc func keyboardWillHide(note: NSNotification) {
+    @objc func keyboardWillHide(noti: NSNotification) {
         delegate?.keyboardSizeChange(height: 0)
         tempEmoView.isHidden = true
     }
@@ -141,9 +148,16 @@ extension CustomInputView: EmoInputViewDelegate {
 extension CustomInputView: UITextViewDelegate {
     
     func textViewDidChange(_ textView: UITextView) {
+        let height = self.textViewHeightConstraint.constant
+        if textView.contentSize.height >= 150.0 {
+            self.textViewHeightConstraint.constant = 150
+        }
+        else {
+            let height = textView.sizeThatFits(CGSize(width: textView.frame.width, height: .infinity)).height
+            self.textViewHeightConstraint.constant = height
+        }
+        
         self.layoutIfNeeded()
-        let height = textView.sizeThatFits(CGSize(width: textView.frame.width, height: .infinity)).height
-        self.textViewHeightConstraint.constant = height
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {

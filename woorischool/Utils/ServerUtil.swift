@@ -120,6 +120,16 @@ class ServerUtil: NSObject {
         apiRequest("school_quarter_info", method: .get, parameters: parameters, completion: completion)
     }
     
+    func getNote(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("note", method: .get, parameters: parameters, completion: completion)
+    }
+    
+    func postNote(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest(showLoading: false, "note", method: .post, parameters: parameters, completion: completion)
+    }
+    
     //parents
     
     func getMeInfo(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
@@ -311,6 +321,11 @@ class ServerUtil: NSObject {
         uploadRequest("v2_board", method: .patch, showUploadProgress: true, multipartFormData: multipartFormData, completion: completion)
     }
     
+    func putNote(vc: UIViewController, multipartFormData: @escaping (MultipartFormData) -> Void, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        uploadRequest("note", method: .put, showUploadProgress: true, multipartFormData: multipartFormData, completion: completion)
+    }
+    
 }
 
 extension ServerUtil {
@@ -336,8 +351,10 @@ extension ServerUtil {
     }
     
     
-    fileprivate func apiRequest(version: String = "", _ api: String, method: HTTPMethod, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
-        showLoadding()
+    fileprivate func apiRequest(showLoading: Bool = true, version: String = "", _ api: String, method: HTTPMethod, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        if showLoading {
+            showLoadding()
+        }
         var request: DataRequest!
 //        switch method {
 //        case .delete:

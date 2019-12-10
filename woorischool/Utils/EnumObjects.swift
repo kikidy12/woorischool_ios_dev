@@ -17,8 +17,8 @@ enum DateFormatterStyle: String {
 }
 
 enum ChatType: String {
-    case oneToOne = "1대1"
-    case manyToMany = "단체체팅"
+    case oneToOne = "ONE"
+    case manyToMany = "ALL"
 }
 
 enum UserType: String {

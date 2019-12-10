@@ -12,7 +12,7 @@ class ReplyListViewController: UIViewController {
     
     var parentReply: ReplyData!
     
-    var isFirst = true
+    var isScrollToBottom = false
     
     var commentList = [ReplyData]() {
         didSet {
@@ -23,15 +23,16 @@ class ReplyListViewController: UIViewController {
                 
             }
             
-            replyTableView.reloadData()
-            self.viewWillLayoutSubviews()
             
-            if isFirst {
-                isFirst = false
-            }
-            else {
+            self.replyTableView.reloadData()
+            self.replyTableViewHeightConstraint.constant = self.replyTableView.contentSize.height
+            self.view.layoutIfNeeded()
+            self.replyTableViewHeightConstraint.constant = self.replyTableView.contentSize.height
+            
+            if isScrollToBottom {
                 let bottomOffset = CGPoint(x: 0, y: scrollView.contentSize.height)
                 scrollView.setContentOffset(bottomOffset, animated: false)
+                isScrollToBottom = false
             }
         }
     }
@@ -65,12 +66,6 @@ class ReplyListViewController: UIViewController {
         getReplyList()
     }
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        replyTableView.layoutIfNeeded()
-        replyTableViewHeightConstraint.constant = self.replyTableView.contentSize.height
-    }
-    
     @objc func hideKeyBoard() {
         customInputView.lastSelectTextView.resignFirstResponder()
     }
@@ -83,10 +78,13 @@ extension ReplyListViewController: CustomInputViewDelegate {
     
     func keyboardSizeChange(height: CGFloat) {
         if height == 0 {
-            chatTextViewBottomConstraint.constant = 0
+            self.chatTextViewBottomConstraint.constant = 0
         }
         else {
-            chatTextViewBottomConstraint.constant = height - view.safeAreaInsets.bottom
+            UIView.animate(withDuration: 1) {
+                self.chatTextViewBottomConstraint.constant = height - self.view.safeAreaInsets.bottom
+                self.view.layoutIfNeeded()
+            }
         }
     }
 }
@@ -161,6 +159,7 @@ extension ReplyListViewController {
                 return
             }
             
+            self.isScrollToBottom = true
             self.getReplyList()
         }
     }

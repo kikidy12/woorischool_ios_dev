@@ -9,7 +9,14 @@
 import UIKit
 
 class ChattingRoomTableViewCell: UITableViewCell {
+    
+    var room: ChatRoomData!
 
+    @IBOutlet weak var roomTitleImageView: CircleImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var bodyLabel: UILabel!
+    @IBOutlet weak var lastTimeLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -19,6 +26,17 @@ class ChattingRoomTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func initView(_ data: ChatRoomData) {
+        room = data
+        self.layoutIfNeeded()
+    }
+    override func layoutIfNeeded() {
+        super.layoutIfNeeded()
+        titleLabel.text = room.title
+        bodyLabel.text = room.body
+        lastTimeLabel.text = room.lastMessageTime
     }
     
 }

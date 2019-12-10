@@ -259,6 +259,16 @@ class CustomLabel: UILabel {
 }
 
 @IBDesignable
+class CircleImageView: UIImageView {
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.layer.masksToBounds = true
+        self.layer.cornerRadius = self.frame.height / 2
+    }
+}
+
+
+@IBDesignable
 class GradientButton: UIButton {
     override func layoutSubviews() {
         super.layoutSubviews()
