@@ -27,6 +27,8 @@ class CustomInputView: UIView {
     
     var isCahtting = false
     
+    var isShowKeyboard = false
+    
     var selectedEmoticon: ImageData! {
         didSet {
             emoImageView.kf.setImage(with: selectedEmoticon.url, placeholder: UIImage(named: "tempImage"))
@@ -126,13 +128,18 @@ class CustomInputView: UIView {
     @objc func keyboardWillShow(noti: NSNotification) {
         if let keyboardSize = (noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
             keyboardHeight = keyboardSize.height
-            delegate?.keyboardSizeChange(height: keyboardSize.height)
+            if !isShowKeyboard {
+                isShowKeyboard = true
+                delegate?.keyboardSizeChange(height: keyboardSize.height)
+            }
+            
         }
     }
 
     @objc func keyboardWillHide(noti: NSNotification) {
-        delegate?.keyboardSizeChange(height: 0)
+        isShowKeyboard = false
         tempEmoView.isHidden = true
+        delegate?.keyboardSizeChange(height: 0)
     }
 }
 

@@ -14,10 +14,14 @@ class MyChattingTableViewCell: UITableViewCell {
     var hasNext = false
     
     @IBOutlet weak var messageLabel: UILabel!
-    @IBOutlet weak var userCountLabel: UILabel!
+    @IBOutlet weak var messageContinerView: UIView!
     @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var imageContainerView: UIView!
     @IBOutlet weak var chatImageView: UIImageView!
+    @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var imageMessageDivideHeightCnstraint: NSLayoutConstraint!
+    @IBOutlet weak var imageTimeLabel: UILabel!
+    
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,49 +41,59 @@ class MyChattingTableViewCell: UITableViewCell {
     
     override func layoutIfNeeded() {
         super.layoutIfNeeded()
-        print("layoutUpdate")
-        
-        
         
         if chat.createdAt.dateToString(formatter: "yyyy-MM-dd") == Date().dateToString(formatter: "yyyy-MM-dd") {
             timeLabel.text = chat.createdAt.dateToString(formatter: "HH:mm")
+            imageTimeLabel.text = chat.createdAt.dateToString(formatter: "HH:mm")
         }
         else {
             timeLabel.text = chat.createdAt.dateToString(formatter: "mm/dd")
+            imageTimeLabel.text = chat.createdAt.dateToString(formatter: "HH:mm")
         }
+
+        imageMessageDivideHeightCnstraint.constant = 20
         
-        if let message = chat.message {
-            messageLabel.isHidden = false
+        if let message = chat.message, message != "" {
             messageLabel.text = message
+            messageContinerView.isHidden = false
+            showTimeLabel(label: timeLabel, show: true)
         }
         else {
-            messageLabel.isHidden = true
+            messageContinerView.isHidden = true
+            imageMessageDivideHeightCnstraint.constant = 0
+            showTimeLabel(label: timeLabel, show: false)
         }
-        
         if let url = chat.imageURL {
-            print("test")
-            imageContainerView.isHidden = false
+            imageHeightConstraint.constant = 100
             chatImageView.kf.setImage(with: url, placeholder: #imageLiteral(resourceName: "tempImage"))
+            showTimeLabel(label: imageTimeLabel, show: true)
         }
         else {
-            imageContainerView.isHidden = true
+            imageTimeLabel.isHidden = true
+            imageHeightConstraint.constant = 0
+            imageMessageDivideHeightCnstraint.constant = 0
+            showTimeLabel(label: imageTimeLabel, show: false)
         }
         
-        if hasPre, hasNext {
-            userCountLabel.isHidden = true
-            timeLabel.isHidden = true
+        if chat.imageURL != nil, chat.message != nil {
+            showTimeLabel(label: timeLabel, show: true)
+            showTimeLabel(label: imageTimeLabel, show: false)
         }
-        else if hasPre, !hasNext {
-            userCountLabel.isHidden = false
-            timeLabel.isHidden = false
-        }
-        else if !hasPre, hasNext {
-            userCountLabel.isHidden = true
-            timeLabel.isHidden = true
+        
+        
+    }
+    
+    func showTimeLabel(label: UILabel, show: Bool) {
+        if show {
+            if (hasPre && !hasNext) || (!hasPre && !hasNext) {
+                label.isHidden = false
+            }
+            else {
+                label.isHidden = true
+            }
         }
         else {
-            userCountLabel.isHidden = false
-            timeLabel.isHidden = false
+            label.isHidden = true
         }
     }
     

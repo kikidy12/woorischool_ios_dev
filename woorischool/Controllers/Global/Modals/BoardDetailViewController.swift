@@ -70,7 +70,6 @@ class BoardDetailViewController: UIViewController {
         customInputView.parentsVc = self
         customInputView.delegate = self
         boardImageCollectionView.register(UINib(nibName: "ImagePagingCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "imageCell")
-//        replyTableView.addObserver(self, forKeyPath: "contentSize", options: [.new, .old, .prior], context: nil)
         settingNaviBar()
     }
     
@@ -88,16 +87,6 @@ class BoardDetailViewController: UIViewController {
         rightBarBtnItem = UIBarButtonItem(image: UIImage(named:"moreIcon"), style: .plain, target: self, action: #selector(showActionSheet))
         if board?.postingUser?.id == GlobalDatas.currentUser.id {
             navigationItem.rightBarButtonItem = rightBarBtnItem
-        }
-    }
-    
-    
-
-    @objc override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if keyPath == "contentSize" {
-             // content size changed
-            print("height:", change?.values.first)
-            self.replyTableViewHeightConstraint.constant = self.replyTableView.contentSize.height
         }
     }
     

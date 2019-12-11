@@ -22,7 +22,7 @@ class ChattingViewController: UIViewController {
     
     var isUpdate = false
     
-    var tableHeight:CGFloat = 0
+    var keyboardHeight:CGFloat = 0
     
     var chatList = [ChatData]() {
         didSet {
@@ -47,6 +47,7 @@ class ChattingViewController: UIViewController {
     @IBOutlet weak var customInputView: CustomInputView!
     @IBOutlet weak var chatTableView: UITableView!
     @IBOutlet weak var customInputViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var tableViewBottomConstraint: NSLayoutConstraint!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,16 +75,16 @@ class ChattingViewController: UIViewController {
         if chatList.isEmpty {
             self.getChatting("new")
         }
-        if (timer == nil || !timer.isValid), isUpdate {
+        if (timer == nil || !timer.isValid) {
             timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { (timer) in
-                self.getChatting("new")
+                if self.isUpdate {
+                    self.getChatting("new")
+                }
+                
             }
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        tableHeight = chatTableView.frame.height
-    }
 
     @objc func hideKeyBoard() {
         customInputView.lastSelectTextView.resignFirstResponder()
@@ -99,17 +100,20 @@ extension ChattingViewController: CustomInputViewDelegate {
     func keyboardSizeChange(height: CGFloat) {
         if height == 0 {
             self.customInputViewBottomConstraint.constant = 0
+            if self.chatTableView.contentOffset.y - self.keyboardHeight + self.view.safeAreaInsets.bottom >= 0 {
+                self.chatTableView.contentOffset.y = self.chatTableView.contentOffset.y - self.keyboardHeight + self.view.safeAreaInsets.bottom
+            }
             
-//            self.chatTableViewBottomConstraint.constant = self.customInputView.frame.height
-            chatTableView.layoutSubviews()
+            print("hideKeyboard:", self.chatTableView.contentOffset)
         }
         else {
             UIView.animate(withDuration: 1, animations: {
-                self.chatTableView.scrollToRow(at: IndexPath(item: self.chatList.count - 1, section: 0), at: .bottom, animated: false)
+                self.keyboardHeight = height
                 self.customInputViewBottomConstraint.constant = height - self.view.safeAreaInsets.bottom
+                
+                self.chatTableView.contentOffset.y = self.chatTableView.contentOffset.y + self.keyboardHeight - self.view.safeAreaInsets.bottom
                 print(self.chatTableView.contentOffset)
                 self.view.layoutIfNeeded()
-                self.chatTableView.layoutSubviews()
             })
         }
     }
@@ -125,7 +129,7 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource, UI
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
+        return 300
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -145,6 +149,7 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource, UI
                 cell.hasNext = false
             }
             cell.initView(chat)
+            
             return cell
         }
         else {
@@ -219,6 +224,7 @@ extension ChattingViewController {
     }
     
     func addChat(message: String, image: UIImage?, emoticon: ImageData?) {
+        isUpdate = false
         ServerUtil.shared.putNote(vc: self, multipartFormData: { (formData) in
             formData.append("\(self.room.id!)".data(using: .utf8)!, withName: "note_id")
             formData.append(message.data(using: .utf8)!, withName: "message")
@@ -230,10 +236,10 @@ extension ChattingViewController {
                 formData.append(image.resizeImage(width: 300)!, withName: "image", fileName: "commentImage.jpeg", mimeType: "image/jpeg")
             }
         }) { (success, dict, message) in
+            self.isUpdate = true
             guard success else {
                 return
             }
-            
             self.scrolltoBottm = true
             self.getChatting("new")
         }
