@@ -177,6 +177,8 @@
 		996EA4D523730D2B000C6D34 /* PictureImageCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 996EA4D323730D2B000C6D34 /* PictureImageCollectionViewCell.xib */; };
 		996EA4D823739849000C6D34 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996EA4D623739849000C6D34 /* MyPageViewController.swift */; };
 		996EA4D923739849000C6D34 /* MyPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 996EA4D723739849000C6D34 /* MyPageViewController.xib */; };
+		996FE81823A3889C003872D4 /* PhotoDetailShowViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996FE81623A3889C003872D4 /* PhotoDetailShowViewViewController.swift */; };
+		996FE81923A3889C003872D4 /* PhotoDetailShowViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 996FE81723A3889C003872D4 /* PhotoDetailShowViewViewController.xib */; };
 		99766E1723711FAE002573FD /* SchoolData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99766E1623711FAE002573FD /* SchoolData.swift */; };
 		99CF8697238560CF00812A36 /* ImagePagingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CF8695238560CF00812A36 /* ImagePagingCollectionViewCell.swift */; };
 		99CF8698238560CF00812A36 /* ImagePagingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99CF8696238560CF00812A36 /* ImagePagingCollectionViewCell.xib */; };
@@ -422,6 +424,8 @@
 		996EA4D323730D2B000C6D34 /* PictureImageCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PictureImageCollectionViewCell.xib; sourceTree = "<group>"; };
 		996EA4D623739849000C6D34 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		996EA4D723739849000C6D34 /* MyPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageViewController.xib; sourceTree = "<group>"; };
+		996FE81623A3889C003872D4 /* PhotoDetailShowViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailShowViewViewController.swift; sourceTree = "<group>"; };
+		996FE81723A3889C003872D4 /* PhotoDetailShowViewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoDetailShowViewViewController.xib; sourceTree = "<group>"; };
 		99766E1623711FAE002573FD /* SchoolData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolData.swift; sourceTree = "<group>"; };
 		99CF8695238560CF00812A36 /* ImagePagingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePagingCollectionViewCell.swift; sourceTree = "<group>"; };
 		99CF8696238560CF00812A36 /* ImagePagingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImagePagingCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -761,6 +765,8 @@
 				994907A82394C10000A6D1F6 /* SearchSchoolViewController.swift */,
 				994907B623978F1A00A6D1F6 /* QuarterClassListViewController.swift */,
 				994907DF239D10FB00A6D1F6 /* ChattingViewController.swift */,
+				996FE81623A3889C003872D4 /* PhotoDetailShowViewViewController.swift */,
+				996FE81723A3889C003872D4 /* PhotoDetailShowViewViewController.xib */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
@@ -1160,6 +1166,7 @@
 				9914A9FC23431447001C0112 /* NotoSansCJKkr-Black.otf in Resources */,
 				99088BCE2375413D009C9AE6 /* NotiListViewController.xib in Resources */,
 				994907EA239DE46C00A6D1F6 /* OtherChattingTableViewCell.xib in Resources */,
+				996FE81923A3889C003872D4 /* PhotoDetailShowViewViewController.xib in Resources */,
 				99F7DC9E23470EA9007C4ABE /* RegistedClassMainViewController.xib in Resources */,
 				99F7DCA423471F86007C4ABE /* FillClassPopUpViewController.xib in Resources */,
 				9914AA0E23431B00001C0112 /* SelectUserTypeViewController.xib in Resources */,
@@ -1405,6 +1412,7 @@
 				99057904236BD06B002842AB /* ParentsEnrolmentClassViewController.swift in Sources */,
 				9956BF712365A65B0069E661 /* ParentContractTableViewCell.swift in Sources */,
 				9956BF92236857100069E661 /* TeacherStudentAttandTableViewCell.swift in Sources */,
+				996FE81823A3889C003872D4 /* PhotoDetailShowViewViewController.swift in Sources */,
 				9914AA2A2345C861001C0112 /* CourseRegistrationViewController.swift in Sources */,
 				9914A9DE23430B99001C0112 /* CustomPageControl.swift in Sources */,
 				991182E1236C8F9D0020D6CE /* BoardReplyTableViewCell.swift in Sources */,

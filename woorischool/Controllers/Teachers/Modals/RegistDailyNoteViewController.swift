@@ -271,7 +271,7 @@ extension RegistDailyNoteViewController {
         guard let id = selectedSchedule.id, let idData = "\(id)".data(using: .utf8) else {
             return
         }
-        guard let content = textView.text, !content.isEmpty, let contentData = content.data(using: .utf8) else {
+        guard let content = textView.text, !content.isEmpty, let contentData = content.data(using: .nonLossyASCII, allowLossyConversion: true) else {
             return
         }
         guard let material = materialTextField.text else {

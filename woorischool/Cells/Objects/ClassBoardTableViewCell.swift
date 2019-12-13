@@ -48,7 +48,7 @@ class ClassBoardTableViewCell: UITableViewCell {
         }
         nameLabel.text = board.postingUser.name
         timeLabel.text = board.writeTime
-        contentLabel.text = board.content
+        contentLabel.text = board.content?.decodeEmoji
         likeCountLabel.text = "\(board.likeCount ?? 0)개"
         replyCountLabel.text = "\(board.commentCount ?? 0)개"
         

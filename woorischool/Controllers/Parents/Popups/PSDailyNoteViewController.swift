@@ -21,7 +21,7 @@ class PSDailyNoteViewController: UIViewController {
             }
             dateLabel.text = dailyNote.writeTime
             titleLabel.text = schedule.date.dateToString(formatter: "MM월 dd일자 알림장")
-            contentLabel.text = dailyNote.content
+            contentLabel.text = (dailyNote.content ?? "없음").decodeEmoji
             materialLabel.text = dailyNote.materials ?? "없음"
             homeworkLabel.text = dailyNote.homework ?? "없음"
             

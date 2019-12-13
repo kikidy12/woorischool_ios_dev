@@ -16,6 +16,8 @@ class ChattingViewController: UIViewController {
     
     var isFirst = true
     
+    var topLoadData = false
+    
     var scrolltoBottm = false
     
     var isScrollBottm = false
@@ -26,21 +28,7 @@ class ChattingViewController: UIViewController {
     
     var keyboardHeight:CGFloat = 0
     
-    var chatList = [ChatData]() {
-        didSet {
-            chatTableView.reloadData()
-            if isFirst || scrolltoBottm || isScrollBottm, !chatList.isEmpty {
-                print("scroll To Bottom")
-                view.layoutIfNeeded()
-                chatTableView.scrollToRow(at: IndexPath(item: chatList.count - 1, section: 0), at: .bottom, animated: false)
-                if isFirst {
-                    isScrollBottm = true
-                }
-                isFirst = false
-                scrolltoBottm = false
-            }
-        }
-    }
+    var chatList = [ChatData]()
     
     var noteMessageId: Int?
 
@@ -84,6 +72,9 @@ class ChattingViewController: UIViewController {
                 if self.isUpdate {
                     if let id = self.chatList.last?.id {
                         self.getChatting("new", id: id)
+                    }
+                    else {
+                        self.getChatting("new", id: -1)
                     }
                 }
                 
@@ -196,6 +187,8 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource, UI
         }
     }
     
+    
+    
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let height = scrollView.frame.size.height
         let contentYoffset = scrollView.contentOffset.y
@@ -207,6 +200,18 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource, UI
         else {
 //            print(" you not reached end of the table")
             isScrollBottm = false
+        }
+        
+        if scrollView.contentOffset.y < -50 {
+            topLoadData = true
+        }
+        
+        if scrollView.contentOffset.y > -10, topLoadData {
+            print("isBounce true")
+            topLoadData = false
+            if let id = self.chatList.first?.id {
+                self.getChatting("prev", id: id)
+            }
         }
     }
 }
@@ -223,26 +228,41 @@ extension ChattingViewController {
     
     func getChatting(_ type: String, id: Int) {
         isUpdate = false
-        var parameters = [
+        let parameters = [
             "note_id": room.id!,
-            "type": type
+            "type": type,
+            "note_message_id": id
         ] as [String:Any]
-        if let messageId = chatList.last?.id {
-            parameters["note_message_id"] = messageId
-        }
-        else {
-            parameters["note_message_id"] = 0
-        }
+        print(parameters)
         ServerUtil.shared.postNote(self, parameters: parameters) { (success, dict, message) in
             self.isUpdate = true
             guard success, let array = dict?["note_message"] as? NSArray else {
                 return
             }
-            var tempArray = self.chatList
-            array.forEach {
-                tempArray.append(ChatData($0 as! NSDictionary))
+            
+            if type == "prev" {
+                array.forEach {
+                    self.chatList.insert(ChatData($0 as! NSDictionary), at: 0)
+                }
             }
-            self.chatList = tempArray
+            else {
+                array.forEach {
+                    self.chatList.append(ChatData($0 as! NSDictionary))
+                }
+            }
+            
+            self.chatTableView.reloadData()
+            if self.isFirst || self.scrolltoBottm || self.isScrollBottm, !self.chatList.isEmpty {
+                print("scroll To Bottom")
+                self.view.layoutIfNeeded()
+                self.chatTableView.scrollToRow(at: IndexPath(item: self.chatList.count - 1, section: 0), at: .bottom, animated: false)
+                if self.isFirst {
+                    self.isScrollBottm = true
+                }
+                self.isFirst = false
+                self.scrolltoBottm = false
+            }
+            
         }
     }
     
@@ -263,7 +283,10 @@ extension ChattingViewController {
                 return
             }
             self.scrolltoBottm = true
-            if let id = self.chatList.last?.id {
+            if self.chatList.isEmpty {
+                self.getChatting("new", id: -1)
+            }
+            else if let id = self.chatList.last?.id {
                 self.getChatting("new", id: id)
             }
         }

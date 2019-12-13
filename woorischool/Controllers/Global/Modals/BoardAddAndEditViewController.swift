@@ -127,7 +127,7 @@ extension BoardAddAndEditViewController {
         guard let id = board?.id, let idData = "\(id)".data(using: .utf8) else {
             return
         }
-        guard let content = textView.text, !content.isEmpty, let contentData = content.data(using: .utf8) else {
+        guard let content = textView.text, !content.isEmpty, let contentData = content.data(using: .nonLossyASCII, allowLossyConversion: true) else {
             return
         }
         
@@ -151,7 +151,7 @@ extension BoardAddAndEditViewController {
         guard let id = lectureClass?.id, let idData = "\(id)".data(using: .utf8) else {
             return
         }
-        guard let content = textView.text, !content.isEmpty, let contentData = content.data(using: .utf8) else {
+        guard let content = textView.text, !content.isEmpty, let contentData = content.data(using: .nonLossyASCII, allowLossyConversion: true) else {
             return
         }
         

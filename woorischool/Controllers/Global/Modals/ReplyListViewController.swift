@@ -170,7 +170,7 @@ extension ReplyListViewController {
         ServerUtil.shared.putV2Comment(vc: self, multipartFormData: { (formData) in
             formData.append("\(self.parentReply.boardId!)".data(using: .utf8)!, withName: "board_id")
             formData.append("\(self.parentReply.id!)".data(using: .utf8)!, withName: "parents_id")
-            formData.append(message.data(using: .utf8)!, withName: "content")
+            formData.append(message.data(using: .nonLossyASCII, allowLossyConversion: true)!, withName: "content")
             if let id = emoticon?.id {
                 formData.append("\(id)".data(using: .utf8)!, withName: "emoticon_id")
             }

@@ -43,7 +43,7 @@ class DailyNoteTableViewCell: UITableViewCell {
         }
         dateLabel.text = schdule.date.dateToString(formatter: "MM월 dd일자 알림장")
         createTimeLabel.text = note.writeTime ?? "미확인"
-        contentLabel.text = note.content ?? "없음"
+        contentLabel.text = (note.content ?? "없음").decodeEmoji
         
         if let imageURL = note.imageList.first?.url {
             mainImageView.isHidden = false
