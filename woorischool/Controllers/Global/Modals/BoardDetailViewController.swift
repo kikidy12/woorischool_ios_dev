@@ -16,6 +16,8 @@ class BoardDetailViewController: UIViewController {
     
     var isTableViewUpdate = false
     
+    var selectedEmoticon: ImageData!
+    
     var commentList = [ReplyData]() {
         didSet {
             if commentList.isEmpty {
@@ -43,6 +45,8 @@ class BoardDetailViewController: UIViewController {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var scrollContentView: UIView!
+    @IBOutlet weak var tempEmoView: UIView!
+    @IBOutlet weak var tempEmoImageView: UIImageView!
     @IBOutlet weak var customInputView: CustomInputView!
     @IBOutlet weak var chatViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var replyTableView: UITableView!
@@ -81,6 +85,10 @@ class BoardDetailViewController: UIViewController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
+    }
+    
+    @IBAction func hideTempEmoView() {
+        tempEmoView.isHidden = true
     }
     
     func settingNaviBar() {
@@ -122,7 +130,7 @@ class BoardDetailViewController: UIViewController {
     func settingBoard() {
         nameLabel.text = board.postingUser.name
         timeLabel.text = board.writeTime
-        contentLabel.text = board.content
+        contentLabel.text = board.content?.decodeEmoji
         replyCountLabel.text = "댓글 (\(board.commentCount ?? 0))"
         likeCountLabel.text = "+\(board.likeCount ?? 0)"
         
@@ -145,12 +153,24 @@ class BoardDetailViewController: UIViewController {
 }
 extension BoardDetailViewController: CustomInputViewDelegate {
     
-    func sendMessage(message: String, image: UIImage?, emoticon: ImageData?) {
-        addReply(message: message, image: image, emoticon: emoticon)
+    func sendMessage(message: String, image: UIImage?) {
+        if !tempEmoView.isHidden, let emo = selectedEmoticon {
+            print("isEmoticon")
+            addReply(message: message, image: nil, emoticon: emo)
+        }
+        else if image != nil {
+            print("isImage")
+            addReply(message: message, image: image, emoticon: nil)
+        }
+        else {
+            print("onlyMessage")
+            addReply(message: message, image: nil, emoticon: nil)
+        }
     }
     
     func keyboardSizeChange(height: CGFloat) {
         if height == 0 {
+            tempEmoView.isHidden = true
             self.chatViewBottomConstraint.constant = 0
         }
         else {
@@ -159,6 +179,12 @@ extension BoardDetailViewController: CustomInputViewDelegate {
                 self.view.layoutIfNeeded()
             }
         }
+    }
+    
+    func selectEmoticon(emoticon: ImageData) {
+        self.selectedEmoticon = emoticon
+        tempEmoImageView.kf.setImage(with: emoticon.url)
+        self.tempEmoView.isHidden = false
     }
 }
 

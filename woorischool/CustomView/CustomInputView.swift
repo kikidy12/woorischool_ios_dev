@@ -9,16 +9,21 @@
 import UIKit
 
 protocol CustomInputViewDelegate {
-    func sendMessage(message: String, image: UIImage?, emoticon: ImageData?)
+    func sendMessage(message: String, image: UIImage?)
     func keyboardSizeChange(height: CGFloat)
+    func selectEmoticon(emoticon: ImageData)
 }
 
 extension CustomInputViewDelegate {
-    func sendMessage(message: String, image: UIImage?, emoticon: ImageData?) {
+    func sendMessage(message: String, image: UIImage?) {
         
     }
     
     func keyboardSizeChange(height: CGFloat) {
+        
+    }
+    
+    func selectEmoticon(emoticon: ImageData) {
         
     }
 }
@@ -29,11 +34,9 @@ class CustomInputView: UIView {
     
     var isShowKeyboard = false
     
-    var selectedEmoticon: ImageData! {
-        didSet {
-            emoImageView.kf.setImage(with: selectedEmoticon.url, placeholder: UIImage(named: "tempImage"))
-        }
-    }
+    var defaultTextViewHeight:CGFloat = 0
+    
+    var selectedEmoticon: ImageData!
     var view = UIView()
     var defaultFrame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 60)
     
@@ -43,7 +46,7 @@ class CustomInputView: UIView {
     
     var lastSelectTextView = UITextView()
     
-    var keyboardHeight:CGFloat = 0.0
+    var keyboardHeight:CGFloat = 0
     
     var delegate: CustomInputViewDelegate?
     
@@ -52,8 +55,6 @@ class CustomInputView: UIView {
     
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var messageTextView: UITextView!
-    @IBOutlet weak var tempEmoView: UIView!
-    @IBOutlet weak var emoImageView: UIImageView!
     @IBOutlet weak var textViewHeightConstraint: NSLayoutConstraint!
     
     override init(frame: CGRect) {
@@ -72,8 +73,10 @@ class CustomInputView: UIView {
         self.addSubview(view)
         defaultFrame = self.frame
 //        self.textView.frame.size = estimatedSize
-        NotificationCenter.default.addObserver(self, selector:#selector(keyboardWillShow(noti:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector:#selector(keyboardWillHide(noti:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector:#selector(keyboardWillChange(noti:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        defaultTextViewHeight = textViewHeightConstraint.constant
         emoInPutView.delegate = self
         textView.delegate = self
         emoTextView.inputView = emoInPutView
@@ -87,34 +90,22 @@ class CustomInputView: UIView {
     }
     
     deinit {
-        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
-    }
-    
-    @IBAction func hideEmoviewEvent() {
-        tempEmoView.isHidden = true
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
     
     @IBAction func sendMessageEvent() {
-        if tempEmoView.isHidden {
-            delegate?.sendMessage(message: messageTextView.text!, image: nil, emoticon: nil)
-        }
-        else {
-            delegate?.sendMessage(message: messageTextView.text!, image: nil, emoticon: selectedEmoticon)
-        }
+        delegate?.sendMessage(message: messageTextView.text!, image: nil)
         messageTextView.text = ""
-        if isCahtting {
-            tempEmoView.isHidden = true
-        }
-        else {
-            lastSelectTextView.resignFirstResponder()
-        }
+        lastSelectTextView.resignFirstResponder()
+        
+        textViewHeightConstraint.constant = defaultTextViewHeight
     }
     
     @IBAction func showCameraViewEvent() {
         let vc = SelectCameraTypeViewController()
         vc.selectImagePickClouser = { image in
-            self.delegate?.sendMessage(message: "", image: image, emoticon: nil)
+            self.delegate?.sendMessage(message: "", image: image)
         }
         
         parentsVc.showPopupView(vc: vc)
@@ -125,28 +116,26 @@ class CustomInputView: UIView {
         emoTextView.becomeFirstResponder()
     }
     
-    @objc func keyboardWillShow(noti: NSNotification) {
+    @objc func keyboardWillChange(noti: NSNotification) {
         if let keyboardSize = (noti.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {
-            keyboardHeight = keyboardSize.height
-            if !isShowKeyboard {
-                isShowKeyboard = true
+            if keyboardHeight != keyboardSize.height {
                 delegate?.keyboardSizeChange(height: keyboardSize.height)
+                keyboardHeight = keyboardSize.height
             }
-            
         }
     }
 
     @objc func keyboardWillHide(noti: NSNotification) {
         isShowKeyboard = false
-        tempEmoView.isHidden = true
+//        tempEmoView.isHidden = true
+        keyboardHeight = 0
         delegate?.keyboardSizeChange(height: 0)
     }
 }
 
 extension CustomInputView: EmoInputViewDelegate {
     func selectEmoticon(emoticon: ImageData) {
-        selectedEmoticon = emoticon
-        tempEmoView.isHidden = false
+        delegate?.selectEmoticon(emoticon: emoticon)
     }
 }
 
@@ -155,7 +144,6 @@ extension CustomInputView: EmoInputViewDelegate {
 extension CustomInputView: UITextViewDelegate {
     
     func textViewDidChange(_ textView: UITextView) {
-        let height = self.textViewHeightConstraint.constant
         if textView.contentSize.height >= 150.0 {
             self.textViewHeightConstraint.constant = 150
         }

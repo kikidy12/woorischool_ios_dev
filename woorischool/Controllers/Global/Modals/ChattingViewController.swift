@@ -22,6 +22,8 @@ class ChattingViewController: UIViewController {
     
     var isUpdate = false
     
+    var selectedEmoticon: ImageData!
+    
     var keyboardHeight:CGFloat = 0
     
     var chatList = [ChatData]() {
@@ -46,8 +48,10 @@ class ChattingViewController: UIViewController {
 
     @IBOutlet weak var customInputView: CustomInputView!
     @IBOutlet weak var chatTableView: UITableView!
+    @IBOutlet weak var tempEmoView: UIView!
+    @IBOutlet weak var tempEmoImageView: UIImageView!
     @IBOutlet weak var customInputViewBottomConstraint: NSLayoutConstraint!
-    @IBOutlet weak var tableViewBottomConstraint: NSLayoutConstraint!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,16 +77,22 @@ class ChattingViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         if chatList.isEmpty {
-            self.getChatting("new")
+            self.getChatting("new", id: -1)
         }
         if (timer == nil || !timer.isValid) {
             timer = Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { (timer) in
                 if self.isUpdate {
-                    self.getChatting("new")
+                    if let id = self.chatList.last?.id {
+                        self.getChatting("new", id: id)
+                    }
                 }
                 
             }
         }
+    }
+    
+    @IBAction func hideTempEmoView() {
+        self.tempEmoView.isHidden = true
     }
     
 
@@ -93,21 +103,34 @@ class ChattingViewController: UIViewController {
 
 extension ChattingViewController: CustomInputViewDelegate {
     
-    func sendMessage(message: String, image: UIImage?, emoticon: ImageData?) {
-        addChat(message: message, image: image, emoticon: emoticon)
+    func sendMessage(message: String, image: UIImage?) {
+        if !tempEmoView.isHidden, let emoticon = selectedEmoticon {
+            addChat(message: message, image: image, emoticon: emoticon)
+        }
+        else if image != nil {
+            addChat(message: message, image: image, emoticon: nil)
+        }
+        else {
+            addChat(message: message, image: nil, emoticon: nil)
+        }
+    }
+    
+    func selectEmoticon(emoticon: ImageData) {
+        self.selectedEmoticon = emoticon
+        tempEmoImageView.kf.setImage(with: emoticon.url)
+        self.tempEmoView.isHidden = false
     }
     
     func keyboardSizeChange(height: CGFloat) {
         if height == 0 {
+            self.tempEmoView.isHidden = true
             self.customInputViewBottomConstraint.constant = 0
             if self.chatTableView.contentOffset.y - self.keyboardHeight + self.view.safeAreaInsets.bottom >= 0 {
                 self.chatTableView.contentOffset.y = self.chatTableView.contentOffset.y - self.keyboardHeight + self.view.safeAreaInsets.bottom
             }
-            
-            print("hideKeyboard:", self.chatTableView.contentOffset)
         }
         else {
-            UIView.animate(withDuration: 1, animations: {
+            UIView.animate(withDuration: 0, animations: {
                 self.keyboardHeight = height
                 self.customInputViewBottomConstraint.constant = height - self.view.safeAreaInsets.bottom
                 
@@ -178,11 +201,11 @@ extension ChattingViewController: UITableViewDelegate, UITableViewDataSource, UI
         let contentYoffset = scrollView.contentOffset.y
         let distanceFromBottom = scrollView.contentSize.height - contentYoffset
         if distanceFromBottom < height + 50 {
-            print(" you reached end of the table")
+//            print(" you reached end of the table")
             isScrollBottm = true
         }
         else {
-            print(" you not reached end of the table")
+//            print(" you not reached end of the table")
             isScrollBottm = false
         }
     }
@@ -198,7 +221,7 @@ extension ChattingViewController {
         }
     }
     
-    func getChatting(_ type: String) {
+    func getChatting(_ type: String, id: Int) {
         isUpdate = false
         var parameters = [
             "note_id": room.id!,
@@ -227,9 +250,8 @@ extension ChattingViewController {
         isUpdate = false
         ServerUtil.shared.putNote(vc: self, multipartFormData: { (formData) in
             formData.append("\(self.room.id!)".data(using: .utf8)!, withName: "note_id")
-            formData.append(message.data(using: .utf8)!, withName: "message")
+            formData.append(message.data(using: .nonLossyASCII, allowLossyConversion: true)!, withName: "message")
             if let id = emoticon?.id {
-                print("emoId: ", id)
                 formData.append("\(id)".data(using: .utf8)!, withName: "emoticon_id")
             }
             if let image = image {
@@ -241,7 +263,9 @@ extension ChattingViewController {
                 return
             }
             self.scrolltoBottm = true
-            self.getChatting("new")
+            if let id = self.chatList.last?.id {
+                self.getChatting("new", id: id)
+            }
         }
     }
 }

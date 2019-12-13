@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -42,7 +42,7 @@
                             <view contentMode="scaleToFill" horizontalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="up0-D3-klp" customClass="CustomView" customModule="우리스쿨" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="228.5" height="120"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="751" text="ㅇㅁㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇ" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t6o-qQ-j5r">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="751" text="ㅇㅁㅇㅁㄴㅇㅁㄴㅇㅁㄴㅇㅁ" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t6o-qQ-j5r">
                                         <rect key="frame" x="15" y="15" width="198.5" height="90"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="lessThanOrEqual" constant="200" id="H9e-Lm-iy1"/>
@@ -54,9 +54,9 @@
                                 </subviews>
                                 <color key="backgroundColor" name="veryLightPink"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="t6o-qQ-j5r" secondAttribute="bottom" constant="15" id="H0H-NK-PIm"/>
+                                    <constraint firstAttribute="bottom" secondItem="t6o-qQ-j5r" secondAttribute="bottom" priority="999" constant="15" id="H0H-NK-PIm"/>
                                     <constraint firstItem="t6o-qQ-j5r" firstAttribute="leading" secondItem="up0-D3-klp" secondAttribute="leading" constant="15" id="JDw-aL-rTk"/>
-                                    <constraint firstItem="t6o-qQ-j5r" firstAttribute="top" secondItem="up0-D3-klp" secondAttribute="top" constant="15" id="hEz-7o-3lk"/>
+                                    <constraint firstItem="t6o-qQ-j5r" firstAttribute="top" secondItem="up0-D3-klp" secondAttribute="top" priority="999" constant="15" id="hEz-7o-3lk"/>
                                     <constraint firstAttribute="trailing" secondItem="t6o-qQ-j5r" secondAttribute="trailing" constant="15" id="vdn-Rl-Lnm"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -76,14 +76,15 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="bBe-F8-S1e" secondAttribute="bottom" constant="20" id="4SQ-nZ-Rsy"/>
-                    <constraint firstItem="bBe-F8-S1e" firstAttribute="top" secondItem="Pkr-Af-sZ3" secondAttribute="bottom" constant="20" id="GLR-1j-NNs"/>
                     <constraint firstItem="afE-Eu-Tzm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="MsS-cH-7ka"/>
                     <constraint firstItem="Pkr-Af-sZ3" firstAttribute="leading" secondItem="afE-Eu-Tzm" secondAttribute="trailing" constant="10" id="SA5-dH-zlp"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Pkr-Af-sZ3" secondAttribute="bottom" priority="999" constant="20" id="Whu-ar-s6f"/>
                     <constraint firstItem="Pkr-Af-sZ3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="a3k-MA-IJR"/>
                     <constraint firstItem="afE-Eu-Tzm" firstAttribute="bottom" secondItem="Pkr-Af-sZ3" secondAttribute="bottom" id="crb-Xq-3si"/>
                     <constraint firstAttribute="trailing" secondItem="Pkr-Af-sZ3" secondAttribute="trailing" constant="20" id="d4g-JE-Ugj"/>
                     <constraint firstAttribute="trailing" secondItem="bBe-F8-S1e" secondAttribute="trailing" constant="20" id="deT-OZ-aT0"/>
                     <constraint firstItem="peA-gL-2bJ" firstAttribute="bottom" secondItem="bBe-F8-S1e" secondAttribute="bottom" id="kGo-Fy-8Ru"/>
+                    <constraint firstItem="bBe-F8-S1e" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" priority="999" constant="120" id="ozV-JH-JTN"/>
                     <constraint firstItem="peA-gL-2bJ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="x1k-nQ-pRM"/>
                     <constraint firstItem="bBe-F8-S1e" firstAttribute="leading" secondItem="peA-gL-2bJ" secondAttribute="trailing" constant="10" id="xTz-J1-SCq"/>
                 </constraints>
@@ -93,11 +94,11 @@
             <connections>
                 <outlet property="chatImageView" destination="Pkr-Af-sZ3" id="Gf0-fX-ZjE"/>
                 <outlet property="imageHeightConstraint" destination="mdF-yK-Ocg" id="C6f-5e-0Hp"/>
-                <outlet property="imageMessageDivideHeightCnstraint" destination="GLR-1j-NNs" id="f8f-EH-7LH"/>
                 <outlet property="imageTimeLabel" destination="afE-Eu-Tzm" id="wDy-aa-mNM"/>
                 <outlet property="messageContinerView" destination="up0-D3-klp" id="WvM-Oz-E1f"/>
                 <outlet property="messageLabel" destination="t6o-qQ-j5r" id="8Jk-0v-08r"/>
-                <outlet property="timeLabel" destination="peA-gL-2bJ" id="jGm-FZ-bMl"/>
+                <outlet property="messageTimeLabel" destination="peA-gL-2bJ" id="G1L-bj-QVZ"/>
+                <outlet property="messageTopConstraint" destination="ozV-JH-JTN" id="jFm-tT-iZp"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="165.40178571428569"/>
         </tableViewCell>

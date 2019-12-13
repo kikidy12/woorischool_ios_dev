@@ -15,11 +15,11 @@ class MyChattingTableViewCell: UITableViewCell {
     
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var messageContinerView: UIView!
-    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var messageTimeLabel: UILabel!
     @IBOutlet weak var chatImageView: UIImageView!
     @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
-    @IBOutlet weak var imageMessageDivideHeightCnstraint: NSLayoutConstraint!
     @IBOutlet weak var imageTimeLabel: UILabel!
+    @IBOutlet weak var messageTopConstraint: NSLayoutConstraint!
     
     
     
@@ -43,58 +43,59 @@ class MyChattingTableViewCell: UITableViewCell {
         super.layoutIfNeeded()
         
         if chat.createdAt.dateToString(formatter: "yyyy-MM-dd") == Date().dateToString(formatter: "yyyy-MM-dd") {
-            timeLabel.text = chat.createdAt.dateToString(formatter: "HH:mm")
+            messageTimeLabel.text = chat.createdAt.dateToString(formatter: "HH:mm")
             imageTimeLabel.text = chat.createdAt.dateToString(formatter: "HH:mm")
         }
         else {
-            timeLabel.text = chat.createdAt.dateToString(formatter: "mm/dd")
-            imageTimeLabel.text = chat.createdAt.dateToString(formatter: "HH:mm")
+            messageTimeLabel.text = chat.createdAt.dateToString(formatter: "MM/dd")
+            imageTimeLabel.text = chat.createdAt.dateToString(formatter: "MM/dd")
         }
-
-        imageMessageDivideHeightCnstraint.constant = 20
+        
+        if chat.imageURL != nil, chat.message != nil, chat.message != "" {
+            messageTopConstraint.constant = 120
+        }
+        else if chat.imageURL == nil {
+            messageTopConstraint.constant = 0
+        }
+        else {
+            messageTopConstraint.constant = 0
+        }
+        
+        if hasNext {
+            messageTimeLabel.isHidden = true
+            imageTimeLabel.isHidden = true
+        }
+        else {
+            if chat.imageURL == nil {
+                imageTimeLabel.isHidden = true
+                messageTimeLabel.isHidden = false
+            }
+            else if chat.message == nil || chat.message == "" {
+                imageTimeLabel.isHidden = false
+                messageTimeLabel.isHidden = true
+            }
+            else {
+                imageTimeLabel.isHidden = true
+                messageTimeLabel.isHidden = false
+            }
+        }
+        
+        if let chatImageURL = chat.imageURL {
+            chatImageView.kf.setImage(with: chatImageURL)
+            imageHeightConstraint.constant = 100
+        }
+        else {
+            imageHeightConstraint.constant = 0
+        }
         
         if let message = chat.message, message != "" {
-            messageLabel.text = message
             messageContinerView.isHidden = false
-            showTimeLabel(label: timeLabel, show: true)
+            messageLabel.text = message.decodeEmoji
         }
         else {
             messageContinerView.isHidden = true
-            imageMessageDivideHeightCnstraint.constant = 0
-            showTimeLabel(label: timeLabel, show: false)
         }
-        if let url = chat.imageURL {
-            imageHeightConstraint.constant = 100
-            chatImageView.kf.setImage(with: url, placeholder: #imageLiteral(resourceName: "tempImage"))
-            showTimeLabel(label: imageTimeLabel, show: true)
-        }
-        else {
-            imageTimeLabel.isHidden = true
-            imageHeightConstraint.constant = 0
-            imageMessageDivideHeightCnstraint.constant = 0
-            showTimeLabel(label: imageTimeLabel, show: false)
-        }
-        
-        if chat.imageURL != nil, chat.message != nil {
-            showTimeLabel(label: timeLabel, show: true)
-            showTimeLabel(label: imageTimeLabel, show: false)
-        }
-        
-        
     }
     
-    func showTimeLabel(label: UILabel, show: Bool) {
-        if show {
-            if (hasPre && !hasNext) || (!hasPre && !hasNext) {
-                label.isHidden = false
-            }
-            else {
-                label.isHidden = true
-            }
-        }
-        else {
-            label.isHidden = true
-        }
-    }
     
 }

@@ -34,8 +34,8 @@ class ChattingRoomTableViewCell: UITableViewCell {
     }
     override func layoutIfNeeded() {
         super.layoutIfNeeded()
-        titleLabel.text = room.title
-        bodyLabel.text = room.body
+        titleLabel.text = room.title?.decodeEmoji
+        bodyLabel.text = room.body?.decodeEmoji
         lastTimeLabel.text = room.lastMessageTime
     }
     

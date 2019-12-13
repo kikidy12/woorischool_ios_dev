@@ -14,6 +14,8 @@ class ReplyListViewController: UIViewController {
     
     var isScrollToBottom = false
     
+    var selectedEmoticon: ImageData!
+    
     var commentList = [ReplyData]() {
         didSet {
             if commentList.isEmpty {
@@ -38,7 +40,8 @@ class ReplyListViewController: UIViewController {
     }
     
     @IBOutlet weak var scrollView: UIScrollView!
-    
+    @IBOutlet weak var tempEmoView: UIView!
+    @IBOutlet weak var tempEmoImageView: UIImageView!
     @IBOutlet weak var customInputView: CustomInputView!
     @IBOutlet weak var chatTextViewBottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var replyTableView: UITableView!
@@ -66,18 +69,32 @@ class ReplyListViewController: UIViewController {
         getReplyList()
     }
     
+    @IBAction func hideTempEmoView() {
+        tempEmoView.isHidden = true
+    }
+    
     @objc func hideKeyBoard() {
         customInputView.lastSelectTextView.resignFirstResponder()
     }
 }
 
 extension ReplyListViewController: CustomInputViewDelegate {
-    func sendMessage(message: String, image: UIImage?, emoticon: ImageData?) {
-        addReply(message: message, image: image, emoticon: emoticon)
+    func sendMessage(message: String, image: UIImage?) {
+        if !tempEmoView.isHidden, let emo = selectedEmoticon {
+            addReply(message: message, image: image, emoticon: emo)
+        }
+        else if image != nil {
+            addReply(message: message, image: image, emoticon: nil)
+        }
+        else {
+            addReply(message: message, image: nil, emoticon: nil)
+        }
     }
+    
     
     func keyboardSizeChange(height: CGFloat) {
         if height == 0 {
+            tempEmoView.isHidden = true
             self.chatTextViewBottomConstraint.constant = 0
         }
         else {
@@ -86,6 +103,12 @@ extension ReplyListViewController: CustomInputViewDelegate {
                 self.view.layoutIfNeeded()
             }
         }
+    }
+    
+    func selectEmoticon(emoticon: ImageData) {
+        self.selectedEmoticon = emoticon
+        tempEmoImageView.kf.setImage(with: emoticon.url)
+        self.tempEmoView.isHidden = false
     }
 }
 

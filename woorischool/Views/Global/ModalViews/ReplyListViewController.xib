@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,6 +16,8 @@
                 <outlet property="replyTableView" destination="R42-rU-nyl" id="nkH-rJ-4Wg"/>
                 <outlet property="replyTableViewHeightConstraint" destination="caD-1R-LOd" id="lbc-nk-d4d"/>
                 <outlet property="scrollView" destination="9pT-LX-CFe" id="P05-mk-NFK"/>
+                <outlet property="tempEmoImageView" destination="l32-Bh-wLp" id="e3u-8g-wGR"/>
+                <outlet property="tempEmoView" destination="sEs-6N-fmF" id="BWO-sj-JsL"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -60,6 +63,35 @@
                     <viewLayoutGuide key="contentLayoutGuide" id="bch-kd-ALh"/>
                     <viewLayoutGuide key="frameLayoutGuide" id="NVs-ka-Xa6"/>
                 </scrollView>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sEs-6N-fmF">
+                    <rect key="frame" x="0.0" y="658" width="414" height="144"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="l32-Bh-wLp">
+                            <rect key="frame" x="260.5" y="22" width="100" height="100"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="100" id="4sJ-pk-Mn4"/>
+                                <constraint firstAttribute="width" constant="100" id="Ivo-I6-dfc"/>
+                            </constraints>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CxR-iT-BYj">
+                            <rect key="frame" x="364" y="0.0" width="50" height="48"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <inset key="contentEdgeInsets" minX="10" minY="10" maxX="10" maxY="10"/>
+                            <state key="normal" image="xIcon"/>
+                            <connections>
+                                <action selector="hideTempEmoView" destination="-1" eventType="touchUpInside" id="591-Ws-8J6"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" name="black60"/>
+                    <constraints>
+                        <constraint firstItem="l32-Bh-wLp" firstAttribute="centerX" secondItem="sEs-6N-fmF" secondAttribute="centerX" multiplier="150%" id="1UG-8V-V03"/>
+                        <constraint firstAttribute="height" constant="144" id="HaY-Z1-K0B"/>
+                        <constraint firstItem="l32-Bh-wLp" firstAttribute="centerY" secondItem="sEs-6N-fmF" secondAttribute="centerY" id="goX-Yq-peZ"/>
+                        <constraint firstItem="CxR-iT-BYj" firstAttribute="top" secondItem="sEs-6N-fmF" secondAttribute="top" id="kQ3-TU-ofv"/>
+                        <constraint firstAttribute="trailing" secondItem="CxR-iT-BYj" secondAttribute="trailing" id="sP9-Xf-JGZ"/>
+                    </constraints>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MIC-ox-UxU" customClass="CustomInputView" customModule="우리스쿨" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="802" width="414" height="60"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -71,8 +103,11 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="9pT-LX-CFe" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="4KO-sB-Vbf"/>
+                <constraint firstItem="sEs-6N-fmF" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="9HG-r3-CwV"/>
+                <constraint firstItem="sEs-6N-fmF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="C64-4L-dgF"/>
                 <constraint firstItem="MIC-ox-UxU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Nms-k3-Xli"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="MIC-ox-UxU" secondAttribute="trailing" id="RhV-vH-fKU"/>
+                <constraint firstItem="MIC-ox-UxU" firstAttribute="top" secondItem="sEs-6N-fmF" secondAttribute="bottom" id="dg3-Qk-rY9"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9pT-LX-CFe" secondAttribute="trailing" id="g7X-Vx-R0v"/>
                 <constraint firstItem="9pT-LX-CFe" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="jL1-cE-AGB"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="MIC-ox-UxU" secondAttribute="bottom" id="oeN-XO-qlu"/>
@@ -82,4 +117,10 @@
             <point key="canvasLocation" x="136" y="98"/>
         </view>
     </objects>
+    <resources>
+        <image name="xIcon" width="15" height="14"/>
+        <namedColor name="black60">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.60000002384185791" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

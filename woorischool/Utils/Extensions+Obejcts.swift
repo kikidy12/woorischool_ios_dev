@@ -181,6 +181,19 @@ extension String {
         
         return URL(string: encoded) 
     }
+    
+    var decodeEmoji: String {
+        let data = self.data(using: .utf8)
+        if let data = data, let str = String(data: data, encoding: .nonLossyASCII) {
+            return str
+        }
+        return self
+    }
+    
+    var encodeEmoji: String {
+        let data = self.data(using: .nonLossyASCII, allowLossyConversion: true)!
+        return String(data: data, encoding: .utf8)!
+    }
 }
 
 extension UIImage {
