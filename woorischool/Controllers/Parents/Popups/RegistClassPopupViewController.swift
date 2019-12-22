@@ -42,14 +42,14 @@ class RegistClassPopupViewController: UIViewController {
 
     @IBAction func registEvent() {
         registRequest()
-        
     }
 }
 
 extension RegistClassPopupViewController {
     func registRequest() {
         let parameters = [
-            "lecture_class_id": lectureClass!.id!
+            "lecture_class_id": lectureClass!.id!,
+            "type": "NORMAL"
         ] as [String:Any]
         ServerUtil.shared.postLecture(self, parameters: parameters) { (success, dict, message) in
             guard success else {
@@ -66,7 +66,7 @@ extension RegistClassPopupViewController {
                     }
                 }
                 else {
-                    AlertHandler.shared.showAlert(vc: self, message: message ?? "serverError", okTitle: "확인")
+                    AlertHandler().showAlert(vc: self, message: message ?? "serverError", okTitle: "확인")
                 }
                 
                 return

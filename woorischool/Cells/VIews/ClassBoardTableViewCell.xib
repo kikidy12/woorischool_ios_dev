@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -87,7 +87,7 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstItem="QZj-Xs-6AO" firstAttribute="leading" secondItem="6vo-gq-g7R" secondAttribute="leading" id="2n4-jt-Mbi"/>
-                                            <constraint firstAttribute="height" constant="176" id="6ME-7h-MoM"/>
+                                            <constraint firstAttribute="height" priority="999" constant="176" id="6ME-7h-MoM"/>
                                             <constraint firstItem="QZj-Xs-6AO" firstAttribute="top" secondItem="6vo-gq-g7R" secondAttribute="top" id="OY4-hC-rMJ"/>
                                             <constraint firstAttribute="trailing" secondItem="QZj-Xs-6AO" secondAttribute="trailing" id="a9f-w7-nPX"/>
                                             <constraint firstAttribute="bottom" secondItem="QZj-Xs-6AO" secondAttribute="bottom" id="r9n-iy-8N0"/>
@@ -180,6 +180,7 @@
                 <outlet property="firstImageView" destination="QZj-Xs-6AO" id="jwh-DY-YYk"/>
                 <outlet property="imaegContainerView" destination="6vo-gq-g7R" id="lPs-Ql-lz2"/>
                 <outlet property="likeCountLabel" destination="kgm-QG-izX" id="Awl-H7-QbQ"/>
+                <outlet property="likeImageView" destination="hrF-Nq-2tV" id="6Nv-8B-k44"/>
                 <outlet property="nameLabel" destination="yff-aA-DPE" id="ci5-nV-3lu"/>
                 <outlet property="profileImageView" destination="r4s-vM-p5O" id="e8x-mv-Yxh"/>
                 <outlet property="replyCountLabel" destination="Nr2-iQ-Sb1" id="8J6-A8-EUs"/>

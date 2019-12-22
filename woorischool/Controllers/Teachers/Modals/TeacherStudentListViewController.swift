@@ -79,7 +79,7 @@ extension TeacherStudentListViewController {
         ] as [String:Any]
         ServerUtil.shared.postStudentList(self, parameters: parameters) { (success, dict, message) in
             guard success, let array = dict?["student"] as? NSArray else {
-                AlertHandler.shared.showAlert(vc: self, message: message ?? "Server Error", okTitle: "확인")
+                AlertHandler().showAlert(vc: self, message: message ?? "Server Error", okTitle: "확인")
                 return
             }
             

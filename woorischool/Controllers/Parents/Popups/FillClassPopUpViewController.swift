@@ -53,7 +53,7 @@ extension FillClassPopUpViewController {
         ] as [String:Any]
         ServerUtil.shared.postLectureWait(self, parameters: parameters) { (success, dict, message) in
             guard success else {
-                AlertHandler.shared.showAlert(vc: self, message: message ?? "serverError", okTitle: "확인")
+                AlertHandler().showAlert(vc: self, message: message ?? "serverError", okTitle: "확인")
                 return
             }
             

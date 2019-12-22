@@ -124,32 +124,32 @@ extension RegistChildViewController {
         }
         
         if name.isEmpty {
-            AlertHandler.shared.showAlert(vc: self, message: "이름을 입력해주세요.", okTitle: "확인")
+            AlertHandler().showAlert(vc: self, message: "이름을 입력해주세요.", okTitle: "확인")
             return
         }
         
         if password.isEmpty {
-            AlertHandler.shared.showAlert(vc: self, message: "비밀번호를 입력해주세요.", okTitle: "확인")
+            AlertHandler().showAlert(vc: self, message: "비밀번호를 입력해주세요.", okTitle: "확인")
             return
         }
         
         if selectedSchool == nil {
-            AlertHandler.shared.showAlert(vc: self, message: "학교를 선택해주세요.", okTitle: "확인")
+            AlertHandler().showAlert(vc: self, message: "학교를 선택해주세요.", okTitle: "확인")
             return
         }
         
         if grade.isEmpty {
-            AlertHandler.shared.showAlert(vc: self, message: "학년을 입력해주세요.", okTitle: "확인")
+            AlertHandler().showAlert(vc: self, message: "학년을 입력해주세요.", okTitle: "확인")
             return
         }
         
         if classNum.isEmpty {
-            AlertHandler.shared.showAlert(vc: self, message: "반을 입력해주세요.", okTitle: "확인")
+            AlertHandler().showAlert(vc: self, message: "반을 입력해주세요.", okTitle: "확인")
             return
         }
         
         if number.isEmpty {
-            AlertHandler.shared.showAlert(vc: self, message: "학생번호를 입력해주세요.", okTitle: "확인")
+            AlertHandler().showAlert(vc: self, message: "학생번호를 입력해주세요.", okTitle: "확인")
             return
         }
         
@@ -165,7 +165,7 @@ extension RegistChildViewController {
         print(parameters)
         ServerUtil.shared.postParentStudent(self, parameters: parameters) { (success, dict, message) in
             guard success else {
-                AlertHandler.shared.showAlert(vc: self, message: message ?? "error", okTitle: "확인")
+                AlertHandler().showAlert(vc: self, message: message ?? "error", okTitle: "확인")
                 return
             }
             UserDefs.setHasChildren(true)

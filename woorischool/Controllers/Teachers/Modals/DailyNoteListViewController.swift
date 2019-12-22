@@ -108,7 +108,7 @@ extension DailyNoteListViewController {
         
         ServerUtil.shared.getV2Announcement(self, parameters: parameters) { (success, dict, message) in
             guard success, let array = dict?["announcements"] as? NSArray else {
-                AlertHandler.shared.showAlert(vc: self, message: message ?? "Server Error", okTitle: "확인")
+                AlertHandler().showAlert(vc: self, message: message ?? "Server Error", okTitle: "확인")
                 return
             }
             

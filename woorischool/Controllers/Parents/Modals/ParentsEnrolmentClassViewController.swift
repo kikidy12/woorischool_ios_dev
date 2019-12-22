@@ -22,13 +22,18 @@ class ParentsEnrolmentClassViewController: UIViewController {
     @IBOutlet weak var quaterNameLabel: UILabel!
     @IBOutlet weak var registPeriodLabel: UILabel!
     @IBOutlet weak var dueDateLabel: UILabel!
-    
+    @IBOutlet weak var priceLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         getQuater()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .decimal
+        priceLabel.text = "\(numberFormatter.string(for: GlobalDatas.currentUser?.childlen?.point) ?? "0")원"
+    }
     @IBAction func showRegistViewEvent() {
         let vc = CourseRegistrationViewController()
         self.show(vc, sender: nil)

@@ -15,6 +15,7 @@ protocol CustomInputViewDelegate {
 }
 
 extension CustomInputViewDelegate {
+    
     func sendMessage(message: String, image: UIImage?) {
         
     }
@@ -145,11 +146,13 @@ extension CustomInputView: UITextViewDelegate {
     
     func textViewDidChange(_ textView: UITextView) {
         if textView.contentSize.height >= 150.0 {
+            print("150>")
             self.textViewHeightConstraint.constant = 150
         }
         else {
             let height = textView.sizeThatFits(CGSize(width: textView.frame.width, height: .infinity)).height
             self.textViewHeightConstraint.constant = height
+            print(height)
         }
         
         self.layoutIfNeeded()

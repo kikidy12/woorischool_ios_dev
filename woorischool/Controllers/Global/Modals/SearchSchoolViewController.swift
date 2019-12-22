@@ -99,6 +99,7 @@ extension SearchSchoolViewController: UITableViewDelegate, UITableViewDataSource
             return
         }
         clouser!(number)
+        self.navigationController?.popViewController(animated: true)
     }
 }
 

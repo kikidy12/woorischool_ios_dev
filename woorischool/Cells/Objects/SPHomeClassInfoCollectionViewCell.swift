@@ -47,7 +47,7 @@ class SPHomeClassInfoCollectionViewCell: UICollectionViewCell {
             return
         }
         
-        lectureNameLabel.text = lecture.name
+        lectureNameLabel.text = "\(lecture.name ?? "강좌") \(lectureClass.name ?? "클래스")"
         locationLabel.text = "(\(lectureClass.location ?? "미정"))"
         eduTimeLabel.text = lectureClassDay.eduTime
         

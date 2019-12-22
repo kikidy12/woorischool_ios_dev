@@ -154,10 +154,7 @@ extension CourseRegistrationViewController: UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "classCell", for: indexPath) as! RegistClassTableViewCell
         cell.requestClouser = {
-            let vc = RegistClassPopupViewController()
-            vc.lectureClass = self.filterLectureList[indexPath.item]
-            vc.preVC = self
-            self.showPopupView(vc: vc)
+            self.isUseAblePoint(classData: self.filterLectureList[indexPath.item])
         }
         return cell
     }
@@ -208,6 +205,39 @@ extension CourseRegistrationViewController {
             }
             
             self.courseList = array.compactMap { LectureAreaData($0 as! NSDictionary)}
+        }
+    }
+    
+    func isUseAblePoint(classData: LectureClassData) {
+        let parameters = [
+            "lecture_class_id": classData.id!
+        ] as [String:Any]
+        
+        ServerUtil.shared.postPointLectureApply(self, parameters: parameters) { (success, dict, message) in
+            guard success, let possible = dict?["is_possible"] as? Bool, let price = dict?["lecture_price"] as? Int, let point = dict?["my_point"] as? Int else {
+                return
+            }
+            GlobalDatas.currentUser.childlen.point = point
+            
+            let vc = ClassRegistPopupViewController()
+            vc.lectureClass = classData
+            vc.preVC = self
+            vc.price = price
+            self.showPopupView(vc: vc)
+            
+//            if possible {
+//                let vc = ClassRegistPopupViewController()
+//                vc.lectureClass = classData
+//                vc.preVC = self
+//                vc.price = price
+//                self.showPopupView(vc: vc)
+//            }
+//            else {
+//                let vc = RegistClassPopupViewController()
+//                vc.lectureClass = classData
+//                vc.preVC = self
+//                self.showPopupView(vc: vc)
+//            }
         }
     }
     

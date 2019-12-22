@@ -16,6 +16,8 @@ class BoardData: NSObject {
     
     var writeTime: String!
     
+    var isLike: Bool!
+    
     var imageList = [ImageData]()
     var postingUser: UserData!
     
@@ -43,5 +45,7 @@ class BoardData: NSObject {
         if let dict = data["lecture_class"] as? NSDictionary {
             lectureClass = LectureClassData(dict)
         }
+        
+        isLike = data["is_like"] as? Bool
     }
 }

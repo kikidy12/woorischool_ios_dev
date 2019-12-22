@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,7 +22,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyPageViewController" customModule="우리스쿨" customModuleProvider="target">
             <connections>
+                <outlet property="childPointView" destination="QPj-gQ-UJy" id="3Qf-xn-fki"/>
                 <outlet property="childrenView" destination="ToY-64-XeT" id="1e7-3d-9KU"/>
+                <outlet property="profileImageView" destination="Txv-Ln-QfI" id="wz3-IN-jF4"/>
                 <outlet property="quaterClassListView" destination="Fqh-Ru-bev" id="gAC-25-7Jc"/>
                 <outlet property="userInfoLabel" destination="MuR-XN-xeT" id="kSc-y7-ojB"/>
                 <outlet property="userNameLabel" destination="Gcm-jM-hgB" id="NPH-GY-Xm2"/>
@@ -38,12 +40,17 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="878-xf-aWc">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="108"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilePlaceHolder" translatesAutoresizingMaskIntoConstraints="NO" id="Txv-Ln-QfI">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilePlaceHolder" translatesAutoresizingMaskIntoConstraints="NO" id="Txv-Ln-QfI" customClass="CustomImageView" customModule="우리스쿨" customModuleProvider="target">
                             <rect key="frame" x="26" y="20" width="58" height="58"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="58" id="DHc-vK-hnn"/>
                                 <constraint firstAttribute="width" constant="58" id="cvO-JK-U5f"/>
                             </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
+                                    <real key="value" value="29"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gcm-jM-hgB">
                             <rect key="frame" x="96" y="25" width="46.5" height="22.5"/>
@@ -78,6 +85,9 @@
                                     <color key="value" name="brownGrey"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="showEditProfileViewEvent" destination="-1" eventType="touchUpInside" id="6wK-NW-Ibg"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYP-NL-UTc">
                             <rect key="frame" x="147.5" y="25" width="46.5" height="22.5"/>
@@ -102,10 +112,10 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3AG-sc-9oS">
-                    <rect key="frame" x="0.0" y="118" width="375" height="525"/>
+                    <rect key="frame" x="0.0" y="118" width="375" height="580"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BqS-RY-YYM">
-                            <rect key="frame" x="26" y="10" width="323" height="495"/>
+                            <rect key="frame" x="26" y="10" width="323" height="550"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YAi-Cb-Ur3">
                                     <rect key="frame" x="0.0" y="0.0" width="323" height="55"/>
@@ -256,8 +266,57 @@
                                         <outletCollection property="gestureRecognizers" destination="lXk-q4-WkI" appends="YES" id="dpe-nS-nO3"/>
                                     </connections>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5kj-DZ-oQI">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QPj-gQ-UJy" userLabel="freePointView">
                                     <rect key="frame" x="0.0" y="165" width="323" height="55"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilePlaceHolder" translatesAutoresizingMaskIntoConstraints="NO" id="6uy-QU-TnF">
+                                            <rect key="frame" x="10" y="19" width="17" height="17"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="17" id="kln-rI-aBG"/>
+                                                <constraint firstAttribute="height" constant="17" id="yNm-XY-MTh"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="자율 수강권" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xFs-8p-sLf">
+                                            <rect key="frame" x="41" y="19" width="69.5" height="17.5"/>
+                                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="15"/>
+                                            <color key="textColor" name="greyishBrown"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rightBrace" translatesAutoresizingMaskIntoConstraints="NO" id="moh-6J-Wzr">
+                                            <rect key="frame" x="306" y="21" width="7" height="13"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="7" id="syQ-Ss-Gii"/>
+                                                <constraint firstAttribute="height" constant="13" id="vqc-oo-7UR"/>
+                                            </constraints>
+                                        </imageView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="I0A-qJ-gUK">
+                                            <rect key="frame" x="0.0" y="54" width="323" height="1"/>
+                                            <color key="backgroundColor" name="veryLightPink"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="g4a-dj-XXu"/>
+                                            </constraints>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <gestureRecognizers/>
+                                    <constraints>
+                                        <constraint firstItem="xFs-8p-sLf" firstAttribute="centerY" secondItem="QPj-gQ-UJy" secondAttribute="centerY" id="6MO-Hz-QW7"/>
+                                        <constraint firstAttribute="height" constant="55" id="Bve-Se-ZvX"/>
+                                        <constraint firstAttribute="trailing" secondItem="moh-6J-Wzr" secondAttribute="trailing" constant="10" id="NXi-xj-1tx"/>
+                                        <constraint firstAttribute="trailing" secondItem="I0A-qJ-gUK" secondAttribute="trailing" id="Vad-gf-DHL"/>
+                                        <constraint firstItem="moh-6J-Wzr" firstAttribute="centerY" secondItem="QPj-gQ-UJy" secondAttribute="centerY" id="XhZ-hM-nZa"/>
+                                        <constraint firstItem="I0A-qJ-gUK" firstAttribute="leading" secondItem="QPj-gQ-UJy" secondAttribute="leading" id="a5q-7M-4Fi"/>
+                                        <constraint firstItem="6uy-QU-TnF" firstAttribute="centerY" secondItem="QPj-gQ-UJy" secondAttribute="centerY" id="hsF-2u-l4Y"/>
+                                        <constraint firstAttribute="bottom" secondItem="I0A-qJ-gUK" secondAttribute="bottom" id="lRf-0A-jr7"/>
+                                        <constraint firstItem="xFs-8p-sLf" firstAttribute="leading" secondItem="6uy-QU-TnF" secondAttribute="trailing" constant="14" id="mzm-6E-cBK"/>
+                                        <constraint firstItem="6uy-QU-TnF" firstAttribute="leading" secondItem="QPj-gQ-UJy" secondAttribute="leading" constant="10" id="wmA-F9-GYQ"/>
+                                    </constraints>
+                                    <connections>
+                                        <outletCollection property="gestureRecognizers" destination="MRI-qu-sAM" appends="YES" id="idz-39-BrN"/>
+                                    </connections>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5kj-DZ-oQI">
+                                    <rect key="frame" x="0.0" y="220" width="323" height="55"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lockIcon" translatesAutoresizingMaskIntoConstraints="NO" id="AZD-hi-DNs">
                                             <rect key="frame" x="10" y="19" width="17" height="17"/>
@@ -307,7 +366,7 @@
                                     </connections>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lWK-Df-L77">
-                                    <rect key="frame" x="0.0" y="220" width="323" height="55"/>
+                                    <rect key="frame" x="0.0" y="275" width="323" height="55"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notiIcon" translatesAutoresizingMaskIntoConstraints="NO" id="q6p-Yc-khH">
                                             <rect key="frame" x="10" y="19" width="17" height="17"/>
@@ -357,7 +416,7 @@
                                     </connections>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4We-bh-JX3">
-                                    <rect key="frame" x="0.0" y="275" width="323" height="55"/>
+                                    <rect key="frame" x="0.0" y="330" width="323" height="55"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phoneIcon" translatesAutoresizingMaskIntoConstraints="NO" id="y3L-cz-b09">
                                             <rect key="frame" x="10" y="19" width="17" height="17"/>
@@ -407,7 +466,7 @@
                                     </connections>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wdz-pK-F6F">
-                                    <rect key="frame" x="0.0" y="330" width="323" height="55"/>
+                                    <rect key="frame" x="0.0" y="385" width="323" height="55"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="listIcon" translatesAutoresizingMaskIntoConstraints="NO" id="hLI-vj-PME">
                                             <rect key="frame" x="10" y="19" width="17" height="17"/>
@@ -457,7 +516,7 @@
                                     </connections>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7tc-pR-l8U">
-                                    <rect key="frame" x="0.0" y="385" width="323" height="55"/>
+                                    <rect key="frame" x="0.0" y="440" width="323" height="55"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoutIcon" translatesAutoresizingMaskIntoConstraints="NO" id="uYQ-rL-7A8">
                                             <rect key="frame" x="10" y="19" width="17" height="17"/>
@@ -507,7 +566,7 @@
                                     </connections>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="34n-3M-iez">
-                                    <rect key="frame" x="0.0" y="440" width="323" height="55"/>
+                                    <rect key="frame" x="0.0" y="495" width="323" height="55"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="resignIcon" translatesAutoresizingMaskIntoConstraints="NO" id="V2P-n0-ecT">
                                             <rect key="frame" x="10" y="19" width="17" height="17"/>
@@ -613,6 +672,11 @@
         <tapGestureRecognizer id="usa-kC-bu0" userLabel="resignTap">
             <connections>
                 <action selector="resignEvent" destination="-1" id="2zE-sS-F3V"/>
+            </connections>
+        </tapGestureRecognizer>
+        <tapGestureRecognizer id="MRI-qu-sAM" userLabel="freePointTap">
+            <connections>
+                <action selector="showStudentPointInfoListViewEvent" destination="-1" id="Foa-3r-PEa"/>
             </connections>
         </tapGestureRecognizer>
     </objects>

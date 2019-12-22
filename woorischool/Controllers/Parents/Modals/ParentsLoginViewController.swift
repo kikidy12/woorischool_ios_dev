@@ -43,7 +43,7 @@ extension ParentsLoginViewController {
         print(parameters)
         ServerUtil.shared.postPhoneAuth(self, parameters: parameters) { (success, dict, message) in
             guard success else {
-                AlertHandler.shared.showAlert(vc: self, message: message ?? "error", okTitle: "확인")
+                AlertHandler().showAlert(vc: self, message: message ?? "error", okTitle: "확인")
                 return
             }
         }
@@ -59,13 +59,23 @@ extension ParentsLoginViewController {
         print(parameters)
         ServerUtil.shared.postAuth(self, parameters: parameters) { (success, dict, message) in
             guard success, let user = dict?["user"] as? NSDictionary, let token = dict?["token"] as? String else {
-                AlertHandler.shared.showAlert(vc: self, message: message ?? "Server Error", okTitle: "확인")
+                AlertHandler().showAlert(vc: self, message: message ?? "Server Error", okTitle: "확인")
                 return
             }
             
             GlobalDatas.currentUser = UserData(user)
             UserDefs.setLastUserType(type: GlobalDatas.currentUser.type.rawValue)
             UserDefs.setUserToken(token: token)
+            
+            guard let name = GlobalDatas.currentUser.name, !name.isEmpty else {
+                let navi = UINavigationController(rootViewController: EditProfileViewController())
+                navi.navigationBar.tintColor = .black
+                navi.navigationBar.barTintColor = .white
+                navi.navigationBar.shadowImage = UIImage()
+                UIApplication.shared.keyWindow?.rootViewController = navi
+                
+                return
+            }
             
             if GlobalDatas.currentUser.childlen == nil {
                 UserDefs.setHasChildren(false)
@@ -78,7 +88,6 @@ extension ParentsLoginViewController {
                 navi.navigationBar.barTintColor = .white
                 navi.navigationBar.shadowImage = UIImage()
                 UIApplication.shared.keyWindow?.rootViewController = navi
-                
             }
         }
     }

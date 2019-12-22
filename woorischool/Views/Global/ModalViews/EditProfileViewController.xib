@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansCJKkr-Medium.otf">
+            <string>NotoSansCJKkr-Medium</string>
+        </array>
+        <array key="NotoSansCJKkr-Regular.otf">
+            <string>NotoSansCJKkr-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditProfileViewController" customModule="우리스쿨" customModuleProvider="target">
+            <connections>
+                <outlet property="nameTextField" destination="ZNl-3N-VVC" id="at6-4F-Tiy"/>
+                <outlet property="profileImaegView" destination="iEv-UK-IKR" id="hzj-vt-dAg"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilePlaceHolder" translatesAutoresizingMaskIntoConstraints="NO" id="iEv-UK-IKR" customClass="CustomImageView" customModule="우리스쿨" customModuleProvider="target">
+                    <rect key="frame" x="147.5" y="30" width="80" height="80"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="13o-s6-5OY"/>
+                        <constraint firstAttribute="height" constant="80" id="a6N-na-JUI"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
+                            <real key="value" value="40"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="pencil.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="tGg-wF-dZJ" customClass="CustomImageView" customModule="우리스쿨" customModuleProvider="target">
+                    <rect key="frame" x="198.5" y="81.5" width="34" height="33"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="tintColor" name="greenishTeal"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="34" id="J6o-jK-W17"/>
+                        <constraint firstAttribute="width" constant="34" id="MTo-oi-UAO"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
+                            <real key="value" value="17"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="프로필 사진과 닉네임을 입력해주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HqJ-id-CL0">
+                    <rect key="frame" x="30" y="150" width="315" height="17.5"/>
+                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="15"/>
+                    <color key="textColor" name="greyishBrown"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N33-Sp-Kfa" customClass="CustomView" customModule="우리스쿨" customModuleProvider="target">
+                    <rect key="frame" x="30" y="172.5" width="315" height="47"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZNl-3N-VVC">
+                            <rect key="frame" x="20" y="0.0" width="275" height="47"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="47" id="OKI-mC-8O6"/>
+                        <constraint firstItem="ZNl-3N-VVC" firstAttribute="leading" secondItem="N33-Sp-Kfa" secondAttribute="leading" constant="20" id="PHy-1M-cDc"/>
+                        <constraint firstAttribute="bottom" secondItem="ZNl-3N-VVC" secondAttribute="bottom" id="b1u-2W-H6Q"/>
+                        <constraint firstAttribute="trailing" secondItem="ZNl-3N-VVC" secondAttribute="trailing" constant="20" id="gTt-68-z0s"/>
+                        <constraint firstItem="ZNl-3N-VVC" firstAttribute="top" secondItem="N33-Sp-Kfa" secondAttribute="top" id="sJr-Ox-EY7"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" name="veryLightPink"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
+                            <real key="value" value="2"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* 사용 가능한 별명입니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPJ-lb-BhP">
+                    <rect key="frame" x="30" y="224.5" width="128" height="15.5"/>
+                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="13"/>
+                    <color key="textColor" name="greenishTeal"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="iEv-UK-IKR" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="0An-hT-yfs"/>
+                <constraint firstItem="HqJ-id-CL0" firstAttribute="top" secondItem="iEv-UK-IKR" secondAttribute="bottom" constant="40" id="3gb-iO-cYg"/>
+                <constraint firstItem="tGg-wF-dZJ" firstAttribute="trailing" secondItem="iEv-UK-IKR" secondAttribute="trailing" constant="5" id="6P4-Gq-CMm"/>
+                <constraint firstItem="N33-Sp-Kfa" firstAttribute="top" secondItem="HqJ-id-CL0" secondAttribute="bottom" constant="5" id="AZ7-Q6-f8H"/>
+                <constraint firstItem="N33-Sp-Kfa" firstAttribute="leading" secondItem="HqJ-id-CL0" secondAttribute="leading" id="JcN-xF-Ov4"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="HqJ-id-CL0" secondAttribute="trailing" constant="30" id="M1g-JL-L2p"/>
+                <constraint firstItem="iEv-UK-IKR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ZLe-hV-MTZ"/>
+                <constraint firstItem="HqJ-id-CL0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="aQ0-Te-U5h"/>
+                <constraint firstItem="tPJ-lb-BhP" firstAttribute="top" secondItem="N33-Sp-Kfa" secondAttribute="bottom" constant="5" id="b7f-vS-Pai"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="N33-Sp-Kfa" secondAttribute="trailing" constant="30" id="eBj-mJ-OuI"/>
+                <constraint firstItem="tPJ-lb-BhP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="twY-JT-FL9"/>
+                <constraint firstItem="tGg-wF-dZJ" firstAttribute="bottom" secondItem="iEv-UK-IKR" secondAttribute="bottom" constant="5" id="uv3-FH-TyD"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="139" y="90"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="pencil.circle" catalog="system" width="64" height="60"/>
+        <image name="profilePlaceHolder" width="60" height="60"/>
+        <namedColor name="greenishTeal">
+            <color red="0.17254901960784313" green="0.77647058823529413" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="greyishBrown">
+            <color red="0.29019607843137257" green="0.29019607843137257" blue="0.29019607843137257" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="veryLightPink">
+            <color red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

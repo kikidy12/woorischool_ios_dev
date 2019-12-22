@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class UserData: NSObject {
     var id: Int!
@@ -14,6 +15,9 @@ class UserData: NSObject {
     var name: String!
     var phoneNum: String!
     var email: String!
+    var point: Int!
+    
+    var profileImage: UIImage!
     
     var attendence: AttendenceType!
     
@@ -26,10 +30,12 @@ class UserData: NSObject {
     }
     
     init(_ data: NSDictionary) {
+        super.init()
         id = data["id"] as? Int
         name = data["name"] as? String
         email = data["email"] as? String
         phoneNum = data["phone_num"] as? String
+        point = data["point"] as? Int
         if let typeStr = data["type"] as? String {
             type = UserType(rawValue: typeStr)
         }
@@ -44,6 +50,20 @@ class UserData: NSObject {
         
         if let str = data["attendance"] as? String {
             attendence = AttendenceType(rawValue: str)
+        }
+        
+        if let urlStr = data["profile_image_url"] as? String, let url = URL(string: urlStr) {
+            KingfisherManager.shared.retrieveImage(with: url, completionHandler: { (result) in
+                switch result {
+                case .success(let value):
+                    self.profileImage = value.image
+                    break
+                case .failure(let error):
+                    print(error)
+                    self.profileImage = nil
+                    break
+                }
+            })
         }
     }
 }

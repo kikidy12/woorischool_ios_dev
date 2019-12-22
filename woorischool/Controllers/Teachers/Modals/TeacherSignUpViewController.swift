@@ -117,7 +117,7 @@ extension TeacherSignUpViewController {
         
         ServerUtil.shared.postTeacherEmailCheck(self, parameters: parameters) { (success, dict, message) in
             guard success else {
-                AlertHandler.shared.showAlert(vc: self, message: message ?? "Server Error", okTitle: "확인")
+                AlertHandler().showAlert(vc: self, message: message ?? "Server Error", okTitle: "확인")
                 return
             }
             self.emailCheck = true
@@ -145,7 +145,7 @@ extension TeacherSignUpViewController {
         parameters["password"] = password
         ServerUtil.shared.putAuth(self, parameters: parameters) { (success, dict, message) in
             guard success, let token = dict?["token"] as? String else {
-                AlertHandler.shared.showAlert(vc: self, message: message ?? "Server Error", okTitle: "확인")
+                AlertHandler().showAlert(vc: self, message: message ?? "Server Error", okTitle: "확인")
                 return
             }
             UserDefs.setLastUserType(type: "TEACHER")

@@ -85,6 +85,11 @@ class ServerUtil: NSObject {
         apiRequest("v2_board", method: .post, parameters: parameters, completion: completion)
     }
     
+    func postLike(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("like", method: .post, parameters: parameters, completion: completion)
+    }
+    
     func deleteV2Board(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
         currentVc = vc
         apiRequest("v2_board", method: .delete, parameters: parameters, completion: completion)
@@ -135,6 +140,11 @@ class ServerUtil: NSObject {
     func getMeInfo(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
         currentVc = vc
         apiRequest("me_info", method: .get, parameters: parameters, completion: completion)
+    }
+    
+    func postPointLectureApply(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("point_lecture_apply", method: .post, parameters: parameters, completion: completion)
     }
     
     func postAuth(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
@@ -296,6 +306,11 @@ class ServerUtil: NSObject {
         uploadRequest("auth", method: .put, showUploadProgress: true, multipartFormData: multipartFormData, completion: completion)
     }
     
+    func patchAuth(vc: UIViewController, multipartFormData: @escaping (MultipartFormData) -> Void, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        uploadRequest("auth", method: .patch, showUploadProgress: true, multipartFormData: multipartFormData, completion: completion)
+    }
+    
     func putV2Announcement(vc: UIViewController, multipartFormData: @escaping (MultipartFormData) -> Void, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
         currentVc = vc
         uploadRequest("v2_announcement", method: .put, showUploadProgress: true, multipartFormData: multipartFormData, completion: completion)
@@ -336,7 +351,7 @@ extension ServerUtil {
     
     var headerCheck: Bool {
         if headers["X-Http-Token"]!.isEmpty {
-            AlertHandler.shared.showAlert(vc: currentVc, message: "Token Error", okTitle: "확인")
+            AlertHandler().showAlert(vc: currentVc, message: "Token Error", okTitle: "확인")
             return false
         }
         else {
@@ -407,7 +422,7 @@ extension ServerUtil {
         progressLabel.removeFromSuperview()
         guard let result = response.result.value as? NSDictionary else {
             completion(false ,nil, nil)
-            AlertHandler.shared.showAlert(vc: currentVc, message: "Server Error", okTitle: "확인")
+            AlertHandler().showAlert(vc: currentVc, message: "Server Error", okTitle: "확인")
             return
         }
         
@@ -425,7 +440,7 @@ extension ServerUtil {
         
         guard let code = result["code"] as? Int else {
             completion(false ,nil, nil)
-            AlertHandler.shared.showAlert(vc: currentVc, message: "Server Error", okTitle: "확인")
+            AlertHandler().showAlert(vc: currentVc, message: "Server Error", okTitle: "확인")
             return
         }
         guard code == 200 || code == 201 else {
@@ -433,7 +448,7 @@ extension ServerUtil {
                 completion(false ,nil, message)
             }
             else {
-                AlertHandler.shared.showAlert(vc: currentVc, message: "Server Error", okTitle: "확인")
+                AlertHandler().showAlert(vc: currentVc, message: "Server Error", okTitle: "확인")
                 completion(false ,nil, nil)
             }
             return

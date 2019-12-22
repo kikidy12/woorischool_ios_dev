@@ -62,6 +62,7 @@ class BoardDetailViewController: UIViewController {
     @IBOutlet weak var boardImageCollectionView: UICollectionView!
     @IBOutlet weak var imageContainerView: UIView!
     
+    @IBOutlet weak var likeImageView: UIImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -91,10 +92,23 @@ class BoardDetailViewController: UIViewController {
         tempEmoView.isHidden = true
     }
     
+    @IBAction func likeCheckEvent() {
+        likeCheck()
+    }
+    
     func settingNaviBar() {
         rightBarBtnItem = UIBarButtonItem(image: UIImage(named:"moreIcon"), style: .plain, target: self, action: #selector(showActionSheet))
         if board?.postingUser?.id == GlobalDatas.currentUser.id {
             navigationItem.rightBarButtonItem = rightBarBtnItem
+        }
+    }
+    
+    func setLike(isLike: Bool) {
+        if isLike {
+            likeImageView.image = UIImage(named: "heartfillIcon")
+        }
+        else {
+            likeImageView.image = UIImage(named: "heartemptycon")
         }
     }
     
@@ -110,7 +124,7 @@ class BoardDetailViewController: UIViewController {
             self.show(vc, sender: nil)
         }
         let deleteAction = UIAlertAction(title: "삭제하기", style: .destructive) { (_) in
-            AlertHandler.shared.showAlert(vc: self, message: "삭제하시겠습니까?", okTitle: "삭제", cancelTitle: "취소", okHandler: { (_) in
+            AlertHandler().showAlert(vc: self, message: "삭제하시겠습니까?", okTitle: "삭제", cancelTitle: "취소", okHandler: { (_) in
                 self.deleteBoard()
             })
         }
@@ -147,7 +161,7 @@ class BoardDetailViewController: UIViewController {
             imageCountLabel.text = "\(1)/\(board.imageList.count)"
             imageCountLabel.isHidden = false
         }
-        
+        setLike(isLike: board.isLike)
         boardImageCollectionView.reloadData()
     }
 }
@@ -246,6 +260,13 @@ extension BoardDetailViewController: UICollectionViewDelegate, UICollectionViewD
         return .init(top: 0, left: 0, bottom: 0, right: 0)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let vc = PhotoDetailShowViewViewController()
+        vc.imageList = board.imageList
+        vc.index = indexPath.item
+        showPopupView(vc: vc)
+    }
+    
 }
 
 extension BoardDetailViewController {
@@ -331,6 +352,19 @@ extension BoardDetailViewController {
             }
             self.board = BoardData(data)
             self.settingBoard()
+        }
+    }
+    
+    func likeCheck() {
+        let parameters = [
+            "board_id": board.id!
+        ] as [String:Any]
+        ServerUtil.shared.postLike(self, parameters: parameters) { (success, dict, message) in
+            guard success, let isLike = dict?["is_like"] as? Bool, let likeCount = dict?["like_count"] as? Int else {
+                return
+            }
+            self.setLike(isLike: isLike)
+            self.likeCountLabel.text = "+\(likeCount)"
         }
     }
 }

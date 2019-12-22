@@ -26,6 +26,7 @@ class RegistedClassTableViewCell: UITableViewCell {
     @IBOutlet weak var classTimeLabel: UILabel!
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var countLabel: UILabel!
+    @IBOutlet weak var readyTitleLabel: UILabel!
     
     @IBOutlet weak var applyBtn: CustomButton!
     
@@ -47,7 +48,7 @@ class RegistedClassTableViewCell: UITableViewCell {
         cancelClouser()
     }
     
-    func initView(_ data: LectureClassData, type: String) {
+    func initView(_ data: LectureClassData, type: String, quater: QuaterData) {
         lectureClass = data
         numberFormatter.numberStyle = .decimal
         guard let lecture = lectureClass.lecture else { return }
@@ -67,11 +68,23 @@ class RegistedClassTableViewCell: UITableViewCell {
             classTimeLabel.text = "-"
         }
         
-        if type == "APPLY" {
-            applyBtn.isHidden = false
+        if type == "CONFIRM" {
+            applyBtn.isHidden = true
+            readyTitleLabel.isHidden = true
+            countLabel.isHidden = true
         }
         else {
-            applyBtn.isHidden = true
+            applyBtn.isHidden = false
+            if quater.type == .first {
+                readyTitleLabel.isHidden = false
+                countLabel.isHidden = false
+            }
+            else {
+                readyTitleLabel.isHidden = false
+                countLabel.isHidden = false
+            }
         }
+        
+        
     }
 }

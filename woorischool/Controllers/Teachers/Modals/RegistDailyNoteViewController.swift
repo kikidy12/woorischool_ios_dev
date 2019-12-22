@@ -254,7 +254,7 @@ extension RegistDailyNoteViewController {
         print(parameters)
         ServerUtil.shared.postV2Announcement(self, parameters: parameters) { (success, dict, message) in
             guard success else {
-                AlertHandler.shared.showAlert(vc: self, message: message ?? "Server Error", okTitle: "확인")
+                AlertHandler().showAlert(vc: self, message: message ?? "Server Error", okTitle: "확인")
                 return
             }
             guard let dailynote = dict?["announcement"] as? NSDictionary else {

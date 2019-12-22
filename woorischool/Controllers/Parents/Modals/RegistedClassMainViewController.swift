@@ -10,7 +10,18 @@ import UIKit
 
 class RegistedClassMainViewController: UIViewController {
     
-    var type: String = "APPLY"
+    var type: String = "CONFIRM"
+    
+    var quater: QuaterData! {
+        didSet {
+            if type == "CONFIRM" {
+                setHeaderViews(headerFirstBtn)
+            }
+            else {
+                setHeaderViews(headerSecondBtn)
+            }
+        }
+    }
     
     var lectureClassList = [LectureClassData]() {
         didSet {
@@ -57,12 +68,7 @@ class RegistedClassMainViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if type == "APPLY" {
-            setHeaderViews(headerFirstBtn)
-        }
-        else {
-            setHeaderViews(headerSecondBtn)
-        }
+        getQuater()
     }
     
     func setHeaderViews(_ sender: UIButton) {
@@ -75,7 +81,7 @@ class RegistedClassMainViewController: UIViewController {
                 btn.setTitleColor(.brownGrey, for: .normal)
                 lineView.backgroundColor = .clear
             }
-            type = "APPLY"
+            type = "CONFIRM"
         }
         if sender.superview == headerSecondView {
             if let lineView = headerSecondView.subviews.last {
@@ -103,7 +109,7 @@ class RegistedClassMainViewController: UIViewController {
 extension RegistedClassMainViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if let cell = cell as? RegistedClassTableViewCell {
-            cell.initView(lectureClassList[indexPath.item], type: type)
+            cell.initView(lectureClassList[indexPath.item], type: type, quater: quater)
         }
         if indexPath.item == (tableView.indexPathsForVisibleRows!.last!).item {
             classTableViewHeightConstraint.constant = cell.frame.height * CGFloat(lectureClassList.count)
@@ -128,7 +134,7 @@ extension RegistedClassMainViewController: UITableViewDelegate, UITableViewDataS
         }
         
         cell.cancelClouser = {
-            AlertHandler.shared.showAlert(vc: self, message: "취소하시겠습니까?", okTitle: "확인", cancelTitle: "닫기", okHandler: { (_) in
+            AlertHandler().showAlert(vc: self, message: "취소하시겠습니까?", okTitle: "확인", cancelTitle: "닫기", okHandler: { (_) in
                 guard let id = self.lectureClassList[indexPath.item].applyId else { return }
                 self.cancelClass(id: id)
             })
@@ -168,6 +174,17 @@ extension RegistedClassMainViewController {
             }
             
             self.getLectureClass()
+        }
+    }
+    
+    func getQuater() {
+        
+        ServerUtil.shared.getSchoolQuarterInfo(self) { (success, dict, message) in
+            guard success, let quater = dict?["school_quarter"] as? NSDictionary else {
+                return
+            }
+            
+            self.quater = QuaterData(quater)
         }
     }
 }

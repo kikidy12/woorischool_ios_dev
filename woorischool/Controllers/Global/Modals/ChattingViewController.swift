@@ -93,7 +93,6 @@ class ChattingViewController: UIViewController {
 }
 
 extension ChattingViewController: CustomInputViewDelegate {
-    
     func sendMessage(message: String, image: UIImage?) {
         if !tempEmoView.isHidden, let emoticon = selectedEmoticon {
             addChat(message: message, image: image, emoticon: emoticon)

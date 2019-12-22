@@ -179,6 +179,10 @@
 		996EA4D923739849000C6D34 /* MyPageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 996EA4D723739849000C6D34 /* MyPageViewController.xib */; };
 		996FE81823A3889C003872D4 /* PhotoDetailShowViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996FE81623A3889C003872D4 /* PhotoDetailShowViewViewController.swift */; };
 		996FE81923A3889C003872D4 /* PhotoDetailShowViewViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 996FE81723A3889C003872D4 /* PhotoDetailShowViewViewController.xib */; };
+		996FE81C23A3F65F003872D4 /* ClassRegistPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996FE81A23A3F65F003872D4 /* ClassRegistPopupViewController.swift */; };
+		996FE81D23A3F65F003872D4 /* ClassRegistPopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 996FE81B23A3F65F003872D4 /* ClassRegistPopupViewController.xib */; };
+		996FE86023A750C3003872D4 /* ImageDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996FE85E23A750C3003872D4 /* ImageDetailCollectionViewCell.swift */; };
+		996FE86123A750C3003872D4 /* ImageDetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 996FE85F23A750C3003872D4 /* ImageDetailCollectionViewCell.xib */; };
 		99766E1723711FAE002573FD /* SchoolData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99766E1623711FAE002573FD /* SchoolData.swift */; };
 		99CF8697238560CF00812A36 /* ImagePagingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CF8695238560CF00812A36 /* ImagePagingCollectionViewCell.swift */; };
 		99CF8698238560CF00812A36 /* ImagePagingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99CF8696238560CF00812A36 /* ImagePagingCollectionViewCell.xib */; };
@@ -224,6 +228,12 @@
 		99F7DC9E23470EA9007C4ABE /* RegistedClassMainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99F7DC9C23470EA9007C4ABE /* RegistedClassMainViewController.xib */; };
 		99F7DCA323471F86007C4ABE /* FillClassPopUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F7DCA123471F86007C4ABE /* FillClassPopUpViewController.swift */; };
 		99F7DCA423471F86007C4ABE /* FillClassPopUpViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99F7DCA223471F86007C4ABE /* FillClassPopUpViewController.xib */; };
+		99FAB1B223AF125400CE0D3A /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FAB1B023AF125400CE0D3A /* EditProfileViewController.swift */; };
+		99FAB1B323AF125400CE0D3A /* EditProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99FAB1B123AF125400CE0D3A /* EditProfileViewController.xib */; };
+		99FAB1B623AF30DD00CE0D3A /* ChildInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FAB1B423AF30DD00CE0D3A /* ChildInfoTableViewCell.swift */; };
+		99FAB1B723AF30DD00CE0D3A /* ChildInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99FAB1B523AF30DD00CE0D3A /* ChildInfoTableViewCell.xib */; };
+		99FAB1BA23AF339C00CE0D3A /* ChildPointListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FAB1B823AF339C00CE0D3A /* ChildPointListViewController.swift */; };
+		99FAB1BB23AF339C00CE0D3A /* ChildPointListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99FAB1B923AF339C00CE0D3A /* ChildPointListViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -426,6 +436,10 @@
 		996EA4D723739849000C6D34 /* MyPageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyPageViewController.xib; sourceTree = "<group>"; };
 		996FE81623A3889C003872D4 /* PhotoDetailShowViewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailShowViewViewController.swift; sourceTree = "<group>"; };
 		996FE81723A3889C003872D4 /* PhotoDetailShowViewViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhotoDetailShowViewViewController.xib; sourceTree = "<group>"; };
+		996FE81A23A3F65F003872D4 /* ClassRegistPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassRegistPopupViewController.swift; sourceTree = "<group>"; };
+		996FE81B23A3F65F003872D4 /* ClassRegistPopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassRegistPopupViewController.xib; sourceTree = "<group>"; };
+		996FE85E23A750C3003872D4 /* ImageDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		996FE85F23A750C3003872D4 /* ImageDetailCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageDetailCollectionViewCell.xib; sourceTree = "<group>"; };
 		99766E1623711FAE002573FD /* SchoolData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolData.swift; sourceTree = "<group>"; };
 		99CF8695238560CF00812A36 /* ImagePagingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePagingCollectionViewCell.swift; sourceTree = "<group>"; };
 		99CF8696238560CF00812A36 /* ImagePagingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImagePagingCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -472,6 +486,12 @@
 		99F7DC9C23470EA9007C4ABE /* RegistedClassMainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistedClassMainViewController.xib; sourceTree = "<group>"; };
 		99F7DCA123471F86007C4ABE /* FillClassPopUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FillClassPopUpViewController.swift; sourceTree = "<group>"; };
 		99F7DCA223471F86007C4ABE /* FillClassPopUpViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FillClassPopUpViewController.xib; sourceTree = "<group>"; };
+		99FAB1B023AF125400CE0D3A /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		99FAB1B123AF125400CE0D3A /* EditProfileViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditProfileViewController.xib; sourceTree = "<group>"; };
+		99FAB1B423AF30DD00CE0D3A /* ChildInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildInfoTableViewCell.swift; sourceTree = "<group>"; };
+		99FAB1B523AF30DD00CE0D3A /* ChildInfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChildInfoTableViewCell.xib; sourceTree = "<group>"; };
+		99FAB1B823AF339C00CE0D3A /* ChildPointListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildPointListViewController.swift; sourceTree = "<group>"; };
+		99FAB1B923AF339C00CE0D3A /* ChildPointListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChildPointListViewController.xib; sourceTree = "<group>"; };
 		C63EB5231703A402FC52CEED /* Pods-woorischoolUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-woorischoolUITests.release.xcconfig"; path = "Target Support Files/Pods-woorischoolUITests/Pods-woorischoolUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CECCFAD86527E37AA122206D /* Pods-woorischoolTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-woorischoolTests.release.xcconfig"; path = "Target Support Files/Pods-woorischoolTests/Pods-woorischoolTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -589,6 +609,8 @@
 				994907D52398DBC600A6D1F6 /* MyClassRecordTableViewCell.swift */,
 				994907F3239E362B00A6D1F6 /* OtherChattingTableViewCell.swift */,
 				994907EB239DE47D00A6D1F6 /* MyChattingTableViewCell.swift */,
+				996FE85E23A750C3003872D4 /* ImageDetailCollectionViewCell.swift */,
+				99FAB1B423AF30DD00CE0D3A /* ChildInfoTableViewCell.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -667,6 +689,8 @@
 				99DFB17E2355808200C5B69D /* ManageChildrenViewController.swift */,
 				99057902236BD06B002842AB /* ParentsEnrolmentClassViewController.swift */,
 				991182F3236CF84B0020D6CE /* DailyNotiViewController.swift */,
+				99FAB1B823AF339C00CE0D3A /* ChildPointListViewController.swift */,
+				99FAB1B923AF339C00CE0D3A /* ChildPointListViewController.xib */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
@@ -725,6 +749,8 @@
 				994907A92394C10000A6D1F6 /* SearchSchoolViewController.xib */,
 				994907B723978F1A00A6D1F6 /* QuarterClassListViewController.xib */,
 				994907E0239D10FB00A6D1F6 /* ChattingViewController.xib */,
+				996FE81723A3889C003872D4 /* PhotoDetailShowViewViewController.xib */,
+				99FAB1B123AF125400CE0D3A /* EditProfileViewController.xib */,
 			);
 			path = ModalViews;
 			sourceTree = "<group>";
@@ -766,7 +792,7 @@
 				994907B623978F1A00A6D1F6 /* QuarterClassListViewController.swift */,
 				994907DF239D10FB00A6D1F6 /* ChattingViewController.swift */,
 				996FE81623A3889C003872D4 /* PhotoDetailShowViewViewController.swift */,
-				996FE81723A3889C003872D4 /* PhotoDetailShowViewViewController.xib */,
+				99FAB1B023AF125400CE0D3A /* EditProfileViewController.swift */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
@@ -802,6 +828,8 @@
 				994907D62398DBC600A6D1F6 /* MyClassRecordTableViewCell.xib */,
 				994907E8239DE46C00A6D1F6 /* OtherChattingTableViewCell.xib */,
 				994907EC239DE47D00A6D1F6 /* MyChattingTableViewCell.xib */,
+				996FE85F23A750C3003872D4 /* ImageDetailCollectionViewCell.xib */,
+				99FAB1B523AF30DD00CE0D3A /* ChildInfoTableViewCell.xib */,
 			);
 			path = VIews;
 			sourceTree = "<group>";
@@ -1020,6 +1048,7 @@
 				99DFB13C234F7AE400C5B69D /* RegistClassPopupViewController.swift */,
 				99DFB1692354236600C5B69D /* ConfirmClassViewController.swift */,
 				99CF869F2387739600812A36 /* PSDailyNoteViewController.swift */,
+				996FE81A23A3F65F003872D4 /* ClassRegistPopupViewController.swift */,
 			);
 			path = Popups;
 			sourceTree = "<group>";
@@ -1032,6 +1061,7 @@
 				99DFB13D234F7AE400C5B69D /* RegistClassPopupViewController.xib */,
 				99DFB16A2354236600C5B69D /* ConfirmClassViewController.xib */,
 				99CF86A02387739600812A36 /* PSDailyNoteViewController.xib */,
+				996FE81B23A3F65F003872D4 /* ClassRegistPopupViewController.xib */,
 			);
 			path = PopupViews;
 			sourceTree = "<group>";
@@ -1150,6 +1180,7 @@
 				99088BE6237CF3D8009C9AE6 /* DailyNoteTableViewCell.xib in Resources */,
 				991182D2236BE0460020D6CE /* BoardListTableViewCell.xib in Resources */,
 				991182E2236C8F9D0020D6CE /* BoardReplyTableViewCell.xib in Resources */,
+				99FAB1B723AF30DD00CE0D3A /* ChildInfoTableViewCell.xib in Resources */,
 				991182D6236C60CF0020D6CE /* ClassBoardListViewController.xib in Resources */,
 				9914A9FD23431447001C0112 /* NotoSansCJKkr-Light.otf in Resources */,
 				9968CF3923418F3500B8D095 /* LaunchScreen.storyboard in Resources */,
@@ -1163,6 +1194,7 @@
 				9915B61423631F4700ACE9B6 /* TeacherMainViewController.xib in Resources */,
 				9914AA352346FC4B001C0112 /* ParentsHomeScheduleTableViewCell.xib in Resources */,
 				9915B610236307A400ACE9B6 /* TeacherPhoneAuthViewController.xib in Resources */,
+				99FAB1BB23AF339C00CE0D3A /* ChildPointListViewController.xib in Resources */,
 				9914A9FC23431447001C0112 /* NotoSansCJKkr-Black.otf in Resources */,
 				99088BCE2375413D009C9AE6 /* NotiListViewController.xib in Resources */,
 				994907EA239DE46C00A6D1F6 /* OtherChattingTableViewCell.xib in Resources */,
@@ -1210,12 +1242,15 @@
 				9914AA042343174A001C0112 /* NanumSquareRound-Light.otf in Resources */,
 				9914A9FE23431447001C0112 /* NotoSansMonoCJKkr-Regular.otf in Resources */,
 				99CF8698238560CF00812A36 /* ImagePagingCollectionViewCell.xib in Resources */,
+				996FE81D23A3F65F003872D4 /* ClassRegistPopupViewController.xib in Resources */,
 				9962A4C623470B160027FEB6 /* RegistedClassTableViewCell.xib in Resources */,
 				991182DA236C618A0020D6CE /* ClassBoardTableViewCell.xib in Resources */,
 				991182FC236D7E000020D6CE /* EmoticonCollectionViewCell.xib in Resources */,
 				9914A9FF23431447001C0112 /* NotoSansCJKkr-Bold.otf in Resources */,
 				9914AA272345C12C001C0112 /* ParentsHomeViewController.xib in Resources */,
 				9915B61923633A4800ACE9B6 /* MainTitleView.xib in Resources */,
+				996FE86123A750C3003872D4 /* ImageDetailCollectionViewCell.xib in Resources */,
+				99FAB1B323AF125400CE0D3A /* EditProfileViewController.xib in Resources */,
 				99CF86A22387739600812A36 /* PSDailyNoteViewController.xib in Resources */,
 				99088BD223754235009C9AE6 /* NotiTableViewCell.xib in Resources */,
 				994907D82398DBC600A6D1F6 /* MyClassRecordTableViewCell.xib in Resources */,
@@ -1362,9 +1397,11 @@
 				994A6B2F235ED5770088D46E /* StudentHomeViewController.swift in Sources */,
 				9956BF822366C3850069E661 /* ParentsMainViewController.swift in Sources */,
 				99DFB16B2354236600C5B69D /* ConfirmClassViewController.swift in Sources */,
+				996FE86023A750C3003872D4 /* ImageDetailCollectionViewCell.swift in Sources */,
 				99DFB13A234F736F00C5B69D /* ClassInfoPopupViewController.swift in Sources */,
 				99DFB133234EFBAB00C5B69D /* GlobalDatas.swift in Sources */,
 				9956BF8A23672A2E0069E661 /* SPHomeClassInfoCollectionViewCell.swift in Sources */,
+				996FE81C23A3F65F003872D4 /* ClassRegistPopupViewController.swift in Sources */,
 				994907B823978F1A00A6D1F6 /* QuarterClassListViewController.swift in Sources */,
 				994907ED239DE47D00A6D1F6 /* MyChattingTableViewCell.swift in Sources */,
 				9914AA342346FC4B001C0112 /* ParentsHomeScheduleTableViewCell.swift in Sources */,
@@ -1399,11 +1436,13 @@
 				994907D22398DAC700A6D1F6 /* MyRegistCourseHeaderView.swift in Sources */,
 				99DFB1772355671500C5B69D /* RegistClassCompleteListViewController.swift in Sources */,
 				99468CE62372823E00AAB535 /* RegistDailyNoteViewController.swift in Sources */,
+				99FAB1B223AF125400CE0D3A /* EditProfileViewController.swift in Sources */,
 				99DFB184235581E300C5B69D /* ChildTableViewCell.swift in Sources */,
 				99088BF423829170009C9AE6 /* ReplyData.swift in Sources */,
 				994907B52394F8D800A6D1F6 /* QuaterData.swift in Sources */,
 				994907A72394AE2100A6D1F6 /* AlarmData.swift in Sources */,
 				994907A02394AAFF00A6D1F6 /* AlarmListViewController.swift in Sources */,
+				99FAB1BA23AF339C00CE0D3A /* ChildPointListViewController.swift in Sources */,
 				99088BD823755179009C9AE6 /* ChattingRoomTableHeaderView.swift in Sources */,
 				9914AA262345C12C001C0112 /* ParentsHomeViewController.swift in Sources */,
 				991182D9236C618A0020D6CE /* ClassBoardTableViewCell.swift in Sources */,
@@ -1451,6 +1490,7 @@
 				9915B60F236307A400ACE9B6 /* TeacherPhoneAuthViewController.swift in Sources */,
 				9914A9D523430AC6001C0112 /* CustomViews.swift in Sources */,
 				99088BF223828B3D009C9AE6 /* BoardData.swift in Sources */,
+				99FAB1B623AF30DD00CE0D3A /* ChildInfoTableViewCell.swift in Sources */,
 				99118310236EBC090020D6CE /* EmoticonDatas.swift in Sources */,
 				994907AD2394C4F800A6D1F6 /* SearchView.swift in Sources */,
 				9914A9D1234309BB001C0112 /* Extensions+Obejcts.swift in Sources */,
@@ -1644,14 +1684,14 @@
 				CODE_SIGN_ENTITLEMENTS = woorischool/woorischool.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4TNGT36HA9;
 				INFOPLIST_FILE = woorischool/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.beanfactory.woorischool;
 				PRODUCT_NAME = "우리스쿨";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1668,14 +1708,14 @@
 				CODE_SIGN_ENTITLEMENTS = woorischool/woorischool.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4TNGT36HA9;
 				INFOPLIST_FILE = woorischool/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.beanfactory.woorischool;
 				PRODUCT_NAME = "우리스쿨";
 				PROVISIONING_PROFILE_SPECIFIER = "";

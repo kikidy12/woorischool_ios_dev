@@ -121,7 +121,7 @@ extension TeacherHomeViewController {
             
             ServerUtil.shared.getV2MeInfo(self, parameters: paramterts) { (success, dict, message) in
                 guard success, let array = dict?["lecture_class"] as? NSArray else {
-                    AlertHandler.shared.showAlert(vc: self, message: message ?? "Server Error", okTitle: "확인")
+                    AlertHandler().showAlert(vc: self, message: message ?? "Server Error", okTitle: "확인")
                     return
                 }
                 

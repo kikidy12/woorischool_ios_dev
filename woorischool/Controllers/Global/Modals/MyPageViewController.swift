@@ -15,23 +15,34 @@ class MyPageViewController: UIViewController {
     @IBOutlet weak var userTypeLabel: UILabel!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var userInfoLabel: UILabel!
-    
+    @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var childrenView: UIView!
+    @IBOutlet weak var childPointView: UIView!
     @IBOutlet weak var quaterClassListView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
         userNameLabel.text = GlobalDatas.currentUser.name
         if userType == .parents {
             userTypeLabel.isHidden = true
+            childPointView.isHidden = false
+            quaterClassListView.isHidden = false
+            childrenView.isHidden = false
             userInfoLabel.text = GlobalDatas.currentUser.phoneNum
         }
         else {
             childrenView.isHidden = true
+            childPointView.isHidden = true
             quaterClassListView.isHidden = true
             userTypeLabel.text = "선생님"
             userInfoLabel.text = GlobalDatas.currentUser.email
         }
+        
+        profileImageView.image = GlobalDatas.currentUser.profileImage
     }
     
     @IBAction func showMyBoardListEvent() {
@@ -66,8 +77,19 @@ class MyPageViewController: UIViewController {
         
     }
     
+    @IBAction func showStudentPointInfoListViewEvent() {
+        let vc = ChildPointListViewController()
+        self.show(vc, sender: nil)
+    }
+    
+    @IBAction func showEditProfileViewEvent() {
+        let vc = EditProfileViewController()
+        vc.isEditMode = true
+        self.show(vc, sender: nil)
+    }
+    
     @IBAction func logoutEvent() {
-        AlertHandler.shared.showAlert(vc: self, message: "로그아웃 하시겠습니까", okTitle: "로그아웃", cancelTitle: "취소", okHandler: { (_) in
+        AlertHandler().showAlert(vc: self, message: "로그아웃 하시겠습니까", okTitle: "로그아웃", cancelTitle: "취소", okHandler: { (_) in
             self.logout()
         })
     }

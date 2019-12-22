@@ -21,6 +21,8 @@ class QuaterData: NSObject {
     var applyEndDate: Date!
     var applyStartDate: Date!
     
+    var type: QuaterType = .first
+    
     var lectureClassList = [LectureClassData]()
     
     var applyPeriodStr: String {
@@ -57,6 +59,10 @@ class QuaterData: NSObject {
         
         if let array = data["lecture_class"] as? NSArray {
             lectureClassList = array.compactMap { LectureClassData($0 as! NSDictionary) }
+        }
+        
+        if let str = data["type"] as? String {
+            self.type = QuaterType(rawValue: str) ?? .first
         }
     }
 }

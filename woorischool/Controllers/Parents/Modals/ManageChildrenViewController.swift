@@ -90,7 +90,7 @@ extension ManageChildrenViewController {
         ] as [String:Any]
         ServerUtil.shared.deleteParentStudent(self, parameters: parameters) { (success, dict, message) in
             guard success else {
-                AlertHandler.shared.showAlert(vc: self, message: message ?? "serverError", okTitle: "확인")
+                AlertHandler().showAlert(vc: self, message: message ?? "serverError", okTitle: "확인")
                 return
             }
             
@@ -104,7 +104,7 @@ extension ManageChildrenViewController {
         ] as [String:Any]
         ServerUtil.shared.patchParentStudent(self, parameters: parameters) { (success, dict, message) in
             guard success else {
-                AlertHandler.shared.showAlert(vc: self, message: message ?? "serverError", okTitle: "확인")
+                AlertHandler().showAlert(vc: self, message: message ?? "serverError", okTitle: "확인")
                 return
             }
             

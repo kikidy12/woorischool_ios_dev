@@ -206,7 +206,7 @@ extension TeacherStudentAttendViewController {
         ] as [String:Any]
         ServerUtil.shared.postLectureSchedule(self, parameters: parameters) { (success, dict, message) in
             guard success else {
-                AlertHandler.shared.showAlert(vc: self, message: message ?? "Server Error", okTitle: "확인")
+                AlertHandler().showAlert(vc: self, message: message ?? "Server Error", okTitle: "확인")
                 return
             }
             
@@ -237,7 +237,7 @@ extension TeacherStudentAttendViewController {
         
         ServerUtil.shared.postLectureStatus(self, parameters: parameters) { (success, dict, message) in
             guard success, let array = dict?["users"] as? NSArray, let schedule = dict?["lecture_schedule"] as? NSDictionary else {
-                AlertHandler.shared.showAlert(vc: self, message: message ?? "Server Error", okTitle: "확인")
+                AlertHandler().showAlert(vc: self, message: message ?? "Server Error", okTitle: "확인")
                 return
             }
             

@@ -25,6 +25,8 @@ class ClassBoardTableViewCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
     
+    @IBOutlet weak var likeImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -46,6 +48,7 @@ class ClassBoardTableViewCell: UITableViewCell {
         else {
             classNameLabel.superview?.isHidden = true
         }
+        
         nameLabel.text = board.postingUser.name
         timeLabel.text = board.writeTime
         contentLabel.text = board.content?.decodeEmoji
@@ -59,6 +62,12 @@ class ClassBoardTableViewCell: UITableViewCell {
             imaegContainerView.isHidden = false
             self.firstImageView.kf.setImage(with: self.board.imageList.first?.url, placeholder: UIImage(named: "tempImage"))
         }
+        
+        if let isLike = board.isLike, isLike {
+            likeImageView.image = UIImage(named: "heartfillIcon")
+        }
+        else {
+            likeImageView.image = UIImage(named: "heartemptycon")
+        }
     }
-    
 }

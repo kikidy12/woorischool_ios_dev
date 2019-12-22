@@ -16,6 +16,11 @@ enum DateFormatterStyle: String {
     case hypoon = "-"
 }
 
+enum QuaterType: String {
+    case first = "FIRST_COME"
+    case random = "LOTTERY"
+}
+
 enum ChatType: String {
     case oneToOne = "ONE"
     case manyToMany = "ALL"

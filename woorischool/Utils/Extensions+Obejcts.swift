@@ -183,7 +183,8 @@ extension String {
     }
     
     var decodeEmoji: String {
-        let data = self.data(using: .utf8)
+        let string = self.lowercased()
+        let data = string.data(using: .utf8)
         if let data = data, let str = String(data: data, encoding: .nonLossyASCII) {
             return str
         }
@@ -191,6 +192,7 @@ extension String {
     }
     
     var encodeEmoji: String {
+        print(self)
         let data = self.data(using: .nonLossyASCII, allowLossyConversion: true)!
         return String(data: data, encoding: .utf8)!
     }
@@ -223,4 +225,15 @@ extension Collection {
         return self.indices.contains(i) ? self[i] : nil
     }
 
+}
+
+
+extension Int {
+    var decimalString: String? {
+        get {
+            let numberFormatter = NumberFormatter()
+            numberFormatter.numberStyle = .decimal
+            return numberFormatter.string(for: self)
+        }
+    }
 }

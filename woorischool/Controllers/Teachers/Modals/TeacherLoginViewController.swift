@@ -46,7 +46,7 @@ extension TeacherLoginViewController {
         
         ServerUtil.shared.postAuth(self, parameters: parameters) { (success, dict, message) in
             guard success, let token = dict?["token"] as? String else {
-                AlertHandler.shared.showAlert(vc: self, message: message ?? "Server Error", okTitle: "확인")
+                AlertHandler().showAlert(vc: self, message: message ?? "Server Error", okTitle: "확인")
                 return
             }
             

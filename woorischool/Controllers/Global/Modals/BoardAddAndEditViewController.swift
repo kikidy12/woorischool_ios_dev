@@ -67,7 +67,7 @@ class BoardAddAndEditViewController: UIViewController {
                 return UIImage(data: data)
             }
             
-            textView.text = board.content
+            textView.text = board.content.decodeEmoji
         }
     }
 

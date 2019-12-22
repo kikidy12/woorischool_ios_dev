@@ -43,7 +43,7 @@ extension TeacherPhoneAuthViewController {
         
         ServerUtil.shared.postTeacherPhoneAuth(self, parameters: parameters) { (success, dict, message) in
             guard success else {
-                AlertHandler.shared.showAlert(vc: self, message: message ?? "ServerError", okTitle: "확인")
+                AlertHandler().showAlert(vc: self, message: message ?? "ServerError", okTitle: "확인")
                 return
             }
             
@@ -64,7 +64,7 @@ extension TeacherPhoneAuthViewController {
         
         ServerUtil.shared.postPhoneAuthNumCheck(self, parameters: parameters) { (success, dict, message) in
             guard success else {
-                AlertHandler.shared.showAlert(vc: self, message: message ?? "ServerError", okTitle: "확인")
+                AlertHandler().showAlert(vc: self, message: message ?? "ServerError", okTitle: "확인")
                 return
             }
             

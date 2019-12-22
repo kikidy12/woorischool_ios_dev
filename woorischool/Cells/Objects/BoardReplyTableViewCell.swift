@@ -51,7 +51,7 @@ class BoardReplyTableViewCell: UITableViewCell {
         comment = data
         if let content = comment.content, !content.isEmpty {
             contentLabel.isHidden = false
-            contentLabel.text = comment.content
+            contentLabel.text = content.decodeEmoji
         }
         else {
             contentLabel.isHidden = true
