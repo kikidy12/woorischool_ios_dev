@@ -175,7 +175,10 @@ class ParentsHomeRenewViewController: UIViewController {
                 else {
                     count = 0
                 }
-                self.notiBtn.setTitle("[공지] " + GlobalDatas.noticeList[count].title, for: .normal)
+                UIView.transition(with: self.notiBtn, duration: 0.2, options: .transitionCrossDissolve, animations: {
+                    self.notiBtn.setTitle("[공지] " + GlobalDatas.noticeList[count].title, for: .normal)
+                    self.view.layoutIfNeeded()
+                }, completion: nil)
             }
         }
     }
