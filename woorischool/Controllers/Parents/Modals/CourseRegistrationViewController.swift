@@ -64,7 +64,15 @@ class CourseRegistrationViewController: UIViewController {
     @IBOutlet weak var courseCollectionViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var chooseableCorseTableView: UITableView!
     @IBOutlet weak var chooseableCorseTableViewHeightConstraint: NSLayoutConstraint!
-
+    
+    @IBOutlet weak var expendView: UIView!
+    @IBOutlet weak var expendViewTopConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var totalPriceLabel: UILabel!
+    @IBOutlet weak var usePointLabel: UILabel!
+    @IBOutlet weak var pointResultLabel: UILabel!
+    @IBOutlet weak var payPriceLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         accessaryView = UIToolbar()
@@ -77,6 +85,7 @@ class CourseRegistrationViewController: UIViewController {
         chooseableCorseTableView.register(UINib(nibName: "RegistClassTableViewCell", bundle: nil), forCellReuseIdentifier: "classCell")
         courseCollectionView.register(UINib(nibName: "CourseCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "courseCell")
         getCourse()
+       
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -87,11 +96,57 @@ class CourseRegistrationViewController: UIViewController {
         title = "수강신청"
     }
     
-    
     func navibarSetting() {
         let rightBtn = UIBarButtonItem(image: UIImage(named: "filterImage"), style: .plain, target: self, action: #selector(showFilterView))
         
         navigationItem.rightBarButtonItem = rightBtn
+    }
+    
+    func setPayInfo(point: Int, total: Int) {
+        totalPriceLabel.text = "\(total.decimalString ?? "0") 원"
+        
+        if total == 0 {
+            usePointLabel.text = "0 원"
+            pointResultLabel.text = "(보유 : \(point.decimalString ?? "0") 원 / 차감 후 : \(point.decimalString ?? "0") 원)"
+            return
+        }
+        
+        let lastPoint = point - total
+    
+        if lastPoint > 0 {
+            usePointLabel.text = "\(total.decimalString ?? "0") 원"
+            pointResultLabel.text = "(보유 : \(point.decimalString ?? "0") 원 / 차감 후 : \(lastPoint.decimalString ?? "0") 원)"
+        }
+        else {
+            usePointLabel.text = "\(point.decimalString ?? "0") 원"
+            pointResultLabel.text = "(보유 : \(point) 원 / 차감 후 : \(point) 원)"
+        }
+        
+        payPriceLabel.text = "\((total - point).decimalString ?? "0") 원"
+    }
+    
+    @IBAction func showAndHideExpendViewEvent(_ sender: UIButton) {
+        if sender.tag == 1 {
+            UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
+                self.expendViewTopConstraint.constant = 0
+                self.view.layoutIfNeeded()
+            }) { (_) in
+                self.expendView.alpha = 0
+            }
+            sender.setImage(UIImage(named: "chevron.compact.up"), for: .normal)
+            sender.tag = 0
+        }
+        else {
+            self.expendView.alpha = 1
+            UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseIn, animations: {
+                self.expendViewTopConstraint.constant = -self.expendView.frame.height
+                self.view.layoutIfNeeded()
+            }) { (_) in
+                
+            }
+            sender.setImage(UIImage(named: "chevron.compact.down"), for: .normal)
+            sender.tag = 1
+        }
     }
 
     @IBAction func selectDay(_ sender: UIButton) {
@@ -154,7 +209,15 @@ extension CourseRegistrationViewController: UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "classCell", for: indexPath) as! RegistClassTableViewCell
         cell.requestClouser = {
-            self.isUseAblePoint(classData: self.filterLectureList[indexPath.item])
+            
+            let vc = RegistClassPopupViewController()
+            vc.lectureClass = self.filterLectureList[indexPath.item]
+            vc.preVC = self
+            self.showPopupView(vc: vc)
+//            let vc = ClassRegistPopupViewController()
+//            vc.lectureClass = self.filterLectureList[indexPath.item]
+//            vc.preVC = self
+//            self.showPopupView(vc: vc)
         }
         return cell
     }
@@ -219,11 +282,7 @@ extension CourseRegistrationViewController {
             }
             GlobalDatas.currentUser.childlen.point = point
             
-            let vc = ClassRegistPopupViewController()
-            vc.lectureClass = classData
-            vc.preVC = self
-            vc.price = price
-            self.showPopupView(vc: vc)
+            
             
 //            if possible {
 //                let vc = ClassRegistPopupViewController()
@@ -325,12 +384,12 @@ extension CourseRegistrationViewController {
         ] as [String:Any]
         print(parameters)
         ServerUtil.shared.getLecture(self, parameters: parameters) { (success, dict, message) in
-            guard success, let array = dict?["lecture_list"] as? NSArray else {
+            guard success, let array = dict?["lecture_list"] as? NSArray, let totalPrice = dict?["apply_amount"] as? Int, let point = dict?["my_point"] as? Int else {
                 return
             }
             
             self.lectureList = array.compactMap { LectureClassData($0 as! NSDictionary)}
-            
+            self.setPayInfo(point: point, total: totalPrice)
         }
     }
 }

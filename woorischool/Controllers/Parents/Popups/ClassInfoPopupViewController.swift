@@ -42,7 +42,15 @@ class ClassInfoPopupViewController: UIViewController {
         priceLabel.text = "\(numberFormatter.string(for: lectureClass.price) ?? "0")"
         materialLabel.text = lectureClass.material
         teacherNameLabel.text = teacher.name
-        timeLabel.text = lectureClass.dayList.first?.eduTime
+        
+        timeLabel.text = lectureClass.dayList.enumerated().reduce("") {
+            if $1.offset == 0 {
+                return "\($0 ?? "")\($1.element.eduTime) (삐리빠바바)"
+            }
+            else {
+                return "\($0 ?? "")\n\($1.element.eduTime) (삐리빠바바)"
+            }
+        }
         weekLabel.text = "\(lectureClass.classTime ?? "")(\(lecture.week ?? 0))"
         placeLabel.text = lectureClass.location
 

@@ -49,6 +49,14 @@ class RegistedClassMainViewController: UIViewController {
     @IBOutlet weak var classTabelView: UITableView!
     @IBOutlet weak var classTableViewHeightConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var expendView: UIView!
+    @IBOutlet weak var expendViewTopConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var totalPriceLabel: UILabel!
+    @IBOutlet weak var usePointLabel: UILabel!
+    @IBOutlet weak var pointResultLabel: UILabel!
+    @IBOutlet weak var payPriceLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -75,6 +83,29 @@ class RegistedClassMainViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         getQuater()
+    }
+    
+    func setPayInfo(point: Int, total: Int) {
+        totalPriceLabel.text = "\(total.decimalString ?? "0") 원"
+        
+        if total == 0 {
+            usePointLabel.text = "0 원"
+            pointResultLabel.text = "(보유 : \(point.decimalString ?? "0") 원 / 차감 후 : \(point.decimalString ?? "0") 원)"
+            return
+        }
+        
+        let lastPoint = point - total
+    
+        if lastPoint > 0 {
+            usePointLabel.text = "\(total.decimalString ?? "0") 원"
+            pointResultLabel.text = "(보유 : \(point.decimalString ?? "0") 원 / 차감 후 : \(lastPoint.decimalString ?? "0") 원)"
+        }
+        else {
+            usePointLabel.text = "\(point.decimalString ?? "0") 원"
+            pointResultLabel.text = "(보유 : \(point) 원 / 차감 후 : \(point) 원)"
+        }
+        
+        payPriceLabel.text = "\((total - point).decimalString ?? "0") 원"
     }
     
     func setHeaderViews(_ sender: UIButton) {
@@ -105,6 +136,29 @@ class RegistedClassMainViewController: UIViewController {
         getLectureClass()
     }
 
+    @IBAction func showAndHideExpendViewEvent(_ sender: UIButton) {
+        if sender.tag == 1 {
+            UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseOut, animations: {
+                self.expendViewTopConstraint.constant = 0
+                self.view.layoutIfNeeded()
+            }) { (_) in
+                self.expendView.alpha = 0
+            }
+            sender.setImage(UIImage(named: "chevron.compact.up"), for: .normal)
+            sender.tag = 0
+        }
+        else {
+            self.expendView.alpha = 1
+            UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseIn, animations: {
+                self.expendViewTopConstraint.constant = -self.expendView.frame.height
+                self.view.layoutIfNeeded()
+            }) { (_) in
+                
+            }
+            sender.setImage(UIImage(named: "chevron.compact.down"), for: .normal)
+            sender.tag = 1
+        }
+    }
 
     @IBAction func selectHeader(_ sender: UIButton) {
         setHeaderViews(sender)
@@ -120,7 +174,7 @@ extension RegistedClassMainViewController: UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "classCell", for: indexPath) as! RegistedClassTableViewCell
-        
+        cell.initView(lectureClassList[indexPath.item], type: type, quater: quater)
         cell.requestClouser = {
             let vc = ConfirmClassViewController()
             vc.preVC = self

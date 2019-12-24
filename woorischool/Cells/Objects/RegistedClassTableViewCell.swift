@@ -53,6 +53,8 @@ class RegistedClassTableViewCell: UITableViewCell {
         numberFormatter.numberStyle = .decimal
         guard let lecture = lectureClass.lecture else { return }
         
+        layoutIfNeeded()
+        
         nameLabel.text = lecture.name
         teacherNameLabel.text = lectureClass.teacher.name
         priceLabel.text = numberFormatter.string(for: lectureClass.price)
@@ -60,9 +62,21 @@ class RegistedClassTableViewCell: UITableViewCell {
         
         weekdaysLabel.text = lectureClass.daysStr
         countLabel.text = "\(lectureClass.waitCount ?? 0)"
-        
+        let count = lectureClass.dayList.count
         if let eduStr = lectureClass.dayList.first?.eduTime {
-            classTimeLabel.text = eduStr
+            if count > 1 {
+                let str = "\(eduStr) 외\(count - 1)"
+                let attributedString = NSMutableAttributedString(string: str, attributes: [
+                  .font: UIFont(name: "NotoSansCJKkr-Medium", size: 13.0)!,
+                  .foregroundColor: UIColor.greyishBrown,
+                  .kern: 0.0
+                ])
+                attributedString.addAttribute(.foregroundColor, value: UIColor.greenishTeal, range: NSRange(location: str.count - 2, length: 2))
+                classTimeLabel.attributedText = attributedString
+            }
+            else {
+                classTimeLabel.text = eduStr
+            }
         }
         else {
             classTimeLabel.text = "-"
