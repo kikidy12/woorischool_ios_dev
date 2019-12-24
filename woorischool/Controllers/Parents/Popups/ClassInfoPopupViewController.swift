@@ -45,10 +45,10 @@ class ClassInfoPopupViewController: UIViewController {
         
         timeLabel.text = lectureClass.dayList.enumerated().reduce("") {
             if $1.offset == 0 {
-                return "\($0 ?? "")\($1.element.eduTime) (삐리빠바바)"
+                return "\($0 ?? "")\($1.element.eduTime)(\($1.element.day!))"
             }
             else {
-                return "\($0 ?? "")\n\($1.element.eduTime) (삐리빠바바)"
+                return "\($0 ?? "")\n\($1.element.eduTime)(\($1.element.day!))"
             }
         }
         weekLabel.text = "\(lectureClass.classTime ?? "")(\(lecture.week ?? 0))"

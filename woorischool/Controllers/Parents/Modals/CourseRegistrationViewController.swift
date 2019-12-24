@@ -116,13 +116,13 @@ class CourseRegistrationViewController: UIViewController {
         if lastPoint > 0 {
             usePointLabel.text = "\(total.decimalString ?? "0") 원"
             pointResultLabel.text = "(보유 : \(point.decimalString ?? "0") 원 / 차감 후 : \(lastPoint.decimalString ?? "0") 원)"
+            payPriceLabel.text = "0 원"
         }
         else {
             usePointLabel.text = "\(point.decimalString ?? "0") 원"
-            pointResultLabel.text = "(보유 : \(point) 원 / 차감 후 : \(point) 원)"
+            pointResultLabel.text = "(보유 : \(point.decimalString ?? "0") 원 / 차감 후 : 0 원)"
+            payPriceLabel.text = "\((total - point).decimalString ?? "0") 원"
         }
-        
-        payPriceLabel.text = "\((total - point).decimalString ?? "0") 원"
     }
     
     @IBAction func showAndHideExpendViewEvent(_ sender: UIButton) {
@@ -133,7 +133,11 @@ class CourseRegistrationViewController: UIViewController {
             }) { (_) in
                 self.expendView.alpha = 0
             }
-            sender.setImage(UIImage(named: "chevron.compact.up"), for: .normal)
+            if #available(iOS 13.0, *) {
+                sender.setImage(UIImage(systemName: "chevron.compact.up"), for: .normal)
+            } else {
+                // Fallback on earlier versions
+            }
             sender.tag = 0
         }
         else {
@@ -144,7 +148,11 @@ class CourseRegistrationViewController: UIViewController {
             }) { (_) in
                 
             }
-            sender.setImage(UIImage(named: "chevron.compact.down"), for: .normal)
+            if #available(iOS 13.0, *) {
+                sender.setImage(UIImage(systemName: "chevron.compact.down"), for: .normal)
+            } else {
+                // Fallback on earlier versions
+            }
             sender.tag = 1
         }
     }

@@ -19,15 +19,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegistedClassMainViewController" customModule="우리스쿨" customModuleProvider="target">
             <connections>
-                <outlet property="alertLabel" destination="crJ-uX-sca" id="pCh-NN-ZMZ"/>
                 <outlet property="classTabelView" destination="8QG-yu-PEd" id="dQx-OM-R1y"/>
-                <outlet property="classTableViewHeightConstraint" destination="ril-9q-mBn" id="VlU-wO-tsz"/>
+                <outlet property="expendBtn" destination="Pkd-2a-BF6" id="eVF-Yk-GAu"/>
                 <outlet property="expendView" destination="5q6-BA-Wru" id="eON-bq-FFy"/>
                 <outlet property="expendViewTopConstraint" destination="AJp-3v-RyP" id="8wb-FE-NgH"/>
                 <outlet property="headerFirstBtn" destination="35T-qr-WD2" id="MKQ-oQ-wM5"/>
                 <outlet property="headerFirstView" destination="7ZU-WB-X2p" id="qdt-u1-nHK"/>
                 <outlet property="headerSecondBtn" destination="z9q-Al-M7r" id="GGt-YG-k0E"/>
                 <outlet property="headerSecondView" destination="wRp-kE-Rdh" id="kLn-6w-Lqa"/>
+                <outlet property="payInfoBottomView" destination="sRq-Iq-cxP" id="wPg-jV-7Vo"/>
                 <outlet property="payPriceLabel" destination="sWe-q0-AhO" id="aLM-cM-3w5"/>
                 <outlet property="pointResultLabel" destination="N4S-cj-Q94" id="kNb-Fv-YrC"/>
                 <outlet property="totalPriceLabel" destination="8ep-kW-a14" id="gPj-Eq-nIj"/>
@@ -40,6 +40,10 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k8J-Gf-ryB">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <color key="backgroundColor" name="paleGreyThree"/>
+                </view>
                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ePP-Ic-lq9">
                     <rect key="frame" x="0.0" y="44" width="414" height="36"/>
                     <subviews>
@@ -120,59 +124,11 @@
                         <constraint firstAttribute="height" constant="1" id="GLr-hp-WT2"/>
                     </constraints>
                 </view>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iS2-G6-RQf">
-                    <rect key="frame" x="0.0" y="81" width="414" height="781"/>
-                    <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VVN-zW-HIp">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="500"/>
-                            <subviews>
-                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crJ-uX-sca" customClass="CustomLabel" customModule="우리스쿨" customModuleProvider="target">
-                                    <rect key="frame" x="15" y="18" width="384" height="58"/>
-                                    <color key="backgroundColor" name="grapefruit10"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="58" id="J4a-TK-bhh"/>
-                                    </constraints>
-                                    <string key="text">12:00 시간 이내에 수강확정이 되지 않으면 
-다음 대기자에게 수강신청 권한이 넘어갑니다</string>
-                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="17"/>
-                                    <color key="textColor" name="grapefruit"/>
-                                    <nil key="highlightedColor"/>
-                                    <userDefinedRuntimeAttributes>
-                                        <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
-                                            <real key="value" value="6"/>
-                                        </userDefinedRuntimeAttribute>
-                                    </userDefinedRuntimeAttributes>
-                                </label>
-                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8QG-yu-PEd">
-                                    <rect key="frame" x="15" y="90" width="384" height="400"/>
-                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="400" id="ril-9q-mBn"/>
-                                    </constraints>
-                                </tableView>
-                            </subviews>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstItem="crJ-uX-sca" firstAttribute="leading" secondItem="VVN-zW-HIp" secondAttribute="leading" constant="15" id="HRb-fZ-Cqj"/>
-                                <constraint firstItem="crJ-uX-sca" firstAttribute="top" secondItem="VVN-zW-HIp" secondAttribute="top" constant="18" id="MCd-Jy-Fuc"/>
-                                <constraint firstAttribute="trailing" secondItem="crJ-uX-sca" secondAttribute="trailing" constant="15" id="TTX-Ri-Fho"/>
-                                <constraint firstItem="8QG-yu-PEd" firstAttribute="leading" secondItem="VVN-zW-HIp" secondAttribute="leading" constant="15" id="VA7-1O-ikY"/>
-                                <constraint firstAttribute="trailing" secondItem="8QG-yu-PEd" secondAttribute="trailing" constant="15" id="fIB-NY-z8b"/>
-                                <constraint firstAttribute="bottom" secondItem="8QG-yu-PEd" secondAttribute="bottom" constant="10" id="kTP-Bz-x9H"/>
-                                <constraint firstItem="8QG-yu-PEd" firstAttribute="top" secondItem="crJ-uX-sca" secondAttribute="bottom" constant="14" id="wKM-PR-d7x"/>
-                            </constraints>
-                        </view>
-                    </subviews>
-                    <constraints>
-                        <constraint firstItem="VVN-zW-HIp" firstAttribute="leading" secondItem="HhW-M7-b76" secondAttribute="leading" id="75a-xW-czV"/>
-                        <constraint firstItem="VVN-zW-HIp" firstAttribute="trailing" secondItem="HhW-M7-b76" secondAttribute="trailing" id="DnW-2i-LZ1"/>
-                        <constraint firstItem="VVN-zW-HIp" firstAttribute="bottom" secondItem="HhW-M7-b76" secondAttribute="bottom" id="cup-mB-kFl"/>
-                        <constraint firstItem="VVN-zW-HIp" firstAttribute="centerX" secondItem="I7m-jS-nTZ" secondAttribute="centerX" id="fLT-PU-eHN"/>
-                        <constraint firstItem="VVN-zW-HIp" firstAttribute="top" secondItem="HhW-M7-b76" secondAttribute="top" id="fb6-f0-8og"/>
-                    </constraints>
-                    <viewLayoutGuide key="contentLayoutGuide" id="HhW-M7-b76"/>
-                    <viewLayoutGuide key="frameLayoutGuide" id="I7m-jS-nTZ"/>
-                </scrollView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="8QG-yu-PEd">
+                    <rect key="frame" x="17" y="81" width="380" height="736"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pkd-2a-BF6" customClass="CustomButton" customModule="우리스쿨" customModuleProvider="target">
                     <rect key="frame" x="341" y="794" width="73" height="40"/>
                     <color key="backgroundColor" name="black60"/>
@@ -269,7 +225,7 @@
                                 <constraint firstAttribute="width" constant="25" id="jHw-E3-KKX"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="예정 결제 금액" textAlignment="natural" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYr-I4-z6z">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="최종 결제 금액" textAlignment="natural" lineBreakMode="tailTruncation" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYr-I4-z6z">
                             <rect key="frame" x="50" y="14" width="86.5" height="17.5"/>
                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="15"/>
                             <color key="textColor" name="greyishBrown"/>
@@ -299,23 +255,26 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="VVN-zW-HIp" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="3dm-HD-WRO"/>
                 <constraint firstItem="T5f-Wf-fQP" firstAttribute="top" secondItem="ePP-Ic-lq9" secondAttribute="bottom" id="44Z-Fa-LcJ"/>
-                <constraint firstItem="iS2-G6-RQf" firstAttribute="top" secondItem="T5f-Wf-fQP" secondAttribute="bottom" id="6rR-eT-ZWv"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="k8J-Gf-ryB" secondAttribute="bottom" id="4Fk-6Y-sWn"/>
                 <constraint firstItem="5q6-BA-Wru" firstAttribute="top" secondItem="sRq-Iq-cxP" secondAttribute="top" id="AJp-3v-RyP"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="iS2-G6-RQf" secondAttribute="trailing" id="Sh6-zt-IGb"/>
+                <constraint firstItem="k8J-Gf-ryB" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="EdX-2a-tVs"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8QG-yu-PEd" secondAttribute="trailing" constant="17" id="IaW-PH-4yn"/>
+                <constraint firstItem="8QG-yu-PEd" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="17" id="OUs-tg-pDP"/>
+                <constraint firstItem="8QG-yu-PEd" firstAttribute="top" secondItem="T5f-Wf-fQP" secondAttribute="bottom" id="QhH-wr-OSL"/>
                 <constraint firstItem="ePP-Ic-lq9" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="So1-EJ-LCS"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="sRq-Iq-cxP" secondAttribute="bottom" id="Tta-iX-20m"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Pkd-2a-BF6" secondAttribute="trailing" id="U2d-w5-BeQ"/>
                 <constraint firstItem="Pkd-2a-BF6" firstAttribute="bottom" secondItem="5q6-BA-Wru" secondAttribute="top" constant="17" id="VoE-WH-o4P"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="sRq-Iq-cxP" secondAttribute="trailing" id="YfL-O9-OdK"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="T5f-Wf-fQP" secondAttribute="trailing" id="a0v-wK-nF8"/>
+                <constraint firstItem="k8J-Gf-ryB" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="bRi-Xm-sR8"/>
                 <constraint firstItem="T5f-Wf-fQP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dN5-W7-X3N"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="k8J-Gf-ryB" secondAttribute="trailing" id="dg0-a6-Xph"/>
+                <constraint firstItem="5q6-BA-Wru" firstAttribute="top" secondItem="8QG-yu-PEd" secondAttribute="bottom" id="fFF-fa-8Vb"/>
                 <constraint firstItem="sRq-Iq-cxP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gnS-MY-QrA"/>
                 <constraint firstItem="ePP-Ic-lq9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="iYO-Th-Vkz"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ePP-Ic-lq9" secondAttribute="trailing" id="qJh-Ib-aZa"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="iS2-G6-RQf" secondAttribute="bottom" id="tJS-MP-WhL"/>
-                <constraint firstItem="iS2-G6-RQf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vbe-Lo-dNb"/>
                 <constraint firstItem="5q6-BA-Wru" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="yNK-ls-AQ0"/>
                 <constraint firstItem="5q6-BA-Wru" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="yds-O2-Rc1"/>
             </constraints>
@@ -332,17 +291,14 @@
         <namedColor name="brownGrey">
             <color red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="grapefruit">
-            <color red="0.94901960784313721" green="0.40392156862745099" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
-        <namedColor name="grapefruit10">
-            <color red="0.94900000095367432" green="0.40400001406669617" blue="0.3919999897480011" alpha="0.10000000149011612" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="greenishTeal">
             <color red="0.17254901960784313" green="0.77647058823529413" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="greyishBrown">
             <color red="0.29019607843137257" green="0.29019607843137257" blue="0.29019607843137257" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="paleGreyThree">
+            <color red="0.96078431372549022" green="0.96078431372549022" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="veryLightPink">
             <color red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

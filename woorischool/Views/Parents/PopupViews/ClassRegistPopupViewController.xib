@@ -32,7 +32,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ygk-wc-C4i">
-                    <rect key="frame" x="40" y="308" width="334" height="280"/>
+                    <rect key="frame" x="40" y="303" width="334" height="290"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사용가능한 자율수강권이 있습니다" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QYV-S3-C0U" customClass="CustomLabel" customModule="우리스쿨" customModuleProvider="target">
                             <rect key="frame" x="15" y="15" width="304" height="45"/>
@@ -45,38 +45,38 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이용가능 포인트" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FRa-xw-Bhj">
-                            <rect key="frame" x="15" y="81" width="95" height="17.5"/>
+                            <rect key="frame" x="15" y="81" width="101" height="22.5"/>
                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="15"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BVn-fb-Gpk">
-                            <rect key="frame" x="297.5" y="81" width="21.5" height="17.5"/>
+                            <rect key="frame" x="296.5" y="81" width="22.5" height="22.5"/>
                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="15"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bsk-VN-oAk">
-                            <rect key="frame" x="15" y="106.5" width="304" height="1"/>
+                            <rect key="frame" x="15" y="111.5" width="304" height="1"/>
                             <color key="backgroundColor" name="veryLightPinkTwo"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="4Vm-oK-L3a"/>
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="가격" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HqF-g3-lCh">
-                            <rect key="frame" x="15" y="120.5" width="26" height="17.5"/>
+                            <rect key="frame" x="15" y="125.5" width="28" height="22.5"/>
                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="15"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcY-Q4-dVG">
-                            <rect key="frame" x="297.5" y="120.5" width="21.5" height="17.5"/>
+                            <rect key="frame" x="296.5" y="125.5" width="22.5" height="22.5"/>
                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="15"/>
                             <color key="textColor" name="softBlue"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFW-jP-urS" customClass="CustomButton" customModule="우리스쿨" customModuleProvider="target">
-                            <rect key="frame" x="15" y="165" width="304" height="45"/>
+                            <rect key="frame" x="15" y="175" width="304" height="45"/>
                             <color key="backgroundColor" name="greenishTeal"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="21I-t1-teE"/>
@@ -95,7 +95,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="caj-Si-iPK" customClass="CustomButton" customModule="우리스쿨" customModuleProvider="target">
-                            <rect key="frame" x="15" y="220" width="304" height="45"/>
+                            <rect key="frame" x="15" y="230" width="304" height="45"/>
                             <color key="backgroundColor" name="dodgerBlue"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="45" id="r5q-5m-LTt"/>

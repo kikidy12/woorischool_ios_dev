@@ -16,6 +16,7 @@ class RegistedClassMainViewController: UIViewController {
         didSet {
             if type == "CONFIRM" {
                 setHeaderViews(headerFirstBtn)
+                
             }
             else {
                 setHeaderViews(headerSecondBtn)
@@ -31,12 +32,9 @@ class RegistedClassMainViewController: UIViewController {
             else {
                 
             }
-            
+            let total = lectureClassList.reduce(0) { $0 + $1.price }
+            setPayInfo(point: GlobalDatas.currentUser.childlen.point, total: total)
             classTabelView.reloadData()
-            
-            classTableViewHeightConstraint.constant = classTabelView.estimatedRowHeight * CGFloat(lectureClassList.count)
-            view.layoutIfNeeded()
-            classTableViewHeightConstraint.constant = classTabelView.contentSize.height
         }
     }
     
@@ -44,12 +42,12 @@ class RegistedClassMainViewController: UIViewController {
     @IBOutlet weak var headerFirstBtn: UIButton!
     @IBOutlet weak var headerSecondView: UIView!
     @IBOutlet weak var headerSecondBtn: UIButton!
-    @IBOutlet weak var alertLabel: UILabel!
     
     @IBOutlet weak var classTabelView: UITableView!
-    @IBOutlet weak var classTableViewHeightConstraint: NSLayoutConstraint!
     
+    @IBOutlet weak var expendBtn: UIView!
     @IBOutlet weak var expendView: UIView!
+    @IBOutlet weak var payInfoBottomView: UIView!
     @IBOutlet weak var expendViewTopConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var totalPriceLabel: UILabel!
@@ -67,14 +65,6 @@ class RegistedClassMainViewController: UIViewController {
         classTabelView.tableFooterView = UIView(frame: .init(x: 0, y: 0, width: 1, height: 0.001))
         classTabelView.estimatedRowHeight = 300
         classTabelView.rowHeight = UITableView.automaticDimension
-        let attributedString = NSMutableAttributedString(string: "12:00 시간 이내에 수강확정이 되지 않으면 \n다음 대기자에게 수강신청 권한이 넘어갑니다", attributes: [
-            .font: UIFont(name: "NotoSansCJKkr-Regular", size: 14.0)!,
-            .foregroundColor: UIColor.grapefruit,
-            .kern: 0.0
-            ])
-        attributedString.addAttribute(.font, value: UIFont(name: "NotoSansCJKkr-Medium", size: 14.0)!, range: NSRange(location: 0, length: 5))
-
-        alertLabel.attributedText = attributedString
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -99,13 +89,13 @@ class RegistedClassMainViewController: UIViewController {
         if lastPoint > 0 {
             usePointLabel.text = "\(total.decimalString ?? "0") 원"
             pointResultLabel.text = "(보유 : \(point.decimalString ?? "0") 원 / 차감 후 : \(lastPoint.decimalString ?? "0") 원)"
+            payPriceLabel.text = "0 원"
         }
         else {
             usePointLabel.text = "\(point.decimalString ?? "0") 원"
-            pointResultLabel.text = "(보유 : \(point) 원 / 차감 후 : \(point) 원)"
+            pointResultLabel.text = "(보유 : \(point.decimalString ?? "0") 원 / 차감 후 : 0 원)"
+            payPriceLabel.text = "\((total - point).decimalString ?? "0") 원"
         }
-        
-        payPriceLabel.text = "\((total - point).decimalString ?? "0") 원"
     }
     
     func setHeaderViews(_ sender: UIButton) {
@@ -118,6 +108,9 @@ class RegistedClassMainViewController: UIViewController {
                 btn.setTitleColor(.brownGrey, for: .normal)
                 lineView.backgroundColor = .clear
             }
+            expendBtn.isHidden = false
+            expendView.isHidden = false
+            payInfoBottomView.isHidden = false
             type = "CONFIRM"
         }
         if sender.superview == headerSecondView {
@@ -130,6 +123,9 @@ class RegistedClassMainViewController: UIViewController {
                 lineView.backgroundColor = .clear
             }
             
+            expendBtn.isHidden = true
+            expendView.isHidden = true
+            payInfoBottomView.isHidden = true
             type = "WAIT"
         }
         
@@ -144,7 +140,11 @@ class RegistedClassMainViewController: UIViewController {
             }) { (_) in
                 self.expendView.alpha = 0
             }
-            sender.setImage(UIImage(named: "chevron.compact.up"), for: .normal)
+            if #available(iOS 13.0, *) {
+                sender.setImage(UIImage(systemName: "chevron.compact.up"), for: .normal)
+            } else {
+                // Fallback on earlier versions
+            }
             sender.tag = 0
         }
         else {
@@ -155,7 +155,11 @@ class RegistedClassMainViewController: UIViewController {
             }) { (_) in
                 
             }
-            sender.setImage(UIImage(named: "chevron.compact.down"), for: .normal)
+            if #available(iOS 13.0, *) {
+                sender.setImage(UIImage(systemName: "chevron.compact.down"), for: .normal)
+            } else {
+                // Fallback on earlier versions
+            }
             sender.tag = 1
         }
     }
@@ -167,6 +171,45 @@ class RegistedClassMainViewController: UIViewController {
 }
 
 extension RegistedClassMainViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if type == "CONFIRM" {
+            return nil
+        }
+        else {
+            let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 80))
+            headerView.backgroundColor = .paleGreyThree
+            let titleLabel = UILabel()
+            titleLabel.frame.size = .init(width: headerView.frame.width, height: 50)
+            titleLabel.center = headerView.center
+            titleLabel.textAlignment = .center
+            titleLabel.text = "12:00 시간 이내에 수강호가정\n그런거 있다"
+            titleLabel.textColor = .grapefruit
+            titleLabel.backgroundColor = .grapefruit10
+            
+            headerView.addSubview(titleLabel)
+            return headerView
+        }
+    }
+    
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        if type == "CONFIRM" {
+            return 20
+        }
+        else {
+            return 80
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
+        if type == "CONFIRM" {
+            return 20
+        }
+        else {
+            return 80
+        }
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return lectureClassList.count
