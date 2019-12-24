@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -46,7 +46,7 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="1723"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8AE-gp-dQv">
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8AE-gp-dQv">
                     <rect key="frame" x="0.0" y="44" width="414" height="1645"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sv8-Qn-0sZ">
@@ -228,15 +228,15 @@
                                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R62-BQ-UFy" customClass="CustomView" customModule="우리스쿨" customModuleProvider="target">
                                     <rect key="frame" x="18" y="358" width="378" height="157"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tempEmptyImage" translatesAutoresizingMaskIntoConstraints="NO" id="EcT-Yw-CSC">
-                                            <rect key="frame" x="154" y="28" width="70" height="70"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noClassImage" translatesAutoresizingMaskIntoConstraints="NO" id="EcT-Yw-CSC">
+                                            <rect key="frame" x="138" y="35" width="102" height="52"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="70" id="mKK-Qw-shJ"/>
-                                                <constraint firstAttribute="width" constant="70" id="pc9-gt-cLr"/>
+                                                <constraint firstAttribute="height" constant="52" id="mKK-Qw-shJ"/>
+                                                <constraint firstAttribute="width" constant="102" id="pc9-gt-cLr"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일정이 없습니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mlg-PU-XZD">
-                                            <rect key="frame" x="138.5" y="104" width="101.5" height="19"/>
+                                            <rect key="frame" x="138.5" y="93" width="101.5" height="19"/>
                                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="16"/>
                                             <color key="textColor" name="brownGrey"/>
                                             <nil key="highlightedColor"/>
@@ -246,7 +246,7 @@
                                     <constraints>
                                         <constraint firstItem="Mlg-PU-XZD" firstAttribute="top" secondItem="EcT-Yw-CSC" secondAttribute="bottom" constant="6" id="0rM-c9-pT0"/>
                                         <constraint firstItem="EcT-Yw-CSC" firstAttribute="centerX" secondItem="R62-BQ-UFy" secondAttribute="centerX" id="UoU-cp-F7W"/>
-                                        <constraint firstItem="EcT-Yw-CSC" firstAttribute="top" secondItem="R62-BQ-UFy" secondAttribute="top" constant="28" id="h5S-NN-N7i"/>
+                                        <constraint firstItem="EcT-Yw-CSC" firstAttribute="top" secondItem="R62-BQ-UFy" secondAttribute="top" constant="35" id="h5S-NN-N7i"/>
                                         <constraint firstItem="Mlg-PU-XZD" firstAttribute="centerX" secondItem="R62-BQ-UFy" secondAttribute="centerX" id="ogK-C9-Ouc"/>
                                     </constraints>
                                     <userDefinedRuntimeAttributes>
@@ -603,10 +603,10 @@
     <resources>
         <image name="chevron.compact.left" catalog="system" width="32" height="64"/>
         <image name="chevron.compact.right" catalog="system" width="32" height="64"/>
+        <image name="noClassImage" width="102" height="52"/>
         <image name="notiIcon" width="20" height="20"/>
         <image name="profilePlaceHolder" width="60" height="60"/>
         <image name="scheduleIcon" width="21" height="20"/>
-        <image name="tempEmptyImage" width="70" height="70"/>
         <namedColor name="brownGrey">
             <color red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

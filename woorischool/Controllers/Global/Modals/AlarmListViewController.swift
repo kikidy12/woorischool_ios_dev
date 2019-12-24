@@ -12,16 +12,13 @@ class AlarmListViewController: UIViewController {
     
     var alarmList = [AlarmData]() {
         didSet {
-            if alarmList.isEmpty {
-                
-            }
-            else {
-                alarmTableView.reloadData()
-            }
+            alarmEmptyView.isHidden = alarmList.isEmpty ? true : false
+            alarmTableView.reloadData()
         }
     }
     
     @IBOutlet weak var alarmTableView: UITableView!
+    @IBOutlet weak var alarmEmptyView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
@@ -28,37 +28,37 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lHv-4d-Ard" customClass="CustomView" customModule="우리스쿨" customModuleProvider="target">
-                    <rect key="frame" x="14" y="69" width="386" height="275.5"/>
+                    <rect key="frame" x="14" y="25" width="347" height="273"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4분기 방과후학교 수강신청 기간" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vql-cn-uJz">
-                            <rect key="frame" x="25" y="17" width="336" height="20"/>
+                            <rect key="frame" x="25" y="17" width="297" height="20"/>
                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="17"/>
                             <color key="textColor" name="greyishBrown"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Udb-1V-PIw">
-                            <rect key="frame" x="32" y="85.5" width="60" height="60"/>
+                            <rect key="frame" x="75" y="85.5" width="60" height="60"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="60" id="FPn-IE-saY"/>
                                 <constraint firstAttribute="height" constant="60" id="Whj-ci-hXB"/>
                             </constraints>
-                            <state key="normal" backgroundImage="registHomeIcon"/>
+                            <state key="normal" backgroundImage="registBtnIcon"/>
                             <connections>
                                 <action selector="showRegistViewEvent" destination="-1" eventType="touchUpInside" id="18C-fw-r7X"/>
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수강신청하기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ecl-LU-hop">
-                            <rect key="frame" x="18" y="150.5" width="88.5" height="20"/>
-                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
+                            <rect key="frame" x="66" y="150.5" width="78" height="17.5"/>
+                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="15"/>
                             <color key="textColor" name="greyishBrown"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wjp-c2-v2W">
-                            <rect key="frame" x="163" y="85.5" width="60" height="60"/>
+                            <rect key="frame" x="212" y="85.5" width="60" height="60"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="60" id="0hx-ih-Xr6"/>
                                 <constraint firstAttribute="width" constant="60" id="fBx-zX-SCf"/>
@@ -69,30 +69,13 @@
                             </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수강신청현황" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kru-we-EZ6">
-                            <rect key="frame" x="149" y="150.5" width="88.5" height="20"/>
-                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
-                            <color key="textColor" name="greyishBrown"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V5x-k2-Jj5">
-                            <rect key="frame" x="294" y="85.5" width="60" height="60"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="60" id="sEp-hG-Egt"/>
-                                <constraint firstAttribute="width" constant="60" id="y66-fS-tGg"/>
-                            </constraints>
-                            <state key="normal" backgroundImage="registCompIcon2"/>
-                            <connections>
-                                <action selector="showCompleteRegistViewEvent" destination="-1" eventType="touchUpInside" id="dCo-gI-ky3"/>
-                            </connections>
-                        </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수강확정강좌" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xn9-en-Wel">
-                            <rect key="frame" x="280" y="150.5" width="88.5" height="20"/>
-                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="17"/>
+                            <rect key="frame" x="203" y="150.5" width="78" height="17.5"/>
+                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="15"/>
                             <color key="textColor" name="greyishBrown"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wzv-QZ-jT9">
-                            <rect key="frame" x="20" y="204.5" width="346" height="50"/>
+                            <rect key="frame" x="20" y="202" width="307" height="50"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="KZv-Bw-wcH"/>
                             </constraints>
@@ -108,25 +91,21 @@
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
                         <constraint firstItem="Wjp-c2-v2W" firstAttribute="top" secondItem="Udb-1V-PIw" secondAttribute="top" id="4JQ-vg-maa"/>
+                        <constraint firstAttribute="trailing" secondItem="Wjp-c2-v2W" secondAttribute="trailing" constant="75" id="4y7-4y-0gH"/>
                         <constraint firstAttribute="trailing" secondItem="Vql-cn-uJz" secondAttribute="trailing" constant="25" id="7Lu-6N-2bT"/>
                         <constraint firstItem="Udb-1V-PIw" firstAttribute="top" secondItem="K4Q-qX-Ji0" secondAttribute="bottom" constant="28" id="CQB-p9-3KN"/>
                         <constraint firstItem="K4Q-qX-Ji0" firstAttribute="top" secondItem="Vql-cn-uJz" secondAttribute="bottom" constant="3" id="Cqb-9Z-yCl"/>
                         <constraint firstAttribute="bottom" secondItem="Wzv-QZ-jT9" secondAttribute="bottom" constant="21" id="ItU-vk-cuq"/>
-                        <constraint firstAttribute="trailing" secondItem="V5x-k2-Jj5" secondAttribute="trailing" constant="32" id="Nen-fv-889"/>
                         <constraint firstItem="Kru-we-EZ6" firstAttribute="centerX" secondItem="Wjp-c2-v2W" secondAttribute="centerX" id="QNA-Ws-flT"/>
-                        <constraint firstItem="V5x-k2-Jj5" firstAttribute="top" secondItem="Udb-1V-PIw" secondAttribute="top" id="Wwo-MX-CfU"/>
+                        <constraint firstItem="Udb-1V-PIw" firstAttribute="leading" secondItem="lHv-4d-Ard" secondAttribute="leading" constant="75" id="WtF-yZ-jYd"/>
                         <constraint firstItem="Wzv-QZ-jT9" firstAttribute="leading" secondItem="lHv-4d-Ard" secondAttribute="leading" constant="20" id="XZZ-ML-WN7"/>
                         <constraint firstItem="K4Q-qX-Ji0" firstAttribute="leading" secondItem="lHv-4d-Ard" secondAttribute="leading" constant="25" id="k5L-JY-8Fk"/>
                         <constraint firstItem="Vql-cn-uJz" firstAttribute="leading" secondItem="lHv-4d-Ard" secondAttribute="leading" constant="25" id="mTh-fa-rKz"/>
                         <constraint firstItem="Vql-cn-uJz" firstAttribute="top" secondItem="lHv-4d-Ard" secondAttribute="top" constant="17" id="ncN-9c-nIi"/>
                         <constraint firstItem="Wzv-QZ-jT9" firstAttribute="top" secondItem="Kru-we-EZ6" secondAttribute="bottom" constant="34" id="nnx-9Y-ZS9"/>
-                        <constraint firstItem="Udb-1V-PIw" firstAttribute="leading" secondItem="lHv-4d-Ard" secondAttribute="leading" constant="32" id="oUE-3o-STN"/>
-                        <constraint firstItem="xn9-en-Wel" firstAttribute="centerX" secondItem="V5x-k2-Jj5" secondAttribute="centerX" id="odv-WU-wul"/>
-                        <constraint firstItem="Wjp-c2-v2W" firstAttribute="centerX" secondItem="lHv-4d-Ard" secondAttribute="centerX" id="pGt-8L-FUh"/>
                         <constraint firstItem="Ecl-LU-hop" firstAttribute="centerX" secondItem="Udb-1V-PIw" secondAttribute="centerX" id="pcc-AQ-TRU"/>
                         <constraint firstAttribute="trailing" secondItem="Wzv-QZ-jT9" secondAttribute="trailing" constant="20" id="qaK-nR-1HC"/>
                         <constraint firstItem="Ecl-LU-hop" firstAttribute="top" secondItem="Udb-1V-PIw" secondAttribute="bottom" constant="5" id="t3l-SL-8rZ"/>
-                        <constraint firstItem="xn9-en-Wel" firstAttribute="top" secondItem="V5x-k2-Jj5" secondAttribute="bottom" constant="5" id="umG-Ik-6qB"/>
                         <constraint firstItem="Kru-we-EZ6" firstAttribute="top" secondItem="Wjp-c2-v2W" secondAttribute="bottom" constant="5" id="umY-GR-CDW"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
@@ -148,7 +127,7 @@
                     </userDefinedRuntimeAttributes>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f6e-OM-s12" customClass="CustomGradientButton" customModule="우리스쿨" customModuleProvider="target">
-                    <rect key="frame" x="14" y="359.5" width="386" height="54"/>
+                    <rect key="frame" x="14" y="313" width="347" height="54"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="54" id="fEG-wL-dQS"/>
                     </constraints>
@@ -181,13 +160,13 @@
                     </userDefinedRuntimeAttributes>
                 </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XUw-FA-mw9">
-                    <rect key="frame" x="188.5" y="378" width="37" height="17.5"/>
+                    <rect key="frame" x="169" y="331.5" width="37" height="17.5"/>
                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="15"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nhP-bH-6qe" customClass="CustomView" customModule="우리스쿨" customModuleProvider="target">
-                    <rect key="frame" x="14" y="429.5" width="386" height="108"/>
+                    <rect key="frame" x="14" y="383" width="347" height="108"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="자율수강권" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iqN-tk-cV2">
                             <rect key="frame" x="25" y="15" width="74" height="20"/>
@@ -202,7 +181,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0 원" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pem-31-cFo">
-                            <rect key="frame" x="336.5" y="61" width="27.5" height="19"/>
+                            <rect key="frame" x="297.5" y="61" width="27.5" height="19"/>
                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="16"/>
                             <color key="textColor" name="greenishTeal"/>
                             <nil key="highlightedColor"/>
@@ -262,9 +241,8 @@
     </objects>
     <resources>
         <image name="programBtnImage" width="312" height="48"/>
+        <image name="registBtnIcon" width="66" height="66"/>
         <image name="registCheckHomeIcon" width="60" height="60"/>
-        <image name="registCompIcon2" width="60" height="60"/>
-        <image name="registHomeIcon" width="60" height="60"/>
         <namedColor name="dodgerBlue">
             <color red="0.19607843137254902" green="0.61568627450980395" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

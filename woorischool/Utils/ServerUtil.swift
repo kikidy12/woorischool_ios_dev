@@ -90,6 +90,11 @@ class ServerUtil: NSObject {
         apiRequest("like", method: .post, parameters: parameters, completion: completion)
     }
     
+    func getLike(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("like", method: .get, parameters: parameters, completion: completion)
+    }
+    
     func deleteV2Board(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
         currentVc = vc
         apiRequest("v2_board", method: .delete, parameters: parameters, completion: completion)

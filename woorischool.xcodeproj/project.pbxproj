@@ -102,6 +102,10 @@
 		9915B61D2365213700ACE9B6 /* TeacherStudentListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9915B61B2365213700ACE9B6 /* TeacherStudentListViewController.xib */; };
 		9915B62023652A4600ACE9B6 /* StudentContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9915B61E23652A4600ACE9B6 /* StudentContactTableViewCell.swift */; };
 		9915B62123652A4600ACE9B6 /* StudentContactTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9915B61F23652A4600ACE9B6 /* StudentContactTableViewCell.xib */; };
+		9945594E23B1CF060052E322 /* LikeUserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9945594C23B1CF060052E322 /* LikeUserListViewController.swift */; };
+		9945594F23B1CF060052E322 /* LikeUserListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9945594D23B1CF060052E322 /* LikeUserListViewController.xib */; };
+		9945595223B1D0A90052E322 /* BoardLikeUserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9945595023B1D0A90052E322 /* BoardLikeUserTableViewCell.swift */; };
+		9945595323B1D0A90052E322 /* BoardLikeUserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9945595123B1D0A90052E322 /* BoardLikeUserTableViewCell.xib */; };
 		99468CE62372823E00AAB535 /* RegistDailyNoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99468CE42372823E00AAB535 /* RegistDailyNoteViewController.swift */; };
 		99468CE72372823E00AAB535 /* RegistDailyNoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99468CE52372823E00AAB535 /* RegistDailyNoteViewController.xib */; };
 		994907A02394AAFF00A6D1F6 /* AlarmListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9949079E2394AAFF00A6D1F6 /* AlarmListViewController.swift */; };
@@ -353,6 +357,10 @@
 		9915B61B2365213700ACE9B6 /* TeacherStudentListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TeacherStudentListViewController.xib; sourceTree = "<group>"; };
 		9915B61E23652A4600ACE9B6 /* StudentContactTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentContactTableViewCell.swift; sourceTree = "<group>"; };
 		9915B61F23652A4600ACE9B6 /* StudentContactTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StudentContactTableViewCell.xib; sourceTree = "<group>"; };
+		9945594C23B1CF060052E322 /* LikeUserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeUserListViewController.swift; sourceTree = "<group>"; };
+		9945594D23B1CF060052E322 /* LikeUserListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LikeUserListViewController.xib; sourceTree = "<group>"; };
+		9945595023B1D0A90052E322 /* BoardLikeUserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardLikeUserTableViewCell.swift; sourceTree = "<group>"; };
+		9945595123B1D0A90052E322 /* BoardLikeUserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BoardLikeUserTableViewCell.xib; sourceTree = "<group>"; };
 		99468CE42372823E00AAB535 /* RegistDailyNoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistDailyNoteViewController.swift; sourceTree = "<group>"; };
 		99468CE52372823E00AAB535 /* RegistDailyNoteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegistDailyNoteViewController.xib; sourceTree = "<group>"; };
 		9949079E2394AAFF00A6D1F6 /* AlarmListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListViewController.swift; sourceTree = "<group>"; };
@@ -611,6 +619,7 @@
 				994907EB239DE47D00A6D1F6 /* MyChattingTableViewCell.swift */,
 				996FE85E23A750C3003872D4 /* ImageDetailCollectionViewCell.swift */,
 				99FAB1B423AF30DD00CE0D3A /* ChildInfoTableViewCell.swift */,
+				9945595023B1D0A90052E322 /* BoardLikeUserTableViewCell.swift */,
 			);
 			path = Objects;
 			sourceTree = "<group>";
@@ -671,6 +680,7 @@
 				99DFB17F2355808200C5B69D /* ManageChildrenViewController.xib */,
 				99057903236BD06B002842AB /* ParentsEnrolmentClassViewController.xib */,
 				991182F4236CF84B0020D6CE /* DailyNotiViewController.xib */,
+				99FAB1B923AF339C00CE0D3A /* ChildPointListViewController.xib */,
 			);
 			path = ModalViews;
 			sourceTree = "<group>";
@@ -690,7 +700,6 @@
 				99057902236BD06B002842AB /* ParentsEnrolmentClassViewController.swift */,
 				991182F3236CF84B0020D6CE /* DailyNotiViewController.swift */,
 				99FAB1B823AF339C00CE0D3A /* ChildPointListViewController.swift */,
-				99FAB1B923AF339C00CE0D3A /* ChildPointListViewController.xib */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
@@ -751,6 +760,7 @@
 				994907E0239D10FB00A6D1F6 /* ChattingViewController.xib */,
 				996FE81723A3889C003872D4 /* PhotoDetailShowViewViewController.xib */,
 				99FAB1B123AF125400CE0D3A /* EditProfileViewController.xib */,
+				9945594D23B1CF060052E322 /* LikeUserListViewController.xib */,
 			);
 			path = ModalViews;
 			sourceTree = "<group>";
@@ -793,6 +803,7 @@
 				994907DF239D10FB00A6D1F6 /* ChattingViewController.swift */,
 				996FE81623A3889C003872D4 /* PhotoDetailShowViewViewController.swift */,
 				99FAB1B023AF125400CE0D3A /* EditProfileViewController.swift */,
+				9945594C23B1CF060052E322 /* LikeUserListViewController.swift */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
@@ -830,6 +841,7 @@
 				994907EC239DE47D00A6D1F6 /* MyChattingTableViewCell.xib */,
 				996FE85F23A750C3003872D4 /* ImageDetailCollectionViewCell.xib */,
 				99FAB1B523AF30DD00CE0D3A /* ChildInfoTableViewCell.xib */,
+				9945595123B1D0A90052E322 /* BoardLikeUserTableViewCell.xib */,
 			);
 			path = VIews;
 			sourceTree = "<group>";
@@ -1255,6 +1267,7 @@
 				99088BD223754235009C9AE6 /* NotiTableViewCell.xib in Resources */,
 				994907D82398DBC600A6D1F6 /* MyClassRecordTableViewCell.xib in Resources */,
 				994A6B30235ED5770088D46E /* StudentHomeViewController.xib in Resources */,
+				9945594F23B1CF060052E322 /* LikeUserListViewController.xib in Resources */,
 				9968CF3123418F3200B8D095 /* Main.storyboard in Resources */,
 				994A6B3C235ED6030088D46E /* StudentMyInfoViewController.xib in Resources */,
 				994907A52394AB5300A6D1F6 /* AlarmTableViewCell.xib in Resources */,
@@ -1277,6 +1290,7 @@
 				994907E2239D10FB00A6D1F6 /* ChattingViewController.xib in Resources */,
 				99EBAC04237306AC00091905 /* SelectCameraTypeViewController.xib in Resources */,
 				9914AA0023431447001C0112 /* NotoSansCJKkr-DemiLight.otf in Resources */,
+				9945595323B1D0A90052E322 /* BoardLikeUserTableViewCell.xib in Resources */,
 				994A6B38235ED5ED0088D46E /* StudentChattingRoomListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1424,6 +1438,7 @@
 				99DFB13E234F7AE400C5B69D /* RegistClassPopupViewController.swift in Sources */,
 				994907D72398DBC600A6D1F6 /* MyClassRecordTableViewCell.swift in Sources */,
 				9956BF782366B5670069E661 /* TeacherStudentAttendViewController.swift in Sources */,
+				9945595223B1D0A90052E322 /* BoardLikeUserTableViewCell.swift in Sources */,
 				994A6B3B235ED6030088D46E /* StudentMyInfoViewController.swift in Sources */,
 				994907F2239E0A7000A6D1F6 /* ChatData.swift in Sources */,
 				991182FE236D86DC0020D6CE /* EmoInputView.swift in Sources */,
@@ -1469,6 +1484,7 @@
 				99088BE1237CF351009C9AE6 /* DailyNoteListViewController.swift in Sources */,
 				9968CF2E23418F3200B8D095 /* ViewController.swift in Sources */,
 				9968CF2C23418F3200B8D095 /* AppDelegate.swift in Sources */,
+				9945594E23B1CF060052E322 /* LikeUserListViewController.swift in Sources */,
 				996EA4D823739849000C6D34 /* MyPageViewController.swift in Sources */,
 				9956BF7C2366C3070069E661 /* ParentsHomeRenewViewController.swift in Sources */,
 				994907F0239DE9DB00A6D1F6 /* ChatRoomData.swift in Sources */,

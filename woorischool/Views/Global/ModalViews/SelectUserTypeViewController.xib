@@ -30,11 +30,11 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SYA-II-aSs" customClass="CustomView" customModule="우리스쿨" customModuleProvider="target">
                     <rect key="frame" x="40" y="196.5" width="295" height="78"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tempEmptyImage" translatesAutoresizingMaskIntoConstraints="NO" id="JTx-Az-onG" customClass="CustomImageView" customModule="우리스쿨" customModuleProvider="target">
-                            <rect key="frame" x="15" y="14" width="50" height="50"/>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dogIcon" translatesAutoresizingMaskIntoConstraints="NO" id="JTx-Az-onG" customClass="CustomImageView" customModule="우리스쿨" customModuleProvider="target">
+                            <rect key="frame" x="15" y="10" width="58" height="58"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="50" id="1Sm-sD-9gw"/>
-                                <constraint firstAttribute="width" constant="50" id="B4y-lC-TtG"/>
+                                <constraint firstAttribute="height" constant="58" id="1Sm-sD-9gw"/>
+                                <constraint firstAttribute="width" constant="58" id="B4y-lC-TtG"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
@@ -43,13 +43,13 @@
                             </userDefinedRuntimeAttributes>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="저는" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPV-U2-Vfa">
-                            <rect key="frame" x="90" y="27.5" width="35" height="23"/>
+                            <rect key="frame" x="98" y="27.5" width="35" height="23"/>
                             <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="20"/>
                             <color key="textColor" name="greyishBrown"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="학생" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RZD-7R-vUt">
-                            <rect key="frame" x="125" y="27.5" width="83" height="23"/>
+                            <rect key="frame" x="133" y="27.5" width="75" height="23"/>
                             <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="20"/>
                             <color key="textColor" name="greenishTeal"/>
                             <nil key="highlightedColor"/>
@@ -61,7 +61,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" name="whiteTwo"/>
                     <gestureRecognizers/>
                     <constraints>
                         <constraint firstItem="tKq-re-8yf" firstAttribute="leading" secondItem="RZD-7R-vUt" secondAttribute="trailing" id="0Ls-h0-3WJ"/>
@@ -79,12 +79,6 @@
                         <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
                             <real key="value" value="10"/>
                         </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                            <real key="value" value="1"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                            <color key="value" name="veryLightPink"/>
-                        </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <outletCollection property="gestureRecognizers" destination="W4A-TV-iJV" appends="YES" id="86a-a1-XQh"/>
@@ -93,11 +87,11 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="H9n-kJ-S7L" customClass="CustomView" customModule="우리스쿨" customModuleProvider="target">
                     <rect key="frame" x="40" y="294.5" width="295" height="78"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tempEmptyImage" translatesAutoresizingMaskIntoConstraints="NO" id="YqA-qa-xDy" customClass="CustomImageView" customModule="우리스쿨" customModuleProvider="target">
-                            <rect key="frame" x="15" y="14" width="50" height="50"/>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pangIcon" translatesAutoresizingMaskIntoConstraints="NO" id="YqA-qa-xDy" customClass="CustomImageView" customModule="우리스쿨" customModuleProvider="target">
+                            <rect key="frame" x="15" y="10" width="58" height="58"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="50" id="gdj-fP-sWz"/>
-                                <constraint firstAttribute="height" constant="50" id="rkh-ky-mTy"/>
+                                <constraint firstAttribute="width" constant="58" id="gdj-fP-sWz"/>
+                                <constraint firstAttribute="height" constant="58" id="rkh-ky-mTy"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
@@ -106,13 +100,13 @@
                             </userDefinedRuntimeAttributes>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="저는" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dk8-Gw-8Kc">
-                            <rect key="frame" x="90" y="27.5" width="35" height="23"/>
+                            <rect key="frame" x="98" y="27.5" width="35" height="23"/>
                             <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="20"/>
                             <color key="textColor" name="greyishBrown"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="학부모" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Hr-Kg-3CH">
-                            <rect key="frame" x="125" y="27.5" width="83" height="23"/>
+                            <rect key="frame" x="133" y="27.5" width="75" height="23"/>
                             <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="20"/>
                             <color key="textColor" name="softBlue"/>
                             <nil key="highlightedColor"/>
@@ -124,7 +118,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" name="whiteTwo"/>
                     <gestureRecognizers/>
                     <constraints>
                         <constraint firstItem="0Hr-Kg-3CH" firstAttribute="centerY" secondItem="H9n-kJ-S7L" secondAttribute="centerY" id="07S-Qp-9dO"/>
@@ -142,12 +136,6 @@
                         <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
                             <real key="value" value="10"/>
                         </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                            <real key="value" value="1"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                            <color key="value" name="veryLightPink"/>
-                        </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <outletCollection property="gestureRecognizers" destination="L61-yF-yDu" appends="YES" id="Yjc-G9-7Je"/>
@@ -156,11 +144,11 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bw1-BR-26N" customClass="CustomView" customModule="우리스쿨" customModuleProvider="target">
                     <rect key="frame" x="40" y="392.5" width="295" height="78"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tempEmptyImage" translatesAutoresizingMaskIntoConstraints="NO" id="EYd-qe-nJ5" customClass="CustomImageView" customModule="우리스쿨" customModuleProvider="target">
-                            <rect key="frame" x="15" y="14" width="50" height="50"/>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="duckIcon" translatesAutoresizingMaskIntoConstraints="NO" id="EYd-qe-nJ5" customClass="CustomImageView" customModule="우리스쿨" customModuleProvider="target">
+                            <rect key="frame" x="15" y="10" width="58" height="58"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="50" id="Rf9-NJ-rXv"/>
-                                <constraint firstAttribute="height" constant="50" id="ggh-HX-zt4"/>
+                                <constraint firstAttribute="width" constant="58" id="Rf9-NJ-rXv"/>
+                                <constraint firstAttribute="height" constant="58" id="ggh-HX-zt4"/>
                             </constraints>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
@@ -169,13 +157,13 @@
                             </userDefinedRuntimeAttributes>
                         </imageView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="저는" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FCv-2e-emE">
-                            <rect key="frame" x="90" y="27.5" width="35" height="23"/>
+                            <rect key="frame" x="98" y="27.5" width="35" height="23"/>
                             <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="20"/>
                             <color key="textColor" name="greyishBrown"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="선생님" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0K-DM-bWu">
-                            <rect key="frame" x="125" y="27.5" width="83" height="23"/>
+                            <rect key="frame" x="133" y="27.5" width="75" height="23"/>
                             <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="20"/>
                             <color key="textColor" name="marigold"/>
                             <nil key="highlightedColor"/>
@@ -187,7 +175,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <color key="backgroundColor" name="whiteTwo"/>
                     <gestureRecognizers/>
                     <constraints>
                         <constraint firstItem="sSQ-AT-fYC" firstAttribute="centerY" secondItem="bw1-BR-26N" secondAttribute="centerY" id="J35-xi-pYi"/>
@@ -205,31 +193,25 @@
                         <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
                             <real key="value" value="10"/>
                         </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                            <real key="value" value="1"/>
-                        </userDefinedRuntimeAttribute>
-                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                            <color key="value" name="veryLightPink"/>
-                        </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
                         <outletCollection property="gestureRecognizers" destination="Wgj-5O-wnE" appends="YES" id="SZe-2f-si2"/>
                     </connections>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="우리스쿨에 오신 것을 환영합니다" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="03x-nt-kdK">
-                    <rect key="frame" x="0.0" y="111.5" width="375" height="20"/>
-                    <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="17"/>
-                    <color key="textColor" name="greyishBrown"/>
+                    <rect key="frame" x="0.0" y="141.5" width="375" height="21"/>
+                    <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="18"/>
+                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="bw1-BR-26N" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="9Ko-Jb-Q3n"/>
                 <constraint firstItem="H9n-kJ-S7L" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="A1S-cQ-aDw"/>
                 <constraint firstItem="H9n-kJ-S7L" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="A6s-f0-1ZH"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="03x-nt-kdK" secondAttribute="trailing" id="C3L-BC-qs7"/>
-                <constraint firstItem="SYA-II-aSs" firstAttribute="top" secondItem="03x-nt-kdK" secondAttribute="bottom" constant="65" id="CqR-0C-f2o"/>
+                <constraint firstItem="SYA-II-aSs" firstAttribute="top" secondItem="03x-nt-kdK" secondAttribute="bottom" constant="34" id="CqR-0C-f2o"/>
                 <constraint firstItem="bw1-BR-26N" firstAttribute="top" secondItem="H9n-kJ-S7L" secondAttribute="bottom" constant="20" id="HcH-25-ZfW"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="SYA-II-aSs" secondAttribute="trailing" constant="40" id="Khl-8o-qcu"/>
                 <constraint firstItem="H9n-kJ-S7L" firstAttribute="top" secondItem="SYA-II-aSs" secondAttribute="bottom" constant="20" id="dC3-qm-oJ0"/>
@@ -259,7 +241,9 @@
         </tapGestureRecognizer>
     </objects>
     <resources>
-        <image name="tempEmptyImage" width="70" height="70"/>
+        <image name="dogIcon" width="57" height="57"/>
+        <image name="duckIcon" width="57" height="56"/>
+        <image name="pangIcon" width="56" height="56"/>
         <namedColor name="greenishTeal">
             <color red="0.17254901960784313" green="0.77647058823529413" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -272,8 +256,8 @@
         <namedColor name="softBlue">
             <color red="0.38039215686274508" green="0.67843137254901964" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="veryLightPink">
-            <color red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="whiteTwo">
+            <color red="0.96078431372549022" green="0.96078431372549022" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

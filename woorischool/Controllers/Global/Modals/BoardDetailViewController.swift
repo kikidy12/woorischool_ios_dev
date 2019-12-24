@@ -27,7 +27,7 @@ class BoardDetailViewController: UIViewController {
                 
             }
             self.replyTableView.reloadData()
-            self.replyTableViewHeightConstraint.constant = self.replyTableView.contentSize.height
+            replyTableViewHeightConstraint.constant = replyTableView.estimatedRowHeight * CGFloat(commentList.count)
             self.view.layoutIfNeeded()
             self.replyTableViewHeightConstraint.constant = self.replyTableView.contentSize.height
             
@@ -66,6 +66,8 @@ class BoardDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        likeCountLabel.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showLikeListEvent(_:))))
         replyTableView.register(UINib(nibName: "BoardReplyTableViewCell", bundle: nil), forCellReuseIdentifier: "replyCell")
         replyTableView.estimatedRowHeight = 300
         replyTableView.rowHeight = UITableView.automaticDimension
@@ -94,6 +96,14 @@ class BoardDetailViewController: UIViewController {
     
     @IBAction func likeCheckEvent() {
         likeCheck()
+    }
+    
+    @objc func showLikeListEvent(_ sender: UITapGestureRecognizer) {
+        if sender.state == .ended {
+            let vc = LikeUserListViewController()
+            vc.board = self.board
+            showPopupView(vc: vc)
+        }
     }
     
     func settingNaviBar() {
@@ -146,7 +156,7 @@ class BoardDetailViewController: UIViewController {
         timeLabel.text = board.writeTime
         contentLabel.text = board.content?.decodeEmoji
         replyCountLabel.text = "댓글 (\(board.commentCount ?? 0))"
-        likeCountLabel.text = "+\(board.likeCount ?? 0)"
+        likeCountLabel.text = "\(board.likeCount ?? 0) 명이 좋아합니다"
         
         if board.imageList.count == 0 {
             imageContainerView.isHidden = true
@@ -364,7 +374,7 @@ extension BoardDetailViewController {
                 return
             }
             self.setLike(isLike: isLike)
-            self.likeCountLabel.text = "+\(likeCount)"
+            self.likeCountLabel.text = "\(likeCount) 명이 좋아합니다"
         }
     }
 }

@@ -168,7 +168,7 @@ class ParentsHomeRenewViewController: UIViewController {
         var count = 0
         if !GlobalDatas.noticeList.isEmpty, (timer == nil || !timer.isValid) {
             self.notiBtn.setTitle("[공지] " + GlobalDatas.noticeList[0].title, for: .normal)
-            timer = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (timer) in
+            timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { (timer) in
                 if count < GlobalDatas.noticeList.count - 1 {
                     count += 1
                 }

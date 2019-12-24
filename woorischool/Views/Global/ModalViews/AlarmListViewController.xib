@@ -1,15 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansCJKkr-Regular.otf">
+            <string>NotoSansCJKkr-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AlarmListViewController" customModule="우리스쿨" customModuleProvider="target">
             <connections>
+                <outlet property="alarmEmptyView" destination="hEj-XO-5H3" id="ahs-3r-t7f"/>
                 <outlet property="alarmTableView" destination="Yk9-4j-zYz" id="NFS-md-XX9"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -27,16 +34,55 @@
                         <outlet property="delegate" destination="-1" id="GB5-sJ-OCz"/>
                     </connections>
                 </tableView>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hEj-XO-5H3">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="새로운 알림이 없습니다" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfY-Vl-5f2">
+                            <rect key="frame" x="20" y="320" width="374" height="19"/>
+                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="16"/>
+                            <color key="textColor" name="brownGrey"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="alarmEmptyImage" translatesAutoresizingMaskIntoConstraints="NO" id="Rpt-y8-VQV">
+                            <rect key="frame" x="168.5" y="359" width="77" height="100"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="77" id="NkW-xy-15f"/>
+                                <constraint firstAttribute="height" constant="100" id="hAs-ld-7RU"/>
+                            </constraints>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" name="paleGrey"/>
+                    <constraints>
+                        <constraint firstItem="Rpt-y8-VQV" firstAttribute="centerY" secondItem="hEj-XO-5H3" secondAttribute="centerY" id="5Bm-6S-0Kc"/>
+                        <constraint firstItem="Rpt-y8-VQV" firstAttribute="top" secondItem="pfY-Vl-5f2" secondAttribute="bottom" constant="20" id="Bh2-mS-lOn"/>
+                        <constraint firstAttribute="trailing" secondItem="pfY-Vl-5f2" secondAttribute="trailing" constant="20" symbolic="YES" id="DAU-g5-W3A"/>
+                        <constraint firstItem="pfY-Vl-5f2" firstAttribute="leading" secondItem="hEj-XO-5H3" secondAttribute="leading" constant="20" symbolic="YES" id="VSf-WV-CBD"/>
+                        <constraint firstItem="Rpt-y8-VQV" firstAttribute="centerX" secondItem="hEj-XO-5H3" secondAttribute="centerX" id="p5g-UI-7bJ"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="hEj-XO-5H3" secondAttribute="trailing" id="DFT-b2-aTt"/>
+                <constraint firstItem="hEj-XO-5H3" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="FSA-Cj-Cac"/>
                 <constraint firstItem="Yk9-4j-zYz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="JSS-zB-XaE"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Yk9-4j-zYz" secondAttribute="bottom" id="VfN-HU-SbK"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Yk9-4j-zYz" secondAttribute="trailing" id="XMl-A9-npP"/>
+                <constraint firstItem="hEj-XO-5H3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dA1-Yc-Zo8"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="hEj-XO-5H3" secondAttribute="bottom" id="fnM-S8-BD9"/>
                 <constraint firstItem="Yk9-4j-zYz" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="tP9-ew-EB4"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="94"/>
         </view>
     </objects>
+    <resources>
+        <image name="alarmEmptyImage" width="77" height="101"/>
+        <namedColor name="brownGrey">
+            <color red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="paleGrey">
+            <color red="0.96078431372549022" green="0.96078431372549022" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

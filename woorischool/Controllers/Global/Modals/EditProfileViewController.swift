@@ -16,6 +16,7 @@ class EditProfileViewController: UIViewController {
     
     @IBOutlet weak var profileImaegView: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var textCountLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +54,21 @@ class EditProfileViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
+    }
+    
+    @IBAction func editTextChange(_ sender: UITextField) {
+        guard let text = sender.text else {
+            return
+        }
+        
+        if text.count > 5 {
+            sender.text = String(text.dropLast())
+            textCountLabel.text = "5/5"
+        }
+        else {
+            textCountLabel.text = "\(text.count)/5"
+        }
+        
     }
 
 }

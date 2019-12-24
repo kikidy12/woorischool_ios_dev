@@ -28,24 +28,33 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="우리가 만드는 방과후 학교" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wsP-yO-IaS">
-                    <rect key="frame" x="0.0" y="244" width="414" height="20"/>
+                    <rect key="frame" x="0.0" y="438" width="414" height="20"/>
                     <fontDescription key="fontDescription" name="NanumSquareRoundR" family="NanumSquareRound" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="우리스쿨" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HgJ-vf-2ng">
-                    <rect key="frame" x="0.0" y="284" width="414" height="35"/>
+                    <rect key="frame" x="0.0" y="478" width="414" height="35"/>
                     <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="30"/>
                     <color key="textColor" name="greenishTeal"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoIcon" translatesAutoresizingMaskIntoConstraints="NO" id="5wr-2P-573">
+                    <rect key="frame" x="182" y="368" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="5Fr-hp-JYo"/>
+                        <constraint firstAttribute="width" constant="50" id="8Cj-5x-PBf"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="wsP-yO-IaS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="1eW-yx-tAS"/>
+                <constraint firstItem="wsP-yO-IaS" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="VOq-Wi-8FB"/>
+                <constraint firstItem="wsP-yO-IaS" firstAttribute="top" secondItem="5wr-2P-573" secondAttribute="bottom" constant="20" id="Xpy-IP-hJw"/>
+                <constraint firstItem="5wr-2P-573" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="YWW-Dg-HV3"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="HgJ-vf-2ng" secondAttribute="trailing" id="ZE1-mA-D0G"/>
                 <constraint firstItem="HgJ-vf-2ng" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="a3W-zc-D6E"/>
-                <constraint firstItem="wsP-yO-IaS" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="200" id="bG7-Ef-LKC"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wsP-yO-IaS" secondAttribute="trailing" id="eGM-he-Bqd"/>
                 <constraint firstItem="HgJ-vf-2ng" firstAttribute="top" secondItem="wsP-yO-IaS" secondAttribute="bottom" constant="20" id="sgP-Ks-P3y"/>
             </constraints>
@@ -54,6 +63,7 @@
         </view>
     </objects>
     <resources>
+        <image name="logoIcon" width="51" height="51"/>
         <namedColor name="greenishTeal">
             <color red="0.17254901960784313" green="0.77647058823529413" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

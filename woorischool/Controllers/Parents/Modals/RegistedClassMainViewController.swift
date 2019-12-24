@@ -33,6 +33,10 @@ class RegistedClassMainViewController: UIViewController {
             }
             
             classTabelView.reloadData()
+            
+            classTableViewHeightConstraint.constant = classTabelView.estimatedRowHeight * CGFloat(lectureClassList.count)
+            view.layoutIfNeeded()
+            classTableViewHeightConstraint.constant = classTabelView.contentSize.height
         }
     }
     
@@ -52,7 +56,9 @@ class RegistedClassMainViewController: UIViewController {
         classTabelView.dataSource = self
         
         classTabelView.register(UINib(nibName: "RegistedClassTableViewCell", bundle: nil), forCellReuseIdentifier: "classCell")
-        
+        classTabelView.tableFooterView = UIView(frame: .init(x: 0, y: 0, width: 1, height: 0.001))
+        classTabelView.estimatedRowHeight = 300
+        classTabelView.rowHeight = UITableView.automaticDimension
         let attributedString = NSMutableAttributedString(string: "12:00 시간 이내에 수강확정이 되지 않으면 \n다음 대기자에게 수강신청 권한이 넘어갑니다", attributes: [
             .font: UIFont(name: "NotoSansCJKkr-Regular", size: 14.0)!,
             .foregroundColor: UIColor.grapefruit,
@@ -107,14 +113,6 @@ class RegistedClassMainViewController: UIViewController {
 }
 
 extension RegistedClassMainViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if let cell = cell as? RegistedClassTableViewCell {
-            cell.initView(lectureClassList[indexPath.item], type: type, quater: quater)
-        }
-        if indexPath.item == (tableView.indexPathsForVisibleRows!.last!).item {
-            classTableViewHeightConstraint.constant = cell.frame.height * CGFloat(lectureClassList.count)
-        }
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return lectureClassList.count

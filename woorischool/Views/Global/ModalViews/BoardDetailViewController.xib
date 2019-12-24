@@ -183,7 +183,7 @@
                                             <color key="textColor" name="greyishBrown"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2mk-wm-Vyr">
+                                        <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2mk-wm-Vyr">
                                             <rect key="frame" x="350.5" y="11" width="15.5" height="15.5"/>
                                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="13"/>
                                             <color key="textColor" name="greyishBrown"/>
@@ -198,7 +198,7 @@
                                             </constraints>
                                         </imageView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bud-Du-PAc">
-                                            <rect key="frame" x="350.5" y="0.0" width="63.5" height="37"/>
+                                            <rect key="frame" x="371" y="0.0" width="43" height="37"/>
                                             <connections>
                                                 <action selector="likeCheckEvent" destination="-1" eventType="touchUpInside" id="pRD-Gh-q62"/>
                                             </connections>
@@ -206,6 +206,7 @@
                                     </subviews>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
+                                        <constraint firstItem="bud-Du-PAc" firstAttribute="leading" secondItem="IOW-R3-f3G" secondAttribute="leading" id="1Nn-YV-t2o"/>
                                         <constraint firstAttribute="trailing" secondItem="IOW-R3-f3G" secondAttribute="trailing" constant="26" id="25V-OY-Sbb"/>
                                         <constraint firstItem="bud-Du-PAc" firstAttribute="top" secondItem="Q51-5K-Zd7" secondAttribute="top" id="7qr-XS-bQ5"/>
                                         <constraint firstItem="IOW-R3-f3G" firstAttribute="centerY" secondItem="Q51-5K-Zd7" secondAttribute="centerY" id="Baa-0k-EW8"/>
@@ -215,7 +216,6 @@
                                         <constraint firstItem="IOW-R3-f3G" firstAttribute="leading" secondItem="2mk-wm-Vyr" secondAttribute="trailing" constant="5" id="L7q-m7-3ve"/>
                                         <constraint firstItem="mFl-db-seO" firstAttribute="leading" secondItem="Q51-5K-Zd7" secondAttribute="leading" constant="28" id="Lqc-cD-rn5"/>
                                         <constraint firstItem="mFl-db-seO" firstAttribute="centerY" secondItem="Q51-5K-Zd7" secondAttribute="centerY" id="Qji-18-gy7"/>
-                                        <constraint firstItem="bud-Du-PAc" firstAttribute="leading" secondItem="2mk-wm-Vyr" secondAttribute="leading" id="ZJ2-AM-VQx"/>
                                         <constraint firstAttribute="bottom" secondItem="bud-Du-PAc" secondAttribute="bottom" id="bk9-jd-t1u"/>
                                         <constraint firstItem="2mk-wm-Vyr" firstAttribute="centerY" secondItem="Q51-5K-Zd7" secondAttribute="centerY" id="f8x-3W-VVR"/>
                                         <constraint firstItem="0ZM-hB-qXe" firstAttribute="leading" secondItem="mFl-db-seO" secondAttribute="trailing" constant="8" id="zW0-NA-Gnw"/>

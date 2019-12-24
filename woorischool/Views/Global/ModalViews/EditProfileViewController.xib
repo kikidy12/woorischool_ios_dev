@@ -21,6 +21,7 @@
             <connections>
                 <outlet property="nameTextField" destination="ZNl-3N-VVC" id="at6-4F-Tiy"/>
                 <outlet property="profileImaegView" destination="iEv-UK-IKR" id="hzj-vt-dAg"/>
+                <outlet property="textCountLabel" destination="aFj-Bw-Qvm" id="wT4-2G-8Ce"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -61,6 +62,12 @@
                     <color key="textColor" name="greyishBrown"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFj-Bw-Qvm">
+                    <rect key="frame" x="319" y="148.5" width="26" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" name="brownGrey"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N33-Sp-Kfa" customClass="CustomView" customModule="우리스쿨" customModuleProvider="target">
                     <rect key="frame" x="30" y="172.5" width="315" height="47"/>
                     <subviews>
@@ -68,6 +75,9 @@
                             <rect key="frame" x="20" y="0.0" width="275" height="47"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <action selector="editTextChange:" destination="-1" eventType="editingChanged" id="ZgE-XQ-yq9"/>
+                            </connections>
                         </textField>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -90,8 +100,8 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* 사용 가능한 별명입니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPJ-lb-BhP">
-                    <rect key="frame" x="30" y="224.5" width="128" height="15.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="* 한글/영문만 가능합니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPJ-lb-BhP">
+                    <rect key="frame" x="30" y="224.5" width="129" height="15.5"/>
                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="13"/>
                     <color key="textColor" name="greenishTeal"/>
                     <nil key="highlightedColor"/>
@@ -100,6 +110,7 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="iEv-UK-IKR" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="0An-hT-yfs"/>
+                <constraint firstItem="aFj-Bw-Qvm" firstAttribute="trailing" secondItem="N33-Sp-Kfa" secondAttribute="trailing" id="3g9-Nz-4xj"/>
                 <constraint firstItem="HqJ-id-CL0" firstAttribute="top" secondItem="iEv-UK-IKR" secondAttribute="bottom" constant="40" id="3gb-iO-cYg"/>
                 <constraint firstItem="tGg-wF-dZJ" firstAttribute="trailing" secondItem="iEv-UK-IKR" secondAttribute="trailing" constant="5" id="6P4-Gq-CMm"/>
                 <constraint firstItem="N33-Sp-Kfa" firstAttribute="top" secondItem="HqJ-id-CL0" secondAttribute="bottom" constant="5" id="AZ7-Q6-f8H"/>
@@ -109,6 +120,7 @@
                 <constraint firstItem="HqJ-id-CL0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="aQ0-Te-U5h"/>
                 <constraint firstItem="tPJ-lb-BhP" firstAttribute="top" secondItem="N33-Sp-Kfa" secondAttribute="bottom" constant="5" id="b7f-vS-Pai"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="N33-Sp-Kfa" secondAttribute="trailing" constant="30" id="eBj-mJ-OuI"/>
+                <constraint firstItem="aFj-Bw-Qvm" firstAttribute="centerY" secondItem="HqJ-id-CL0" secondAttribute="centerY" id="qlQ-1K-o1e"/>
                 <constraint firstItem="tPJ-lb-BhP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="twY-JT-FL9"/>
                 <constraint firstItem="tGg-wF-dZJ" firstAttribute="bottom" secondItem="iEv-UK-IKR" secondAttribute="bottom" constant="5" id="uv3-FH-TyD"/>
             </constraints>
@@ -119,6 +131,9 @@
     <resources>
         <image name="pencil.circle" catalog="system" width="64" height="60"/>
         <image name="profilePlaceHolder" width="60" height="60"/>
+        <namedColor name="brownGrey">
+            <color red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="greenishTeal">
             <color red="0.17254901960784313" green="0.77647058823529413" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

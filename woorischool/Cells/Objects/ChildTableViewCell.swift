@@ -17,6 +17,7 @@ class ChildTableViewCell: UITableViewCell {
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var pointLabel: UILabel!
     
 
     override func awakeFromNib() {
@@ -40,5 +41,7 @@ class ChildTableViewCell: UITableViewCell {
         
         nameLabel.text = child.name
         infoLabel.text = "\(child.studentInfo?.grade ?? 1)학년 \(child.studentInfo?.classNumber ?? 0)반 \(child.studentInfo?.number ?? 0)번"
+        
+        pointLabel.text = "\(child.point.decimalString ?? "0") 원"
     }
 }
