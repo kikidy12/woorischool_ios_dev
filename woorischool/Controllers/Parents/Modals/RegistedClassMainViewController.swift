@@ -181,9 +181,14 @@ extension RegistedClassMainViewController: UITableViewDelegate, UITableViewDataS
             headerView.backgroundColor = .paleGreyThree
             let titleLabel = UILabel()
             titleLabel.frame.size = .init(width: headerView.frame.width, height: 50)
+            let attributedString = NSMutableAttributedString(string: "10월 23일 15:00시에 낙첨 결과 확인이 가능합니다.", attributes: [
+              .font: UIFont(name: "NotoSansCJKkr-Medium", size: 14.0)!,
+              .foregroundColor: UIColor.greyishBrown,
+              .kern: 0.0
+            ])
+            titleLabel.attributedText = attributedString
             titleLabel.center = headerView.center
             titleLabel.textAlignment = .center
-            titleLabel.text = "12:00 시간 이내에 수강호가정\n그런거 있다"
             titleLabel.textColor = .grapefruit
             titleLabel.backgroundColor = .grapefruit10
             

@@ -51,6 +51,19 @@ class ClassInfoPopupViewController: UIViewController {
                 return "\($0 ?? "")\n\($1.element.eduTime)(\($1.element.day!))"
             }
         }
+        
+        weekDaysLabel.text = lectureClass.dayList.enumerated().reduce("") {
+            guard let pre = $0, let day = $1.element.day else {
+                return ""
+            }
+            
+            if $1.offset == 0 {
+                return "\(day)"
+            }
+            else {
+                return "\(pre)/\(day)"
+            }
+        }
         weekLabel.text = "\(lectureClass.classTime ?? "")(\(lecture.week ?? 0))"
         placeLabel.text = lectureClass.location
 

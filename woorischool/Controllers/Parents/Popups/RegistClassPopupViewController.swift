@@ -36,6 +36,19 @@ class RegistClassPopupViewController: UIViewController {
             }
         }
         
+        weekDayLabel.text = lectureClass.dayList.enumerated().reduce("") {
+            guard let pre = $0, let day = $1.element.day else {
+                return ""
+            }
+            
+            if $1.offset == 0 {
+                return "\(day)"
+            }
+            else {
+                return "\(pre)/\(day)"
+            }
+        }
+        
         gradeLabel.text = lectureClass.gradeStr() + "학년"
         classNameLabel.text = lectureClass.name
     }
