@@ -16,6 +16,12 @@ enum DateFormatterStyle: String {
     case hypoon = "-"
 }
 
+enum RatingRequestState: String {
+    case requested = "취소하기"
+    case completion = "상태확인"
+    case needRequest = "요청하기"
+}
+
 enum QuaterType: String {
     case first = "FIRST_COME"
     case random = "LOTTERY"

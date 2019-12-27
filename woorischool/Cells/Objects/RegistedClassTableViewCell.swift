@@ -27,7 +27,7 @@ class RegistedClassTableViewCell: UITableViewCell {
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var readyTitleLabel: UILabel!
-    
+    @IBOutlet weak var stateInfoLabel: UILabel!
     @IBOutlet weak var applyBtn: CustomButton!
     
     override func awakeFromNib() {
@@ -83,6 +83,8 @@ class RegistedClassTableViewCell: UITableViewCell {
         }
         
         if type == "CONFIRM" {
+            stateInfoLabel.isHidden = false
+            stateInfoLabel.text = "신청이 완료되었습니다"
             applyBtn.isHidden = true
             readyTitleLabel.isHidden = true
             countLabel.isHidden = true
@@ -90,10 +92,12 @@ class RegistedClassTableViewCell: UITableViewCell {
         else {
             applyBtn.isHidden = false
             if quater.type == .first {
+                stateInfoLabel.isHidden = true
                 readyTitleLabel.isHidden = false
                 countLabel.isHidden = false
             }
             else {
+                stateInfoLabel.isHidden = false
                 readyTitleLabel.isHidden = false
                 countLabel.isHidden = false
             }

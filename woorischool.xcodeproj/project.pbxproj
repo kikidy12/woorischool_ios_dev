@@ -188,6 +188,10 @@
 		996FE86023A750C3003872D4 /* ImageDetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 996FE85E23A750C3003872D4 /* ImageDetailCollectionViewCell.swift */; };
 		996FE86123A750C3003872D4 /* ImageDetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 996FE85F23A750C3003872D4 /* ImageDetailCollectionViewCell.xib */; };
 		99766E1723711FAE002573FD /* SchoolData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99766E1623711FAE002573FD /* SchoolData.swift */; };
+		9998833223B49EE1000C413C /* ClassInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9998833023B49EE1000C413C /* ClassInfoViewController.swift */; };
+		9998833323B49EE1000C413C /* ClassInfoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9998833123B49EE1000C413C /* ClassInfoViewController.xib */; };
+		9998833623B5EB9F000C413C /* TermCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9998833423B5EB9F000C413C /* TermCheckViewController.swift */; };
+		9998833723B5EB9F000C413C /* TermCheckViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9998833523B5EB9F000C413C /* TermCheckViewController.xib */; };
 		99CF8697238560CF00812A36 /* ImagePagingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CF8695238560CF00812A36 /* ImagePagingCollectionViewCell.swift */; };
 		99CF8698238560CF00812A36 /* ImagePagingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99CF8696238560CF00812A36 /* ImagePagingCollectionViewCell.xib */; };
 		99CF869B2385934500812A36 /* BoardAddAndEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CF86992385934500812A36 /* BoardAddAndEditViewController.swift */; };
@@ -449,6 +453,10 @@
 		996FE85E23A750C3003872D4 /* ImageDetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailCollectionViewCell.swift; sourceTree = "<group>"; };
 		996FE85F23A750C3003872D4 /* ImageDetailCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageDetailCollectionViewCell.xib; sourceTree = "<group>"; };
 		99766E1623711FAE002573FD /* SchoolData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolData.swift; sourceTree = "<group>"; };
+		9998833023B49EE1000C413C /* ClassInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassInfoViewController.swift; sourceTree = "<group>"; };
+		9998833123B49EE1000C413C /* ClassInfoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClassInfoViewController.xib; sourceTree = "<group>"; };
+		9998833423B5EB9F000C413C /* TermCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermCheckViewController.swift; sourceTree = "<group>"; };
+		9998833523B5EB9F000C413C /* TermCheckViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermCheckViewController.xib; sourceTree = "<group>"; };
 		99CF8695238560CF00812A36 /* ImagePagingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePagingCollectionViewCell.swift; sourceTree = "<group>"; };
 		99CF8696238560CF00812A36 /* ImagePagingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImagePagingCollectionViewCell.xib; sourceTree = "<group>"; };
 		99CF86992385934500812A36 /* BoardAddAndEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardAddAndEditViewController.swift; sourceTree = "<group>"; };
@@ -700,6 +708,8 @@
 				99057902236BD06B002842AB /* ParentsEnrolmentClassViewController.swift */,
 				991182F3236CF84B0020D6CE /* DailyNotiViewController.swift */,
 				99FAB1B823AF339C00CE0D3A /* ChildPointListViewController.swift */,
+				9998833023B49EE1000C413C /* ClassInfoViewController.swift */,
+				9998833123B49EE1000C413C /* ClassInfoViewController.xib */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
@@ -804,6 +814,8 @@
 				996FE81623A3889C003872D4 /* PhotoDetailShowViewViewController.swift */,
 				99FAB1B023AF125400CE0D3A /* EditProfileViewController.swift */,
 				9945594C23B1CF060052E322 /* LikeUserListViewController.swift */,
+				9998833423B5EB9F000C413C /* TermCheckViewController.swift */,
+				9998833523B5EB9F000C413C /* TermCheckViewController.xib */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
@@ -1247,6 +1259,7 @@
 				9914AA2B2345C861001C0112 /* CourseRegistrationViewController.xib in Resources */,
 				994907A12394AAFF00A6D1F6 /* AlarmListViewController.xib in Resources */,
 				99DFB1612350605F00C5B69D /* TeacherHomeViewController.xib in Resources */,
+				9998833323B49EE1000C413C /* ClassInfoViewController.xib in Resources */,
 				99DFB185235581E300C5B69D /* ChildTableViewCell.xib in Resources */,
 				991182EE236CEE950020D6CE /* ReReplyTableViewCell.xib in Resources */,
 				99DFB16C2354236600C5B69D /* ConfirmClassViewController.xib in Resources */,
@@ -1286,6 +1299,7 @@
 				994907D42398DAD200A6D1F6 /* MyRegistCourseHeaderView.xib in Resources */,
 				9914AA302345CEFC001C0112 /* CourseCollectionViewCell.xib in Resources */,
 				9956BF8F2367A56C0069E661 /* HomeScheduleTableViewCell.xib in Resources */,
+				9998833723B5EB9F000C413C /* TermCheckViewController.xib in Resources */,
 				994907AF2394C50300A6D1F6 /* SearchView.xib in Resources */,
 				994907E2239D10FB00A6D1F6 /* ChattingViewController.xib in Resources */,
 				99EBAC04237306AC00091905 /* SelectCameraTypeViewController.xib in Resources */,
@@ -1461,6 +1475,7 @@
 				99088BD823755179009C9AE6 /* ChattingRoomTableHeaderView.swift in Sources */,
 				9914AA262345C12C001C0112 /* ParentsHomeViewController.swift in Sources */,
 				991182D9236C618A0020D6CE /* ClassBoardTableViewCell.swift in Sources */,
+				9998833223B49EE1000C413C /* ClassInfoViewController.swift in Sources */,
 				994907DC239CD13E00A6D1F6 /* LectureClassDayEmptyView.swift in Sources */,
 				991182CD236BDEE40020D6CE /* BoardListViewController.swift in Sources */,
 				99057904236BD06B002842AB /* ParentsEnrolmentClassViewController.swift in Sources */,
@@ -1514,6 +1529,7 @@
 				99DFB15D2350579100C5B69D /* LectureClassDayData.swift in Sources */,
 				99CF8697238560CF00812A36 /* ImagePagingCollectionViewCell.swift in Sources */,
 				991182D1236BE0460020D6CE /* BoardListTableViewCell.swift in Sources */,
+				9998833623B5EB9F000C413C /* TermCheckViewController.swift in Sources */,
 				9914A9DA23430B8C001C0112 /* UserDefs.swift in Sources */,
 				994A6B37235ED5ED0088D46E /* StudentChattingRoomListViewController.swift in Sources */,
 				9968CF3423418F3200B8D095 /* woorischool.xcdatamodeld in Sources */,

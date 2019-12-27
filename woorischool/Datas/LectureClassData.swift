@@ -25,6 +25,9 @@ class LectureClassData: NSObject {
     var isTodayWrite: Bool!
     var attendance: AttendenceType!
     
+    var ratingStartDate: Date!
+    var ratingEndDate: Date!
+    
     var isApply: Bool!
     
     var applyId: Int!
@@ -38,6 +41,33 @@ class LectureClassData: NSObject {
     var scheduleList = [LectureScheduleData]()
     
     var lectureSchedule: LectureScheduleData!
+    
+    var classPeriod: String? {
+        guard let lecture = self.lecture, let stDate = lecture.startDate, let edDate = lecture.endDate else {
+            return nil
+        }
+        
+        return "\(stDate.dateToString(formatter: "yyyy.MM.dd")) - \(edDate.dateToString(formatter: "yyyy.MM.dd"))"
+    }
+    
+    var ratingPeriod: String? {
+        guard let stDate = ratingStartDate, let edDate = ratingEndDate else {
+            return nil
+        }
+        
+        return "\(stDate.dateToString(formatter: "yyyy.MM.dd")) - \(edDate.dateToString(formatter: "yyyy.MM.dd"))"
+    }
+    
+    var isStudy:Bool {
+        guard let lecture = self.lecture, let edDate = lecture.endDate else {
+            print("no EndDate")
+            return false
+        }
+        
+        return Date() < edDate ? true : false
+    }
+    
+    var requestStatus: RatingRequestState = .needRequest
     
     var daysStr: String {
         var weekDaysStr = ""
@@ -96,6 +126,18 @@ class LectureClassData: NSObject {
         
         if let schedule = data["schedule"] as? NSDictionary {
             lectureSchedule = LectureScheduleData(schedule)
+        }
+        
+        if let str = data["request_status"] as? String {
+            requestStatus = RatingRequestState(rawValue: str) ?? .needRequest
+        }
+        
+        if let str = data["rating_start_date"] as? String {
+            ratingStartDate = str.stringToDate(formatter: "yyyy-MM-dd HH:mm:ss")
+        }
+        
+        if let str = data["rating_end_date"] as? String {
+            ratingEndDate = str.stringToDate(formatter: "yyyy-MM-dd HH:mm:ss")
         }
     }
 

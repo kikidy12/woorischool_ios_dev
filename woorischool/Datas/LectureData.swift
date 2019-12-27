@@ -14,6 +14,9 @@ class LectureData: NSObject {
     var week: Int!
     var lecturePlanUrl: String!
     
+    var startDate: Date!
+    var endDate: Date!
+    
     var lectureClass: LectureClassData!
     
     override init() {
@@ -27,6 +30,14 @@ class LectureData: NSObject {
         lecturePlanUrl = data["lecture_plan_url"] as? String
         if let dict = data["lecture_class"] as? NSDictionary {
             lectureClass = LectureClassData(dict)
+        }
+        
+        if let str = data["start_date"] as? String {
+            startDate = str.stringToDate(formatter: "yyyy-MM-dd HH:mm:ss")
+        }
+        
+        if let str = data["end_date"] as? String {
+            endDate = str.stringToDate(formatter: "yyyy-MM-dd HH:mm:ss")
         }
     }
 }

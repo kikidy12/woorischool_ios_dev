@@ -209,7 +209,7 @@
                                 <color key="textColor" name="grapefruit"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FEq-Dc-1Qt" customClass="CustomButton" customModule="우리스쿨" customModuleProvider="target">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FEq-Dc-1Qt" customClass="CustomButton" customModule="우리스쿨" customModuleProvider="target">
                                 <rect key="frame" x="231" y="133" width="173" height="38"/>
                                 <color key="backgroundColor" name="greenishTeal"/>
                                 <constraints>
@@ -229,9 +229,16 @@
                                     <action selector="registEvent" destination="KGk-i7-Jjw" eventType="touchUpInside" id="RjT-or-LaV"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="신청이 완료되었습니다" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CjL-AI-Jpj">
+                                <rect key="frame" x="271" y="144" width="125" height="16.5"/>
+                                <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
+                                <color key="textColor" name="brownGrey"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="CjL-AI-Jpj" secondAttribute="trailing" constant="20" id="7zu-2c-ALO"/>
                             <constraint firstItem="gkg-qQ-2fh" firstAttribute="centerY" secondItem="UsA-UH-Evv" secondAttribute="centerY" id="B4K-yJ-Clb"/>
                             <constraint firstItem="Gv4-Xc-x4q" firstAttribute="centerY" secondItem="FEq-Dc-1Qt" secondAttribute="centerY" id="BlR-s3-JGK"/>
                             <constraint firstItem="L2P-1M-Giq" firstAttribute="centerY" secondItem="UsA-UH-Evv" secondAttribute="centerY" id="CSr-8M-dH3"/>
@@ -244,6 +251,7 @@
                             <constraint firstItem="gjP-ll-48o" firstAttribute="centerY" secondItem="UsA-UH-Evv" secondAttribute="centerY" id="QWI-bV-nvI"/>
                             <constraint firstItem="rrV-0n-c7x" firstAttribute="leading" secondItem="zMY-JW-EgD" secondAttribute="leading" id="V4g-sC-VFf"/>
                             <constraint firstItem="FEq-Dc-1Qt" firstAttribute="top" secondItem="lEO-Ih-9Bv" secondAttribute="bottom" constant="8" id="bMN-aC-T5P"/>
+                            <constraint firstItem="CjL-AI-Jpj" firstAttribute="centerY" secondItem="Gv4-Xc-x4q" secondAttribute="centerY" id="cfS-yp-XkC"/>
                             <constraint firstItem="lEO-Ih-9Bv" firstAttribute="leading" secondItem="zMY-JW-EgD" secondAttribute="leading" id="fbI-P2-3Lu"/>
                             <constraint firstItem="gjP-ll-48o" firstAttribute="leading" secondItem="UsA-UH-Evv" secondAttribute="trailing" constant="5" id="hhW-yZ-0TU"/>
                             <constraint firstItem="L2P-1M-Giq" firstAttribute="leading" secondItem="gkg-qQ-2fh" secondAttribute="trailing" constant="12" id="iGD-Og-PrC"/>
@@ -288,6 +296,7 @@
                 <outlet property="nameLabel" destination="gjP-ll-48o" id="OGt-Pl-w9t"/>
                 <outlet property="priceLabel" destination="V45-zG-WSn" id="gzc-ls-X3P"/>
                 <outlet property="readyTitleLabel" destination="ndH-TE-3Vi" id="ek5-Zb-fjA"/>
+                <outlet property="stateInfoLabel" destination="CjL-AI-Jpj" id="0DY-CI-txG"/>
                 <outlet property="teacherNameLabel" destination="hRk-V4-Rev" id="SP6-Gx-xSg"/>
                 <outlet property="weekdaysLabel" destination="7yX-nO-4ff" id="IwD-9A-1XW"/>
             </connections>

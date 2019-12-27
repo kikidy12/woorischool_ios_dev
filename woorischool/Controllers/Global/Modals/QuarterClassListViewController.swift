@@ -77,6 +77,12 @@ extension QuarterClassListViewController: UITableViewDelegate, UITableViewDataSo
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         return 13
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = ClassInfoViewController()
+        vc.lectureClassId = quaterList[indexPath.section].lectureClassList[indexPath.item].id
+        show(vc, sender: nil)
+    }
 }
 
 
