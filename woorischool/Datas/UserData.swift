@@ -42,6 +42,10 @@ class UserData: NSObject {
         
         if let dict = data["child"] as? NSDictionary {
             childlen = UserData(dict)
+            UserDefs.setHasChildren(true)
+        }
+        else {
+            UserDefs.setHasChildren(false)
         }
         
         if let dict = data["student_info"] as? NSDictionary {

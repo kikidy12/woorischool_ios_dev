@@ -145,6 +145,16 @@ class ServerUtil: NSObject {
         apiRequest(showLoading: false, "lecture_detail", method: .get, parameters: parameters, completion: completion)
     }
     
+    func postUserService(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest(showLoading: false, "user_service", method: .post, parameters: parameters, completion: completion)
+    }
+    
+    func getScheduleList(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest(showLoading: false, "schedule_list", method: .get, parameters: parameters, completion: completion)
+    }
+    
     //parents
     
     func getMeInfo(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {

@@ -68,12 +68,8 @@ extension ParentsLoginViewController {
             UserDefs.setUserToken(token: token)
             
             guard let name = GlobalDatas.currentUser.name, !name.isEmpty else {
-                let navi = UINavigationController(rootViewController: EditProfileViewController())
-                navi.navigationBar.tintColor = .black
-                navi.navigationBar.barTintColor = .white
-                navi.navigationBar.shadowImage = UIImage()
-                UIApplication.shared.keyWindow?.rootViewController = navi
                 
+                self.show(TermCheckViewController(), sender: nil)
                 return
             }
             

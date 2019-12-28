@@ -10,9 +10,11 @@ import UIKit
 
 class HomeScheduleTableViewCell: UITableViewCell {
     
-    var classDayData: TestData!
+    var classDayData: ScheduleData!
     
     @IBOutlet weak var eduTimeLabel: UILabel!
+    @IBOutlet weak var lectureNameLabel: UILabel!
+    @IBOutlet weak var classNameLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,28 +28,34 @@ class HomeScheduleTableViewCell: UITableViewCell {
     }
     
     
-    func initView(_ data: TestData) {
+    func initView(_ data: ScheduleData) {
         classDayData = data
-        let eduTimeStr = "11:30-13:00\n"
-        let lectureNameStr = "창의교실"
-        let locationStr = "\n\n2-1"
-        let attributedString = NSMutableAttributedString(string: "\(eduTimeStr)\(lectureNameStr)\(locationStr)", attributes: [
-          .font: UIFont(name: "NotoSansCJKkr-Regular", size: 8.0)!
-        ])
-        attributedString.addAttribute(.font, value: UIFont(name: "NotoSansCJKkr-Medium", size: 10.0)!, range: NSRange(location: 12, length: lectureNameStr.count))
-        
-        if classDayData.id == nil {
+        guard let lectureClass = classDayData.lectureClass else {
             backgroundColor = .white
-            eduTimeLabel.isHidden = true
-        }
-        else {
-            eduTimeLabel.isHidden = false
-            eduTimeLabel.attributedText = attributedString
             
-            let color = getRandomColor()
-            backgroundColor = color.withAlphaComponent(0.2)
-            eduTimeLabel.textColor = color
+            contentView.subviews.forEach {
+                $0.isHidden = true
+            }
+            
+            return
         }
+        
+        let color = getRandomColor()
+        backgroundColor = color.withAlphaComponent(0.2)
+        eduTimeLabel.textColor = color
+        
+        contentView.subviews.forEach {
+            if let label = $0 as? UILabel {
+                label.textColor = color
+                label.isHidden = false
+            }
+        }
+        
+        eduTimeLabel.text = "\(classDayData.eduTime ?? "00:00-00:00")"
+        lectureNameLabel.text = "\(lectureClass.lecture?.name ?? "강좌")"
+        classNameLabel.text = "\(lectureClass.name ?? "강의실")"
+        
+        
     }
     
     func getRandomColor() -> UIColor {

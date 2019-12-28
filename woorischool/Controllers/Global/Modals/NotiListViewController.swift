@@ -10,8 +10,6 @@ import UIKit
 
 class NotiListViewController: UIViewController {
     
-    var notiList = [String]()
-    
     @IBOutlet weak var notiTableView: UITableView!
 
     override func viewDidLoad() {
@@ -20,18 +18,25 @@ class NotiListViewController: UIViewController {
         notiTableView.register(UINib(nibName: "NotiTableViewCell", bundle: nil), forCellReuseIdentifier: "notiCell")
         notiTableView.tableFooterView = UIView(frame: .init(x: 0, y: 0, width: 0, height: 0.001))
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        title = "공지사항"
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        title = " "
+    }
 }
 
 
 extension NotiListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return GlobalDatas.noticeList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "notiCell", for: indexPath)
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "notiCell", for: indexPath) as! NotiTableViewCell
+        cell.noti = GlobalDatas.noticeList[indexPath.item]
         return cell
     }
     
@@ -42,4 +47,11 @@ extension NotiListViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 62
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = NotiDetailViewController()
+        vc.noti = GlobalDatas.noticeList[indexPath.item]
+        show(vc, sender: nil)
+    }
 }
+

@@ -25,5 +25,9 @@ class NoticeData: NSObject {
         title = data["title"] as? String
         content = data["content"] as? String
         type = data["type"] as? String
+        
+        if let str = data["created_at"] as? String {
+            cretedAt = str.stringToDate(formatter: "yyyy-MM-dd HH:mm:ss")
+        }
     }
 }

@@ -106,6 +106,21 @@ class TermCheckViewController: UIViewController {
 
 extension TermCheckViewController {
     func agreeTerm() {
+        let parameters = [
+            "terms": firstTermView.tag,
+            "privacy": secondTermView.tag,
+            "notify_message": thirdTermView.tag
+        ] as [String:Any]
         
+        ServerUtil.shared.postUserService(self, parameters: parameters) { (success, dict, message) in
+            guard success else {
+                AlertHandler().showAlert(vc: self, message: message ?? "ServerError", okTitle: "확인")
+                return
+            }
+            
+            let vc = EditProfileViewController()
+            vc.isEditMode = false
+            self.show(vc, sender: nil)
+        }
     }
 }

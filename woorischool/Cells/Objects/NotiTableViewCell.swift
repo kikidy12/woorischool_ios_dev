@@ -9,10 +9,22 @@
 import UIKit
 
 class NotiTableViewCell: UITableViewCell {
-
+    
+    var noti: NoticeData! {
+        didSet {
+            titleLabel.text = noti.title
+            createTimeLabel.text = noti.cretedAt.dateToString(formatter: "MM/dd")
+            isNewImageView.isHidden = true
+        }
+    }
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var createTimeLabel: UILabel!
+    @IBOutlet weak var isNewImageView: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -20,5 +32,4 @@ class NotiTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
 }
