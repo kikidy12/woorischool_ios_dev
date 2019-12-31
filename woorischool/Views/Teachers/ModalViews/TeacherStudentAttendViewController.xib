@@ -163,7 +163,7 @@
                     <rect key="frame" x="0.0" y="285" width="414" height="577"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DrO-Zl-Wrm">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="423.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="417.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YtX-Te-6vQ">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="10"/>
@@ -173,13 +173,13 @@
                                     </constraints>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pnn-dq-Fj2">
-                                    <rect key="frame" x="26" y="32" width="50" height="28.5"/>
+                                    <rect key="frame" x="26" y="32" width="46.5" height="22.5"/>
                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="19"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Och-Go-bQA" customClass="CustomView" customModule="우리스쿨" customModuleProvider="target">
-                                    <rect key="frame" x="16" y="80.5" width="382" height="36"/>
+                                    <rect key="frame" x="16" y="74.5" width="382" height="36"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="2Nr-1h-khm">
                                             <rect key="frame" x="0.0" y="0.0" width="382" height="36"/>
@@ -230,7 +230,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ixG-OS-XQc">
-                                    <rect key="frame" x="16" y="123.5" width="382" height="300"/>
+                                    <rect key="frame" x="16" y="117.5" width="382" height="300"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="300" id="xWk-cX-35r"/>

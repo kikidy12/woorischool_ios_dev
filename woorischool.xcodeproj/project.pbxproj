@@ -64,7 +64,6 @@
 		9914A9D723430B32001C0112 /* ServerUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9914A9D623430B32001C0112 /* ServerUtil.swift */; };
 		9914A9DA23430B8C001C0112 /* UserDefs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9914A9D923430B8C001C0112 /* UserDefs.swift */; };
 		9914A9DC23430B8F001C0112 /* AlertHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9914A9DB23430B8F001C0112 /* AlertHandler.swift */; };
-		9914A9DE23430B99001C0112 /* CustomPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9914A9DD23430B99001C0112 /* CustomPageControl.swift */; };
 		9914A9E623430DA9001C0112 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9914A9E423430DA9001C0112 /* SplashViewController.swift */; };
 		9914A9E723430DA9001C0112 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9914A9E523430DA9001C0112 /* SplashViewController.xib */; };
 		9914A9FA23431447001C0112 /* NotoSansCJKkr-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9914A9F123431441001C0112 /* NotoSansCJKkr-Thin.otf */; };
@@ -195,6 +194,9 @@
 		9998833A23B74141000C413C /* NotiDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9998833823B74141000C413C /* NotiDetailViewController.swift */; };
 		9998833B23B74141000C413C /* NotiDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9998833923B74141000C413C /* NotiDetailViewController.xib */; };
 		9998833D23BB0FA8000C413C /* LectureApplyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9998833C23BB0FA8000C413C /* LectureApplyData.swift */; };
+		9998834023BB2AC4000C413C /* TutoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9998833E23BB2AC4000C413C /* TutoViewController.swift */; };
+		9998834123BB2AC4000C413C /* TutoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9998833F23BB2AC4000C413C /* TutoViewController.xib */; };
+		9998834323BB3E36000C413C /* CustomPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9998834223BB3E36000C413C /* CustomPageControl.swift */; };
 		99CF8697238560CF00812A36 /* ImagePagingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CF8695238560CF00812A36 /* ImagePagingCollectionViewCell.swift */; };
 		99CF8698238560CF00812A36 /* ImagePagingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99CF8696238560CF00812A36 /* ImagePagingCollectionViewCell.xib */; };
 		99CF869B2385934500812A36 /* BoardAddAndEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CF86992385934500812A36 /* BoardAddAndEditViewController.swift */; };
@@ -326,7 +328,6 @@
 		9914A9D623430B32001C0112 /* ServerUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerUtil.swift; sourceTree = "<group>"; };
 		9914A9D923430B8C001C0112 /* UserDefs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefs.swift; sourceTree = "<group>"; };
 		9914A9DB23430B8F001C0112 /* AlertHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertHandler.swift; sourceTree = "<group>"; };
-		9914A9DD23430B99001C0112 /* CustomPageControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPageControl.swift; sourceTree = "<group>"; };
 		9914A9E423430DA9001C0112 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		9914A9E523430DA9001C0112 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
 		9914A9F123431441001C0112 /* NotoSansCJKkr-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansCJKkr-Thin.otf"; sourceTree = "<group>"; };
@@ -463,6 +464,9 @@
 		9998833823B74141000C413C /* NotiDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotiDetailViewController.swift; sourceTree = "<group>"; };
 		9998833923B74141000C413C /* NotiDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotiDetailViewController.xib; sourceTree = "<group>"; };
 		9998833C23BB0FA8000C413C /* LectureApplyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureApplyData.swift; sourceTree = "<group>"; };
+		9998833E23BB2AC4000C413C /* TutoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutoViewController.swift; sourceTree = "<group>"; };
+		9998833F23BB2AC4000C413C /* TutoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TutoViewController.xib; sourceTree = "<group>"; };
+		9998834223BB3E36000C413C /* CustomPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageControl.swift; sourceTree = "<group>"; };
 		99CF8695238560CF00812A36 /* ImagePagingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePagingCollectionViewCell.swift; sourceTree = "<group>"; };
 		99CF8696238560CF00812A36 /* ImagePagingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImagePagingCollectionViewCell.xib; sourceTree = "<group>"; };
 		99CF86992385934500812A36 /* BoardAddAndEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardAddAndEditViewController.swift; sourceTree = "<group>"; };
@@ -676,7 +680,7 @@
 				9914A9D623430B32001C0112 /* ServerUtil.swift */,
 				9914A9D923430B8C001C0112 /* UserDefs.swift */,
 				9914A9DB23430B8F001C0112 /* AlertHandler.swift */,
-				9914A9DD23430B99001C0112 /* CustomPageControl.swift */,
+				9998834223BB3E36000C413C /* CustomPageControl.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -825,6 +829,8 @@
 				99FAB1B023AF125400CE0D3A /* EditProfileViewController.swift */,
 				9945594C23B1CF060052E322 /* LikeUserListViewController.swift */,
 				9998833823B74141000C413C /* NotiDetailViewController.swift */,
+				9998833E23BB2AC4000C413C /* TutoViewController.swift */,
+				9998833F23BB2AC4000C413C /* TutoViewController.xib */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
@@ -1211,6 +1217,7 @@
 				991182CE236BDEE40020D6CE /* BoardListViewController.xib in Resources */,
 				99DFB17923556E7F00C5B69D /* RegistClassCompleteListViewController.xib in Resources */,
 				99088BE6237CF3D8009C9AE6 /* DailyNoteTableViewCell.xib in Resources */,
+				9998834123BB2AC4000C413C /* TutoViewController.xib in Resources */,
 				991182D2236BE0460020D6CE /* BoardListTableViewCell.xib in Resources */,
 				991182E2236C8F9D0020D6CE /* BoardReplyTableViewCell.xib in Resources */,
 				99FAB1B723AF30DD00CE0D3A /* ChildInfoTableViewCell.xib in Resources */,
@@ -1461,10 +1468,12 @@
 				99DFB14A2350481C00C5B69D /* RegistCompClassTableViewCell.swift in Sources */,
 				99DFB13E234F7AE400C5B69D /* RegistClassPopupViewController.swift in Sources */,
 				994907D72398DBC600A6D1F6 /* MyClassRecordTableViewCell.swift in Sources */,
+				9998834323BB3E36000C413C /* CustomPageControl.swift in Sources */,
 				9956BF782366B5670069E661 /* TeacherStudentAttendViewController.swift in Sources */,
 				9945595223B1D0A90052E322 /* BoardLikeUserTableViewCell.swift in Sources */,
 				994A6B3B235ED6030088D46E /* StudentMyInfoViewController.swift in Sources */,
 				994907F2239E0A7000A6D1F6 /* ChatData.swift in Sources */,
+				9998834023BB2AC4000C413C /* TutoViewController.swift in Sources */,
 				991182FE236D86DC0020D6CE /* EmoInputView.swift in Sources */,
 				9911830A236E94CB0020D6CE /* CustomInputView.swift in Sources */,
 				99088BD523754ABF009C9AE6 /* ChattingRoomListViewController.swift in Sources */,
@@ -1494,7 +1503,6 @@
 				9956BF92236857100069E661 /* TeacherStudentAttandTableViewCell.swift in Sources */,
 				996FE81823A3889C003872D4 /* PhotoDetailShowViewViewController.swift in Sources */,
 				9914AA2A2345C861001C0112 /* CourseRegistrationViewController.swift in Sources */,
-				9914A9DE23430B99001C0112 /* CustomPageControl.swift in Sources */,
 				991182E1236C8F9D0020D6CE /* BoardReplyTableViewCell.swift in Sources */,
 				99CF869E23866CAB00812A36 /* NoticeData.swift in Sources */,
 				9914AA1B234326D4001C0112 /* UserData.swift in Sources */,

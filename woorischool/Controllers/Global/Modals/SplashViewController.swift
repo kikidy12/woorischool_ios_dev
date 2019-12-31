@@ -49,20 +49,30 @@ class SplashViewController: UIViewController {
                     UIApplication.shared.keyWindow?.rootViewController = navi
                 }
                 else {
-                    let navi = UINavigationController(rootViewController: SelectUserTypeViewController())
-                    navi.navigationBar.tintColor = .black
-                    navi.navigationBar.barTintColor = .white
-                    navi.navigationBar.shadowImage = UIImage()
-                    UIApplication.shared.keyWindow?.rootViewController = navi
+                    if UserDefs.isOpenedApp {
+                        let navi = UINavigationController(rootViewController: SelectUserTypeViewController())
+                        navi.navigationBar.tintColor = .black
+                        navi.navigationBar.barTintColor = .white
+                        navi.navigationBar.shadowImage = UIImage()
+                        UIApplication.shared.keyWindow?.rootViewController = navi
+                    }
+                    else {
+                        UIApplication.shared.keyWindow?.rootViewController = TutoViewController()
+                    }
                 }
             }
         }
         else {
-            let navi = UINavigationController(rootViewController: SelectUserTypeViewController())
-            navi.navigationBar.tintColor = .black
-            navi.navigationBar.barTintColor = .white
-            navi.navigationBar.shadowImage = UIImage()
-            UIApplication.shared.keyWindow?.rootViewController = navi
+            if UserDefs.isOpenedApp {
+                let navi = UINavigationController(rootViewController: SelectUserTypeViewController())
+                navi.navigationBar.tintColor = .black
+                navi.navigationBar.barTintColor = .white
+                navi.navigationBar.shadowImage = UIImage()
+                UIApplication.shared.keyWindow?.rootViewController = navi
+            }
+            else {
+                UIApplication.shared.keyWindow?.rootViewController = TutoViewController()
+            }
         }
     }
 }
@@ -76,11 +86,17 @@ extension SplashViewController {
         
         ServerUtil.shared.getV2Info(self, parameters: parameters) { (success, dict, message) in
             guard success, let user = dict?["user"] as? NSDictionary else {
-                let navi = UINavigationController(rootViewController: SelectUserTypeViewController())
-                navi.navigationBar.tintColor = .black
-                navi.navigationBar.barTintColor = .white
-                navi.navigationBar.shadowImage = UIImage()
-                UIApplication.shared.keyWindow?.rootViewController = navi
+                if UserDefs.isOpenedApp {
+                    let navi = UINavigationController(rootViewController: SelectUserTypeViewController())
+                    navi.navigationBar.tintColor = .black
+                    navi.navigationBar.barTintColor = .white
+                    navi.navigationBar.shadowImage = UIImage()
+                    UIApplication.shared.keyWindow?.rootViewController = navi
+                }
+                else {
+                    UIApplication.shared.keyWindow?.rootViewController = TutoViewController()
+                }
+                
                 return
             }
             

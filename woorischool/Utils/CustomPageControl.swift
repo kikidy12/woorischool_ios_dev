@@ -1,15 +1,15 @@
 //
 //  CustomPageControl.swift
-//  fifteensecond
+//  woorischool
 //
-//  Created by 권성민 on 08/08/2019.
-//  Copyright © 2019 cfour. All rights reserved.
+//  Created by 권성민 on 2019/12/31.
+//  Copyright © 2019 beanfactory. All rights reserved.
 //
 
 import UIKit
 
 class CustomPageControl: UIPageControl {
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
         
