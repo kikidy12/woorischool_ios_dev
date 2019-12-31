@@ -24,7 +24,7 @@ class LectureClassData: NSObject {
     var confirmCount: Int!
     var isTodayWrite: Bool!
     var attendance: AttendenceType!
-    
+    var lectureApply: LectureApplyData!
     var ratingStartDate: Date!
     var ratingEndDate: Date!
     
@@ -138,6 +138,10 @@ class LectureClassData: NSObject {
         
         if let str = data["rating_end_date"] as? String {
             ratingEndDate = str.stringToDate(formatter: "yyyy-MM-dd HH:mm:ss")
+        }
+        
+        if let dict = data["lecture_apply"] as? NSDictionary {
+            lectureApply = LectureApplyData(dict)
         }
     }
 

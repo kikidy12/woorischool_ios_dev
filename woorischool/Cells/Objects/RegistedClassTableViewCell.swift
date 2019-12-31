@@ -19,6 +19,8 @@ class RegistedClassTableViewCell: UITableViewCell {
     
     var numberFormatter = NumberFormatter()
     
+    var warningHeightConstrint: NSLayoutConstraint!
+    
     @IBOutlet weak var weekdaysLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var classNameLabel: UILabel!
@@ -29,6 +31,7 @@ class RegistedClassTableViewCell: UITableViewCell {
     @IBOutlet weak var readyTitleLabel: UILabel!
     @IBOutlet weak var stateInfoLabel: UILabel!
     @IBOutlet weak var applyBtn: CustomButton!
+    @IBOutlet weak var expireTimeWarningLabel: CustomLabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -48,13 +51,13 @@ class RegistedClassTableViewCell: UITableViewCell {
         cancelClouser()
     }
     
-    func initView(_ data: LectureClassData, type: String, quater: QuaterData) {
+    func initView(_ data: LectureClassData, quater: QuaterData) {
         lectureClass = data
         numberFormatter.numberStyle = .decimal
-        guard let lecture = lectureClass.lecture else { return }
+        guard let lecture = lectureClass.lecture, let apply = lectureClass.lectureApply else { return }
         
         layoutIfNeeded()
-        
+        warningHeightConstrint = expireTimeWarningLabel.heightAnchor.constraint(equalToConstant: 0)
         nameLabel.text = lecture.name
         teacherNameLabel.text = lectureClass.teacher.name
         priceLabel.text = numberFormatter.string(for: lectureClass.price)
@@ -82,27 +85,51 @@ class RegistedClassTableViewCell: UITableViewCell {
             classTimeLabel.text = "-"
         }
         
-        if type == "CONFIRM" {
+        if apply.status == "WAIT" {
+            if let expireTime = apply.expireTime, expireTime > Date() {
+                let str = expireTime.dateToString(formatter: "MM월 dd일 HH:mm")
+                let attributedString = NSMutableAttributedString(string: "\(str) 이내에 수강확정이 되지 않으면 \n다음 대기자에게 수강신청 권한이 넘어갑니다", attributes: [
+                  .font: UIFont(name: "NotoSansCJKkr-Medium", size: 13.0)!,
+                  .foregroundColor: UIColor.grapefruit,
+                  .kern: 0.0
+                ])
+                attributedString.addAttribute(.font, value: UIFont(name: "NotoSansCJKkr-Black", size: 13.0)!, range: NSRange(location: 0, length: str.count))
+                expireTimeWarningLabel.attributedText = attributedString
+                warningHeightConstrint.isActive = false
+                stateInfoLabel.isHidden = true
+                applyBtn.isHidden = false
+                readyTitleLabel.isHidden = true
+                countLabel.isHidden = true
+            }
+            else {
+                applyBtn.isHidden = true
+                warningHeightConstrint.isActive = true
+                if quater.type == .first {
+                    stateInfoLabel.isHidden = true
+                    readyTitleLabel.isHidden = false
+                    countLabel.isHidden = false
+                }
+                else {
+                    stateInfoLabel.isHidden = false
+                    stateInfoLabel.text = "만료"
+                    readyTitleLabel.isHidden = true
+                    countLabel.isHidden = true
+                }
+            }
+        }
+        else {
             stateInfoLabel.isHidden = false
-            stateInfoLabel.text = "신청이 완료되었습니다"
             applyBtn.isHidden = true
             readyTitleLabel.isHidden = true
             countLabel.isHidden = true
-        }
-        else {
-            applyBtn.isHidden = false
-            if quater.type == .first {
-                stateInfoLabel.isHidden = true
-                readyTitleLabel.isHidden = false
-                countLabel.isHidden = false
+            warningHeightConstrint.isActive = true
+            
+            if apply.status == "CONFIRM" {
+                stateInfoLabel.text = "신청이 완료되었습니다"
             }
             else {
-                stateInfoLabel.isHidden = false
-                readyTitleLabel.isHidden = false
-                countLabel.isHidden = false
+                stateInfoLabel.text = "추첨 대기중..."
             }
         }
-        
-        
     }
 }

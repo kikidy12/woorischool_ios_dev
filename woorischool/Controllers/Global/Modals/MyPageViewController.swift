@@ -29,17 +29,22 @@ class MyPageViewController: UIViewController {
         userNameLabel.text = GlobalDatas.currentUser.name
         if userType == .parents {
             userTypeLabel.isHidden = true
-            childPointView.isHidden = false
             quaterClassListView.isHidden = false
             childrenView.isHidden = false
             userInfoLabel.text = GlobalDatas.currentUser.phoneNum
         }
-        else {
+        else if userType == .teacher {
+            userTypeLabel.isHidden = false
             childrenView.isHidden = true
-            childPointView.isHidden = true
             quaterClassListView.isHidden = true
             userTypeLabel.text = "선생님"
             userInfoLabel.text = GlobalDatas.currentUser.email
+        }
+        else {
+            userTypeLabel.isHidden = true
+            childrenView.isHidden = true
+            quaterClassListView.isHidden = false
+            userInfoLabel.text = GlobalDatas.currentUser.phoneNum
         }
         
         profileImageView.image = GlobalDatas.currentUser.profileImage

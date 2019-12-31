@@ -194,6 +194,7 @@
 		9998833723B5EB9F000C413C /* TermCheckViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9998833523B5EB9F000C413C /* TermCheckViewController.xib */; };
 		9998833A23B74141000C413C /* NotiDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9998833823B74141000C413C /* NotiDetailViewController.swift */; };
 		9998833B23B74141000C413C /* NotiDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9998833923B74141000C413C /* NotiDetailViewController.xib */; };
+		9998833D23BB0FA8000C413C /* LectureApplyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9998833C23BB0FA8000C413C /* LectureApplyData.swift */; };
 		99CF8697238560CF00812A36 /* ImagePagingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CF8695238560CF00812A36 /* ImagePagingCollectionViewCell.swift */; };
 		99CF8698238560CF00812A36 /* ImagePagingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99CF8696238560CF00812A36 /* ImagePagingCollectionViewCell.xib */; };
 		99CF869B2385934500812A36 /* BoardAddAndEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CF86992385934500812A36 /* BoardAddAndEditViewController.swift */; };
@@ -461,6 +462,7 @@
 		9998833523B5EB9F000C413C /* TermCheckViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TermCheckViewController.xib; sourceTree = "<group>"; };
 		9998833823B74141000C413C /* NotiDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotiDetailViewController.swift; sourceTree = "<group>"; };
 		9998833923B74141000C413C /* NotiDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotiDetailViewController.xib; sourceTree = "<group>"; };
+		9998833C23BB0FA8000C413C /* LectureApplyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LectureApplyData.swift; sourceTree = "<group>"; };
 		99CF8695238560CF00812A36 /* ImagePagingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePagingCollectionViewCell.swift; sourceTree = "<group>"; };
 		99CF8696238560CF00812A36 /* ImagePagingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImagePagingCollectionViewCell.xib; sourceTree = "<group>"; };
 		99CF86992385934500812A36 /* BoardAddAndEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardAddAndEditViewController.swift; sourceTree = "<group>"; };
@@ -658,6 +660,7 @@
 				994907B42394F8D800A6D1F6 /* QuaterData.swift */,
 				994907EF239DE9DB00A6D1F6 /* ChatRoomData.swift */,
 				994907F1239E0A7000A6D1F6 /* ChatData.swift */,
+				9998833C23BB0FA8000C413C /* LectureApplyData.swift */,
 			);
 			path = Datas;
 			sourceTree = "<group>";
@@ -1484,6 +1487,7 @@
 				991182D9236C618A0020D6CE /* ClassBoardTableViewCell.swift in Sources */,
 				9998833223B49EE1000C413C /* ClassInfoViewController.swift in Sources */,
 				994907DC239CD13E00A6D1F6 /* LectureClassDayEmptyView.swift in Sources */,
+				9998833D23BB0FA8000C413C /* LectureApplyData.swift in Sources */,
 				991182CD236BDEE40020D6CE /* BoardListViewController.swift in Sources */,
 				99057904236BD06B002842AB /* ParentsEnrolmentClassViewController.swift in Sources */,
 				9956BF712365A65B0069E661 /* ParentContractTableViewCell.swift in Sources */,

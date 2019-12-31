@@ -112,10 +112,10 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3AG-sc-9oS">
-                    <rect key="frame" x="0.0" y="118" width="375" height="580"/>
+                    <rect key="frame" x="0.0" y="118" width="375" height="525"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BqS-RY-YYM">
-                            <rect key="frame" x="26" y="10" width="323" height="550"/>
+                            <rect key="frame" x="26" y="10" width="323" height="495"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YAi-Cb-Ur3">
                                     <rect key="frame" x="0.0" y="0.0" width="323" height="55"/>
@@ -170,8 +170,8 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fqh-Ru-bev">
                                     <rect key="frame" x="0.0" y="55" width="323" height="55"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="list.bullet" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Lzv-Ek-vyh">
-                                            <rect key="frame" x="10" y="21.5" width="17" height="11.5"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="quaterIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Lzv-Ek-vyh">
+                                            <rect key="frame" x="10" y="19" width="17" height="17"/>
                                             <color key="tintColor" name="greyishBrown"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="17" id="3lV-pm-NYs"/>
@@ -266,7 +266,7 @@
                                         <outletCollection property="gestureRecognizers" destination="lXk-q4-WkI" appends="YES" id="dpe-nS-nO3"/>
                                     </connections>
                                 </view>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QPj-gQ-UJy" userLabel="freePointView">
+                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QPj-gQ-UJy" userLabel="freePointView">
                                     <rect key="frame" x="0.0" y="165" width="323" height="55"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilePlaceHolder" translatesAutoresizingMaskIntoConstraints="NO" id="6uy-QU-TnF">
@@ -316,7 +316,7 @@
                                     </connections>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5kj-DZ-oQI">
-                                    <rect key="frame" x="0.0" y="220" width="323" height="55"/>
+                                    <rect key="frame" x="0.0" y="165" width="323" height="55"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lockIcon" translatesAutoresizingMaskIntoConstraints="NO" id="AZD-hi-DNs">
                                             <rect key="frame" x="10" y="19" width="17" height="17"/>
@@ -366,7 +366,7 @@
                                     </connections>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lWK-Df-L77">
-                                    <rect key="frame" x="0.0" y="275" width="323" height="55"/>
+                                    <rect key="frame" x="0.0" y="220" width="323" height="55"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notiIcon" translatesAutoresizingMaskIntoConstraints="NO" id="q6p-Yc-khH">
                                             <rect key="frame" x="10" y="19" width="17" height="17"/>
@@ -416,7 +416,7 @@
                                     </connections>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4We-bh-JX3">
-                                    <rect key="frame" x="0.0" y="330" width="323" height="55"/>
+                                    <rect key="frame" x="0.0" y="275" width="323" height="55"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="phoneIcon" translatesAutoresizingMaskIntoConstraints="NO" id="y3L-cz-b09">
                                             <rect key="frame" x="10" y="19" width="17" height="17"/>
@@ -466,7 +466,7 @@
                                     </connections>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wdz-pK-F6F">
-                                    <rect key="frame" x="0.0" y="385" width="323" height="55"/>
+                                    <rect key="frame" x="0.0" y="330" width="323" height="55"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="listIcon" translatesAutoresizingMaskIntoConstraints="NO" id="hLI-vj-PME">
                                             <rect key="frame" x="10" y="19" width="17" height="17"/>
@@ -516,7 +516,7 @@
                                     </connections>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7tc-pR-l8U">
-                                    <rect key="frame" x="0.0" y="440" width="323" height="55"/>
+                                    <rect key="frame" x="0.0" y="385" width="323" height="55"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoutIcon" translatesAutoresizingMaskIntoConstraints="NO" id="uYQ-rL-7A8">
                                             <rect key="frame" x="10" y="19" width="17" height="17"/>
@@ -566,7 +566,7 @@
                                     </connections>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="34n-3M-iez">
-                                    <rect key="frame" x="0.0" y="495" width="323" height="55"/>
+                                    <rect key="frame" x="0.0" y="440" width="323" height="55"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="resignIcon" translatesAutoresizingMaskIntoConstraints="NO" id="V2P-n0-ecT">
                                             <rect key="frame" x="10" y="19" width="17" height="17"/>
@@ -688,6 +688,7 @@
         <image name="notiIcon" width="20" height="20"/>
         <image name="phoneIcon" width="17" height="20"/>
         <image name="profilePlaceHolder" width="60" height="60"/>
+        <image name="quaterIcon" width="20" height="20"/>
         <image name="resignIcon" width="20" height="19"/>
         <image name="rightBrace" width="6" height="14"/>
         <namedColor name="brownGrey">

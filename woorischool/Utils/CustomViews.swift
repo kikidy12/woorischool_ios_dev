@@ -236,6 +236,11 @@ class CustomButton: UIButton {
 @IBDesignable
 class CustomLabel: UILabel {
     
+    @IBInspectable var topInset: CGFloat = 5.0
+    @IBInspectable var bottomInset: CGFloat = 5.0
+    @IBInspectable var leftInset: CGFloat = 16.0
+    @IBInspectable var rightInset: CGFloat = 16.0
+    
     //coner
     @IBInspectable var conerRadius : CGFloat = 0.0 {
         didSet {
@@ -255,6 +260,17 @@ class CustomLabel: UILabel {
         didSet {
             self.layer.borderColor = borderColor.cgColor
         }
+    }
+    
+    override func drawText(in rect: CGRect) {
+        let insets = UIEdgeInsets.init(top: topInset, left: leftInset, bottom: bottomInset, right: rightInset)
+        super.drawText(in: rect.inset(by: insets))
+    }
+    
+    override var intrinsicContentSize: CGSize {
+        let size = super.intrinsicContentSize
+        return CGSize(width: size.width + leftInset + rightInset,
+                      height: size.height + topInset + bottomInset)
     }
 }
 

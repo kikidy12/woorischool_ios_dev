@@ -51,6 +51,15 @@ class SPHomeClassInfoCollectionViewCell: UICollectionViewCell {
         locationLabel.text = "(\(lectureClass.location ?? "미정"))"
         eduTimeLabel.text = lectureClassDay.eduTime
         
+        if let bool = lectureClassDay?.lectureClass?.lectureSchedule?.isAnnouncement, bool {
+            dateLabel.superview?.backgroundColor = UIColor.dodgerBlue.withAlphaComponent(0.12)
+            dateLabel.textColor = .dodgerBlue
+        }
+        else {
+            dateLabel.superview?.backgroundColor = .paleGrey
+            dateLabel.textColor = .brownGrey
+        }
+        
         switch lectureClass.attendance {
         case .attendance:
             attendImageView.image = #imageLiteral(resourceName: "attandCheckIcon1")

@@ -173,47 +173,39 @@ class RegistedClassMainViewController: UIViewController {
 extension RegistedClassMainViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if type == "CONFIRM" {
-            return nil
-        }
-        else {
-            let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 80))
-            headerView.backgroundColor = .paleGreyThree
-            let titleLabel = UILabel()
-            titleLabel.frame.size = .init(width: headerView.frame.width, height: 50)
-            let attributedString = NSMutableAttributedString(string: "10월 23일 15:00시에 낙첨 결과 확인이 가능합니다.", attributes: [
-              .font: UIFont(name: "NotoSansCJKkr-Medium", size: 14.0)!,
-              .foregroundColor: UIColor.greyishBrown,
-              .kern: 0.0
-            ])
-            titleLabel.attributedText = attributedString
-            titleLabel.center = headerView.center
-            titleLabel.textAlignment = .center
-            titleLabel.textColor = .grapefruit
-            titleLabel.backgroundColor = .grapefruit10
-            
-            headerView.addSubview(titleLabel)
-            return headerView
-        }
+//        if type == "CONFIRM" {
+//            return nil
+//        }
+//        else {
+//            let headerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 80))
+//            headerView.backgroundColor = .paleGreyThree
+//            let titleLabel = UILabel()
+//            titleLabel.frame.size = .init(width: headerView.frame.width, height: 50)
+//            let attributedString = NSMutableAttributedString(string: "10월 23일 15:00시에 낙첨 결과 확인이 가능합니다.", attributes: [
+//              .font: UIFont(name: "NotoSansCJKkr-Medium", size: 14.0)!,
+//              .foregroundColor: UIColor.greyishBrown,
+//              .kern: 0.0
+//            ])
+//            titleLabel.attributedText = attributedString
+//            titleLabel.center = headerView.center
+//            titleLabel.textAlignment = .center
+//            titleLabel.textColor = .grapefruit
+//            titleLabel.backgroundColor = .grapefruit10
+//
+//            headerView.addSubview(titleLabel)
+//            return headerView
+//        }
+        
+        return nil
     }
     
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        if type == "CONFIRM" {
-            return 20
-        }
-        else {
-            return 80
-        }
+        return 20
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
-        if type == "CONFIRM" {
-            return 20
-        }
-        else {
-            return 80
-        }
+        return 20
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -222,7 +214,7 @@ extension RegistedClassMainViewController: UITableViewDelegate, UITableViewDataS
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "classCell", for: indexPath) as! RegistedClassTableViewCell
-        cell.initView(lectureClassList[indexPath.item], type: type, quater: quater)
+        cell.initView(lectureClassList[indexPath.item], quater: quater)
         cell.requestClouser = {
             let vc = ConfirmClassViewController()
             vc.preVC = self
