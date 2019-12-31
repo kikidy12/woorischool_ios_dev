@@ -236,10 +236,10 @@ class CustomButton: UIButton {
 @IBDesignable
 class CustomLabel: UILabel {
     
-    @IBInspectable var topInset: CGFloat = 5.0
-    @IBInspectable var bottomInset: CGFloat = 5.0
-    @IBInspectable var leftInset: CGFloat = 16.0
-    @IBInspectable var rightInset: CGFloat = 16.0
+    @IBInspectable var topInset: CGFloat = 0
+    @IBInspectable var bottomInset: CGFloat = 0
+    @IBInspectable var leftInset: CGFloat = 0
+    @IBInspectable var rightInset: CGFloat = 0
     
     //coner
     @IBInspectable var conerRadius : CGFloat = 0.0 {

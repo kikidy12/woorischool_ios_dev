@@ -242,6 +242,21 @@ class ServerUtil: NSObject {
         apiRequest("lecture_apply", method: .patch, parameters: parameters, completion: completion)
     }
     
+    func patchLectureRating(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("lecture_rating", method: .patch, parameters: parameters, completion: completion)
+    }
+    
+    func putLectureRating(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("lecture_rating", method: .put, parameters: parameters, completion: completion)
+    }
+    
+    func postLectureRating(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("lecture_rating", method: .post, parameters: parameters, completion: completion)
+    }
+    
     //v2
     func getV2Info(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
         currentVc = vc

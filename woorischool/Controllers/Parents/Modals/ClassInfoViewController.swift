@@ -118,10 +118,45 @@ class ClassInfoViewController: UIViewController {
             isStudyLabel.textColor = .brownGrey
         }
     }
+    
+    @IBAction func ratingRequestEvnet(_ sender: UIButton) {
+        if lectureClass.requestStatus == .requested {
+            cancleRating()
+        }
+        else if lectureClass.requestStatus == .needRequest {
+            requestRating()
+        }
+    }
 }
 
 
 extension ClassInfoViewController {
+    
+    func cancleRating() {
+        let parameters = [
+            "lecture_apply_id": lectureClass.lectureApply.id!
+        ] as [String:Any]
+        ServerUtil.shared.patchLectureRating(self, parameters: parameters) { (success, dict, message) in
+            guard success else {
+                return
+            }
+            
+            self.getLectureDetail()
+        }
+    }
+    
+    func requestRating() {
+        let parameters = [
+            "lecture_apply_id": lectureClass.lectureApply.id!
+        ] as [String:Any]
+        ServerUtil.shared.putLectureRating(self, parameters: parameters) { (success, dict, message) in
+            guard success else {
+                return
+            }
+            self.getLectureDetail()
+        }
+    }
+    
     func getLectureDetail() {
         let parameters = [
             "lecture_class_id": lectureClassId!

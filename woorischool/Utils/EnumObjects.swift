@@ -18,7 +18,7 @@ enum DateFormatterStyle: String {
 
 enum RatingRequestState: String {
     case requested = "취소하기"
-    case completion = "상태확인"
+    case completion = "평가확인"
     case needRequest = "요청하기"
 }
 
