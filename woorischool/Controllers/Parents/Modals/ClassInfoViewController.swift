@@ -46,6 +46,10 @@ class ClassInfoViewController: UIViewController {
         
         getLectureDetail()
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        title = " "
+    }
 
     
     func setClassInfo(lectureClass: LectureClassData) {
@@ -127,6 +131,16 @@ class ClassInfoViewController: UIViewController {
             requestRating()
         }
     }
+    
+    @IBAction func showBoardListEvent() {
+        let vc = ClassBoardListViewController()
+        vc.lectureClass = self.lectureClass
+        self.show(vc, sender: nil)
+    }
+    
+    @IBAction func showOneToOneChatViewEvent() {
+        getOneToOneChat()
+    }
 }
 
 
@@ -172,6 +186,22 @@ extension ClassInfoViewController {
             self.tardyCountLabel.text = "\(tardyCount)"
             self.absentCountLabel.text = "\(absentCount)"
             self.lectureClass = LectureClassData(item)
+        }
+    }
+    
+    func getOneToOneChat() {
+        let parameters = [
+            "lecture_class_id": lectureClass.id!,
+            "parents_id": GlobalDatas.currentUser.id!
+        ] as [String:Any]
+        ServerUtil.shared.postNoteOne(self, parameters: parameters) { (success, dict, message) in
+            guard success, let room = dict?["note"] as? NSDictionary  else {
+                return
+            }
+            
+            let vc = ChattingViewController()
+            vc.room = ChatRoomData(room)
+            self.show(vc, sender: nil)
         }
     }
 }

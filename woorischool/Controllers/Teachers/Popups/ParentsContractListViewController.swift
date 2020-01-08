@@ -10,7 +10,7 @@ import UIKit
 
 class ParentsContractListViewController: UIViewController {
     
-    var showChatClouser: (()->())!
+    var showChatClouser: ((Int)->())!
     
     var parentList = [UserData]()
     
@@ -45,7 +45,7 @@ extension ParentsContractListViewController: UITableViewDelegate, UITableViewDat
         }
         cell.chatClouser = {
             self.dismiss(animated: false) {
-                self.showChatClouser()
+                self.showChatClouser(self.parentList[indexPath.item].id!)
             }
         }
         return cell

@@ -36,7 +36,12 @@ class ChildInfoTableViewCell: UITableViewCell {
     
     override func layoutIfNeeded() {
         super.layoutIfNeeded()
-        profileImageView.image = student.profileImage ?? #imageLiteral(resourceName: "tempEmptyImage")
+        if let urlStr = student.profileImage {
+            profileImageView.kf.setImage(with: URL(string: urlStr), placeholder: UIImage(named: "profilePlaceHolder"))
+        }
+        else {
+            profileImageView.image = UIImage(named: "profilePlaceHolder")
+        }
         nameLabel.text = student.name
         studentSchoolInfoLabel.text = "\(student.studentInfo?.grade ?? 1)학년 \(student.studentInfo?.classNumber ?? 0)반 \(student.studentInfo?.number ?? 0)번"
         pointLabel.text = "\(student.point.decimalString ?? "0") 원"

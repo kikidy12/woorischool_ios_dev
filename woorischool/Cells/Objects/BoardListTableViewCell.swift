@@ -36,6 +36,14 @@ class BoardListTableViewCell: UITableViewCell {
         else {
             isNewLabel.isHidden = true
         }
+        
+        if let urlStr = lectureClass.boardIconUrl {
+            titleImageView.kf.setImage(with: URL(string: urlStr))
+        }
+        else {
+            titleImageView.image = UIImage(named: "tempEmptyImage")
+        }
+        
         nameLabel.text = "\(lectureClass.lecture?.name ?? "강의") \(lectureClass.name ?? "클래스")"
         teacherNameLabel.text = lectureClass.teacher?.name ?? "익명"
         userCountLabel.text = "\(lectureClass.confirmCount ?? 0)명"

@@ -41,6 +41,11 @@ class ClassBoardTableViewCell: UITableViewCell {
     func initView(_ data: BoardData) {
         board = data
         
+        self.layoutIfNeeded()
+    }
+    
+    override func layoutIfNeeded() {
+        super.layoutIfNeeded()
         if isMyBoardList {
             classNameLabel.superview?.isHidden = false
             classNameLabel.text = "\(board?.lectureClass?.lecture?.name ?? "강의명") \(board.lectureClass?.name ?? "클래스명")"
@@ -69,5 +74,13 @@ class ClassBoardTableViewCell: UITableViewCell {
         else {
             likeImageView.image = UIImage(named: "heartemptycon")
         }
+        if let urlStr = board.postingUser?.profileImage {
+            profileImageView.kf.setImage(with: URL(string: urlStr), placeholder: UIImage(named: "profilePlaceHolder"))
+        }
+        else {
+            profileImageView.image = UIImage(named: "profilePlaceHolder")
+        }
+        
+//        profileImageView.image = board.postingUser?.profileImage ?? UIImage(named: "profilePlaceHolder")
     }
 }

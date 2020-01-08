@@ -37,6 +37,19 @@ class ChattingRoomTableViewCell: UITableViewCell {
         titleLabel.text = room.title?.decodeEmoji
         bodyLabel.text = room.body?.decodeEmoji
         lastTimeLabel.text = room.lastMessageTime
+        
+        if let urlStr = room.boardIconUrl {
+            roomTitleImageView.kf.setImage(with: URL(string: urlStr))
+        }
+        else {
+            if room.type == "ONE" {
+                roomTitleImageView.image = UIImage(named: "profilePlaceHolder")
+            }
+            else {
+                roomTitleImageView.image = UIImage(named: "tempEmptyImage")
+            }
+        }
+        
     }
     
 }

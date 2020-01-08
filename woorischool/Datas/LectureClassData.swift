@@ -36,6 +36,8 @@ class LectureClassData: NSObject {
     
     var lecture: LectureData!
     
+    var boardIconUrl: String!
+    
     var dayList = [LectureClassDayData]()
     
     var scheduleList = [LectureScheduleData]()
@@ -143,6 +145,8 @@ class LectureClassData: NSObject {
         if let dict = data["lecture_apply"] as? NSDictionary {
             lectureApply = LectureApplyData(dict)
         }
+        
+        boardIconUrl = data["board_icon_url"] as? String
     }
 
     

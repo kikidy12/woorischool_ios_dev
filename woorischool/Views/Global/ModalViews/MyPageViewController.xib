@@ -22,6 +22,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MyPageViewController" customModule="우리스쿨" customModuleProvider="target">
             <connections>
+                <outlet property="changePasswordView" destination="5kj-DZ-oQI" id="UHd-qW-M2f"/>
                 <outlet property="childPointView" destination="QPj-gQ-UJy" id="3Qf-xn-fki"/>
                 <outlet property="childrenView" destination="ToY-64-XeT" id="1e7-3d-9KU"/>
                 <outlet property="profileImageView" destination="Txv-Ln-QfI" id="wz3-IN-jF4"/>

@@ -27,6 +27,7 @@ class TeacherStudentListViewController: UIViewController {
     }
     
     @IBOutlet weak var studentCountLabel: UILabel!
+    @IBOutlet weak var classTimeLabel: UILabel!
     @IBOutlet weak var studentTableView: UITableView!
     @IBOutlet weak var studentTableViewHeightConstraint: NSLayoutConstraint!
 
@@ -39,8 +40,8 @@ class TeacherStudentListViewController: UIViewController {
         }
         
         title = "\(lectureClass.lecture.name ?? "강의명") \(lectureClass.name ?? "클래스명")"
+        classTimeLabel.text = lectureClass.classTime
         studentTableView.register(UINib(nibName: "StudentContactTableViewCell", bundle: nil), forCellReuseIdentifier: "studentCell")
-        
         studentTableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0.001))
     }
 
@@ -63,8 +64,7 @@ extension TeacherStudentListViewController: UITableViewDelegate, UITableViewData
             vc.parentList = self.studentList[indexPath.item].parentsList
             
             vc.showChatClouser = {
-                let vc = NotiListViewController()
-                self.show(vc, sender: nil)
+                self.getOneToOneChat(parentId: $0)
             }
             self.showPopupView(vc: vc)
         }
@@ -92,6 +92,22 @@ extension TeacherStudentListViewController {
             }
             
             self.studentList = array.compactMap { UserData($0 as! NSDictionary)}
+        }
+    }
+    
+    func getOneToOneChat(parentId: Int) {
+        let parameters = [
+            "lecture_class_id": lectureClass.id!,
+            "parents_id": parentId
+        ] as [String:Any]
+        ServerUtil.shared.postNoteOne(self, parameters: parameters) { (success, dict, message) in
+            guard success, let room = dict?["note"] as? NSDictionary  else {
+                return
+            }
+            
+            let vc = ChattingViewController()
+            vc.room = ChatRoomData(room)
+            self.show(vc, sender: nil)
         }
     }
 }

@@ -17,7 +17,7 @@ class UserData: NSObject {
     var email: String!
     var point: Int!
     
-    var profileImage: UIImage!
+    var profileImage: String!
     
     var attendence: AttendenceType!
     
@@ -62,18 +62,19 @@ class UserData: NSObject {
             parentsList = array.compactMap { UserData($0 as! NSDictionary) }
         }
         
-        if let urlStr = data["profile_image_url"] as? String, let url = URL(string: urlStr) {
-            KingfisherManager.shared.retrieveImage(with: url, completionHandler: { (result) in
-                switch result {
-                case .success(let value):
-                    self.profileImage = value.image
-                    break
-                case .failure(let error):
-                    print(error)
-                    self.profileImage = nil
-                    break
-                }
-            })
-        }
+        profileImage = data["profile_image_url"] as? String
+//        if let urlStr = data["profile_image_url"] as? String, let url = URL(string: urlStr) {
+//            KingfisherManager.shared.retrieveImage(with: url, completionHandler: { (result) in
+//                switch result {
+//                case .success(let value):
+//                    self.profileImage = value.image
+//                    break
+//                case .failure(let error):
+//                    print(error)
+//                    self.profileImage = nil
+//                    break
+//                }
+//            })
+//        }
     }
 }

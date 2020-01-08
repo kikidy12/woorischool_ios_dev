@@ -78,6 +78,13 @@ class BoardReplyTableViewCell: UITableViewCell {
             imageContainerView.isHidden = true
         }
         
+        if let urlStr = comment.commentUser.profileImage {
+            profileImageView.kf.setImage(with: URL(string: urlStr), placeholder: UIImage(named:"profilePlaceHolder"))
+        }
+        else {
+            profileImageView.image = UIImage(named:"profilePlaceHolder")
+        }
+        
         rereCountBtn.setTitle("+ 댓글 \(comment.reCommentCount ?? 0)개", for: .normal)
     }
 }

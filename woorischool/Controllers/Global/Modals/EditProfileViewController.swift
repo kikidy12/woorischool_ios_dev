@@ -23,7 +23,12 @@ class EditProfileViewController: UIViewController {
         navibarSetting()
         
         if isEditMode {
-            profileImaegView.image = GlobalDatas.currentUser.profileImage ?? #imageLiteral(resourceName: "profilePlaceHolder")
+            if let urlStr = GlobalDatas.currentUser.profileImage {
+                profileImaegView.kf.setImage(with: URL(string: urlStr), placeholder: UIImage(named: "profilePlaceHolder"))
+            }
+            else {
+                profileImaegView.image = UIImage(named: "profilePlaceHolder")
+            }
             nameTextField.text = GlobalDatas.currentUser.name
             
             profileImaegView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(editProfileImageEvent(_:))))

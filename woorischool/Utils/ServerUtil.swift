@@ -145,6 +145,11 @@ class ServerUtil: NSObject {
         apiRequest(showLoading: false, "note", method: .post, parameters: parameters, completion: completion)
     }
     
+    func postPasswordChange(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest(showLoading: false, "password_change", method: .post, parameters: parameters, completion: completion)
+    }
+    
     func getLectureDetail(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
         currentVc = vc
         apiRequest(showLoading: false, "lecture_detail", method: .get, parameters: parameters, completion: completion)

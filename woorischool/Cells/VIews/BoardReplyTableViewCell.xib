@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,8 +22,8 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="216"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilePlaceHolder" translatesAutoresizingMaskIntoConstraints="NO" id="rN7-4d-wHD">
-                        <rect key="frame" x="20" y="52.5" width="35" height="35"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilePlaceHolder" translatesAutoresizingMaskIntoConstraints="NO" id="rN7-4d-wHD" customClass="CircleImageView" customModule="우리스쿨" customModuleProvider="target">
+                        <rect key="frame" x="20" y="10" width="35" height="35"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="35" id="LNm-4G-qwO"/>
                             <constraint firstAttribute="width" constant="35" id="bD1-Rw-fkT"/>
@@ -152,7 +151,7 @@
                     <constraint firstItem="HR8-fH-QUB" firstAttribute="top" secondItem="WWe-EV-C9o" secondAttribute="bottom" constant="4" id="NYO-zM-igE"/>
                     <constraint firstAttribute="trailing" secondItem="WWe-EV-C9o" secondAttribute="trailing" constant="20" id="TWH-Ji-HWa"/>
                     <constraint firstItem="WWe-EV-C9o" firstAttribute="leading" secondItem="rN7-4d-wHD" secondAttribute="trailing" constant="7" id="WaP-30-gO4"/>
-                    <constraint firstItem="rN7-4d-wHD" firstAttribute="centerY" secondItem="WWe-EV-C9o" secondAttribute="centerY" id="fFn-ZN-FDR"/>
+                    <constraint firstItem="rN7-4d-wHD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="b4O-vn-B7t"/>
                     <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="HR8-fH-QUB" secondAttribute="bottom" constant="20" id="fYb-FZ-AQm"/>
                     <constraint firstAttribute="trailing" secondItem="HR8-fH-QUB" secondAttribute="trailing" constant="20" id="jct-z2-OCR"/>
                 </constraints>

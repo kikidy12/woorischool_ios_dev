@@ -49,13 +49,17 @@ class RegistChildViewController: UIViewController {
         getSchoolList()
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        title = " "
+    }
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
     }
     
     @objc func selectSchool() {
         selectedSchool = schoolList[pickerView.selectedRow(inComponent: 0)]
-        schoolNumberTextField.text = selectedSchool.name
+        schoolNumberTextField.text = "\(selectedSchool.name ?? "미확인") (\(selectedSchool.number ?? "0000"))"
         schoolNumberTextField.resignFirstResponder()
     }
     

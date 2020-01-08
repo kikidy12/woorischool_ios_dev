@@ -171,6 +171,13 @@ class BoardDetailViewController: UIViewController {
             imageCountLabel.text = "\(1)/\(board.imageList.count)"
             imageCountLabel.isHidden = false
         }
+        
+        if let urlStr = board.postingUser.profileImage {
+            profileImageView.kf.setImage(with: URL(string: urlStr), placeholder: UIImage(named:"profilePlaceHolder"))
+        }
+        else {
+            profileImageView.image = UIImage(named:"profilePlaceHolder")
+        }
         setLike(isLike: board.isLike)
         boardImageCollectionView.reloadData()
     }

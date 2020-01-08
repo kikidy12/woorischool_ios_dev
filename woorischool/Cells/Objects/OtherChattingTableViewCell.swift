@@ -52,6 +52,12 @@ class OtherChattingTableViewCell: UITableViewCell {
             messageTimeLabel.text = chat.createdAt.dateToString(formatter: "MM/dd")
             imageTimeLabel.text = chat.createdAt.dateToString(formatter: "MM/dd")
         }
+        if let urlStr = chat.user.profileImage {
+            profileImageView.kf.setImage(with: URL(string: urlStr), placeholder: UIImage(named: "profilePlaceHolder"))
+        }
+        else {
+            profileImageView.image = UIImage(named: "profilePlaceHolder")
+        }
         
         if hasPre {
             if chat.imageURL != nil, chat.message != nil, chat.message != "" {
@@ -85,23 +91,36 @@ class OtherChattingTableViewCell: UITableViewCell {
             nameLabel.isHidden = false
         }
         
-        if hasNext {
-            messageTimeLabel.isHidden = true
+//        if hasNext {
+//            messageTimeLabel.isHidden = true
+//            imageTimeLabel.isHidden = true
+//        }
+//        else {
+//            if chat.imageURL == nil {
+//                imageTimeLabel.isHidden = true
+//                messageTimeLabel.isHidden = false
+//            }
+//            else if chat.message == nil || chat.message == "" {
+//                imageTimeLabel.isHidden = false
+//                messageTimeLabel.isHidden = true
+//            }
+//            else {
+//                imageTimeLabel.isHidden = true
+//                messageTimeLabel.isHidden = false
+//            }
+//        }
+        
+        if chat.imageURL == nil {
             imageTimeLabel.isHidden = true
+            messageTimeLabel.isHidden = false
+        }
+        else if chat.message == nil || chat.message == "" {
+            imageTimeLabel.isHidden = false
+            messageTimeLabel.isHidden = true
         }
         else {
-            if chat.imageURL == nil {
-                imageTimeLabel.isHidden = true
-                messageTimeLabel.isHidden = false
-            }
-            else if chat.message == nil || chat.message == "" {
-                imageTimeLabel.isHidden = false
-                messageTimeLabel.isHidden = true
-            }
-            else {
-                imageTimeLabel.isHidden = true
-                messageTimeLabel.isHidden = false
-            }
+            imageTimeLabel.isHidden = true
+            messageTimeLabel.isHidden = false
         }
         
         if let chatImageURL = chat.imageURL {

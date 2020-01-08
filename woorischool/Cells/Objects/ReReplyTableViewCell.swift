@@ -68,6 +68,13 @@ class ReReplyTableViewCell: UITableViewCell {
             imageViewContainerView.isHidden = true
         }
         
+        if let urlStr = comment.commentUser.profileImage {
+            profileImageView.kf.setImage(with: URL(string: urlStr), placeholder: UIImage(named:"profilePlaceHolder"))
+        }
+        else {
+            profileImageView.image = UIImage(named:"profilePlaceHolder")
+        }
+        
     }
 }
 

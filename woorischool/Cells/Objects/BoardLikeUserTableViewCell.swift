@@ -11,7 +11,12 @@ import UIKit
 class BoardLikeUserTableViewCell: UITableViewCell {
     var user: UserData! {
         didSet {
-            profileImageView.image = user.profileImage
+            if let urlStr = user.profileImage {
+                profileImageView.kf.setImage(with: URL(string: urlStr), placeholder: UIImage(named: "profilePlaceHolder"))
+            }
+            else {
+                profileImageView.image = UIImage(named: "profilePlaceHolder")
+            }
             nameLabel.text = user.name
         }
     }

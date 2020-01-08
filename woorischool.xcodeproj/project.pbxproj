@@ -199,6 +199,8 @@
 		9998834323BB3E36000C413C /* CustomPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9998834223BB3E36000C413C /* CustomPageControl.swift */; };
 		9998834623BE0FFF000C413C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9998834423BE0FFF000C413C /* MapViewController.swift */; };
 		9998834723BE0FFF000C413C /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9998834523BE0FFF000C413C /* MapViewController.xib */; };
+		9998834A23C59E0D000C413C /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9998834823C59E0D000C413C /* ChangePasswordViewController.swift */; };
+		9998834B23C59E0D000C413C /* ChangePasswordViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9998834923C59E0D000C413C /* ChangePasswordViewController.xib */; };
 		99CF8697238560CF00812A36 /* ImagePagingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CF8695238560CF00812A36 /* ImagePagingCollectionViewCell.swift */; };
 		99CF8698238560CF00812A36 /* ImagePagingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99CF8696238560CF00812A36 /* ImagePagingCollectionViewCell.xib */; };
 		99CF869B2385934500812A36 /* BoardAddAndEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CF86992385934500812A36 /* BoardAddAndEditViewController.swift */; };
@@ -471,6 +473,8 @@
 		9998834223BB3E36000C413C /* CustomPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageControl.swift; sourceTree = "<group>"; };
 		9998834423BE0FFF000C413C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		9998834523BE0FFF000C413C /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
+		9998834823C59E0D000C413C /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		9998834923C59E0D000C413C /* ChangePasswordViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChangePasswordViewController.xib; sourceTree = "<group>"; };
 		99CF8695238560CF00812A36 /* ImagePagingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePagingCollectionViewCell.swift; sourceTree = "<group>"; };
 		99CF8696238560CF00812A36 /* ImagePagingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImagePagingCollectionViewCell.xib; sourceTree = "<group>"; };
 		99CF86992385934500812A36 /* BoardAddAndEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardAddAndEditViewController.swift; sourceTree = "<group>"; };
@@ -1065,6 +1069,7 @@
 				9956BF772366B5670069E661 /* TeacherStudentAttendViewController.xib */,
 				99088BE0237CF351009C9AE6 /* DailyNoteListViewController.xib */,
 				99468CE52372823E00AAB535 /* RegistDailyNoteViewController.xib */,
+				9998834923C59E0D000C413C /* ChangePasswordViewController.xib */,
 			);
 			path = ModalViews;
 			sourceTree = "<group>";
@@ -1081,6 +1086,7 @@
 				9956BF762366B5670069E661 /* TeacherStudentAttendViewController.swift */,
 				99088BDF237CF351009C9AE6 /* DailyNoteListViewController.swift */,
 				99468CE42372823E00AAB535 /* RegistDailyNoteViewController.swift */,
+				9998834823C59E0D000C413C /* ChangePasswordViewController.swift */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
@@ -1317,6 +1323,7 @@
 				99DFB13F234F7AE400C5B69D /* RegistClassPopupViewController.xib in Resources */,
 				99DFB15323504D6000C5B69D /* TeacherLoginViewController.xib in Resources */,
 				9914A9E723430DA9001C0112 /* SplashViewController.xib in Resources */,
+				9998834B23C59E0D000C413C /* ChangePasswordViewController.xib in Resources */,
 				9911830C236E94DC0020D6CE /* CustomInputView.xib in Resources */,
 				9956BF8B23672A2E0069E661 /* SPHomeClassInfoCollectionViewCell.xib in Resources */,
 				994907EE239DE47D00A6D1F6 /* MyChattingTableViewCell.xib in Resources */,
@@ -1551,6 +1558,7 @@
 				99FAB1B623AF30DD00CE0D3A /* ChildInfoTableViewCell.swift in Sources */,
 				99118310236EBC090020D6CE /* EmoticonDatas.swift in Sources */,
 				994907AD2394C4F800A6D1F6 /* SearchView.swift in Sources */,
+				9998834A23C59E0D000C413C /* ChangePasswordViewController.swift in Sources */,
 				9914A9D1234309BB001C0112 /* Extensions+Obejcts.swift in Sources */,
 				994907F4239E362B00A6D1F6 /* OtherChattingTableViewCell.swift in Sources */,
 				99DFB15D2350579100C5B69D /* LectureClassDayData.swift in Sources */,
@@ -1744,7 +1752,7 @@
 				CODE_SIGN_ENTITLEMENTS = woorischool/woorischool.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 4TNGT36HA9;
 				INFOPLIST_FILE = woorischool/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1768,7 +1776,7 @@
 				CODE_SIGN_ENTITLEMENTS = woorischool/woorischool.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 4TNGT36HA9;
 				INFOPLIST_FILE = woorischool/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

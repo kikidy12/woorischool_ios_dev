@@ -24,8 +24,6 @@ class ReplyListViewController: UIViewController {
             else {
                 
             }
-            
-            
             self.replyTableView.reloadData()
             self.replyTableViewHeightConstraint.constant = self.replyTableView.contentSize.height
             self.view.layoutIfNeeded()

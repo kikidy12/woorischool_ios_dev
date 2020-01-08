@@ -18,6 +18,7 @@ class MyPageViewController: UIViewController {
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var childrenView: UIView!
     @IBOutlet weak var childPointView: UIView!
+    @IBOutlet weak var changePasswordView: UIView!
     @IBOutlet weak var quaterClassListView: UIView!
 
     override func viewDidLoad() {
@@ -31,12 +32,14 @@ class MyPageViewController: UIViewController {
             userTypeLabel.isHidden = true
             quaterClassListView.isHidden = false
             childrenView.isHidden = false
+            changePasswordView.isHidden = true
             userInfoLabel.text = GlobalDatas.currentUser.phoneNum
         }
         else if userType == .teacher {
             userTypeLabel.isHidden = false
             childrenView.isHidden = true
             quaterClassListView.isHidden = true
+            changePasswordView.isHidden = false
             userTypeLabel.text = "선생님"
             userInfoLabel.text = GlobalDatas.currentUser.email
         }
@@ -44,10 +47,15 @@ class MyPageViewController: UIViewController {
             userTypeLabel.isHidden = true
             childrenView.isHidden = true
             quaterClassListView.isHidden = false
+            changePasswordView.isHidden = false
             userInfoLabel.text = GlobalDatas.currentUser.phoneNum
         }
-        
-        profileImageView.image = GlobalDatas.currentUser.profileImage
+        if let urlStr = GlobalDatas.currentUser.profileImage {
+            profileImageView.kf.setImage(with: URL(string: urlStr), placeholder: UIImage(named: "profilePlaceHolder"))
+        }
+        else {
+            profileImageView.image = UIImage(named: "profilePlaceHolder")
+        }
     }
     
     @IBAction func showMyBoardListEvent() {
@@ -66,7 +74,8 @@ class MyPageViewController: UIViewController {
     }
     
     @IBAction func showChnagePasswordViewEvent() {
-        
+        let vc = ChangePasswordViewController()
+        self.show(vc, sender: nil)
     }
     
     @IBAction func showNotiListViewEvent() {
@@ -75,11 +84,11 @@ class MyPageViewController: UIViewController {
     }
     
     @IBAction func showAttractViewEvent() {
-        
+        AlertHandler().showAlert(vc: self, message: "준비중인 기능입니다.", okTitle: "확인")
     }
     
     @IBAction func showTermListViewEvent() {
-        
+        AlertHandler().showAlert(vc: self, message: "준비중인 기능입니다.", okTitle: "확인")
     }
     
     @IBAction func showStudentPointInfoListViewEvent() {

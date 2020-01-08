@@ -61,24 +61,37 @@ class MyChattingTableViewCell: UITableViewCell {
             messageTopConstraint.constant = 0
         }
         
-        if hasNext {
-            messageTimeLabel.isHidden = true
+//        if hasNext {
+//            messageTimeLabel.isHidden = true
+//            imageTimeLabel.isHidden = true
+//        }
+//        else {
+//            if chat.imageURL == nil {
+//                imageTimeLabel.isHidden = true
+//                messageTimeLabel.isHidden = false
+//            }
+//            else if chat.message == nil || chat.message == "" {
+//                imageTimeLabel.isHidden = false
+//                messageTimeLabel.isHidden = true
+//            }
+//            else {
+//                imageTimeLabel.isHidden = true
+//                messageTimeLabel.isHidden = false
+//            }
+//        }
+        if chat.imageURL == nil {
             imageTimeLabel.isHidden = true
+            messageTimeLabel.isHidden = false
+        }
+        else if chat.message == nil || chat.message == "" {
+            imageTimeLabel.isHidden = false
+            messageTimeLabel.isHidden = true
         }
         else {
-            if chat.imageURL == nil {
-                imageTimeLabel.isHidden = true
-                messageTimeLabel.isHidden = false
-            }
-            else if chat.message == nil || chat.message == "" {
-                imageTimeLabel.isHidden = false
-                messageTimeLabel.isHidden = true
-            }
-            else {
-                imageTimeLabel.isHidden = true
-                messageTimeLabel.isHidden = false
-            }
+            imageTimeLabel.isHidden = true
+            messageTimeLabel.isHidden = false
         }
+
         
         if let chatImageURL = chat.imageURL {
             chatImageView.kf.setImage(with: chatImageURL)

@@ -95,10 +95,11 @@ extension SearchSchoolViewController: UITableViewDelegate, UITableViewDataSource
     
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let number = schoolList[indexPath.item].number, clouser != nil else {
+        guard clouser != nil else {
             return
         }
-        clouser!(number)
+        let school = schoolList[indexPath.item]
+        clouser!("\(school.name ?? "미확인") (\(school.number ?? "0000"))")
         self.navigationController?.popViewController(animated: true)
     }
 }

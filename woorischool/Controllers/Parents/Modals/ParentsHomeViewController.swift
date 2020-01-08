@@ -123,7 +123,12 @@ class ParentsHomeViewController: UIViewController {
     func setUserInfo() {
         let user = GlobalDatas.currentUser
         nameLabel.text = "\(user?.childlen?.name ?? "아무개") 학부모님\n안녕하세요"
-        childProfileImageView.image = user?.childlen.profileImage ?? #imageLiteral(resourceName: "tempEmptyImage")
+        if let urlStr = user?.childlen.profileImage {
+            childProfileImageView.kf.setImage(with: URL(string: urlStr), placeholder: UIImage(named: "profilePlaceHolder"))
+        }
+        else {
+            childProfileImageView.image = UIImage(named: "profilePlaceHolder")
+        }
     }
     
     func dateStackViewSetting() {
