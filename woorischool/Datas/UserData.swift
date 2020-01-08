@@ -25,6 +25,8 @@ class UserData: NSObject {
     
     var studentInfo: StudentInfoData!
     
+    var parentsList = [UserData]()
+    
     override init() {
         
     }
@@ -54,6 +56,10 @@ class UserData: NSObject {
         
         if let str = data["attendance"] as? String {
             attendence = AttendenceType(rawValue: str)
+        }
+        
+        if let array = data["parents"] as? NSArray {
+            parentsList = array.compactMap { UserData($0 as! NSDictionary) }
         }
         
         if let urlStr = data["profile_image_url"] as? String, let url = URL(string: urlStr) {

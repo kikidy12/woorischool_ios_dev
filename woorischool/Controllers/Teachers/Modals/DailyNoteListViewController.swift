@@ -37,6 +37,12 @@ class DailyNoteListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         getDailyNoteList()
+        
+        title = "\(lectureClass.lecture?.name ?? "강좌명") \(lectureClass.name ?? "클래스")"
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        title = " "
     }
 }
 
@@ -61,14 +67,15 @@ extension DailyNoteListViewController: UITableViewDelegate, UITableViewDataSourc
         headerBtn.frame.size = .init(width: headerView.frame.width - 34, height: 50)
         headerBtn.center = headerView.center
         headerBtn.setTitle("+ 알림장 올리기", for: .normal)
-        let gradient = CAGradientLayer()
-        gradient.startPoint = CGPoint(x: 0, y: 0)
-        gradient.endPoint = CGPoint(x: 1, y: 0)
-        gradient.colors = [UIColor.turquoiseBlue.cgColor, UIColor.dodgerBlue.cgColor]
-        gradient.frame = headerBtn.bounds
-        headerBtn.layer.addSublayer(gradient)
+//        let gradient = CAGradientLayer()
+//        gradient.startPoint = CGPoint(x: 0, y: 0)
+//        gradient.endPoint = CGPoint(x: 1, y: 0)
+//        gradient.colors = [UIColor.turquoiseBlue.cgColor, UIColor.dodgerBlue.cgColor]
+//        gradient.frame = headerBtn.bounds
+//        headerBtn.layer.addSublayer(gradient)
+//        gradient.cornerRadius = 5
         headerBtn.layer.cornerRadius = 5
-        gradient.cornerRadius = 5
+        headerBtn.backgroundColor = .greenishTeal
         headerBtn.bringSubviewToFront(headerBtn.titleLabel!)
         headerView.addSubview(headerBtn)
         headerBtn.addTarget(self, action: #selector(selectHeadierView(_:)), for: .touchUpInside)

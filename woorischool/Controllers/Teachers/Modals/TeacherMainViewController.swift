@@ -26,7 +26,10 @@ class TeacherMainViewController: UIViewController {
         getInfo {
             self.settingTabViews(self.tabStackView.arrangedSubviews.first!)
         }
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        title = " "
     }
     
     @objc func showAlarmEvent() {

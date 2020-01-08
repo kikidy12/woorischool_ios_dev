@@ -9,6 +9,12 @@
 import UIKit
 
 class ParentContractTableViewCell: UITableViewCell {
+    
+    var chatClouser: (()->())!
+    var callClouser: (()->())!
+    
+    
+    @IBOutlet weak var phoneNumLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,6 +25,14 @@ class ParentContractTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    @IBAction func callEvent() {
+        callClouser()
+    }
+    
+    @IBAction func showChatEvent() {
+        chatClouser()
     }
     
 }

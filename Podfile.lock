@@ -79,6 +79,7 @@ PODS:
     - nanopb/encode (= 0.3.901)
   - nanopb/decode (0.3.901)
   - nanopb/encode (0.3.901)
+  - NMapsMap (3.6.1)
   - Protobuf (3.9.0)
 
 DEPENDENCIES:
@@ -88,6 +89,7 @@ DEPENDENCIES:
   - Firebase/Messaging
   - Kingfisher
   - lottie-ios
+  - NMapsMap
 
 SPEC REPOS:
   https://github.com/CocoaPods/Specs.git:
@@ -108,6 +110,8 @@ SPEC REPOS:
     - lottie-ios
     - nanopb
     - Protobuf
+  trunk:
+    - NMapsMap
 
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
@@ -126,8 +130,9 @@ SPEC CHECKSUMS:
   Kingfisher: 176d377ad339113c99ad4980cbae687f807e20fe
   lottie-ios: 49cd85b1f24f61a7708ad7ec76a523ab2d0e3100
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
+  NMapsMap: ffdda08491e8ae33a967050b5530f4e9d462394f
   Protobuf: 1097ca58584c8d9be81bfbf2c5ff5975648dd87a
 
-PODFILE CHECKSUM: f87a6dd0f74a0aa708381b40b136f554cd38613a
+PODFILE CHECKSUM: f05964668535986871c68438908aea7f5f9c8e57
 
 COCOAPODS: 1.8.3

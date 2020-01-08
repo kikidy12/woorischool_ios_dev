@@ -41,13 +41,8 @@ class ChattingRoomListViewController: UIViewController {
         headerView.manageColuser = {
             
         }
-        headerView.timeInfoLabel.text = "채팅 가능시간 12:00pm - 3:00 pm"
-        if UserDefs.lastUserType == UserType.teacher.rawValue {
-            headerView.manageTimeBtn.isHidden = false
-        }
-        else {
-            headerView.manageTimeBtn.isHidden = true
-        }
+        headerView.timeInfoLabel.text = "채팅 가능시간 08:00 - 20:00"
+        headerView.manageTimeBtn.isHidden = true
         
         if chatType == .manyToMany {
             chattingRoomTableView.tableHeaderView = UIView(frame: .init(x: 0, y: 0, width: 0, height: 0.001))

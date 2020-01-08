@@ -14,6 +14,7 @@ class ChatRoomData: NSObject {
     var body: String!
     var lastMessageTime: String!
     var personCount: Int!
+    var type: String!
     
     override init() {
         
@@ -25,5 +26,6 @@ class ChatRoomData: NSObject {
         body = data["last_message"] as? String
         lastMessageTime = data["last_message_time"] as? String
         personCount = data["person_count"] as? Int
+        type = data["type"] as? String
     }
 }

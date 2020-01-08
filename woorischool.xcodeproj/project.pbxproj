@@ -197,6 +197,8 @@
 		9998834023BB2AC4000C413C /* TutoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9998833E23BB2AC4000C413C /* TutoViewController.swift */; };
 		9998834123BB2AC4000C413C /* TutoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9998833F23BB2AC4000C413C /* TutoViewController.xib */; };
 		9998834323BB3E36000C413C /* CustomPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9998834223BB3E36000C413C /* CustomPageControl.swift */; };
+		9998834623BE0FFF000C413C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9998834423BE0FFF000C413C /* MapViewController.swift */; };
+		9998834723BE0FFF000C413C /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9998834523BE0FFF000C413C /* MapViewController.xib */; };
 		99CF8697238560CF00812A36 /* ImagePagingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CF8695238560CF00812A36 /* ImagePagingCollectionViewCell.swift */; };
 		99CF8698238560CF00812A36 /* ImagePagingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99CF8696238560CF00812A36 /* ImagePagingCollectionViewCell.xib */; };
 		99CF869B2385934500812A36 /* BoardAddAndEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99CF86992385934500812A36 /* BoardAddAndEditViewController.swift */; };
@@ -467,6 +469,8 @@
 		9998833E23BB2AC4000C413C /* TutoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutoViewController.swift; sourceTree = "<group>"; };
 		9998833F23BB2AC4000C413C /* TutoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TutoViewController.xib; sourceTree = "<group>"; };
 		9998834223BB3E36000C413C /* CustomPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPageControl.swift; sourceTree = "<group>"; };
+		9998834423BE0FFF000C413C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		9998834523BE0FFF000C413C /* MapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
 		99CF8695238560CF00812A36 /* ImagePagingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePagingCollectionViewCell.swift; sourceTree = "<group>"; };
 		99CF8696238560CF00812A36 /* ImagePagingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImagePagingCollectionViewCell.xib; sourceTree = "<group>"; };
 		99CF86992385934500812A36 /* BoardAddAndEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardAddAndEditViewController.swift; sourceTree = "<group>"; };
@@ -785,6 +789,8 @@
 				99FAB1B123AF125400CE0D3A /* EditProfileViewController.xib */,
 				9945594D23B1CF060052E322 /* LikeUserListViewController.xib */,
 				9998833923B74141000C413C /* NotiDetailViewController.xib */,
+				9998833F23BB2AC4000C413C /* TutoViewController.xib */,
+				9998834523BE0FFF000C413C /* MapViewController.xib */,
 			);
 			path = ModalViews;
 			sourceTree = "<group>";
@@ -830,7 +836,7 @@
 				9945594C23B1CF060052E322 /* LikeUserListViewController.swift */,
 				9998833823B74141000C413C /* NotiDetailViewController.swift */,
 				9998833E23BB2AC4000C413C /* TutoViewController.swift */,
-				9998833F23BB2AC4000C413C /* TutoViewController.xib */,
+				9998834423BE0FFF000C413C /* MapViewController.swift */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
@@ -1256,6 +1262,7 @@
 				994907B32394DD1800A6D1F6 /* SchoolTableViewCell.xib in Resources */,
 				991182DE236C8C8A0020D6CE /* BoardDetailViewController.xib in Resources */,
 				99DFB14B2350481C00C5B69D /* RegistCompClassTableViewCell.xib in Resources */,
+				9998834723BE0FFF000C413C /* MapViewController.xib in Resources */,
 				9956BF7523668BDF0069E661 /* loading.json in Resources */,
 				99DFB15723504F1500C5B69D /* TeacherSignUpViewController.xib in Resources */,
 				9914A9FB23431447001C0112 /* NotoSansMonoCJKkr-Bold.otf in Resources */,
@@ -1446,6 +1453,7 @@
 				99DFB13A234F736F00C5B69D /* ClassInfoPopupViewController.swift in Sources */,
 				99DFB133234EFBAB00C5B69D /* GlobalDatas.swift in Sources */,
 				9956BF8A23672A2E0069E661 /* SPHomeClassInfoCollectionViewCell.swift in Sources */,
+				9998834623BE0FFF000C413C /* MapViewController.swift in Sources */,
 				996FE81C23A3F65F003872D4 /* ClassRegistPopupViewController.swift in Sources */,
 				994907B823978F1A00A6D1F6 /* QuarterClassListViewController.swift in Sources */,
 				994907ED239DE47D00A6D1F6 /* MyChattingTableViewCell.swift in Sources */,

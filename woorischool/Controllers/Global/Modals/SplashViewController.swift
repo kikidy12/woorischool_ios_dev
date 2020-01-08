@@ -101,7 +101,7 @@ extension SplashViewController {
             }
             
             GlobalDatas.currentUser = UserData(user)
-            UserDefs.setLastUserType(type: UserType.parents.rawValue)
+            UserDefs.setLastUserType(type: GlobalDatas.currentUser.type.rawValue)
             complete()
         }
     }

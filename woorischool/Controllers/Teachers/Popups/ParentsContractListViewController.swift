@@ -10,6 +10,8 @@ import UIKit
 
 class ParentsContractListViewController: UIViewController {
     
+    var showChatClouser: (()->())!
+    
     var parentList = [UserData]()
     
     @IBOutlet weak var parentsCountLabel: UILabel!
@@ -23,23 +25,29 @@ class ParentsContractListViewController: UIViewController {
         
         parentsTableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: 0, height: 0.001))
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        parentsTableView.reloadData()
+        parentsCountLabel.text = "\(parentList.count)명의 부모님이 있습니다."
+    }
 }
 
 extension ParentsContractListViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.item == (tableView.indexPathsForVisibleRows!.last!).item {
-            parentsTableViewHeightConstrant.constant = cell.frame.height * CGFloat(5)
-        }
-    }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return parentList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "parentsCell", for: indexPath) as! ParentContractTableViewCell
-        
+        cell.phoneNumLabel.text = parentList[indexPath.item].phoneNum
+        cell.callClouser = {
+            self.phoneCallRequest(self.parentList[indexPath.item].phoneNum ?? "")
+        }
+        cell.chatClouser = {
+            self.dismiss(animated: false) {
+                self.showChatClouser()
+            }
+        }
         return cell
     }
     

@@ -409,7 +409,9 @@ extension ParentsHomeRenewViewController: UICollectionViewDelegate, UICollection
             
         }
         else if collectionView == dayClassInfoCollectionView {
-            
+            let vc = ClassInfoViewController()
+            vc.lectureClassId = classDayList[indexPath.item].lectureClass.id
+            self.show(vc, sender: nil)
         }
     }
     

@@ -94,6 +94,13 @@ class ChattingViewController: UIViewController {
 
 extension ChattingViewController: CustomInputViewDelegate {
     func sendMessage(message: String, image: UIImage?) {
+        let startTime = Calendar.current.date(bySettingHour: 8, minute: 0, second: 0, of: Date())!
+        let endTime = Calendar.current.date(bySettingHour: 20, minute: 0, second: 0, of: Date())!
+        
+        guard room.type != "ONE" || (Date() > startTime && Date() < endTime) else {
+            self.showToast(message: "채팅가능 시간이 아닙니다.", font: UIFont.systemFont(ofSize: 15))
+            return
+        }
         if !tempEmoView.isHidden, let emoticon = selectedEmoticon {
             addChat(message: message, image: image, emoticon: emoticon)
         }
@@ -279,6 +286,9 @@ extension ChattingViewController {
         }) { (success, dict, message) in
             self.isUpdate = true
             guard success else {
+                if message == "소통가능 시간이 아닙니다." {
+                    self.showToast(message: "소통가능 시간이 아닙니다.", font: UIFont.systemFont(ofSize: 15))
+                }
                 return
             }
             self.scrolltoBottm = true

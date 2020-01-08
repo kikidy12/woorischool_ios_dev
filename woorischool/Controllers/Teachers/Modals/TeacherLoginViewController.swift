@@ -50,8 +50,11 @@ extension TeacherLoginViewController {
                 return
             }
             
-            UserDefs.setLastUserType(type: "TEACHER")
+            UserDefs.setLastUserType(type: UserType.teacher.rawValue)
             UserDefs.setUserToken(token: token)
+            
+            print(UserDefs.lastUserType)
+            print(token)
             
             let navi = UINavigationController(rootViewController: TeacherMainViewController())
             navi.navigationBar.tintColor = .black

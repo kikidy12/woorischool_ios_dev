@@ -15,10 +15,12 @@ class NotiTableViewCell: UITableViewCell {
             titleLabel.text = noti.title
             createTimeLabel.text = noti.cretedAt.dateToString(formatter: "MM/dd")
             isNewImageView.isHidden = true
+            contentLabel.text = noti.content
         }
     }
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var createTimeLabel: UILabel!
+    @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var isNewImageView: UIImageView!
     
     override func awakeFromNib() {

@@ -13,6 +13,7 @@ target 'woorischool' do
   pod 'Firebase/Messaging'
   pod 'Firebase/Analytics'
   pod 'lottie-ios'
+  pod 'NMapsMap'
 
   target 'woorischoolTests' do
     inherit! :search_paths

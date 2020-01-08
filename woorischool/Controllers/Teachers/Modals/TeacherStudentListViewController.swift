@@ -20,6 +20,7 @@ class TeacherStudentListViewController: UIViewController {
             else {
                 
             }
+            studentTableViewHeightConstraint.constant = 45 * CGFloat(studentList.count)
             studentCountLabel.text = "총 \(studentList.count) 수강생"
             studentTableView.reloadData()
         }
@@ -49,11 +50,6 @@ class TeacherStudentListViewController: UIViewController {
 }
 
 extension TeacherStudentListViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if indexPath.item == (tableView.indexPathsForVisibleRows!.last!).item {
-            studentTableViewHeightConstraint.constant = cell.frame.height * CGFloat(studentList.count)
-        }
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return studentList.count
@@ -64,12 +60,24 @@ extension TeacherStudentListViewController: UITableViewDelegate, UITableViewData
         cell.initView(studentList[indexPath.item])
         cell.contactParentClouser = {
             let vc = ParentsContractListViewController()
+            vc.parentList = self.studentList[indexPath.item].parentsList
+            
+            vc.showChatClouser = {
+                let vc = NotiListViewController()
+                self.show(vc, sender: nil)
+            }
             self.showPopupView(vc: vc)
         }
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 45
+    }
     
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 45
+    }
 }
 
 extension TeacherStudentListViewController {

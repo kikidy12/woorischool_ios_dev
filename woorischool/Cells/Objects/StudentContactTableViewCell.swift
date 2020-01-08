@@ -31,7 +31,6 @@ class StudentContactTableViewCell: UITableViewCell {
     }
     
     @IBAction func callParentEvnet() {
-        print("teststssd")
         contactParentClouser()
     }
     

@@ -125,6 +125,11 @@ class ServerUtil: NSObject {
         apiRequest("v2_emoticon", method: .get, parameters: parameters, completion: completion)
     }
     
+    func postNoteOne(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("note_one", method: .post, parameters: parameters, completion: completion)
+    }
+    
     func getSchoolQuarterInfo(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
         currentVc = vc
         apiRequest("school_quarter_info", method: .get, parameters: parameters, completion: completion)
@@ -480,6 +485,7 @@ extension ServerUtil {
         }
         guard code == 200 || code == 201 else {
             if let message = result["message"] as? String {
+                print(message)
                 completion(false ,nil, message)
             }
             else {

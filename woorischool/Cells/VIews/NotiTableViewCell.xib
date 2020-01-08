@@ -23,14 +23,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="128"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="[공지] 업데이트 안내 공지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Hq-GO-sxe">
-                        <rect key="frame" x="17" y="56" width="140.5" height="16.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="업데이트 안내 공지" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Hq-GO-sxe">
+                        <rect key="frame" x="53.5" y="22" width="105" height="16.5"/>
                         <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
-                        <color key="textColor" name="greyishBrown"/>
+                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="n.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="BYO-Zb-ueR">
-                        <rect key="frame" x="162.5" y="56.5" width="16" height="15"/>
+                        <rect key="frame" x="163.5" y="23" width="16" height="15"/>
                         <color key="tintColor" name="grapefruit"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="16" id="9tC-Pm-BE1"/>
@@ -50,23 +50,42 @@
                             <constraint firstAttribute="height" constant="1" id="tvb-qy-0QB"/>
                         </constraints>
                     </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="[공지]" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ec-0S-2dr">
+                        <rect key="frame" x="17" y="22" width="31.5" height="16.5"/>
+                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
+                        <color key="textColor" name="greenishTeal"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="안녕하세요 우리스쿨입니다:) 벌써 2019년도 끝자락입니다! 2019년을 마무리하며 올 한해…" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I5c-qT-4T9">
+                        <rect key="frame" x="17" y="43.5" width="239" height="33"/>
+                        <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
+                        <color key="textColor" name="brownGrey"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="I5c-qT-4T9" secondAttribute="bottom" constant="22" id="8GX-nZ-Yba"/>
                     <constraint firstAttribute="bottom" secondItem="9cS-J7-YXN" secondAttribute="bottom" id="Cai-Kk-wde"/>
-                    <constraint firstItem="8Hq-GO-sxe" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="FZ9-1u-Tth"/>
-                    <constraint firstItem="BYO-Zb-ueR" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="IBw-B8-NmS"/>
+                    <constraint firstItem="8Hq-GO-sxe" firstAttribute="leading" secondItem="6Ec-0S-2dr" secondAttribute="trailing" constant="5" id="OEB-wU-gXF"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="BYO-Zb-ueR" secondAttribute="trailing" constant="5" id="T8q-tu-o5w"/>
+                    <constraint firstItem="I5c-qT-4T9" firstAttribute="top" secondItem="6Ec-0S-2dr" secondAttribute="bottom" constant="5" id="TAU-bR-tZL"/>
                     <constraint firstItem="9cS-J7-YXN" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="V12-eA-ddM"/>
-                    <constraint firstItem="hGo-gU-Wjq" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="BYO-Zb-ueR" secondAttribute="trailing" constant="5" id="V5u-aw-kOO"/>
+                    <constraint firstItem="6Ec-0S-2dr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="22" id="W2e-dV-xdA"/>
                     <constraint firstAttribute="trailing" secondItem="hGo-gU-Wjq" secondAttribute="trailing" constant="18" id="XRr-Jz-btc"/>
+                    <constraint firstItem="6Ec-0S-2dr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="17" id="d34-Sm-uno"/>
                     <constraint firstItem="BYO-Zb-ueR" firstAttribute="leading" secondItem="8Hq-GO-sxe" secondAttribute="trailing" constant="5" id="fnr-YH-e8K"/>
+                    <constraint firstItem="8Hq-GO-sxe" firstAttribute="centerY" secondItem="6Ec-0S-2dr" secondAttribute="centerY" id="hkz-QN-kDB"/>
                     <constraint firstItem="hGo-gU-Wjq" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="oOC-1A-Ppc"/>
-                    <constraint firstItem="8Hq-GO-sxe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="17" id="ooH-qQ-fon"/>
+                    <constraint firstItem="BYO-Zb-ueR" firstAttribute="centerY" secondItem="8Hq-GO-sxe" secondAttribute="centerY" id="pKh-GR-ftF"/>
+                    <constraint firstItem="I5c-qT-4T9" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="17" id="rKQ-SR-Dxf"/>
+                    <constraint firstItem="hGo-gU-Wjq" firstAttribute="leading" secondItem="I5c-qT-4T9" secondAttribute="trailing" constant="10" id="re1-4E-eDy"/>
                     <constraint firstAttribute="trailing" secondItem="9cS-J7-YXN" secondAttribute="trailing" id="vW7-xS-Qrt"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="contentLabel" destination="I5c-qT-4T9" id="Lpf-VC-JPK"/>
                 <outlet property="createTimeLabel" destination="hGo-gU-Wjq" id="FlZ-Z1-0DB"/>
                 <outlet property="isNewImageView" destination="BYO-Zb-ueR" id="Kx4-gS-Mmr"/>
                 <outlet property="titleLabel" destination="8Hq-GO-sxe" id="0Fx-HE-5zz"/>
@@ -76,8 +95,14 @@
     </objects>
     <resources>
         <image name="n.circle.fill" catalog="system" width="64" height="60"/>
+        <namedColor name="brownGrey">
+            <color red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="grapefruit">
             <color red="0.94901960784313721" green="0.40392156862745099" blue="0.39215686274509803" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="greenishTeal">
+            <color red="0.17254901960784313" green="0.77647058823529413" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="greyishBrown">
             <color red="0.29019607843137257" green="0.29019607843137257" blue="0.29019607843137257" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

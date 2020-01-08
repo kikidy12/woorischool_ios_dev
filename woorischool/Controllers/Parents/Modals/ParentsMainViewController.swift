@@ -22,8 +22,11 @@ class ParentsMainViewController: UIViewController {
         }
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        title = " "
+    }
+    
     @objc func showAlarmEvent() {
-//        let vc = SearchSchoolViewController()
         let vc = AlarmListViewController()
         self.show(vc, sender: nil)
     }
@@ -70,7 +73,7 @@ class ParentsMainViewController: UIViewController {
                 switch $0.offset {
                 case 0:
                     setMainViews(vc: ParentsHomeRenewViewController())
-                    setLeftTitleSetting("OSchool")
+                    setLeftTitleSetting("우리스쿨")
                     break
                 case 1:
                     setMainViews(vc: ParentsEnrolmentClassViewController())
