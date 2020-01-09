@@ -24,6 +24,22 @@ class SplashViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
+        
+        if #available(iOS 13.0, *) {
+            
+        }
+        else {
+            AlertHandler().showAlert(vc: self, message: "ios 13버전 이후만 사용 가능합니다.", okTitle: "확인", okHandler: { (_) in
+                exit(0)
+            })
+        }
+        
+        if UIDevice.modelName.contains("SE") {
+            AlertHandler().showAlert(vc: self, message: "se모델은 지원하지 않습니다.", okTitle: "확인", okHandler: { (_) in
+                exit(0)
+            })
+        }
+        
         print("x-http-token: ", UserDefs.userToken)
         if UserDefs.userToken != "" {
             getInfo {
