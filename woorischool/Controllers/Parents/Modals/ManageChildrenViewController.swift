@@ -108,6 +108,24 @@ extension ManageChildrenViewController {
                 return
             }
             
+            self.getInfo()
+        }
+    }
+    
+    func getInfo() {
+        let parameters = [
+            "device_token": GlobalDatas.deviceToken,
+            "os": "iOS"
+        ] as [String:Any]
+        
+        ServerUtil.shared.getV2Info(self, parameters: parameters) { (success, dict, message) in
+            guard success, let user = dict?["user"] as? NSDictionary else {
+                return
+            }
+            
+            GlobalDatas.currentUser = UserData(user)
+            UserDefs.setHasChildren(true)
+            UserDefs.setLastUserType(type: UserType.parents.rawValue)
             self.navigationController?.popViewController(animated: true)
         }
     }

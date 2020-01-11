@@ -37,11 +37,11 @@ class AlarmTableViewCell: UITableViewCell {
         
         if let type = alarm.type {
             typeLabel.text = type
-            typeLabel.backgroundColor = .dodgerBlue
+            typeLabel.backgroundColor = .greenishTeal
         }
         else {
             typeLabel.text = "미정"
-            typeLabel.backgroundColor = .brownGrey
+            typeLabel.backgroundColor = .greenishTeal
         }
         
         titleLabel.text = alarm.title

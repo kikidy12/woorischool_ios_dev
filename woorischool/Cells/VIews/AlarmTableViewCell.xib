@@ -26,19 +26,19 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="91"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="공지" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iEa-t3-gXT" customClass="CustomLabel" customModule="우리스쿨" customModuleProvider="target">
-                        <rect key="frame" x="18" y="0.0" width="40" height="40"/>
+                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="좋아요" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iEa-t3-gXT" customClass="CustomLabel" customModule="우리스쿨" customModuleProvider="target">
+                        <rect key="frame" x="18" y="0.0" width="45" height="45"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="40" id="fJd-jf-ROV"/>
-                            <constraint firstAttribute="width" constant="40" id="tGp-Wl-IDF"/>
+                            <constraint firstAttribute="height" constant="45" id="fJd-jf-ROV"/>
+                            <constraint firstAttribute="width" constant="45" id="tGp-Wl-IDF"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="14"/>
-                        <color key="textColor" name="blueGrey"/>
+                        <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="13"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
-                                <real key="value" value="20"/>
+                                <real key="value" value="22.5"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="number" keyPath="topInset">
                                 <real key="value" value="0.0"/>
@@ -55,22 +55,22 @@
                         </userDefinedRuntimeAttributes>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xRc-eG-eIh" customClass="CustomView" customModule="우리스쿨" customModuleProvider="target">
-                        <rect key="frame" x="68" y="0.0" width="232" height="76"/>
+                        <rect key="frame" x="73" y="0.0" width="227" height="76"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="753" text="fsdfsdfndsj" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0TN-6Y-LDv">
-                                <rect key="frame" x="20" y="10" width="161.5" height="14"/>
+                                <rect key="frame" x="20" y="10" width="155" height="18"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
                                 <color key="textColor" name="brownGrey"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Cw-K2-N9U">
-                                <rect key="frame" x="191.5" y="10" width="29.5" height="14"/>
+                                <rect key="frame" x="185" y="10" width="31" height="18"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="12"/>
                                 <color key="textColor" name="brownGrey"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="752" text="kvmaklsvmk" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWZ-mE-Ph2">
-                                <rect key="frame" x="20" y="30" width="192" height="31"/>
+                                <rect key="frame" x="20" y="34" width="187" height="27"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                 <color key="textColor" name="greyishBrown"/>
                                 <nil key="highlightedColor"/>
@@ -123,9 +123,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <namedColor name="blueGrey">
-            <color red="0.48627450980392156" green="0.52549019607843139" blue="0.59215686274509804" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
         <namedColor name="brownGrey">
             <color red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
