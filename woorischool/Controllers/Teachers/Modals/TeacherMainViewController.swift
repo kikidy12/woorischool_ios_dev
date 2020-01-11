@@ -81,7 +81,7 @@ class TeacherMainViewController: UIViewController {
                 switch $0.offset {
                 case 0:
                     setMainViews(vc: TeacherHomeViewController())
-                    setLeftTitleSetting("OSchool")
+                    setLeftTitleSetting("우리스쿨")
                     break
                 case 1:
                     setMainViews(vc: BoardListViewController())
@@ -92,8 +92,8 @@ class TeacherMainViewController: UIViewController {
                     setLeftTitleSetting("소통방")
                     break
                 case 3:
-                    setMainViews(vc: MyPageViewController())
-                    setLeftTitleSetting("내 정보")
+                    setMainViews(vc: MoreStep1ViewController())
+                    setLeftTitleSetting("더보기")
                     break
                 default:
                     break

@@ -127,8 +127,10 @@ class RegistDailyNoteViewController: UIViewController {
     func settingDailyNote(_ mode: Bool) {
         editMode = mode
         
+        print(editMode)
+        
         if editMode {
-            textView.text = dailyNote.content
+            textView.text = dailyNote.content.lowercased().decodeEmoji
             materialTextField.text = dailyNote.materials
             homeWorkTextField.text = dailyNote.homework
             

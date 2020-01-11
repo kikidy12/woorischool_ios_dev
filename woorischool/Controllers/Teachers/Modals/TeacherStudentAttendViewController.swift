@@ -14,7 +14,8 @@ class TeacherStudentAttendViewController: UIViewController {
     var selectedSchedule: LectureScheduleData! {
         didSet {
             dateBarItem.title = selectedSchedule.date.dateToString(formatter: "MM/dd")
-            
+            startBtn.isEnabled = true
+            endBtn.isEnabled = true
             if selectedSchedule.endTime != nil, selectedSchedule.startTime != nil {
                 startBtn.setTitle(selectedSchedule.startTime.dateToString(formatter: "HH:mm"), for: .normal)
                 startBtn.setTitleColor(.brownGrey, for: .normal)
@@ -96,7 +97,7 @@ class TeacherStudentAttendViewController: UIViewController {
             getClassInfo(id: lectureClass.scheduleList.last!.id)
         }
         else {
-            getClassInfo(id: tempList.last!.id)
+            getClassInfo(id: tempList.first!.id)
         }
     }
     

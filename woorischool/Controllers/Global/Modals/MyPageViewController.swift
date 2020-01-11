@@ -12,65 +12,26 @@ class MyPageViewController: UIViewController {
     
     var userType: UserType = UserType(rawValue: UserDefs.lastUserType) ?? .parents
     
-    @IBOutlet weak var userTypeLabel: UILabel!
-    @IBOutlet weak var userNameLabel: UILabel!
-    @IBOutlet weak var userInfoLabel: UILabel!
-    @IBOutlet weak var profileImageView: UIImageView!
-    @IBOutlet weak var childrenView: UIView!
-    @IBOutlet weak var childPointView: UIView!
     @IBOutlet weak var changePasswordView: UIView!
-    @IBOutlet weak var quaterClassListView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        if userType == .parents {
+            changePasswordView.isHidden = true
+        }
+        else {
+            changePasswordView.isHidden = false
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        userNameLabel.text = GlobalDatas.currentUser.name
-        if userType == .parents {
-            userTypeLabel.isHidden = true
-            quaterClassListView.isHidden = false
-            childrenView.isHidden = false
-            changePasswordView.isHidden = true
-            userInfoLabel.text = GlobalDatas.currentUser.phoneNum
-        }
-        else if userType == .teacher {
-            userTypeLabel.isHidden = false
-            childrenView.isHidden = true
-            quaterClassListView.isHidden = true
-            changePasswordView.isHidden = false
-            userTypeLabel.text = "선생님"
-            userInfoLabel.text = GlobalDatas.currentUser.email
-        }
-        else {
-            userTypeLabel.isHidden = true
-            childrenView.isHidden = true
-            quaterClassListView.isHidden = false
-            changePasswordView.isHidden = false
-            userInfoLabel.text = GlobalDatas.currentUser.phoneNum
-        }
-        if let urlStr = GlobalDatas.currentUser.profileImage {
-            profileImageView.kf.setImage(with: URL(string: urlStr), placeholder: UIImage(named: "profilePlaceHolder"))
-        }
-        else {
-            profileImageView.image = UIImage(named: "profilePlaceHolder")
-        }
+        title = "더보기"
     }
     
-    @IBAction func showMyBoardListEvent() {
-        let vc = ClassBoardListViewController()
-        self.show(vc, sender: nil)
-    }
-    
-    @IBAction func showChildrenListViewEvent() {
-        let vc = ManageChildrenViewController()
-        self.show(vc, sender: nil)
-    }
-    
-    @IBAction func showMyQuaterClassListEvent() {
-        let vc = QuarterClassListViewController()
-        self.show(vc, sender: nil)
+    override func viewWillDisappear(_ animated: Bool) {
+        title = " "
     }
     
     @IBAction func showChnagePasswordViewEvent() {
@@ -78,29 +39,11 @@ class MyPageViewController: UIViewController {
         self.show(vc, sender: nil)
     }
     
-    @IBAction func showNotiListViewEvent() {
-        let vc = NotiListViewController()
-        show(vc, sender: nil)
-    }
-    
-    @IBAction func showAttractViewEvent() {
-        AlertHandler().showAlert(vc: self, message: "준비중인 기능입니다.", okTitle: "확인")
-    }
     
     @IBAction func showTermListViewEvent() {
         AlertHandler().showAlert(vc: self, message: "준비중인 기능입니다.", okTitle: "확인")
     }
     
-    @IBAction func showStudentPointInfoListViewEvent() {
-        let vc = ChildPointListViewController()
-        self.show(vc, sender: nil)
-    }
-    
-    @IBAction func showEditProfileViewEvent() {
-        let vc = EditProfileViewController()
-        vc.isEditMode = true
-        self.show(vc, sender: nil)
-    }
     
     @IBAction func logoutEvent() {
         AlertHandler().showAlert(vc: self, message: "로그아웃 하시겠습니까", okTitle: "로그아웃", cancelTitle: "취소", okHandler: { (_) in
@@ -109,10 +52,6 @@ class MyPageViewController: UIViewController {
     }
     
     @IBAction func resignEvent() {
-        
-    }
-    
-    func settingMeInfo() {
         
     }
 }

@@ -88,8 +88,8 @@ class ParentsMainViewController: UIViewController {
                     setLeftTitleSetting("소통방")
                     break
                 case 4:
-                    setMainViews(vc: MyPageViewController())
-                    setLeftTitleSetting("내 정보")
+                    setMainViews(vc: MoreStep1ViewController())
+                    setLeftTitleSetting("더보기")
                     break
                 default:
                     break

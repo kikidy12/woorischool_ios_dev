@@ -473,7 +473,6 @@ extension ServerUtil {
         
         if serverAddress != liveServer {
             print(response.request?.description ?? "ServerError")
-            
             do {
                 let jsonData = try JSONSerialization.data(withJSONObject: result, options: .prettyPrinted)
                 print(String(data: jsonData, encoding: .utf8)!)

@@ -27,6 +27,7 @@ class TeacherHomeViewController: UIViewController {
 
     
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var classCountLabel: UILabel!
     @IBOutlet weak var classTableViewHeightContraint: NSLayoutConstraint!
     @IBOutlet weak var classTableView: UITableView!
@@ -52,6 +53,9 @@ class TeacherHomeViewController: UIViewController {
     func setUserInfo() {
         let user = GlobalDatas.currentUser
         nameLabel.text = "\(user?.name ?? "미확인") 선생님\n안녕하세요"
+        if let urlStr = user?.profileImage {
+            profileImageView.kf.setImage(with: URL(string: urlStr), placeholder: UIImage(named: "profilePlaceHolder"))
+        }
         var count = 0
         if !GlobalDatas.noticeList.isEmpty, (timer == nil || !timer.isValid) {
             self.notiBtn.setTitle("[공지] " + GlobalDatas.noticeList[0].title, for: .normal)
@@ -67,6 +71,11 @@ class TeacherHomeViewController: UIViewController {
         }
         
         getClassInfo()
+    }
+    
+    @IBAction func showNotiList() {
+        let vc = NotiListViewController()
+        self.show(vc, sender: nil)
     }
 }
 

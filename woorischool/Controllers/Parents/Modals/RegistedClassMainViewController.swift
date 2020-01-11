@@ -227,7 +227,7 @@ extension RegistedClassMainViewController: UITableViewDelegate, UITableViewDataS
         
         cell.cancelClouser = {
             AlertHandler().showAlert(vc: self, message: "취소하시겠습니까?", okTitle: "확인", cancelTitle: "닫기", okHandler: { (_) in
-                guard let id = self.lectureClassList[indexPath.item].applyId else { return }
+                guard let id = self.lectureClassList[indexPath.item].lectureApply.id else { return }
                 self.cancelClass(id: id)
             })
         }
@@ -247,6 +247,8 @@ extension RegistedClassMainViewController {
         let parameters = [
             "status": type
         ] as [String:Any]
+        
+        print(parameters)
         ServerUtil.shared.getLectureApply(self, parameters: parameters) { (success, dict, message) in
             guard success, let array = dict?["lecture_class"] as? NSArray else {
                 return

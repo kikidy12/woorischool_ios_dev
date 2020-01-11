@@ -117,7 +117,9 @@ class ParentsHomeRenewViewController: UIViewController {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var monthLabel: UILabel!
+    @IBOutlet weak var monthTitleLabel: UILabel!
     @IBOutlet weak var notiBtn: UIButton!
+    @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var pageControl: UIPageControl!
     
     @IBOutlet weak var monthDatesCollectionView: UICollectionView!
@@ -170,6 +172,9 @@ class ParentsHomeRenewViewController: UIViewController {
     func setUserInfo() {
         let user = GlobalDatas.currentUser
         nameLabel.text = "\(user?.childlen?.name ?? "아무개") 학부모님\n안녕하세요"
+        if let urlStr = user?.profileImage {
+            profileImageView.kf.setImage(with: URL(string: urlStr), placeholder: UIImage(named: "profilePlaceHolder"))
+        }
         var count = 0
         if !GlobalDatas.noticeList.isEmpty, (timer == nil || !timer.isValid) {
             self.notiBtn.setTitle("[공지] " + GlobalDatas.noticeList[0].title, for: .normal)
@@ -262,6 +267,12 @@ class ParentsHomeRenewViewController: UIViewController {
         monthLabel.text = "\(month)월"
         monthDateList = range.compactMap {
             DateComponents(calendar: calendar, year: year, month: month, day: $0, hour: 9, minute: 0, second: 0).date!
+        }
+        if byAdding == 0 {
+            monthTitleLabel.text = "\(Date().dateToString(formatter: "M/d")) 일 일정"
+        }
+        else {
+            monthTitleLabel.text = "\(month)/1 일 일정"
         }
     }
     
@@ -405,6 +416,15 @@ extension ParentsHomeRenewViewController: UICollectionViewDelegate, UICollection
             }
             else {
                 selectMonthDateIndex = indexPath
+            }
+            let currentDate = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: Date())
+            let date = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: selectedDate)
+            
+            if currentDate == date {
+                monthTitleLabel.text = "오늘 일정"
+            }
+            else {
+                monthTitleLabel.text = "\(selectedDate.dateToString(formatter: "M/d"))일 일정"
             }
             
         }

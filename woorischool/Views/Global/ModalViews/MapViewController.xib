@@ -10,7 +10,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MapViewController" customModule="우리스쿨" customModuleProvider="target">
             <connections>
-                <outlet property="naverMapView" destination="Cl7-Mf-RcS" id="Uw9-C3-Pob"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -18,19 +17,7 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-            <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cl7-Mf-RcS" customClass="NMFNaverMapView">
-                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                </view>
-            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-            <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Cl7-Mf-RcS" secondAttribute="trailing" id="OEm-q5-lVy"/>
-                <constraint firstItem="Cl7-Mf-RcS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="dHf-rq-JRJ"/>
-                <constraint firstItem="Cl7-Mf-RcS" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="ftP-8S-yH3"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Cl7-Mf-RcS" secondAttribute="bottom" id="jJg-2y-uFU"/>
-            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="139" y="90"/>
         </view>

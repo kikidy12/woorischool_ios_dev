@@ -218,7 +218,7 @@
                                         <constraint firstAttribute="height" constant="2" id="MFx-gj-Xyk"/>
                                     </constraints>
                                 </view>
-                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="myMainIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Zwy-Q0-e1r">
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mainMoreIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Zwy-Q0-e1r">
                                     <rect key="frame" x="15" y="10" width="20" height="20"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="tintColor" name="brownGrey"/>
@@ -227,8 +227,8 @@
                                         <constraint firstAttribute="width" constant="20" id="JO5-ZB-3Mj"/>
                                     </constraints>
                                 </imageView>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MY" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gg4-wN-Hy5">
-                                    <rect key="frame" x="17.5" y="30" width="15.5" height="20"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="더보기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gg4-wN-Hy5">
+                                    <rect key="frame" x="12" y="30" width="26" height="20"/>
                                     <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="10"/>
                                     <color key="textColor" name="brownGrey"/>
                                     <nil key="highlightedColor"/>
@@ -303,7 +303,7 @@
         <image name="boardMainIcon" width="23" height="19"/>
         <image name="classMainIcon" width="22" height="20"/>
         <image name="homeMainIcon" width="22" height="21"/>
-        <image name="myMainIcon" width="23" height="20"/>
+        <image name="mainMoreIcon" width="21" height="5"/>
         <image name="talkMainIcon" width="23" height="18"/>
         <namedColor name="brownGrey">
             <color red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

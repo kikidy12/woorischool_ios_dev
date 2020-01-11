@@ -28,9 +28,11 @@
                 <outlet property="mondayTableView" destination="6yx-ng-eVe" id="2m0-Sb-nDf"/>
                 <outlet property="monthDatesCollectionView" destination="9PX-ux-KhE" id="Ayq-yc-npu"/>
                 <outlet property="monthLabel" destination="Kqb-bW-6Jl" id="AJ9-sE-TEf"/>
+                <outlet property="monthTitleLabel" destination="KqJ-ZD-1Vf" id="Ia0-hJ-RtB"/>
                 <outlet property="nameLabel" destination="rc0-bn-y3i" id="oie-fc-6ZK"/>
                 <outlet property="notiBtn" destination="Nne-Uj-K3Y" id="EMw-92-bgs"/>
                 <outlet property="pageControl" destination="pfD-E7-pRb" id="c6x-Fr-aFA"/>
+                <outlet property="profileImageView" destination="e8n-vh-sYf" id="Q3L-6v-hbq"/>
                 <outlet property="saturdayTableView" destination="5uy-UQ-Mgq" id="agn-jK-3JD"/>
                 <outlet property="thursdayTableView" destination="NL7-jm-Shp" id="ZX6-h0-Mu3"/>
                 <outlet property="tuesdayTableView" destination="6pd-ZP-rfA" id="PIx-dS-ENc"/>
@@ -53,7 +55,7 @@
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BDT-6H-DSB" customClass="CustomView" customModule="우리스쿨" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilePlaceHolder" translatesAutoresizingMaskIntoConstraints="NO" id="e8n-vh-sYf">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profilePlaceHolder" translatesAutoresizingMaskIntoConstraints="NO" id="e8n-vh-sYf" customClass="CircleImageView" customModule="우리스쿨" customModuleProvider="target">
                                             <rect key="frame" x="20" y="30" width="60" height="60"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="60" id="iHE-li-aKW"/>

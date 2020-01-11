@@ -192,7 +192,6 @@ extension String {
     }
     
     var encodeEmoji: String {
-        print(self)
         let data = self.data(using: .nonLossyASCII, allowLossyConversion: true)!
         return String(data: data, encoding: .utf8)!
     }

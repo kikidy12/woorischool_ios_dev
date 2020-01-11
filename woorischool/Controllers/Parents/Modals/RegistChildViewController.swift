@@ -68,20 +68,7 @@ class RegistChildViewController: UIViewController {
     }
     
     @IBAction func addChildEvent() {
-//        registChild()
-        
-        if UIApplication.shared.keyWindow?.rootViewController == self {
-            print("login")
-            let navi = UINavigationController(rootViewController: ParentsHomeViewController())
-            navi.navigationBar.tintColor = .black
-            navi.navigationBar.barTintColor = .white
-            navi.navigationBar.shadowImage = UIImage()
-            UIApplication.shared.keyWindow?.rootViewController = navi
-        }
-        else {
-            print("main")
-            self.navigationController?.popViewController(animated: true)
-        }
+        registChild()
     }
     
     @IBAction func showSchoolListEvent() {
