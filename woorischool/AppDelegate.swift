@@ -83,21 +83,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let navi = window?.rootViewController as? UINavigationController {
             if state == .background || state == .inactive {
                 navi.popToRootViewController(animated: false)
-                let vc = RegistedClassMainViewController()
-                vc.type = "WAIT"
+                let vc = AlarmListViewController()
                 navi.show(vc, sender: nil)
             } else if state == .active {
                 // foreground
+                navi.popToRootViewController(animated: false)
+                let vc = AlarmListViewController()
+                navi.show(vc, sender: nil)
             }
         }
         else {
-            let navi = UINavigationController(rootViewController: ParentsHomeViewController())
+            var navi = UINavigationController()
+            if UserDefs.lastUserType == UserType.parents.rawValue {
+                navi = UINavigationController(rootViewController: ParentsMainViewController())
+            }
+            else if UserDefs.lastUserType == UserType.teacher.rawValue {
+                navi = UINavigationController(rootViewController: TeacherMainViewController())
+            }
+            
             navi.navigationBar.tintColor = .black
             navi.navigationBar.barTintColor = .white
             navi.navigationBar.shadowImage = UIImage()
             UIApplication.shared.keyWindow?.rootViewController = navi
-            let vc = RegistedClassMainViewController()
-            vc.type = "WAIT"
+            let vc = AlarmListViewController()
+//            vc.type = "WAIT"
             navi.show(vc, sender: nil)
         }
     }

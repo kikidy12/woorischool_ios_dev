@@ -143,6 +143,7 @@
                 <outlet property="isNewLabel" destination="2fe-hw-LQL" id="o7y-AE-4Gr"/>
                 <outlet property="nameLabel" destination="iAa-c3-yMs" id="Ice-l0-G03"/>
                 <outlet property="teacherNameLabel" destination="h43-48-t8W" id="99G-9n-vs6"/>
+                <outlet property="teacherTitleLabel" destination="KXM-ly-1Ng" id="iiG-RB-uf9"/>
                 <outlet property="titleImageView" destination="6Ur-CT-LHX" id="34C-O9-UhF"/>
                 <outlet property="userCountLabel" destination="RoK-bl-8xe" id="j4e-Gp-N0d"/>
             </connections>

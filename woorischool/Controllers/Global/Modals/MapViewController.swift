@@ -11,46 +11,72 @@ import NMapsMap
 
 class MapViewController: UIViewController {
     
-    var courseList = ["수학","영어","과학"] {
+    var courseList = [AcademyCategory]() {
         didSet {
-            
+            pickerView.reloadAllComponents()
+            title = courseList.first?.name
+            self.getAcademys(id: courseList.first?.id)
         }
     }
     
-    var locManger = CLLocationManager()
-    
-    var currentLoc = NMGLatLng() {
+    var markers = [NMFMarker]() {
         didSet {
-            DispatchQueue.global(qos: .default).async {
-                var markers = [NMFMarker]()
-                for index in 0 ... 5 {
-                    let marker = NMFMarker(position: NMGLatLng(lat: self.currentLoc.lat, lng: self.currentLoc.lng + (Double(index) * 0.01)))
-                    marker.captionText = "\(index)번"
-                    markers.append(marker)
-                    
-                    marker.touchHandler = {[weak self] (overlay) -> Bool in
-                        let marker = overlay as! NMFMarker
-                        print((overlay as? NMFMarker)?.captionText)
-                        self?.title = (overlay as? NMFMarker)?.captionText ?? "없어"
-                        self?.moveCamera(marker.position)
-                        return true
-                    }
-                }
-                DispatchQueue.main.async { [weak self] in
-                    // 메인 스레드
-                    markers.forEach {
-                        $0.mapView = self?.naverMapView.mapView
-                    }
+            DispatchQueue.main.async { [weak self] in
+                self?.markers.forEach {
+                    $0.mapView = self?.naverMapView.mapView
                 }
             }
         }
     }
+    
+    var academyList = [AcademyData]() {
+        didSet {
+            mapTableView.reloadData()
+            markers.forEach {
+                $0.mapView = nil
+            }
+            DispatchQueue.global(qos: .default).async {
+                self.markers = self.academyList.compactMap { academy in
+                    let marker = NMFMarker(position: academy.location)
+                    marker.captionText = academy.name
+                    marker.zIndex = academy.id
+                    marker.touchHandler = {[weak self] (overlay) -> Bool in
+                        let marker = overlay as! NMFMarker
+                        self?.moveCamera(marker.position, academy: academy)
+                        return true
+                    }
+                    
+                    return marker
+                }
+            }
+        }
+    }
+    
+    var selectedAcademy: AcademyData!
+    
+    var locManger = CLLocationManager()
     
     var textField = UITextField(frame: .zero)
     var pickerView = UIPickerView(frame: .zero)
     var accessaryView: UIToolbar!
     
     var naverMapView: NMFNaverMapView!
+    
+    @IBOutlet weak var mapContainerView: UIView!
+    @IBOutlet weak var tableContainerView: UIView!
+    @IBOutlet weak var academyInfoView: UIView!
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var distanceLabel: UILabel!
+    
+    @IBOutlet weak var mapSchoolNameBtn: UIButton!
+    @IBOutlet weak var tableSchoolNameBtn: UIButton!
+    
+    @IBOutlet weak var showListBtn: UIButton!
+    
+    @IBOutlet weak var mapTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,35 +94,81 @@ class MapViewController: UIViewController {
         textField.inputView = pickerView
         textField.inputAccessoryView = accessaryView
         
+        mapTableView.register(UINib(nibName: "MapTableViewCell", bundle: nil), forCellReuseIdentifier: "academyCell")
+        
+        mapTableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 1))
+        mapTableView.tableFooterView?.backgroundColor = .veryLightPink
+        
         view.addSubview(textField)
         let rightBtn = UIBarButtonItem(image: UIImage(named: "filterImage"), style: .plain, target: self, action: #selector(showFilterView))
         
+        academyInfoView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(showAcademyInfoEvent(_:))))
         navigationItem.rightBarButtonItem = rightBtn
     }
     
     
     override func viewDidAppear(_ animated: Bool) {
         
-        naverMapView = NMFNaverMapView(frame: view.bounds)
-        view.addSubview(naverMapView)
+        naverMapView = NMFNaverMapView(frame: mapContainerView.bounds)
+        mapContainerView.addSubview(naverMapView)
+        mapContainerView.sendSubviewToBack(naverMapView)
         naverMapView.mapView.delegate = self
         locManger.delegate = self
-        if CLLocationManager.authorizationStatus() != .authorizedWhenInUse {
-            locManger.requestWhenInUseAuthorization()
-        }
-        else {
-            guard let coordinate = locManger.location?.coordinate else {
-                return
+        if let school = GlobalDatas.currentUser?.childlen?.school {
+            mapSchoolNameBtn.setTitle(school.name, for: .normal)
+            tableSchoolNameBtn.setTitle(school.name, for: .normal)
+            let marker = NMFMarker(position: school.location)
+            marker.iconImage = NMF_MARKER_IMAGE_BLACK
+            marker.zIndex = Int(INT_MAX)
+            marker.captionText = school.name
+            marker.touchHandler = {[weak self] (overlay) -> Bool in
+                let marker = overlay as! NMFMarker
+                self?.moveCamera(marker.position)
+                return false
             }
-            currentLoc = NMGLatLng(from: coordinate)
-            moveCamera(NMGLatLng(lat: currentLoc.lat, lng: currentLoc.lng))
+            marker.mapView = naverMapView.mapView
+            self.moveCamera(school.location)
+            getCategory()
         }
     }
     
-    func moveCamera(_ nmgLatlng: NMGLatLng) {
+    @IBAction func changeMode(_ sender: UIButton) {
+        if sender.tag == 0 {
+            tableContainerView.isHidden = false
+        }
+        else {
+            tableContainerView.isHidden = true
+        }
+    }
+    
+    @IBAction func moveToSchool(_ sender: UIButton) {
+        if let location = GlobalDatas.currentUser.childlen?.school?.location {
+            moveCamera(location)
+        }
+    }
+    
+    func moveCamera(_ nmgLatlng: NMGLatLng, academy: AcademyData? = nil) {
         let cameraUpdate = NMFCameraUpdate(scrollTo: nmgLatlng)
         cameraUpdate.animation = .easeIn
         naverMapView.mapView.moveCamera(cameraUpdate)
+        if academy != nil {
+            showListBtn.isHidden = true
+            academyInfoView.isHidden = false
+            nameLabel.text = academy?.name
+            addressLabel.text = academy?.address
+            categoryLabel.text = academy?.category.name
+            if let distance = academy?.location.distance(to: GlobalDatas.currentUser.childlen.school.location) {
+                distanceLabel.text = "\(distance.toFloorString() ?? "0")m"
+            }
+            else {
+                
+            }
+            selectedAcademy = academy
+        }
+        else {
+            academyInfoView.isHidden = true
+            showListBtn.isHidden = false
+        }
     }
     
     @objc func showFilterView() {
@@ -104,30 +176,32 @@ class MapViewController: UIViewController {
     }
     
     @objc func selectCourse() {
-        title = courseList[pickerView.selectedRow(inComponent: 0)]
+        title = courseList[pickerView.selectedRow(inComponent: 0)].name
         textField.resignFirstResponder()
+        self.getAcademys(id: courseList[pickerView.selectedRow(inComponent: 0)].id)
     }
     
     @objc func closePickerView() {
         textField.resignFirstResponder()
     }
+    
+    @objc func showAcademyInfoEvent(_ sender: UITapGestureRecognizer) {
+        if sender.state == .ended {
+            if let link = selectedAcademy.linkUrl, let url = URL(string: link), UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+            else {
+                AlertHandler().showAlert(vc: self, message: "링크를 열 수 없습니다.", okTitle: "확인")
+            }
+        }
+    }
 }
 
 
 extension MapViewController: NMFMapViewDelegate, CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if status == .authorizedWhenInUse {
-            guard let coordinate = manager.location?.coordinate else {
-                return
-            }
-            currentLoc = NMGLatLng(from: coordinate)
-            let cameraUpdate = NMFCameraUpdate(scrollTo: NMGLatLng(lat: currentLoc.lat, lng: currentLoc.lng))
-            cameraUpdate.animation = .easeIn
-            naverMapView.mapView.moveCamera(cameraUpdate)
-        }
-    }
     func didTapMapView(_ point: CGPoint, latLng latlng: NMGLatLng) {
-        print("hideView")
+        academyInfoView.isHidden = true
+        showListBtn.isHidden = false
     }
     
 }
@@ -142,6 +216,64 @@ extension MapViewController: UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return courseList[row]
+        return courseList[row].name
+    }
+}
+
+extension MapViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return academyList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "academyCell", for: indexPath) as! MapTableViewCell
+        
+        cell.academy = academyList[indexPath.item]
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let link = academyList[indexPath.item].linkUrl, let url = URL(string: link), UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+        else {
+            AlertHandler().showAlert(vc: self, message: "링크를 열 수 없습니다.", okTitle: "확인")
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 78
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 78
+    }
+    
+}
+
+extension MapViewController {
+    func getCategory() {
+        ServerUtil.shared.getAcademyCategory(self) { (success, dict, message) in
+            guard success, let array = dict?["academy_category"] as? NSArray else {
+                return
+            }
+            var tempArray = array.compactMap { AcademyCategory($0 as! NSDictionary) }
+            tempArray.insert(AcademyCategory(name: "전체"), at: 0)
+            self.courseList = tempArray
+        }
+    }
+    
+    func getAcademys(id: Int?) {
+        let parameters = [
+            "academy_category_id": id == nil ? 0 : id!
+        ]
+        ServerUtil.shared.getAcademy(self, parameters: parameters) { (success, dict, message) in
+            guard success , let array = dict?["academy"] as? NSArray else {
+                return
+            }
+            
+            self.academyList = array.compactMap { AcademyData($0 as! NSDictionary) }
+        }
     }
 }

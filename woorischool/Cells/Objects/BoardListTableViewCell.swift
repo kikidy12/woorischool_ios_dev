@@ -14,6 +14,7 @@ class BoardListTableViewCell: UITableViewCell {
 
     @IBOutlet weak var isNewLabel: CustomLabel!
     @IBOutlet weak var teacherNameLabel: UILabel!
+    @IBOutlet weak var teacherTitleLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var titleImageView: UIImageView!
     @IBOutlet weak var userCountLabel: UILabel!
@@ -43,10 +44,23 @@ class BoardListTableViewCell: UITableViewCell {
         else {
             titleImageView.image = UIImage(named: "tempEmptyImage")
         }
+        if let name = lectureClass.lecture?.name {
+            nameLabel.text = "\(name) \(lectureClass.name ?? "클래스")"
+            teacherTitleLabel.isHidden = false
+        }
+        else {
+            nameLabel.text = "\(lectureClass.name ?? "게시판이름")"
+            teacherTitleLabel.isHidden = true
+        }
+        teacherNameLabel.text = lectureClass.teacher?.name
+        if let count = lectureClass.confirmCount {
+            userCountLabel.text = "\(count)명"
+            userCountLabel.isHidden = false
+        }
+        else {
+            userCountLabel.isHidden = true
+        }
         
-        nameLabel.text = "\(lectureClass.lecture?.name ?? "강의") \(lectureClass.name ?? "클래스")"
-        teacherNameLabel.text = lectureClass.teacher?.name ?? "익명"
-        userCountLabel.text = "\(lectureClass.confirmCount ?? 0)명"
     }
     
 }

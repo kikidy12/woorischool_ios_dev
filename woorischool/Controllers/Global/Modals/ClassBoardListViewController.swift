@@ -41,7 +41,12 @@ class ClassBoardListViewController: UIViewController {
             getMyBoardList()
         }
         else {
-            title = "\(lectureClass.lecture?.name ?? "강의") \(lectureClass.name ?? "클래스")"
+            if lectureClass.boardType == "ALL" {
+                title = "\(lectureClass.name ?? "전체게시글")"
+            }
+            else {
+                title = "\(lectureClass.lecture?.name ?? "강의") \(lectureClass.name ?? "클래스")"
+            }
             getClassBoardList()
             naviBarSetting()
         }
@@ -80,7 +85,8 @@ extension ClassBoardListViewController: UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = BoardDetailViewController()
-        vc.board = boardList[indexPath.item]
+        vc.boardId = boardList[indexPath.item].id
+        vc.type = boardList[indexPath.item].type
         self.show(vc, sender: nil)
     }
 }
@@ -88,9 +94,15 @@ extension ClassBoardListViewController: UITableViewDelegate, UITableViewDataSour
 
 extension ClassBoardListViewController {
     func getClassBoardList() {
-        let parameters = [
-            "lecture_class_id": lectureClass.id!
-        ] as [String: Any]
+        var parameters = [String: Any]()
+        
+        if lectureClass.boardType == "ALL" {
+            parameters["school_id"] = lectureClass.schoolId!
+            parameters["grade"] = lectureClass.grade!
+        }
+        else {
+            parameters["lecture_class_id"] = lectureClass.id!
+        }
         ServerUtil.shared.postV2Board(self, parameters: parameters) { (success, dict, message) in
             guard success, let array = dict?["board"] as? NSArray else {
                 return

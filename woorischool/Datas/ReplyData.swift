@@ -19,6 +19,7 @@ class ReplyData: NSObject {
     var reCommentCount: Int!
     
     var boardId: Int!
+    var allBoardId: Int!
     
     var commentUser: UserData!
     
@@ -33,6 +34,7 @@ class ReplyData: NSObject {
         writeTime = data["write_time"] as? String
         reCommentCount = data["re_comment_count"] as? Int
         parentsId = data["parents_id"] as? Int
+        allBoardId = data["all_board_id"] as? Int
         if let dict = data["user"] as? NSDictionary {
             commentUser = UserData(dict)
         }

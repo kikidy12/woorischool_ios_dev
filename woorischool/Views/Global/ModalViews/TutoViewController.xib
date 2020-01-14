@@ -43,19 +43,19 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tuto1" translatesAutoresizingMaskIntoConstraints="NO" id="Hds-o5-nvD">
-                                            <rect key="frame" x="40" y="251" width="374" height="567"/>
+                                            <rect key="frame" x="40" y="250.99999999999994" width="374" height="567.00000000000011"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="Hds-o5-nvD" secondAttribute="height" multiplier="315:478" id="Lkl-wa-1pe"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="일정 확인" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oNY-v7-ut2">
-                                            <rect key="frame" x="42" y="82" width="112.5" height="35"/>
+                                            <rect key="frame" x="42" y="82" width="117" height="33.5"/>
                                             <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="30"/>
                                             <color key="textColor" name="greenishTeal"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘의 방과후 일정과 시간표를 확인할 수 있어요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xId-aZ-CHE">
-                                            <rect key="frame" x="42" y="127" width="266" height="16.5"/>
+                                            <rect key="frame" x="42" y="125.5" width="276" height="15.5"/>
                                             <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="14"/>
                                             <color key="textColor" name="greyishBrown"/>
                                             <nil key="highlightedColor"/>
@@ -76,19 +76,19 @@
                                     <rect key="frame" x="414" y="0.0" width="414" height="818"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tuto2" translatesAutoresizingMaskIntoConstraints="NO" id="PTG-t8-viI">
-                                            <rect key="frame" x="40" y="251" width="374" height="567"/>
+                                            <rect key="frame" x="40" y="250.99999999999994" width="374" height="567.00000000000011"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="PTG-t8-viI" secondAttribute="height" multiplier="315:478" id="L3t-Gf-swQ"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="간편 신청" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jhB-zn-MNi">
-                                            <rect key="frame" x="42" y="82" width="112.5" height="35"/>
+                                            <rect key="frame" x="42" y="82" width="117" height="33.5"/>
                                             <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="30"/>
                                             <color key="textColor" name="greenishTeal"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="방과후 수업을 간편하게 신청하세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qTi-RH-Dfh">
-                                            <rect key="frame" x="42" y="127" width="193.5" height="16.5"/>
+                                            <rect key="frame" x="42" y="125.5" width="202" height="15.5"/>
                                             <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="14"/>
                                             <color key="textColor" name="greyishBrown"/>
                                             <nil key="highlightedColor"/>
@@ -109,19 +109,19 @@
                                     <rect key="frame" x="828" y="0.0" width="414" height="818"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tuto3" translatesAutoresizingMaskIntoConstraints="NO" id="hjr-la-STO">
-                                            <rect key="frame" x="40" y="251" width="374" height="567"/>
+                                            <rect key="frame" x="40" y="250.99999999999994" width="374" height="567.00000000000011"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="hjr-la-STO" secondAttribute="height" multiplier="315:478" id="xTm-xa-1w6"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="커뮤니케이션" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WV2-3j-IZe">
-                                            <rect key="frame" x="42" y="82" width="156" height="35"/>
+                                            <rect key="frame" x="42" y="82" width="164" height="33.5"/>
                                             <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="30"/>
                                             <color key="textColor" name="greenishTeal"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="방과후학교 구성인원들과 대화를 나눠보세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DOB-As-gP4">
-                                            <rect key="frame" x="42" y="127" width="242" height="16.5"/>
+                                            <rect key="frame" x="42" y="125.5" width="253" height="15.5"/>
                                             <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="14"/>
                                             <color key="textColor" name="greyishBrown"/>
                                             <nil key="highlightedColor"/>
@@ -142,19 +142,19 @@
                                     <rect key="frame" x="1242" y="0.0" width="414" height="818"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tuto4" translatesAutoresizingMaskIntoConstraints="NO" id="TqC-Q5-Ees">
-                                            <rect key="frame" x="40" y="251" width="374" height="567"/>
+                                            <rect key="frame" x="40" y="250.99999999999994" width="374" height="567.00000000000011"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="TqC-Q5-Ees" secondAttribute="height" multiplier="315:478" id="vtT-F6-J5u"/>
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="수업 공유" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yor-AX-hpS">
-                                            <rect key="frame" x="42" y="82" width="112.5" height="35"/>
+                                            <rect key="frame" x="42" y="82" width="117" height="33.5"/>
                                             <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="30"/>
                                             <color key="textColor" name="greenishTeal"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="반별 게시판에서 수업 내용을 공유해보세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qQZ-OP-UiH">
-                                            <rect key="frame" x="42" y="127" width="234" height="16.5"/>
+                                            <rect key="frame" x="42" y="125.5" width="243.5" height="15.5"/>
                                             <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="14"/>
                                             <color key="textColor" name="greyishBrown"/>
                                             <nil key="highlightedColor"/>

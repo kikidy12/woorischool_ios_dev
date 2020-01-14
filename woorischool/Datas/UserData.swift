@@ -23,6 +23,8 @@ class UserData: NSObject {
     
     var childlen: UserData!
     
+    var school: SchoolData!
+    
     var studentInfo: StudentInfoData!
     
     var parentsList = [UserData]()
@@ -52,6 +54,10 @@ class UserData: NSObject {
         
         if let dict = data["student_info"] as? NSDictionary {
             studentInfo = StudentInfoData(dict)
+        }
+        
+        if let dict = data["school"] as? NSDictionary {
+            school = SchoolData(dict)
         }
         
         if let str = data["attendance"] as? String {

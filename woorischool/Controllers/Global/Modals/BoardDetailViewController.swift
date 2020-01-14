@@ -10,7 +10,18 @@ import UIKit
 
 class BoardDetailViewController: UIViewController {
     
-    var board: BoardData!
+    var boardId: Int!
+    
+    var type: String!
+    
+    var board: BoardData! {
+        didSet {
+            boardId = board.id
+            type = board.type
+            settingNaviBar()
+            settingBoard()
+        }
+    }
     
     var isScrollToBottom = false
     
@@ -77,7 +88,6 @@ class BoardDetailViewController: UIViewController {
         customInputView.parentsVc = self
         customInputView.delegate = self
         boardImageCollectionView.register(UINib(nibName: "ImagePagingCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "imageCell")
-        settingNaviBar()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -110,6 +120,9 @@ class BoardDetailViewController: UIViewController {
         rightBarBtnItem = UIBarButtonItem(image: UIImage(named:"moreIcon"), style: .plain, target: self, action: #selector(showActionSheet))
         if board?.postingUser?.id == GlobalDatas.currentUser.id {
             navigationItem.rightBarButtonItem = rightBarBtnItem
+        }
+        else {
+            navigationItem.rightBarButtonItem = nil
         }
     }
     
@@ -154,7 +167,7 @@ class BoardDetailViewController: UIViewController {
     func settingBoard() {
         nameLabel.text = board.postingUser.name
         timeLabel.text = board.writeTime
-        contentLabel.text = board.content?.decodeEmoji
+        contentLabel.text = board.content?.lowercased().decodeEmoji
         replyCountLabel.text = "댓글 (\(board.commentCount ?? 0))"
         likeCountLabel.text = "\(board.likeCount ?? 0) 명이 좋아합니다"
         
@@ -234,6 +247,7 @@ extension BoardDetailViewController: UITableViewDataSource, UITableViewDelegate 
         cell.showReReListClouser = {
             let vc = ReplyListViewController()
             vc.parentReply = self.commentList[indexPath.item]
+            vc.type = self.type
             self.show(vc, sender: nil)
         }
         
@@ -246,7 +260,7 @@ extension BoardDetailViewController: UITableViewDataSource, UITableViewDelegate 
 
 extension BoardDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return board.imageList.count
+        return board?.imageList.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -288,9 +302,13 @@ extension BoardDetailViewController: UICollectionViewDelegate, UICollectionViewD
 
 extension BoardDetailViewController {
     func getReplyList() {
-        let parameters = [
-            "board_id": board.id!
-        ] as [String:Any]
+        var parameters = [String:Any]()
+        if type == "ALL" {
+            parameters["all_board_id"] = boardId!
+        }
+        else {
+            parameters["board_id"] = boardId!
+        }
         ServerUtil.shared.getV2Comment(self, parameters: parameters) { (success, dict, message) in
             guard success, let array = dict?["comment"] as? NSArray else {
                 return
@@ -302,9 +320,14 @@ extension BoardDetailViewController {
     }
     
     func deleteReply(id: Int) {
-        let parameters = [
-            "comment_id": id
-        ] as [String:Any]
+        var parameters = [String:Any]()
+        
+        if type == "ALL" {
+            parameters["all_board_comment_id"] = id
+        }
+        else {
+            parameters["comment_id"] = id
+        }
         
         ServerUtil.shared.deleteV2Comment(self, parameters: parameters) { (success, dict, message) in
             guard success else {
@@ -317,7 +340,12 @@ extension BoardDetailViewController {
     
     func addReply(message: String, image: UIImage?, emoticon: ImageData?) {
         ServerUtil.shared.putV2Comment(vc: self, multipartFormData: { (formData) in
-            formData.append("\(self.board.id!)".data(using: .utf8)!, withName: "board_id")
+            if self.type == "ALL" {
+                formData.append("\(self.boardId!)".data(using: .utf8)!, withName: "all_board_id")
+            }
+            else {
+                formData.append("\(self.boardId!)".data(using: .utf8)!, withName: "board_id")
+            }
             formData.append(message.data(using: .nonLossyASCII, allowLossyConversion: true)!, withName: "content")
             if let id = emoticon?.id {
                 formData.append("\(id)".data(using: .utf8)!, withName: "emoticon_id")
@@ -345,9 +373,13 @@ extension BoardDetailViewController {
     }
     
     func deleteBoard() {
-        let parameters = [
-            "board_id": board.id!
-        ] as [String:Any]
+        var parameters = [String:Any]()
+        if type == "ALL" {
+            parameters["all_board_id"] = boardId!
+        }
+        else {
+            parameters["board_id"] = boardId!
+        }
         
         ServerUtil.shared.deleteV2Board(self, parameters: parameters) { (success, dict, message) in
             guard success else {
@@ -359,23 +391,30 @@ extension BoardDetailViewController {
     }
     
     func getBoard() {
-        let parameters = [
-            "board_id": board.id!
-        ] as [String:Any]
+        var parameters = [String:Any]()
+        if type == "ALL" {
+            parameters["all_board_id"] = boardId!
+        }
+        else {
+            parameters["board_id"] = boardId!
+        }
         
         ServerUtil.shared.postv2BoardDetail(self, parameters: parameters) { (success, dict, message) in
             guard success, let data = dict?["board"] as? NSDictionary else {
                 return
             }
             self.board = BoardData(data)
-            self.settingBoard()
         }
     }
     
     func likeCheck() {
-        let parameters = [
-            "board_id": board.id!
-        ] as [String:Any]
+        var parameters = [String:Any]()
+        if type == "ALL" {
+            parameters["all_board_id"] = boardId!
+        }
+        else {
+            parameters["board_id"] = boardId!
+        }
         ServerUtil.shared.postLike(self, parameters: parameters) { (success, dict, message) in
             guard success, let isLike = dict?["is_like"] as? Bool, let likeCount = dict?["like_count"] as? Int else {
                 return

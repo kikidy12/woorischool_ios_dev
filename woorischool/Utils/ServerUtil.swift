@@ -167,6 +167,16 @@ class ServerUtil: NSObject {
     
     //parents
     
+    func getAcademyCategory(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("academy_category", method: .get, parameters: parameters, completion: completion)
+    }
+    
+    func getAcademy(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest("academy", method: .get, parameters: parameters, completion: completion)
+    }
+    
     func getMeInfo(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
         currentVc = vc
         apiRequest("me_info", method: .get, parameters: parameters, completion: completion)

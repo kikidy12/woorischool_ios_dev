@@ -13,7 +13,7 @@ class BoardData: NSObject {
     var content: String!
     var commentCount: Int!
     var likeCount: Int!
-    
+    var type: String!
     var writeTime: String!
     
     var isLike: Bool!
@@ -33,6 +33,7 @@ class BoardData: NSObject {
         commentCount = data["comment_count"] as? Int
         likeCount = data["like_count"] as? Int
         writeTime = data["write_time"] as? String
+        type = data["type"] as? String
         
         if let dict = data["user"] as? NSDictionary {
             postingUser = UserData(dict)

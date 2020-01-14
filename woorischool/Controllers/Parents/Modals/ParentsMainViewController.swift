@@ -55,7 +55,15 @@ class ParentsMainViewController: UIViewController {
         let customTitleView = MainTitleView(frame: CGRect(x: 0, y: 0, width: 150, height: 42))
         let leftBtn = UIBarButtonItem(customView: customTitleView)
         self.navigationItem.leftBarButtonItem = leftBtn
-        customTitleView.titleLabel.text = str
+        if str == "우리스쿨" {
+            customTitleView.titleLabel.text = str
+            customTitleView.schoolLabel.text = "(\(GlobalDatas.currentUser.childlen?.school?.name ?? "학교"))"
+        }
+        else {
+            customTitleView.titleLabel.text = str
+            customTitleView.schoolLabel.text = ""
+        }
+        
     }
     
     func settingTabViews(_ selectView: UIView) {

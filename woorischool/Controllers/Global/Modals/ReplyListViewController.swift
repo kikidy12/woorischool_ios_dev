@@ -14,6 +14,8 @@ class ReplyListViewController: UIViewController {
     
     var isScrollToBottom = false
     
+    var type: String!
+    
     var selectedEmoticon: ImageData!
     
     var commentList = [ReplyData]() {
@@ -151,9 +153,15 @@ extension ReplyListViewController: UITableViewDelegate, UITableViewDataSource {
 
 extension ReplyListViewController {
     func getReplyList() {
-        let parameters = [
-            "comment_id": parentReply.id!
-        ] as [String:Any]
+        var parameters = [String:Any]()
+        
+        if type == "ALL" {
+            parameters["all_board_comment_id"] = parentReply.id!
+        }
+        else {
+            parameters["comment_id"] = parentReply.id!
+        }
+        
         ServerUtil.shared.postV2Comment(self, parameters: parameters) { (success, dict, message) in
             guard success, let array = dict?["comment"] as? NSArray else {
                 return
@@ -166,7 +174,12 @@ extension ReplyListViewController {
     
     func addReply(message: String, image: UIImage?, emoticon: ImageData?) {
         ServerUtil.shared.putV2Comment(vc: self, multipartFormData: { (formData) in
-            formData.append("\(self.parentReply.boardId!)".data(using: .utf8)!, withName: "board_id")
+            if self.type == "ALL" {
+                formData.append("\(self.parentReply.allBoardId!)".data(using: .utf8)!, withName: "all_board_id")
+            }
+            else {
+                formData.append("\(self.parentReply.boardId!)".data(using: .utf8)!, withName: "board_id")
+            }
             formData.append("\(self.parentReply.id!)".data(using: .utf8)!, withName: "parents_id")
             formData.append(message.data(using: .nonLossyASCII, allowLossyConversion: true)!, withName: "content")
             if let id = emoticon?.id {
@@ -197,9 +210,14 @@ extension ReplyListViewController {
     }
     
     func deleteReply(id: Int) {
-        let parameters = [
-            "comment_id": id
-        ] as [String:Any]
+        var parameters = [String:Any]()
+        
+        if type == "ALL" {
+            parameters["all_board_comment_id"] = id
+        }
+        else {
+            parameters["comment_id"] = id
+        }
         
         ServerUtil.shared.deleteV2Comment(self, parameters: parameters) { (success, dict, message) in
             guard success else {

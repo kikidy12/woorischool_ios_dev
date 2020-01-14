@@ -27,8 +27,10 @@ class LectureClassData: NSObject {
     var lectureApply: LectureApplyData!
     var ratingStartDate: Date!
     var ratingEndDate: Date!
-    
+    var schoolId: Int!
     var isApply: Bool!
+    var grade: Int!
+    var boardType: String!
     
     var applyId: Int!
     
@@ -104,6 +106,9 @@ class LectureClassData: NSObject {
         isApply = data["is_apply"] as? Bool
         waitCount = data["wait_count"] as? Int
         isTodayWrite = data["is_today_write"] as? Bool
+        schoolId = data["school_id"] as? Int
+        boardType = data["type"] as? String
+        grade = data["grade"] as? Int
         
         if let dict = data["lecture"] as? NSDictionary {
             lecture = LectureData(dict)

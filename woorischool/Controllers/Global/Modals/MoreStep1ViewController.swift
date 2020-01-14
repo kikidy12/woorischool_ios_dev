@@ -84,9 +84,9 @@ class MoreStep1ViewController: UIViewController {
     }
     
     @IBAction func showSearchMapEvent() {
-        AlertHandler().showAlert(vc: self, message: "준비중인 기능입니다.", okTitle: "확인")
+//        AlertHandler().showAlert(vc: self, message: "준비중인 기능입니다.", okTitle: "확인")
         let vc = MapViewController()
-//        self.show(vc, sender: nil)
+        self.show(vc, sender: nil)
     }
     
     @IBAction func showMoreViewEvent() {

@@ -4,12 +4,29 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="NotoSansCJKkr-Regular.otf">
+            <string>NotoSansCJKkr-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MapViewController" customModule="우리스쿨" customModuleProvider="target">
             <connections>
+                <outlet property="academyInfoView" destination="jVR-0f-FpT" id="YvW-Tt-BFt"/>
+                <outlet property="addressLabel" destination="4xO-Kf-BXF" id="j85-nT-hXy"/>
+                <outlet property="categoryLabel" destination="6gK-ge-hs1" id="GAD-BM-IWu"/>
+                <outlet property="distanceLabel" destination="IJR-3w-xcd" id="hUj-me-hrQ"/>
+                <outlet property="mapContainerView" destination="XtB-1P-2be" id="JX4-aY-z3W"/>
+                <outlet property="mapSchoolNameBtn" destination="08D-3a-dDc" id="8to-iu-dMx"/>
+                <outlet property="mapTableView" destination="8oR-Xm-Jsy" id="tIS-aB-78T"/>
+                <outlet property="nameLabel" destination="XWM-wx-sOI" id="E79-z6-OkP"/>
+                <outlet property="showListBtn" destination="3Po-py-T4j" id="fmJ-M3-hmx"/>
+                <outlet property="tableContainerView" destination="QFE-gB-26T" id="rK7-Lj-rUa"/>
+                <outlet property="tableSchoolNameBtn" destination="33u-d7-yoh" id="kzH-2p-8Ee"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,9 +34,260 @@
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XtB-1P-2be">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="08D-3a-dDc">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="41"/>
+                            <color key="backgroundColor" name="black60"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="41" id="B2s-ft-IWk"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="15"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
+                            <state key="normal" title="학교이름" image="schoolLocIcon">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="moveToSchool:" destination="-1" eventType="touchUpInside" id="iPY-I8-oe1"/>
+                            </connections>
+                        </button>
+                        <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jVR-0f-FpT" customClass="CustomView" customModule="우리스쿨" customModuleProvider="target">
+                            <rect key="frame" x="25" y="669" width="364" height="109"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XWM-wx-sOI">
+                                    <rect key="frame" x="17" y="15" width="39.5" height="19"/>
+                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="16"/>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4xO-Kf-BXF">
+                                    <rect key="frame" x="17" y="42" width="32" height="15.5"/>
+                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="13"/>
+                                    <color key="textColor" name="brownGrey"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MhY-MY-pbz">
+                                    <rect key="frame" x="17" y="69.5" width="330" height="1"/>
+                                    <color key="backgroundColor" name="veryLightPink"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="1" id="uKC-41-nnt"/>
+                                    </constraints>
+                                </view>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6gK-ge-hs1">
+                                    <rect key="frame" x="17" y="82.5" width="34.5" height="16.5"/>
+                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IJR-3w-xcd">
+                                    <rect key="frame" x="308.5" y="82.5" width="34.5" height="16.5"/>
+                                    <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
+                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="locIcon" translatesAutoresizingMaskIntoConstraints="NO" id="8Fi-eZ-Xc4">
+                                    <rect key="frame" x="295.5" y="84.5" width="10" height="13"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="13" id="1XW-Rj-Ujb"/>
+                                        <constraint firstAttribute="width" constant="10" id="VCY-Fk-HXz"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="IJR-3w-xcd" secondAttribute="trailing" constant="21" id="3Kt-49-KkZ"/>
+                                <constraint firstAttribute="bottom" secondItem="6gK-ge-hs1" secondAttribute="bottom" constant="10" id="4pD-9X-rfu"/>
+                                <constraint firstItem="XWM-wx-sOI" firstAttribute="top" secondItem="jVR-0f-FpT" secondAttribute="top" constant="15" id="FW6-Da-ozD"/>
+                                <constraint firstItem="8Fi-eZ-Xc4" firstAttribute="centerY" secondItem="6gK-ge-hs1" secondAttribute="centerY" id="KSo-Eh-yWa"/>
+                                <constraint firstItem="6gK-ge-hs1" firstAttribute="leading" secondItem="jVR-0f-FpT" secondAttribute="leading" constant="17" id="O5F-oL-NyU"/>
+                                <constraint firstItem="XWM-wx-sOI" firstAttribute="leading" secondItem="jVR-0f-FpT" secondAttribute="leading" constant="17" id="Txd-gf-Xyh"/>
+                                <constraint firstItem="MhY-MY-pbz" firstAttribute="top" secondItem="4xO-Kf-BXF" secondAttribute="bottom" constant="12" id="YwP-Np-w0p"/>
+                                <constraint firstItem="IJR-3w-xcd" firstAttribute="leading" secondItem="8Fi-eZ-Xc4" secondAttribute="trailing" constant="3" id="bW8-Kc-8mA"/>
+                                <constraint firstItem="MhY-MY-pbz" firstAttribute="leading" secondItem="jVR-0f-FpT" secondAttribute="leading" constant="17" id="nsO-Sb-AL8"/>
+                                <constraint firstItem="IJR-3w-xcd" firstAttribute="centerY" secondItem="6gK-ge-hs1" secondAttribute="centerY" id="pkN-H0-XaV"/>
+                                <constraint firstAttribute="trailing" secondItem="MhY-MY-pbz" secondAttribute="trailing" constant="17" id="rNH-vs-9bi"/>
+                                <constraint firstItem="6gK-ge-hs1" firstAttribute="top" secondItem="MhY-MY-pbz" secondAttribute="bottom" constant="12" id="sR1-Sv-m2d"/>
+                                <constraint firstItem="4xO-Kf-BXF" firstAttribute="top" secondItem="XWM-wx-sOI" secondAttribute="bottom" constant="8" symbolic="YES" id="tRg-ry-1ec"/>
+                                <constraint firstItem="4xO-Kf-BXF" firstAttribute="leading" secondItem="jVR-0f-FpT" secondAttribute="leading" constant="17" id="y9D-Ep-Zfi"/>
+                            </constraints>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
+                                    <real key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                    <real key="value" value="0.080000000000000002"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                    <real key="value" value="5"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                    <size key="value" width="0.0" height="2"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Po-py-T4j" customClass="CustomButton" customModule="우리스쿨" customModuleProvider="target">
+                            <rect key="frame" x="141" y="727" width="132" height="36"/>
+                            <color key="backgroundColor" name="dodgerBlue"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="36" id="1xj-kR-YqP"/>
+                                <constraint firstAttribute="width" constant="132" id="3tL-Hf-Wqc"/>
+                            </constraints>
+                            <state key="normal" title="목록으로 보기">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                    <real key="value" value="0.40000000000000002"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                    <size key="value" width="1" height="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                    <real key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
+                                    <real key="value" value="18"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="changeMode:" destination="-1" eventType="touchUpInside" id="qx2-6c-gr3"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="jVR-0f-FpT" secondAttribute="trailing" constant="25" id="7zN-nd-zdz"/>
+                        <constraint firstItem="jVR-0f-FpT" firstAttribute="leading" secondItem="XtB-1P-2be" secondAttribute="leading" constant="25" id="CCq-RL-w9e"/>
+                        <constraint firstAttribute="trailing" secondItem="08D-3a-dDc" secondAttribute="trailing" id="QAL-8V-Aj1"/>
+                        <constraint firstItem="08D-3a-dDc" firstAttribute="leading" secondItem="XtB-1P-2be" secondAttribute="leading" id="YuX-hF-9vx"/>
+                        <constraint firstItem="3Po-py-T4j" firstAttribute="centerX" secondItem="XtB-1P-2be" secondAttribute="centerX" id="esF-Ul-opj"/>
+                        <constraint firstAttribute="bottom" secondItem="3Po-py-T4j" secondAttribute="bottom" constant="55" id="f2Z-it-qHe"/>
+                        <constraint firstAttribute="bottom" secondItem="jVR-0f-FpT" secondAttribute="bottom" constant="40" id="gQH-Od-ec0"/>
+                        <constraint firstItem="08D-3a-dDc" firstAttribute="top" secondItem="XtB-1P-2be" secondAttribute="top" id="iNG-Qu-pem"/>
+                    </constraints>
+                </view>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QFE-gB-26T">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="33u-d7-yoh">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="41"/>
+                            <color key="backgroundColor" name="ice"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="41" id="cd0-h0-ATE"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="15"/>
+                            <color key="tintColor" name="greenishTeal"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="15" maxY="0.0"/>
+                            <state key="normal" title="학교이름" image="schoolLocIcon">
+                                <color key="titleColor" name="greenishTeal"/>
+                            </state>
+                            <connections>
+                                <action selector="moveToSchool:" destination="-1" eventType="touchUpInside" id="Ukx-Zl-Y07"/>
+                            </connections>
+                        </button>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8oR-Xm-Jsy">
+                            <rect key="frame" x="0.0" y="41" width="414" height="777"/>
+                            <color key="backgroundColor" name="paleGrey"/>
+                            <color key="separatorColor" name="veryLightPink"/>
+                            <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="hsW-eM-v74"/>
+                                <outlet property="delegate" destination="-1" id="kSr-au-PbC"/>
+                            </connections>
+                        </tableView>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H85-sa-tvI" customClass="CustomButton" customModule="우리스쿨" customModuleProvider="target">
+                            <rect key="frame" x="141" y="727" width="132" height="36"/>
+                            <color key="backgroundColor" name="dodgerBlue"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="132" id="UKr-jL-8nA"/>
+                                <constraint firstAttribute="height" constant="36" id="flN-5c-G2f"/>
+                            </constraints>
+                            <state key="normal" title="지도로 보기">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="color" keyPath="shadowColor">
+                                    <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                    <real key="value" value="0.40000000000000002"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="size" keyPath="shadowOffset">
+                                    <size key="value" width="1" height="1"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="shadowRadius">
+                                    <real key="value" value="2"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="number" keyPath="conerRadius">
+                                    <real key="value" value="18"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="changeMode:" destination="-1" eventType="touchUpInside" id="hyC-6n-J8g"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" name="paleGrey"/>
+                    <constraints>
+                        <constraint firstItem="8oR-Xm-Jsy" firstAttribute="top" secondItem="33u-d7-yoh" secondAttribute="bottom" id="7xh-MG-gro"/>
+                        <constraint firstItem="33u-d7-yoh" firstAttribute="top" secondItem="QFE-gB-26T" secondAttribute="top" id="E2i-fT-e2H"/>
+                        <constraint firstAttribute="trailing" secondItem="8oR-Xm-Jsy" secondAttribute="trailing" id="EHO-CD-JIf"/>
+                        <constraint firstItem="H85-sa-tvI" firstAttribute="centerX" secondItem="QFE-gB-26T" secondAttribute="centerX" id="HKJ-LI-JNB"/>
+                        <constraint firstAttribute="bottom" secondItem="H85-sa-tvI" secondAttribute="bottom" constant="55" id="Y4U-L4-2Oh"/>
+                        <constraint firstAttribute="trailing" secondItem="33u-d7-yoh" secondAttribute="trailing" id="ZW8-yT-N1y"/>
+                        <constraint firstItem="33u-d7-yoh" firstAttribute="leading" secondItem="QFE-gB-26T" secondAttribute="leading" id="bQS-mX-6aB"/>
+                        <constraint firstItem="8oR-Xm-Jsy" firstAttribute="leading" secondItem="QFE-gB-26T" secondAttribute="leading" id="dZd-im-vG4"/>
+                        <constraint firstAttribute="bottom" secondItem="8oR-Xm-Jsy" secondAttribute="bottom" id="eA6-84-06c"/>
+                    </constraints>
+                </view>
+            </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="XtB-1P-2be" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="38H-i3-tyq"/>
+                <constraint firstItem="QFE-gB-26T" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="FSP-Ol-DjU"/>
+                <constraint firstItem="QFE-gB-26T" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="PrK-Md-q4d"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="XtB-1P-2be" secondAttribute="bottom" id="VB3-kk-jxJ"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="QFE-gB-26T" secondAttribute="bottom" id="eBj-Ee-XOz"/>
+                <constraint firstItem="XtB-1P-2be" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="g5i-HM-Hbf"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="XtB-1P-2be" secondAttribute="trailing" id="j2U-uB-mNn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QFE-gB-26T" secondAttribute="trailing" id="zTf-b5-7dg"/>
+            </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="139" y="90"/>
+            <point key="canvasLocation" x="137.68115942028987" y="89.732142857142847"/>
         </view>
     </objects>
+    <resources>
+        <image name="locIcon" width="10" height="13"/>
+        <image name="schoolLocIcon" width="24" height="24"/>
+        <namedColor name="black60">
+            <color red="0.0" green="0.0" blue="0.0" alpha="0.60000002384185791" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="brownGrey">
+            <color red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="dodgerBlue">
+            <color red="0.19607843137254902" green="0.61568627450980395" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="greenishTeal">
+            <color red="0.17254901960784313" green="0.77647058823529413" blue="0.5607843137254902" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="ice">
+            <color red="0.89411764705882357" green="0.97254901960784312" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="paleGrey">
+            <color red="0.96078431372549022" green="0.96078431372549022" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="veryLightPink">
+            <color red="0.8784313725490196" green="0.8784313725490196" blue="0.8784313725490196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

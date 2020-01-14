@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,6 +16,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainTitleView" customModule="우리스쿨" customModuleProvider="target">
             <connections>
+                <outlet property="schoolLabel" destination="iTk-7f-UdX" id="jgP-z2-pYf"/>
                 <outlet property="titleLabel" destination="ZDa-ns-cH1" id="l9T-DM-lv8"/>
             </connections>
         </placeholder>
@@ -30,9 +31,17 @@
                     <color key="textColor" name="greenishTeal"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(학교)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iTk-7f-UdX">
+                    <rect key="frame" x="82.5" y="440" width="38.5" height="20"/>
+                    <fontDescription key="fontDescription" name="NanumSquareRoundB" family="NanumSquareRound" pointSize="17"/>
+                    <color key="textColor" name="greenishTeal"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="iTk-7f-UdX" firstAttribute="bottom" secondItem="ZDa-ns-cH1" secondAttribute="bottom" id="3xM-Vq-FaI"/>
+                <constraint firstItem="iTk-7f-UdX" firstAttribute="leading" secondItem="ZDa-ns-cH1" secondAttribute="trailing" constant="5" id="AdC-49-0wP"/>
                 <constraint firstItem="ZDa-ns-cH1" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Nyp-Cb-saZ"/>
                 <constraint firstItem="ZDa-ns-cH1" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="fP0-sU-yIH"/>
             </constraints>

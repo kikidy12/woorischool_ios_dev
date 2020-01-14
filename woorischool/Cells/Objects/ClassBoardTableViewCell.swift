@@ -48,7 +48,12 @@ class ClassBoardTableViewCell: UITableViewCell {
         super.layoutIfNeeded()
         if isMyBoardList {
             classNameLabel.superview?.isHidden = false
-            classNameLabel.text = "\(board?.lectureClass?.lecture?.name ?? "강의명") \(board.lectureClass?.name ?? "클래스명")"
+            if board.type == "ALL" {
+                classNameLabel.text = board.lectureClass?.name
+            }
+            else {
+                classNameLabel.text = "\(board?.lectureClass?.lecture?.name ?? "강의명") \(board.lectureClass?.name ?? "클래스명")"
+            }
         }
         else {
             classNameLabel.superview?.isHidden = true

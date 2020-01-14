@@ -14,7 +14,6 @@ class BoardAddAndEditViewController: UIViewController {
     var editMode = false
     
     var board: BoardData!
-    
     var lectureClass: LectureClassData!
     
     var imageList = [UIImage]() {
@@ -132,7 +131,12 @@ extension BoardAddAndEditViewController {
         }
         
         ServerUtil.shared.patchV2Board(vc: self, multipartFormData: { (formData) in
-            formData.append(idData, withName: "board_id")
+            if self.board.type == "ALL" {
+                formData.append(idData, withName: "all_board_id")
+            }
+            else {
+                formData.append(idData, withName: "board_id")
+            }
             formData.append(contentData, withName: "content")
             self.imageList.forEach {
                 formData.append($0.resizeImage(width: 500)!, withName: "image", fileName: "boardImage.jpeg", mimeType: "image/jpeg")
@@ -148,15 +152,19 @@ extension BoardAddAndEditViewController {
     }
     
     func addBoard() {
-        guard let id = lectureClass?.id, let idData = "\(id)".data(using: .utf8) else {
-            return
-        }
         guard let content = textView.text, !content.isEmpty, let contentData = content.data(using: .nonLossyASCII, allowLossyConversion: true) else {
             return
         }
         
         ServerUtil.shared.putV2Board(vc: self, multipartFormData: { (formData) in
-            formData.append(idData, withName: "lecture_class_id")
+            if self.lectureClass.boardType == "ALL" {
+                formData.append("ALL".data(using: .utf8)!, withName: "type")
+            }
+            else {
+                formData.append("\(self.lectureClass.id!)".data(using: .utf8)!, withName: "lecture_class_id")
+                formData.append("LECTURE".data(using: .utf8)!, withName: "type")
+            }
+            
             formData.append(contentData, withName: "content")
             self.imageList.forEach {
                 formData.append($0.resizeImage(width: 500)!, withName: "image", fileName: "boardImage.jpeg", mimeType: "image/jpeg")

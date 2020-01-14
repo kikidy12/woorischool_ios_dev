@@ -226,6 +226,15 @@ extension Collection {
 
 }
 
+extension Double {
+    func toFloorString(min: Int = 0, max: Int = 0, mode: NumberFormatter.RoundingMode = .floor) -> String? {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.roundingMode = mode
+        numberFormatter.minimumSignificantDigits = min
+        numberFormatter.maximumSignificantDigits = max
+        return numberFormatter.string(for: self)
+    }
+}
 
 extension Int {
     var decimalString: String? {

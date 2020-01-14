@@ -48,13 +48,13 @@ extension LikeUserListViewController: UITableViewDelegate, UITableViewDataSource
 
 extension LikeUserListViewController {
     func getLikeUserList() {
-        guard let id = board.id else {
-            return
+        var parameters = [String:Any]()
+        if board.type == "ALL" {
+            parameters["all_board_id"] = board.id!
         }
-        
-        let parameters = [
-            "board_id": id
-        ] as [String:Any]
+        else {
+            parameters["board_id"] = board.id!
+        }
         
         ServerUtil.shared.getLike(self, parameters: parameters) { (success, dict, message) in
             guard success, let array = dict?["users"] as? NSArray else {

@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import NMapsMap
 
 class SchoolData: NSObject {
     
     var id: Int!
     var name: String!
     var number: String!
+    var location: NMGLatLng!
     
     override init() {
         
@@ -22,5 +24,8 @@ class SchoolData: NSObject {
         id = data["id"] as? Int
         name = data["name"] as? String
         number = data["number"] as? String
+        if let lat = data["latitude"] as? Double, let lng = data["longitude"] as? Double {
+            location = NMGLatLng(lat: lat, lng: lng)
+        }
     }
 }
