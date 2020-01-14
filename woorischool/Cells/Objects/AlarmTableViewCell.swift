@@ -45,7 +45,7 @@ class AlarmTableViewCell: UITableViewCell {
         }
         
         titleLabel.text = alarm.title
-        contentLabel.text = alarm.content
+        contentLabel.text = alarm.content.lowercased().decodeEmoji
         timeLabel.text = alarm.time
     }
     

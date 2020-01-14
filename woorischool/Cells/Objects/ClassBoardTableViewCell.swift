@@ -18,7 +18,6 @@ class ClassBoardTableViewCell: UITableViewCell {
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var firstImageView: UIImageView!
-    @IBOutlet weak var imaegContainerView: UIView!
     
     @IBOutlet weak var replyCountLabel: UILabel!
     @IBOutlet weak var likeCountLabel: UILabel!
@@ -66,11 +65,11 @@ class ClassBoardTableViewCell: UITableViewCell {
         replyCountLabel.text = "\(board.commentCount ?? 0)개"
         
         if board.imageList.count == 0 {
-            imaegContainerView.isHidden = true
+            firstImageView.isHidden = true
         }
         else {
-            imaegContainerView.isHidden = false
-            self.firstImageView.kf.setImage(with: self.board.imageList.first?.url, placeholder: UIImage(named: "tempImage"))
+            firstImageView.isHidden = false
+            self.firstImageView.kf.setImage(with: self.board.imageList.first?.url, placeholder: nil)
         }
         
         if let isLike = board.isLike, isLike {

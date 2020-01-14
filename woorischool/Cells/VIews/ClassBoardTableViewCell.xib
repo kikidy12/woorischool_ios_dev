@@ -24,7 +24,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a9s-D0-nks" customClass="CustomView" customModule="우리스쿨" customModuleProvider="target">
-                        <rect key="frame" x="18" y="0.0" width="284" height="375.5"/>
+                        <rect key="frame" x="18" y="0.0" width="284" height="369"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="MZx-Fc-MMU">
                                 <rect key="frame" x="0.0" y="0.0" width="284" height="70"/>
@@ -61,47 +61,41 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yff-aA-DPE">
-                                <rect key="frame" x="64" y="91.5" width="37" height="17.5"/>
+                                <rect key="frame" x="64" y="89" width="38.5" height="22.5"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nmN-Fo-OOJ">
-                                <rect key="frame" x="232" y="92.5" width="32" height="15.5"/>
+                                <rect key="frame" x="230.5" y="90.5" width="33.5" height="19.5"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="13"/>
                                 <color key="textColor" name="brownGrey"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozi-HM-yWL">
-                                <rect key="frame" x="20" y="128" width="244" height="16.5"/>
+                                <rect key="frame" x="20" y="128" width="244" height="21"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Aid-xW-Laa">
-                                <rect key="frame" x="20" y="154.5" width="244" height="176"/>
+                                <rect key="frame" x="20" y="159" width="244" height="165"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6vo-gq-g7R">
-                                        <rect key="frame" x="0.0" y="0.0" width="244" height="176"/>
-                                        <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QZj-Xs-6AO">
-                                                <rect key="frame" x="0.0" y="0.0" width="244" height="176"/>
-                                                <color key="tintColor" name="brownGrey"/>
-                                            </imageView>
-                                        </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QZj-Xs-6AO">
+                                        <rect key="frame" x="0.0" y="0.0" width="244" height="165"/>
+                                        <color key="tintColor" name="brownGrey"/>
                                         <constraints>
-                                            <constraint firstItem="QZj-Xs-6AO" firstAttribute="leading" secondItem="6vo-gq-g7R" secondAttribute="leading" id="2n4-jt-Mbi"/>
-                                            <constraint firstAttribute="height" priority="999" constant="176" id="6ME-7h-MoM"/>
-                                            <constraint firstItem="QZj-Xs-6AO" firstAttribute="top" secondItem="6vo-gq-g7R" secondAttribute="top" id="OY4-hC-rMJ"/>
-                                            <constraint firstAttribute="trailing" secondItem="QZj-Xs-6AO" secondAttribute="trailing" id="a9f-w7-nPX"/>
-                                            <constraint firstAttribute="bottom" secondItem="QZj-Xs-6AO" secondAttribute="bottom" id="r9n-iy-8N0"/>
+                                            <constraint firstAttribute="height" constant="165" id="DDo-Ok-RdX"/>
                                         </constraints>
-                                    </view>
+                                    </imageView>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="QZj-Xs-6AO" firstAttribute="leading" secondItem="Aid-xW-Laa" secondAttribute="leading" id="GyF-rJ-Bcz"/>
+                                    <constraint firstAttribute="trailing" secondItem="QZj-Xs-6AO" secondAttribute="trailing" id="nKV-mE-eOt"/>
+                                </constraints>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="hrF-Nq-2tV">
-                                <rect key="frame" x="20" y="347" width="14" height="12.5"/>
+                                <rect key="frame" x="20" y="340.5" width="14" height="12.5"/>
                                 <color key="tintColor" name="brownGrey"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="Ceo-Mn-cVC"/>
@@ -109,13 +103,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgm-QG-izX">
-                                <rect key="frame" x="39" y="345.5" width="32" height="15.5"/>
+                                <rect key="frame" x="39" y="337" width="33.5" height="19.5"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="13"/>
                                 <color key="textColor" name="brownGrey"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ellipses.bubble" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="qda-gS-3P3">
-                                <rect key="frame" x="91" y="348" width="15" height="10.5"/>
+                                <rect key="frame" x="92.5" y="341.5" width="15" height="10.5"/>
                                 <color key="tintColor" name="brownGrey"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="11" id="6Gc-9f-ADa"/>
@@ -123,7 +117,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nr2-iQ-Sb1">
-                                <rect key="frame" x="111" y="345.5" width="32" height="15.5"/>
+                                <rect key="frame" x="112.5" y="337" width="33.5" height="19.5"/>
                                 <fontDescription key="fontDescription" name="NotoSansCJKkr-Regular" family="Noto Sans CJK KR" pointSize="13"/>
                                 <color key="textColor" name="brownGrey"/>
                                 <nil key="highlightedColor"/>
@@ -183,7 +177,6 @@
                 <outlet property="classNameLabel" destination="ghP-Rd-Hqt" id="UhG-yJ-tjJ"/>
                 <outlet property="contentLabel" destination="ozi-HM-yWL" id="dID-b2-5XQ"/>
                 <outlet property="firstImageView" destination="QZj-Xs-6AO" id="jwh-DY-YYk"/>
-                <outlet property="imaegContainerView" destination="6vo-gq-g7R" id="lPs-Ql-lz2"/>
                 <outlet property="likeCountLabel" destination="kgm-QG-izX" id="Awl-H7-QbQ"/>
                 <outlet property="likeImageView" destination="hrF-Nq-2tV" id="6Nv-8B-k44"/>
                 <outlet property="nameLabel" destination="yff-aA-DPE" id="ci5-nV-3lu"/>
