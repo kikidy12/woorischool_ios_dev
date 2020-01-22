@@ -149,6 +149,9 @@
 		9953BEC823CC96BF00297C73 /* AcademyData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9953BEC723CC96BF00297C73 /* AcademyData.swift */; };
 		9953BECB23CD3B6600297C73 /* MapTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9953BEC923CD3B6600297C73 /* MapTableViewCell.swift */; };
 		9953BECC23CD3B6600297C73 /* MapTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9953BECA23CD3B6600297C73 /* MapTableViewCell.xib */; };
+		9953BECF23D5B05800297C73 /* RatingMessagePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9953BECD23D5B05800297C73 /* RatingMessagePopupViewController.swift */; };
+		9953BED023D5B05800297C73 /* RatingMessagePopupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9953BECE23D5B05800297C73 /* RatingMessagePopupViewController.xib */; };
+		9953BED223D5B30A00297C73 /* RatingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9953BED123D5B30A00297C73 /* RatingData.swift */; };
 		9956BF6D2365A42B0069E661 /* ParentsContractListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9956BF6B2365A42B0069E661 /* ParentsContractListViewController.swift */; };
 		9956BF6E2365A42B0069E661 /* ParentsContractListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9956BF6C2365A42B0069E661 /* ParentsContractListViewController.xib */; };
 		9956BF712365A65B0069E661 /* ParentContractTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9956BF6F2365A65B0069E661 /* ParentContractTableViewCell.swift */; };
@@ -423,6 +426,9 @@
 		9953BEC723CC96BF00297C73 /* AcademyData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AcademyData.swift; sourceTree = "<group>"; };
 		9953BEC923CD3B6600297C73 /* MapTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapTableViewCell.swift; sourceTree = "<group>"; };
 		9953BECA23CD3B6600297C73 /* MapTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapTableViewCell.xib; sourceTree = "<group>"; };
+		9953BECD23D5B05800297C73 /* RatingMessagePopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingMessagePopupViewController.swift; sourceTree = "<group>"; };
+		9953BECE23D5B05800297C73 /* RatingMessagePopupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatingMessagePopupViewController.xib; sourceTree = "<group>"; };
+		9953BED123D5B30A00297C73 /* RatingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingData.swift; sourceTree = "<group>"; };
 		9956BF6B2365A42B0069E661 /* ParentsContractListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentsContractListViewController.swift; sourceTree = "<group>"; };
 		9956BF6C2365A42B0069E661 /* ParentsContractListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ParentsContractListViewController.xib; sourceTree = "<group>"; };
 		9956BF6F2365A65B0069E661 /* ParentContractTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParentContractTableViewCell.swift; sourceTree = "<group>"; };
@@ -688,6 +694,7 @@
 				9998833C23BB0FA8000C413C /* LectureApplyData.swift */,
 				9953BEC523CC90E900297C73 /* AcademyCategory.swift */,
 				9953BEC723CC96BF00297C73 /* AcademyData.swift */,
+				9953BED123D5B30A00297C73 /* RatingData.swift */,
 			);
 			path = Datas;
 			sourceTree = "<group>";
@@ -1118,6 +1125,7 @@
 				99DFB1692354236600C5B69D /* ConfirmClassViewController.swift */,
 				99CF869F2387739600812A36 /* PSDailyNoteViewController.swift */,
 				996FE81A23A3F65F003872D4 /* ClassRegistPopupViewController.swift */,
+				9953BECD23D5B05800297C73 /* RatingMessagePopupViewController.swift */,
 			);
 			path = Popups;
 			sourceTree = "<group>";
@@ -1131,6 +1139,7 @@
 				99DFB16A2354236600C5B69D /* ConfirmClassViewController.xib */,
 				99CF86A02387739600812A36 /* PSDailyNoteViewController.xib */,
 				996FE81B23A3F65F003872D4 /* ClassRegistPopupViewController.xib */,
+				9953BECE23D5B05800297C73 /* RatingMessagePopupViewController.xib */,
 			);
 			path = PopupViews;
 			sourceTree = "<group>";
@@ -1270,6 +1279,7 @@
 				994907EA239DE46C00A6D1F6 /* OtherChattingTableViewCell.xib in Resources */,
 				996FE81923A3889C003872D4 /* PhotoDetailShowViewViewController.xib in Resources */,
 				99F7DC9E23470EA9007C4ABE /* RegistedClassMainViewController.xib in Resources */,
+				9953BED023D5B05800297C73 /* RatingMessagePopupViewController.xib in Resources */,
 				99F7DCA423471F86007C4ABE /* FillClassPopUpViewController.xib in Resources */,
 				9914AA0E23431B00001C0112 /* SelectUserTypeViewController.xib in Resources */,
 				9914A9FA23431447001C0112 /* NotoSansCJKkr-Thin.otf in Resources */,
@@ -1535,6 +1545,7 @@
 				994907DC239CD13E00A6D1F6 /* LectureClassDayEmptyView.swift in Sources */,
 				9998833D23BB0FA8000C413C /* LectureApplyData.swift in Sources */,
 				991182CD236BDEE40020D6CE /* BoardListViewController.swift in Sources */,
+				9953BED223D5B30A00297C73 /* RatingData.swift in Sources */,
 				99057904236BD06B002842AB /* ParentsEnrolmentClassViewController.swift in Sources */,
 				9956BF712365A65B0069E661 /* ParentContractTableViewCell.swift in Sources */,
 				9956BF92236857100069E661 /* TeacherStudentAttandTableViewCell.swift in Sources */,
@@ -1577,6 +1588,7 @@
 				9915B60F236307A400ACE9B6 /* TeacherPhoneAuthViewController.swift in Sources */,
 				9914A9D523430AC6001C0112 /* CustomViews.swift in Sources */,
 				99088BF223828B3D009C9AE6 /* BoardData.swift in Sources */,
+				9953BECF23D5B05800297C73 /* RatingMessagePopupViewController.swift in Sources */,
 				99FAB1B623AF30DD00CE0D3A /* ChildInfoTableViewCell.swift in Sources */,
 				99118310236EBC090020D6CE /* EmoticonDatas.swift in Sources */,
 				994907AD2394C4F800A6D1F6 /* SearchView.swift in Sources */,
@@ -1783,7 +1795,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.5;
+				MARKETING_VERSION = 1.0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.beanfactory.woorischool;
 				PRODUCT_NAME = "우리스쿨";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1807,7 +1819,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.5;
+				MARKETING_VERSION = 1.0.6;
 				PRODUCT_BUNDLE_IDENTIFIER = com.beanfactory.woorischool;
 				PRODUCT_NAME = "우리스쿨";
 				PROVISIONING_PROFILE_SPECIFIER = "";

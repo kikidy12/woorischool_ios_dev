@@ -130,6 +130,9 @@ class ClassInfoViewController: UIViewController {
         else if lectureClass.requestStatus == .needRequest {
             requestRating()
         }
+        else if lectureClass.requestStatus == .completion {
+            getRatingInfo()
+        }
     }
     
     @IBAction func showBoardListEvent() {
@@ -141,10 +144,39 @@ class ClassInfoViewController: UIViewController {
     @IBAction func showOneToOneChatViewEvent() {
         getOneToOneChat()
     }
+    
+    @IBAction func showPDFFileEvent() {
+        if let urlStr = lectureClass?.lecture?.lecturePlanUrl?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed), let url = URL(string: urlStr), UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+        else {
+            AlertHandler().showAlert(vc: self, message: "통신문을 열 수 없습니다.", okTitle: "확인")
+        }
+    }
 }
 
 
 extension ClassInfoViewController {
+    
+    func getRatingInfo() {
+        guard let id = lectureClass.applyId else {
+            return
+        }
+        let parameters = [
+            "lecture_apply_id": id
+        ] as [String:Any]
+        
+        ServerUtil.shared.postLectureRating(self, parameters: parameters) { (success, dict, message) in
+            guard success, let rating = dict?["rating"] as? NSDictionary else {
+                AlertHandler().showAlert(vc: self, message: message ?? "server error", okTitle: "확인")
+                return
+            }
+            let vc = RatingMessagePopupViewController()
+            vc.lectureClass = self.lectureClass
+            vc.rating = RatingData(rating)
+            self.showPopupView(vc: vc)
+        }
+    }
     
     func cancleRating() {
         let parameters = [
@@ -160,6 +192,17 @@ extension ClassInfoViewController {
     }
     
     func requestRating() {
+        
+        guard let startDate = Calendar.current.date(bySettingHour: 0, minute: 0, second: 0, of: lectureClass.ratingStartDate), let endDate = Calendar.current.date(bySettingHour: 23, minute: 59, second: 59, of: lectureClass.ratingEndDate) else {
+            return
+        }
+        guard Date() > startDate, Date() < endDate else {
+            AlertHandler().showAlert(vc: self, message: "평가기간이 아닙니다.", okTitle: "확인")
+            return
+        }
+        
+        
+        
         let parameters = [
             "lecture_apply_id": lectureClass.lectureApply.id!
         ] as [String:Any]

@@ -14,6 +14,8 @@ class ParentsMainViewController: UIViewController {
     @IBOutlet weak var tabStackView: UIStackView!
     @IBOutlet weak var mainView: UIView!
     
+    let customTitleView = MainTitleView(frame: CGRect(x: 0, y: 0, width: 150, height: 42))
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navibarSetting()
@@ -51,8 +53,6 @@ class ParentsMainViewController: UIViewController {
     }
     
     func setLeftTitleSetting(_ str: String) {
-        
-        let customTitleView = MainTitleView(frame: CGRect(x: 0, y: 0, width: 150, height: 42))
         let leftBtn = UIBarButtonItem(customView: customTitleView)
         self.navigationItem.leftBarButtonItem = leftBtn
         if str == "우리스쿨" {
@@ -136,10 +136,22 @@ class ParentsMainViewController: UIViewController {
             GlobalDatas.currentUser = UserData(user)
             UserDefs.setHasChildren(true)
             GlobalDatas.noticeList = array.compactMap { NoticeData( $0 as! NSDictionary ) }
+            
+            
             UserDefs.setLastUserType(type: UserType.parents.rawValue)
             complete()
         }
     }
     
+}
+
+
+class NoticeCodableData: Decodable {
+    var id : Int!
+    var title: String!
+    var content: String!
+    var type: String!
+    var createdAt: Date!
+    var updatedAt: Date!
 }
 

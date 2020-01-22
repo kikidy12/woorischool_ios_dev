@@ -14,6 +14,7 @@ class QuaterData: NSObject {
     var id: Int!
     var years: Int!
     var quarter: String!
+    var fileURL: String!
     
     var startDate: Date!
     var endDate: Date!
@@ -41,6 +42,7 @@ class QuaterData: NSObject {
         id = data["id"] as? Int
         years = data["years"] as? Int
         quarter = data["quarter"] as? String
+        fileURL = data["file_url"] as? String
         if let str = data["start_date"] as? String {
             startDate = str.stringToDate(formatter: "yyyy-MM-dd HH:mm:ss")
         }

@@ -64,6 +64,7 @@ class ChattingViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        title = room.title
         if chatList.isEmpty {
             self.getChatting("new", id: -1)
         }

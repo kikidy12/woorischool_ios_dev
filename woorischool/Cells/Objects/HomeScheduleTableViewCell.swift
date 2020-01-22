@@ -53,7 +53,7 @@ class HomeScheduleTableViewCell: UITableViewCell {
         
         eduTimeLabel.text = "\(classDayData.eduTime ?? "00:00-00:00")"
         lectureNameLabel.text = "\(lectureClass.lecture?.name ?? "강좌")"
-        classNameLabel.text = "\(lectureClass.name ?? "강의실")"
+        classNameLabel.text = "\(lectureClass.location ?? "강의실")"
         
         
     }

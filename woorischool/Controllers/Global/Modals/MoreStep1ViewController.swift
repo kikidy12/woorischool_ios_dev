@@ -74,7 +74,7 @@ class MoreStep1ViewController: UIViewController {
     }
     
     @IBAction func showAttractViewEvent() {
-        AlertHandler().showAlert(vc: self, message: "준비중인 기능입니다.", okTitle: "확인")
+        createAndShowQNA()
     }
     
     @IBAction func showEditProfileViewEvent() {
@@ -94,4 +94,23 @@ class MoreStep1ViewController: UIViewController {
         self.show(vc, sender: nil)
     }
     
+}
+
+extension MoreStep1ViewController {
+    func createAndShowQNA() {
+        guard userType == .parents else {
+            AlertHandler().showAlert(vc: self, message: "학부모 전용 기능입니다.", okTitle: "확인")
+            return
+        }
+        
+        ServerUtil.shared.getNoteQna(self) { (success, dict, message) in
+            guard success, let room = dict?["note"] as? NSDictionary  else {
+                return
+            }
+            
+            let vc = ChattingViewController()
+            vc.room = ChatRoomData(room)
+            self.show(vc, sender: nil)
+        }
+    }
 }

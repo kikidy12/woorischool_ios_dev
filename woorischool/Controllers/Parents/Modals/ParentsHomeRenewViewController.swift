@@ -171,6 +171,8 @@ class ParentsHomeRenewViewController: UIViewController {
     
     func setUserInfo() {
         let user = GlobalDatas.currentUser
+        (parent as! ParentsMainViewController).customTitleView.titleLabel.text = "우리스쿨"
+        (parent as! ParentsMainViewController).customTitleView.schoolLabel.text = "(\(GlobalDatas.currentUser.childlen?.school?.name ?? "학교"))"
         nameLabel.text = "\(user?.childlen?.name ?? "아무개") 학부모님\n안녕하세요"
         if let urlStr = user?.profileImage {
             profileImageView.kf.setImage(with: URL(string: urlStr), placeholder: UIImage(named: "profilePlaceHolder"))
@@ -538,3 +540,4 @@ extension ParentsHomeRenewViewController {
         }
     }
 }
+

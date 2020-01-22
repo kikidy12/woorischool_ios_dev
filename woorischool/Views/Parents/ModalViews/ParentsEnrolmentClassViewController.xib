@@ -80,6 +80,9 @@
                                 <constraint firstAttribute="height" constant="50" id="KZv-Bw-wcH"/>
                             </constraints>
                             <state key="normal" backgroundImage="programBtnImage"/>
+                            <connections>
+                                <action selector="showPdfFileEvent" destination="-1" eventType="touchUpInside" id="y7O-xs-9Ae"/>
+                            </connections>
                         </button>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019.05.06 - 2019.07.21" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K4Q-qX-Ji0">
                             <rect key="frame" x="25" y="40" width="164.5" height="17.5"/>

@@ -290,8 +290,6 @@ extension CourseRegistrationViewController {
             }
             GlobalDatas.currentUser.childlen.point = point
             
-            
-            
 //            if possible {
 //                let vc = ClassRegistPopupViewController()
 //                vc.lectureClass = classData

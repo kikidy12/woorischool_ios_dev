@@ -60,13 +60,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
 
         print(userInfo)
-        guard let type = userInfo["type"] as? String else  {
-            return
-        }
         
-        if type == "wait_push" {
-            notiTypeWaitPush()
-        }
+        notiTypeWaitPush()
+//        guard let type = userInfo["type"] as? String else  {
+//            return
+//        }
+//
+//        if type == "wait_push" {
+//            notiTypeWaitPush()
+//        }
         
         UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
         UNUserNotificationCenter.current().removeAllDeliveredNotifications()
@@ -87,9 +89,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 navi.show(vc, sender: nil)
             } else if state == .active {
                 // foreground
-                navi.popToRootViewController(animated: false)
-                let vc = AlarmListViewController()
-                navi.show(vc, sender: nil)
+//                navi.popToRootViewController(animated: false)
+//                let vc = AlarmListViewController()
+//                navi.show(vc, sender: nil)
             }
         }
         else {

@@ -284,7 +284,7 @@
                                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fyr-Td-csH" userLabel="callView">
                                                                     <rect key="frame" x="112.5" y="0.0" width="80" height="74"/>
                                                                     <subviews>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moreCallIcon" translatesAutoresizingMaskIntoConstraints="NO" id="qih-WP-7zT">
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="moreAttractIcon" translatesAutoresizingMaskIntoConstraints="NO" id="qih-WP-7zT">
                                                                             <rect key="frame" x="23" y="12" width="34" height="30"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="34" id="QSE-BK-m4Z"/>
@@ -549,8 +549,8 @@
         </tapGestureRecognizer>
     </objects>
     <resources>
+        <image name="moreAttractIcon" width="34" height="30"/>
         <image name="moreBoardIcon" width="34" height="30"/>
-        <image name="moreCallIcon" width="34" height="30"/>
         <image name="moreMoreIcon" width="34" height="30"/>
         <image name="moreNotiIcon" width="34" height="30"/>
         <image name="moreProfileIcon" width="34" height="30"/>

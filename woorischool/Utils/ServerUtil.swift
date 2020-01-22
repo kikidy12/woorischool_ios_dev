@@ -18,7 +18,7 @@ class ServerUtil: NSObject {
     
     fileprivate let devServer:String = "http://ec2-52-78-148-252.ap-northeast-2.compute.amazonaws.com/"
     
-    fileprivate let localServer:String = "http://172.30.1.17:5000/"
+    fileprivate let localServer:String = "http://192.168.43.224:5000/"
     
     fileprivate var serverAddress: String!
     
@@ -164,6 +164,12 @@ class ServerUtil: NSObject {
         currentVc = vc
         apiRequest(showLoading: false, "schedule_list", method: .get, parameters: parameters, completion: completion)
     }
+    
+    func getNoteQna(_ vc: UIViewController, parameters: Parameters? = nil, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
+        currentVc = vc
+        apiRequest(showLoading: false, "note_qna", method: .get, parameters: parameters, completion: completion)
+    }
+    
     
     //parents
     
@@ -443,6 +449,8 @@ extension ServerUtil {
         
     }
     
+    
+    
     fileprivate func uploadRequest(version: String = "", _ api: String, method: HTTPMethod, showUploadProgress:Bool = false, multipartFormData: @escaping (MultipartFormData) -> Void, completion: @escaping (Bool, NSDictionary?, String?) -> Void) {
         if showUploadProgress {
             self.currentVc.view.addSubview(self.progressLabel)
@@ -475,6 +483,7 @@ extension ServerUtil {
         
         loadingView.removeFromSuperview()
         progressLabel.removeFromSuperview()
+        
         guard let result = response.result.value as? NSDictionary else {
             completion(false ,nil, nil)
             AlertHandler().showAlert(vc: currentVc, message: "Server Error", okTitle: "확인")
@@ -483,6 +492,7 @@ extension ServerUtil {
         
         if serverAddress != liveServer {
             print(response.request?.description ?? "ServerError")
+            
             do {
                 let jsonData = try JSONSerialization.data(withJSONObject: result, options: .prettyPrinted)
                 print(String(data: jsonData, encoding: .utf8)!)
@@ -493,7 +503,7 @@ extension ServerUtil {
         }
         
         guard let code = result["code"] as? Int else {
-            completion(false ,nil, nil)
+//            completion(false ,nil, nil)
             AlertHandler().showAlert(vc: currentVc, message: "Server Error", okTitle: "확인")
             return
         }

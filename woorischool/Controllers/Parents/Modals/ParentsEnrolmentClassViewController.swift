@@ -44,9 +44,13 @@ class ParentsEnrolmentClassViewController: UIViewController {
         self.show(vc, sender: nil)
     }
     
-    @IBAction func showCompleteRegistViewEvent() {
-        let vc = RegistClassCompleteListViewController()
-        self.show(vc, sender: nil)
+    @IBAction func showPdfFileEvent() {
+        if let urlStr = quater.fileURL?.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed), let url = URL(string: urlStr), UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+        else {
+            AlertHandler().showAlert(vc: self, message: "통신문을 열 수 없습니다.", okTitle: "확인")
+        }
     }
 }
 

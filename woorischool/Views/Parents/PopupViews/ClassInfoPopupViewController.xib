@@ -344,7 +344,7 @@
                             </constraints>
                             <fontDescription key="fontDescription" name="NotoSansCJKkr-Medium" family="Noto Sans CJK KR" pointSize="16"/>
                             <inset key="titleEdgeInsets" minX="12" minY="0.0" maxX="0.0" maxY="0.0"/>
-                            <state key="normal" title="수업계획서 다운" image="docIcon">
+                            <state key="normal" title="수업계획서 조회" image="docIcon">
                                 <color key="titleColor" name="greyishBrown"/>
                             </state>
                             <userDefinedRuntimeAttributes>
@@ -358,6 +358,9 @@
                                     <color key="value" name="veryLightPink"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="showPDFFileEvent" destination="-1" eventType="touchUpInside" id="hT3-1S-mtE"/>
+                            </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y6z-Wc-cxn">
                             <rect key="frame" x="18" y="351" width="344" height="50"/>
