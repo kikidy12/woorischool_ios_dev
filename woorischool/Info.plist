@@ -28,9 +28,9 @@
 	<key>NSCameraUsageDescription</key>
 	<string>카메라를 사용합니다</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>스팟에서 내 주변 가맹점 안내를 위해 필요합니다. 스팟에서 내 기기 위치에 액세스하도록 허용하시겠습니까?</string>
+	<string>내 기기 위치에 액세스하도록 허용하시겠습니까?</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>스팟에서 내 주변 가맹점 안내를 위해 필요합니다. 스팟에서 내 기기 위치에 액세스하도록 허용하시겠습니까?</string>
+	<string>내 기기 위치에 액세스하도록 허용하시겠습니까?</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>사진첩을 사용합니다</string>
 	<key>UIAppFonts</key>
